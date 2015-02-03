@@ -3,10 +3,11 @@ cloudinary = require 'cloudinary'
 # TODO
 # check if it is production or staging, update settings accordingly
 s =
-  is_development: process.env.NODE_ENV != 'production'
-
-  path:
-    views: process.cwd() + '/src/views/'
+  is_development : process.env.NODE_ENV != 'production'
+  port           : process.env.PORT || 1993
+  is_dev_machine : require("os").hostname().indexOf( 'local' ) != -1
+  debug          : off
+  in_production  : false
 
 
 cloudinary.config
@@ -14,6 +15,26 @@ cloudinary.config
   api_key   : '631677181392992', 
   api_secret: 'opQ179HoyQlceRzNr1VGMukScas' 
 
+s.facebook =
+  client_id    : "133746950129386"
+  client_secret: "905d2b50f2cc4c9b407a7efec182c90f"
+  callback_url : "http://www.loopcast.fm/auth/facebook/callback"
+
+s.soundcloud =
+  client_id    : "afac925318ccc98d6aca4631b0a86a92"
+  client_secret: "be900f4e96a1d18da740c6536cc756ee"
+  callback_url : "http://localhost:3000/auth/soundcloud/callback"
+
+s.twitter =
+  consumer_key   : "3YqpmaF3kZjd6vH7ijnSZg"
+  consumer_secret: "w9PMdVtjN496Op1B4Obk6dkg48MPixYil2gy6mBW0Kk"
+  callback_url   : 'http://localhost:3000/auth/twitter/callback'
+
+s.google =
+  clientID    : 'your-secret-clientID-here',
+  clientSecret: 'your-client-secret-here',
+  callbackURL : 'http://localhost:8080/auth/google/callback'
+    
 if s.is_development
 
   # ~ databases
@@ -46,24 +67,6 @@ if s.is_development
 # clientSecret: "9cd913aa3e37e6b3353aafd9c99358db"
 # callbackURL: "http://127.0.0.1:3000/auth/facebook/callback"
 
-  s.facebook =
-    client_id    : "133746950129386"
-    client_secret: "905d2b50f2cc4c9b407a7efec182c90f"
-    callback_url : "http://www.loopcast.fm/auth/facebook/callback"
 
-  s.soundcloud =
-    client_id    : "afac925318ccc98d6aca4631b0a86a92"
-    client_secret: "be900f4e96a1d18da740c6536cc756ee"
-    callback_url : "http://localhost:3000/auth/soundcloud/callback"
-
-  s.twitter =
-    consumer_key   : "3YqpmaF3kZjd6vH7ijnSZg"
-    consumer_secret: "w9PMdVtjN496Op1B4Obk6dkg48MPixYil2gy6mBW0Kk"
-    callback_url   : 'http://localhost:3000/auth/twitter/callback'
-
-  s.google =
-    clientID    : 'your-secret-clientID-here',
-    clientSecret: 'your-client-secret-here',
-    callbackURL : 'http://localhost:8080/auth/google/callback'
 
 module.exports = s
