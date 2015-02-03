@@ -18,9 +18,15 @@ module.exports = ( url, callback ) ->
   url  = root + url + '.jade'
 
 
-  fs.exists url, ( exists ) ->
+  fs.readFile url, ( error, content ) ->
 
 
-    if not exists then callback error = true
-      
-    callback null, jade.renderFile url, hello: 'world!' 
+    if error then return callback error
+
+
+    template = jade.compile content,
+      filename    : url
+      compileDebug: on
+      pretty      : on
+
+    callback null, template hello: 'world!' 
