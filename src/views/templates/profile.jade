@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  h1 Profile
+
+  br
+  br
+    
+  h4 #{name}
+
+  ul
+    for genre in genres
+      li #{genre}
+
+  if live
+    br
+    br
+    
+    h4 live
+
+    h3 #{live.name}
+
+  br
+  br
+    
+  h4 recorded
+
+  ul
+    for room in recorded
+      li 
+        pre
+          | title : #{room.title}
+          | author: #{room.author}
+          | ---
