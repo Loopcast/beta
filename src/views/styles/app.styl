@@ -1,0 +1,18 @@
+@import 'reset.styl'
+@import 'header.styl'
+@import 'footer.styl'
+
+
+// simple media query example
+
+body
+  background: #222
+  
+  +below( 700px )
+    color: red
+    
+  +above( 700px )
+    color: blue
+    
+  +above( 1200px )
+    color: white

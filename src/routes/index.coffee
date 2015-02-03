@@ -10,10 +10,14 @@ profile  = lib 'render/profile'
 
 module.exports =
   method: 'GET'
-  path  : '/{page}'
+  path  : '/'
   handler: ( request, reply )->
 
-    url = request.url.href
+    user_is_logged = false
+
+    if user_is_logged then return reply.redirect '/explore'
+      
+    url = '/index'
 
     render = ( response ) -> reply response
 
@@ -21,8 +25,4 @@ module.exports =
 
       if not error then return render response
 
-      profile url, ( error, response ) ->
-
-        if not error then return render response
-
-        return reply( "Page not found" ).code 404
+      reply error

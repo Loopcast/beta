@@ -17,12 +17,9 @@ module.exports = ( url, callback ) ->
 
   url  = root + url + '.jade'
 
-
   fs.readFile url, ( error, content ) ->
 
-
     if error then return callback error
-
 
     template = jade.compile content,
       filename    : url
