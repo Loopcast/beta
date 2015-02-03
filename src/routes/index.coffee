@@ -19,10 +19,8 @@ module.exports =
       
     url = '/index'
 
-    render = ( response ) -> reply response
+    template url, null, ( error, response ) ->
 
-    template url, ( error, response ) ->
-
-      if not error then return render response
+      if not error then return reply response
 
       reply error

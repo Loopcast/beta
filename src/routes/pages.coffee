@@ -17,7 +17,7 @@ module.exports =
 
     render = ( response ) -> reply response
 
-    template url, ( error, response ) ->
+    template url, null, ( error, response ) ->
 
       if not error then return render response
 

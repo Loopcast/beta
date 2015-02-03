@@ -11,7 +11,7 @@ fs   = require 'fs'
 path = require 'path'
 jade = require 'jade'
 
-module.exports = ( url, callback ) ->
+module.exports = ( url, data, callback ) ->
 
   root = path.join( __dirname + '/../../views/templates' )
 
@@ -26,4 +26,4 @@ module.exports = ( url, callback ) ->
       compileDebug: on
       pretty      : on
 
-    callback null, template hello: 'world!' 
+    callback null, template data

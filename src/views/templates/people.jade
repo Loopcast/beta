@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  h1 People
+
+  br
+  br
+    
+  h4 genres
+
+  ul
+    for genre in genres
+      li #{genre}
+
+  br
+  br
+    
+  h4 people
+
+  ul
+    for person in people
+      li 
+        pre
+          | author: #{person.author}
+          | kind  : #{person.kind}
+          | ---
