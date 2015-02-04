@@ -11,16 +11,21 @@ profile  = lib 'render/profile'
 module.exports =
   method: 'GET'
   path  : '/'
-  handler: ( request, reply )->
+  config:
 
-    user_is_logged = false
+    auth:
+      strategy: 'session'
+      mode    : 'try'
 
-    if user_is_logged then return reply.redirect '/explore'
-      
-    url = '/index'
+    handler: ( request, reply )->
 
-    template url, null, ( error, response ) ->
+      # if user is logged, redirect to explore page
+      if request.auth.isAuthenticated then return reply.redirect '/explore'
+       
+      url = '/index'
 
-      if not error then return reply response
+      template url, null, ( error, response ) ->
 
-      reply error
+        if not error then return reply response
+
+        reply error
