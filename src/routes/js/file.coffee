@@ -19,7 +19,6 @@ module.exports =
 
     url  = root + request.params.file.replace '.js', '.coffee'
 
-    
     fs.readFile url, encoding: 'utf-8', ( error, content ) ->
 
       if error then return reply( "coffee file not found" ).code 404
