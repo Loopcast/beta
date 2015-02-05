@@ -20,7 +20,6 @@ block content
   ul
     for person in people
       li 
-        pre
-          | author: #{person.author}
-          | kind  : #{person.kind}
-          | ---
+       a( href="#{person.id}") #{person.author}
+       
+       .kind  : #{person.kind}

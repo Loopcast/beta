@@ -9,6 +9,7 @@ module.exports = ( callback ) ->
       "Techno"
     ]
     people: [
+        id       : 'thomas-amundsen'
         author   : "Thomas Amundsen"
         kind     : "Dj/Producer"
         genres   : [ "House", "Tech House", "Electro House" ]
@@ -16,6 +17,7 @@ module.exports = ( callback ) ->
         followers: 45
         url      : "/thomas"
       ,
+        id       : 'hems'
         author   : "hems"
         kind     : "Dj/Producer"
         genres  : [ "Ambient", "Alternative", "Experimental" ]

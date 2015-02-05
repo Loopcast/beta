@@ -3,11 +3,11 @@ cloudinary = require 'cloudinary'
 # TODO
 # check if it is production or staging, update settings accordingly
 s =
-  is_development : process.env.NODE_ENV != 'production'
+  is_development : process.env.NODE_ENV isnt 'production'
   port           : process.env.PORT || 1993
   is_dev_machine : require("os").hostname().indexOf( 'local' ) != -1
   debug          : off
-  in_production  : false
+  in_production  : process.env.NODE_ENV is 'production'
   https          : off
   server:
     url: 'http://localhost:1993/'
