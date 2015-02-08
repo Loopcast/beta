@@ -1,18 +1,16 @@
 extends layout
 
 block content
-  h1 Profile
+  h1 #{name}
 
   br
   br
     
-  h4 #{name}
-
   ul
     for genre in genres
       li #{genre}
 
-  audio( controls autoplay src="http://radio.loopcast.fm:8000/source" )
+  audio( controls autoplay src="http://radio.loopcast.fm:8000/#{id}" )
 
   if live
     br
