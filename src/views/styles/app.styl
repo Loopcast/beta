@@ -27,9 +27,9 @@ open_sans()
 
 
 // Imports
-@import 'shared/reset.styl'
-@import 'shared/header.styl'
-@import 'shared/footer.styl'
+@import '_shared/_reset.styl'
+@import '_shared/_header.styl'
+@import '_shared/_footer.styl'
 
 
 // Footer always pushed to the bottom
@@ -54,4 +54,7 @@ body
 #content
 	padding-top: 42px
 	// TEMP
-	background-color: #fff 
+	background-color: #fff
+	
+	+above( 1200px )
+		background: #f00 

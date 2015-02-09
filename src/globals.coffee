@@ -1,9 +1,13 @@
-global.s   = require './settings'
+path  = require 'path'
+
+global.s  = require './settings'
 
 global.lib = ( path ) -> 
   require __dirname + "/lib/#{path}"
 
 global.models = ( path ) -> 
   require __dirname + "/models/#{path}"
+
+global.root = path.join( __dirname + "/.."  )
 
 module.exports = global
