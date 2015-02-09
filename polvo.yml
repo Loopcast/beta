@@ -1,0 +1,20 @@
+server:
+  port: 3000
+  root: ./www
+
+input:
+  - src/views/scripts
+  - src/views/styles
+
+output:
+  js: ./www/js/app.js
+  css: ./www/css/app.css
+
+alias:
+  app: ./src/views/scripts/
+
+minify:
+  js: false
+  css: false
+
+boot: ./src/views/scripts/app

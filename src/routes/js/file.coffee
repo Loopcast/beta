@@ -15,21 +15,13 @@ module.exports =
 
   handler: ( request, reply ) ->
 
-    root = path.join( __dirname + '/../../views/scripts/' )
+    # check for real file
+    url  = root + '/www/js/' + request.params.file
 
-    url  = root + request.params.file.replace '.js', '.coffee'
+    console.log 
 
     fs.readFile url, encoding: 'utf-8', ( error, content ) ->
 
-      if error then return reply( "coffee file not found" ).code 404
+      if error then return reply error
 
-      try
-        compiled = coffee.compile content, 
-          bare    : 1
-          filename: url
-
-        reply compiled
-
-      catch error
-
-        reply error
+      reply( content ).type( 'text/javascript')
