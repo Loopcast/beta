@@ -1,18 +1,57 @@
-@import 'reset.styl'
-@import 'header.styl'
-@import 'footer.styl'
+// Variables
 
 
-// simple media query example
+// ----- Colors
+BLACK = #1f1f1f
+GRAY  = #dedede
 
+// ----- Sizes
+MAX_WIDTH = 1140px
+FOOTER_HEIGHT = 80px
+
+// --------------------------------------------
+
+// Fonts
+open_sans()
+	font-family: 'Open Sans', sans-serif
+	
+// --------------------------------------------
+
+// Structure classes
+
+.centered
+	max-width: MAX_WIDTH
+	margin: 0 auto
+
+
+
+
+// Imports
+@import 'shared/reset.styl'
+@import 'shared/header.styl'
+@import 'shared/footer.styl'
+
+
+// Footer always pushed to the bottom
+html,body
+	height: 100%
+	
+#content
+	min-height: 100%
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -(FOOTER_HEIGHT);
+	
+.push, footer
+	height: FOOTER_HEIGHT
+
+// General Layout
 body
-  background: #222
-  
-  +below( 700px )
-    color: red
-    
-  +above( 700px )
-    color: blue
-    
-  +above( 1200px )
-    color: white
+	background: GRAY
+	color: black
+	open_sans()
+		
+#content
+	padding-top: 42px
+	// TEMP
+	background-color: #cbfdff 

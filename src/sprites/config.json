@@ -1,0 +1,9 @@
+{
+	"src_image_folder"		: "./sources",
+	"output_css_folder"  	: "../../www/css",
+	"output_image_folder"	: "../../www/images",
+	"selector"  			: ".spritesheet",
+	"output_css"  	 		: "spritesheet.css",
+	"output_image"  		: "spritesheet.png",
+	"output_image_retina"	: "spritesheet-retina.png"
+}
