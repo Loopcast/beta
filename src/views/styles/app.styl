@@ -1,37 +1,41 @@
-// Variables
+// --------------------------------------------
+// Colors
+BLACK  	= #1f1f1f
+GRAY   	= #dedede
+GRAY_2 	= #615b5b
 
-
-// ----- Colors
-BLACK = #1f1f1f
-GRAY  = #dedede
-
-// ----- Sizes
+// Sizes
 MAX_WIDTH = 1140px
 FOOTER_HEIGHT = 80px
 
 // --------------------------------------------
-
 // Fonts
 open_sans()
 	font-family: 'Open Sans', sans-serif
 	
+open_bold()
+	font-weight: 600
+	
 // --------------------------------------------
-
 // Structure classes
 
 .centered
 	max-width: MAX_WIDTH
 	margin: 0 auto
 
+.clear
+	clear: both
 
-
-
+// --------------------------------------------
 // Imports
 @import 'shared/reset.styl'
-@import 'shared/header.styl'
-@import 'shared/footer.styl'
+@import 'shared/header_footer.styl'
+@import 'shared/modal.styl'
+@import 'shared/ui.styl'
 
+@import 'pages/login.styl'
 
+// --------------------------------------------
 // Footer always pushed to the bottom
 html,body
 	height: 100%
@@ -45,13 +49,15 @@ html,body
 .push, footer
 	height: FOOTER_HEIGHT
 
+// --------------------------------------------
 // General Layout
 body
 	background: GRAY
 	color: black
+	font-size: 100%;
 	open_sans()
 		
 #content
 	padding-top: 42px
-	// TEMP
 	background-color: #fff 
+	text-align: center

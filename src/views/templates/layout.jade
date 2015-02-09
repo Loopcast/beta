@@ -16,12 +16,12 @@ html
 
 			script( src="https://code.jquery.com/jquery-2.1.1.min.js" )
 			script( src="/js/app.js" )
-			link( href='//fonts.googleapis.com/css?family=Open+Sans:400,300,700,600' rel='stylesheet' type='text/css' )
+			link( href='//fonts.googleapis.com/css?family=Open+Sans:300,400,700,600' rel='stylesheet' type='text/css' )
 			link( href='/css/spritesheet.css' rel='stylesheet' type='text/css' )
 			link( href='/css/app.css' rel='stylesheet' type='text/css' )
 
 
-	body
+	body.no_touch_device
 		block body
 
 			include ./shared/header.jade
@@ -31,3 +31,4 @@ html
 				.push 
 
 			include ./shared/footer.jade
+			include ./shared/login.jade

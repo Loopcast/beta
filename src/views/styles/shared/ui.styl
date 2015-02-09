@@ -1,0 +1,31 @@
+DARK_PERCENTAGE = 10
+
+.button
+	border-radius: 2px
+	text-align: center
+	display: block
+	color: white
+	letter-spacing: 0.04em
+	font-size: 0.9em
+	padding: 10px
+	
+
+	&.facebook
+		background-color: #2e5d94
+		
+	&.soundcloud
+		background-color: #ff5224
+		
+	&.signin
+		background-color: #2095cf
+		
+
+.no_touch_device
+	.button.facebook:hover
+		background-color: darken(#2e5d94, DARK_PERCENTAGE)
+		
+	.button.soundcloud:hover
+		background-color: darken(#ff5224, DARK_PERCENTAGE)
+		
+	.button.signin:hover
+		background-color: darken(#2095cf, DARK_PERCENTAGE)
