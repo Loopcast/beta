@@ -1,6 +1,6 @@
 module.exports = class ModalHandler
 	constructor: ( @dom ) ->
-		view.on 'binded', @on_ready
+		view.once 'binded', @on_ready
 
 	on_ready: ( ) =>
 		log "[ModalHandler] on_ready"
