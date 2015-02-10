@@ -2,7 +2,7 @@
 window.delay  		= require './utils/delay'
 window.log  		= require './utils/log'
 Window 				= require './utils/window'
-require '../../vendors/modernizr.custom.js'
+require '../vendors/modernizr.custom.js'
 
 # events
 
@@ -10,7 +10,7 @@ happens         	= require 'happens'
 
 # controllers
 views         		= require './controllers/views'
-# navigation        	= require './controllers/navigation'
+navigation        	= require './controllers/navigation'
 # motion        		= require 'app/controllers/motion'
 
 class App
@@ -29,7 +29,6 @@ class App
 
 	start: ->
 
-		console.log "start"
 		@body   = $ 'body'
 		
 		@settings = require 'app/utils/settings'
@@ -41,7 +40,16 @@ class App
 
 		# Controllers binding
 		do views.bind
-		# do navigation.bind
+		do navigation.bind
+
+		# when the new are is rendered, do the same with the new content
+		navigation.on 'before_destroy', =>
+			views.unbind '#content'
+
+
+		navigation.on 'after_render', => 
+			views.bind       '#content'
+			navigation.bind '#content'
 		
 
 

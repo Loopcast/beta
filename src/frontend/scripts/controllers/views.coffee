@@ -73,16 +73,25 @@ class View
 			for name in names
 				@_add_view $item, name
 
-			
-
 			# remove the data-view attribute, so it won't be instantiated twice!
 			$item.removeAttr 'data-view'
 
-			
+		).promise().done => @emit "binded"
 
-		).promise().done => 
-			@emit "binded"
-			# $( @ ).trigger "after_bind"
+	unbind: ( scope = 'body' ) ->
+		$( scope ).find( '[data-uid]' ).each( ( index, item ) =>
+
+			$item = $ item
+
+			id = $item.data 'uid'
+
+			v = view.get_by_uid id
+
+			if v
+				v.destroy?()
+				view.on_view_destroyed id
+
+		).promise().done => @emit "unbinded"
 
 
 
@@ -108,6 +117,8 @@ class View
 		view.uid = UNIQUE_ID
 		view.view_name = view_name
 
+		log "[view] add", view.uid, view.view_name
+
 		$item.attr 'data-uid', UNIQUE_ID
 
 		# Save the view in a linear array model
@@ -123,6 +134,7 @@ class View
 
 	on_view_destroyed: ( uid ) ->
 		
+		log "[View] on_view_destroyed", uid
 		if @uid_map[ uid ]?
 
 			# Get the data from the uid map

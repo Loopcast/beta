@@ -6,14 +6,6 @@
 		font-size: 1.15em
 		text-align: center
 		margin-bottom: 24px
-		
-	.facebook, .soundcloud
-		display: inline-block
-		width: 48%
-		float: left
-	
-	.soundcloud
-		float: right
 	
 	form
 		position: relative
@@ -30,3 +22,12 @@
 	div.error
 		.label_error
 			display: block
+			
+	.buttons_flex
+		display: flex
+		justify-content: space-around
+		flex-flow: row wrap
+		& > *
+			
+			width: 47%;  
+			margin: 0px 1% 10px; 
