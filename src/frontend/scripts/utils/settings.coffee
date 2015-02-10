@@ -166,7 +166,7 @@ has3d = ->
 	has3d isnt `undefined` and has3d.length > 0 and has3d isnt "none"
 
 
-settings.has3d = has3d()
+# settings.has3d = has3d()
 
 
 

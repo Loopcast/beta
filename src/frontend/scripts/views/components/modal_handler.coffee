@@ -3,6 +3,5 @@ module.exports = class ModalHandler
 		view.once 'binded', @on_ready
 
 	on_ready: ( ) =>
-		log "[ModalHandler] on_ready"
 		modal_target = view.get_by_dom @dom.data( 'modal' )
 		@dom.on 'click', -> modal_target.open()

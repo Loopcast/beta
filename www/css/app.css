@@ -56,34 +56,36 @@ header {
   left: 0;
   color: #fff;
   height: 42px;
+  z-index: 3;
 }
 
-/* line 9 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 10 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 header a {
   display: inline-block;
   padding: 9px 25px;
 }
 
-/* line 12 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 13 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 header .left {
   float: left;
 }
 
-/* line 14 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 15 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 header .left a {
   border-right: 1px solid #333;
 }
 
-/* line 17 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 18 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 header .right {
   float: right;
 }
 
-/* line 21 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 22 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 footer {
   background: #e9fff1;
   text-align: center;
   color: #000;
+  z-index: 0;
 }
 
 /* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
@@ -400,24 +402,45 @@ a {
   text-indent: -9999px;
 }
 
-/* line 40 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 35 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+li {
+  list-style: none;
+}
+
+/* line 43 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
 .centered {
   max-width: 1140px;
   margin: 0 auto;
 }
 
-/* line 44 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 47 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
 .clear {
   clear: both;
 }
 
 /* line 50 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+}
+
+/* line 54 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+.visible {
+  visibility: visible;
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+}
+
+/* line 61 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
 html,
 body {
   height: 100%;
 }
 
-/* line 53 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 64 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
 #content {
   min-height: 100%;
   height: auto !important;
@@ -425,13 +448,13 @@ body {
   margin: 0 auto -80px;
 }
 
-/* line 59 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 70 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
 .push,
 footer {
   height: 80px;
 }
 
-/* line 64 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 75 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
 body {
   background: #dedede;
   color: #000;
@@ -440,11 +463,24 @@ body {
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
-/* line 70 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 81 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
 #content {
   padding-top: 42px;
   background-color: #fff;
   text-align: center;
+  position: relative;
+  z-index: 0;
+}
+
+/* line 88 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+#loading {
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
 }
 
 
