@@ -18,8 +18,8 @@ start:
 setup:
 	npm install
 	rm -rf node_modules/polvo/node_modules/polvo-stylus
-	cd node_modules/polvo/node_modules/ && git clone https://github.com/hems/polvo-stylus
-	cd node_modules/polvo/node_modules/polvo-stylus/ && npm install
+	# cd node_modules/polvo/node_modules/ && git clone https://github.com/hems/polvo-stylus
+	# cd node_modules/polvo/node_modules/polvo-stylus/ && npm install
 
 client:
 	$(POLVO) -ws

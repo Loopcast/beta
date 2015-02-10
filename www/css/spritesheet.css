@@ -1,12 +1,18 @@
 .spritesheet {
   background: url( '../images/spritesheet.png' ) no-repeat;
-  background-size: 41px 24px;
+  background-size: 114px 95px;
+}
+
+.spritesheet.medium_black_logo {
+  width: 114px;
+  height: 70px;
+  background-position: 0 0;
 }
 
 .spritesheet.sprite_small_logo {
   width: 41px;
-  height: 24px;
-  background-position: 0 0;
+  height: 25px;
+  background-position: 0 -70px;
 }
 
 
@@ -17,7 +23,7 @@
 (min-device-pixel-ratio: 2) {
 .spritesheet {
   background: url( '../images/spritesheet-retina.png' ) no-repeat;
-  background-size: 41px 24px;
+  background-size: 114px 95px;
 }
 
 }

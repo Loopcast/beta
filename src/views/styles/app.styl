@@ -1,20 +1,38 @@
 // --------------------------------------------
-// Colors
-BLACK  	= #1f1f1f
-GRAY   	= #dedede
-GRAY_2 	= #615b5b
+// Imports
 
-// Sizes
-MAX_WIDTH = 1140px
-FOOTER_HEIGHT = 80px
+@import '_shared/_bootstrap.styl'
+@import '_shared/_header_footer.styl'
+@import '_shared/_modal.styl'
+@import '_shared/_ui.styl'
 
 // --------------------------------------------
-// Fonts
-open_sans()
-	font-family: 'Open Sans', sans-serif
+// Reset
+
+
+// Inheriting box-sizing Probably Slightly Better Best-Practice
+// http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+html
+	box-sizing: border-box;
+
+*, *:before, *:after
+	box-sizing: inherit;
+
+
+*
+	margin  0
+	padding 0
+	border  0
 	
-open_bold()
-	font-weight: 600
+a
+	color: inherit
+	text-decoration: none
+	
+.spritesheet
+	display: inline-block
+	text-indent: -9999px
+	
+
 	
 // --------------------------------------------
 // Structure classes
@@ -25,13 +43,7 @@ open_bold()
 
 .clear
 	clear: both
-
-// --------------------------------------------
-// Imports
-@import '_shared/_reset.styl'
-@import '_shared/_header_footer.styl'
-@import '_shared/_modal.styl'
-@import '_shared/_ui.styl'
+	
 
 // --------------------------------------------
 // Footer always pushed to the bottom
