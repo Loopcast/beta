@@ -1,5 +1,5 @@
-#login(class="modal slide_from_bottom", data-view="modal")
-	.md_wrapper
+#login(class="modal slide_from_bottom", data-view="components/modal")
+	.md_wrapper(data-view="login")
 		.md_header
 			span.spritesheet(class="md_logo sprite_small_logo")
 
@@ -16,6 +16,13 @@
 
 			.middle_line
 				span or
+
+			form
+				p.label_error Username or password not valid. Please retry
+				input.password(name="username", type="text", placeholder="Enter your email or username")
+				input.username(name="password" type="password", placeholder="Password")
+
+				a.button.signin.no_shadow(href="javascript:;" title="Sign In") Sign In
 
 
 

@@ -9,7 +9,10 @@ DARK_PERCENTAGE = 5
 	font-size: 0.9em
 	padding: 10px
 	box-shadow: inset 0px -3px 1px rgba(0, 0, 0, 0.15), 0px 2px 2px rgba(0, 0, 0, 0.05)
-	position: relative		
+	position: relative	
+	
+	&.no_shadow
+		box-shadow: none	
 
 	&.facebook
 		background-color: #2e5d94
@@ -55,3 +58,19 @@ DARK_PERCENTAGE = 5
 		&:after
 			right: 0  
 			left: auto 
+			
+input
+	display: block
+	border: none
+	background: #dedede
+	color: BLACK
+	border-radius: 3px
+	margin-bottom: 20px
+	width: 100%
+	font-size: 0.9em
+	padding: 10px 15px
+	&::-webkit-input-placeholder 
+	&:-moz-placeholder 
+	&::-moz-placeholder
+	&:-ms-input-placeholder 
+		color: #A9A9A9
