@@ -27,9 +27,13 @@ html
 			include ./shared/header.jade
 
 			#content.centered
-				block content
+				.inner_content
+					block content
+
+				#loading.hidden(data-view="loading")
+
 				.push 
+				
 
 			include ./shared/footer.jade
 			include ./shared/login.jade
-			include ./shared/loading.jade

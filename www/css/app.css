@@ -82,10 +82,11 @@ header .right {
 
 /* line 22 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 footer {
-  background: #e9fff1;
+  background: #1f1f1f;
   text-align: center;
-  color: #000;
+  color: #fff;
   z-index: 0;
+  position: relative;
 }
 
 /* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
@@ -311,11 +312,16 @@ footer {
 }
 
 /* line 41 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+.no_touch_device .button.google:hover {
+  background-color: #ef0606;
+}
+
+/* line 44 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .no_touch_device .button.signin:hover {
   background-color: #1d85b9;
 }
 
-/* line 46 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 49 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .middle_line {
   text-align: center;
   position: relative;
@@ -326,7 +332,7 @@ span
   display: inline-block;
 }
 
-/* line 54 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 57 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .middle_line:before,
 .middle_line:after {
   border-top: 1px solid #e5e5e5;
@@ -339,13 +345,13 @@ span
   top: 50%;
 }
 
-/* line 65 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 68 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .middle_line:after {
   right: 0;
   left: auto;
 }
 
-/* line 69 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 72 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 input {
   display: block;
   border: none;
@@ -359,7 +365,7 @@ input {
   padding: 10px 15px;
 }
 
-/* line 79 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 82 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 input::-webkit-input-placeholder,
 input:-moz-placeholder,
 input::-moz-placeholder,
@@ -475,7 +481,7 @@ body {
 /* line 88 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
 #loading {
   background: #fff;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;

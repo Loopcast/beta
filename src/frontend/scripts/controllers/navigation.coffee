@@ -16,7 +16,7 @@ class Navigation
 			return
 
 		Navigation.instance = @
-		@content_selector = '#content'
+		@content_selector = '#content .inner_content'
 		@content_div = $ @content_selector
 
 		happens @
@@ -60,9 +60,9 @@ class Navigation
 
 			delay 400, =>			
 
-				new_content = div.find( '#content' ).children()
+				new_content = div.find( @content_selector ).children()
 				
-				@content_div = $ '#content'
+				@content_div = $ @content_selector
 
 				# Remove old content
 				@content_div.children().remove()
