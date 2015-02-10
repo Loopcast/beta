@@ -3,18 +3,18 @@ server:
   root: ./www
 
 input:
-  - src/views/scripts
-  - src/views/styles
+  - src/frontend/scripts
+  - src/frontend/styles
 
 output:
   js: ./www/js/app.js
   css: ./www/css/app.css
 
 alias:
-  app: ./src/views/scripts/
+  app: ./src/frontend/scripts/
 
 minify:
   js: false
   css: false
 
-boot: ./src/views/scripts/app
+boot: ./src/frontend/scripts/app

@@ -1,6 +1,6 @@
 ###
 
-Try to find a jade file on ./src/views/templates/#{url}
+Try to find a jade file on ./src/frontend/templates/#{url}
 if suceeds replies passing rendered file back
 if fails calls callback with error true
 
@@ -13,7 +13,7 @@ jade = require 'jade'
 
 module.exports = ( url, data, callback ) ->
 
-  root = path.join( __dirname + '/../../views/templates' )
+  root = path.join( __dirname + '/../../frontend/templates' )
 
   url  = root + url + '.jade'
 
