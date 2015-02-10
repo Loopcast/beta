@@ -45,7 +45,7 @@
 
 /* line 3 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_bootstrap.styl */
 
-/* line 18 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 20 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 
 /* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 header {
@@ -149,16 +149,18 @@ footer {
 }
 
 /* line 38 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
-.md_content {
+.md_wrapper {
   color: #000;
   background: #fff;
   position: relative;
   -webkit-border-radius: 3px;
   border-radius: 3px;
   margin: 0 auto;
+  font-weight: 300;
+  font-size: 1em;
 }
 
-/* line 46 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+/* line 48 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
 .md_header {
   margin: 0;
   padding: 0.4em;
@@ -173,14 +175,16 @@ footer {
   -webkit-border-radius: 3px 3px 0 0;
   border-radius: 3px 3px 0 0;
   position: relative;
+  padding: 13px 20px 13px;
+  margin: 0;
 }
 
-/* line 57 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+/* line 61 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
 .md_header .md_logo {
   display: block;
 }
 
-/* line 60 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+/* line 64 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
 .md_header .tabs {
   position: absolute;
   right: 20px;
@@ -188,38 +192,34 @@ footer {
   font-weight: 600;
 }
 
-/* line 65 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+/* line 69 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
 .md_header .tabs a {
   display: inline-block;
-  padding: 10px;
+  padding: 10px 20px;
 }
 
-/* line 69 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+/* line 73 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
 .md_header .tabs a.active {
   background: #fff;
   -webkit-border-radius: 3px 3px 0 0;
   border-radius: 3px 3px 0 0;
-  color: #000;
+  color: #605b5b;
 }
 
-/* line 75 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
-
-/* line 76 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
-.md_content > div {
-  padding: 13px 20px 13px;
+/* line 79 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+.md_content {
+  padding: 30px 20px;
   margin: 0;
-  font-weight: 300;
-  font-size: 1em;
 }
 
-/* line 83 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
-.md_content > div p {
+/* line 82 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+.md_content p {
   margin: 0;
   padding: 10px 0;
 }
 
-/* line 92 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
-.slide_from_bottom .md_content {
+/* line 91 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+.slide_from_bottom .md_wrapper {
   -webkit-transform: translateY(200%);
   -moz-transform: translateY(200%);
   -o-transform: translateY(200%);
@@ -235,8 +235,8 @@ footer {
   transition: all 0.3s ease-out;
 }
 
-/* line 97 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
-.md_show.slide_from_bottom .md_content {
+/* line 96 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+.md_show.slide_from_bottom .md_wrapper {
   -webkit-transform: translateY(0);
   -moz-transform: translateY(0);
   -o-transform: translateY(0);
@@ -259,38 +259,71 @@ footer {
   letter-spacing: 0.04em;
   font-size: 0.9em;
   padding: 10px;
+  -webkit-box-shadow: inset 0px -3px 1px rgba(0,0,0,0.15), 0px 2px 2px rgba(0,0,0,0.05);
+  box-shadow: inset 0px -3px 1px rgba(0,0,0,0.15), 0px 2px 2px rgba(0,0,0,0.05);
+  position: relative;
 }
 
-/* line 13 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 14 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .button.facebook {
   background-color: #2e5d94;
 }
 
-/* line 16 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 17 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .button.soundcloud {
   background-color: #ff5224;
 }
 
-/* line 19 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 20 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .button.signin {
   background-color: #2095cf;
 }
 
-/* line 23 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
-
 /* line 24 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+
+/* line 25 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .no_touch_device .button.facebook:hover {
-  background-color: #22456d;
+  background-color: #285181;
 }
 
-/* line 27 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 28 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .no_touch_device .button.soundcloud:hover {
-  background-color: #f03200;
+  background-color: #ff3e0a;
 }
 
-/* line 30 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 31 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .no_touch_device .button.signin:hover {
-  background-color: #1975a3;
+  background-color: #1d85b9;
+}
+
+/* line 36 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+.middle_line {
+  text-align: center;
+  position: relative;
+  margin: 40px 0;
+  font-weight: 600;
+  color: #99999c;
+span
+  display: inline-block;
+}
+
+/* line 44 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+.middle_line:before,
+.middle_line:after {
+  border-top: 1px solid #e5e5e5;
+  display: block;
+  height: 1px;
+  content: " ";
+  width: 45%;
+  position: absolute;
+  left: 0;
+  top: 50%;
+}
+
+/* line 55 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+.middle_line:after {
+  right: 0;
+  left: auto;
 }
 
 /* line 15 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
@@ -425,7 +458,7 @@ body {
 
 /* line 4 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/login.styl */
 #login h4 {
-  color: #615b5b;
+  color: #605b5b;
   font-size: 1.15em;
   text-align: center;
   margin-bottom: 24px;

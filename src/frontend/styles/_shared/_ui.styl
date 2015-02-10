@@ -1,4 +1,4 @@
-DARK_PERCENTAGE = 10
+DARK_PERCENTAGE = 5
 
 .button
 	border-radius: 2px
@@ -8,7 +8,8 @@ DARK_PERCENTAGE = 10
 	letter-spacing: 0.04em
 	font-size: 0.9em
 	padding: 10px
-	
+	box-shadow: inset 0px -3px 1px rgba(0, 0, 0, 0.15), 0px 2px 2px rgba(0, 0, 0, 0.05)
+	position: relative		
 
 	&.facebook
 		background-color: #2e5d94
@@ -29,3 +30,28 @@ DARK_PERCENTAGE = 10
 		
 	.button.signin:hover
 		background-color: darken(#2095cf, DARK_PERCENTAGE)
+		
+
+
+.middle_line
+	text-align: center
+	position: relative
+	margin: 40px 0
+	open_bold()
+	color: #99999c
+	span
+	    display: inline-block
+	    &:before, &:after
+	
+			border-top: 1px solid #e5e5e5
+			display: block
+			height: 1px
+			content: " "
+			width: 45%
+			position: absolute
+			left: 0
+			top: 50%
+
+		&:after
+			right: 0  
+			left: auto 

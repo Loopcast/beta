@@ -35,12 +35,14 @@ MARGIN_MODAL = 20px
 	visibility: visible
 	
 
-.md_content
+.md_wrapper
 	color: #000;
 	background: #fff;
 	position: relative;
 	border-radius: 3px;
 	margin: 0 auto;
+	font-weight: 300;
+	font-size: 1em;
 
 
 .md_header
@@ -54,6 +56,8 @@ MARGIN_MODAL = 20px
 	color: white
 	border-radius: 3px 3px 0 0;
 	position: relative
+	padding: 13px MARGIN_MODAL 13px
+	margin: 0;
 	.md_logo
 		display: block
 		
@@ -64,23 +68,18 @@ MARGIN_MODAL = 20px
 		open_bold()
 		a
 			display: inline-block
-			padding: 10px
+			padding: 10px 20px
 			
 			&.active
 				background: white
 				border-radius: 3px 3px 0 0
-				color: black
+				color: GRAY_2
 
 
-.md_content 
-	& > div
-		padding: 13px MARGIN_MODAL 13px
-		margin: 0;
-		font-weight: 300;
-		font-size: 1em;
-
-
-	& > div p
+.md_content
+	padding: 30px MARGIN_MODAL
+	margin: 0;
+	p
 		margin: 0;
 		padding: 10px 0;
 		
@@ -89,11 +88,11 @@ MARGIN_MODAL = 20px
 
 
 
-.slide_from_bottom .md_content
+.slide_from_bottom .md_wrapper
 	transform: translateY(200%)
 	opacity: 0
 	transition: all 0.3s ease-out
 
-.md_show.slide_from_bottom .md_content
+.md_show.slide_from_bottom .md_wrapper
 	transform: translateY(0)
 	opacity: 1
