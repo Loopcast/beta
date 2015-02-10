@@ -3,6 +3,7 @@
 
 ### requirements
 
+ - git
  - node.js
  - make
 
