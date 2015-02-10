@@ -42,6 +42,9 @@ class App
 		# Controllers binding
 		do views.bind
 		# do navigation.bind
+
+		delay 10, =>
+			@emit "views:binded"
 		
 
 
