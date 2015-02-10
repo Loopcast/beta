@@ -8,8 +8,11 @@ DARK_PERCENTAGE = 5
 	letter-spacing: 0.04em
 	font-size: 0.9em
 	padding: 10px
+	padding-top: 9px
+	height: 39px
 	box-shadow: inset 0px -3px 1px rgba(0, 0, 0, 0.15), 0px 2px 2px rgba(0, 0, 0, 0.05)
-	position: relative	
+	position: relative
+	transition: background-color .1s linear	
 	
 	&.no_shadow
 		box-shadow: none	
@@ -30,6 +33,20 @@ DARK_PERCENTAGE = 5
 		display: inline-block
 		width: 48%
 		
+	&.yellow_button
+		background-color : YELLOW
+		color: BLACK
+		font-weight: 800
+		
+	&.white_transparent_button
+		background: transparent
+		border: 1px solid white
+		color: white
+	
+	&.small_button
+		font-size: .75em
+		padding: 10px
+		
 
 .no_touch_device
 	.button.facebook:hover
@@ -44,7 +61,24 @@ DARK_PERCENTAGE = 5
 	.button.signin:hover
 		background-color: darken(#2095cf, DARK_PERCENTAGE)
 		
-
+	.button.yellow_button:hover
+		background-color : BLACK
+		color: YELLOW
+		border: 1px solid YELLOW
+	
+	.button.white_transparent_button:hover
+		background: white
+		color: BLACK
+		
+		
+.buttons_flex
+	display: flex
+	justify-content: space-around
+	flex-flow: row wrap
+	& > *
+		
+		width: 47%;  
+		margin: 0px 1% 10px; 
 
 .middle_line
 	text-align: center

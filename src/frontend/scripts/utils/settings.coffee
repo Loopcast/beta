@@ -186,9 +186,12 @@ settings.bind = (body)->
 
 	body.addClass klasses.join( " " ).toLowerCase()
 
+	settings.header_height = $( 'header' ).height()
 	# body.css 
 	# 	'min-width'  : settings.browser.min_size.w
 	# 	'min-height' : settings.browser.min_size.h
+
+
 
 # TEMP
 
