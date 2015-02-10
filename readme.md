@@ -19,6 +19,7 @@ make setup
 make start
 ````
 
+Then browse [http://localhost:1993](http://localhost:1993)
 
 ### developing frontend
 
@@ -26,9 +27,9 @@ make start
 make client
 ````
 
-Then edit files on ````src/frontend````, note that jade files are actually being rendered by the backend.
+Then edit files on ````src/frontend````, note that .jade templates are actually being rendered by the backend.
 
-They are on the frontend folder just for convenience while developing the templates, which are deeply connected with scripts and stlesheets which are pre-compiled for every release.
+They are on the frontend folder just for convenience while developing the templates, which are deeply connected with scripts and stylesheets which are pre-compiled for every release.
 
 
 ### building frontend for release
