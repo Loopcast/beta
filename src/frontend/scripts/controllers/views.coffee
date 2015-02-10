@@ -1,3 +1,5 @@
+happens = require 'happens'
+
 class View
 
 	UNIQUE_ID  	= 0
@@ -78,7 +80,9 @@ class View
 
 			
 
-		).promise().done => $( @ ).trigger "after_bind"
+		).promise().done => 
+			@emit "binded"
+			# $( @ ).trigger "after_bind"
 
 
 
@@ -144,6 +148,7 @@ class View
 
 
 view = new View
+happens view
 
 module.exports = window.view = view
 
