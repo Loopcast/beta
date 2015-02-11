@@ -1,16 +1,16 @@
 extends layout
 
 block content
-  h1 #{name}
+  h1 #{user.name}
 
   br
   br
     
   ul
-    for genre in genres
+    for genre in user.genres
       li #{genre}
 
-  audio( controls autoplay src="http://radio.loopcast.fm:8000/#{id}" )
+  audio( controls autoplay src="http://radio.loopcast.fm:8000/#{user.id}" )
 
   if live
     br
@@ -26,7 +26,7 @@ block content
   h4 recorded
 
   ul
-    for room in recorded
+    for room in user.recorded
       li 
         pre
           | title : #{room.title}
