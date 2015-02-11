@@ -39,6 +39,12 @@
   background-position: -62px -70px;
 }
 
+.spritesheet.header_search_icon {
+  width: 16px;
+  height: 15px;
+  background-position: -83px -70px;
+}
+
 
 
 @media (min--moz-device-pixel-ratio: 2),

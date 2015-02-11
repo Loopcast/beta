@@ -41,6 +41,10 @@ header
 		float: left
 		& > *
 			border-right: 1px solid #333
+			padding: 9px 25px
+			
+			&.no_border
+				border-right: none
 		
 	.right
 		float: right
@@ -64,6 +68,14 @@ header
 			
 		&.hovered
 			transform: translateY(0%)
+	
+	.search_box
+		.spritesheet
+			position: relative
+			top: 3px;
+			margin-right: 10px;
+		form
+			display: inline-block
 		
 
 		
