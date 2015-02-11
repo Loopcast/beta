@@ -13,18 +13,14 @@ server.start ->
 
     server.register require( 'hapi-auth-cookie' ), ( error ) ->
 
+      # see this page for documentation:
+      # https://github.com/hapijs/hapi-auth-cookie
       server.auth.strategy 'session', 'cookie',
-        password   : 'secret'
+        password   : '798746534986541324898675421657421'
         cookie     : 'sid-example'
         # redirectTo : '/login'
         isSecure   : s.https
-
-      server.auth.strategy 'twitter', 'bell',
-        provider    : 'twitter',
-        password    : 'cookie_encryption_password',
-        clientId    : s.twitter.id
-        clientSecret: s.twitter.secret
-        isSecure    : s.https
+        appendNext : true
 
       server.auth.strategy 'facebook', 'bell',
         provider    : 'facebook',
@@ -40,6 +36,14 @@ server.start ->
         clientSecret  : s.google.secret
         isSecure      : s.https
         providerParams: s.google.provider_params
+
+      # disabled as we can't fetch user's email ?
+      server.auth.strategy 'twitter', 'bell',
+        provider    : 'twitter',
+        password    : 'cookie_encryption_password',
+        clientId    : s.twitter.id
+        clientSecret: s.twitter.secret
+        isSecure    : s.https
 
       # server.auth.strategy 'soundcloud', 'bell',
       #   provider    : 'soundcloud',
