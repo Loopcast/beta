@@ -514,13 +514,16 @@ footer {
   margin: 40px 0;
   font-weight: 600;
   color: #99999c;
-span
+}
+
+/* line 89 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+.middle_line span {
   display: inline-block;
 }
 
 /* line 91 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
-.middle_line:before,
-.middle_line:after {
+.middle_line span:before,
+.middle_line span:after {
   border-top: 1px solid #e5e5e5;
   display: block;
   height: 1px;
@@ -532,7 +535,7 @@ span
 }
 
 /* line 102 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
-.middle_line:after {
+.middle_line span:after {
   right: 0;
   left: auto;
 }

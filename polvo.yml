@@ -14,7 +14,7 @@ alias:
   app: ./src/frontend/scripts/
 
 minify:
-  js: false
-  css: false
+  js : true
+  css: true
 
 boot: ./src/frontend/scripts/app
