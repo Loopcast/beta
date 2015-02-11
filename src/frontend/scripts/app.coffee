@@ -44,7 +44,9 @@ class App
 		do navigation.bind
 
 		# when the new are is rendered, do the same with the new content
+
 		navigation.on 'before_destroy', =>
+			log "--------- BEFORE DESTROY"
 			views.unbind '#content'
 
 
@@ -53,6 +55,16 @@ class App
 			navigation.bind '#content'
 		
 
+		# Simulate the log in action from a fake user
+		# delay 400, =>
+		# 	user = 
+		# 		username: "Stefano Ortisi"
+		# 		thumb: "/images/profile.jpg"
+		# 		permalink: "/profile/stefanoortisi"
+
+		# 	app.body.addClass "logged"
+		# 	app.emit 'user:logged', user
+				
 
 
 	###

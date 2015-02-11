@@ -24,7 +24,7 @@ header
 		& > *
 		
 			display: inline-block
-			padding: 9px 14px
+			padding: 9px 22px
 			vertical-align: top
 			
 			&.settings
@@ -72,10 +72,32 @@ header
 	.search_box
 		.spritesheet
 			position: relative
-			top: 3px;
-			margin-right: 10px;
+			top: 3px
+			margin-right: 10px
 		form
 			display: inline-block
+			
+	.user_logged
+		display: none
+		padding: 0
+		& > *
+			display: inline-block
+			vertical-align: middle
+		.thumb_wrapper
+			margin-right: 50px
+			position: relative
+			.spritesheet
+				position: absolute
+				top: 43%
+				right: -20px
+		
+.logged
+	header
+		.user_logged
+			display: inline-block
+		.login_link
+			display: none
+			
 		
 
 		

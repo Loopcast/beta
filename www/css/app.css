@@ -91,7 +91,7 @@ header .centered.second {
 header .left > *,
 header .right > * {
   display: inline-block;
-  padding: 9px 14px;
+  padding: 9px 22px;
   vertical-align: top;
 }
 
@@ -202,20 +202,59 @@ header .search_box form {
   display: inline-block;
 }
 
+/* line 80 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+header .user_logged {
+  display: none;
+  padding: 0;
+}
+
 /* line 83 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
-
-/* line 84 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
-
-/* line 85 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+header .user_logged > * {
+  display: inline-block;
+  vertical-align: middle;
+}
 
 /* line 86 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+header .user_logged .thumb_wrapper {
+  margin-right: 50px;
+  position: relative;
+}
+
+/* line 89 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+header .user_logged .thumb_wrapper .spritesheet {
+  position: absolute;
+  top: 43%;
+  right: -20px;
+}
+
+/* line 94 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+
+/* line 95 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+
+/* line 96 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+.logged header .user_logged {
+  display: inline-block;
+}
+
+/* line 98 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+.logged header .login_link {
+  display: none;
+}
+
+/* line 105 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+
+/* line 106 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+
+/* line 107 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+
+/* line 108 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 .no_touch_device header .settings_dropdown li:hover {
   color: #222;
   background: #dedede;
   border-bottom: 1px solid #dedede;
 }
 
-/* line 91 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 113 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 footer {
   background: #1f1f1f;
   text-align: center;
