@@ -1,4 +1,3 @@
 script
-  | console.log( "opener is ->", window.opener );
-  | window.opener.console.warn( "LOGGED!" );
+  | window.opener.console.warn( "LOGGED! #{username}" );
   | window.close()

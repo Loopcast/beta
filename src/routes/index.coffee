@@ -19,6 +19,9 @@ module.exports =
 
     handler: ( request, reply )->
 
+
+      console.log "-> INDEX CALLED"
+
       # if user is logged, redirect to explore page
       if request.auth.isAuthenticated 
 

@@ -1,7 +1,7 @@
 module.exports = ( id, callback ) ->
 
 
-  if id == 'thomas'
+  if id.indexOf( 'thomas' ) isnt -1
 
     callback null,
       id       : 'thomas'
@@ -42,7 +42,7 @@ module.exports = ( id, callback ) ->
           url      : "/thomas/last-saturday-set"
         ]
   
-  if id == 'hems'
+  else if id.indexOf( 'hems' ) isnt -1
     callback null,
       id       : 'hems'
       name     : 'hems'
@@ -82,7 +82,7 @@ module.exports = ( id, callback ) ->
           url      : "/thomas/last-saturday-set"
         ]
 
-  if id == 'stefano'
+  else if id.indexOf( 'stefano' ) isnt -1
     callback null,
       id       : 'stefano'
       name     : 'stefano'
@@ -122,7 +122,7 @@ module.exports = ( id, callback ) ->
           url      : "/thomas/last-saturday-set"
         ]
 
-  if id == 'adrian'
+  else if id.indexOf( 'adrian' ) isnt -1
     callback null,
       id       : 'adrian'
       name     : 'adrian'
@@ -162,7 +162,7 @@ module.exports = ( id, callback ) ->
           url      : "/thomas/last-saturday-set"
         ]
 
-  if id == 'hanzo'
+  else if id.indexOf( 'hanzo' ) isnt -1
     callback null,
       id       : 'hanzo'
       name     : 'hanzo'
@@ -202,7 +202,7 @@ module.exports = ( id, callback ) ->
           url      : "/thomas/last-saturday-set"
         ]
 
-  if id == 'manon'
+  else
     callback null,
       id       : 'manon'
       name     : 'manon'

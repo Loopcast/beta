@@ -10,16 +10,22 @@ module.exports =
 
       if !request.auth.isAuthenticated
 
-        console.log "Authenticaiton failed!"
+        console.log "! authenticaiton failed!"
         console.log request.auth.error.message
 
         # redirect to login again
         reply.redirect '/login'
 
       else
-        console.log "AUTHENTICATED!!!", request.auth
 
-        request.auth.session.set request.auth.credentials
+        credentials = request.auth.credentials
+
+        username = credentials.profile.email
+        username = username.substr 0, username.indexOf '@'
+
+        session = username: username
+
+        request.auth.session.set session
 
         # redirect to succesful login
         return reply.redirect '/login/successful'
