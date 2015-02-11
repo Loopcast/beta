@@ -70,6 +70,9 @@ class Navigation
 	##
 	go: ( url ) ->
 
+		# don't hijack login actions
+		if req.url.indexOf '/login' is 0 then return true
+
 		ways.go url
 
 		return false

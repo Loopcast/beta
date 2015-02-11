@@ -20,7 +20,10 @@ module.exports =
     handler: ( request, reply )->
 
       # if user is logged, redirect to explore page
-      if request.auth.isAuthenticated then return reply.redirect '/people'
+      if request.auth.isAuthenticated 
+
+        console.log 'auth ->', request.auth
+        # return reply.redirect '/people'
        
       url = '/index'
 

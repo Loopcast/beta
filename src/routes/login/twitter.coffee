@@ -6,7 +6,7 @@ module.exports =
         strategy: 'twitter'
         mode    : 'try'
 
-    handler: (request, reply) ->
+    handler: ( request, reply ) ->
 
       if !request.auth.isAuthenticated
         return reply('Authentication failed due to: ' + request.auth.error.message);
