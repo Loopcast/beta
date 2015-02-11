@@ -5,10 +5,22 @@ Logs user out
 ###
 
 module.exports =
-  method : 'GET'
+  method : [ 'GET', 'POST' ]
   path   : '/logout'
 
   handler: ( request, reply ) ->
 
-    request.auth.session.clear()
-    reply.redirect '/'
+    if request.auth.session?
+
+      if request.method is "POST"
+        reply success: true
+      else
+        reply.redirect '/'
+
+    else
+
+      if request.method is "POST"
+        reply error: code: 'not_logged'
+      else
+        reply.redirect '/'
+    
