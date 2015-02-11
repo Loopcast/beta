@@ -21,7 +21,8 @@ class Navigation
 
 		happens @
 
-		
+		# this way we can call navigation from successful pop up
+		window.ways = ways		
 
 
 
@@ -30,7 +31,7 @@ class Navigation
 		# routing
 		ways '*', @url_changed
 
-		
+
 
 		# don't need to init since the first page is already on DOM
 		do ways.init
