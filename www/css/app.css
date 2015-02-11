@@ -1,58 +1,110 @@
 
-/* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
+/* line 286 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
 
-/* line 14 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 14 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/border.styl */
+/* line 13 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 11 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/clearfix.styl */
+/* line 120 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
-/* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/color-image.styl */
+/* line 10 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
-/* line 5 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/border.styl */
 
-/* line 91 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+/* line 28 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/border.styl */
 
-/* line 91 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/clearfix.styl */
 
-/* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/iconic.styl */
+/* line 4 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/clearfix.styl */
 
-/* line 8 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/image.styl */
+/* line 247 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/color-image.styl */
 
-/* line 26 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/overflow.styl */
+/* line 196 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/color-image.styl */
 
-/* line 3 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/positions.styl */
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 3 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
+/* line 90 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 6 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+/* line 120 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
-/* line 6 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/aliases.styl */
+/* line 11 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
-/* line 13 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/ellipsis.styl */
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
 
-/* line 10 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/hide-text.styl */
+/* line 7 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
 
-/* line 9 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/replace-text.styl */
+/* line 247 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/iconic.styl */
 
-/* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/shadow-stroke.styl */
+/* line 25 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/iconic.styl */
 
-/* line undefined : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/vendor.styl */
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/image.styl */
 
-/* line 578 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
+/* line 20 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/image.styl */
 
-/* line 12 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/size.styl */
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/overflow.styl */
 
-/* line 3 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_bootstrap.styl */
+/* line 66 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/overflow.styl */
 
-/* line 24 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_bootstrap.styl */
+/* line 247 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/positions.styl */
+
+/* line 78 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/positions.styl */
+
+/* line 247 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
+
+/* line 5 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
+
+/* line 120 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+
+/* line 12 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/aliases.styl */
+
+/* line 9 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/aliases.styl */
+
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/ellipsis.styl */
+
+/* line 8 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/ellipsis.styl */
+
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/hide-text.styl */
+
+/* line 9 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/hide-text.styl */
+
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/replace-text.styl */
+
+/* line 2 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/replace-text.styl */
+
+/* line 247 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/shadow-stroke.styl */
+
+/* line 577 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/shadow-stroke.styl */
+
+/* line 247 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/vendor.styl */
+
+/* line 11 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/vendor.styl */
+
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
+
+/* line 28 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
+
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/size.styl */
+
+/* line 260 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/size.styl */
+
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/rupture/rupture/index.styl */
+
+/* line 25 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/rupture/rupture/index.styl */
+
+/* line 3 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_bootstrap.styl */
+
+/* line 24 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_bootstrap.styl */
 .yellow {
   color: #ffc80a;
 }
 
-/* line 26 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 27 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_bootstrap.styl */
 
-/* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 25 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_header_footer.styl */
+
+/* line 1 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_header_footer.styl */
 header {
   background: #1f1f1f;
   position: fixed;
@@ -64,28 +116,28 @@ header {
   z-index: 3;
 }
 
-/* line 10 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 10 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_header_footer.styl */
 header a {
   display: inline-block;
   padding: 9px 25px;
 }
 
-/* line 13 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 13 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_header_footer.styl */
 header .left {
   float: left;
 }
 
-/* line 15 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 15 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_header_footer.styl */
 header .left a {
   border-right: 1px solid #333;
 }
 
-/* line 18 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 18 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_header_footer.styl */
 header .right {
   float: right;
 }
 
-/* line 22 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 22 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_header_footer.styl */
 footer {
   background: #1f1f1f;
   text-align: center;
@@ -94,9 +146,11 @@ footer {
   position: relative;
 }
 
-/* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+/* line 98 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_header_footer.styl */
 
-/* line 4 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+/* line 1 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_modal.styl */
+
+/* line 4 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_modal.styl */
 .modal {
   position: fixed;
   top: 50%;
@@ -106,29 +160,21 @@ footer {
   z-index: 2000;
   visibility: hidden;
   -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-transform: translateX(-50%) translateY(-50%);
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -o-transform: translateX(-50%) translateY(-50%);
   -ms-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
 }
 
-/* line 16 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+/* line 16 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_modal.styl */
 .md_show {
   visibility: visible;
-  -webkit-box-shadow: 1px 1px 26px -7px #000;
   box-shadow: 1px 1px 26px -7px #000;
-  -webkit-transition: box-shadow 0.3s linear 0.2s;
-  -moz-transition: box-shadow 0.3s linear 0.2s;
-  -o-transition: box-shadow 0.3s linear 0.2s;
-  -ms-transition: box-shadow 0.3s linear 0.2s;
   transition: box-shadow 0.3s linear 0.2s;
 }
 
-/* line 21 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+/* line 21 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_modal.styl */
 .md_overlay {
   position: fixed;
   width: 100%;
@@ -141,14 +187,10 @@ footer {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
   background: #000;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  -ms-transition: all 0.3s;
   transition: all 0.3s;
 }
 
-/* line 33 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+/* line 33 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_modal.styl */
 .md_show ~ .md_overlay {
   opacity: 0.6;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
@@ -156,19 +198,18 @@ footer {
   visibility: visible;
 }
 
-/* line 38 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+/* line 38 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_modal.styl */
 .md_wrapper {
   color: #000;
   background: #fff;
   position: relative;
-  -webkit-border-radius: 3px;
   border-radius: 3px;
   margin: 0 auto;
   font-weight: 300;
   font-size: 1em;
 }
 
-/* line 48 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+/* line 48 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_modal.styl */
 .md_header {
   margin: 0;
   padding: 0.4em;
@@ -177,22 +218,22 @@ footer {
   font-weight: 300;
   opacity: 1;
   -ms-filter: none;
-  filter: none;
+  -webkit-filter: none;
+          filter: none;
   background: #1f1f1f;
   color: #fff;
-  -webkit-border-radius: 3px 3px 0 0;
   border-radius: 3px 3px 0 0;
   position: relative;
   padding: 13px 20px 13px;
   margin: 0;
 }
 
-/* line 61 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+/* line 61 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_modal.styl */
 .md_header .md_logo {
   display: block;
 }
 
-/* line 64 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+/* line 64 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_modal.styl */
 .md_header .tabs {
   position: absolute;
   right: 20px;
@@ -200,66 +241,59 @@ footer {
   font-weight: 600;
 }
 
-/* line 69 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+/* line 69 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_modal.styl */
 .md_header .tabs a {
   display: inline-block;
   padding: 10px 20px;
 }
 
-/* line 73 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+/* line 73 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_modal.styl */
 .md_header .tabs a.active {
   background: #fff;
-  -webkit-border-radius: 3px 3px 0 0;
   border-radius: 3px 3px 0 0;
   color: #605b5b;
 }
 
-/* line 79 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+/* line 79 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_modal.styl */
 .md_content {
   padding: 30px 20px;
   margin: 0;
 }
 
-/* line 82 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+/* line 82 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_modal.styl */
 .md_content p {
   margin: 0;
   padding: 10px 0;
 }
 
-/* line 91 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+/* line 91 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_modal.styl */
 .slide_from_bottom .md_wrapper {
   -webkit-transform: translateY(200%);
-  -moz-transform: translateY(200%);
-  -o-transform: translateY(200%);
   -ms-transform: translateY(200%);
   transform: translateY(200%);
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
-  -webkit-transition: all 0.3s ease-out;
-  -moz-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
-  -ms-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
 
-/* line 96 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+/* line 96 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_modal.styl */
 .md_show.slide_from_bottom .md_wrapper {
   -webkit-transform: translateY(0);
-  -moz-transform: translateY(0);
-  -o-transform: translateY(0);
   -ms-transform: translateY(0);
   transform: translateY(0);
   opacity: 1;
   -ms-filter: none;
-  filter: none;
+  -webkit-filter: none;
+          filter: none;
 }
 
-/* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 120 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_modal.styl */
 
-/* line 3 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 1 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_ui.styl */
+
+/* line 3 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_ui.styl */
 .button {
-  -webkit-border-radius: 2px;
   border-radius: 2px;
   text-align: center;
   display: block;
@@ -269,113 +303,103 @@ footer {
   padding: 10px;
   padding-top: 9px;
   height: 39px;
-  -webkit-box-shadow: inset 0px -3px 1px rgba(0,0,0,0.15), 0px 2px 2px rgba(0,0,0,0.05);
   box-shadow: inset 0px -3px 1px rgba(0,0,0,0.15), 0px 2px 2px rgba(0,0,0,0.05);
   position: relative;
-  -webkit-transition: background-color 0.1s linear;
-  -moz-transition: background-color 0.1s linear;
-  -o-transition: background-color 0.1s linear;
-  -ms-transition: background-color 0.1s linear;
   transition: background-color 0.1s linear;
 }
 
-/* line 17 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 17 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_ui.styl */
 .button.no_shadow {
-  -webkit-box-shadow: none;
   box-shadow: none;
 }
 
-/* line 20 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 20 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_ui.styl */
 .button.facebook {
   background-color: #2e5d94;
 }
 
-/* line 23 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 23 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_ui.styl */
 .button.soundcloud {
   background-color: #ff5224;
 }
 
-/* line 26 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 26 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_ui.styl */
 .button.google {
   background-color: #f91616;
 }
 
-/* line 29 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 29 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_ui.styl */
 .button.signin {
   background-color: #2095cf;
 }
 
-/* line 32 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 32 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_ui.styl */
 .button.half {
   display: inline-block;
   width: 48%;
 }
 
-/* line 36 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 36 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_ui.styl */
 .button.yellow_button {
   background-color: #ffc80a;
   color: #1f1f1f;
   font-weight: 800;
 }
 
-/* line 41 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 41 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_ui.styl */
 .button.white_transparent_button {
   background: transparent;
   border: 1px solid #fff;
   color: #fff;
 }
 
-/* line 46 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 46 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_ui.styl */
 .button.small_button {
   font-size: 0.75em;
   padding: 10px;
 }
 
-/* line 51 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 51 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_ui.styl */
 
-/* line 52 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 52 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_ui.styl */
 .no_touch_device .button.facebook:hover {
   background-color: #285181;
 }
 
-/* line 55 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 55 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_ui.styl */
 .no_touch_device .button.soundcloud:hover {
   background-color: #ff3e0a;
 }
 
-/* line 58 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 58 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_ui.styl */
 .no_touch_device .button.google:hover {
   background-color: #ef0606;
 }
 
-/* line 61 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 61 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_ui.styl */
 .no_touch_device .button.signin:hover {
   background-color: #1d85b9;
 }
 
-/* line 64 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 64 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_ui.styl */
 .no_touch_device .button.yellow_button:hover {
   background-color: #1f1f1f;
   color: #ffc80a;
   border: 1px solid #ffc80a;
 }
 
-/* line 69 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 69 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_ui.styl */
 .no_touch_device .button.white_transparent_button:hover {
   background: #fff;
   color: #1f1f1f;
 }
 
-/* line 74 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 74 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_ui.styl */
 .buttons_flex {
-  display: -webkit-box;
-  display: -moz-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: box;
   display: flex;
-  -webkit-box-pack: distribute;
-  -moz-box-pack: distribute;
   -o-box-pack: distribute;
   -ms-flex-pack: distribute;
   -webkit-justify-content: space-around;
@@ -391,26 +415,29 @@ footer {
   flex-flow: row wrap;
 }
 
-/* line 78 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 78 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_ui.styl */
 .buttons_flex > * {
   width: 47%;
   margin: 0px 1% 10px;
 }
 
-/* line 83 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 83 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_ui.styl */
 .middle_line {
   text-align: center;
   position: relative;
   margin: 40px 0;
   font-weight: 600;
   color: #99999c;
-span
+}
+
+/* line 89 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_ui.styl */
+.middle_line span {
   display: inline-block;
 }
 
-/* line 91 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
-.middle_line:before,
-.middle_line:after {
+/* line 91 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_ui.styl */
+.middle_line span:before,
+.middle_line span:after {
   border-top: 1px solid #e5e5e5;
   display: block;
   height: 1px;
@@ -421,19 +448,18 @@ span
   top: 50%;
 }
 
-/* line 102 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
-.middle_line:after {
+/* line 102 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_ui.styl */
+.middle_line span:after {
   right: 0;
   left: auto;
 }
 
-/* line 106 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 106 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_ui.styl */
 input {
   display: block;
   border: none;
   background: #dedede;
   color: #1f1f1f;
-  -webkit-border-radius: 3px;
   border-radius: 3px;
   margin-bottom: 20px;
   width: 100%;
@@ -441,7 +467,7 @@ input {
   padding: 10px 15px;
 }
 
-/* line 116 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 116 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_ui.styl */
 input::-webkit-input-placeholder,
 input:-moz-placeholder,
 input::-moz-placeholder,
@@ -449,58 +475,54 @@ input:-ms-input-placeholder {
   color: #a9a9a9;
 }
 
-/* line 15 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 15 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
 html {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 18 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 18 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
 *,
 *:before,
 *:after {
-  -webkit-box-sizing: inherit;
-  -moz-box-sizing: inherit;
   box-sizing: inherit;
 }
 
-/* line 22 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 22 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
 * {
   margin: 0;
   padding: 0;
   border: 0;
 }
 
-/* line 27 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 27 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
 a {
   color: inherit;
   text-decoration: none;
 }
 
-/* line 31 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 31 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
 .spritesheet {
   display: inline-block;
   text-indent: -9999px;
 }
 
-/* line 35 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 35 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
 li {
   list-style: none;
 }
 
-/* line 43 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 43 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
 .centered {
   max-width: 1220px;
   margin: 0 auto;
 }
 
-/* line 47 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 47 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
 .clear {
   clear: both;
 }
 
-/* line 50 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 50 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
 .hidden {
   visibility: hidden;
   opacity: 0;
@@ -508,18 +530,17 @@ li {
   filter: alpha(opacity=0);
 }
 
-/* line 54 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 54 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
 .visible {
   visibility: visible;
   opacity: 1;
   -ms-filter: none;
-  filter: none;
+  -webkit-filter: none;
+          filter: none;
 }
 
-/* line 58 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 58 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
 .cover {
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
   background-size: cover;
   background-position: 50% 50%;
   width: 100%;
@@ -530,23 +551,23 @@ li {
   z-index: 0;
 }
 
-/* line 66 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 66 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
 .left {
   float: left;
 }
 
-/* line 68 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 68 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
 .right {
   float: right;
 }
 
-/* line 73 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 73 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
 html {
   position: relative;
   min-height: 100%;
 }
 
-/* line 87 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 87 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
 body {
   background: #dedede;
   color: #000;
@@ -556,14 +577,14 @@ body {
   padding-top: 42px;
 }
 
-/* line 96 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 96 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
 #content {
   text-align: center;
   position: relative;
   z-index: 1;
 }
 
-/* line 102 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 102 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
 #loading {
   background: #dedede;
   position: absolute;
@@ -575,63 +596,113 @@ body {
 }
 
 
-/* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
+/* line 286 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/index.styl */
 
-/* line 14 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 14 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/border.styl */
+/* line 13 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 11 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/clearfix.styl */
+/* line 52 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
-/* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/color-image.styl */
+/* line 10 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
-/* line 5 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/border.styl */
 
-/* line 91 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+/* line 28 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/border.styl */
 
-/* line 91 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/clearfix.styl */
 
-/* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/iconic.styl */
+/* line 4 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/clearfix.styl */
 
-/* line 8 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/image.styl */
+/* line 247 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/color-image.styl */
 
-/* line 26 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/overflow.styl */
+/* line 196 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/color-image.styl */
 
-/* line 3 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/positions.styl */
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 3 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
+/* line 90 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 6 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+/* line 52 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
-/* line 6 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/aliases.styl */
+/* line 11 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
-/* line 13 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/ellipsis.styl */
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
 
-/* line 10 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/hide-text.styl */
+/* line 7 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
 
-/* line 9 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/replace-text.styl */
+/* line 247 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/iconic.styl */
 
-/* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/shadow-stroke.styl */
+/* line 25 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/iconic.styl */
 
-/* line undefined : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/vendor.styl */
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/image.styl */
 
-/* line 578 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
+/* line 20 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/image.styl */
 
-/* line 12 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/size.styl */
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/overflow.styl */
 
-/* line 3 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_bootstrap.styl */
+/* line 66 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/overflow.styl */
 
-/* line 24 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_bootstrap.styl */
+/* line 247 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/positions.styl */
+
+/* line 78 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/positions.styl */
+
+/* line 247 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
+
+/* line 5 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
+
+/* line 52 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+
+/* line 12 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/aliases.styl */
+
+/* line 9 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/aliases.styl */
+
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/ellipsis.styl */
+
+/* line 8 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/ellipsis.styl */
+
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/hide-text.styl */
+
+/* line 9 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/hide-text.styl */
+
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/replace-text.styl */
+
+/* line 2 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/replace-text.styl */
+
+/* line 247 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/shadow-stroke.styl */
+
+/* line 577 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/shadow-stroke.styl */
+
+/* line 247 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/vendor.styl */
+
+/* line 11 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/vendor.styl */
+
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
+
+/* line 28 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
+
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/size.styl */
+
+/* line 260 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/size.styl */
+
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/rupture/rupture/index.styl */
+
+/* line 25 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/rupture/rupture/index.styl */
+
+/* line 3 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_bootstrap.styl */
+
+/* line 24 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_bootstrap.styl */
 .yellow {
   color: #ffc80a;
 }
 
-/* line 3 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/index.styl */
+/* line 3 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/index.styl */
 .homepage {
   position: relative;
 }
 
-/* line 5 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/index.styl */
+/* line 5 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/index.styl */
 .homepage .black_box {
   position: absolute;
   top: 11%;
@@ -644,15 +715,14 @@ body {
   z-index: 0;
 }
 
-/* line 17 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/index.styl */
+/* line 17 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/index.styl */
 .homepage .black_box .content {
   position: relative;
   z-index: 1;
 }
 
-/* line 20 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/index.styl */
+/* line 20 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/index.styl */
 .homepage .black_box .background {
-  -webkit-border-radius: 3px;
   border-radius: 3px;
   position: absolute;
   top: 0;
@@ -665,36 +735,36 @@ body {
   filter: alpha(opacity=90);
 }
 
-/* line 29 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/index.styl */
+/* line 29 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/index.styl */
 .homepage .black_box .spritesheet {
   margin-bottom: 20px;
 }
 
-/* line 31 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/index.styl */
+/* line 31 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/index.styl */
 .homepage .black_box h1 {
   font-weight: 400;
   line-height: 32px;
   margin-bottom: 30px;
 }
 
-/* line 35 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/index.styl */
+/* line 35 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/index.styl */
 .homepage .black_box p {
   font-weight: 300;
   font-size: 1em;
   margin-bottom: 20px;
 }
 
-/* line 40 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/index.styl */
+/* line 40 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/index.styl */
 .homepage .black_box .buttons {
   overflow: hidden;
 }
 
-/* line 42 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/index.styl */
+/* line 42 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/index.styl */
 .homepage .black_box .buttons .button {
   width: 48%;
 }
 
-/* line 45 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/index.styl */
+/* line 45 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/index.styl */
 .homepage .scroll_down {
   position: absolute;
   bottom: 30px;
@@ -704,67 +774,117 @@ body {
   color: #fff;
 }
 
-/* line 50 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/index.styl */
+/* line 50 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/index.styl */
 .homepage .scroll_down p {
   margin-bottom: 5px;
   text-shadow: 1px 1px 1px #000;
 }
 
 
-/* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
+/* line 286 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/login.styl */
 
-/* line 14 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 14 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/border.styl */
+/* line 13 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 11 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/clearfix.styl */
+/* line 24 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
-/* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/color-image.styl */
+/* line 10 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
-/* line 5 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/border.styl */
 
-/* line 91 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+/* line 28 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/border.styl */
 
-/* line 91 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/clearfix.styl */
 
-/* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/iconic.styl */
+/* line 4 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/clearfix.styl */
 
-/* line 8 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/image.styl */
+/* line 247 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/color-image.styl */
 
-/* line 26 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/overflow.styl */
+/* line 196 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/color-image.styl */
 
-/* line 3 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/positions.styl */
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 3 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
+/* line 90 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 6 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+/* line 24 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
-/* line 6 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/aliases.styl */
+/* line 11 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
-/* line 13 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/ellipsis.styl */
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
 
-/* line 10 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/hide-text.styl */
+/* line 7 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
 
-/* line 9 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/replace-text.styl */
+/* line 247 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/iconic.styl */
 
-/* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/shadow-stroke.styl */
+/* line 25 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/iconic.styl */
 
-/* line undefined : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/vendor.styl */
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/image.styl */
 
-/* line 578 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
+/* line 20 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/image.styl */
 
-/* line 12 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/size.styl */
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/overflow.styl */
 
-/* line 3 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_bootstrap.styl */
+/* line 66 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/overflow.styl */
 
-/* line 24 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_bootstrap.styl */
+/* line 247 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/positions.styl */
+
+/* line 78 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/positions.styl */
+
+/* line 247 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
+
+/* line 5 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
+
+/* line 24 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+
+/* line 12 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/aliases.styl */
+
+/* line 9 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/aliases.styl */
+
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/ellipsis.styl */
+
+/* line 8 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/ellipsis.styl */
+
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/hide-text.styl */
+
+/* line 9 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/hide-text.styl */
+
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/replace-text.styl */
+
+/* line 2 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/replace-text.styl */
+
+/* line 247 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/shadow-stroke.styl */
+
+/* line 577 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/shadow-stroke.styl */
+
+/* line 247 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/vendor.styl */
+
+/* line 11 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/vendor.styl */
+
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
+
+/* line 28 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
+
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/size.styl */
+
+/* line 260 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/size.styl */
+
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/rupture/rupture/index.styl */
+
+/* line 25 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/rupture/rupture/index.styl */
+
+/* line 3 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_bootstrap.styl */
+
+/* line 24 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_bootstrap.styl */
 .yellow {
   color: #ffc80a;
 }
 
-/* line 3 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/login.styl */
+/* line 3 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/login.styl */
 
-/* line 4 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/login.styl */
+/* line 4 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/login.styl */
 #login h4 {
   color: #605b5b;
   font-size: 1.15em;
@@ -772,12 +892,12 @@ body {
   margin-bottom: 24px;
 }
 
-/* line 10 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/login.styl */
+/* line 10 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/login.styl */
 #login form {
   position: relative;
 }
 
-/* line 12 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/login.styl */
+/* line 12 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/login.styl */
 #login form .label_error {
   position: absolute;
   top: -40px;
@@ -789,9 +909,9 @@ body {
   display: none;
 }
 
-/* line 22 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/login.styl */
+/* line 22 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/login.styl */
 
-/* line 23 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/login.styl */
+/* line 23 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/login.styl */
 #login div.error .label_error {
   display: block;
 }
