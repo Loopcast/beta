@@ -39,10 +39,22 @@
   background-position: -62px -70px;
 }
 
+.spritesheet.messages_icon {
+  width: 20px;
+  height: 16px;
+  background-position: -83px -70px;
+}
+
 .spritesheet.header_search_icon {
   width: 16px;
   height: 15px;
-  background-position: -83px -70px;
+  background-position: -103px -70px;
+}
+
+.spritesheet.small_arrow_white {
+  width: 10px;
+  height: 5px;
+  background-position: -119px -70px;
 }
 
 

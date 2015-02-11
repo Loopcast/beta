@@ -20,21 +20,11 @@ class Navigation
 		@content_div = $ @content_selector
 
 		happens @
-
-		# this way we can call navigation from successful pop up
-		window.ways = ways		
-
-
-
-		
 	
 		# routing
 		ways '*', @url_changed
 
-
-
-		# don't need to init since the first page is already on DOM
-		do ways.init
+		delay 200, => @emit 'after_render'
 
 	url_changed: ( req ) =>
 

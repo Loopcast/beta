@@ -1,4 +1,4 @@
-header
+header(data-view="header")
 	.background
 	.centered
 		.left
@@ -15,7 +15,9 @@ header
 
 		.right
 			//- a(href="#" title="Sign Up") Sign Up
-			a(
+			.user_logged
+
+			a.login_link(
 				href="javascript:;", 
 				title="Log In", 
 				data-view="components/popup_handler", 

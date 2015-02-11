@@ -117,7 +117,7 @@ class View
 		view.uid = UNIQUE_ID
 		view.view_name = view_name
 
-		log "[view] add", view.uid, view.view_name
+		# log "[view] add", view.uid, view.view_name
 
 		$item.attr 'data-uid', UNIQUE_ID
 
@@ -134,7 +134,7 @@ class View
 
 	on_view_destroyed: ( uid ) ->
 		
-		log "[View] on_view_destroyed", uid
+		# log "[View] on_view_destroyed", uid
 		if @uid_map[ uid ]?
 
 			# Get the data from the uid map
