@@ -21,8 +21,12 @@ class Navigation
 
 		happens @
 	
+		# export to window
+		window.ways = ways;
+		
 		# routing
 		ways '*', @url_changed
+
 
 		delay 200, => @emit 'after_render'
 

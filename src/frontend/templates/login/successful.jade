@@ -1,3 +1,5 @@
 script
-  | window.opener.console.warn( "LOGGED! #{username}" );
+  | window.opener.console.warn( "+ /login/successful for #{username}" );
+  | window.opener.console.warn( "+ calling ways.go( '/#{username}' ) on opener" );
+  | window.opener.ways.go( "/#{username}" );
   | window.close()
