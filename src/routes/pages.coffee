@@ -10,7 +10,7 @@ profile  = lib 'render/profile'
 
 module.exports =
   method: 'GET'
-  path  : '/{page}'
+  path  : '/{page*}'
   handler: ( request, reply )->
 
     url = request.url.href

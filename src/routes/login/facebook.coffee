@@ -9,9 +9,17 @@ module.exports =
     handler: ( request, reply ) ->
 
       if !request.auth.isAuthenticated
-        return reply('Authentication failed due to: ' + request.auth.error.message);
+
+        console.log "Authenticaiton failed!"
+        console.log request.auth.error.message
+
+        # redirect to login again
+        reply.redirect '/login'
+
       else
         console.log "AUTHENTICATED!!!", request.auth
+
         request.auth.session.set request.auth.credentials
 
-      return reply.redirect('/');
+        # redirect to succesful login
+        return reply.redirect '/login/successful'
