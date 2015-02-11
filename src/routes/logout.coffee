@@ -7,20 +7,24 @@ Logs user out
 module.exports =
   method : [ 'GET', 'POST' ]
   path   : '/logout'
+  config:
 
-  handler: ( request, reply ) ->
+    auth:
+      strategy: 'session'
+      mode    : 'try'
 
-    if request.auth.session?
+    handler: ( request, reply ) ->
 
-      if request.method is "POST"
-        reply success: true
+      if request.auth.isAuthenticated
+
+        if request.method is "POST"
+          reply success: true
+        else
+          reply.redirect '/'
+
       else
-        reply.redirect '/'
 
-    else
-
-      if request.method is "POST"
-        reply error: code: 'not_logged'
-      else
-        reply.redirect '/'
-    
+        if request.method is "POST"
+          reply error: code: 'not_logged'
+        else
+          reply.redirect '/'
