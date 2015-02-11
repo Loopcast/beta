@@ -15,7 +15,15 @@ header
 
 		.right
 			//- a(href="#" title="Sign Up") Sign Up
-			a(href="javascript:;", title="Log In", data-view="components/modal_handler", data-modal="#login") Log In
+			a(
+				href="javascript:;", 
+				title="Log In", 
+				data-view="components/popup_handler", 
+				data-url="/login" 
+				data-title="Log In ~ Loopcast"
+				data-w="400"
+				data-h="300"
+			) Log In
 			div.settings(href="javascript:;", title="Settings", data-view="components/hover_trigger" data-target=".settings_dropdown")
 				span.spritesheet.header_settings
 
