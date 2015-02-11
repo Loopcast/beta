@@ -1,4 +1,5 @@
 header
+	.background
 	.centered
 		.left
 			a(href="/" class="menu_logo" title="Loopcast Logo")
@@ -8,4 +9,21 @@ header
 
 		.right
 			//- a(href="#" title="Sign Up") Sign Up
-			a(href="#", title="Log In", data-view="components/modal_handler", data-modal="#login") Log In
+			a(href="javascript:;", title="Log In", data-view="components/modal_handler", data-modal="#login") Log In
+			div.settings(href="javascript:;", title="Settings", data-view="components/hover_trigger" data-target=".settings_dropdown")
+				span.spritesheet.header_settings
+					
+	.centered.second
+		ul.settings_dropdown
+			li
+				a(href="#" title="About Loopcast") About Loopcast
+			li
+				a(href="#" title="Help") Help
+			li
+				a(href="#" title="Blog") Blog
+			li
+				a(href="#" title="Advertising") Advertising
+			li
+				a(href="#" title="Privacy") Privacy
+			li
+				a(href="#" title="Terms of use") Terms of use

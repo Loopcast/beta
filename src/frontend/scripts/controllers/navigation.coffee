@@ -30,8 +30,10 @@ class Navigation
 		# routing
 		ways '*', @url_changed
 
+		
+
 		# don't need to init since the first page is already on DOM
-		# do ways.init
+		do ways.init
 
 	url_changed: ( req ) =>
 
