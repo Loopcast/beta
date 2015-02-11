@@ -2,7 +2,7 @@ extends layout
 
 block content
 
-	.homepage(data-view="components/fullscreen")
+	.landing(data-view="components/fullscreen")
 		.cover(style="background-image:url('/images/homepage.jpg')")
 
 		.black_box
@@ -23,6 +23,15 @@ block content
 					a.button.white_transparent_button.no_shadow.right(href="javascript:;" title="Explore live music") Explore live music
 
 
-		.scroll_down
+		.scroll_down(data-view="components/scroll_handler" data-target=".landing_2")
 			p Scroll down to learn more
 			span.spritesheet.sprite_arrow_down_white
+
+	div.landing_2(data-view="components/fullscreen")
+		.cover(style="background-image:url('/images/homepage_2.jpg')")
+			.black_box.opaque
+				.background
+				.content
+					h1 Stream your Music to the World
+					p Create your own virtual rooms, connect with any third party software or hardware and stream your music live for friends, fans and followers everywhere. Record and save your live sessions to your profile, allowing your audience to go back and re-experience their favourite moments.
+

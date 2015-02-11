@@ -3,6 +3,7 @@ window.delay  		= require './utils/delay'
 window.log  		= require './utils/log'
 Window 				= require './utils/window'
 require '../vendors/modernizr.custom.js'
+require './utils/mover'
 
 # events
 

@@ -118,3 +118,64 @@ input
 	&::-moz-placeholder
 	&:-ms-input-placeholder 
 		color: #A9A9A9
+		
+	&.dark_input
+		background-color: lighten( #2c2c2c, 5 )
+		color: white
+		font-size: 0.7em;
+		padding: 6px;
+		border-radius: 5px;
+		transition: width .3s ease-out, background-color .3s linear
+		
+		&:focus
+			outline: 0;
+			width: 150%
+			background-color: lighten( #2c2c2c, 10 )
+		
+.hover_object
+	.normal_state
+		display: block
+		
+	.hover_state
+		display: none
+		
+	&.hovered
+		.normal_state
+			display: none
+			
+		.hover_state
+			display: block
+
+
+.black_box
+	position: absolute
+	padding: 20px
+	
+	width: 36%
+	min-width: 400px
+	text-align: left
+	color: white
+	z-index: 0
+	h1
+		font-weight: 400
+		line-height: 32px
+		margin-bottom: 30px
+	p
+		font-weight: 300
+		font-size: 1em
+		margin-bottom: 20px
+		
+	.content
+		position: relative
+		z-index: 1
+	.background
+		border-radius: 3px
+		absolute top 0 left 0
+		width: 100%
+		height: 100%
+		background: #292C2F
+		opacity: 0.9
+		
+	&.opaque
+		.background
+			opacity: 1
