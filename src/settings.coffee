@@ -31,8 +31,8 @@ s.twitter =
   secret       : "w9PMdVtjN496Op1B4Obk6dkg48MPixYil2gy6mBW0Kk"
 
 s.google =
-  id              : 'your-secret-clientID-here',
-  secret          : 'your-client-secret-here',
+  id              : '957006099085-8a3950umkka7sklpg09ncvt794uoeped.apps.googleusercontent.com',
+  secret          : 'zPC2aBhCnCELhSKFKOlqbH58',
   provider_params : 
     redirect_uri: s.server.url + '/login/google'
 
