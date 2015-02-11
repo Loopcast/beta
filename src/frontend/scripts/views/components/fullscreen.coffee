@@ -1,5 +1,6 @@
 module.exports = class Fullscreen
 	constructor: ( @dom ) ->
+		@dom.addClass 'fullscreen'
 		app.window.on 'resize', @on_resize
 		do @on_resize
 
