@@ -10,7 +10,7 @@ s =
   in_production  : process.env.NODE_ENV is 'production'
   https          : off
   server:
-    url: 'http://localhost:1993/'
+    url: 'http://beta.loopcast.fm'
 
 
 cloudinary.config
@@ -19,24 +19,20 @@ cloudinary.config
   api_secret: 'opQ179HoyQlceRzNr1VGMukScas' 
 
 s.facebook =
-  id           : "133746950129386"
-  secret       : "905d2b50f2cc4c9b407a7efec182c90f"
-  callback_url : "http://www.loopcast.fm/auth/facebook/callback"
+  id           : "1551393601809115"
+  secret       : "7d4307b592fb8aab287582835bdba803"
 
 s.soundcloud =
   id           : "afac925318ccc98d6aca4631b0a86a92"
   secret       : "be900f4e96a1d18da740c6536cc756ee"
-  callback_url : "http://localhost:3000/auth/soundcloud/callback"
 
 s.twitter =
   id           : "3YqpmaF3kZjd6vH7ijnSZg"
   secret       : "w9PMdVtjN496Op1B4Obk6dkg48MPixYil2gy6mBW0Kk"
-  callback_url : 'http://localhost:3000/auth/twitter/callback'
 
 s.google =
   id              : 'your-secret-clientID-here',
   secret          : 'your-client-secret-here',
-  callback_url    : 'http://localhost:8080/auth/google/callback'
   provider_params : 
     redirect_uri: s.server.url + '/login/google'
 
