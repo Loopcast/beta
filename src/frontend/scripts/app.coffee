@@ -18,8 +18,8 @@ class App
 
 	win:
 		obj: null
-		w: 0
-		h: 0
+		w  : 0
+		h  : 0
 
 
 	constructor: -> 	
@@ -30,7 +30,7 @@ class App
 
 	start: ->
 
-		@body   = $ 'body'
+		@body = $ 'body'
 		
 		@settings = require 'app/utils/settings'
 		@settings.bind @body
