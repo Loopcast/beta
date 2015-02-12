@@ -14,6 +14,9 @@ views         		= require './controllers/views'
 navigation        	= require './controllers/navigation'
 # motion        		= require 'app/controllers/motion'
 
+window.user_did_login = ( user ) ->
+	log "[user_did_login]", user
+
 class App
 
 	win:
