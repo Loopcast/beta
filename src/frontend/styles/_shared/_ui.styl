@@ -24,7 +24,7 @@ DARK_PERCENTAGE = 5
 		background-color: #ff5224
 		
 	&.google
-		background-color: #F91616
+		background-color: #dc4b38
 		
 	&.signin
 		background-color: #2095cf
@@ -47,6 +47,26 @@ DARK_PERCENTAGE = 5
 		font-size: .75em
 		padding: 10px
 		
+	&.social
+		padding-left: 50px;
+		width: 300px;
+		padding-top: 20px;
+		height: auto;
+		padding-bottom: 20px;
+		padding-right: 26px;
+		font-size: 1.1em;
+		letter-spacing: .03em;
+		span.spritesheet
+			margin-right: 10px
+			position: absolute
+			left: 26px
+			top: 50%
+			transform: translateY(-50%)
+		span
+			vertical-align: middle
+			display: block
+			text-align: right
+		
 
 .no_touch_device
 	.button.facebook:hover
@@ -56,7 +76,7 @@ DARK_PERCENTAGE = 5
 		background-color: darken(#ff5224, DARK_PERCENTAGE)
 		
 	.button.google:hover
-		background-color: darken(#F91616, DARK_PERCENTAGE)	
+		background-color: darken(#dc4b38, DARK_PERCENTAGE)	
 
 	.button.signin:hover
 		background-color: darken(#2095cf, DARK_PERCENTAGE)

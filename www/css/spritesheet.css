@@ -3,13 +3,13 @@
   background-size: 228px 127px;
 }
 
-.spritesheet.medium_black_logo {
+.spritesheet.medium_white_logo {
   width: 114px;
   height: 70px;
   background-position: 0 0;
 }
 
-.spritesheet.medium_white_logo {
+.spritesheet.medium_black_logo {
   width: 114px;
   height: 70px;
   background-position: -114px 0;
@@ -25,6 +25,18 @@
   width: 32px;
   height: 32px;
   background-position: 0 -95px;
+}
+
+.spritesheet.google_button_icon {
+  width: 20px;
+  height: 31px;
+  background-position: -32px -95px;
+}
+
+.spritesheet.facebook_button_icon {
+  width: 16px;
+  height: 31px;
+  background-position: -52px -95px;
 }
 
 .spritesheet.header_settings_hover {
@@ -45,19 +57,19 @@
   background-position: -83px -70px;
 }
 
-.spritesheet.rooms_icon {
+.spritesheet.people_icon {
   width: 18px;
   height: 16px;
   background-position: -103px -70px;
 }
 
-.spritesheet.sets_icon {
+.spritesheet.rooms_icon {
   width: 18px;
   height: 16px;
   background-position: -121px -70px;
 }
 
-.spritesheet.people_icon {
+.spritesheet.sets_icon {
   width: 18px;
   height: 16px;
   background-position: -139px -70px;
