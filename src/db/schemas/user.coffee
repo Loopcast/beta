@@ -6,13 +6,24 @@ schema = new Schema
     id        : String # ie: thomas-amundsen
     name      : String
     genres    : Array
-    avatar    : Object
-    # url : String
-    # cdn : Object # cdn information regarding the image
+    avatar    : String
     followers : Number
     visitors  : Number
     sets      : Number
     about     : String
+
+  # data:
+  #   email:
+
+  #   facebook:
+  #     id      :
+  #     email   :
+  #     timezone:
+
+  #   images:
+  #     profile: 
+  #       id : # id used to upload picture, ie: fb:#{graph_id} | gp:#{gp_id}
+  #       cdn: # cloudinary information
 
 
 module.exports = mongoose.model 'User', schema
