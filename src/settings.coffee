@@ -1,9 +1,8 @@
 cloudinary = require 'cloudinary'
 
-# TODO
-# check if it is production or staging, update settings accordingly
 s =
-  is_development : process.env.NODE_ENV isnt 'production'
+  # beta is our "production"
+  is_beta        : process.env.NODE_ENV is 'beta'
   port           : process.env.PORT || 1993
   is_dev_machine : require("os").hostname().indexOf( 'local' ) != -1
   debug          : off
@@ -46,7 +45,8 @@ s.mailchimp =
 
   url: "https://us3.api.mailchimp.com/2.0/lists/subscribe.json"
 
-if s.is_development
+# IF PRODUCTION
+if s.is_beta
 
   # ~ databases
 
@@ -67,14 +67,27 @@ if s.is_development
     secret : "super-duper-secret-that-nobody-would-evah-guess-saxophone"
     key    : "loopcast.sid"
 
+# IF LOCAL OR DEVELOPMENT
+else
 
-  # ~ misc credentials
+  # ~ databases
 
+  s.mongo =
+    url: "mongodb://loopy:ulpi1991@ds029060-a0.mongolab.com:29060,ds029060-a1.mongolab.com:29060/loopdb"
+    options: 
+      user: 'myUserName',
+      pass: 'myPassword'
 
-# clientID: "409014582559393"
-# clientSecret: "9cd913aa3e37e6b3353aafd9c99358db"
-# callbackURL: "http://127.0.0.1:3000/auth/facebook/callback"
+  s.redis =
+    host     : 'pub-redis-17738.eu-west-1-1.2.ec2.garantiadata.com'
+    port     : 17738
+    password : '9b83PvcXCgqJPspO'
 
+  # ~ app session
+
+  s.session =
+    secret : "super-duper-secret-that-nobody-would-evah-guess-saxophone"
+    key    : "loopcast.sid"
 
 
 module.exports = s

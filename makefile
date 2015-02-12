@@ -13,7 +13,7 @@ start:
 	# DEBUG=app:* NODE_ENV=$(BRANCH) $(NODEMON) --debug --watch . -e coffee,jade ./src/app.coffee
 
 	# without remote debug
-	DEBUG=app:* NODE_ENV=$(BRANCH) $(NODEMON)	--watch . -e coffee,jade ./src/app.coffee
+	DEBUG=app:* GIT_BRANCH=$(BRANCH) $(NODEMON)	--watch . -e coffee,jade ./src/app.coffee
 
 setup:
 	npm install
