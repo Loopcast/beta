@@ -18,7 +18,7 @@ module.exports =
       if request.auth.isAuthenticated
 
         request.auth.session.clear()
-        
+        # ∞
         if request.method is "POST"
           reply success: true
         else
