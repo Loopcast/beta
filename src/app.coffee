@@ -1,3 +1,12 @@
+# defaults to production environment
+if not process.env.NODE_ENV then process.env.NODE_ENV = 'development'
+
+# require newrelic when running on amazon aws, actually since all devs
+# are using OSX, we feel confident to fire it up when running on linux
+if process.platform is 'linux'
+  console.log '+ Requesting new relic'
+  newrelic = require 'newrelic'
+
 g = require './globals'
 
 # save server as global variable as well
