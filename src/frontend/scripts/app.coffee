@@ -55,8 +55,8 @@ class App
 			navigation.bind '#content'
 			
 				
-	user_did_login : ( user ) ->
-		log "[user_did_login]", user
+	logged : ( user ) ->
+		log "[logged]", user
 
 
 	###
