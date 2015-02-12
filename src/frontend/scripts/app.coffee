@@ -53,17 +53,7 @@ class App
 		navigation.on 'after_render', => 
 			views.bind       '#content'
 			navigation.bind '#content'
-		
-
-		# Simulate the log in action from a fake user
-		delay 400, =>
-			user = 
-				username: "Stefano Ortisi"
-				thumb: "/images/profile.jpg"
-				permalink: "/profile/stefanoortisi"
-
-			app.body.addClass "logged"
-			app.emit 'user:logged', user
+			
 				
 
 
