@@ -1,3 +1,5 @@
+transform = models 'transforms/facebook_to_session'
+
 module.exports = 
   method: ['GET', 'POST']
   path  : '/login/facebook'
@@ -20,12 +22,12 @@ module.exports =
 
         credentials = request.auth.credentials
 
-        username = credentials.profile.email
-        username = username.substr 0, username.indexOf '@'
 
-        session = username: username
+        transform credentials, ( error, session ) ->
 
-        request.auth.session.set session
+          if error then return reply error
 
-        # redirect to succesful login
-        return reply.redirect '/login/successful'
+          request.auth.session.set session
+
+          # redirect to succesful login
+          return reply.redirect '/login/successful'

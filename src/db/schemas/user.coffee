@@ -6,7 +6,9 @@ schema = new Schema
     id        : String # ie: thomas-amundsen
     name      : String
     genres    : Array
-    image     : String
+    avatar    : Object
+    # url : String
+    # cdn : Object # cdn information regarding the image
     followers : Number
     visitors  : Number
     sets      : Number
