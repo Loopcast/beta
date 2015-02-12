@@ -2,7 +2,7 @@ mongoose = require( 'mongoose')
 Schema   = mongoose.Schema
 
 schema = new Schema
-  info   :
+  info :
     id        : String # ie: thomas-amundsen
     name      : String
     genres    : Array
@@ -10,7 +10,7 @@ schema = new Schema
     followers : Number
     visitors  : Number
     sets      : Number
-    info      : String
+    about     : String
 
 
 module.exports = mongoose.model 'User', schema

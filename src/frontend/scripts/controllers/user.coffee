@@ -7,8 +7,8 @@ class User
 	
 	login: ( callback ) ->
 		user = 
-			username: "Stefano Ortisi"
-			thumb: "/images/profile.jpg"
+			username : "Stefano Ortisi"
+			thumb    : "/images/profile.jpg"
 			permalink: "/profile/stefanoortisi"
 
 		app.body.addClass "logged"

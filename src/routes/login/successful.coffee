@@ -24,7 +24,10 @@ module.exports =
 
     # follows just the bare minimun information needed
     data = 
-      username: request.auth.credentials.username
+      user:
+        id     : request.auth.credentials.username
+        avatar : ''
+
 
     template url, data, ( error, response ) ->
 
