@@ -1,26 +1,44 @@
 extends layout
 
 block content
-  h1(data-view="room") Rooms
+	.explore(data-menu="explore")
+		.sub_header
+			ul.centered
+				li.selected
+					p 
+						span.spritesheet.rooms_icon
+						span Rooms
+				li
+					a(href="#" title="People")
+						span.spritesheet.people_icon
+						span People
+				li
+					a(href="#" title="Sets")
+						span.spritesheet.sets_icon
+						span Sets
 
-  br
-  br
-    
-  h4 genres
 
-  ul
-    for genre in genres
-      li #{genre}
 
-  br
-  br
-    
-  h4 rooms
+		h1(data-view="room") Rooms
 
-  ul
-    for room in rooms
-      li 
-        pre
-          | title : #{room.title}
-          | author: #{room.author}
-          | ---
+		br
+		br
+			
+		h4 genres
+
+		ul
+			for genre in genres
+				li #{genre}
+
+		br
+		br
+			
+		h4 rooms
+
+		ul
+			for room in rooms
+				li 
+					pre
+						| title : #{room.title}
+						| author: #{room.author}
+						| ---

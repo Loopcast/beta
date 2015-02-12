@@ -1,0 +1,26 @@
+@import '../_shared/_bootstrap.styl'
+
+HEIGHT_SUBHEADER = 45px
+.explore
+	.sub_header
+		background: #EFF3F6
+		height: HEIGHT_SUBHEADER
+		border-bottom: 1px solid #d5d4d4
+		color: GRAY_2
+		font-size: .9em
+		font-weight: 600
+		li
+			display: inline-block
+			height: HEIGHT_SUBHEADER
+			padding: 10px 40px 0
+			
+			.spritesheet
+				position: relative
+				top: 2px
+				margin-right: 5px
+				
+			&.selected
+				background: GRAY
+				border-left: 1px solid #d5d4d4
+				border-right: 1px solid #d5d4d4
+		

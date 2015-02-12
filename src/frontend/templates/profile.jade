@@ -1,34 +1,37 @@
 extends layout
 
 block content
-  h1 #{user.name}
+  if user
+  
+    h1 #{user.name}
 
-  br
-  br
-    
-  ul
-    for genre in user.genres
-      li #{genre}
-
-  audio( controls autoplay src="http://radio.loopcast.fm:8000/#{user.id}" )
-
-  if live
     br
     br
-    
-    h4 live
+      
+    ul
+      for genre in user.genres
+        li #{genre}
+    audio( controls autoplay src="http://radio.loopcast.fm:8000/#{user.id}" )
 
-    h3 #{live.name}
+    if live
+      br
+      br
+      
+      h4 live
 
-  br
-  br
-    
-  h4 recorded
+      h3 #{live.name}
 
-  ul
-    for room in user.recorded
-      li 
-        pre
-          | title : #{room.title}
-          | author: #{room.author}
-          | ---
+    br
+    br
+      
+    h4 recorded
+
+    ul
+      for room in user.recorded
+        li 
+          pre
+            | title : #{room.title}
+            | author: #{room.author}
+            | ---
+  else
+    p User not logged
