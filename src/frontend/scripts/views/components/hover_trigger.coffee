@@ -1,5 +1,12 @@
+###
+Adds the class 'hovered' to the element and to the target
+The class is toggled on mouseover/mouseleave for desktops
+and on click for touch devices
+###
+
 module.exports = class HoverTrigger
 	opened: false
+	klass: "hovered"
 
 	constructor: ( @dom ) ->
 		@target = $ @dom.data 'target'
@@ -8,33 +15,53 @@ module.exports = class HoverTrigger
 			log "[HoverTrigger] error. target not found", @dom.data( 'target' )
 			return
 
+		@dom.addClass "hover_dropdown_trigger"
+		@set_listeners()
+
+		app.on "dropdown:opened", @on_dropdown_opened
+		app.on "dropdown:closed", @on_dropdown_closed
+
+	set_listeners: ( ) ->
+
 		if app.settings.touch_device
 			@dom.on 'click', @toggle
-			$('html,body').on 'click', @on_mouse_leave
 		else
-			@dom.on 'mouseover', @on_mouse_over
-			@target.on 'mouseleave', @on_mouse_leave
+			@dom.on 'mouseover', @open
+			@target.on 'mouseleave', @close
+
+		app.window.on "body:clicked", @close
 
 	toggle: ( e ) =>
 		if @opened
-			do @on_mouse_leave
+			do @close
 		else
-			do @on_mouse_over
+			do @open
 
 		e.stopPropagation()
 
-	on_mouse_over: ( ) =>
+
+
+	open: ( ) =>
 		return if @opened
 		@opened = true
 
-		@dom.addClass "hovered"
-		@target.addClass "hovered"
+		@dom.addClass @klass
+		@target.addClass @klass
 
-	on_mouse_leave: ( ) =>
+		app.emit "dropdown:opened", @uid
+
+	close: ( ) =>
 		return if not @opened
 		@opened = false
 
-		@dom.removeClass "hovered"
-		@target.removeClass "hovered"
+		@dom.removeClass @klass
+		@target.removeClass @klass
+
+		app.emit "dropdown:closed", @uid
+
+	on_dropdown_opened: ( data ) =>
+		@close() if data isnt @uid
+
+	on_dropdown_closed: ( data ) =>
 
 

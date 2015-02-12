@@ -26,20 +26,20 @@ header(data-view="header")
 				data-w="500"
 				data-h="400"
 			) Log In
-			div.settings(href="javascript:;", title="Settings", data-view="components/hover_trigger" data-target=".settings_dropdown")
+			div.settings.hover_dropdown_trigger(href="javascript:;", title="Settings", data-view="components/click_trigger" data-target=".settings_dropdown")
 				span.spritesheet.header_settings
 
-	.centered.second
-		ul.settings_dropdown
-			li
-				a(href="#" title="About Loopcast") About Loopcast
-			li
-				a(href="#" title="Help") Help
-			li
-				a(href="#" title="Blog") Blog
-			li
-				a(href="#" title="Advertising") Advertising
-			li
-				a(href="#" title="Privacy") Privacy
-			li
-				a(href="#" title="Terms of use") Terms of use
+				ul.settings_dropdown.hover_dropdown
+					li
+						a(href="#" title="About Loopcast") About Loopcast
+					li
+						a(href="#" title="Help") Help
+					li
+						a(href="#" title="Blog") Blog
+					li
+						a(href="#" title="Advertising") Advertising
+					li
+						a(href="#" title="Privacy") Privacy
+					li
+						a(href="#" title="Terms of use") Terms of use
+		

@@ -179,3 +179,30 @@ input
 	&.opaque
 		.background
 			opacity: 1
+			
+.hover_dropdown_trigger
+	position: relative
+	cursor: pointer
+	
+.hover_dropdown
+	position: absolute
+	right: 0
+	background: #222
+	color: GRAY
+	font-size: .85em
+	width: 140px
+	display: none
+	top: 100%
+	li
+		border-bottom: 1px solid GRAY_3
+	a
+		padding: 9px 14px
+		display: block
+		
+	&.hovered
+		display: block
+		
+.no_touch_device
+	.hover_dropdown
+		li:hover
+			color: white

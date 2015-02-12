@@ -56,14 +56,14 @@ class App
 		
 
 		# Simulate the log in action from a fake user
-		# delay 400, =>
-		# 	user = 
-		# 		username: "Stefano Ortisi"
-		# 		thumb: "/images/profile.jpg"
-		# 		permalink: "/profile/stefanoortisi"
+		delay 400, =>
+			user = 
+				username: "Stefano Ortisi"
+				thumb: "/images/profile.jpg"
+				permalink: "/profile/stefanoortisi"
 
-		# 	app.body.addClass "logged"
-		# 	app.emit 'user:logged', user
+			app.body.addClass "logged"
+			app.emit 'user:logged', user
 				
 
 

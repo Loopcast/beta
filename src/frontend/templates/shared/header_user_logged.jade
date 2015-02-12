@@ -1,6 +1,16 @@
-.thumb_wrapper
+.thumb_wrapper(data-view="components/click_trigger" data-target=".user_dropdown")
 	img(width="42", src="#{thumb}")
 	span.spritesheet.small_arrow_white
+
+	ul.user_dropdown.hover_dropdown
+		li
+			a(href="#" title="My Profile") My Profile
+		li
+			a(href="#" title="Feedback") Feedback
+		li
+			a(href="#" title="Logout") Logout
+
+
 
 a(href="javascript:;" title="Messages")
 	span.spritesheet.messages_icon

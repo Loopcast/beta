@@ -31,6 +31,8 @@ header
 				padding-top: 10px
 				padding-bottom: 0
 				cursor: pointer
+				height: HEADER_HEIGHT
+				position: relative
 				span
 					transition: transform .1s linear
 					
@@ -51,23 +53,8 @@ header
 		position: relative
 		
 	.settings_dropdown
-		position: absolute
-		top: 100%
-		right: 0
-		background: #222
-		color: GRAY
-		font-size: .85em
 		width: 140px
-		transition: transform .3s ease-out
-		transform: translateY(-140%)
-		li
-			border-bottom: 1px solid GRAY_3
-		a
-			padding: 9px 14px
-			display: block
-			
-		&.hovered
-			transform: translateY(0%)
+		
 	
 	.search_box
 		.spritesheet
@@ -86,10 +73,17 @@ header
 		.thumb_wrapper
 			margin-right: 50px
 			position: relative
+			height: HEADER_HEIGHT
 			.spritesheet
 				position: absolute
 				top: 43%
 				right: -20px
+			&.hovered
+				.spritesheet
+					transform: rotate(180deg)
+				
+	.user_dropdown
+		right: -30px
 		
 .logged
 	header
@@ -99,16 +93,6 @@ header
 			display: none
 			
 		
-
-		
-
-.no_touch_device
-	header 
-		.settings_dropdown
-			li:hover
-				color: #222
-				background: GRAY
-				border-bottom: 1px solid GRAY
 
 footer
 	background: BLACK
