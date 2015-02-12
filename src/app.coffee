@@ -34,8 +34,8 @@ server.start ->
       server.auth.strategy 'facebook', 'bell',
         provider    : 'facebook',
         password    : 'cookie_encryption_password',
-        clientId    : s.facebook.id
-        clientSecret: s.facebook.secret
+        clientId    : s.facebook.app.id
+        clientSecret: s.facebook.app.secret
         isSecure    : s.https
 
       server.auth.strategy 'google', 'bell',
