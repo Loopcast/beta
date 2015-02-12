@@ -55,6 +55,8 @@ class App
 			navigation.bind '#content'
 			
 				
+	logged : ( user ) ->
+		log "[logged]", user
 
 
 	###
