@@ -43,6 +43,8 @@ module.exports = ( info, callback ) ->
     type        : 'large'
     redirect    : false
 
+  # TODO: delete this picture from cloudinary in case user upload a new one
+  # TODO: don't upload in case picture url did not change
   graph avatar.url, params, ( error, response ) ->
 
     # if fails to fetch facebook profile image
