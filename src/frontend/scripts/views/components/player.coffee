@@ -11,7 +11,6 @@ module.exports = ( dom ) ->
 
   # hide items when initializing
   audio.hide()
-  vu.hide()
 
   socket.on 'connected', ( status ) ->
 
@@ -51,13 +50,9 @@ module.exports = ( dom ) ->
     audio.attr 'src', audio.data 'src'
     audio.show()
 
-    vu.show()
-
   stop_audio = ->
     audio.stop()
     audio.hide()
-
-    vu.hide()
 
   # temporary hack to start audio only after stream starts
   socket.on 'stream:online', ( status ) ->
@@ -67,8 +62,9 @@ module.exports = ( dom ) ->
     else
       stop_audio()
 
+  # console.warn "listening for vu"
   # temporary hack to start audio only after stream starts
   socket.on 'stream:vu', ( meter ) ->
 
-    vu.find( '.left' ).width meter[0] * 100
-    vu.find( '.right' ).width meter[1] * 100
+    vu.find( '.meter_left' ).width meter[0] * 1000
+    vu.find( '.meter_right' ).width meter[1] * 1000

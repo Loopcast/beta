@@ -1,59 +1,84 @@
 extends layout
 
 block content
-  h1 #{profile.name}
+  .profile.centered(data-menu="profile")
+    .cover
+      .cover_image(style="background-image:url(/images/homepage_2.jpg)")
+      .content
+        h1.name.black_background #{profile.name}
+        br
+        h3.type.black_background DJ/Producer
+        br
+        ul.genres.black_background
+          for genre, i in profile.genres
+            if i < profile.genres.length - 1
+              li #{genre},
+            else
+              li #{genre}
+        .profile_image
+          img(src="/images/profile_big.png")
 
-  br
-  br
-    
-  ul
-    for genre in profile.genres
-      li #{genre}
+        .sidebar_right
+          .big_number
+            span.number 2
+            span.text Followers
 
-  .player(data-view="components/player")
-    .status
-    audio( controls autoplay data-src="http://radio.loopcast.fm:8000/#{profile.id}" )
+          .big_number
+            span.number 0
+            span.text Rooms
+
+          .big_number
+            span.number 2
+            span.text 
+              | Total 
+              br
+              | visitors
+
+
+    .player(data-view="components/player")
+      .status
+      audio( controls autoplay data-src="http://radio.loopcast.fm:8000/#{profile.id}" )
       .vu
-        .left
-        .right
+        .meter_left
+        .meter_right
 
-  if live
+    //- only appears if it's own user profile, like
+    //- when user.id == profile.id
+    .controls
+
+      .devices
+        select(id="input_devices" data-view="components/input_devices")
+          option(value="test")
+
+      .streaming
+        button.start_streaming(data-view="buttons/start_stream")
+          | start_streaming
+        button.stop_streaming(data-view="buttons/stop_stream")
+          | stop_streaming
+
+      .recording
+        button.start_recording(data-view="buttons/start_recording")
+          | start_recording
+        button.stop_recording(data-view="buttons/stop_recording")
+          | stop_recording
+
+    if live
+      br
+      br
+      
+      h4 live
+
+      h3 #{live.name}
+
     br
     br
-    
-    h4 live
+      
+    h4 recorded
 
-    h3 #{live.name}
-
-  br
-  br
-    
-  h4 recorded
-
-  ul
-    for room in profile.recorded
-      li 
-        pre
-          | title : #{room.title}
-          | author: #{room.author}
-          | ---
-
-  //- only appears if it's own user profile, like
-  //- when user.id == profile.id
-  .controls
-
-    .devices
-      select(id="input_devices" data-view="components/input_devices")
-        option(value="test")
-
-    .streaming
-      button.start_streaming(data-view="buttons/start_stream")
-        | start_streaming
-      button.stop_streaming(data-view="buttons/stop_stream")
-        | stop_streaming
-
-    .recording
-      button.start_recording(data-view="buttons/start_recording")
-        | start_recording
-      button.stop_recording(data-view="buttons/stop_recording")
-        | stop_recording
+    ul
+      for room in profile.recorded
+        li 
+          pre
+            | title : #{room.title}
+            | author: #{room.author}
+            | ---
