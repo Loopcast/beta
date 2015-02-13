@@ -4,16 +4,19 @@ module.exports = class Window
 	obj: null
 	w: 0
 	h: 0
-	constructor: ( ) ->
+
+	constructor: ->
+
 		happens @
+
 		@obj = $ window
 		@obj.on 'resize', @on_resize
+
 		delay 100, @on_resize
 
-		$('html,body').on 'click', =>
-			@emit "body:clicked"
+		$( 'html,body' ).on 'click', => @emit "body:clicked"
 
-	on_resize: ( ) =>
+	on_resize: =>
 		@w = @obj.width()
 		@h = @obj.height()
 
