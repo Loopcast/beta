@@ -3,9 +3,9 @@ Navigation = require 'app/controllers/navigation'
 module.exports = class Login
 	constructor: ( @dom ) ->
 
-		# unless window.opener?
-		# 	app.body.removeClass "login_page"
-		# 	Navigation.go '/'
+		unless window.opener?
+			app.body.removeClass "login_page"
+			Navigation.go '/'
 		
 		@username = @dom.find( '.username' )
 		@password = @dom.find( '.password' )
