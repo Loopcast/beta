@@ -906,7 +906,7 @@ body {
   color: #000;
   font-size: 100%;
   font-family: 'Open Sans', sans-serif;
-  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-font-smoothing: antialiased;
   padding-top: 42px;
 }
 
