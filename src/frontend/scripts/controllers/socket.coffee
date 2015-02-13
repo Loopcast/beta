@@ -2,7 +2,7 @@
 # Socket controller will be used to communicate with desktop app AppCast
 ###
 
-aware     = require 'aware'
+aware    = require 'aware'
 # shortcut for vendor scripts
 v       = require 'app/vendors'
 
@@ -86,7 +86,7 @@ socket.connect = ->
     reader.onload = ( e ) ->
       buffer = new Float32Array e.target.result
 
-      socket.set 'stream:vu', buffer      
+      socket.set 'stream:vu', buffer  
 
     reader.readAsArrayBuffer e.data
 
