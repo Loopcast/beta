@@ -1,20 +1,19 @@
-socket  = require 'app/controllers/socket'
+appcast  = require 'app/controllers/appcast'
 happens = require 'happens'
 
 module.exports = ( dom ) ->
 
   happens @
 
-  console.log 'input devices dom ->', dom
+  dom.on 'change', ->
 
-  socket.on 'input_devices', ( devices ) ->
+    appcast.set 'input_device', dom.val()
 
-    console.info 'device changed'
+  appcast.on 'input_devices', ( devices ) ->
 
+    # clear options
+    # TODO: keep the choosen option selected
+    # TODO: let the user know if previouly selected isn't available anymore
+    dom.html " "
     for device in devices
-      console.log 'device ->', device
-
       dom.append "<option value='#{device}'>#{device}</option>"
-
-    console.log "- dom got devices!", devices
-      

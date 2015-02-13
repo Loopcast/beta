@@ -126,7 +126,31 @@ block content
 
 
     .player(data-view="components/player")
-      audio( controls autoplay src="http://radio.loopcast.fm:8000/#{profile.id}" )
+      .status
+      audio( controls autoplay data-src="http://radio.loopcast.fm:8000/#{profile.id}" )
+      .vu
+        .meter_left
+        .meter_right
+
+    //- only appears if it's own user profile, like
+    //- when user.id == profile.id
+    .controls
+
+      .devices
+        select(id="input_devices" data-view="components/input_devices")
+          option(value="test")
+
+      .streaming
+        button.start_streaming(data-view="buttons/start_stream")
+          | start_streaming
+        button.stop_streaming(data-view="buttons/stop_stream")
+          | stop_streaming
+
+      .recording
+        button.start_recording(data-view="buttons/start_recording")
+          | start_recording
+        button.stop_recording(data-view="buttons/stop_recording")
+          | stop_recording
 
     if live
       br
@@ -148,23 +172,3 @@ block content
             | title : #{room.title}
             | author: #{room.author}
             | ---
-
-    //- only appears if it's own user profile, like
-    //- when user.id == profile.id
-    .controls
-
-      .devices
-        select(id="input_devices" data-view="components/input_devices")
-          option(value="test")
-
-      .streaming
-        button.start_streaming
-          | start_streaming
-        button.stop_streaming
-          | stop_streaming
-
-      .recording
-        button.start_recording
-          | start_recording
-        button.stop_recording
-          | stop_recording
