@@ -2,8 +2,13 @@ extends layout
 
 block content
 
-	.landing(data-view="components/fullscreen")
-		.cover(style="background-image:url('/images/homepage.jpg')")
+	.landing.parallax-container(
+		data-view="components/fullscreen",
+		data-factor="1",
+		data-parallax="scroll",
+		data-bleed="10",
+		data-image-src="/images/homepage.jpg"
+	)
 
 		.centered
 			.black_box
@@ -28,24 +33,38 @@ block content
 			p Scroll down to learn more
 			span.spritesheet.sprite_arrow_down_white
 
-	div.landing_2.secondary_screen(data-view="components/fullscreen")
-		.cover(style="background-image:url('/images/homepage_2.jpg')")
-			.centered
-				.black_box
-					.background
-					.content
-						h1 Stream your Music to the World
-						p Create your own virtual rooms, connect with any third party software or hardware and stream your music live for friends, fans and followers everywhere. Record and save your live sessions to your profile, allowing your audience to go back and re-experience their favourite moments.
+	.landing_2.secondary_screen(
+		class="parallax-container",
+		data-view="components/fullscreen", 
+		data-factor="1.07",
+		data-parallax="scroll",
+		data-bleed="10",
+		data-image-src="/images/homepage_2.jpg"
+	)
+		.centered
+			.black_box
+				.background
+				.content
+					h1 Stream your Music to the World
+					p Create your own virtual rooms, connect with any third party software or hardware and stream your music live for friends, fans and followers everywhere. Record and save your live sessions to your profile, allowing your audience to go back and re-experience their favourite moments.
 
-	div.landing_3.secondary_screen(data-view="components/fullscreen")
-		.cover(style="background-image:url('/images/homepage_3.jpg')")
-			.centered
-				.black_box
-					.background
-					.content
-						h1 Explore and Experience
-						p Browse through your favourite genres, find the music you love and interact with whoever is playing it. Give them real-time feedback and follow the best DJs and radio presenters
-						a.button.yellow_button.no_shadow(href="javascript:;" title="Join Loopcast now") Join Loopcast now
+
+
+	div.landing_3.secondary_screen.parallax-container(
+		data-view="components/fullscreen", 
+		data-factor="1.03",
+		data-parallax="scroll",
+		data-bleed="10",
+		data-image-src="/images/homepage_3.jpg"
+	)
+
+		.centered
+			.black_box
+				.background
+				.content
+					h1 Explore and Experience
+					p Browse through your favourite genres, find the music you love and interact with whoever is playing it. Give them real-time feedback and follow the best DJs and radio presenters
+					a.button.yellow_button.no_shadow(href="javascript:;" title="Join Loopcast now") Join Loopcast now
 
 
 

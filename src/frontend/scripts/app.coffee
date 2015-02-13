@@ -1,5 +1,6 @@
 require './globals'
 require './vendors'
+require '../vendors/parallax.min.js'
 
 views      = require './controllers/views'
 navigation = require './controllers/navigation'
@@ -60,8 +61,13 @@ class App
 	# After the views have been rendered
 	###
 	after_render: ( ) =>
+		log "after_render"
 		# Hide the loading
 		delay 10, => @body.addClass "loaded"
+
+
+		
+		# $('.parallax-window').parallax({imageSrc: '/path/to/image.jpg'});
 
 		
 app = new App
