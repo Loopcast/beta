@@ -4,13 +4,14 @@
 
 # utils
 
-window.delay = require './utils/delay'
+window.delay = require './globals/delay'
 
-window.log   = require './utils/log'
+window.log   = require './globals/log'
 
-window.mover = require './utils/mover'
+window.mover = require './globals/mover'
 
 # widely used modules
+
 window.happens = require 'happens'
 
 

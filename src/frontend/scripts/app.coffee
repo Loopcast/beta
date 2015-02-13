@@ -49,7 +49,8 @@ class App
 			
 				
 	login : ( user ) ->
-		log "[logged]", user
+		log "[logged]"
+		console.dir user
 
 	logout: ->
 		log "[logged out]", user

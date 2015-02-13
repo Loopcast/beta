@@ -7,24 +7,31 @@ hash    = lib 'tools/hash'
 graph   = lib 'facebook/call_graph'
 upload  = lib 'cloudinary/upload'
 
+# args
+#  - "info" is the information received from facebook
+#  - "callback" standard node callback
 module.exports = ( info, callback ) ->
-
-  console.log "facebook information ->"
-  console.log info
-
 
   after_upload = ( picture_info ) ->
 
     username = info.profile.email
     username = username.substr 0, username.indexOf '@'
 
-    session = 
-      username: username
-      name    : info.profile.displayName
+    user = 
+      session :
+        username: username
+        name    : info.profile.displayName
+        avatar  : picture_info.secure_url
 
-    console.log "picture info ->", picture_info
+      data :
+        facebook: info
+        images:
+          profile:
+            id : avatar.id
+            cdn: picture_info
 
-    callback null, session
+
+    callback null, user
 
   ###
   # fetch large profile picture from facebook and upload to cloudinary

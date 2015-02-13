@@ -15,10 +15,7 @@ schema = new Schema
   # data:
   #   email:
 
-  #   facebook:
-  #     id      :
-  #     email   :
-  #     timezone:
+  #   facebook: fb_info # facebook information
 
   #   images:
   #     profile: 

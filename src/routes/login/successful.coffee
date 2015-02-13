@@ -23,11 +23,7 @@ module.exports =
     url = request.url.href
 
     # follows just the bare minimun information needed
-    data = 
-      user:
-        id     : request.auth.credentials.username
-        avatar : ''
-
+    data = request.auth.credentials
 
     template url, data, ( error, response ) ->
 

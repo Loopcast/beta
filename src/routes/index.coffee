@@ -20,14 +20,17 @@ module.exports =
     handler: ( request, reply )->
 
       # if user is logged, redirect to explore page
-      if request.auth.isAuthenticated 
+      # if request.auth.isAuthenticated 
 
-        console.log 'auth ->', request.auth
+        # console.log 'auth ->', request.auth
         # return reply.redirect '/people'
        
       url = '/index'
 
-      template url, null, ( error, response ) ->
+      # always inject user data into requests
+      data = request.auth.credentials || {}
+
+      template url, data, ( error, response ) ->
 
         if not error then return reply response
 
