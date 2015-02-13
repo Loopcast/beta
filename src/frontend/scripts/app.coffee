@@ -55,8 +55,11 @@ class App
 			navigation.bind '#content'
 			
 				
-	logged : ( user ) ->
+	login : ( user ) ->
 		log "[logged]", user
+
+	logout: ->
+		log "[logged out]", user
 
 
 	###

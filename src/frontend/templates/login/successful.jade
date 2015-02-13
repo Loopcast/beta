@@ -1,5 +1,5 @@
 script
   | window.opener.console.warn( "Logged on facebook" );
   | window.opener.console.dir( !{JSON.stringify(user)} );
-  | window.opener.app.logged( !{JSON.stringify(user)} );
+  | window.opener.app.login( !{JSON.stringify(user)} );
   | window.close()
