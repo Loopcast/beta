@@ -15,9 +15,10 @@ module.exports = class Header
 		obj = $( '[data-menu]' )
 		if obj.length > 0
 			page = obj.data 'menu'
+			log "[Header] check_menu", page
 			
 			if @current_page.length > 0
-				@dom.find( '.#{@current_page}_item' ).removeClass "selected"
+				@dom.find( ".#{@current_page}_item" ).removeClass "selected"
 				app.body.removeClass "#{@current_page}_page"
 
 			@dom.find( ".#{page}_item" ).addClass "selected"

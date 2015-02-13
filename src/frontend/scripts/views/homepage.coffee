@@ -11,10 +11,8 @@ module.exports = class Homepage
 			images.push $( @ ).data( 'image-parallax' )
 
 		preload images, ( images_loaded )->
-			log "[Homepage] all images loaded"
 
 			for el, i in elements
-				log "[Homepage] building parallax", images_loaded[ i ].src, images_loaded[ i ].width, images_loaded[ i ].height
 				el.parallax
 					imageSrc     : images_loaded[ i ].src
 					bleed        : 10
@@ -22,10 +20,10 @@ module.exports = class Homepage
 					naturalWidth : images_loaded[ i ].width
 					naturalheight: images_loaded[ i ].height
 
-			delay 10, => app.window.obj.trigger 'resize'
-
+			delay 100, => app.window.obj.trigger 'resize'
 
 
 	destroy: ( ) ->
-		log "[Homepage] parallax remove"
-		$( '.parallax-mirror' ).remove()
+		p = $( '.parallax-mirror' )
+		p.addClass( 'hide' )
+		delay 300, -> p.remove()
