@@ -4,7 +4,7 @@ module.exports = ( dom ) ->
 
   dom.click -> 
 
-    if not socket.get 'streaming'
+    if not socket.get 'streaming:online'
 
       console.error '- cant start recording if not streaming'
       return

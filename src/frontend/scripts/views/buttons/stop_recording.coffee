@@ -4,7 +4,7 @@ module.exports = ( dom ) ->
 
   dom.click -> 
 
-    if not socket.get 'recording'
+    if not socket.get 'stream:recording'
 
       console.error '- cant stop recording if not recording'
       return

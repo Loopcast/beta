@@ -13,6 +13,9 @@ block content
   .player(data-view="components/player")
     .status
     audio( controls autoplay data-src="http://radio.loopcast.fm:8000/#{profile.id}" )
+      .vu
+        .left
+        .right
 
   if live
     br

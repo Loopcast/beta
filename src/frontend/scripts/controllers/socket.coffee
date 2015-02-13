@@ -2,7 +2,9 @@
 # Socket controller will be used to communicate with desktop app AppCast
 ###
 
-aware = require 'aware'
+aware     = require 'aware'
+# shortcut for vendor scripts
+v       = require 'app/vendors'
 
 # the controller is the model, modern concept of hermaphrodite file
 socket = aware {}
@@ -14,19 +16,29 @@ WebSocket = window.WebSocket || null
 socket.messages = {}
 socket.vu       = {}
 
+
+socket.set 'connected', false
 # connects to AppCast's WebSocket server and listen for messages
 socket.connect = ->
 
   if not WebSocket
     return console.info '+ socket controller wont connect'
 
-  socket.messages = new window.WebSocket 'ws://localhost:51234/loopcast/messages'
+  messages_socket = 'ws://localhost:51234/loopcast/messages'
+  socket.messages = new v.ReconnectingWebsocket messages_socket
 
   socket.messages.onopen = ->
+    console.info '- socket controller connection opened'
+
+    socket.set 'connected', true
+
     socket.messages.send JSON.stringify [ 'get_input_devices' ]
 
   socket.messages.onclose = ->
-    console.error '- socket controller connect closed'
+    console.info '- AppCast isnt OPEN, will retry to connect'
+
+    socket.set 'connected', false
+
 
   # route incoming messages to socket.callbacks hash
   socket.messages.onmessage = ( e ) ->
@@ -51,6 +63,33 @@ socket.connect = ->
     else 
       console.log " + socket controller has no callback for:", method
 
+
+
+  vu_socket = 'ws://localhost:51234/loopcast/vu'
+  socket.vu = new v.ReconnectingWebsocket vu_socket
+
+  socket.vu.onopen = ->
+    console.info '- socket VU connection opened'
+
+    socket.set 'vu:connected', true
+
+  socket.vu.onclose = ->
+    console.info '- socket VU connection closed'
+
+    socket.set 'vu:connected', false
+
+  # route incoming messages to socket.callbacks hash
+  socket.vu.onmessage = ( e ) ->
+
+    reader = new FileReader
+
+    reader.onload = ( e ) ->
+      buffer = new Float32Array e.target.result
+
+      socket.set 'stream:vu', buffer      
+
+    reader.readAsArrayBuffer e.data
+
 socket.start_stream = ( device_name ) ->
 
   mount_point = "hems"
@@ -61,10 +100,12 @@ socket.start_stream = ( device_name ) ->
     mount_point : mount_point
     password    : password
 
+  socket.set "stream:starting", true
   socket.messages.send JSON.stringify [ "start_stream", payload ]
 
 socket.stop_stream = ->
 
+  socket.set "stream:stopping", true
   socket.messages.send JSON.stringify [ "stop_stream" ]
 
 
@@ -83,16 +124,37 @@ socket.callbacks =
     # automaticaly testing stream
     # socket.start_stream "Soundflower (2ch)"
 
-  stream_started : ->
+  stream_started : ( args ) ->
 
-    # save current streaming status
-    socket.set 'streaming', true
+    if args? and args.error?
 
-    console.log "stream_started"
+      console.error "- stream_started error:", args.error
 
-    # reload the audio tag
-    $( 'audio' ).attr( 'src', $( 'audio' ).attr( 'src' ) )
+      socket.set "stream:error", args.error
 
+      return
+
+    # save current stream:online status
+    socket.set 'stream:online', true
+
+    # reset other straming flags
+    socket.set "stream:starting", null
+    socket.set "stream:error"   , null
+
+  stream_stopped: ->
+
+    # save current stream:online status
+    socket.set 'stream:online'  , false
+    socket.set "stream:stopping", null
+
+###
+# Listening to messages
+###
+socket.on 'input_device', ->
+
+  if socket.get 'stream:online'
+    console.error '- input device changed while stream:online'
+    console.error '? what should we do'
 
 # should try to connect only on it's own profile page
 socket.connect()

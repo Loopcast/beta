@@ -1,12 +1,11 @@
 ###
-
-Validates user credentials then send recording message to recording backend
-
+# validates user credentials then
+# create a new room
 ###
 
 module.exports =
   method : 'POST'
-  path   : '/tape/start/{mount_point}'
+  path   : '/room/add'
 
   config:
     auth:
@@ -18,5 +17,5 @@ module.exports =
       if not request.auth.isAuthenticated
 
         return reply error: 'needs_authentication'
-
+      
       reply recording: true

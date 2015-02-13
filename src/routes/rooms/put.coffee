@@ -1,12 +1,12 @@
 ###
 
-Validates user credentials then send recording message to recording backend
+Updates cover image for a given Room
 
 ###
 
 module.exports =
-  method : 'POST'
-  path   : '/tape/start/{mount_point}'
+  method : 'PUT'
+  path   : '/room/{id}/cover'
 
   config:
     auth:
@@ -18,5 +18,5 @@ module.exports =
       if not request.auth.isAuthenticated
 
         return reply error: 'needs_authentication'
-
+      
       reply recording: true
