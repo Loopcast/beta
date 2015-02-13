@@ -34,3 +34,9 @@ html
 				
 
 			include ./shared/login.jade
+
+	
+		script
+			| var loopcast = {}
+			if user
+				| loopcast.user = !{JSON.stringify(user)}

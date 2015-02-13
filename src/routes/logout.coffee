@@ -16,17 +16,15 @@ module.exports =
     handler: ( request, reply ) ->
 
       if request.auth.isAuthenticated
-
         request.auth.session.clear()
         # ∞
-        if request.method is "POST"
+        if request.method is "post"
           reply success: true
         else
           reply.redirect '/'
 
       else
-
-        if request.method is "POST"
+        if request.method is "post"
           reply error: code: 'not_logged'
         else
           reply.redirect '/'
