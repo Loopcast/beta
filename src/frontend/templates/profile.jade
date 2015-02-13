@@ -96,14 +96,14 @@ block content
             span.alert_icon.spritesheet
             span.alert_text 1 hour free storage remaining
 
-          each val in [1, 2, 3]
+          for room in profile.recorded
             .session.outline_box
-              a.image(href="#", title="Winter Jam - Techno and House Music", style="background-image:url(/images/profile_session_1.jpg)")
+              a.image(href="#", title="#{room.title}", style="background-image:url(/images/profile_session_1.jpg)")
                 span.play_icon.spritesheet
               .content
                 h2.session_title 
-                  a(href="#", title="Winter Jam - Techno and House Music") Winter Jam - Techno and House Music
-                a.session_author.underline_link(href="#", title="Thomas Amudsen") Thomas Amudsen
+                  a(href="#", title="#{room.title}") #{room.title}
+                a.session_author.underline_link(href="#", title="#{room.author}") #{room.author}
                 .genres
                   a.tag(href="#") House
                   a.tag(href="#") Tech House
