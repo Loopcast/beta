@@ -1,7 +1,7 @@
 happens = require 'happens'
 
-# create new happens object
-happens( win = {} )
+# create and export a new happens object
+module.exports = happens( win = {} )
 
 # event handling for window resize
 win.obj = $ window
@@ -14,7 +14,4 @@ win.obj.on 'resize', on_resize = ->
 delay 100, on_resize
 
 # global click event
-$( 'html,body' ).on 'click', => @emit "body:clicked"
-
-
-module.exports = win
+$( 'html,body' ).on 'click', -> win.emit "body:clicked"
