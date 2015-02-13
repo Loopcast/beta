@@ -28,7 +28,9 @@ class App
 	start: ->
 
 		@local  = require 'app/controllers/local_connection'
+		@socket = require 'app/controllers/socket'
 		@window = require 'app/controllers/window'
+
 		@body   = $ 'body'
 		
 		@settings = require 'app/utils/settings'
