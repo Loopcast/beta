@@ -60,9 +60,10 @@ block content
 
       .list_sessions
         .session.outline_box
-          .image(style="background-image:url(/images/profile_session_1.jpg)")
+          a.image(href="#", title="Old School House session", style="background-image:url(/images/profile_session_1.jpg)")
           .content
-            h2.session_title Old School House session
+            h2.session_title 
+              a(href="#", title="Old School House session") Old School House session
             a.session_author.underline_link(href="#", title="Thomas Amudsen") Thomas Amudsen
             .genres
               a.tag(href="#") House
@@ -80,49 +81,46 @@ block content
                 span
                 | 2467
 
+            .live 
+              p.label now live
+              p.time 02:33
 
 
-        .session.outline_box
-          .image(style="background-image:url(/images/profile_session_1.jpg)")
-          .content
-            h2.session_title Old School House session
-            a.session_author.underline_link(href="#", title="Thomas Amudsen") Thomas Amudsen
-            .genres
-              a.tag(href="#") House
-              a.tag(href="#") Tech House
-              a.tag(href="#") Techno
-              a.tag(href="#") Electro House
-            .small_info
-              .location 
-                span
-                | London/UK
-              .likes 
-                span
-                | 46
-              .guests 
-                span
-                | 2467
-                
-        .session.outline_box
-          .image(style="background-image:url(/images/profile_session_1.jpg)")
-          .content
-            h2.session_title Old School House session
-            a.session_author.underline_link(href="#", title="Thomas Amudsen") Thomas Amudsen
-            .genres
-              a.tag(href="#") House
-              a.tag(href="#") Tech House
-              a.tag(href="#") Techno
-              a.tag(href="#") Electro House
-            .small_info
-              .location 
-                span
-                | London/UK
-              .likes 
-                span
-                | 46
-              .guests 
-                span
-                | 2467
+        .recorded_sessions
+          .title
+            h2 Recorded session
+            span.session_icon.spritesheet
+            span.session_text 13
+
+            span.alert_icon.spritesheet
+            span.alert_text 1 hour free storage remaining
+
+          each val in [1, 2, 3]
+            .session.outline_box
+              a.image(href="#", title="Winter Jam - Techno and House Music", style="background-image:url(/images/profile_session_1.jpg)")
+                span.play_icon.spritesheet
+              .content
+                h2.session_title 
+                  a(href="#", title="Winter Jam - Techno and House Music") Winter Jam - Techno and House Music
+                a.session_author.underline_link(href="#", title="Thomas Amudsen") Thomas Amudsen
+                .genres
+                  a.tag(href="#") House
+                  a.tag(href="#") Tech House
+                  a.tag(href="#") Techno
+                  a.tag(href="#") Electro House
+                .small_info
+                  .location 
+                    span
+                    | London/UK
+                  .likes 
+                    span
+                    | 46
+                  .guests 
+                    span
+                    | 2467
+
+                a.spritesheet.header_settings_hover(href="#", title="Setting Session") Settings Session
+
 
 
     .player(data-view="components/player")
