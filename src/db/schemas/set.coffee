@@ -15,5 +15,8 @@ schema = new Schema
     plays    : Number
     is_live  : Boolean
 
+  data:
+    created_at: Date
+
 
 module.exports = mongoose.model 'Set', schema

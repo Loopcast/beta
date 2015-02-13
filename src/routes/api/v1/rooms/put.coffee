@@ -1,11 +1,12 @@
 ###
-# validates user credentials then
-# create a new room
+
+Updates cover image for a given Room
+
 ###
 
 module.exports =
-  method : 'POST'
-  path   : '/room/add'
+  method : 'PUT'
+  path   : '/api/v1/room/{id}/cover'
 
   config:
     auth:
