@@ -11,7 +11,8 @@ block content
       li #{genre}
 
   .player(data-view="components/player")
-    audio( controls autoplay src="http://radio.loopcast.fm:8000/#{profile.id}" )
+    .status
+    audio( controls autoplay data-src="http://radio.loopcast.fm:8000/#{profile.id}" )
 
   if live
     br
@@ -43,13 +44,13 @@ block content
         option(value="test")
 
     .streaming
-      button.start_streaming
+      button.start_streaming(data-view="buttons/start_stream")
         | start_streaming
-      button.stop_streaming
+      button.stop_streaming(data-view="buttons/stop_stream")
         | stop_streaming
 
     .recording
-      button.start_recording
+      button.start_recording(data-view="buttons/start_recording")
         | start_recording
-      button.stop_recording
+      button.stop_recording(data-view="buttons/stop_recording")
         | stop_recording

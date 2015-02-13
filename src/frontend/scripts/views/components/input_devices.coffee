@@ -5,16 +5,12 @@ module.exports = ( dom ) ->
 
   happens @
 
-  console.log 'input devices dom ->', dom
+  dom.on 'change', ->
+
+    console.log 'setting socket input device ->', dom.val()
+    socket.set 'input_device', dom.val()
 
   socket.on 'input_devices', ( devices ) ->
 
-    console.info 'device changed'
-
     for device in devices
-      console.log 'device ->', device
-
       dom.append "<option value='#{device}'>#{device}</option>"
-
-    console.log "- dom got devices!", devices
-      

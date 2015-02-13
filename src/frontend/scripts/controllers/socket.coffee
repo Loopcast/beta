@@ -14,6 +14,7 @@ WebSocket = window.WebSocket || null
 socket.messages = {}
 socket.vu       = {}
 
+# connects to AppCast's WebSocket server and listen for messages
 socket.connect = ->
 
   if not WebSocket
@@ -62,6 +63,15 @@ socket.start_stream = ( device_name ) ->
 
   socket.messages.send JSON.stringify [ "start_stream", payload ]
 
+socket.stop_stream = ->
+
+  socket.messages.send JSON.stringify [ "stop_stream" ]
+
+
+###
+# callbacks are called by "messages" coming from the WebsocketServer created
+# by the desktop application AppCast
+###
 socket.callbacks =
   input_devices  : ( args ) ->
 
