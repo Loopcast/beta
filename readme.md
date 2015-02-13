@@ -1,5 +1,6 @@
 # ~ beta.loopcast.fm
 
+[ ![Codeship Status for Loopcast/beta](https://codeship.com/projects/0663b7f0-9522-0132-d4fc-466960a0e7d2/status?branch=development)](https://codeship.com/projects/62741)
 
 ### requirements
 
@@ -35,5 +36,11 @@ They are on the frontend folder just for convenience while developing the templa
 ### building frontend for release
 
 ````
-make client-release
+make release
+````
+
+### publishing to [http://development.loopcast.fm](http://development.loopcast.fm)
+
+````
+git push origin development
 ````

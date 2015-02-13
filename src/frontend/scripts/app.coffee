@@ -1,13 +1,15 @@
 require './globals'
 require './vendors'
+require '../vendors/parallax.min.js'
 
-views      = require './controllers/views'
-navigation = require './controllers/navigation'
+views           = require './controllers/views'
+navigation      = require './controllers/navigation'
+user_controller = require './controllers/user'
 # motion   = require 'app/controllers/motion'
 
 class App
 
-	# link to controller/local_connection
+	# link to window
 	window: null
 
 	# link to utils/settings
@@ -24,10 +26,12 @@ class App
 		@on 'ready', @after_render
 
 	start: ->
-
+		
 		@local  = require 'app/controllers/local_connection'
 		@window = require 'app/controllers/window'
+
 		@body   = $ 'body'
+
 		
 		@settings = require 'app/utils/settings'
 		@settings.bind @body
@@ -42,24 +46,24 @@ class App
 			log "--------- BEFORE DESTROY"
 			views.unbind '#content'
 
-
 		navigation.on 'after_render', => 
 			views.bind       '#content'
 			navigation.bind '#content'
-			
-				
-	login : ( user ) ->
-		log "[logged]"
-		console.dir user
+			do user_controller.check_user
 
-	logout: ->
-		log "[logged out]", user
+			
+	
+	# User Proxies
+	login : ( user ) -> user_controller.login user
+
+	logout: -> log "[logged out]", user
 
 
 	###
 	# After the views have been rendered
 	###
 	after_render: ( ) =>
+		log "after_render"
 		# Hide the loading
 		delay 10, => @body.addClass "loaded"
 

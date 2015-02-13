@@ -6,6 +6,8 @@
 
 window.delay = require './globals/delay'
 
+window.interval  = require './globals/interval'
+
 window.log   = require './globals/log'
 
 window.mover = require './globals/mover'

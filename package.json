@@ -5,6 +5,7 @@
   "main": "src/app.coffee",
   "dependencies": {
     "autoprefixer-stylus": "^0.5.0",
+    "aware": "^0.3.0",
     "bell": "^2.1.0",
     "cloudinary": "^1.1.1",
     "coffee-script": "^1.9.0",
@@ -15,6 +16,7 @@
     "hapi-auth-cookie": "^2.0.0",
     "happens": "^0.5.0",
     "jade": "^1.9.1",
+    "moment": "^2.9.0",
     "mongoose": "^3.8.22",
     "newrelic": "^1.16.1",
     "polvo-cs": "^0.1.1",

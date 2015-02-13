@@ -6,7 +6,7 @@ ways.use require 'ways-browser'
 class Navigation
 
 	instance = null
-	
+	first_loading: on
 
 	constructor: ->
 
@@ -28,9 +28,17 @@ class Navigation
 		ways '*', @url_changed
 
 
-		delay 200, => @emit 'after_render'
+		# For the first screen, emit the event after_render.
+		# if, in the meantime, the navigation goes to another url
+		# we won't emit this first event.
+		delay 200, =>
+			if @first_loading then @emit 'after_render'
+
 
 	url_changed: ( req ) =>
+
+
+		log "url_changed", req.url
 
 		# ie hack for hash urls
 		req.url = req.url.replace( "/#", '' )
@@ -66,16 +74,18 @@ class Navigation
 
 				# populate with the loaded content
 				@content_div.append new_content
-
-				@emit 'after_render'
+				delay 10, =>
+					log "[Navigation] after_render", req.url
+					@emit 'after_render'
 
 	##
 	# Navigates to a given URL using Html 5 history API
 	##
 	go: ( url ) ->
 
+		@first_loading = off
 		# don't hijack login actions
-		if req.url.indexOf '/login' is 0 then return true
+		# if req.url.indexOf '/login' is 0 then return true
 
 		ways.go url
 

@@ -1,5 +1,5 @@
 Opacity = 
-	show: (el, time = 300) ->
+	show: (el, time = 500) ->
 		# log "[Opacity] show"
 		el.fadeIn time
 		# t = Opacity.get_time( time )
@@ -10,7 +10,7 @@ Opacity =
 		# delay 1, ->
 		# 	el.css 'opacity', 1
 
-	hide: ( el, time = 300 ) ->
+	hide: ( el, time = 500 ) ->
 		# log "[Opacity] hide"
 		el.fadeOut time
 

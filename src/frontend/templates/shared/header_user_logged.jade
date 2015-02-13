@@ -1,10 +1,10 @@
 .thumb_wrapper(data-view="components/click_trigger" data-target=".user_dropdown")
-	img(width="42", src="#{thumb}")
+	img(width="42", src="#{avatar}")
 	span.spritesheet.small_arrow_white
 
 	ul.user_dropdown.hover_dropdown
 		li
-			a(href="#" title="My Profile") My Profile
+			a(href="/#{username}" title="My Profile") My Profile
 		li
 			a(href="#" title="Feedback") Feedback
 		li
@@ -12,5 +12,5 @@
 
 
 
-a(href="javascript:;" title="Messages")
+a(href="#", title="Messages")
 	span.spritesheet.messages_icon

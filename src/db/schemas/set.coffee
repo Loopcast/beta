@@ -2,7 +2,9 @@ mongoose = require( 'mongoose')
 Schema   = mongoose.Schema
 
 schema = new Schema
+  # foreign key 
   user_id: Schema.Types.ObjectId
+
   info   :
     url      : String # icecast url ?
     id       : String # unique id? ie: last-saturday-session
@@ -12,6 +14,9 @@ schema = new Schema
     loves    : Number
     plays    : Number
     is_live  : Boolean
+
+  data:
+    created_at: Date
 
 
 module.exports = mongoose.model 'Set', schema

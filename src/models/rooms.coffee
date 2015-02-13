@@ -1,3 +1,8 @@
+###
+# Returns an array of Rooms ready to be rendered by
+# rooms.jade template
+###
+
 module.exports = ( callback ) ->
 
 

@@ -11,18 +11,28 @@ profile  = lib 'render/profile'
 module.exports =
   method: 'GET'
   path  : '/{page*}'
-  handler: ( request, reply )->
 
-    url = request.url.href
+  config:
 
-    render = ( response ) -> reply response
+    auth:
+      strategy: 'session'
+      mode    : 'try'
 
-    template url, null, ( error, response ) ->
+    handler: ( request, reply )->
 
-      if not error then return render response
+      url = request.url.href
 
-      profile url, ( error, response ) ->
+      render = ( response ) -> reply response
+
+      # always inject user data into requests
+      data = request.auth.credentials || {}
+
+      template url, data, ( error, response ) ->
 
         if not error then return render response
 
-        return reply( "Page not found" ).code 404
+        profile url, data, ( error, response ) ->
+
+          if not error then return render response
+
+          return reply( "Page not found" ).code 404
