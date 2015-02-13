@@ -26,10 +26,13 @@ class App
 		@on 'ready', @after_render
 
 	start: ->
+		
+		@local  = require 'app/controllers/local_connection'
+		@socket = require 'app/controllers/socket'
+		@window = require 'app/controllers/window'
 
-		@local   = require 'app/controllers/local_connection'
-		@window  = require 'app/controllers/window'
-		@body    = $ 'body'
+		@body   = $ 'body'
+
 		
 		@settings = require 'app/utils/settings'
 		@settings.bind @body

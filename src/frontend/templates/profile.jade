@@ -9,7 +9,9 @@ block content
   ul
     for genre in profile.genres
       li #{genre}
-  audio( controls autoplay src="http://radio.loopcast.fm:8000/#{profile.id}" )
+
+  .player(data-view="components/player")
+    audio( controls autoplay src="http://radio.loopcast.fm:8000/#{profile.id}" )
 
   if live
     br
@@ -31,3 +33,23 @@ block content
           | title : #{room.title}
           | author: #{room.author}
           | ---
+
+  //- only appears if it's own user profile, like
+  //- when user.id == profile.id
+  .controls
+
+    .devices
+      select(id="input_devices" data-view="components/input_devices")
+        option(value="test")
+
+    .streaming
+      button.start_streaming
+        | start_streaming
+      button.stop_streaming
+        | stop_streaming
+
+    .recording
+      button.start_recording
+        | start_recording
+      button.stop_recording
+        | stop_recording
