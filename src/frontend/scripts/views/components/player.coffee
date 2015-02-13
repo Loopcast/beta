@@ -1,4 +1,4 @@
-socket  = require 'app/controllers/socket'
+appcast  = require 'app/controllers/appcast'
 
 module.exports = ( dom ) ->
 
@@ -12,19 +12,19 @@ module.exports = ( dom ) ->
   # hide items when initializing
   audio.hide()
 
-  socket.on 'connected', ( status ) ->
+  appcast.on 'connected', ( status ) ->
 
     if status
       dom.find( '.status' ).html '... waiting stream to start ...'
     else
       dom.find( '.status' ).html '... waiting AppCast to start ...'
 
-  socket.on "stream:error", ( error ) ->
+  appcast.on "stream:error", ( error ) ->
     if not error then return
 
     dom.find( '.status' ).html "... #{error} ..."
 
-  # temporary solution while we don't have sockets to the webserver
+  # temporary solution while we don't have appcasts to the webserver
   # check stream status and retries 100ms after response
   check_stream = ->
 
@@ -55,7 +55,7 @@ module.exports = ( dom ) ->
     audio.hide()
 
   # temporary hack to start audio only after stream starts
-  socket.on 'stream:online', ( status ) ->
+  appcast.on 'stream:online', ( status ) ->
 
     if status
       start_audio()
@@ -64,7 +64,7 @@ module.exports = ( dom ) ->
 
   # console.warn "listening for vu"
   # temporary hack to start audio only after stream starts
-  socket.on 'stream:vu', ( meter ) ->
+  appcast.on 'stream:vu', ( meter ) ->
 
     vu.find( '.meter_left' ).width meter[0] * 1000
     vu.find( '.meter_right' ).width meter[1] * 1000

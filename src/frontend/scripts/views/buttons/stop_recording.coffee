@@ -1,15 +1,15 @@
-socket = require 'app/controllers/socket'
+appcast = require 'app/controllers/appcast'
 
 module.exports = ( dom ) ->
 
   dom.click -> 
 
-    if not socket.get 'stream:recording'
+    if not appcast.get 'stream:recording'
 
       console.error '- cant stop recording if not recording'
       return
 
-    console.log '+ stopping to record with ', socket.get 'input_device'
+    console.log '+ stopping to record with ', appcast.get 'input_device'
     
     # post to backend in order to start recording set
 

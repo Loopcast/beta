@@ -1,4 +1,4 @@
-socket  = require 'app/controllers/socket'
+appcast  = require 'app/controllers/appcast'
 happens = require 'happens'
 
 module.exports = ( dom ) ->
@@ -7,9 +7,9 @@ module.exports = ( dom ) ->
 
   dom.on 'change', ->
 
-    socket.set 'input_device', dom.val()
+    appcast.set 'input_device', dom.val()
 
-  socket.on 'input_devices', ( devices ) ->
+  appcast.on 'input_devices', ( devices ) ->
 
     # clear options
     # TODO: keep the choosen option selected

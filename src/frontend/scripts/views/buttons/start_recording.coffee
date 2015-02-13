@@ -1,22 +1,22 @@
-socket = require 'app/controllers/socket'
+appcast = require 'app/controllers/appcast'
 
 module.exports = ( dom ) ->
 
   dom.click -> 
 
-    if not socket.get 'streaming:online'
+    if not appcast.get 'streaming:online'
 
       console.error '- cant start recording if not streaming'
       return
 
-    console.log '+ start recording', socket.get 'input_device'
+    console.log '+ start recording', appcast.get 'input_device'
     
     # post to backend in order to start recording set
 
     url  = "/tape/start/recording"
     done = ->
       console.info '+ recording post done ->', arguments
-      socket.set 'recording', true
+      appcast.set 'recording', true
 
     fail = ->
       console.error '- failing trying to start recording ->', arguments
