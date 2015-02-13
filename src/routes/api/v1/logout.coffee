@@ -5,8 +5,8 @@ Logs user out
 ###
 
 module.exports =
-  method : [ 'GET' ]
-  path   : '/logout'
+  method : [ 'POST' ]
+  path   : '/api/v1/logout'
   config:
 
     auth:
@@ -18,5 +18,7 @@ module.exports =
       if request.auth.isAuthenticated
         request.auth.session.clear()
         # ∞
+        reply success: true
 
-      reply.redirect '/'
+      else
+         reply error: code: 'not_logged'

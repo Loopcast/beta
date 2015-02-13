@@ -19,6 +19,7 @@ schema = new Schema
     visitors : Number
   
   data:
+    created_at: Date
     email:
 
     facebook: fb_info # facebook information

@@ -3,11 +3,11 @@ happens = require 'happens'
 module.exports = happens
 	logout: ( callback ) ->
 		
-		return unless @is_logged()
+		if not @is_logged() then return callback error: code: 'node_logged'
 
 		log "[User] trying to logout..."
 
-		$.post '/logout', {}, (data) =>
+		$.post '/api/v1/logout', {}, (data) =>
 			log "[User] logout ~ success", data
 
 			@emit 'user:unlogged'

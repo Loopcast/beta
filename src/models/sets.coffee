@@ -1,3 +1,8 @@
+###
+# Returns an array of Sets ready to be rendered by
+# sets.jade template
+###
+
 module.exports = ( callback ) ->
 
 
