@@ -1,55 +1,80 @@
 extends layout
 
 block content
-  h1 #{profile.name}
+  .profile.centered(data-menu="profile")
+    .cover
+      .cover_image(style="background-image:url(/images/homepage_2.jpg)")
+      .content
+        h1.name.black_background #{profile.name}
+        br
+        h3.type.black_background DJ/Producer
+        br
+        ul.genres.black_background
+          for genre, i in profile.genres
+            if i < profile.genres.length - 1
+              li #{genre},
+            else
+              li #{genre}
+        .profile_image
+          img(src="/images/profile_big.png")
 
-  br
-  br
-    
-  ul
-    for genre in profile.genres
-      li #{genre}
+        .sidebar_right
+          .big_number
+            span.number 2
+            span.text Followers
 
-  .player(data-view="components/player")
-    audio( controls autoplay src="http://radio.loopcast.fm:8000/#{profile.id}" )
+          .big_number
+            span.number 0
+            span.text Rooms
 
-  if live
+          .big_number
+            span.number 2
+            span.text 
+              | Total 
+              br
+              | visitors
+
+
+    .player(data-view="components/player")
+      audio( controls autoplay src="http://radio.loopcast.fm:8000/#{profile.id}" )
+
+    if live
+      br
+      br
+      
+      h4 live
+
+      h3 #{live.name}
+
     br
     br
-    
-    h4 live
+      
+    h4 recorded
 
-    h3 #{live.name}
+    ul
+      for room in profile.recorded
+        li 
+          pre
+            | title : #{room.title}
+            | author: #{room.author}
+            | ---
 
-  br
-  br
-    
-  h4 recorded
+    //- only appears if it's own user profile, like
+    //- when user.id == profile.id
+    .controls
 
-  ul
-    for room in profile.recorded
-      li 
-        pre
-          | title : #{room.title}
-          | author: #{room.author}
-          | ---
+      .devices
+        select(id="input_devices" data-view="components/input_devices")
+          option(value="test")
 
-  //- only appears if it's own user profile, like
-  //- when user.id == profile.id
-  .controls
+      .streaming
+        button.start_streaming
+          | start_streaming
+        button.stop_streaming
+          | stop_streaming
 
-    .devices
-      select(id="input_devices" data-view="components/input_devices")
-        option(value="test")
-
-    .streaming
-      button.start_streaming
-        | start_streaming
-      button.stop_streaming
-        | stop_streaming
-
-    .recording
-      button.start_recording
-        | start_recording
-      button.stop_recording
-        | stop_recording
+      .recording
+        button.start_recording
+          | start_recording
+        button.stop_recording
+          | stop_recording
