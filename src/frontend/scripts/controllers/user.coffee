@@ -1,6 +1,6 @@
 happens = require 'happens'
 
-class User
+user = happens
 	logout: ( callback ) ->
 		@emit 'user:logged_out'
 		do callback
@@ -13,9 +13,5 @@ class User
 
 		app.body.addClass "logged"
 		@emit 'user:logged', user
-
-
-user = new User
-happens user
 
 module.exports = window.user_controller = user

@@ -1,43 +1,36 @@
-# utils / helpers
-window.delay  		= require './utils/delay'
-window.log  		= require './utils/log'
-Window 				= require './utils/window'
-require '../vendors/modernizr.custom.js'
-require './utils/mover'
+require './globals'
+require './vendors'
 
-# events
-
-happens         	= require 'happens'
-
-# controllers
-views         		= require './controllers/views'
-navigation        	= require './controllers/navigation'
-# motion        		= require 'app/controllers/motion'
+views      = require './controllers/views'
+navigation = require './controllers/navigation'
+# motion   = require 'app/controllers/motion'
 
 class App
 
-	win:
-		obj: null
-		w  : 0
-		h  : 0
+	# link to controller/local_connection
+	window: null
 
+	# link to utils/settings
+	settings: null
+
+	# link to controller/local_connection
+	local: null
 
 	constructor: -> 	
 
 		happens @
 
+		# are we using this?
 		@on 'ready', @after_render
 
 	start: ->
 
-		@body = $ 'body'
+		@local  = require 'app/controllers/local_connection'
+		@window = require 'app/controllers/window'
+		@body   = $ 'body'
 		
 		@settings = require 'app/utils/settings'
 		@settings.bind @body
-
-		# Resize management
-		@window = new Window
-
 
 		# Controllers binding
 		do views.bind
@@ -67,9 +60,7 @@ class App
 	###
 	after_render: ( ) =>
 		# Hide the loading
-		delay 10, => 
-			@body.addClass "loaded"
-
+		delay 10, => @body.addClass "loaded"
 
 		
 app = new App

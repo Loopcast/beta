@@ -1,4 +1,4 @@
-class Mover
+module.exports = 
 	scroll_to : (el, with_topbar = false, speed = 300) ->
 
 		y = el.position().top
@@ -14,7 +14,3 @@ class Mover
 		log "[mover] scroll_to_y", y
 		
 		$( 'html, body' ).animate scrollTop: y, speed
-
-mover = new Mover
-
-module.exports = window.mover = mover
