@@ -6,7 +6,6 @@ schema = new Schema
   user_id: Schema.Types.ObjectId
 
   info   :
-    url      : String # icecast url ?
     id       : String # unique id fo the room? ie: title.safe() ?
     title    : String
     genres   : Array

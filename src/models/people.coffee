@@ -1,3 +1,8 @@
+###
+# Returns an array of People ready to be rendered by
+# people.jade template
+###
+
 module.exports = ( callback ) ->
 
 
