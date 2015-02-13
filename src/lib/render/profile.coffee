@@ -1,15 +1,18 @@
 load     = models 'profile'
 template = lib 'render/template'
 
-module.exports = ( url, callback ) ->
+module.exports = ( url, data, callback ) ->
 
     if url.substr( 0, 1 ) is '/' then url = url.substr 1
 
     console.log "loading profile id ->", url
 
-    load url, ( error, data ) ->
+    load url, ( error, profile ) ->
 
       if error then return reply error
+
+      # appends profile information to data object
+      data.profile = profile
 
       template '/profile', data, ( error, response ) ->
 
