@@ -36,5 +36,11 @@ They are on the frontend folder just for convenience while developing the templa
 ### building frontend for release
 
 ````
-make client-release
+make release
+````
+
+### publishing to [http://development.loopcast.fm](http://development.loopcast.fm)
+
+````
+git push origin development
 ````
