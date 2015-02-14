@@ -1,8 +1,13 @@
 @import '../_shared/_bootstrap.styl'
+
 .profile
 	background: white
-	position: relative
+	position  : relative
+	
+	// maybe player should be a global thing right?
 	.player
+		display: none
+		
 		.vu
 			.meter_left, .meter_right
 				height       : 5px
@@ -11,6 +16,12 @@
 				
 				background: #6A0
 				display: block
+				
+	.controls
+		display: none
+		
+		width 100%
+		background #222
 	
 	h2
 		font-size: 1.3em

@@ -1,5 +1,7 @@
 happens = require 'happens'
 
+user_model = require 'app/models/user'
+
 module.exports = happens
 	logout: ( callback = -> ) ->
 		
@@ -20,9 +22,16 @@ module.exports = happens
 			callback?()
 	
 	login: ( user ) ->
+
+		# copy user properties into user model
+		for property of user
+			user_model.set property, user[property]
+
 		# Register the user as a global variable
 		loopcast.user = user
+
 		app.body.addClass "logged"
+
 		@emit 'user:logged', loopcast.user
 
 		log "[User Controller] login", loopcast.user

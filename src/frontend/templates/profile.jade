@@ -33,6 +33,27 @@ block content
               | Total 
               br
               | visitors
+
+    //- TODO: should always be in the doom, but just show
+    //- if it own user profile
+    .controls(data-view="components/stream_controls")
+
+      .devices
+        select(id="input_devices" data-view="components/input_devices")
+          option(value="test")
+
+      .streaming
+        button.start_streaming(data-view="buttons/start_stream")
+          | start_streaming
+        button.stop_streaming(data-view="buttons/stop_stream")
+          | stop_streaming
+
+      .recording
+        button.start_recording(data-view="buttons/start_recording")
+          | start_recording
+        button.stop_recording(data-view="buttons/stop_recording")
+          | stop_recording
+
     .profile_content
       .profile_left
         .profile_bio.outline_box
@@ -130,44 +151,3 @@ block content
       .vu
         .meter_left
         .meter_right
-
-    //- only appears if it's own user profile, like
-    //- when user.id == profile.id
-    .controls
-
-      .devices
-        select(id="input_devices" data-view="components/input_devices")
-          option(value="test")
-
-      .streaming
-        button.start_streaming(data-view="buttons/start_stream")
-          | start_streaming
-        button.stop_streaming(data-view="buttons/stop_stream")
-          | stop_streaming
-
-      .recording
-        button.start_recording(data-view="buttons/start_recording")
-          | start_recording
-        button.stop_recording(data-view="buttons/stop_recording")
-          | stop_recording
-
-    if live
-      br
-      br
-      
-      h4 live
-
-      h3 #{live.name}
-
-    br
-    br
-      
-    h4 recorded
-
-    ul
-      for room in profile.recorded
-        li 
-          pre
-            | title : #{room.title}
-            | author: #{room.author}
-            | ---
