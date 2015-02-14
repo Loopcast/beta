@@ -11,7 +11,13 @@
 				
 				background: #6A0
 				display: block
-				
+	
+	h2
+		font-size: 1.3em
+		line-height: 1em
+		margin-bottom: 5px
+
+
 	.cover
 		height: 350px
 		position: relative
@@ -66,6 +72,7 @@
 		text-align: center
 		color: #B5B5B5
 		padding: 30px 15px
+		transition: background .5s linear, color .5s linear
 	.big_number
 		margin-bottom: 20px
 		span
@@ -73,20 +80,23 @@
 			
 			&.number
 				font-size: 2.4em
-				line-height: 1.1em;
+				line-height: 1.1em
 				
 			&.text
 				font-size: .9em
-				line-height: 1em;
+				line-height: 1em
 				
 	.profile_content
 		padding: 40px 50px
-		display: flex;
+		display: flex
 		text-align: left
-		.profile_bio
+		.profile_left
 			position: relative
 			width: 290px
 			margin-right: 50px
+		.profile_bio
+			width: 100%
+			position: relative
 			padding: 13px 26px
 			
 			.outline_icon
@@ -107,45 +117,39 @@
 				margin-right: 20px
 			
 		.list_sessions
-			flex: 1;
+			flex: 1
 		
 		.session
 			height: 100px
 			width: 100%
 			margin-bottom: 40px
-			display: flex;
+			display: flex
 			height: 170px
 			.image
 				width: 200px
 				background-size: cover
 				background-position: 50% 50%
+				position: relative
+				.play_icon
+					absolute left 50% top 50%
+					transform: translateX(-50%) translateY(-50%)
 			.content
 				flex: 1
 				padding: 16px 20px
+				position: relative
 			
 			h2
-				font-size: 1.3em
-				line-height: 1em
-				margin-bottom: 5px
+				padding-right: 20px
 				
 			.session_author
 				color: BLUE
 				font-size: .9em
 				margin-bottom: 10px
 				display: block
+				
 			
 			.genres
 				margin-bottom: 15px
-			.tag
-				display: inline-block
-				color: white
-				background: #C1C7C6
-				border-radius: 2px
-				padding: 3px
-				margin-right: 6px
-				text-transform: uppercase
-				font-size: .8em
-				line-height: 0.9em
 				
 			.small_info
 				color: GRAY_2
@@ -159,6 +163,105 @@
 						width: 10px
 						height: 10px
 						margin-right: 5px
+			.live
+				position: absolute
+				bottom: 10px
+				right: 10px
+				width: 100%
+				text-align: right
+				font-weight: 700
+				line-height: 0.8em
+				font-size: 0.7em
+				.time, .label
+					display: inline-block
+					
+				.time
+					color: RED
+					margin-left: 10px
+					text-transform: uppercase
+					font-size: 1.4em
+					
+				.label
+					
+					background: RED
+					border-bottom-right-radius: 4px
+					padding: 7px 20px
+					padding-right: 30px
+					text-transform: uppercase
+					color: #fff
+					position: relative
+					
+					text-align: left
+					&:after
+						content: ""
+						background: white
+						width: 8px
+						height: 8px
+						border-radius: 5px
+						position: absolute
+						top: 50%
+						transform: translateY(-50%)
+						left: 7px
+						
+			.header_settings_hover
+				position: absolute
+				top: 10px
+				right: 10px
+	
+
+	.recorded_sessions
+		.title 
+			margin-bottom: 30px
+			*
+				display: inline-block
+				vertical-align: top
+			h2
+				margin-right: 30px
+				
+			.session_icon
+				position: relative
+				top: 3px
+				margin-right: 5px
+				
+			.session_text
+				margin-right: 15px
+				padding-top: 1px
+				
+			.alert_icon
+				position: relative
+				top: 3px
+				margin-right: 5px
+			
+			.alert_text
+				font-size: 0.7em
+				color: RED
+				font-weight: 800
+				padding-top: 4px
+				
+						
+
+.tag
+	display: inline-block
+	color: white
+	background: #C1C7C6
+	border-radius: 2px
+	padding: 3px
+	margin-right: 6px
+	text-transform: uppercase
+	font-size: .8em
+	line-height: 0.9em
+	
+.no_touch_device
+	.tag:hover
+		background: darken( #C1C7C6, 10 )
+		
+	.profile 
+		.header_settings_hover:hover
+			opacity: 0.8
+			
+		.sidebar_right:hover
+			background: rgba(0,0,0,0.7)
+			color: lighten( #B5B5B5	, 20 )
 		
 				
 
