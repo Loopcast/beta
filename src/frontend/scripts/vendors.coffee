@@ -9,4 +9,10 @@ vendors =
   # documntation: https://github.com/joewalnes/reconnecting-websocket
   ReconnectingWebsocket: require '../vendors/reconnecting-websocket.js'
 
+  # Documentation: http://cloudinary.com/documentation/jquery_integration
+  JqueryUiWidget       : require '../vendors/jquery.ui.widget.js'
+  IframeTransport      : require '../vendors/jquery.iframe-transport.js'
+  FileUpload           : require '../vendors/jquery.fileupload.js'
+  Cloudinary           : require '../vendors/jquery.cloudinary.js'
+
 module.exports = vendors
