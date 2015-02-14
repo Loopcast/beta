@@ -2,9 +2,11 @@ require './globals'
 require './vendors'
 require '../vendors/parallax.min.js'
 
+
 views           = require './controllers/views'
 navigation      = require './controllers/navigation'
 user_controller = require './controllers/user'
+cloudinary      = require './controllers/cloudinary'
 # motion   = require 'app/controllers/motion'
 
 class App

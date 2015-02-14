@@ -1,3 +1,5 @@
+Cloudinary = require 'app/controllers/cloudinary'
+
 module.exports = class Profile 
 	elements: null
 	form_bio: null
@@ -15,6 +17,12 @@ module.exports = class Profile
 		]
 
 	constructor: ( @dom ) ->
+
+		Cloudinary.init @dom.find( '.cloudinary_form' )
+
+		Cloudinary.on 'uploaded', ( data ) ->
+			$( '.label_debug_url' ).attr 'src', data.result.url
+			log "[Cloudinary] event captured", data.result
 
 		@elements = 
 			profile_picture: @dom.find( '.profile_image img' )

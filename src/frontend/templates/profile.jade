@@ -49,6 +49,13 @@ block content
           a.button_with_icon.black_button.element_on_write_mode(href="#", data-profile="set-write-mode")
             span.spritesheet.camera_icon
             span Change Cover
+          form.element_on_write_mode(class="cloudinary_form")
+            input.api_key(type="hidden", name="api_key", value="#{cloudinary.api_key}")
+            input.cloud_name(type="hidden", name="cloud_name", value="#{cloudinary.cloud_name}")
+            input.unsigned_id(type="hidden", name="unsigned_id", value="#{cloudinary.unsigned_id}")
+          img.element_on_write_mode.label_debug_url(width="100", src="")
+
+        .preview
 
     //- TODO: should always be in the doom, but just show
     //- if it own user profile
