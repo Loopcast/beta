@@ -4,6 +4,7 @@ user_controller = require 'app/controllers/user'
 module.exports = class Header
 
 	current_page: ""
+	user_logged: false
 
 	constructor: ( @dom ) ->
 		user_controller.on 'user:logged', @on_user_logged
@@ -29,6 +30,8 @@ module.exports = class Header
 
 	on_user_logged: ( data ) =>
 
+		return if @user_logged
+		@user_logged = true
 		
 		wrapper = @dom.find( '.user_logged' )
 		tmpl    = require 'templates/shared/header_user_logged'
@@ -45,4 +48,6 @@ module.exports = class Header
 
 
 	on_user_unlogged: ( data ) =>
+		return if not @user_logged
+		@user_logged = false
 		log "[Header] on_user_unlogged", data

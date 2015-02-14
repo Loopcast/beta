@@ -55,6 +55,8 @@ class App
 	
 	# User Proxies
 	login : ( user ) -> 
+		log "--------> login called from outside"
+		navigation.go "/#{user.username}"
 		user_controller.login user
 
 	logout: -> 
