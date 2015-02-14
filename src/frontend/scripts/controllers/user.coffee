@@ -1,7 +1,7 @@
 happens = require 'happens'
 
 module.exports = happens
-	logout: ( callback ) ->
+	logout: ( callback = -> ) ->
 		
 		if not @is_logged() then return callback error: code: 'node_logged'
 
