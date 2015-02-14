@@ -1,11 +1,11 @@
-user = require 'app/controllers/user'
+user_controller = require 'app/controllers/user'
 
 # TODO: animation for controls in and out
 
 module.exports = ( dom ) ->
 
   # waits model get user name
-  user.on 'user:logged', ( user ) ->
+  user_controller.on 'user:logged', ( user ) ->
 
     console.log 'user logged ->', user.username
 
@@ -13,5 +13,5 @@ module.exports = ( dom ) ->
       $( '.controls' ).show()
 
 
-  user.on 'user:unlogged', ->
+  user_controller.on 'user:unlogged', ->
     $( '.controls' ).hide()
