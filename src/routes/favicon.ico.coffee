@@ -3,7 +3,7 @@ module.exports =
   method : 'GET'
   path   : '/favicon.ico'
 
-  handler: file: www '/images/favicon.ico'
+  handler: file: www '/favicon.ico'
 
   config: 
     cache:
