@@ -2,6 +2,11 @@ require 'happens'
 
 Cloudinary = happens {}
 
+###
+Unsigned upload to Cloudinary
+http://cloudinary.com/blog/direct_upload_made_easy_from_browser_or_mobile_app_to_the_cloud
+###
+
 Cloudinary.init = (form) ->
 	api_key     = form.find( '.api_key' ).val()
 	cloud_name  = form.find( '.cloud_name' ).val()
