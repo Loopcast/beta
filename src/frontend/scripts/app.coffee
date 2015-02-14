@@ -54,9 +54,13 @@ class App
 			
 	
 	# User Proxies
-	login : ( user ) -> user_controller.login user
+	login : ( user ) -> 
+		user_controller.login user
 
-	logout: -> log "[logged out]", user
+	logout: -> 
+		log "[logged out]", user
+		
+		user_controller.logout()
 
 
 	###
