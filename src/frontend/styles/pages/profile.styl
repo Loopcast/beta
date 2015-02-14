@@ -66,7 +66,7 @@
 		.type, .genres
 			font-size: 1em
 			font-weight: 600
-			color: #B5B5B5
+			color: GRAY_1
 			line-height: 0.9em
 			
 		.genres li
@@ -76,17 +76,33 @@
 		.profile_image
 			absolute bottom 0 left 50px
 			width: 150px
+			overflow: hidden
 			img
 				box-shadow: 1px 1px 66px 3px #000
 				display: block
 				width: 100%
+			.edit_image
+				absolute left 0 bottom 0
+				background: rgba(0,0,0,.8)
+				padding: 10px
+				padding-left: 50px
+				width: 100%
+				color: GRAY_1
+				font-size: .8em
+				line-height: .9em
+				font-weight: 600
+				transition: transform .3s ease-out
+				transform: translateY(100%)
+				.spritesheet
+					absolute left 15px top 50%
+					transform: translateY(-50%)
 				
 	.sidebar_right
 		background: rgba(0,0,0,0.9)
 		absolute top 0 right 0
 		height: 100%
 		text-align: center
-		color: #B5B5B5
+		color: GRAY_1
 		padding: 30px 15px
 		transition: background .5s linear, color .5s linear
 	.big_number
@@ -297,6 +313,9 @@
 		
 	.element_on_write_mode
 		display: block
+		
+	.profile .cover .profile_image .edit_image
+		transform: translateY(0)
 // --------------------------
 
 
@@ -311,7 +330,7 @@
 			
 		.sidebar_right:hover
 			background: rgba(0,0,0,0.7)
-			color: lighten( #B5B5B5	, 20 )
+			color: lighten( GRAY_1	, 20 )
 			
 		.cover_button:hover
 			background: #fff

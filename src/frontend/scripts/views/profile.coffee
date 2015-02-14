@@ -1,4 +1,19 @@
 module.exports = class Profile 
+	elements: null
+	form_bio: null
+
+	# TODO: replace this fake data object
+	user_data :
+		profile_picture: "/images/profile_big.png"
+		cover_picture: "/images/homepage_2.jpg"
+		location: "London - UK"
+		bio: "Thomas Amundsen from Oslo, now based in London has from an early age lots of musical influences, experimenting from acoustic instruments to electronic music production and DJing.<br/><br/>He released his debut EP “I Feel” on Fusion recordings, sub-label of Dj Center Records, and has since released frequently on labels such as; Dobara, Susurrous Music, Incognitus Recordings, Koolwaters and gained support from the likes of Amine Edge, Stacey Pullen, Detlef, Slam, Marc Vedo, Loverdose, Ashley Wild, Jobe and many more"
+		links: [
+			{type:"spotify", url:"http://spotify.com"},
+			{type:"soundcloud", url:"http://soundcloud.com"},
+			{type:"facebook", url:"http://facebook.com"}
+		]
+
 	constructor: ( @dom ) ->
 
 		@elements = 
@@ -19,26 +34,12 @@ module.exports = class Profile
 				{type:"facebook", el:@dom.find( '.facebook_input' )}
 			]
 
-		@fake_user = 
-			profile_picture: "/images/profile_big.png"
-			cover_picture: "/images/homepage_2.jpg"
-			location: "London - UK"
-			bio: "Thomas Amundsen from Oslo, now based in London has from an early age lots of musical influences, experimenting from acoustic instruments to electronic music production and DJing.<br/><br/>He released his debut EP “I Feel” on Fusion recordings, sub-label of Dj Center Records, and has since released frequently on labels such as; Dobara, Susurrous Music, Incognitus Recordings, Koolwaters and gained support from the likes of Amine Edge, Stacey Pullen, Detlef, Slam, Marc Vedo, Loverdose, Ashley Wild, Jobe and many more"
-			links: [
-				{type:"spotify", url:"http://spotify.com"},
-				{type:"soundcloud", url:"http://soundcloud.com"},
-				{type:"facebook", url:"http://facebook.com"}
-			]
-
 
 		@form_bio = @dom.find( '.profile_form' )
 		@form_bio.on 'submit', (e) -> e.preventDefault()
 		@form_bio.find( 'input' ).keyup (e) =>
 			if e.keyCode is 13
 				@read_mode()
-
-
-		@update_dom_from_user()
 
 		ref = @
 
@@ -53,33 +54,52 @@ module.exports = class Profile
 					do ref.read_mode
 
 
+		@update_dom_from_user_data()
+
+
+	# Open the write/edit mode
 	write_mode : ->
-		log "[Profile] set write mode"
 		app.body.addClass 'write_mode'
 
+	
+	
+	
 	read_mode : ->
-		# Trying to save 
-		@fetch_user_from_dom()
+		# - Update the user_data from the inputs
+		@update_user_data_from_dom()
 
-		@update_dom_from_user()
+		# - Update the dom (labels and inputs) from the user_data
+		# 	This action is mostly done for updating labels (inputs are already updated)
+		@update_dom_from_user_data()
 
-		log "[Profile] set read mode"
+		# - TODO: Send the data to the backend
+		@send_to_server()
+
+		# - close the write/edit mode and switch to read only mode
 		app.body.removeClass 'write_mode'
 
-	fetch_user_from_dom: ->
-		@fake_user.location = @elements.location_input.val()
-		@fake_user.bio = @elements.bio_input.val()
 
-		@fake_user.links = []
+
+	update_user_data_from_dom: ->
+
+		# - TODO: Update the images
+
+		@user_data.location = @elements.location_input.val()
+		@user_data.bio = @elements.bio_input.val()
+
+		@user_data.links = []
 		for l, i in @elements.links_input
-			@fake_user.links.push
+			@user_data.links.push
 				type: l.type
 				url: l.el.val()
 
 
-	update_dom_from_user : ->
+	update_dom_from_user_data : ->
+
+		# - TODO: Update the images
+
 		e = @elements
-		d = @fake_user
+		d = @user_data
 
 		e.profile_picture.css 'background-image', d.profile_picture
 		e.cover_picture.css 'background-image', d.cover_picture
@@ -90,15 +110,19 @@ module.exports = class Profile
 		e.bio.html d.bio
 		e.bio_input.val @html_to_textarea( d.bio )
 
-		log "SAVING", d.links, e.links
 		for link, i in d.links
-			log 'link', link, 'i', i
 			e.links[ i ].el.attr 'href', link.url
 			e.links_input[ i ].el.val link.url
 
 	html_to_textarea : ( str ) ->
 		to_find = "<br/>"
 		to_replace = "\n"
-		re = new RegExp(to_find, 'g');
+		re = new RegExp to_find, 'g'
 
-		return str.replace(re, to_replace);
+		return str.replace re, to_replace
+
+	send_to_server: ->
+		log "[Profile] save", @user_data
+		return
+		$.post "/api/v1/user/save", @user_data, (data) =>
+			log "[Profile] server response", data
