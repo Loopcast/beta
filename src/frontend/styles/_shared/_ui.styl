@@ -13,9 +13,15 @@ DARK_PERCENTAGE = 5
 	box-shadow: inset 0px -3px 1px rgba(0, 0, 0, 0.15), 0px 2px 2px rgba(0, 0, 0, 0.05)
 	position: relative
 	transition: background-color .1s linear	
+	cursor: pointer
 	
 	&.no_shadow
 		box-shadow: none	
+		
+	&.save_button
+		background: BLUE
+		color: white
+		font-size: .8em
 
 	&.facebook
 		background-color: #2e5d94
@@ -81,6 +87,9 @@ DARK_PERCENTAGE = 5
 	.button.signin:hover
 		background-color: darken(#2095cf, DARK_PERCENTAGE)
 		
+	&.button.save_button:hover
+		background: darken( BLUE, DARK_PERCENTAGE )
+		
 	.button.yellow_button:hover
 		background-color : BLACK
 		color: YELLOW
@@ -90,6 +99,7 @@ DARK_PERCENTAGE = 5
 		background: white
 		color: BLACK
 		
+
 		
 .buttons_flex
 	display: flex
@@ -123,7 +133,7 @@ DARK_PERCENTAGE = 5
 			right: 0  
 			left: auto 
 			
-input
+input, textarea
 	display: block
 	border: none
 	background: #dedede
@@ -152,6 +162,12 @@ input
 			outline: 0;
 			width: 150%
 			background-color: lighten( #2c2c2c, 10 )
+			
+.squared_input
+	background: none
+	border-radius: 0px
+	border: 1px solid OUTLINE_COLOR
+	
 		
 .hover_object
 	.normal_state
@@ -232,13 +248,13 @@ input
 	padding: 5px
 	
 .outline_box
-	border: 1px solid #CBCBCB
+	border: 1px solid OUTLINE_COLOR
 	border-radius: 5px
 	overflow: hidden
 		
 .outline_icon
 	display: block
-	border: 1px solid #CBCBCB
+	border: 1px solid OUTLINE_COLOR
 	border-radius: 3px
 	width: 38px
 	height: 38px
@@ -249,6 +265,31 @@ input
 		transform: translateY(-50%) translateX(-50%) 
 		
 		
+.button_with_icon
+	background: #E5E9E8
+	color: BLACK
+	border: 1px solid #9DACA9
+	border-radius: 4px
+	font-size: .8em
+	line-height: .85em
+	vertical-align: top
+	padding: 0 10px 10px 6px
+	
+	&.black_button
+		padding: 8px 30px 17px
+		color: #ABA9A9
+		font-size: .9em
+		font-weight: 800
+		background: rgba(0,0,0,0.8)
+	
+	span
+		display: inline-block
+		
+	span.spritesheet
+		position: relative
+		top: 4px
+		margin-right: 5px
+
 .no_touch_device
 	.underline_link:hover
 		text-decoration: underline
@@ -258,3 +299,10 @@ input
 			
 	.outline_icon:hover
 		border-color: GRAY_2
+		
+	.button_with_icon:hover
+		&.black_button
+			color: GRAY
+			background: BLACK
+			
+

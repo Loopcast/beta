@@ -28,7 +28,12 @@
 		line-height: 1em
 		margin-bottom: 5px
 
-
+	.change_cover
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translateX(-50%) translateY(-50%)
+	
 	.cover
 		height: 350px
 		position: relative
@@ -96,6 +101,13 @@
 			&.text
 				font-size: .9em
 				line-height: 1em
+				
+	.cover_button
+		position: absolute
+		bottom: 20px
+		right: 130px
+		span.spritesheet
+			transform: scale(.7,.7)
 				
 	.profile_content
 		padding: 40px 50px
@@ -249,7 +261,15 @@
 				font-weight: 800
 				padding-top: 4px
 				
-						
+.profile_form				
+	padding-top: 10px
+	textarea
+		height: 200px
+		
+	.save_button
+		padding-left: 40px
+		padding-right: 40px
+		margin: 0 auto 20px
 
 .tag
 	display: inline-block
@@ -262,6 +282,25 @@
 	font-size: .8em
 	line-height: 0.9em
 	
+
+// READ / WRITE SECTION
+.element_on_read_mode
+	display: block
+	
+.element_on_write_mode
+	display: none
+	
+
+.write_mode
+	.element_on_read_mode
+		display: none
+		
+	.element_on_write_mode
+		display: block
+// --------------------------
+
+
+	
 .no_touch_device
 	.tag:hover
 		background: darken( #C1C7C6, 10 )
@@ -273,6 +312,10 @@
 		.sidebar_right:hover
 			background: rgba(0,0,0,0.7)
 			color: lighten( #B5B5B5	, 20 )
+			
+		.cover_button:hover
+			background: #fff
+			// color: #E5E9E8
 		
 				
 
