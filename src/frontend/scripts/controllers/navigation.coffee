@@ -83,9 +83,11 @@ class Navigation
 	##
 	go: ( url ) ->
 
+		# If it's a popup, bypass ways and seamless navigation
+		if window.opener?
+			return true
+
 		@first_loading = off
-		# don't hijack login actions
-		if req.url.indexOf '/login' is 0 then return true
 
 		ways.go url
 
