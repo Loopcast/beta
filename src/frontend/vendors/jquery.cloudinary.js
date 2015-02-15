@@ -18,9 +18,13 @@
     // Browser globals:
     var $ = window.jQuery;
     factory($);
+    console.log( "using this" );
     $(function() {
       if($.fn.cloudinary_fileupload !== undefined) {
-        $("input.cloudinary-fileupload[type=file]").cloudinary_fileupload();
+        $("input.cloudinary-fileupload[type=file]").each(function(){
+          console.log( "---> cloudinary created." );
+          $(this).cloudinary_fileupload();
+        });
       }
     });
   }
@@ -683,6 +687,8 @@
 
   $.fn.cloudinary_fileupload = function(options) {
     var initializing = !this.data('blueimpFileupload');
+    console.log( "[cloudinary_fileupload] initializing", options );
+
     if (initializing) {
       options = $.extend({
         maxFileSize: 20000000,
@@ -720,12 +726,14 @@
       });
 
       this.bind("fileuploadstart", function(e){
+        console.log( "----------> start", options.formData.public_id );
         $(e.target).trigger('cloudinarystart');
       });
       this.bind("fileuploadstop", function(e){
         $(e.target).trigger('cloudinarystop');
       });
       this.bind("fileuploadprogress", function(e,data){
+        console.log( "----------> progress", options.formData.public_id );
         $(e.target).trigger('cloudinaryprogress',data);
       });
       this.bind("fileuploadprogressall", function(e,data){
@@ -754,6 +762,7 @@
   };
 
   $.fn.unsigned_cloudinary_upload = function(upload_preset, upload_params, options) {
+    console.log("unsigned_cloudinary_upload", upload_preset, upload_params, options);
     options = options || {};
     upload_params = $.extend({}, upload_params) || {};
 

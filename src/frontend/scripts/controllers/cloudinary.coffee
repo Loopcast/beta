@@ -8,7 +8,6 @@ class Cloudinary
 
 
 	constructor: ->
-
 		if Cloudinary.instance
 			console.error "You can't instantiate this Cloudinary twice"	
 			return
@@ -27,9 +26,12 @@ class Cloudinary
 				api_key   : @config.api_key
 
 	# Return the form with the cloudinary unsigned input file appended
-	initialise_form: ( form, callback ) ->
-		form.append( $.cloudinary.unsigned_upload_tag( @config.unsigned_id, 
+	initialise_form: ( form, unsigned_id, callback ) ->
+
+		form.append( $.cloudinary.unsigned_upload_tag( unsigned_id, 
 			cloud_name: @config.cloud_name
+			public_id: unsigned_id
+			tags: unsigned_id
 		) )
 
 		delay 100, -> callback form

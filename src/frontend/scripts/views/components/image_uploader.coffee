@@ -20,21 +20,13 @@ module.exports = class ImageUploader
 		Cloudinary.set_config
 			cloud_name  : cloud_name
 			api_key     : api_key
-			unsigned_id : unsigned_id
+	
 
 		progress = dom.find '.progress'
 
-		# Initialise the form with cloudinary
-		Cloudinary.initialise_form dom.find( 'form' ), (form) ->
-			# Listen to events
-			form.on 'cloudinarydone', on_upload_complete
-			form.on 'fileuploadstart', on_upload_start
-			form.on 'fileuploadprogress', on_upload_progress
-			form.on 'fileuploadfail', on_upload_fail
-
-
 		ref = @
 		on_upload_start = (e, data) ->
+					
 			log "[Cloudinary] on_upload_start", e, data
 
 			progress.removeClass 'hide'
@@ -66,3 +58,21 @@ module.exports = class ImageUploader
 
 
 
+		is_own_event = (e) ->
+			return e.currentTarget
+
+
+		# Initialise the form with cloudinary
+		form = dom.find( 'form' )
+		form.append( $.cloudinary.unsigned_upload_tag( unsigned_id, {
+			cloud_name: cloud_name
+			public_id: unsigned_id
+			tags: unsigned_id
+		}, {
+			cloudinary_field: unsigned_id
+		}).on( 'cloudinarydone', on_upload_complete )
+		 .on( 'fileuploadstart', on_upload_start )
+		 .on( 'fileuploadprogress', on_upload_progress )
+		 .on( 'fileuploadfail', on_upload_fail )
+		)
+			# Listen to events

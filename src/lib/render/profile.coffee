@@ -15,9 +15,9 @@ module.exports = ( url, data, callback ) ->
       data.profile = profile
 
       data.cloudinary = 
-        api_key    : s.cloudinary.api_key
-        cloud_name : s.cloudinary.cloud_name
-        unsigned_id: s.cloudinary.api_unsigned_id
+        api_key     : s.cloudinary.api_key
+        cloud_name  : s.cloudinary.cloud_name
+        unsigned_ids: s.cloudinary.api_unsigned_ids
 
       template '/profile', data, ( error, response ) ->
 

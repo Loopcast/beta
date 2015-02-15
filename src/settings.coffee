@@ -19,7 +19,9 @@ s.cloudinary = cloudinary.config =
   cloud_name      : 'loopcast', 
   api_key         : '631677181392992', 
   api_secret      : 'opQ179HoyQlceRzNr1VGMukScas',
-  api_unsigned_id : 'fsotrzz4'
+  api_unsigned_ids: 
+    cover  : 'loopcast_cover_image'
+    profile: 'loopcast_profile_image'
 
 s.facebook =
   app:

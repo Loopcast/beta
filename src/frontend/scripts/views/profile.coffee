@@ -66,6 +66,10 @@ module.exports = class Profile
 			@dom.find( '.cover_image' ).css
 				'background-image': "url(#{data.result.url})"
 
+		change_picture_uploader = view.get_by_dom @dom.find( '.profile_image' )
+		change_picture_uploader.on 'completed', (data) =>
+			@dom.find( 'img' ).attr 'src', data.result.url
+
 
 	# Open the write/edit mode
 	write_mode : ->
