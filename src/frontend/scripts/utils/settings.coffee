@@ -142,6 +142,9 @@ else if settings.browser.tablet
 else
 	platform = 'mobile'
 
+
+settings.after_login_url = ""
+
 # Browser class for the body
 settings.browser_class = settings.browser.id + '_' + settings.browser.version
 

@@ -25,14 +25,18 @@ module.exports = happens
 
 		app.body.addClass "logged"
 
-		@emit 'user:logged', loopcast.user
+		@emit 'user:logged', @get_user()
 
-		log "[User Controller] login", loopcast.user
+		log "[User Controller] login", @get_user()
 
 	check_user: -> 
 		if @is_logged()
-			@login loopcast.user
+			@login @get_user()
 		else
 			@logout()
 
-	is_logged: -> loopcast.user?
+	is_logged: -> @get_user()?
+
+	get_user: -> loopcast.user
+
+	set_user: (user) -> loopcast.user = user

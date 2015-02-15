@@ -58,7 +58,14 @@ class App
 	# User Proxies
 	login : ( user ) -> 
 		log "--------> login called from outside"
-		navigation.go "/#{user.username}"
+
+		if @settings.after_login_url.length > 0
+			url = @settings.after_login_url
+			@settings.after_login_url = ""
+		else
+			url = "/#{user.username}"
+			
+		navigation.go url
 		user_controller.login user
 
 	logout: -> 
