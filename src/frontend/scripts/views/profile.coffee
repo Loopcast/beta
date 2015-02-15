@@ -60,14 +60,23 @@ module.exports = class Profile
 
 		view.on 'binded', @on_views_binded
 
+
+
 	on_views_binded: =>
+		# Listen to images upload events
 		change_cover_uploader = view.get_by_dom @dom.find( '.change_cover' )
 		change_cover_uploader.on 'completed', (data) =>
+
+			@user_data.cover_picture = data.result.url
+
 			@dom.find( '.cover_image' ).css
 				'background-image': "url(#{data.result.url})"
 
 		change_picture_uploader = view.get_by_dom @dom.find( '.profile_image' )
 		change_picture_uploader.on 'completed', (data) =>
+
+			@user_data.profile_picture = data.result.url
+
 			@dom.find( 'img' ).attr 'src', data.result.url
 
 
@@ -109,8 +118,6 @@ module.exports = class Profile
 
 
 	update_dom_from_user_data : ->
-
-		# - TODO: Update the images
 
 		e = @elements
 		d = @user_data

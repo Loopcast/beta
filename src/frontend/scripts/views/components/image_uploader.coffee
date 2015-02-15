@@ -25,6 +25,21 @@ module.exports = class ImageUploader
 		progress = dom.find '.progress'
 
 		ref = @
+
+		kill = (e) -> 
+			e.preventDefault()
+			e.stopPropagation()
+
+
+		dom.on
+			dragover: kill
+			drop: kill
+			dragenter: kill
+			dragleave: kill
+
+			
+
+
 		on_upload_start = (e, data) ->
 					
 			log "[Cloudinary] on_upload_start", e, data
@@ -66,8 +81,6 @@ module.exports = class ImageUploader
 		form = dom.find( 'form' )
 		form.append( $.cloudinary.unsigned_upload_tag( unsigned_id, {
 			cloud_name: cloud_name
-			public_id: unsigned_id
-			tags: unsigned_id
 		}, {
 			cloudinary_field: unsigned_id
 		}).on( 'cloudinarydone', on_upload_complete )
