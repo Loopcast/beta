@@ -18,12 +18,6 @@ module.exports = class Profile
 
 	constructor: ( @dom ) ->
 
-		Cloudinary.init @dom.find( '.cloudinary_form' )
-
-		Cloudinary.on 'uploaded', ( data ) ->
-			$( '.label_debug_url' ).attr 'src', data.result.url
-			log "[Cloudinary] event captured", data.result
-
 		@elements = 
 			profile_picture: @dom.find( '.profile_image img' )
 			cover_picture: @dom.find( '.cover_image' )
@@ -63,6 +57,14 @@ module.exports = class Profile
 
 
 		@update_dom_from_user_data()
+
+		view.on 'binded', @on_views_binded
+
+	on_views_binded: =>
+		change_cover_uploader = view.get_by_dom @dom.find( '.change_cover' )
+		change_cover_uploader.on 'completed', (data) =>
+			@dom.find( '.cover_image' ).css
+				'background-image': "url(#{data.result.url})"
 
 
 	# Open the write/edit mode

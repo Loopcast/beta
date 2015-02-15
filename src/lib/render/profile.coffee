@@ -11,8 +11,6 @@ module.exports = ( url, data, callback ) ->
 
       if error then return reply error
 
-      image_id = "sample"
-
       # appends profile information to data object
       data.profile = profile
 

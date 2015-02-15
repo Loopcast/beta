@@ -45,10 +45,12 @@ block content
           span.spritesheet.edit_icon
           span Save Profile
 
-        .change_cover
-          a.button_with_icon.black_button.element_on_write_mode(href="#", data-profile="set-write-mode")
+        .change_cover.upload_wrapper(data-view="components/image_uploader")
+          a.upload_element.button_with_icon.black_button.element_on_write_mode(href="#", data-profile="set-write-mode")
             span.spritesheet.camera_icon
             span Change Cover
+            span.progress
+
           form.element_on_write_mode(class="cloudinary_form")
             input.api_key(type="hidden", name="api_key", value="#{cloudinary.api_key}")
             input.cloud_name(type="hidden", name="cloud_name", value="#{cloudinary.cloud_name}")

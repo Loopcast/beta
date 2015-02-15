@@ -1,28 +1,40 @@
 require 'happens'
 
-Cloudinary = happens {}
-
-###
-Unsigned upload to Cloudinary
-http://cloudinary.com/blog/direct_upload_made_easy_from_browser_or_mobile_app_to_the_cloud
-###
-
-Cloudinary.init = (form) ->
-	api_key     = form.find( '.api_key' ).val()
-	cloud_name  = form.find( '.cloud_name' ).val()
-	unsigned_id = form.find( '.unsigned_id' ).val()
-
-	$.cloudinary.config
-		cloud_name: cloud_name 
-		api_key   : api_key
-
-	log "[Cloudinary] init"
-
-	form.append( $.cloudinary.unsigned_upload_tag( unsigned_id, 
-		cloud_name: cloud_name
-	) ).bind 'cloudinarydone', (e, data) ->
-		log "done", e, data
-		Cloudinary.emit 'uploaded', data
+class Cloudinary
+	instance = null
+	config: 
+		cloud_name: ""
+		api_key: ""
 
 
-module.exports = Cloudinary
+	constructor: ->
+
+		if Cloudinary.instance
+			console.error "You can't instantiate this Cloudinary twice"	
+			return
+
+		Cloudinary.instance = @
+
+	set_config: ( data ) ->
+
+		if @config.cloud_name isnt data.cloud_name or @config.api_key isnt data.api_key
+			# Update the internal object
+			@config = data
+
+			# Update the jQuery plugin config
+			$.cloudinary.config
+				cloud_name: @config.cloud_name 
+				api_key   : @config.api_key
+
+	# Return the form with the cloudinary unsigned input file appended
+	initialise_form: ( form, callback ) ->
+		form.append( $.cloudinary.unsigned_upload_tag( @config.unsigned_id, 
+			cloud_name: @config.cloud_name
+		) )
+
+		delay 100, -> callback form
+
+
+
+# will always export the same instance
+module.exports = new Cloudinary
