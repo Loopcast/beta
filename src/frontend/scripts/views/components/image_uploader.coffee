@@ -26,6 +26,12 @@ module.exports = class ImageUploader
 
 		ref = @
 
+
+		###
+		Disable drag and drop feature because of a cloudinary bug:
+		when two input files are on the same page, when you drag an image on one input file, 
+		both inputs will upload the same image at the same time.
+		###
 		kill = (e) -> 
 			e.preventDefault()
 			e.stopPropagation()
