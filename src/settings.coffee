@@ -12,16 +12,16 @@ s =
     url: 'http://beta.loopcast.fm'
 
 
-cloudinary_config = 
-  
-
-s.cloudinary = cloudinary.config =
+s.cloudinary =
   cloud_name      : 'loopcast', 
   api_key         : '631677181392992', 
   api_secret      : 'opQ179HoyQlceRzNr1VGMukScas',
   api_unsigned_ids: 
     cover  : 'loopcast_cover_image'
     profile: 'loopcast_profile_image'
+
+cloudinary.config s.cloudinary
+
 
 s.facebook =
   app:

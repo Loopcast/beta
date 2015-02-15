@@ -63,8 +63,16 @@ module.exports = class Profile
 
 
 	on_views_binded: =>
+
+
+		log "[Profile] on_views_binded"
 		# Listen to images upload events
 		change_cover_uploader = view.get_by_dom @dom.find( '.change_cover' )
+
+		if not change_cover_uploader
+			log "[Profile] views not binded yet!!!"
+			return
+
 		change_cover_uploader.on 'completed', (data) =>
 
 			@user_data.cover_picture = data.result.url
