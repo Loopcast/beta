@@ -15,11 +15,21 @@ block content
               li #{genre},
             else
               li #{genre}
-        .profile_image
+        .profile_image.upload_wrapper(data-view="components/image_uploader", data-id="profile_picture")
           img(src="/images/profile_big.png")
-          a.edit_image(href="#")
+          a.upload_element.edit_image(href="#")
             span.spritesheet.camera_icon
             span Update profile picture
+            span.progress
+
+          form.element_on_write_mode(class="cloudinary_form")
+            input.api_key(type="hidden", name="api_key", value="#{cloudinary.api_key}")
+            input.cloud_name(type="hidden", name="cloud_name", value="#{cloudinary.cloud_name}")
+            input.unsigned_id(type="hidden", name="unsigned_id", value="#{cloudinary.unsigned_ids.profile}")
+
+
+
+          
 
         .sidebar_right
           .big_number
@@ -45,10 +55,17 @@ block content
           span.spritesheet.edit_icon
           span Save Profile
 
-        .change_cover
-          a.button_with_icon.black_button.element_on_write_mode(href="#", data-profile="set-write-mode")
+        .change_cover.upload_wrapper(data-view="components/image_uploader", data-id="profile_cover")
+          a.upload_element.button_with_icon.black_button.element_on_write_mode(href="#", data-profile="set-write-mode")
             span.spritesheet.camera_icon
             span Change Cover
+            span.progress
+
+          form.element_on_write_mode(class="cloudinary_form")
+            input.api_key(type="hidden", name="api_key", value="#{cloudinary.api_key}")
+            input.cloud_name(type="hidden", name="cloud_name", value="#{cloudinary.cloud_name}")
+            input.unsigned_id(type="hidden", name="unsigned_id", value="#{cloudinary.unsigned_ids.cover}")
+
 
     //- TODO: should always be in the doom, but just show
     //- if it own user profile

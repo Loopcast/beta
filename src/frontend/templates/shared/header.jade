@@ -5,7 +5,7 @@ header.header(data-view="header")
 			a.homepage_item.menu_item(href="/" class="menu_logo" title="Loopcast Logo")
 				span.spritesheet(class="sprite_small_logo") Loopcast Logo
 			a.explore_item.menu_item(href="/rooms" title="Explore") Explore
-			a.create_room_item.menu_item(href="/profile" title="Create Room") Create Room
+			a.create_room_item.menu_item(href="/createroom" title="Create Room", data-view="components/logged_link") Create Room
 			.search_box.no_border
 
 				span.spritesheet.header_search_icon
@@ -19,11 +19,7 @@ header.header(data-view="header")
 
 			a.login_link(
 				title="Log In", 
-				data-view="components/popup_handler", 
-				data-url="/login" 
-				data-title="Log In ~ Loopcast"
-				data-w="500"
-				data-h="400"
+				data-view="components/login_popup_handler",
 				href="#"
 			) Log In
 			div.settings.hover_dropdown_trigger(title="Settings" data-view="components/click_trigger" data-target=".settings_dropdown")

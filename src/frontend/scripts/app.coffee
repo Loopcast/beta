@@ -2,9 +2,11 @@ require './globals'
 require './vendors'
 require '../vendors/parallax.min.js'
 
+
 views           = require './controllers/views'
 navigation      = require './controllers/navigation'
 user_controller = require './controllers/user'
+cloudinary      = require './controllers/cloudinary'
 # motion   = require 'app/controllers/motion'
 
 class App
@@ -56,7 +58,14 @@ class App
 	# User Proxies
 	login : ( user ) -> 
 		log "--------> login called from outside"
-		navigation.go "/#{user.username}"
+
+		if @settings.after_login_url.length > 0
+			url = @settings.after_login_url
+			@settings.after_login_url = ""
+		else
+			url = "/#{user.username}"
+			
+		navigation.go url
 		user_controller.login user
 
 	logout: -> 
