@@ -51,10 +51,10 @@ if s.is_beta
   # ~ databases
 
   s.mongo =
-    url: "mongodb://loopy:ulpi1991@ds029060-a0.mongolab.com:29060,ds029060-a1.mongolab.com:29060/loopdb"
+    url: "mongodb://l00pc4st:l00pc4st2015@c456.lamppost.2.mongolayer.com:10456,c499.lamppost.7.mongolayer.com:10499/beta?replicaSet=set-54e241573646b81682000bbf"
     options: 
-      user: 'myUserName',
-      pass: 'myPassword'
+      user: 'l00pc4st',
+      pass: 'l00pc4st2015'
 
   s.redis =
     host     : 'pub-redis-17738.eu-west-1-1.2.ec2.garantiadata.com'
@@ -73,10 +73,10 @@ else
   # ~ databases
 
   s.mongo =
-    url: "mongodb://loopy:ulpi1991@ds029060-a0.mongolab.com:29060,ds029060-a1.mongolab.com:29060/loopdb"
+    url: "mongodb://l00pc4st:l00pc4st2015@dogen.mongohq.com:10071/loopcast-staging"
     options: 
-      user: 'myUserName',
-      pass: 'myPassword'
+      user: 'l00pc4st',
+      pass: 'l00pc4st2015'
 
   s.redis =
     host     : 'pub-redis-17738.eu-west-1-1.2.ec2.garantiadata.com'
