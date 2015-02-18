@@ -1,20 +1,18 @@
 #createroom_modal(class="modal slide_from_bottom", data-view="components/modal")
 	.md_wrapper
-		.md_header
-			span.spritesheet(class="md_logo sprite_small_logo")
-
-			.tabs
-				//- a(title="Sign Up") Sign Up
-				a(href="#", class="active" title="Sign In") Sign In
 		.md_content
 			h4 Create Room
 			
 			form
-				p.label_error Username or password not valid. Please retry
-				input.password(name="username", type="text", placeholder="Enter your email or username")
-				input.username(name="password" type="password", placeholder="Password")
-
-				a.button.signin.no_shadow(title="Sign In") Sign In
+				label(for="username") Title
+				input.roomname(name="name", type="text", placeholder="Enter room name")
+				label(for="genre") Genre
+				input.roomname(name="genre", type="text", placeholder="Choose genre")
+				label(for="location") Location
+				input.roomname(name="location", type="text", placeholder="Where are you?")
+				textarea.white_textarea(name="description", placeholder="Describe your event")
+				a.button.signin.gray_button.no_shadow(title="Upload Cover") Upload Cover
+				a.button.signin.yellow_button.no_shadow(title="Open Room") Open Room
 
 
 .md_overlay

@@ -38,7 +38,10 @@ DARK_PERCENTAGE = 5
 	&.half
 		display: inline-block
 		width: 48%
-		
+	
+	&.gray_button
+		background-color: #383838
+
 	&.yellow_button
 		background-color : YELLOW
 		color: BLACK
@@ -86,6 +89,9 @@ DARK_PERCENTAGE = 5
 
 	.button.signin:hover
 		background-color: darken(#2095cf, DARK_PERCENTAGE)
+		
+	.button.gray_button:hover
+		background-color: lighten( #383838, 10 )
 		
 	&.button.save_button:hover
 		background: darken( BLUE, DARK_PERCENTAGE )
@@ -148,6 +154,11 @@ input, textarea
 	&::-moz-placeholder
 	&:-ms-input-placeholder 
 		color: #A9A9A9
+		
+	&.white_textarea
+		background: white
+		border: 1px solid #A9A9A9
+		height: 100px
 		
 	&.dark_input
 		background-color: lighten( #2c2c2c, 5 )

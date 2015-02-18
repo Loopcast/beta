@@ -84,8 +84,36 @@ MARGIN_MODAL = 20px
 		padding: 10px 0;
 		
 	
+#createroom_modal
+	text-align: left
+	width: 350px
+	.md_content
+		padding: 20px
+	h4
+		font-size: 1.3em
+		margin-bottom: 10px
+	label
+		text-transform: uppercase
+		font-size: 0.8em
+		color: black
+		margin-bottom: 10px
+		display: block
 	
-
+	input
+		font-size: 0.75em
+		
+	.button
+		margin-bottom: 10px
+		padding-top: 12px
+		padding-bottom: 12px
+		height: 45px
+		
+.no_touch_device
+	#createroom_modal
+		.button.yellow_button:hover
+			background: lighten( YELLOW, 10 )
+			color: BLACK
+			border: none
 
 
 .slide_from_bottom .md_wrapper
