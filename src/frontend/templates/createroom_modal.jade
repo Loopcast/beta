@@ -1,4 +1,4 @@
-#createroom_modal(class="modal slide_from_bottom", data-view="components/modal")
+#createroom_modal(class="modal slide_from_bottom", data-view="room/create_room_modal", data-modal-close="false")
 	.md_wrapper
 		.md_content
 			h4 Create Room
@@ -7,10 +7,10 @@
 				label(for="username") Title
 				input.roomname(name="name", type="text", placeholder="Enter room name")
 				label(for="genre") Genre
-				input.roomname(name="genre", type="text", placeholder="Choose genre")
+				input.genre(name="genre", type="text", placeholder="Choose genre")
 				label(for="location") Location
-				input.roomname(name="location", type="text", placeholder="Where are you?")
-				textarea.white_textarea(name="description", placeholder="Describe your event")
+				input.location(name="location", type="text", placeholder="Where are you?")
+				textarea.description.white_textarea(name="description", placeholder="Describe your event")
 				a.button.signin.gray_button.no_shadow(title="Upload Cover") Upload Cover
 				a.button.signin.yellow_button.no_shadow(title="Open Room") Open Room
 

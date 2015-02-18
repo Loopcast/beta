@@ -1,6 +1,10 @@
+happens = require 'happens'
+
 module.exports = class Modal
 	opened: false
 	constructor: ( @dom ) ->
+		happens @
+
 		@overlay = $ '.md_overlay'
 
 
@@ -10,10 +14,18 @@ module.exports = class Modal
 
 		@dom.addClass 'md_show'
 
-		@overlay.off( 'click' ).on( 'click', @close )
+		log 'modal-close', @dom.data( 'modal-close' )
+
+
+		if @dom.data( 'modal-close' )? and @dom.data( 'modal-close' ) isnt false
+			@overlay.off( 'click' ).on( 'click', @close )
+
+		@emit 'opened'
 
 	close: ( ) =>
 		return if not @opened
 		@opened = false
 
 		@dom.removeClass 'md_show'		
+
+		@emit 'closed'
