@@ -1,0 +1,20 @@
+#createroom_modal(class="modal slide_from_bottom", data-view="components/modal")
+	.md_wrapper
+		.md_header
+			span.spritesheet(class="md_logo sprite_small_logo")
+
+			.tabs
+				//- a(title="Sign Up") Sign Up
+				a(href="#", class="active" title="Sign In") Sign In
+		.md_content
+			h4 Create Room
+			
+			form
+				p.label_error Username or password not valid. Please retry
+				input.password(name="username", type="text", placeholder="Enter your email or username")
+				input.username(name="password" type="password", placeholder="Password")
+
+				a.button.signin.no_shadow(title="Sign In") Sign In
+
+
+.md_overlay

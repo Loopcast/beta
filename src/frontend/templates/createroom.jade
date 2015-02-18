@@ -1,4 +1,7 @@
 extends layout
 
 block content
-  h1 Create room
+  .createroom(data-menu="create_room", data-view="room")
+    h1 Create room
+
+  include ./createroom_modal.jade
