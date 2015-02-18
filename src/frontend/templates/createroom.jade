@@ -1,7 +1,47 @@
 extends layout
 
 block content
-  .createroom(data-menu="create_room", data-view="room")
-    h1 Create room
+  .createroom.profile_page.centered(data-menu="create_room", data-view="room")
+    .cover
+      .cover_image(style="background-image:url(/images/homepage_2.jpg)")
+      .content
+        h1.name.black_background Room Name
+        br
+        h3.type.black_background User name
+        
+        .profile_image.upload_wrapper(data-view="components/image_uploader", data-id="profile_picture")
+          img(src="/images/profile_big.png")
+          a.upload_element.edit_image(href="#")
+            span.spritesheet.camera_icon
+            span Update profile picture
+            span.progress
 
-  include ./createroom_modal.jade
+          //- form.element_on_write_mode(class="cloudinary_form")
+          //-   input.api_key(type="hidden", name="api_key", value="#{cloudinary.api_key}")
+          //-   input.cloud_name(type="hidden", name="cloud_name", value="#{cloudinary.cloud_name}")
+          //-   input.unsigned_id(type="hidden", name="unsigned_id", value="#{cloudinary.unsigned_ids.profile}")
+
+
+
+          
+
+        .sidebar_right
+          .big_number
+            span.number 2
+            span.text Followers
+
+          .big_number
+            span.number 0
+            span.text Rooms
+
+          .big_number
+            span.number 2
+            span.text 
+              | Total 
+              br
+              | visitors
+
+    .profile_content
+      
+
+    include ./createroom_modal.jade
