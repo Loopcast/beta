@@ -1,17 +1,19 @@
-
 module.exports = class EditableText
-	tmpl_path: 'templates/components/editable_text'
 
 	constructor: ( @dom ) ->
-		text = @dom.text()
+		
 
 		@dom.addClass 'editable_text'
 
 		@dom.on 'click', (e) -> e.stopPropagation()
 
-		tmpl = require @tmpl_path
+		@get_template @on_ready
 
-		@dom.append tmpl()
+	on_ready: ( html ) =>
+
+		text = @dom.text()
+		
+		@dom.append html
 
 		@input = @dom.find 'input'
 
@@ -33,7 +35,11 @@ module.exports = class EditableText
 
 		@text_el.on 'click', @open_edit_mode
 
+	get_template: ( callback ) ->
+
+		tmpl = require 'templates/components/editables/editable_text'
 		
+		callback tmpl()
 
 	close_read_mode : =>
 		log 'close_edit_mode'

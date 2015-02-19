@@ -11,8 +11,8 @@ output:
   css: ./www/css/app.css
 
 alias:
-  app: ./src/frontend/scripts/
-  templates: ./src/frontend/templates/
+  app: src/frontend/scripts/
+  templates: src/frontend/templates/
 
 minify:
   js : true
