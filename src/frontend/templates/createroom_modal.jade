@@ -1,18 +1,31 @@
 #createroom_modal(class="modal slide_from_bottom", data-view="room/create_room_modal", data-modal-close="false")
-	.md_wrapper
-		.md_content
-			h4 Create Room
-			
-			form
-				label(for="username") Title
-				input.roomname(name="name", type="text", placeholder="Enter room name")
-				label(for="genre") Genre
-				input.genre(name="genre", type="text", placeholder="Choose genre")
-				label(for="location") Location
-				input.location(name="location", type="text", placeholder="Where are you?")
-				textarea.description.white_textarea(name="description", placeholder="Describe your event")
-				a.button.signin.gray_button.no_shadow(title="Upload Cover") Upload Cover
-				a.button.signin.yellow_button.no_shadow(title="Open Room") Open Room
+  .md_wrapper
+    .md_content
+      h4 Create Room
+      
+    
+      label(for="username") Title
+      input.roomname(name="name", type="text", placeholder="Enter room name")
+      label(for="genre") Genre
+      input.genre(name="genre", type="text", placeholder="Choose genre")
+      label(for="location") Location
+      input.location(name="location", type="text", placeholder="Where are you?")
+      textarea.description.white_textarea(name="description", placeholder="Describe your event")
+
+
+      .room_image.upload_wrapper(data-view="components/image_uploader", data-id="profile_picture")
+
+        a.upload_element.button.signin.gray_button.no_shadow(title="Upload Cover") 
+          span.progress
+          span Upload Cover
+
+          form.cloudinary_form
+            input.api_key(type="hidden", name="api_key", value="#{cloudinary.api_key}")
+            input.cloud_name(type="hidden", name="cloud_name", value="#{cloudinary.cloud_name}")
+            input.unsigned_id(type="hidden", name="unsigned_id", value="#{cloudinary.unsigned_ids.profile}")
+
+      
+      a.button.signin.yellow_button.no_shadow.submit_button(title="Open Room") Open Room
 
 
 .md_overlay

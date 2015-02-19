@@ -6,6 +6,7 @@ module.exports = class Room
 			title   : @dom.find '.cover .name'
 			genre   : @dom.find '.cover .genres'
 			location: @dom.find '.cover .location'
+			cover   : @dom.find '.cover .cover_image'
 
 		if @elements.title.html().length <= 0
 			@elements.title.addClass 'hidden'
@@ -32,6 +33,9 @@ module.exports = class Room
 					@elements[ data.name ].removeClass 'hidden'
 				else
 					@elements[ data.name ].addClass 'hidden'
+			when 'cover'
+				@elements[ data.name ].css
+					'background-image': "url(#{data.value.url})"
 
 
 

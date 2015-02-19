@@ -58,7 +58,7 @@ module.exports = class Profile
 
 		@update_dom_from_user_data()
 
-		view.on 'binded', @on_views_binded
+		view.once 'binded', @on_views_binded
 
 
 

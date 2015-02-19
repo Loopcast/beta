@@ -2,6 +2,7 @@ Modal   = require './../components/modal'
 
 module.exports = class CreateRoomModal extends Modal
 
+	cover_uploaded: ""
 	constructor: ( @dom ) ->
 		super @dom
 
@@ -10,10 +11,32 @@ module.exports = class CreateRoomModal extends Modal
 		@location = @dom.find '.location'
 		@description = @dom.find '.description'
 
+		@submit = @dom.find '.submit_button'
+
 		@title.on 'keyup', @_on_title_changed
 		@genre.on 'keyup', @_on_genre_changed
 		@location.on 'keyup', @_on_location_changed
 		@description.on 'keyup', @_on_description_changed
+
+		@submit.on 'click', @_submit
+
+		view.once 'binded', @on_views_binded
+
+	on_views_binded: ( ) =>
+
+		room_image_uploader = view.get_by_dom @dom.find( '.room_image' )
+
+		if not room_image_uploader
+			log "[CreateRoomModal] views not binded yet!!!"
+			return
+
+		room_image_uploader.on 'completed', @_on_cover_changed
+
+		
+
+	_on_cover_changed: (data) =>
+		@cover_uploaded = data.result.url
+		@emit 'input:changed', { name: 'cover', value: data.result }
 
 	_on_title_changed: ( ) =>
 		@emit 'input:changed', { name: 'title', value: @title.val() }
@@ -26,6 +49,19 @@ module.exports = class CreateRoomModal extends Modal
 
 	_on_description_changed: ( ) =>
 		@emit 'input:changed', { name: 'description', value: @description.val() }
+
+
+	_submit: ( ) =>
+		data = 
+			title: @title.val()
+			genre: @genre.val()
+			location: @location.val()
+			description: @description.val()
+			cover: @cover_uploaded
+
+		log "[Create Room Modal] submit", data
+
+		@close()
 
 
 
