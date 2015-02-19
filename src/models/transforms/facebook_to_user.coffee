@@ -51,8 +51,6 @@ module.exports = ( info, callback ) ->
     redirect    : false
 
 
-  console.log "Facebook ---->", avatar.url, params
-
   # TODO: delete this picture from cloudinary in case user upload a new one
   # TODO: don't upload in case picture url did not change
   graph avatar.url, params, ( error, response ) ->

@@ -13,6 +13,13 @@ jade = require 'jade'
 
 module.exports = ( url, data, callback ) ->
 
+  
+
+  data.cloudinary = 
+    api_key     : s.cloudinary.api_key
+    cloud_name  : s.cloudinary.cloud_name
+    unsigned_ids: s.cloudinary.api_unsigned_ids
+
   root = path.join( __dirname + '/../../frontend/templates' )
 
   url  = root + url + '.jade'
