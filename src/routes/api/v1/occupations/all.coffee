@@ -9,4 +9,12 @@ module.exports =
 
   handler: ( request, reply )->
 
-    reply [ "A", "B" ]
+    reply [
+      "DJ/Producer"
+      "Record Label "
+      "Agency "
+      "Promoter "
+      "Club "
+      "Festival "
+      "Listener"
+    ]
