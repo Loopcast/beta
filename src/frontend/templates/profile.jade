@@ -5,9 +5,11 @@ block content
     .cover
       .cover_image(style="background-image:url(/images/homepage_2.jpg)")
       .content
-        h1.name.black_background #{profile.name}
+        h1.name.black_background(data-view="components/editable_text")
+          span.text #{profile.name}
         br
-        h3.type.black_background DJ/Producer
+        h3.type.black_background(data-view="components/editable_select")
+          span.text DJ/Producer
         br
         ul.genres.black_background
           for genre, i in profile.genres
