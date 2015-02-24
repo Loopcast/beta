@@ -19,28 +19,20 @@ module.exports = ( callback ) ->
       "fusion"       : "Fusion",
       "funky"        : "Funky",
       "punk"         : "Punk",
-      "metal"        : "Metal",
-      "rock"         : "Rock",
-      "gotic"        : "Gotic",
-      "emo"          : "Emo",
-      "pop"          : "Pop",
-      "rnb"          : "R&B",
-      "classic"      : "Classic",
-      "hipster"      : "Hipster",
-      "progressive"  : "Progressive"
-      
+      "metal"        : "Metal"
+
     rooms: [
         title   : "Live at EGG London with Brine7Q"
         author  : "Thomas Amundsen"
         thumb   : "/images/room_thumb.png"
-        genres  : [ "house", "tech-house", "electro-house" ]
+        genres  : [ "house", "tech-house", "electro-house", "metal" ]
         location: "London/UK"
         url     : "/thomas/live-at-egg-london-with-brine7q"
       ,
         title   : "crazylicious"
         author  : "hems"
         thumb   : "/images/room_thumb.png"
-        genres  : [ "ambient", "alternative", "experimental" ]
+        genres  : [ "ambient", "alternative", "punk", "experimental", "house" ]
         location: "London/UK"
         url     : "/hems/crazylicious"
       ,
@@ -54,28 +46,28 @@ module.exports = ( callback ) ->
         title   : "Live from Salisbury"
         author  : "DPR"
         thumb   : "/images/room_thumb.png"
-        genres  : [ "punk", "metal", "rock", "gotic", "emo" ]
+        genres  : [ "punk", "metal" ]
         location: "Salisbury/UK"
         url     : "/dpr/fuck-that-shit"
       ,
         title   : "Live from Dublin"
         author  : "Scott Hamilton"
         thumb   : "/images/room_thumb.png"
-        genres  : [ "pop", "rnb" ]
+        genres  : [ "ska", "fusion", "tech-house" ]
         location: "Dublin/UK"
         url     : "/scott/dublin"
       ,
         title   : "Testing my new machine"
         author  : "Nicola Antonazzo"
         thumb   : "/images/room_thumb.png"
-        genres  : [ "pop", "rnb" ]
+        genres  : [ "electro-house", "ambient" ]
         location: "Bergamo/IT"
         url     : "/antonazzo/test"
       ,
         title   : "Le jeux sont fan"
         author  : "Franz Duregne"
         thumb   : "/images/room_thumb.png"
-        genres  : [ "classic", "hipster", "progressive" ]
+        genres  : [ "ambient", "alternative", "reggae" ]
         location: "Paris/FR"
         url     : "/franz/jeux"
       ]
