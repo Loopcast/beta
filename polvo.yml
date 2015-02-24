@@ -13,6 +13,7 @@ output:
 alias:
   app: src/frontend/scripts/
   templates: src/frontend/templates/
+  vendors: src/frontend/vendors
 
 minify:
   js : true

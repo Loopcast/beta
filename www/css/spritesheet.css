@@ -27,13 +27,13 @@
   background-position: -50px -70px;
 }
 
-.spritesheet.profile_facebook {
+.spritesheet.profile_soundcloud {
   width: 48px;
   height: 48px;
   background-position: -98px -70px;
 }
 
-.spritesheet.profile_soundcloud {
+.spritesheet.profile_facebook {
   width: 48px;
   height: 48px;
   background-position: -146px -70px;
@@ -135,10 +135,16 @@
   background-position: -36px -145px;
 }
 
+.spritesheet.icon_location {
+  width: 12px;
+  height: 12px;
+  background-position: -214px -102px;
+}
+
 .spritesheet.small_arrow_white {
   width: 10px;
   height: 5px;
-  background-position: -214px -102px;
+  background-position: -52px -145px;
 }
 
 

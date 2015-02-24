@@ -18,27 +18,63 @@ block content
 						span Sets
 
 
+		.explore_content.flex.centered(data-view="rooms")
+			.flex_sidebar.genres_list
+				a.selected(title="All genres", href="#", data-genre-id="all-genres") All genres
+				each val, key in genres
+					a(title="#{val}" href="#", data-genre-id="#{key}") #{val}
 
-		h1(data-view="room") Rooms
 
-		br
-		br
-			
-		h4 genres
+			.flex_content.rooms_grid
 
-		ul
-			for genre in genres
-				li #{genre}
+				for room in rooms
 
-		br
-		br
-			
-		h4 rooms
+					- klasses = "item-all-genres"
+					for g in room.genres
+						- klasses += " item-" + g 
 
-		ul
-			for room in rooms
-				li 
-					pre
-						| title : #{room.title}
-						| author: #{room.author}
-						| ---
+					.room_cell.item(class="#{klasses}")
+						a(href="#{room.url}", title="#{room.title}") 
+							img.room_thumb(src="#{room.thumb}")
+						.room_content
+							.text
+								h2.room_title 
+									a(href="#{room.url}", title="#{room.title}") #{room.title}
+								a.room_user(title="#{room.author}", href="#{room.url}") #{room.author}
+								.genres.small
+									for g in room.genres
+										a.tag(href="#", title="#{g}", data-genre-id="#{g}") #{genres[g]}
+
+								p.room_location
+									span.spritesheet.icon_location 
+									| #{room.location}
+								p.now_live Now Live
+
+							a.enter_room(href="#{room.url}", class="button yellow_button no_shadow small_button small_button_2", title="Enter Room") Enter Room
+
+				
+
+
+			//- h1(data-view="room") Rooms
+
+			//- br
+			//- br
+				
+			//- h4 genres
+
+			//- ul
+			//- 	for genre in genres
+			//- 		li #{genre}
+
+			//- br
+			//- br
+				
+			//- h4 rooms
+
+			//- ul
+			//- 	for room in rooms
+			//- 		li 
+			//- 			pre
+			//- 				| title : #{room.title}
+			//- 				| author: #{room.author}
+			//- 				| ---
