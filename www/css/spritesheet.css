@@ -1,6 +1,6 @@
 .spritesheet {
   background: url( '../images/spritesheet.png' ) no-repeat;
-  background-size: 228px 176px;
+  background-size: 228px 210px;
 }
 
 .spritesheet.medium_white_logo {
@@ -15,136 +15,142 @@
   background-position: -114px 0;
 }
 
-.spritesheet.play_icon {
-  width: 50px;
-  height: 50px;
+.spritesheet.room_play {
+  width: 60px;
+  height: 60px;
   background-position: 0 -70px;
 }
 
-.spritesheet.profile_spotify {
-  width: 48px;
-  height: 48px;
-  background-position: -50px -70px;
-}
-
-.spritesheet.profile_soundcloud {
-  width: 48px;
-  height: 48px;
-  background-position: -98px -70px;
+.spritesheet.play_icon {
+  width: 50px;
+  height: 50px;
+  background-position: -60px -70px;
 }
 
 .spritesheet.profile_facebook {
   width: 48px;
   height: 48px;
-  background-position: -146px -70px;
+  background-position: -110px -70px;
+}
+
+.spritesheet.profile_spotify {
+  width: 48px;
+  height: 48px;
+  background-position: -158px -70px;
+}
+
+.spritesheet.profile_soundcloud {
+  width: 48px;
+  height: 48px;
+  background-position: 0 -130px;
 }
 
 .spritesheet.sprite_small_logo {
   width: 41px;
   height: 25px;
-  background-position: 0 -120px;
+  background-position: -48px -130px;
 }
 
 .spritesheet.sprite_arrow_down_white {
   width: 32px;
   height: 32px;
-  background-position: -194px -70px;
+  background-position: 0 -178px;
 }
 
 .spritesheet.google_button_icon {
   width: 20px;
   height: 31px;
-  background-position: 0 -145px;
+  background-position: -206px -70px;
 }
 
 .spritesheet.facebook_button_icon {
   width: 16px;
   height: 31px;
-  background-position: -20px -145px;
+  background-position: -32px -178px;
 }
 
 .spritesheet.camera_icon {
   width: 25px;
   height: 21px;
-  background-position: -41px -120px;
-}
-
-.spritesheet.header_settings_hover {
-  width: 21px;
-  height: 21px;
-  background-position: -66px -120px;
+  background-position: -89px -130px;
 }
 
 .spritesheet.header_settings {
   width: 21px;
   height: 21px;
-  background-position: -87px -120px;
+  background-position: -114px -130px;
+}
+
+.spritesheet.header_settings_hover {
+  width: 21px;
+  height: 21px;
+  background-position: -135px -130px;
 }
 
 .spritesheet.messages_icon {
   width: 20px;
   height: 16px;
-  background-position: -194px -102px;
+  background-position: -206px -101px;
 }
 
 .spritesheet.edit_icon_white {
   width: 14px;
   height: 19px;
-  background-position: -108px -120px;
+  background-position: -156px -130px;
 }
 
 .spritesheet.edit_icon {
   width: 14px;
   height: 19px;
-  background-position: -122px -120px;
+  background-position: -170px -130px;
 }
 
 .spritesheet.session_icon {
   width: 18px;
   height: 18px;
-  background-position: -136px -120px;
+  background-position: -184px -130px;
 }
 
 .spritesheet.alert_icon {
   width: 18px;
   height: 18px;
-  background-position: -154px -120px;
+  background-position: -202px -130px;
 }
 
 .spritesheet.people_icon {
   width: 18px;
   height: 16px;
-  background-position: -172px -120px;
+  background-position: -48px -155px;
 }
 
 .spritesheet.rooms_icon {
   width: 18px;
   height: 16px;
-  background-position: -190px -120px;
+  background-position: -66px -155px;
 }
 
 .spritesheet.sets_icon {
   width: 18px;
   height: 16px;
-  background-position: -208px -120px;
+  background-position: -84px -155px;
 }
 
 .spritesheet.header_search_icon {
   width: 16px;
   height: 15px;
-  background-position: -36px -145px;
+  background-position: -102px -155px;
 }
 
 .spritesheet.icon_location {
   width: 12px;
   height: 12px;
-  background-position: -214px -102px;
+  background-position: -118px -155px;
 }
 
 .spritesheet.small_arrow_white {
   width: 10px;
   height: 5px;
-  background-position: -52px -145px;
+  background-position: -60px -120px;
 }
 
 
@@ -155,7 +161,7 @@
 (min-device-pixel-ratio: 2) {
 .spritesheet {
   background: url( '../images/spritesheet-retina.png' ) no-repeat;
-  background-size: 228px 176px;
+  background-size: 228px 210px;
 }
 
 }

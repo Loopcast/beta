@@ -3,8 +3,6 @@ module.exports = (dom) ->
 
 	container_isotope = dom.find( '.rooms_grid' )[ 0 ]
 
-
-
 	isotope = new Isotope container_isotope,
 		itemSelector: '.item',
 		gutter: 30
@@ -12,8 +10,6 @@ module.exports = (dom) ->
 		masonry:
 			columnWidth: 210,
 			gutter: 30
-
-	console.log isotope
 	
 	filters = dom.find '.genres_list a'
 
@@ -26,6 +22,3 @@ module.exports = (dom) ->
 		dom.find( '.genres_list a[data-genre-id="'+genre_id+'"]' ).addClass 'selected'
 
 		isotope.arrange filter: ".item-#{genre_id}"
-		
-
-

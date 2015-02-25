@@ -1488,12 +1488,30 @@ body {
 }
 
 /* line 81 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
+.explore .rooms_grid .room_cell .thumb_wrapper {
+  position: relative;
+  display: block;
+}
+
+/* line 85 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
+.explore .rooms_grid .room_cell .thumb_wrapper .spritesheet {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+/* line 89 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell .room_thumb {
   width: 100%;
   display: block;
 }
 
-/* line 85 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 93 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell h2 {
   color: #1f1f1f;
   font-size: 1em;
@@ -1502,7 +1520,7 @@ body {
   margin-bottom: 5px;
 }
 
-/* line 92 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 100 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell .room_user {
   color: #4592d4;
   font-size: 0.8em;
@@ -1511,26 +1529,26 @@ body {
   margin-bottom: 10px;
 }
 
-/* line 99 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 107 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell .room_location {
   color: #605b5b;
   font-size: 0.8em;
   margin-bottom: 5px;
 }
 
-/* line 103 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 111 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell .room_location .spritesheet {
   position: relative;
   top: 2px;
 }
 
-/* line 109 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 117 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 110 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 118 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 111 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 119 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 112 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 120 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .no_touch_device .explore .genres_list a:hover {
   background: #747c83;
   color: #dedede;

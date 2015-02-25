@@ -34,8 +34,9 @@ block content
 						- klasses += " item-" + g 
 
 					.room_cell.item(class="#{klasses}")
-						a(href="#{room.url}", title="#{room.title}") 
+						a(href="#{room.url}", title="#{room.title}", class="thumb_wrapper") 
 							img.room_thumb(src="#{room.thumb}")
+							span.spritesheet.room_play
 						.room_content
 							.text
 								h2.room_title 
