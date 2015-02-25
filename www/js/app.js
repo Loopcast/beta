@@ -11518,9 +11518,8 @@ module.exports = function(dom) {
 
 }, {"isotope-layout":"node_modules/isotope-layout/js/isotope"});
 require.register('src/frontend/templates/components/editables/editable_select', function(require, module, exports){
-module.exports = function anonymous(locals
-/**/) {
-jade.debug = [{ lineno: 1, filename: "/Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/templates/components/editables/editable_select.jade" }];
+module.exports = function anonymous(locals) {
+jade.debug = [{ lineno: 1, filename: "/Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/templates/components/editables/editable_select.jade" }];
 try {
 var buf = [];
 var locals_ = (locals || {}),values = locals_.values;jade.debug.unshift({ lineno: 1, filename: jade.debug[0].filename });
@@ -11587,9 +11586,8 @@ jade.debug.shift();;return buf.join("");
 }
 }, {});
 require.register('src/frontend/templates/components/editables/editable_text', function(require, module, exports){
-module.exports = function anonymous(locals
-/**/) {
-jade.debug = [{ lineno: 1, filename: "/Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/templates/components/editables/editable_text.jade" }];
+module.exports = function anonymous(locals) {
+jade.debug = [{ lineno: 1, filename: "/Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/templates/components/editables/editable_text.jade" }];
 try {
 var buf = [];
 jade.debug.unshift({ lineno: 1, filename: jade.debug[0].filename });
@@ -11609,9 +11607,8 @@ jade.debug.shift();;return buf.join("");
 }
 }, {});
 require.register('src/frontend/templates/shared/header_user_logged', function(require, module, exports){
-module.exports = function anonymous(locals
-/**/) {
-jade.debug = [{ lineno: 1, filename: "/Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/templates/shared/header_user_logged.jade" }];
+module.exports = function anonymous(locals) {
+jade.debug = [{ lineno: 1, filename: "/Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/templates/shared/header_user_logged.jade" }];
 try {
 var buf = [];
 var locals_ = (locals || {}),avatar = locals_.avatar,username = locals_.username;jade.debug.unshift({ lineno: 1, filename: jade.debug[0].filename });

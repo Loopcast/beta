@@ -1,63 +1,111 @@
 
-/* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
+/* line 127 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/app.styl */
 
-/* line 14 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 14 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/border.styl */
+/* line 286 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 11 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/clearfix.styl */
+/* line 13 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
-/* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/color-image.styl */
+/* line 13 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
-/* line 5 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/border.styl */
 
-/* line 91 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+/* line 10 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/border.styl */
 
-/* line 91 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/clearfix.styl */
 
-/* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/iconic.styl */
+/* line 28 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/clearfix.styl */
 
-/* line 8 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/image.styl */
+/* line 247 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/color-image.styl */
 
-/* line 26 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/overflow.styl */
+/* line 4 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/color-image.styl */
 
-/* line 3 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/positions.styl */
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 3 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
+/* line 196 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 6 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+/* line 90 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
-/* line 6 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/aliases.styl */
+/* line 90 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
-/* line 13 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/ellipsis.styl */
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
 
-/* line 10 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/hide-text.styl */
+/* line 11 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
 
-/* line 9 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/replace-text.styl */
+/* line 247 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/iconic.styl */
 
-/* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/shadow-stroke.styl */
+/* line 7 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/iconic.styl */
 
-/* line undefined : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/vendor.styl */
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/image.styl */
 
-/* line 578 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
+/* line 25 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/image.styl */
 
-/* line 12 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/size.styl */
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/overflow.styl */
 
-/* line 3 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_bootstrap.styl */
+/* line 20 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/overflow.styl */
 
-/* line 30 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_bootstrap.styl */
+/* line 247 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/positions.styl */
+
+/* line 66 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/positions.styl */
+
+/* line 247 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
+
+/* line 78 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
+
+/* line 5 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+
+/* line 5 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/aliases.styl */
+
+/* line 12 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/aliases.styl */
+
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/ellipsis.styl */
+
+/* line 9 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/ellipsis.styl */
+
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/hide-text.styl */
+
+/* line 8 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/hide-text.styl */
+
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/replace-text.styl */
+
+/* line 9 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/replace-text.styl */
+
+/* line 247 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/shadow-stroke.styl */
+
+/* line 2 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/shadow-stroke.styl */
+
+/* line 247 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/vendor.styl */
+
+/* line 11 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/vendor.styl */
+
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
+
+/* line 577 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
+
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/size.styl */
+
+/* line 28 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/size.styl */
+
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/rupture/rupture/index.styl */
+
+/* line 260 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/rupture/rupture/index.styl */
+
+/* line 3 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_bootstrap.styl */
+
+/* line 30 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_bootstrap.styl */
 .yellow {
   color: #ffc80a;
 }
 
-/* line 32 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 31 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_bootstrap.styl */
 
-/* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 31 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_header_footer.styl */
+
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header {
-  -webkit-transition: opacity 0.3s linear;
-  -moz-transition: opacity 0.3s linear;
-  -o-transition: opacity 0.3s linear;
-  -ms-transition: opacity 0.3s linear;
   transition: opacity 0.3s linear;
   position: fixed;
   width: 100%;
@@ -68,7 +116,7 @@ header.header {
   z-index: 3;
 }
 
-/* line 11 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 11 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .background {
   position: absolute;
   top: 0;
@@ -79,20 +127,20 @@ header.header .background {
   background: #1f1f1f;
 }
 
-/* line 18 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 18 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .centered {
   position: relative;
   z-index: 1;
 }
 
-/* line 21 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 21 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .centered.second {
   z-index: 0;
 }
 
-/* line 24 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 24 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_header_footer.styl */
 
-/* line 25 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 25 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .left > *,
 header.header .right > * {
   display: inline-block;
@@ -101,7 +149,7 @@ header.header .right > * {
   height: 42px;
 }
 
-/* line 32 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 32 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .left > *.settings,
 header.header .right > *.settings {
   padding-top: 10px;
@@ -111,34 +159,29 @@ header.header .right > *.settings {
   position: relative;
 }
 
-/* line 38 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 38 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .left > *.settings span,
 header.header .right > *.settings span {
-  -webkit-transition: -webkit-transform 0.1s linear;
-  -moz-transition: -moz-transform 0.1s linear;
-  -o-transition: -o-transform 0.1s linear;
-  -ms-transition: -ms-transform 0.1s linear;
+  transition: -webkit-transform 0.1s linear;
   transition: transform 0.1s linear;
 }
 
-/* line 41 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 41 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_header_footer.styl */
 
-/* line 42 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 42 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .left > *.settings.hovered span,
 header.header .right > *.settings.hovered span {
   -webkit-transform: rotate(360deg);
-  -moz-transform: rotate(360deg);
-  -o-transform: rotate(360deg);
   -ms-transform: rotate(360deg);
   transform: rotate(360deg);
 }
 
-/* line 45 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 45 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .menu_item {
   position: relative;
 }
 
-/* line 47 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 47 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .menu_item:after {
   content: "";
   position: absolute;
@@ -147,81 +190,77 @@ header.header .menu_item:after {
   width: 100%;
   height: 0px;
   background: #4592d4;
-  -webkit-transition: height 0.1s ease-out;
-  -moz-transition: height 0.1s ease-out;
-  -o-transition: height 0.1s ease-out;
-  -ms-transition: height 0.1s ease-out;
   transition: height 0.1s ease-out;
 }
 
-/* line 56 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 56 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .menu_item.selected:after {
   height: 3px;
 }
 
-/* line 58 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 58 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .menu_item.selected.homepage_item:after {
   height: 0;
 }
 
-/* line 61 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 61 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .left {
   float: left;
 }
 
-/* line 63 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 63 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .left > * {
   border-right: 1px solid #333;
   padding: 9px 25px;
 }
 
-/* line 67 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 67 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .left > *.no_border {
   border-right: none;
 }
 
-/* line 70 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 70 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .right {
   float: right;
   position: relative;
 }
 
-/* line 74 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 74 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .settings_dropdown {
   width: 140px;
 }
 
-/* line 78 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 78 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .search_box {
   position: relative;
   padding-left: 56px;
 }
 
-/* line 81 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 81 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .search_box .spritesheet {
   position: absolute;
   top: 14px;
   left: 25px;
 }
 
-/* line 85 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 85 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .search_box form {
   display: inline-block;
 }
 
-/* line 88 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 88 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .user_logged {
   display: none;
   padding: 0;
 }
 
-/* line 91 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 91 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .user_logged > * {
   display: inline-block;
   vertical-align: middle;
 }
 
-/* line 94 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 94 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .user_logged .thumb_wrapper {
   padding-right: 30px;
   margin-right: 10px;
@@ -229,58 +268,57 @@ header.header .user_logged .thumb_wrapper {
   height: 42px;
 }
 
-/* line 99 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 99 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .user_logged .thumb_wrapper .spritesheet {
   position: absolute;
   top: 43%;
   right: 10px;
 }
 
-/* line 103 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 103 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_header_footer.styl */
 
-/* line 104 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 104 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .user_logged .thumb_wrapper.hovered .spritesheet {
   -webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 
-/* line 107 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 107 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .user_dropdown {
   right: 0px;
 }
 
-/* line 110 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 110 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .messages_icon {
   display: block;
 }
 
-/* line 113 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 113 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_header_footer.styl */
 
-/* line 114 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 114 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_header_footer.styl */
 .first_loaded header {
   opacity: 1;
   -ms-filter: none;
-  filter: none;
+  -webkit-filter: none;
+          filter: none;
 }
 
-/* line 116 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 116 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_header_footer.styl */
 
-/* line 117 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 117 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_header_footer.styl */
 
-/* line 118 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 118 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_header_footer.styl */
 .logged header .user_logged {
   display: inline-block;
 }
 
-/* line 120 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 120 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_header_footer.styl */
 .logged header .login_link {
   display: none;
 }
 
-/* line 124 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 124 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_header_footer.styl */
 footer {
   background: #1f1f1f;
   text-align: center;
@@ -289,9 +327,11 @@ footer {
   position: relative;
 }
 
-/* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+/* line 129 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_header_footer.styl */
 
-/* line 4 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_modal.styl */
+
+/* line 4 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_modal.styl */
 .modal {
   position: fixed;
   top: 50%;
@@ -301,29 +341,21 @@ footer {
   z-index: 2000;
   visibility: hidden;
   -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-transform: translateX(-50%) translateY(-50%);
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -o-transform: translateX(-50%) translateY(-50%);
   -ms-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
 }
 
-/* line 16 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+/* line 16 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_modal.styl */
 .md_show {
   visibility: visible;
-  -webkit-box-shadow: 1px 1px 26px -7px #000;
   box-shadow: 1px 1px 26px -7px #000;
-  -webkit-transition: box-shadow 0.3s linear 0.2s;
-  -moz-transition: box-shadow 0.3s linear 0.2s;
-  -o-transition: box-shadow 0.3s linear 0.2s;
-  -ms-transition: box-shadow 0.3s linear 0.2s;
   transition: box-shadow 0.3s linear 0.2s;
 }
 
-/* line 21 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+/* line 21 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_modal.styl */
 .md_overlay {
   position: fixed;
   width: 100%;
@@ -336,14 +368,10 @@ footer {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
   background: #000;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  -ms-transition: all 0.3s;
   transition: all 0.3s;
 }
 
-/* line 33 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+/* line 33 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_modal.styl */
 .md_show ~ .md_overlay {
   opacity: 0.6;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
@@ -351,19 +379,18 @@ footer {
   visibility: visible;
 }
 
-/* line 38 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+/* line 38 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_modal.styl */
 .md_wrapper {
   color: #000;
   background: #fff;
   position: relative;
-  -webkit-border-radius: 3px;
   border-radius: 3px;
   margin: 0 auto;
   font-weight: 300;
   font-size: 1em;
 }
 
-/* line 48 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+/* line 48 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_modal.styl */
 .md_header {
   margin: 0;
   padding: 0.4em;
@@ -372,22 +399,22 @@ footer {
   font-weight: 300;
   opacity: 1;
   -ms-filter: none;
-  filter: none;
+  -webkit-filter: none;
+          filter: none;
   background: #1f1f1f;
   color: #fff;
-  -webkit-border-radius: 3px 3px 0 0;
   border-radius: 3px 3px 0 0;
   position: relative;
   padding: 13px 20px 13px;
   margin: 0;
 }
 
-/* line 61 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+/* line 61 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_modal.styl */
 .md_header .md_logo {
   display: block;
 }
 
-/* line 64 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+/* line 64 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_modal.styl */
 .md_header .tabs {
   position: absolute;
   right: 20px;
@@ -395,50 +422,49 @@ footer {
   font-weight: 600;
 }
 
-/* line 69 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+/* line 69 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_modal.styl */
 .md_header .tabs a {
   display: inline-block;
   padding: 10px 20px;
 }
 
-/* line 73 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+/* line 73 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_modal.styl */
 .md_header .tabs a.active {
   background: #fff;
-  -webkit-border-radius: 3px 3px 0 0;
   border-radius: 3px 3px 0 0;
   color: #605b5b;
 }
 
-/* line 79 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+/* line 79 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_modal.styl */
 .md_content {
   padding: 30px 20px;
   margin: 0;
 }
 
-/* line 82 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+/* line 82 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_modal.styl */
 .md_content p {
   margin: 0;
   padding: 10px 0;
 }
 
-/* line 87 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+/* line 87 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_modal.styl */
 #createroom_modal {
   text-align: left;
   width: 350px;
 }
 
-/* line 90 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+/* line 90 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_modal.styl */
 #createroom_modal .md_content {
   padding: 20px;
 }
 
-/* line 92 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+/* line 92 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_modal.styl */
 #createroom_modal h4 {
   font-size: 1.3em;
   margin-bottom: 10px;
 }
 
-/* line 95 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+/* line 95 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_modal.styl */
 #createroom_modal label {
   text-transform: uppercase;
   font-size: 0.8em;
@@ -447,12 +473,12 @@ footer {
   display: block;
 }
 
-/* line 102 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+/* line 102 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_modal.styl */
 #createroom_modal input {
   font-size: 0.75em;
 }
 
-/* line 105 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+/* line 105 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_modal.styl */
 #createroom_modal .button {
   margin-bottom: 10px;
   padding-top: 12px;
@@ -460,54 +486,44 @@ footer {
   height: 45px;
 }
 
-/* line 111 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+/* line 111 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_modal.styl */
 
-/* line 112 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+/* line 112 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_modal.styl */
 
-/* line 113 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+/* line 113 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_modal.styl */
 .no_touch_device #createroom_modal .button.yellow_button:hover {
-  background-image: -webkit-linear-gradient(270deg, #ffc80a 11%, #f5be00 42%, #e5b100 73%);
-  background-image: -moz-linear-gradient(270deg, #ffc80a 11%, #f5be00 42%, #e5b100 73%);
-  background-image: -o-linear-gradient(270deg, #ffc80a 11%, #f5be00 42%, #e5b100 73%);
-  background-image: -ms-linear-gradient(270deg, #ffc80a 11%, #f5be00 42%, #e5b100 73%);
   background-image: linear-gradient(180deg, #ffc80a 11%, #f5be00 42%, #e5b100 73%);
   color: #1f1f1f;
 }
 
-/* line 119 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+/* line 119 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_modal.styl */
 .slide_from_bottom .md_wrapper {
   -webkit-transform: translateY(200%);
-  -moz-transform: translateY(200%);
-  -o-transform: translateY(200%);
   -ms-transform: translateY(200%);
   transform: translateY(200%);
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
-  -webkit-transition: all 0.3s ease-out;
-  -moz-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
-  -ms-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
 
-/* line 124 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+/* line 124 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_modal.styl */
 .md_show.slide_from_bottom .md_wrapper {
   -webkit-transform: translateY(0);
-  -moz-transform: translateY(0);
-  -o-transform: translateY(0);
   -ms-transform: translateY(0);
   transform: translateY(0);
   opacity: 1;
   -ms-filter: none;
-  filter: none;
+  -webkit-filter: none;
+          filter: none;
 }
 
-/* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 126 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_modal.styl */
 
-/* line 3 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
+
+/* line 3 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .button {
-  -webkit-border-radius: 2px;
   border-radius: 2px;
   text-align: center;
   display: block;
@@ -518,97 +534,88 @@ footer {
   padding-top: 9px;
   height: 39px;
   position: relative;
-  -webkit-transition: background-color 0.1s linear;
-  -moz-transition: background-color 0.1s linear;
-  -o-transition: background-color 0.1s linear;
-  -ms-transition: background-color 0.1s linear;
   transition: background-color 0.1s linear;
   cursor: pointer;
 }
 
-/* line 18 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 18 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .button.shadow {
-  -webkit-box-shadow: inset 0px -3px 1px rgba(0,0,0,0.15), 0px 2px 2px rgba(0,0,0,0.05);
   box-shadow: inset 0px -3px 1px rgba(0,0,0,0.15), 0px 2px 2px rgba(0,0,0,0.05);
 }
 
-/* line 21 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 21 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .button.save_button {
   background: #4592d4;
   color: #fff;
   font-size: 0.8em;
 }
 
-/* line 26 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 26 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .button.green_button {
   background: #329f0c;
   color: #fff;
 }
 
-/* line 30 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 30 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .button.red_button {
   background: #f23131;
   color: #fff;
 }
 
-/* line 34 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 34 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .button.facebook {
   background-color: #2e5d94;
 }
 
-/* line 37 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 37 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .button.soundcloud {
   background-color: #ff5224;
 }
 
-/* line 40 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 40 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .button.google {
   background-color: #dc4b38;
 }
 
-/* line 43 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 43 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .button.signin {
   background-color: #2095cf;
 }
 
-/* line 46 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 46 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .button.half {
   display: inline-block;
   width: 48%;
 }
 
-/* line 50 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 50 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .button.gray_button {
   background-color: #383838;
 }
 
-/* line 53 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 53 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .button.yellow_button {
-  background-image: -webkit-linear-gradient(270deg, #ffc80a 11%, #f5be00 42%, #e5b100 73%);
-  background-image: -moz-linear-gradient(270deg, #ffc80a 11%, #f5be00 42%, #e5b100 73%);
-  background-image: -o-linear-gradient(270deg, #ffc80a 11%, #f5be00 42%, #e5b100 73%);
-  background-image: -ms-linear-gradient(270deg, #ffc80a 11%, #f5be00 42%, #e5b100 73%);
   background-image: linear-gradient(180deg, #ffc80a 11%, #f5be00 42%, #e5b100 73%);
   color: #1f1f1f;
   font-weight: 800;
   border: 1px solid #e9ac1a;
 }
 
-/* line 60 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 60 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .button.white_transparent_button {
   background: transparent;
   border: 1px solid #fff;
   color: #fff;
 }
 
-/* line 65 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 65 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .button.small_button {
   font-size: 0.75em;
   padding: 10px;
   font-weight: 600;
 }
 
-/* line 70 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 70 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .button.small_button_2 {
   font-size: 0.75em;
   padding: 7px 10px;
@@ -616,14 +623,14 @@ footer {
   font-weight: 600;
 }
 
-/* line 76 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 76 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .button.small_button_3 {
   font-size: 0.8em;
   padding: 9px 40px 10px;
   font-weight: 600;
 }
 
-/* line 82 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 82 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .button.social {
   padding-left: 50px;
   width: 300px;
@@ -635,95 +642,85 @@ footer {
   letter-spacing: 0.03em;
 }
 
-/* line 91 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 91 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .button.social span.spritesheet {
   margin-right: 10px;
   position: absolute;
   left: 26px;
   top: 50%;
   -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
 
-/* line 97 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 97 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .button.social span {
   vertical-align: middle;
   display: block;
   text-align: right;
 }
 
-/* line 103 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 103 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 
-/* line 104 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 104 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .no_touch_device .button.facebook:hover {
   background-color: #285181;
 }
 
-/* line 107 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 107 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .no_touch_device .button.soundcloud:hover {
   background-color: #ff3e0a;
 }
 
-/* line 110 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 110 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .no_touch_device .button.google:hover {
   background-color: #d53a25;
 }
 
-/* line 113 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 113 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .no_touch_device .button.signin:hover {
   background-color: #1d85b9;
 }
 
-/* line 116 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 116 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .no_touch_device .button.gray_button:hover {
   background-color: #525252;
 }
 
-/* line 119 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 119 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .no_touch_device .button.save_button:hover {
   background: #3086cf;
 }
 
-/* line 122 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 122 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .no_touch_device .button.green_button:hover {
   background: #2b870a;
 }
 
-/* line 125 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 125 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .no_touch_device .button.red_button:hover {
   background: #f01919;
 }
 
-/* line 128 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 128 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .no_touch_device .button.yellow_button:hover {
-  background-image: -webkit-linear-gradient(270deg, #000 11%, #000 42%, #000 73%);
-  background-image: -moz-linear-gradient(270deg, #000 11%, #000 42%, #000 73%);
-  background-image: -o-linear-gradient(270deg, #000 11%, #000 42%, #000 73%);
-  background-image: -ms-linear-gradient(270deg, #000 11%, #000 42%, #000 73%);
   background-image: linear-gradient(180deg, #000 11%, #000 42%, #000 73%);
   color: #ffc80a;
   border: 1px solid #ffc80a;
 }
 
-/* line 133 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 133 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .no_touch_device .button.white_transparent_button:hover {
   background: #fff;
   color: #1f1f1f;
 }
 
-/* line 139 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 139 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .buttons_flex {
-  display: -webkit-box;
-  display: -moz-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: box;
   display: flex;
-  -webkit-box-pack: distribute;
-  -moz-box-pack: distribute;
   -o-box-pack: distribute;
   -ms-flex-pack: distribute;
   -webkit-justify-content: space-around;
@@ -739,13 +736,13 @@ footer {
   flex-flow: row wrap;
 }
 
-/* line 143 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 143 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .buttons_flex > * {
   width: 47%;
   margin: 0px 1% 10px;
 }
 
-/* line 148 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 148 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .middle_line {
   text-align: center;
   position: relative;
@@ -754,12 +751,12 @@ footer {
   color: #99999c;
 }
 
-/* line 154 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 154 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .middle_line span {
   display: inline-block;
 }
 
-/* line 156 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 156 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .middle_line span:before,
 .middle_line span:after {
   border-top: 1px solid #e5e5e5;
@@ -772,20 +769,19 @@ footer {
   top: 50%;
 }
 
-/* line 167 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 167 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .middle_line span:after {
   right: 0;
   left: auto;
 }
 
-/* line 171 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 171 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 input,
 textarea {
   display: block;
   border: none;
   background: #dedede;
   color: #1f1f1f;
-  -webkit-border-radius: 3px;
   border-radius: 3px;
   margin-bottom: 20px;
   width: 100%;
@@ -793,7 +789,7 @@ textarea {
   padding: 10px 15px;
 }
 
-/* line 181 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 181 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder,
 input:-moz-placeholder,
@@ -805,7 +801,7 @@ textarea:-ms-input-placeholder {
   color: #a9a9a9;
 }
 
-/* line 187 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 187 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 input.white_textarea,
 textarea.white_textarea {
   background: #fff;
@@ -813,24 +809,19 @@ textarea.white_textarea {
   height: 100px;
 }
 
-/* line 192 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 192 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 input.dark_input,
 textarea.dark_input {
   background-color: #393939;
   color: #fff;
   font-size: 0.7em;
   padding: 6px;
-  -webkit-border-radius: 5px;
   border-radius: 5px;
   margin: 0;
-  -webkit-transition: width 0.3s ease-out, background-color 0.3s linear;
-  -moz-transition: width 0.3s ease-out, background-color 0.3s linear;
-  -o-transition: width 0.3s ease-out, background-color 0.3s linear;
-  -ms-transition: width 0.3s ease-out, background-color 0.3s linear;
   transition: width 0.3s ease-out, background-color 0.3s linear;
 }
 
-/* line 201 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 201 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 input.dark_input:focus,
 textarea.dark_input:focus {
   outline: 0;
@@ -838,39 +829,38 @@ textarea.dark_input:focus {
   background-color: #464646;
 }
 
-/* line 206 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 206 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .squared_input {
   background: none;
-  -webkit-border-radius: 0px;
   border-radius: 0px;
-  border: 1px solid #cbcbcb;
+  border: 1px solid #dadada;
 }
 
-/* line 212 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 212 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 
-/* line 213 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 213 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .hover_object .normal_state {
   display: block;
 }
 
-/* line 216 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 216 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .hover_object .hover_state {
   display: none;
 }
 
-/* line 219 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 219 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 
-/* line 220 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 220 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .hover_object.hovered .normal_state {
   display: none;
 }
 
-/* line 223 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 223 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .hover_object.hovered .hover_state {
   display: block;
 }
 
-/* line 227 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 227 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .black_box {
   position: absolute;
   padding: 20px;
@@ -881,29 +871,28 @@ textarea.dark_input:focus {
   z-index: 0;
 }
 
-/* line 236 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 236 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .black_box h1 {
   font-weight: 400;
   line-height: 32px;
   margin-bottom: 30px;
 }
 
-/* line 240 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 240 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .black_box p {
   font-weight: 300;
   font-size: 1em;
   margin-bottom: 20px;
 }
 
-/* line 245 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 245 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .black_box .content {
   position: relative;
   z-index: 1;
 }
 
-/* line 248 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 248 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .black_box .background {
-  -webkit-border-radius: 3px;
   border-radius: 3px;
   position: absolute;
   top: 0;
@@ -916,22 +905,23 @@ textarea.dark_input:focus {
   filter: alpha(opacity=90);
 }
 
-/* line 256 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 256 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 
-/* line 257 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 257 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .black_box.opaque .background {
   opacity: 1;
   -ms-filter: none;
-  filter: none;
+  -webkit-filter: none;
+          filter: none;
 }
 
-/* line 260 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 260 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .hover_dropdown_trigger {
   position: relative;
   cursor: pointer;
 }
 
-/* line 264 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 264 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .hover_dropdown {
   position: absolute;
   right: 0;
@@ -941,27 +931,26 @@ textarea.dark_input:focus {
   width: 140px;
   display: none;
   top: 100%;
-  -webkit-box-shadow: 1px 1px 16px -2px #000;
   box-shadow: 1px 1px 16px -2px #000;
 }
 
-/* line 274 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 274 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .hover_dropdown li {
   border-bottom: 1px solid #474343;
 }
 
-/* line 276 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 276 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .hover_dropdown a {
   padding: 9px 14px;
   display: block;
 }
 
-/* line 280 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 280 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .hover_dropdown.hovered {
   display: block;
 }
 
-/* line 283 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 283 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .black_background {
   position: relative;
   display: inline-block;
@@ -970,51 +959,46 @@ textarea.dark_input:focus {
   padding: 5px;
 }
 
-/* line 289 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 289 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .black_background.hidden {
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
 }
 
-/* line 292 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 292 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .outline_box {
-  border: 1px solid #cbcbcb;
-  border-bottom: 2px solid #cbcbcb;
-  -webkit-border-radius: 5px;
+  border: 1px solid #dadada;
+  border-bottom: 2px solid #dadada;
   border-radius: 5px;
   overflow: hidden;
 }
 
-/* line 298 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 298 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .outline_icon {
   display: block;
-  border: 1px solid #cbcbcb;
-  -webkit-border-radius: 3px;
+  border: 1px solid #dadada;
   border-radius: 3px;
   width: 38px;
   height: 38px;
   text-align: center;
 }
 
-/* line 306 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 306 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .outline_icon .spritesheet {
   position: absolute;
   left: 50%;
   top: 50%;
   -webkit-transform: translateY(-50%) translateX(-50%);
-  -moz-transform: translateY(-50%) translateX(-50%);
-  -o-transform: translateY(-50%) translateX(-50%);
   -ms-transform: translateY(-50%) translateX(-50%);
   transform: translateY(-50%) translateX(-50%);
 }
 
-/* line 311 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 311 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .button_with_icon {
   background: #e5e9e8;
   color: #1f1f1f;
   border: 1px solid #9daca9;
-  -webkit-border-radius: 4px;
   border-radius: 4px;
   font-size: 0.8em;
   line-height: 0.85em;
@@ -1022,7 +1006,7 @@ textarea.dark_input:focus {
   padding: 0 10px 10px 6px;
 }
 
-/* line 321 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 321 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .button_with_icon.black_button {
   padding: 8px 30px 17px;
   color: #aba9a9;
@@ -1031,40 +1015,36 @@ textarea.dark_input:focus {
   background: rgba(0,0,0,0.8);
 }
 
-/* line 328 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 328 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .button_with_icon span {
   display: inline-block;
 }
 
-/* line 331 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 331 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .button_with_icon span.spritesheet {
   position: relative;
   top: 4px;
   margin-right: 5px;
 }
 
-/* line 336 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 336 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .upload_wrapper {
   position: relative;
   overflow: hidden;
 }
 
-/* line 339 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 339 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .upload_wrapper .upload_element {
   position: relative;
   z-index: 0;
 }
 
-/* line 342 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 342 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .upload_wrapper .upload_element .progress {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 0%;
-  -webkit-transition: width 0.3s linear, opacity 0.3s linear;
-  -moz-transition: width 0.3s linear, opacity 0.3s linear;
-  -o-transition: width 0.3s linear, opacity 0.3s linear;
-  -ms-transition: width 0.3s linear, opacity 0.3s linear;
   transition: width 0.3s linear, opacity 0.3s linear;
   background: #b5b5b5;
   height: 3px;
@@ -1073,14 +1053,14 @@ textarea.dark_input:focus {
   border-bottom-right-radius: 3px;
 }
 
-/* line 354 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 354 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .upload_wrapper .upload_element .progress.hide {
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
 }
 
-/* line 356 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 356 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .upload_wrapper .cloudinary_form {
   position: absolute;
   bottom: 0;
@@ -1089,7 +1069,7 @@ textarea.dark_input:focus {
   cursor: pointer;
 }
 
-/* line 362 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 362 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .upload_wrapper .cloudinary_form input[type=file] {
   font-size: 20px;
   display: block;
@@ -1102,19 +1082,19 @@ textarea.dark_input:focus {
   margin: 0;
 }
 
-/* line 371 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 371 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .editable_text {
   position: relative;
   cursor: pointer;
 }
 
-/* line 374 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 374 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .editable_text .text {
   position: relative;
   z-index: 0;
 }
 
-/* line 378 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 378 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .editable_text input {
   position: absolute;
   top: 0;
@@ -1125,7 +1105,7 @@ textarea.dark_input:focus {
   z-index: 1;
 }
 
-/* line 387 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 387 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .editable_text select {
   position: absolute;
   top: 0;
@@ -1138,148 +1118,142 @@ textarea.dark_input:focus {
   cursor: pointer;
 }
 
-/* line 395 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 395 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .editable_text .spritesheet {
   position: absolute;
   top: 50%;
   right: -30px;
   -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   display: none;
 }
 
-/* line 400 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 400 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 
-/* line 401 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 401 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .editable_text.edit_mode input {
   display: block;
 }
 
-/* line 404 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 404 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .editable_text.edit_mode .spritesheet {
   display: block;
 }
 
-/* line 407 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 407 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .editable_text.edit_mode .text {
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
 }
 
-/* line 410 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 410 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 
-/* line 411 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 411 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .start_stop .start {
   display: block;
 }
 
-/* line 413 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 413 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .start_stop .stop {
   display: none;
 }
 
-/* line 416 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 416 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 
-/* line 417 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 417 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .start_stop.started .start {
   display: none;
 }
 
-/* line 419 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 419 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .start_stop.started .stop {
   display: block;
 }
 
-/* line 422 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 422 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 
-/* line 423 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 423 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 
-/* line 424 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 424 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .no_touch_device .editable_text:hover .spritesheet {
   display: block;
 }
 
-/* line 427 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 427 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .no_touch_device .underline_link:hover {
   text-decoration: underline;
 }
 
-/* line 429 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 429 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 
-/* line 430 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 430 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .no_touch_device .hover_dropdown li:hover {
   color: #fff;
 }
 
-/* line 433 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 433 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .no_touch_device .outline_icon:hover {
   border-color: #605b5b;
 }
 
-/* line 436 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 436 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 
-/* line 437 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 437 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_ui.styl */
 .no_touch_device .button_with_icon:hover.black_button {
   color: #ececec;
   background: #1f1f1f;
 }
 
-/* line 15 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 15 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/app.styl */
 html {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 18 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 18 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/app.styl */
 *,
 *:before,
 *:after {
-  -webkit-box-sizing: inherit;
-  -moz-box-sizing: inherit;
   box-sizing: inherit;
 }
 
-/* line 22 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 22 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/app.styl */
 * {
   margin: 0;
   padding: 0;
   border: 0;
 }
 
-/* line 27 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 27 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/app.styl */
 a {
   color: inherit;
   text-decoration: none;
 }
 
-/* line 31 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 31 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/app.styl */
 .spritesheet {
   display: inline-block;
   text-indent: -9999px;
 }
 
-/* line 35 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 35 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/app.styl */
 li {
   list-style: none;
 }
 
-/* line 43 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 43 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/app.styl */
 .centered {
   max-width: 1140px;
   margin: 0 auto;
 }
 
-/* line 47 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 47 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/app.styl */
 .clear {
   clear: both;
 }
 
-/* line 50 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 50 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/app.styl */
 .hidden {
   visibility: hidden;
   opacity: 0;
@@ -1287,28 +1261,27 @@ li {
   filter: alpha(opacity=0);
 }
 
-/* line 54 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 54 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/app.styl */
 .visible {
   visibility: visible;
   opacity: 1;
   -ms-filter: none;
-  filter: none;
+  -webkit-filter: none;
+          filter: none;
 }
 
-/* line 58 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 58 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/app.styl */
 .fullscreen {
   position: relative;
 }
 
-/* line 61 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 61 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/app.styl */
 .scroll_handler {
   cursor: pointer;
 }
 
-/* line 64 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 64 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/app.styl */
 .cover {
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
   background-size: cover;
   background-position: 50% 50%;
   width: 100%;
@@ -1319,47 +1292,41 @@ li {
   z-index: 0;
 }
 
-/* line 72 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 72 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/app.styl */
 .center_el {
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translateX(-50%) translateY(-50%);
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -o-transform: translateX(-50%) translateY(-50%);
   -ms-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
 }
 
-/* line 76 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 76 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/app.styl */
 .left {
   float: left;
 }
 
-/* line 78 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 78 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/app.styl */
 .right {
   float: right;
 }
 
-/* line 81 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 81 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/app.styl */
 .flex {
-  display: -webkit-box;
-  display: -moz-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: box;
   display: flex;
 }
 
-/* line 84 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 84 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/app.styl */
 .flex .flex_sidebar {
   position: relative;
 }
 
-/* line 87 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 87 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/app.styl */
 .flex .flex_content {
-  -webkit-box-flex: 1;
-  -moz-box-flex: 1;
   -o-box-flex: 1;
   box-flex: 1;
   -webkit-flex: 1;
@@ -1367,13 +1334,13 @@ li {
   flex: 1;
 }
 
-/* line 91 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 91 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/app.styl */
 html {
   position: relative;
   min-height: 100%;
 }
 
-/* line 105 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 105 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/app.styl */
 body {
   background: #ececec;
   color: #1f1f1f;
@@ -1383,14 +1350,14 @@ body {
   padding-top: 42px;
 }
 
-/* line 114 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 114 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/app.styl */
 #content {
   text-align: center;
   position: relative;
   z-index: 1;
 }
 
-/* line 120 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/app.styl */
+/* line 120 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/app.styl */
 #loading {
   background: #ececec;
   position: absolute;
@@ -1402,147 +1369,247 @@ body {
 }
 
 
-/* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
+/* line 286 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/all.styl */
 
-/* line 14 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 14 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/border.styl */
+/* line 13 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 11 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/clearfix.styl */
+/* line 25 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
-/* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/color-image.styl */
+/* line 10 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
-/* line 5 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/border.styl */
 
-/* line 91 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+/* line 28 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/border.styl */
 
-/* line 91 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/clearfix.styl */
 
-/* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/iconic.styl */
+/* line 4 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/clearfix.styl */
 
-/* line 8 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/image.styl */
+/* line 247 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/color-image.styl */
 
-/* line 26 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/overflow.styl */
+/* line 196 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/color-image.styl */
 
-/* line 3 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/positions.styl */
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 3 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
+/* line 90 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 6 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+/* line 25 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
-/* line 6 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/aliases.styl */
+/* line 11 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
-/* line 13 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/ellipsis.styl */
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
 
-/* line 10 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/hide-text.styl */
+/* line 7 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
 
-/* line 9 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/replace-text.styl */
+/* line 247 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/iconic.styl */
 
-/* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/shadow-stroke.styl */
+/* line 25 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/iconic.styl */
 
-/* line undefined : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/vendor.styl */
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/image.styl */
 
-/* line 578 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
+/* line 20 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/image.styl */
 
-/* line 12 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/size.styl */
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/overflow.styl */
 
-/* line 3 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_bootstrap.styl */
+/* line 66 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/overflow.styl */
 
-/* line 30 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_bootstrap.styl */
+/* line 247 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/positions.styl */
+
+/* line 78 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/positions.styl */
+
+/* line 247 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
+
+/* line 5 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
+
+/* line 25 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+
+/* line 12 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/aliases.styl */
+
+/* line 9 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/aliases.styl */
+
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/ellipsis.styl */
+
+/* line 8 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/ellipsis.styl */
+
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/hide-text.styl */
+
+/* line 9 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/hide-text.styl */
+
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/replace-text.styl */
+
+/* line 2 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/replace-text.styl */
+
+/* line 247 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/shadow-stroke.styl */
+
+/* line 577 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/shadow-stroke.styl */
+
+/* line 247 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/vendor.styl */
+
+/* line 11 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/vendor.styl */
+
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
+
+/* line 28 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
+
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/size.styl */
+
+/* line 260 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/size.styl */
+
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/rupture/rupture/index.styl */
+
+/* line 31 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/rupture/rupture/index.styl */
+
+/* line 3 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_bootstrap.styl */
+
+/* line 30 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_bootstrap.styl */
 .yellow {
   color: #ffc80a;
 }
 
-/* line 4 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/all.styl */
+/* line 4 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/all.styl */
 
-/* line 5 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/all.styl */
+/* line 5 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/all.styl */
 .profile_theme.createroom .cover {
   border-bottom: none;
 }
 
-/* line 9 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/all.styl */
+/* line 9 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/all.styl */
 .source_controls {
   width: 220px;
 }
 
-/* line 12 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/all.styl */
+/* line 12 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/all.styl */
 .source_controls input,
 .source_controls select {
   display: block;
   width: 100%;
 }
 
-/* line 15 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/all.styl */
+/* line 15 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/all.styl */
 .dashboard_bar {
   color: #fff;
   height: 100px;
   width: 100%;
-  background: url('/images/dashboard_gradient.png');
+  background: url("/images/dashboard_gradient.png");
   text-align: left;
   padding: 20px;
 }
 
-/* line 23 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/all.styl */
+/* line 23 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/all.styl */
 .dashboard_bar > * {
   display: inline-block;
   margin-right: 20px;
 }
 
 
-/* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
+/* line 286 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 14 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 14 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/border.styl */
+/* line 13 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 11 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/clearfix.styl */
+/* line 123 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
-/* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/color-image.styl */
+/* line 10 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
-/* line 5 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/border.styl */
 
-/* line 91 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+/* line 28 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/border.styl */
 
-/* line 91 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/clearfix.styl */
 
-/* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/iconic.styl */
+/* line 4 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/clearfix.styl */
 
-/* line 8 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/image.styl */
+/* line 247 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/color-image.styl */
 
-/* line 26 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/overflow.styl */
+/* line 196 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/color-image.styl */
 
-/* line 3 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/positions.styl */
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 3 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
+/* line 90 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 6 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+/* line 123 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
-/* line 6 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/aliases.styl */
+/* line 11 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
-/* line 13 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/ellipsis.styl */
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
 
-/* line 10 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/hide-text.styl */
+/* line 7 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
 
-/* line 9 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/replace-text.styl */
+/* line 247 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/iconic.styl */
 
-/* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/shadow-stroke.styl */
+/* line 25 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/iconic.styl */
 
-/* line undefined : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/vendor.styl */
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/image.styl */
 
-/* line 578 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
+/* line 20 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/image.styl */
 
-/* line 12 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/size.styl */
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/overflow.styl */
 
-/* line 3 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_bootstrap.styl */
+/* line 66 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/overflow.styl */
 
-/* line 30 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_bootstrap.styl */
+/* line 247 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/positions.styl */
+
+/* line 78 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/positions.styl */
+
+/* line 247 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
+
+/* line 5 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
+
+/* line 123 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+
+/* line 12 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/aliases.styl */
+
+/* line 9 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/aliases.styl */
+
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/ellipsis.styl */
+
+/* line 8 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/ellipsis.styl */
+
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/hide-text.styl */
+
+/* line 9 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/hide-text.styl */
+
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/replace-text.styl */
+
+/* line 2 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/replace-text.styl */
+
+/* line 247 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/shadow-stroke.styl */
+
+/* line 577 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/shadow-stroke.styl */
+
+/* line 247 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/vendor.styl */
+
+/* line 11 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/vendor.styl */
+
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
+
+/* line 28 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
+
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/size.styl */
+
+/* line 260 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/size.styl */
+
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/rupture/rupture/index.styl */
+
+/* line 31 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/rupture/rupture/index.styl */
+
+/* line 3 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_bootstrap.styl */
+
+/* line 30 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_bootstrap.styl */
 .yellow {
   color: #ffc80a;
 }
 
-/* line 4 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 4 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 5 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 5 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/explore.styl */
 .explore .sub_header {
   background: #eff3f6;
   height: 45px;
@@ -1552,34 +1619,34 @@ body {
   font-weight: 600;
 }
 
-/* line 12 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 12 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/explore.styl */
 .explore .sub_header li {
   display: inline-block;
   height: 45px;
   padding: 10px 40px 0;
 }
 
-/* line 17 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 17 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/explore.styl */
 .explore .sub_header li .spritesheet {
   position: relative;
   top: 2px;
   margin-right: 5px;
 }
 
-/* line 22 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 22 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/explore.styl */
 .explore .sub_header li.selected {
   background: #ececec;
   border-left: 1px solid #d5d4d4;
   border-right: 1px solid #d5d4d4;
 }
 
-/* line 27 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 27 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/explore.styl */
 .explore .explore_content {
   padding-top: 40px;
   padding-left: 20px;
 }
 
-/* line 34 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 34 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/explore.styl */
 .explore .now_live {
   display: inline-block;
   background: #d82030;
@@ -1590,14 +1657,14 @@ body {
   margin-bottom: 10px;
 }
 
-/* line 43 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 43 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/explore.styl */
 .explore .genres_list {
   width: 150px;
   margin-right: 30px;
   font-size: 0.8em;
 }
 
-/* line 47 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 47 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/explore.styl */
 .explore .genres_list a {
   display: block;
   background: #dedede;
@@ -1605,21 +1672,22 @@ body {
   padding: 6px 12px;
   text-align: left;
   margin-bottom: 5px;
+  border-radius: 4px;
 }
 
-/* line 54 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 55 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/explore.styl */
 .explore .genres_list a.selected {
   background: #747c83;
   color: #dedede;
   font-weight: 600;
 }
 
-/* line 61 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 62 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid {
   overflow: hidden;
 }
 
-/* line 63 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 64 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell {
   width: 210px;
   text-align: left;
@@ -1628,45 +1696,42 @@ body {
   overflow: hidden;
   position: relative;
   border: 1px solid #ddd7d7;
-  -webkit-border-radius: 5px;
   border-radius: 5px;
 }
 
-/* line 75 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 76 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell .room_content {
   padding: 10px 5px 5px;
 }
 
-/* line 78 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 79 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell .text {
   padding: 0 5px;
 }
 
-/* line 81 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 82 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell .thumb_wrapper {
   position: relative;
   display: block;
 }
 
-/* line 85 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 86 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell .thumb_wrapper .spritesheet {
   position: absolute;
   left: 50%;
   top: 50%;
   -webkit-transform: translateX(-50%) translateY(-50%);
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -o-transform: translateX(-50%) translateY(-50%);
   -ms-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
 }
 
-/* line 89 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 90 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell .room_thumb {
   width: 100%;
   display: block;
 }
 
-/* line 93 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 94 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell h2 {
   color: #1f1f1f;
   font-size: 1em;
@@ -1675,7 +1740,7 @@ body {
   margin-bottom: 5px;
 }
 
-/* line 100 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 101 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell .room_user {
   color: #4592d4;
   font-size: 0.8em;
@@ -1684,110 +1749,156 @@ body {
   margin-bottom: 10px;
 }
 
-/* line 107 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 108 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell .room_location {
   color: #605b5b;
   font-size: 0.8em;
   margin-bottom: 5px;
 }
 
-/* line 111 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 112 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell .room_location .spritesheet {
   position: relative;
   top: 2px;
 }
 
-/* line 117 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 118 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 118 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 119 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 119 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 120 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 120 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 121 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/explore.styl */
 .no_touch_device .explore .genres_list a:hover {
   background: #747c83;
   color: #dedede;
 }
 
 
-/* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
+/* line 286 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/index.styl */
 
-/* line 14 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 14 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/border.styl */
+/* line 13 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 11 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/clearfix.styl */
+/* line 63 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
-/* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/color-image.styl */
+/* line 10 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
-/* line 5 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/border.styl */
 
-/* line 91 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+/* line 28 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/border.styl */
 
-/* line 91 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/clearfix.styl */
 
-/* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/iconic.styl */
+/* line 4 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/clearfix.styl */
 
-/* line 8 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/image.styl */
+/* line 247 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/color-image.styl */
 
-/* line 26 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/overflow.styl */
+/* line 196 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/color-image.styl */
 
-/* line 3 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/positions.styl */
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 3 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
+/* line 90 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 6 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+/* line 63 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
-/* line 6 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/aliases.styl */
+/* line 11 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
-/* line 13 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/ellipsis.styl */
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
 
-/* line 10 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/hide-text.styl */
+/* line 7 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
 
-/* line 9 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/replace-text.styl */
+/* line 247 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/iconic.styl */
 
-/* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/shadow-stroke.styl */
+/* line 25 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/iconic.styl */
 
-/* line undefined : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/vendor.styl */
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/image.styl */
 
-/* line 578 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
+/* line 20 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/image.styl */
 
-/* line 12 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/size.styl */
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/overflow.styl */
 
-/* line 3 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_bootstrap.styl */
+/* line 66 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/overflow.styl */
 
-/* line 30 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_bootstrap.styl */
+/* line 247 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/positions.styl */
+
+/* line 78 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/positions.styl */
+
+/* line 247 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
+
+/* line 5 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
+
+/* line 63 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+
+/* line 12 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/aliases.styl */
+
+/* line 9 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/aliases.styl */
+
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/ellipsis.styl */
+
+/* line 8 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/ellipsis.styl */
+
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/hide-text.styl */
+
+/* line 9 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/hide-text.styl */
+
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/replace-text.styl */
+
+/* line 2 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/replace-text.styl */
+
+/* line 247 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/shadow-stroke.styl */
+
+/* line 577 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/shadow-stroke.styl */
+
+/* line 247 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/vendor.styl */
+
+/* line 11 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/vendor.styl */
+
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
+
+/* line 28 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
+
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/size.styl */
+
+/* line 260 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/size.styl */
+
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/rupture/rupture/index.styl */
+
+/* line 31 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/rupture/rupture/index.styl */
+
+/* line 3 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_bootstrap.styl */
+
+/* line 30 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_bootstrap.styl */
 .yellow {
   color: #ffc80a;
 }
 
-/* line 3 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/index.styl */
+/* line 3 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/index.styl */
 .parallax-container {
   height: 100%;
 }
 
-/* line 6 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/index.styl */
+/* line 6 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/index.styl */
 .parallax-mirror {
-  -webkit-transition: opacity 0.3s linear;
-  -moz-transition: opacity 0.3s linear;
-  -o-transition: opacity 0.3s linear;
-  -ms-transition: opacity 0.3s linear;
   transition: opacity 0.3s linear;
 }
 
-/* line 8 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/index.styl */
+/* line 8 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/index.styl */
 .parallax-mirror.hide {
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
 }
 
-/* line 10 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/index.styl */
+/* line 10 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/index.styl */
 .landing {
   position: relative;
 }
 
-/* line 12 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/index.styl */
+/* line 12 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/index.styl */
 .landing .black_box {
   min-width: 450px;
   padding: 60px 30px 15px;
@@ -1795,22 +1906,22 @@ body {
   left: 24%;
 }
 
-/* line 18 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/index.styl */
+/* line 18 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/index.styl */
 .landing .black_box .spritesheet {
   margin-bottom: 20px;
 }
 
-/* line 22 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/index.styl */
+/* line 22 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/index.styl */
 .landing .black_box .buttons {
   overflow: hidden;
 }
 
-/* line 24 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/index.styl */
+/* line 24 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/index.styl */
 .landing .black_box .buttons .button {
   width: 48%;
 }
 
-/* line 27 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/index.styl */
+/* line 27 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/index.styl */
 .landing .scroll_down {
   position: absolute;
   bottom: 30px;
@@ -1820,111 +1931,159 @@ body {
   color: #fff;
 }
 
-/* line 32 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/index.styl */
+/* line 32 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/index.styl */
 .landing .scroll_down p {
   margin-bottom: 5px;
   text-shadow: 1px 1px 1px #000;
 }
 
-/* line 36 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/index.styl */
+/* line 36 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/index.styl */
 
-/* line 37 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/index.styl */
+/* line 37 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/index.styl */
 .secondary_screen .black_box {
   text-align: center;
   right: 10%;
   top: 30%;
 }
 
-/* line 42 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/index.styl */
+/* line 42 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/index.styl */
 .secondary_screen .black_box h1 {
   color: #ffc80a;
   line-height: 45px;
 }
 
-/* line 46 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/index.styl */
+/* line 46 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/index.styl */
 .secondary_screen .black_box p {
   padding: 0 23px;
   font-weight: 400;
   line-height: 1.6em;
 }
 
-/* line 52 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/index.styl */
+/* line 52 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/index.styl */
 .secondary_screen .black_box .button {
   width: 50%;
   max-width: 280px;
   margin: 0 auto;
 }
 
-/* line 57 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/index.styl */
+/* line 57 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/index.styl */
 
-/* line 58 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/index.styl */
+/* line 58 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/index.styl */
 .landing_3 .black_box {
   right: auto;
   left: 50%;
   top: 20%;
   width: 50%;
   -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
 }
 
 
-/* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
+/* line 286 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/login.styl */
 
-/* line 14 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 14 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/border.styl */
+/* line 13 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 11 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/clearfix.styl */
+/* line 47 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
-/* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/color-image.styl */
+/* line 10 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
-/* line 5 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/border.styl */
 
-/* line 91 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+/* line 28 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/border.styl */
 
-/* line 91 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/clearfix.styl */
 
-/* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/iconic.styl */
+/* line 4 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/clearfix.styl */
 
-/* line 8 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/image.styl */
+/* line 247 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/color-image.styl */
 
-/* line 26 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/overflow.styl */
+/* line 196 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/color-image.styl */
 
-/* line 3 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/positions.styl */
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 3 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
+/* line 90 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 6 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+/* line 47 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
-/* line 6 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/aliases.styl */
+/* line 11 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
-/* line 13 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/ellipsis.styl */
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
 
-/* line 10 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/hide-text.styl */
+/* line 7 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
 
-/* line 9 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/replace-text.styl */
+/* line 247 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/iconic.styl */
 
-/* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/shadow-stroke.styl */
+/* line 25 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/iconic.styl */
 
-/* line undefined : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/vendor.styl */
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/image.styl */
 
-/* line 578 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
+/* line 20 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/image.styl */
 
-/* line 12 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/size.styl */
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/overflow.styl */
 
-/* line 3 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_bootstrap.styl */
+/* line 66 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/overflow.styl */
 
-/* line 30 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_bootstrap.styl */
+/* line 247 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/positions.styl */
+
+/* line 78 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/positions.styl */
+
+/* line 247 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
+
+/* line 5 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
+
+/* line 47 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+
+/* line 12 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/aliases.styl */
+
+/* line 9 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/aliases.styl */
+
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/ellipsis.styl */
+
+/* line 8 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/ellipsis.styl */
+
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/hide-text.styl */
+
+/* line 9 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/hide-text.styl */
+
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/replace-text.styl */
+
+/* line 2 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/replace-text.styl */
+
+/* line 247 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/shadow-stroke.styl */
+
+/* line 577 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/shadow-stroke.styl */
+
+/* line 247 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/vendor.styl */
+
+/* line 11 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/vendor.styl */
+
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
+
+/* line 28 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
+
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/size.styl */
+
+/* line 260 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/size.styl */
+
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/rupture/rupture/index.styl */
+
+/* line 31 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/rupture/rupture/index.styl */
+
+/* line 3 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_bootstrap.styl */
+
+/* line 30 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_bootstrap.styl */
 .yellow {
   color: #ffc80a;
 }
 
-/* line 3 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/login.styl */
+/* line 3 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/login.styl */
 
-/* line 4 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/login.styl */
+/* line 4 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/login.styl */
 #login h4 {
   color: #605b5b;
   font-size: 1.15em;
@@ -1932,12 +2091,12 @@ body {
   margin-bottom: 75px;
 }
 
-/* line 10 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/login.styl */
+/* line 10 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/login.styl */
 #login form {
   position: relative;
 }
 
-/* line 12 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/login.styl */
+/* line 12 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/login.styl */
 #login form .label_error {
   position: absolute;
   top: -40px;
@@ -1949,19 +2108,19 @@ body {
   display: none;
 }
 
-/* line 22 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/login.styl */
+/* line 22 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/login.styl */
 #login .button {
   margin: 10px auto;
 }
 
-/* line 25 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/login.styl */
+/* line 25 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/login.styl */
 
-/* line 26 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/login.styl */
+/* line 26 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/login.styl */
 #login div.error .label_error {
   display: block;
 }
 
-/* line 29 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/login.styl */
+/* line 29 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/login.styl */
 #login.popup {
   position: absolute;
   top: 0;
@@ -1970,7 +2129,7 @@ body {
   height: 100%;
 }
 
-/* line 34 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/login.styl */
+/* line 34 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/login.styl */
 #login.popup .md_wrapper {
   position: absolute;
   top: 0;
@@ -1979,14 +2138,14 @@ body {
   height: 100%;
 }
 
-/* line 40 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/login.styl */
+/* line 40 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/login.styl */
 
-/* line 41 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/login.styl */
+/* line 41 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/login.styl */
 .login_page header {
   display: none;
 }
 
-/* line 43 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/login.styl */
+/* line 43 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/login.styl */
 .login_page #content {
   position: absolute;
   top: 0;
@@ -1995,71 +2154,121 @@ body {
 }
 
 
-/* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
+/* line 286 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 
-/* line 14 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 14 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/border.styl */
+/* line 13 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 11 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/clearfix.styl */
+/* line 349 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
-/* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/color-image.styl */
+/* line 10 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
-/* line 5 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/border.styl */
 
-/* line 91 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+/* line 28 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/border.styl */
 
-/* line 91 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/clearfix.styl */
 
-/* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/iconic.styl */
+/* line 4 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/clearfix.styl */
 
-/* line 8 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/image.styl */
+/* line 247 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/color-image.styl */
 
-/* line 26 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/overflow.styl */
+/* line 196 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/color-image.styl */
 
-/* line 3 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/positions.styl */
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 3 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
+/* line 90 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 6 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+/* line 349 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
-/* line 6 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/aliases.styl */
+/* line 11 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
-/* line 13 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/ellipsis.styl */
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
 
-/* line 10 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/hide-text.styl */
+/* line 7 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
 
-/* line 9 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/replace-text.styl */
+/* line 247 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/iconic.styl */
 
-/* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/shadow-stroke.styl */
+/* line 25 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/iconic.styl */
 
-/* line undefined : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/vendor.styl */
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/image.styl */
 
-/* line 578 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
+/* line 20 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/image.styl */
 
-/* line 12 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/size.styl */
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/overflow.styl */
 
-/* line 3 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_bootstrap.styl */
+/* line 66 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/overflow.styl */
 
-/* line 30 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_bootstrap.styl */
+/* line 247 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/positions.styl */
+
+/* line 78 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/positions.styl */
+
+/* line 247 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
+
+/* line 5 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
+
+/* line 349 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+
+/* line 12 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/aliases.styl */
+
+/* line 9 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/aliases.styl */
+
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/ellipsis.styl */
+
+/* line 8 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/ellipsis.styl */
+
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/hide-text.styl */
+
+/* line 9 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/hide-text.styl */
+
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/replace-text.styl */
+
+/* line 2 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/replace-text.styl */
+
+/* line 247 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/shadow-stroke.styl */
+
+/* line 577 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/shadow-stroke.styl */
+
+/* line 247 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/vendor.styl */
+
+/* line 11 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/vendor.styl */
+
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
+
+/* line 28 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
+
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/size.styl */
+
+/* line 260 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/size.styl */
+
+/* line 1 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/rupture/rupture/index.styl */
+
+/* line 31 : /Users/thomasamundsen/Documents/loopcastbeta/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/rupture/rupture/index.styl */
+
+/* line 3 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_bootstrap.styl */
+
+/* line 30 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/_shared/_bootstrap.styl */
 .yellow {
   color: #ffc80a;
 }
 
-/* line 3 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 3 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme {
   background: #fff;
   position: relative;
 }
 
-/* line 8 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 8 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .player {
   display: none;
 }
 
-/* line 11 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 11 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 
-/* line 12 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 12 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .player .vu .meter_left,
 .profile_theme .player .vu .meter_right {
   height: 5px;
@@ -2069,34 +2278,32 @@ body {
   display: block;
 }
 
-/* line 20 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 20 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .controls {
   display: none;
   width: 100%;
   background: #222;
 }
 
-/* line 26 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 26 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme h2 {
   font-size: 1.3em;
   line-height: 1em;
   margin-bottom: 5px;
 }
 
-/* line 31 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 31 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .change_cover {
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translateX(-50%) translateY(-50%);
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -o-transform: translateX(-50%) translateY(-50%);
   -ms-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
   overflow: hidden;
 }
 
-/* line 39 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 39 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .cover {
   height: 350px;
   position: relative;
@@ -2104,21 +2311,19 @@ body {
   border-bottom: 1px solid #999;
 }
 
-/* line 44 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 44 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .cover .cover_image {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
   background-size: cover;
   background-position: 50% 50%;
   z-index: 0;
 }
 
-/* line 51 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 51 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .cover .content {
   z-index: 1;
   position: absolute;
@@ -2129,7 +2334,7 @@ body {
   text-align: left;
 }
 
-/* line 58 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 58 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .cover .name {
   font-size: 2.5em;
   margin-bottom: 3px;
@@ -2141,7 +2346,7 @@ body {
   color: #ececec;
 }
 
-/* line 68 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 68 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .cover .type,
 .profile_theme .cover .genres,
 .profile_theme .cover .location {
@@ -2151,31 +2356,29 @@ body {
   line-height: 0.9em;
 }
 
-/* line 74 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 74 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .cover .genres li {
   display: inline-block;
 }
 
-/* line 78 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 78 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .cover .profile_image {
   position: absolute;
   bottom: 0;
   left: 50px;
   width: 150px;
   overflow: hidden;
-  -webkit-box-shadow: 0px 20px 37px 12px rgba(0,0,0,0.75);
   box-shadow: 0px 20px 37px 12px rgba(0,0,0,0.75);
 }
 
-/* line 83 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 83 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .cover .profile_image img {
-  -webkit-box-shadow: 1px 1px 66px 3px #000;
   box-shadow: 1px 1px 66px 3px #000;
   display: block;
   width: 100%;
 }
 
-/* line 87 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 87 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .cover .profile_image .edit_image {
   position: absolute;
   left: 0;
@@ -2188,31 +2391,24 @@ body {
   font-size: 0.8em;
   line-height: 0.9em;
   font-weight: 600;
-  -webkit-transition: -webkit-transform 0.3s ease-out;
-  -moz-transition: -moz-transform 0.3s ease-out;
-  -o-transition: -o-transform 0.3s ease-out;
-  -ms-transition: -ms-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
   -webkit-transform: translateY(100%);
-  -moz-transform: translateY(100%);
-  -o-transform: translateY(100%);
   -ms-transform: translateY(100%);
   transform: translateY(100%);
 }
 
-/* line 99 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 99 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .cover .profile_image .edit_image .spritesheet {
   position: absolute;
   left: 15px;
   top: 50%;
   -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
 
-/* line 103 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 103 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .sidebar_right {
   background: rgba(0,0,0,0.9);
   position: absolute;
@@ -2222,56 +2418,48 @@ body {
   text-align: center;
   color: #b5b5b5;
   padding: 30px 15px;
-  -webkit-transition: background 0.5s linear, color 0.5s linear;
-  -moz-transition: background 0.5s linear, color 0.5s linear;
-  -o-transition: background 0.5s linear, color 0.5s linear;
-  -ms-transition: background 0.5s linear, color 0.5s linear;
   transition: background 0.5s linear, color 0.5s linear;
 }
 
-/* line 111 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 111 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .big_number {
   margin-bottom: 20px;
 }
 
-/* line 113 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 113 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .big_number span {
   display: block;
 }
 
-/* line 116 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 116 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .big_number span.number {
   font-size: 2.4em;
   line-height: 1.1em;
 }
 
-/* line 120 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 120 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .big_number span.text {
   font-size: 0.9em;
   line-height: 1em;
 }
 
-/* line 124 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 124 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .cover_button {
   position: absolute;
   bottom: 20px;
   right: 130px;
 }
 
-/* line 128 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 128 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .cover_button span.spritesheet {
   -webkit-transform: scale(0.7, 0.7);
-  -moz-transform: scale(0.7, 0.7);
-  -o-transform: scale(0.7, 0.7);
   -ms-transform: scale(0.7, 0.7);
   transform: scale(0.7, 0.7);
 }
 
-/* line 131 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 131 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content {
   padding: 40px 50px;
-  display: -webkit-box;
-  display: -moz-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: box;
@@ -2279,54 +2467,52 @@ body {
   text-align: left;
 }
 
-/* line 135 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 135 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .profile_left {
   position: relative;
   width: 290px;
   margin-right: 50px;
 }
 
-/* line 139 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 139 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .profile_bio {
   width: 100%;
   position: relative;
   padding: 13px 26px;
 }
 
-/* line 144 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 144 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .profile_bio .outline_icon {
   position: absolute;
   top: 5px;
   right: 10px;
 }
 
-/* line 148 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 148 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .profile_bio h4 {
   font-size: 1.1em;
   margin-bottom: 14px;
 }
 
-/* line 151 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 151 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .profile_bio .bio {
   color: #605b5b;
   font-size: 0.9em;
 }
 
-/* line 155 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 155 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .social {
   margin-top: 20px;
 }
 
-/* line 157 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 157 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .social a {
   display: inline-block;
   margin-right: 20px;
 }
 
-/* line 161 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 161 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .list_sessions {
-  -webkit-box-flex: 1;
-  -moz-box-flex: 1;
   -o-box-flex: 1;
   box-flex: 1;
   -webkit-flex: 1;
@@ -2334,13 +2520,11 @@ body {
   flex: 1;
 }
 
-/* line 164 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 164 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session {
   height: 100px;
   width: 100%;
   margin-bottom: 40px;
-  display: -webkit-box;
-  display: -moz-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: box;
@@ -2348,32 +2532,26 @@ body {
   height: 170px;
 }
 
-/* line 170 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 170 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .image {
   width: 200px;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
   background-size: cover;
   background-position: 50% 50%;
   position: relative;
 }
 
-/* line 175 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 175 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .image .spritesheet {
   position: absolute;
   left: 50%;
   top: 50%;
   -webkit-transform: translateX(-50%) translateY(-50%);
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -o-transform: translateX(-50%) translateY(-50%);
   -ms-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
 }
 
-/* line 178 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 178 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .content {
-  -webkit-box-flex: 1;
-  -moz-box-flex: 1;
   -o-box-flex: 1;
   box-flex: 1;
   -webkit-flex: 1;
@@ -2383,12 +2561,12 @@ body {
   position: relative;
 }
 
-/* line 183 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 183 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session h2 {
   padding-right: 20px;
 }
 
-/* line 186 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 186 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .session_author {
   color: #4592d4;
   font-size: 0.9em;
@@ -2396,24 +2574,24 @@ body {
   display: block;
 }
 
-/* line 193 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 193 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .genres {
   margin-bottom: 15px;
 }
 
-/* line 196 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 196 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .small_info {
   color: #605b5b;
 }
 
-/* line 198 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 198 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .small_info > * {
   display: inline-block;
   margin-right: 10px;
   font-size: 0.8em;
 }
 
-/* line 202 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 202 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .small_info > * span {
   display: inline-block;
   background: #605b5b;
@@ -2422,7 +2600,7 @@ body {
   margin-right: 5px;
 }
 
-/* line 208 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 208 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .live {
   position: absolute;
   bottom: 10px;
@@ -2434,13 +2612,13 @@ body {
   font-size: 0.7em;
 }
 
-/* line 217 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 217 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .live .time,
 .profile_theme .profile_content .session .live .label {
   display: inline-block;
 }
 
-/* line 220 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 220 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .live .time {
   color: #f23131;
   margin-left: 10px;
@@ -2448,7 +2626,7 @@ body {
   font-size: 1.4em;
 }
 
-/* line 226 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 226 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .live .label {
   background: #f23131;
   border-bottom-right-radius: 4px;
@@ -2460,70 +2638,67 @@ body {
   text-align: left;
 }
 
-/* line 237 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 237 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .live .label:after {
   content: "";
   background: #fff;
   width: 8px;
   height: 8px;
-  -webkit-border-radius: 5px;
   border-radius: 5px;
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   left: 7px;
 }
 
-/* line 248 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 248 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .header_settings_hover {
   position: absolute;
   top: 10px;
   right: 10px;
 }
 
-/* line 254 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 254 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 
-/* line 255 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 255 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .recorded_sessions .title {
   margin-bottom: 30px;
 }
 
-/* line 257 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 257 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .recorded_sessions .title * {
   display: inline-block;
   vertical-align: top;
 }
 
-/* line 260 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 260 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .recorded_sessions .title h2 {
   margin-right: 30px;
 }
 
-/* line 263 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 263 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .recorded_sessions .title .session_icon {
   position: relative;
   top: 3px;
   margin-right: 5px;
 }
 
-/* line 268 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 268 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .recorded_sessions .title .session_text {
   margin-right: 15px;
   padding-top: 1px;
 }
 
-/* line 272 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 272 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .recorded_sessions .title .alert_icon {
   position: relative;
   top: 3px;
   margin-right: 5px;
 }
 
-/* line 277 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 277 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .recorded_sessions .title .alert_text {
   font-size: 0.7em;
   color: #f23131;
@@ -2531,40 +2706,39 @@ body {
   padding-top: 4px;
 }
 
-/* line 283 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 283 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_form {
   padding-top: 10px;
 }
 
-/* line 285 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 285 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_form textarea {
   height: 200px;
 }
 
-/* line 288 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 288 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .profile_form .save_button {
   padding-left: 40px;
   padding-right: 40px;
   margin: 0 auto 20px;
 }
 
-/* line 293 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 293 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .genres {
   overflow: hidden;
 }
 
-/* line 295 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 295 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .genres .tag {
   float: left;
   margin-bottom: 5px;
 }
 
-/* line 298 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 298 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .tag {
   display: inline-block;
   color: #fff;
   background: #c1c7c6;
-  -webkit-border-radius: 2px;
   border-radius: 2px;
   padding: 3px;
   margin-right: 5px;
@@ -2573,65 +2747,63 @@ body {
   line-height: 0.9em;
 }
 
-/* line 310 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 310 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .small > .tag {
   font-size: 0.6em;
 }
 
-/* line 315 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 315 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .element_on_read_mode {
   display: block;
 }
 
-/* line 318 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 318 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .element_on_write_mode {
   display: none;
 }
 
-/* line 322 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 322 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 
-/* line 323 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 323 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .write_mode .element_on_read_mode {
   display: none;
 }
 
-/* line 326 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 326 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .write_mode .element_on_write_mode {
   display: block;
 }
 
-/* line 329 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 329 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .write_mode .profile_theme .cover .profile_image .edit_image {
   -webkit-transform: translateY(0);
-  -moz-transform: translateY(0);
-  -o-transform: translateY(0);
   -ms-transform: translateY(0);
   transform: translateY(0);
 }
 
-/* line 335 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 335 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 
-/* line 336 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 336 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .no_touch_device .tag:hover {
   background: #a6afad;
 }
 
-/* line 339 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 339 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 
-/* line 340 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 340 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .no_touch_device .profile_theme .header_settings_hover:hover {
   opacity: 0.8;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
   filter: alpha(opacity=80);
 }
 
-/* line 343 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 343 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .no_touch_device .profile_theme .sidebar_right:hover {
   background: rgba(0,0,0,0.7);
   color: #e8e8e8;
 }
 
-/* line 347 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 347 : /Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/styles/pages/profile.styl */
 .no_touch_device .profile_theme .cover_button:hover {
   background: #fff;
 }
