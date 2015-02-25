@@ -1,7 +1,4 @@
-start_recording = require 'app/utils/appcast/start_recording'
-start_stream    = require 'app/utils/appcast/start_stream'
-stop_recording  = require 'app/utils/appcast/stop_recording'
-stop_stream     = require 'app/utils/appcast/stop_stream'
+appcast = require 'app/utils/appcast'
 
 module.exports = (dom) ->
 
@@ -18,17 +15,17 @@ module.exports = (dom) ->
 		log "on_broadcast_click", data
 
 		if data is "start"
-			# do start_stream
+			# do appcast.start_stream
 		else
-			# do stop_stream
+			# do appcast.stop_stream
 
 	on_recording_click = (data) ->
 		log "on_recording_click", data
 
 		if data is "start"
-			# do start_recording
+			# do appcast.start_recording
 		else
-			# do stop_recording
+			# do appcast.stop_recording
 
 
 	init()

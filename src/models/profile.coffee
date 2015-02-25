@@ -24,6 +24,7 @@ module.exports = ( id, callback ) ->
       plays    : 273
       url      : "/thomas/last-saturday-set"
     recorded : [
+        id       : "recorded_id_1"
         title    : "Last Saturday Set"
         author   : "Thomas Amundsen"
         kind     : "Dj/Producer"
@@ -33,6 +34,7 @@ module.exports = ( id, callback ) ->
         plays    : 273
         url      : "/thomas/last-saturday-set"
       ,
+        id       : "recorded_id_2"
         title    : "Last Saturday Set"
         author   : "Thomas Amundsen"
         kind     : "Dj/Producer"
