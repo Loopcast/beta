@@ -162,7 +162,7 @@ block content
             span.alert_text 1 hour free storage remaining
 
           for room in profile.recorded
-            .session.outline_box
+            .session.outline_box(id="session_recorded_#{room.id}")
               a.image(href="#", title="#{room.title}", style="background-image:url(/images/profile_session_1.jpg)")
                 span.room_play.spritesheet
               .content
@@ -185,7 +185,12 @@ block content
                     span
                     | 2467
 
-                a.spritesheet.header_settings_hover(href="#", title="Setting Session") Settings Session
+                .edit_session_wrapper
+                  a.spritesheet.settings_button.settings_profile_set_hover(href="#", title="Setting Session", data-view="components/click_trigger" data-target="#session_recorded_#{room.id} .edit_session_popup") Settings Session
+                  .edit_session_popup
+                    a.download_button.button.yellow_button(href="#", title="Download") Download
+                    a.edit_button.button.yellow_button(href="#", title="Edit") Edit
+                    a.delete_button.button.red_button(href="#", title="Delete") Delete
 
 
 
