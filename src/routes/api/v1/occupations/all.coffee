@@ -11,10 +11,12 @@ module.exports =
 
     reply [
       "DJ/Producer"
-      "Record Label "
-      "Agency "
-      "Promoter "
-      "Club "
-      "Festival "
+      "Record Label"
+      "Agency"
+      "Promoter"
+      "Club"
+      "Festival"
       "Listener"
+      "Radio Station"
+      "Podcaster"
     ]
