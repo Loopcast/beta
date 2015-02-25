@@ -32,4 +32,4 @@ release:
 	$(POLVO) -r
 
 spritesheet:
-	$(LIVE_SPRITESHEET) -c src/sprites/config.json
+	$(LIVE_SPRITESHEET) -c src/frontend/sprites/config.json
