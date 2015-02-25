@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  .createroom.profile_page.centered(data-menu="create_room", data-view="room")
+  .createroom.profile_theme.centered(data-menu="create_room", data-view="room")
     .cover
       .cover_image(style="background-image:url(/images/homepage_2.jpg)")
       .content
@@ -42,6 +42,24 @@ block content
               | Total 
               br
               | visitors
+
+    .dashboard_bar
+      .source_controls
+        select.source_select
+          option Traktor audio 10
+          option Traktor audio 20
+          option Traktor audio 30
+
+        input.source_volume(type="range", name="volume", min="0", max="10")
+
+      .broadcast_controls
+        a.button.green_button.small_button_3(title="Start Broadcast") Start Broadcast
+
+      p.broadcast_time 00:00:00
+
+      .recording_controls
+        a.button.red_button.small_button_3(title="Start Recording") Start Recording
+
 
     .profile_content
       

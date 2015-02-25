@@ -10,18 +10,26 @@ DARK_PERCENTAGE = 5
 	padding: 10px
 	padding-top: 9px
 	height: 39px
-	box-shadow: inset 0px -3px 1px rgba(0, 0, 0, 0.15), 0px 2px 2px rgba(0, 0, 0, 0.05)
+	
 	position: relative
 	transition: background-color .1s linear	
 	cursor: pointer
 	
-	&.no_shadow
-		box-shadow: none	
+	&.shadow
+		box-shadow: inset 0px -3px 1px rgba(0, 0, 0, 0.15), 0px 2px 2px rgba(0, 0, 0, 0.05)
 		
 	&.save_button
 		background: BLUE
 		color: white
 		font-size: .8em
+		
+	&.green_button
+		background: GREEN
+		color: white
+		
+	&.red_button
+		background: RED
+		color: white
 
 	&.facebook
 		background-color: #2e5d94
@@ -57,21 +65,29 @@ DARK_PERCENTAGE = 5
 	&.small_button
 		font-size: .75em
 		padding: 10px
+		font-weight: 600
 		
 	&.small_button_2
+		font-size: .75em
 		padding: 7px 10px
 		height: 32px
+		font-weight: 600
+		
+	&.small_button_3
+		font-size: 0.8em
+		padding: 9px 40px 10px
+		font-weight: 600
 		
 		
 	&.social
-		padding-left: 50px;
-		width: 300px;
-		padding-top: 20px;
-		height: auto;
-		padding-bottom: 20px;
-		padding-right: 26px;
-		font-size: 1.1em;
-		letter-spacing: .03em;
+		padding-left: 50px
+		width: 300px
+		padding-top: 20px
+		height: auto
+		padding-bottom: 20px
+		padding-right: 26px
+		font-size: 1.1em
+		letter-spacing: .03em
 		span.spritesheet
 			margin-right: 10px
 			position: absolute
@@ -100,8 +116,14 @@ DARK_PERCENTAGE = 5
 	.button.gray_button:hover
 		background-color: lighten( #383838, 10 )
 		
-	&.button.save_button:hover
+	.button.save_button:hover
 		background: darken( BLUE, DARK_PERCENTAGE )
+		
+	.button.green_button:hover
+		background: darken( GREEN, DARK_PERCENTAGE )
+		
+	.button.red_button:hover
+		background: darken( RED, DARK_PERCENTAGE )
 		
 	.button.yellow_button:hover
 		background-image: linear-gradient(180deg, rgb(0, 0, 0) 11%, rgb(0, 0, 0) 42%, rgb(0, 0, 0) 73%)
@@ -120,8 +142,8 @@ DARK_PERCENTAGE = 5
 	flex-flow: row wrap
 	& > *
 		
-		width: 47%;  
-		margin: 0px 1% 10px; 
+		width: 47%  
+		margin: 0px 1% 10px 
 
 .middle_line
 	text-align: center
@@ -170,14 +192,14 @@ input, textarea
 	&.dark_input
 		background-color: lighten( #2c2c2c, 5 )
 		color: white
-		font-size: 0.7em;
-		padding: 6px;
-		border-radius: 5px;
+		font-size: 0.7em
+		padding: 6px
+		border-radius: 5px
 		margin: 0
 		transition: width .3s ease-out, background-color .3s linear
 		
 		&:focus
-			outline: 0;
+			outline: 0
 			width: 150%
 			background-color: lighten( #2c2c2c, 10 )
 			
@@ -341,8 +363,8 @@ input, textarea
 			font-size: 20px
 			display: block
 			height: 50px
-			direction: ltr;
-			cursor: pointer;
+			direction: ltr
+			cursor: pointer
 			opacity: 0
 			margin: 0
 
