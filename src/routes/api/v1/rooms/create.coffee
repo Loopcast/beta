@@ -5,11 +5,9 @@ module.exports =
   config:
 
     description: "Create room"
-    notes  : [
-      "HTTP status codes"
-      "200, OK"
-      "400, Bad Request ~ something is missing"
-      "5**, Error ~ something wrong in our side"
+    plugins: "hapi-swagger:": responseMessages: [
+      { code: 400, message: 'Bad Request' }
+      { code: 500, message: 'Internal Server Error'}
     ]
     tags   : [ "api", "v1" ]
 
@@ -20,7 +18,7 @@ module.exports =
     validate:
       payload:
         title : joi.string().required()
-        genre : joi.any().default( "" )
+        genre : joi.string().default( "" )
 
     response: schema:
       error : joi.any()

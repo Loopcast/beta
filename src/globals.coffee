@@ -11,9 +11,13 @@ global.models = ( path ) ->
 
 global.joi = require 'joi'
 
+global.happens = require 'happens'
+
 # path shortcuts
 
 path  = require 'path'
+
+global.pack = require '../package'
 
 global.root = path.join( __dirname + "/.."  )
 
