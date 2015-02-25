@@ -12,6 +12,7 @@ output:
 
 alias:
   app: src/frontend/scripts/
+  api: src/frontend/scripts/api/
   templates: src/frontend/templates/
   vendors: src/frontend/vendors
 

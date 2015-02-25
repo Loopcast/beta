@@ -1,4 +1,5 @@
-Modal   = require './../components/modal'
+Modal = require '../components/modal'
+L     = require 'api/loopcast/loopcast'
 
 module.exports = class CreateRoomModal extends Modal
 
@@ -52,14 +53,26 @@ module.exports = class CreateRoomModal extends Modal
 
 
 	_submit: ( ) =>
+
+		# quick validation sketch
+		if not @title.val() then return @title.addClass 'invalid'
+
 		data = 
-			title: @title.val()
-			genre: @genre.val()
-			location: @location.val()
-			description: @description.val()
-			cover: @cover_uploaded
+			title       : @title.val()
+			genre       : @genre.val()
+			location    : @location.val()
+			description : @description.val()
+			cover       : @cover_uploaded
 
 		log "[Create Room Modal] submit", data
+
+		L.room.create data, ( error, response ) ->
+
+			if error
+				return console.error error
+
+			console.warn "NICE!"
+
 
 		@close()
 

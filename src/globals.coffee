@@ -1,5 +1,3 @@
-path  = require 'path'
-
 global.s  = require './settings'
 
 # function shortcuts
@@ -9,7 +7,13 @@ global.lib = ( path ) ->
 global.models = ( path ) -> 
   require __dirname + "/models/#{path}"
 
+# everyone users
+
+global.joi = require 'joi'
+
 # path shortcuts
+
+path  = require 'path'
 
 global.root = path.join( __dirname + "/.."  )
 
