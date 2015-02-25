@@ -1,3 +1,8 @@
+start_recording = require 'app/utils/appcast/start_recording'
+start_stream    = require 'app/utils/appcast/start_stream'
+stop_recording  = require 'app/utils/appcast/stop_recording'
+stop_stream     = require 'app/utils/appcast/stop_stream'
+
 module.exports = (dom) ->
 
 	init = ->
@@ -7,16 +12,23 @@ module.exports = (dom) ->
 		broadcast_trigger = view.get_by_dom dom.find( '.broadcast_controls' )
 		recording_trigger = view.get_by_dom dom.find( '.recording_controls' )
 
-		log "broadcast_trigger", broadcast_trigger
-		log "recording_trigger", recording_trigger
+		broadcast_trigger.on 'change', on_broadcast_click
 
-		broadcast_trigger.on 'change', on_broadcast_change
+	on_broadcast_click = (data) ->
+		log "on_broadcast_click", data
 
-	on_broadcast_change = (data) ->
-		log "on_broadcast_change", data
+		if data is "start"
+			# do start_stream
+		else
+			# do stop_stream
 
-	on_recording_change = (data) ->
-		log "on_recording_change", data
+	on_recording_click = (data) ->
+		log "on_recording_click", data
+
+		if data is "start"
+			# do start_recording
+		else
+			# do stop_recording
 
 
 	init()
