@@ -28,7 +28,7 @@ module.exports = class CreateRoomModal extends Modal
 		room_image_uploader = view.get_by_dom @dom.find( '.room_image' )
 
 		if not room_image_uploader
-			log "[CreateRoomModal] views not binded yet!!!"
+			log "[rooms/createModal] views not binded yet!!!"
 			return
 
 		room_image_uploader.on 'completed', @_on_cover_changed
@@ -55,7 +55,7 @@ module.exports = class CreateRoomModal extends Modal
 	_submit: ( ) =>
 
 		# quick validation sketch
-		if not @title.val() then return @title.addClass 'invalid'
+		if not @title.val() then return @title.addClass 'required'
 
 		data = 
 			title       : @title.val()
@@ -74,7 +74,7 @@ module.exports = class CreateRoomModal extends Modal
 			console.warn "NICE!"
 
 
-		@close()
+		# @close()
 
 
 
