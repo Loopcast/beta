@@ -7,6 +7,9 @@ global.lib = ( path ) ->
 global.models = ( path ) -> 
   require __dirname + "/models/#{path}"
 
+global.schema = ( path ) -> 
+  require __dirname + "/models/schemas/#{path}"
+
 # everyone users
 
 global.joi = require 'joi'
