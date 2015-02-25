@@ -1,3 +1,5 @@
+Room = schema 'room'
+
 module.exports =
   method : 'POST'
   path   : '/api/v1/room/create'
@@ -34,5 +36,14 @@ module.exports =
 
       payload = request.payload
       payload.genre = payload.genre.split ','
-      
+
+      console.log "user ->", user
+      console.log "payload", payload
+
+      room = new Room
+        user_id: user.id
+
+        info
+        
+
       reply recording: true

@@ -1,6 +1,10 @@
 # defaults to production environment
 if not process.env.NODE_ENV then process.env.NODE_ENV = 'local'
 
+console.log "+ ENV"
+console.log "-   NODE_ENV = " + process.env.NODE_ENV
+console.log ""
+
 # require newrelic when running on "beta" or "development" environment
 # local machines ( developers testing ) should not be running newrelic
 if process.env.NODE_ENV is 'development' or process.env.NODE_ENV is 'beta'
@@ -12,11 +16,25 @@ g = require './globals'
 # save server as global variable as well
 g.server = require './server'
 
+mongoose = require 'mongoose'
+
 server.start ( error ) ->
 
-  glob = require 'glob'
-  glob __dirname + "/routes/**/*.coffee", ( error, files ) ->
+  mongoose.connect s.mongo.url, ( error ) ->
 
-    for file in files
+    if error
+      
+      console.error error
+      server.stop()
 
-      server.hapi.route require( file )
+      return
+
+
+    console.log '+ connected to mongodb'
+
+    glob = require 'glob'
+    glob __dirname + "/routes/**/*.coffee", ( error, files ) ->
+
+      for file in files
+
+        server.hapi.route require( file )
