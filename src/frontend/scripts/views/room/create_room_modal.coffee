@@ -59,7 +59,7 @@ module.exports = class CreateRoomModal extends Modal
 
 		data = 
 			title    : @title.val()
-			genre    : @genre.val()
+			genres   : @genre.val()
 			location : @location.val()
 			about    : @description.val()
 			cover    : @cover_uploaded

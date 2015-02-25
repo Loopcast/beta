@@ -1,0 +1,66 @@
+extends ../layout
+
+block content
+  .createroom.profile_theme.centered(data-menu="create_room", data-view="room")
+    .cover
+      .cover_image(style="background-image:url(/images/homepage_2.jpg)")
+      .content
+        h1.name.black_background
+        br
+        h3.genres.black_background
+        br
+        h3.location.black_background
+        
+        .profile_image.upload_wrapper(data-view="components/image_uploader", data-id="profile_picture")
+          img(src="/images/profile_big.png")
+          a.upload_element.edit_image(href="#")
+            span.spritesheet.camera_icon
+            span Update profile picture
+            span.progress
+
+          //- form.element_on_write_mode(class="cloudinary_form")
+          //-   input.api_key(type="hidden", name="api_key", value="#{cloudinary.api_key}")
+          //-   input.cloud_name(type="hidden", name="cloud_name", value="#{cloudinary.cloud_name}")
+          //-   input.unsigned_id(type="hidden", name="unsigned_id", value="#{cloudinary.unsigned_ids.profile}")
+
+
+
+          
+
+        .sidebar_right
+          .big_number
+            span.number 20
+            span.text Listeners
+
+          .big_number
+            span.number 4
+            span.text Favourites
+
+          .big_number
+            span.number 32
+            span.text 
+              | Total 
+              br
+              | Visitors  
+
+    .dashboard_bar(data-view="room/dashboard")
+      .source_controls
+        select.source_select
+          option Traktor audio 10
+          option Traktor audio 20
+          option Traktor audio 30
+
+        input.source_volume(type="range", name="volume", min="0", max="10")
+
+      .broadcast_controls(data-view="buttons/start_stop", data-width="fixed")
+        a.button.green_button.small_button_3.start(title="Start Broadcast") Start Broadcast
+        a.button.green_button.small_button_3.stop(title="Stop Broadcast") Stop Broadcast
+
+      p.broadcast_time 00:00:00
+
+      .recording_controls(data-view="buttons/start_stop", data-width="fixed")
+        a.button.red_button.small_button_3.start(title="Start Recording") Start Recording
+        a.button.red_button.small_button_3.stop(title="Stop Recording") Stop Recording
+
+
+    .profile_content

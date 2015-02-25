@@ -1,3 +1,4 @@
+slug = require 'slug'
 Room = schema 'room'
 
 module.exports =
@@ -20,7 +21,7 @@ module.exports =
     validate:
       payload:
         title    : joi.string().required()
-        genre    : joi.string().default( "" )
+        genres   : joi.string().default( "" )
         location : joi.string()
         about    : joi.string()
         cover    : joi.any()
@@ -35,35 +36,33 @@ module.exports =
 
         return reply error: 'needs_authentication'
 
-      user    = request.auth.credentials
+      user    = request.auth.credentials.user
 
       payload = request.payload
-      payload.genre = payload.genre.split ','
+      payload.genres = payload.genres.split ','
 
-      if not payload.genre.length then delete payload.genre
-
-      console.log "user ->", user
-      console.log "payload", payload
+      if not payload.genres.length then delete payload.genres
 
       doc = 
-        user_id: user.username
-
         info:
-          title   : payload.title
-          genre   : payload.genre
-          location: payload.location
-          about   : payload.about
+          owner_user : user.username
+          title      : payload.title
+          slug       : slug payload.title.toLowerCase()
+          genres     : payload.genres
+          location   : payload.location
+          about      : payload.about
+
+      doc.url = "#{user.username}/#{doc.info.slug}"
+      doc.updated_at = doc.created_at = now().toDate()
 
       if payload.cover
+        doc.info.cover  = payload.cover.secure_url
         doc.image.cover = payload.cover
 
       room = new Room doc
 
-
       room.save ( error, doc ) ->
 
         if error then return failed request, reply, error
-
-        console.info 'saved', doc
 
         reply doc

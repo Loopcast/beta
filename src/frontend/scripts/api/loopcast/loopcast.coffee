@@ -14,6 +14,8 @@ module.exports =
 
       request.done ( response ) ->
 
+        if response.error then return callback response.error
+
         console.info 'success creating room'
         console.info 'got response ->', response
 

@@ -1,33 +1,36 @@
-mongoose = require( 'mongoose')
-Schema   = mongoose.Schema
+mongoose   = require( 'mongoose')
+Schema     = mongoose.Schema
 
 schema = new Schema
   _id : Schema.Types.ObjectId
+  
   info :
-    id        : String # ie: thomas-amundsen
-    name      : String
-    genres    : Array
-    avatar    : String
-    followers : Number
-    visitors  : Number
-    sets      : Number
-    about     : String
+    username : type: String, required: true, unique: true
+    name     : String
+    genres   : Array
+    avatar   : String
+    about    : String
 
   stats:
-    listeners: Number
-    favorited: Number
-    visitors : Number
+    streams   : Number
+    visitors  : Number
+    followers : Number
+    listeners : Number
+    favorited : Number
+
+  created_at: Date
+  updated_at: Date
   
   data:
-    created_at: Date
-    email:
+    email: type: String, unique: true, required: true
 
-    facebook: fb_info # facebook information
+    facebook: Object # facebook information
 
     images:
-      profile: 
-        id : # id used to upload picture, ie: fb:#{graph_id} | gp:#{gp_id}
-        cdn: # cloudinary information
+      cover  : Object # cloudinary info
+      profile: Object # cloudinary info
 
+schema.pre 'save', ( next ) ->
+  @created_at = @updated_at = now()
 
 module.exports = mongoose.model 'User', schema

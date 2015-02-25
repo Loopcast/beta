@@ -12,9 +12,15 @@ global.schema = ( path ) ->
 
 # everyone users
 
+moment = require 'moment'
+
 global.joi = require 'joi'
 
 global.happens = require 'happens'
+
+global.aware   = require 'aware'
+
+global.now = ( value ) -> moment( value ).utc()
 
 # path shortcuts
 
@@ -44,7 +50,7 @@ global.failed = ( request, reply, error, data, skip_report ) ->
 
   # send error down the pipe to the user
   if typeof reply == 'function'
-    reply error : message: error.message
+    reply error : error
 
   # no need to do extra work when running test
   if s.in_tests then return
