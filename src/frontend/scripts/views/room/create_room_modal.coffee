@@ -58,23 +58,23 @@ module.exports = class CreateRoomModal extends Modal
 		if not @title.val() then return @title.addClass 'required'
 
 		data = 
-			title       : @title.val()
-			genre       : @genre.val()
-			location    : @location.val()
-			description : @description.val()
-			cover       : @cover_uploaded
+			title    : @title.val()
+			genre    : @genre.val()
+			location : @location.val()
+			about    : @description.val()
+			cover    : @cover_uploaded
 
 		log "[Create Room Modal] submit", data
 
-		L.room.create data, ( error, response ) ->
+		L.rooms.create data, ( error, room ) ->
 
-			if error
-				return console.error error
+			if error then return console.error error
+				
+			console.info " ! Got room info!"
+			console.warn room
+			console.info " We should swap url HERE!"
 
-			console.warn "NICE!"
-
-
-		# @close()
+			@close()
 
 
 

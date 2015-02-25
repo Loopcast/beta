@@ -32,6 +32,8 @@ server.start ( error ) ->
 
     console.log '+ connected to mongodb'
 
+
+    # TODO: Allow extra fields on methods, so we can have semi-free schema API
     glob = require 'glob'
     glob __dirname + "/routes/**/*.coffee", ( error, files ) ->
 

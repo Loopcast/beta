@@ -2,7 +2,7 @@ Room = schema 'room'
 
 module.exports =
   method : 'POST'
-  path   : '/api/v1/room/create'
+  path   : '/api/v1/rooms/create'
 
   config:
 
@@ -19,12 +19,15 @@ module.exports =
 
     validate:
       payload:
-        title : joi.string().required()
-        genre : joi.string().default( "" )
+        title    : joi.string().required()
+        genre    : joi.string().default( "" )
+        location : joi.string()
+        about    : joi.string()
+        cover    : joi.any()
 
-    response: schema:
-      error : joi.any()
-      id    : joi.any()
+    # response: schema:
+    #   error : joi.any()
+    #   _id   : joi.any()
 
     handler: ( request, reply ) ->
 
@@ -37,13 +40,30 @@ module.exports =
       payload = request.payload
       payload.genre = payload.genre.split ','
 
+      if not payload.genre.length then delete payload.genre
+
       console.log "user ->", user
       console.log "payload", payload
 
-      room = new Room
-        user_id: user.id
+      doc = 
+        user_id: user.username
 
-        info
-        
+        info:
+          title   : payload.title
+          genre   : payload.genre
+          location: payload.location
+          about   : payload.about
 
-      reply recording: true
+      if payload.cover
+        doc.image.cover = payload.cover
+
+      room = new Room doc
+
+
+      room.save ( error, doc ) ->
+
+        if error then return failed request, reply, error
+
+        console.info 'saved', doc
+
+        reply doc

@@ -44,10 +44,7 @@ global.failed = ( request, reply, error, data, skip_report ) ->
 
   # send error down the pipe to the user
   if typeof reply == 'function'
-    reply 
-      success: false
-      error  : 
-        message: error.message
+    reply error : message: error.message
 
   # no need to do extra work when running test
   if s.in_tests then return

@@ -1,8 +1,5 @@
 mongoose = require( 'mongoose')
-slug     = require 'slug'
 Schema   = mongoose.Schema
-
-delete_image = lib 'cloudinary/delete'
 
 schema = new Schema
   # foreign key
@@ -19,6 +16,13 @@ schema = new Schema
   images:
     cover: Object # cloudinary information
       
+
+#
+# hooks
+#
+
+slug         = require 'slug'
+delete_image = lib 'cloudinary/delete'
 
 schema.post 'validate', ( doc ) ->
 

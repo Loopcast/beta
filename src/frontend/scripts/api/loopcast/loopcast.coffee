@@ -1,7 +1,7 @@
 api_url = "/api/v1/"
 
 module.exports = 
-  room :
+  rooms :
     create: ( data, callback ) ->
       request = $.post api_url + 'rooms/create', data
 
