@@ -43,7 +43,7 @@ block content
               br
               | visitors
 
-    .dashboard_bar
+    .dashboard_bar(data-view="room/dashboard")
       .source_controls
         select.source_select
           option Traktor audio 10
@@ -52,13 +52,15 @@ block content
 
         input.source_volume(type="range", name="volume", min="0", max="10")
 
-      .broadcast_controls
-        a.button.green_button.small_button_3(title="Start Broadcast") Start Broadcast
+      .broadcast_controls(data-view="buttons/start_stop", data-width="fixed")
+        a.button.green_button.small_button_3.start(title="Start Broadcast") Start Broadcast
+        a.button.green_button.small_button_3.stop(title="Stop Broadcast") Stop Broadcast
 
       p.broadcast_time 00:00:00
 
-      .recording_controls
-        a.button.red_button.small_button_3(title="Start Recording") Start Recording
+      .recording_controls(data-view="buttons/start_stop", data-width="fixed")
+        a.button.red_button.small_button_3.start(title="Start Recording") Start Recording
+        a.button.red_button.small_button_3.stop(title="Stop Recording") Stop Recording
 
 
     .profile_content

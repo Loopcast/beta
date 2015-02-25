@@ -407,12 +407,23 @@ input, textarea
 		.text
 			opacity: 0
 
+.start_stop
+	.start
+		display: block
+	.stop
+		display: none
+		
+	&.started
+		.start
+			display: none
+		.stop
+			display: block
+
 .no_touch_device
 	.editable_text:hover
 		.spritesheet
 			display: block
-
-.no_touch_device
+			
 	.underline_link:hover
 		text-decoration: underline
 	.hover_dropdown
