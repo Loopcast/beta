@@ -45,6 +45,8 @@ module.exports = class HoverTrigger
 		return if @opened
 		@opened = true
 
+		log "[Trigger] open"
+
 		@dom.addClass @klass
 		@target.addClass @klass
 
@@ -53,6 +55,8 @@ module.exports = class HoverTrigger
 	close: ( ) =>
 		return if not @opened
 		@opened = false
+
+		log "[Trigger] close"
 
 		@dom.removeClass @klass
 		@target.removeClass @klass
