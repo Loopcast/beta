@@ -3,7 +3,7 @@ api_url = "/api/v1/"
 module.exports = 
   room :
     create: ( data, callback ) ->
-      request = $.post api_url + 'room/create', data
+      request = $.post api_url + 'rooms/create', data
 
       request.error ( error ) ->
 
