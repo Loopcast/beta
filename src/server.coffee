@@ -19,7 +19,8 @@ server.start = ( when_done ) ->
       options:
         basePath          : s.base_path
         documentationPath : '/api/documentation'
-        endpoint          : '/api/docs'
+        # endpoint          : '/api/docs'
+        endpoint          : '/docs'
         apiVersion        : pack.version
     }, ( error ) ->
       if error
