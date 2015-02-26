@@ -21,7 +21,7 @@ module.exports =
     validate:
       payload:
         title    : joi.string().required()
-        genres   : joi.string().default( "" )
+        genres   : joi.string()
         location : joi.string()
         about    : joi.string()
         cover    : joi.any()
@@ -53,11 +53,11 @@ module.exports =
           about      : payload.about
 
       doc.url = "#{user.username}/#{doc.info.slug}"
-      doc.updated_at = doc.created_at = now().toDate()
+      # doc.updated_at = doc.created_at = now().toDate()
 
       if payload.cover
-        doc.info.cover  = payload.cover.secure_url
-        doc.image.cover = payload.cover
+        doc.info.cover = payload.cover.secure_url
+        doc.images     = cover: payload.cover
 
       room = new Room doc
 

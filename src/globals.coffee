@@ -39,7 +39,7 @@ global.www = ( path ) -> __dirname + "/../www/#{path}"
 # set skip_report to true if no need to report to newrelic
 global.failed = ( request, reply, error, data, skip_report ) ->
   
-  if typeof( error ) is 'string' then error = new Error error
+  # if typeof( error ) is 'string' then error = new Error error
 
   if not error?
     console.error "Couldnt reply and report error"
@@ -50,6 +50,8 @@ global.failed = ( request, reply, error, data, skip_report ) ->
 
   # send error down the pipe to the user
   if typeof reply == 'function'
+
+    console.log "replying error ->", error
     reply error : error
 
   # no need to do extra work when running test

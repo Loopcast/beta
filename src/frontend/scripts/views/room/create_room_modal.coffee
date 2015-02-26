@@ -14,9 +14,9 @@ module.exports = class CreateRoomModal extends Modal
 
 		@submit = @dom.find '.submit_button'
 
-		@title.on 'keyup', @_on_title_changed
-		@genre.on 'keyup', @_on_genre_changed
-		@location.on 'keyup', @_on_location_changed
+		@title.on 'keyup'      , @_on_title_changed
+		@genre.on 'keyup'      , @_on_genre_changed
+		@location.on 'keyup'   , @_on_location_changed
 		@description.on 'keyup', @_on_description_changed
 
 		@submit.on 'click', @_submit
@@ -36,7 +36,10 @@ module.exports = class CreateRoomModal extends Modal
 		
 
 	_on_cover_changed: (data) =>
-		@cover_uploaded = data.result.url
+		@cover_uploaded = data.result
+
+		console.log "got image result ->", data.result
+
 		@emit 'input:changed', { name: 'cover', value: data.result }
 
 	_on_title_changed: ( ) =>
@@ -66,15 +69,22 @@ module.exports = class CreateRoomModal extends Modal
 
 		log "[Create Room Modal] submit", data
 
+		modal = @
+
 		L.rooms.create data, ( error, room ) ->
 
-			if error then return console.error error
+			if error
+
+				if error is "cant_have_two_live_rooms_with_same_url"
+					console.error "Cant have two live rooms with same url"
+
+				return console.error error
 				
 			console.info " ! Got room info!"
 			console.warn room
 			console.info " We should swap url HERE!"
 
-			@close()
+			modal.close()
 
 
 
@@ -82,4 +92,3 @@ module.exports = class CreateRoomModal extends Modal
 
 
 
-	

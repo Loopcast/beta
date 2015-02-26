@@ -35,7 +35,7 @@ module.exports = class Room
 					@elements[ data.name ].addClass 'hidden'
 			when 'cover'
 				@elements[ data.name ].css
-					'background-image': "url(#{data.value.url})"
+					'background-image': "url(#{data.value.secure_url})"
 
 
 

@@ -38,9 +38,9 @@ module.exports =
       profile = request.params.profile
       room_id = request.params.room
 
-      Room.find( { }, _id: off )
+      Room.find( { } )
         .where( "url"  , "#{profile}/#{room_id}" )
-        .select( "info.title info.location info.about info.genres" )
+        .select( "info" )
         .lean()
         .exec ( error, room ) -> 
 
