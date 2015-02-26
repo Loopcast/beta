@@ -9,7 +9,7 @@ block content
 						span.spritesheet.rooms_icon
 						span Rooms
 				li
-					a(href="#" title="People")
+					a(href="/people" title="People")
 						span.spritesheet.people_icon
 						span People
 				li
@@ -41,7 +41,7 @@ block content
 							.text
 								h2.room_title 
 									a(href="#{room.url}", title="#{room.title}") #{room.title}
-								a.room_user(title="#{room.author}", href="#{room.url}") #{room.author}
+								a.room_subtitle.blue(title="#{room.author}", href="#{room.url}") #{room.author}
 								.genres.small
 									for g in room.genres
 										a.tag(href="#", title="#{g}", data-genre-id="#{g}") #{genres[g]}
@@ -52,30 +52,3 @@ block content
 								p.now_live Now Live
 
 							a.enter_room(href="#{room.url}", class="button yellow_button no_shadow small_button small_button_2", title="Enter Room") Enter Room
-
-				
-
-
-			//- h1(data-view="room") Rooms
-
-			//- br
-			//- br
-				
-			//- h4 genres
-
-			//- ul
-			//- 	for genre in genres
-			//- 		li #{genre}
-
-			//- br
-			//- br
-				
-			//- h4 rooms
-
-			//- ul
-			//- 	for room in rooms
-			//- 		li 
-			//- 			pre
-			//- 				| title : #{room.title}
-			//- 				| author: #{room.author}
-			//- 				| ---

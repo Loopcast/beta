@@ -99,12 +99,16 @@ HEIGHT_SUBHEADER = 45px
 				line-height: 1.3em
 				margin-bottom: 5px
 				
-			.room_user
-				color: BLUE
+			.room_subtitle
 				font-size: 0.8em
 				line-height: 1em
 				display: block
 				margin-bottom: 10px
+				font-weight: 600
+				&.blue
+					color: BLUE
+					font-weight: 400
+					
 				
 			.room_location
 				color: GRAY_2
@@ -114,7 +118,14 @@ HEIGHT_SUBHEADER = 45px
 					position: relative
 					top: 2px
 				
-
+.following_item
+	display: none
+	
+.following
+	.not_following_item
+		display: none
+	.following_item
+		display: block
 		
 .no_touch_device
 	.explore
