@@ -41,14 +41,15 @@ module.exports =
       payload = request.payload
       payload.genres = payload.genres.split ','
 
-      if not payload.genres.length then delete payload.genres
+      # If we delete payload.genres, we gonna have an error below
+      # if not payload.genres.length then delete payload.genres
 
       doc = 
         info:
           owner_user : user.username
           title      : payload.title
           slug       : slug payload.title.toLowerCase()
-          genres     : payload.genres
+          genres     : payload.genres # potential error!
           location   : payload.location
           about      : payload.about
 
