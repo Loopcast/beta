@@ -108,23 +108,22 @@ block content
           a.image(href="#", title="Old School House session", style="background-image:url(/images/profile_session_1.jpg)")
           .content
             h2.session_title 
-              a(href="#", title="Old School House session") Old School House session
-            a.session_author.underline_link(href="#", title="Thomas Amudsen") Thomas Amudsen
+              a(href="#", title="#{profile.live.title}") #{profile.live.title}
+            a.session_author.underline_link(href="#", title="#{profile.live.author}") #{profile.live.author}
             .genres
-              a.tag(href="#", title="House") House
-              a.tag(href="#", title="Tech House") Tech House
-              a.tag(href="#", title="Techno") Techno
-              a.tag(href="#", title="Electro House") Electro House
+              for genre in profile.live.genres
+                a.tag(href="#", title="#{genre}") #{genre}
+
             .small_info
               .location 
                 span
-                | London/UK
+                | #{profile.live.location}
               .likes 
                 span
-                | 46
+                | #{profile.live.loves}
               .guests 
                 span
-                | 2467
+                | #{profile.live.guests}
 
             .live 
               p.label now live
@@ -135,13 +134,13 @@ block content
           .title
             h2 Recorded session
             span.session_icon.spritesheet
-            span.session_text 13
+            span.session_text #{profile.recorded.length}
 
             span.alert_icon.spritesheet
-            span.alert_text 1 hour free storage remaining
+            span.alert_text #{profile.free_storage} free storage remaining
 
           for room in profile.recorded
-            .session.outline_box(id="session_recorded_#{room.id}", data-view="components/user_set")
+            .session.outline_box(id="session_recorded_#{room.id}", data-view="components/user_set", data-data="#{JSON.stringify(room)}")
 
               a.image(href="#", title="#{room.title}", style="background-image:url(/images/profile_session_1.jpg)")
                 span.room_play.spritesheet
@@ -150,20 +149,19 @@ block content
                   a(href="#", title="#{room.title}") #{room.title}
                 a.session_author.underline_link(href="#", title="#{room.author}") #{room.author}
                 .genres
-                  a.tag(href="#") House
-                  a.tag(href="#") Tech House
-                  a.tag(href="#") Techno
-                  a.tag(href="#") Electro House
+                  for genre in room.genres
+                    a.tag(href="#", title="#{genre}") #{genre}
+                  
                 .small_info
                   .location 
                     span
-                    | London/UK
+                    | #{room.location}
                   .likes 
                     span
-                    | 46
+                    | #{room.loves}
                   .guests 
                     span
-                    | 2467
+                    | #{room.guests}
 
                 .edit_session_wrapper
                   a.spritesheet.settings_button.settings_profile_set_hover(href="#", title="Setting Session", data-view="components/click_trigger" data-target="#session_recorded_#{room.id} .edit_session_popup") Settings Session
@@ -180,4 +178,4 @@ block content
                   a.button.white_button.small_button_4.cancel_delete(href="#", title="Cancel") Cancel
 
 
-  include ./createroom_modal.jade
+  include ./rooms/room_modal.jade

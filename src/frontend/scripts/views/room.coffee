@@ -1,3 +1,5 @@
+L     = require 'api/loopcast/loopcast'
+navigation      = require 'app/controllers/navigation'
 module.exports = class Room
 	constructor: ( @dom ) ->
 		view.once 'binded', @on_view_binded
@@ -22,7 +24,8 @@ module.exports = class Room
 	on_view_binded: ( ) =>
 		@modal = view.get_by_dom '#createroom_modal'
 		@modal.on 'input:changed', @on_input_changed
-		@open_modal()
+		@modal.on 'submit', @on_modal_submit
+		@modal.open()
 
 	on_input_changed: ( data ) =>
 		switch data.name
@@ -38,8 +41,36 @@ module.exports = class Room
 					'background-image': "url(#{data.value.secure_url})"
 
 
+	on_modal_submit: ( data ) =>
+		log "[Room] on_modal_submit", data
 
-	open_modal: ( ) ->
-		@modal.open()
+		@modal.hide_message()
+		@modal.show_loading()
+
+		m = @modal
+
+		L.rooms.create data, ( error, room ) ->
+
+			if error
+
+				msg = "Error. Try again."
+				if error is "cant_have_two_live_rooms_with_same_url"
+					console.error "Cant have two live rooms with same url"
+					msg = "Cant have two live rooms with same url"
+				m.hide_loading()
+				m.show_message msg
+				return console.error error
+				
+			console.info " ! Got room info!"
+			console.warn room
+			console.info " We should swap url HERE!"
+
+			delay 1000, ->
+
+				navigation.go_silent "/#{room.url}"
+
+				m.close()
+
+		
 		
 		

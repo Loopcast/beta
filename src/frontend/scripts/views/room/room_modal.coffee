@@ -1,7 +1,7 @@
 Modal = require '../components/modal'
-L     = require 'api/loopcast/loopcast'
 
-module.exports = class CreateRoomModal extends Modal
+
+module.exports = class RoomModal extends Modal
 
 	cover_uploaded: ""
 	constructor: ( @dom ) ->
@@ -11,6 +11,7 @@ module.exports = class CreateRoomModal extends Modal
 		@genre = @dom.find '.genre'
 		@location = @dom.find '.location'
 		@description = @dom.find '.description'
+		@message = @dom.find '.message'
 
 		@submit = @dom.find '.submit_button'
 
@@ -22,6 +23,8 @@ module.exports = class CreateRoomModal extends Modal
 		@submit.on 'click', @_submit
 
 		view.once 'binded', @on_views_binded
+
+		window.modal = @
 
 	on_views_binded: ( ) =>
 
@@ -43,6 +46,7 @@ module.exports = class CreateRoomModal extends Modal
 		@emit 'input:changed', { name: 'cover', value: data.result }
 
 	_on_title_changed: ( ) =>
+		@_check_length @title
 		@emit 'input:changed', { name: 'title', value: @title.val() }
 
 	_on_genre_changed: ( ) =>
@@ -54,11 +58,18 @@ module.exports = class CreateRoomModal extends Modal
 	_on_description_changed: ( ) =>
 		@emit 'input:changed', { name: 'description', value: @description.val() }
 
+	_check_length: ( el ) ->
+		if el.val().length > 0
+			el.removeClass 'required'
+		else
+			el.addClass 'required'
 
 	_submit: ( ) =>
 
 		# quick validation sketch
-		if not @title.val() then return @title.addClass 'required'
+		if not @title.val()
+			@title.addClass( 'required' ).focus()
+			return 
 
 		data = 
 			title    : @title.val()
@@ -67,24 +78,28 @@ module.exports = class CreateRoomModal extends Modal
 			about    : @description.val()
 			cover    : @cover_uploaded
 
-		log "[Create Room Modal] submit", data
+		@emit 'submit', data
 
-		modal = @
 
-		L.rooms.create data, ( error, room ) ->
+	show_message: ( msg ) ->
+		@message.html( msg ).show()
 
-			if error
+	hide_message: ( ) ->
+		@message.hide()
 
-				if error is "cant_have_two_live_rooms_with_same_url"
-					console.error "Cant have two live rooms with same url"
+	open_with_data: ( data ) ->
+		log "[RoomModal] open_with_data", data
 
-				return console.error error
-				
-			console.info " ! Got room info!"
-			console.warn room
-			console.info " We should swap url HERE!"
+		@dom.addClass 'edit_modal'
+		@title.val data.title
+		@genre.val data.genres.join(", ")
+		@location.val data.location
+		@description.val data.about
 
-			modal.close()
+		@open()
+
+		return false
+
 
 
 

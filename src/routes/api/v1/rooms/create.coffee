@@ -39,7 +39,13 @@ module.exports =
       user    = request.auth.credentials.user
 
       payload = request.payload
-      payload.genres = payload.genres.split ','
+
+
+      console.log "====PAYLOAD====="
+      console.log payload
+
+      if payload.genres.length > 0
+        payload.genres = payload.genres.split ','
 
       # If we delete payload.genres, we gonna have an error below
       # if not payload.genres.length then delete payload.genres

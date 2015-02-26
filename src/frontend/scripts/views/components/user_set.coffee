@@ -20,8 +20,7 @@ module.exports = ( dom ) ->
     log "[Set] download"
 
   _edit = ->
-    log "[Set] edit"
-    edit_modal.open()
+    edit_modal.open_with_data dom.data( 'data' )
 
   _to_delete = ->
     dom.addClass 'to_delete'

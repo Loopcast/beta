@@ -12,7 +12,9 @@ module.exports = class Modal
 		return if @opened
 		@opened = true
 
-		@dom.addClass 'md_show'
+		@dom.addClass 'md_visible'
+		delay 10, =>
+			@dom.addClass 'md_show'
 
 		log 'modal-close', @dom.data( 'modal-close' )
 
@@ -23,9 +25,22 @@ module.exports = class Modal
 		@emit 'opened'
 
 	close: ( ) =>
-		return if not @opened
+		if not @opened
+			log "[Modal] it's already closed!"
+			return
+
 		@opened = false
 
 		@dom.removeClass 'md_show'		
+		delay 300, =>
+			@dom.removeClass 'md_visible'
+
+		do @hide_loading
 
 		@emit 'closed'
+
+	show_loading: ( ) ->		
+		@dom.addClass 'loading'
+
+	hide_loading: ( ) ->
+		@dom.removeClass 'loading'

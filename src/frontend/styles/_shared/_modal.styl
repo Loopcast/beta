@@ -11,10 +11,27 @@ MARGIN_MODAL = 20px
 	visibility: hidden
 	backface-visibility: hidden
 	transform: translateX(-50%) translateY(-50%)
+	overflow: hidden
+	.loading
+		absolute top 50% left 50%
+		transform-origin: 50% 50%
+		transform: translateX(-50%) translateY(-50%) scale(0.001)
+		transition: transform .4s ease-out
+		width: 50em
+		height: 50em
+		z-index: 1
+		border-radius: 50%
+		background: rgba(255,255,255,0.9)
 	
+	&.md_visible
+		visibility: visible
+		
+	&.loading
+		.loading
+			transform: translateX(-50%) translateY(-50%) scale(1)
 	
 .md_show
-	visibility: visible
+	
 	box-shadow: 1px 1px 26px -7px black
 	transition: box-shadow .3s linear .2s
 	
@@ -30,34 +47,39 @@ MARGIN_MODAL = 20px
 	background: black
 	transition: all 0.3s
 	
-.md_show ~ .md_overlay
+.md_visible ~ .md_overlay
 	opacity: 0.6
 	visibility: visible
 	
 
 .md_wrapper
-	color: #000;
-	background: #fff;
-	position: relative;
-	border-radius: 3px;
-	margin: 0 auto;
-	font-weight: 300;
-	font-size: 1em;
+	color: #000
+	background: #fff
+	position: relative
+	border-radius: 3px
+	margin: 0 auto
+	font-weight: 300
+	font-size: 1em
+	overflow: hidden
+	
+	
+		
+
 
 
 .md_header
-	margin: 0;
-	padding: 0.4em;
-	text-align: center;
-	font-size: 1em;
-	font-weight: 300;
-	opacity: 1;
+	margin: 0
+	padding: 0.4em
+	text-align: center
+	font-size: 1em
+	font-weight: 300
+	opacity: 1
 	background: BLACK
 	color: white
-	border-radius: 3px 3px 0 0;
+	border-radius: 3px 3px 0 0
 	position: relative
 	padding: 13px MARGIN_MODAL 13px
-	margin: 0;
+	margin: 0
 	.md_logo
 		display: block
 		
@@ -78,10 +100,12 @@ MARGIN_MODAL = 20px
 
 .md_content
 	padding: 30px MARGIN_MODAL
-	margin: 0;
+	margin: 0
+	position: relative
+	z-index: 0
 	p
-		margin: 0;
-		padding: 10px 0;
+		margin: 0
+		padding: 10px 0
 		
 	
 #createroom_modal
@@ -102,11 +126,36 @@ MARGIN_MODAL = 20px
 	input
 		font-size: 0.75em
 		
+		&.required
+			border: 1px solid RED
+		
 	.button
 		margin-bottom: 10px
 		padding-top: 12px
 		padding-bottom: 12px
 		height: 45px
+		
+	.edit_label
+		display: none
+		
+	.message
+		font-size: 0.8em
+		font-weight: 400
+		margin: 0
+		padding: 0
+		position: absolute
+		bottom: 7px
+		left: 0
+		width: 100%
+		text-align: center
+		display: none
+		
+	&.edit_modal
+		.edit_label
+			display: block
+			
+		.create_label
+			display: none
 		
 .no_touch_device
 	#createroom_modal

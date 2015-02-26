@@ -4,10 +4,16 @@
 .styleguide
 	padding: 20px
 	text-align: left
-	.buttons_wrapper > *
-		display: inline-block
-		margin-right: 10px
-		margin-bottom: 10px
+	.buttons_wrapper, .loading_wrapper
+		& > *
+			display: inline-block
+			margin-right: 10px
+			margin-bottom: 10px
+		
+	.loading_wrapper
+		background: white
+		padding: 10px
+		border: 1px solid #ccc
 
 // CREATEROOM
 .profile_theme.createroom

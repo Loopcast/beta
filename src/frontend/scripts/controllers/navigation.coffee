@@ -93,6 +93,11 @@ class Navigation
 
 		return false
 
+	go_silent: ( url, title ) ->
+		if title?
+			ways.go.silent url, title
+		else
+			ways.go.silent url
 	##
 	# Looks for internal links and bind then to client side navigation
 	# as in: html History api

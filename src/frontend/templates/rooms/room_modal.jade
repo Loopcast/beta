@@ -1,10 +1,13 @@
-#createroom_modal(class="modal slide_from_bottom", data-view="room/create_room_modal", data-modal-close="false")
+#createroom_modal(class="modal slide_from_bottom", data-view="room/room_modal", data-modal-close="false")
   .md_wrapper
+    .loading
+      .loading_spin.center_el.medium
     .md_content
-      h4 Create Room
+      h4.create_label Create Room
+      h4.edit_label Edit your set
       
     
-      label(for="username") Title
+      label(for="username") Title*
       input.roomname(name="name", type="text", placeholder="Enter room name")
       label(for="genre") Genre
       input.genre(name="genre", type="text", placeholder="Choose genre")
@@ -17,7 +20,8 @@
 
         a.upload_element.button.signin.gray_button.no_shadow(title="Upload Cover") 
           span.progress
-          span Upload Cover
+          span.text.create_label Upload Cover
+          span.text.edit_label Change Cover
 
           form.cloudinary_form
             input.api_key(type="hidden", name="api_key", value="#{cloudinary.api_key}")
@@ -27,5 +31,6 @@
       
       a.button.signin.yellow_button.no_shadow.submit_button(title="Open Room") Open Room
 
+      p.message this is a message
 
 .md_overlay
