@@ -21,7 +21,7 @@ module.exports = class Profile
 		@elements = 
 			profile_picture: @dom.find( '.profile_image img' )
 			cover_picture: @dom.find( '.cover_image' )
-			location: @dom.find( '.location' )
+			location: @dom.find( '.profile_bio .location' )
 			location_input: @dom.find( '.location_input' )
 			bio: @dom.find( '.bio' )
 			bio_input: @dom.find( '.bio_input' )
@@ -57,6 +57,8 @@ module.exports = class Profile
 
 
 		@update_dom_from_user_data()
+
+		$( '#room_modal' ).data( 'modal-close', true )
 
 		view.once 'binded', @on_views_binded
 

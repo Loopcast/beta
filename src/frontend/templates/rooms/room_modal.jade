@@ -1,4 +1,4 @@
-#createroom_modal(class="modal slide_from_bottom", data-view="room/room_modal", data-modal-close="false")
+#room_modal(class="modal slide_from_bottom", data-view="room/room_modal", data-modal-close="false")
   .md_wrapper
     .loading
       .loading_spin.center_el.medium
@@ -29,8 +29,9 @@
             input.unsigned_id(type="hidden", name="unsigned_id", value="#{cloudinary.unsigned_ids.profile}")
 
       
-      a.button.signin.yellow_button.no_shadow.submit_button(title="Open Room") Open Room
+      a.button.signin.yellow_button.no_shadow.submit_button.create_label(title="Open Room") Open Room
+      a.button.signin.yellow_button.no_shadow.submit_button.edit_label(title="Save") Save
 
-      p.message this is a message
+      p.message
 
 .md_overlay

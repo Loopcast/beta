@@ -16,13 +16,19 @@ module.exports = class Modal
 		delay 10, =>
 			@dom.addClass 'md_show'
 
-		log 'modal-close', @dom.data( 'modal-close' )
-
 
 		if @dom.data( 'modal-close' )? and @dom.data( 'modal-close' ) isnt false
-			@overlay.off( 'click' ).on( 'click', @close )
+			@close_on_click_outside()
+		else
+			@disable_close_on_click_outside()
 
 		@emit 'opened'
+
+	close_on_click_outside: ->
+		@overlay.off( 'click' ).on( 'click', @close )
+
+	disable_close_on_click_outside: ->
+		@overlay.off( 'click' )
 
 	close: ( ) =>
 		if not @opened
@@ -32,12 +38,12 @@ module.exports = class Modal
 		@opened = false
 
 		@dom.removeClass 'md_show'		
-		delay 300, =>
+		delay 400, =>
 			@dom.removeClass 'md_visible'
 
-		do @hide_loading
+			do @hide_loading
 
-		@emit 'closed'
+			@emit 'closed'
 
 	show_loading: ( ) ->		
 		@dom.addClass 'loading'

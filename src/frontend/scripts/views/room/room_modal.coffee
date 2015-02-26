@@ -65,6 +65,7 @@ module.exports = class RoomModal extends Modal
 			el.addClass 'required'
 
 	_submit: ( ) =>
+		log "submit"
 
 		# quick validation sketch
 		if not @title.val()

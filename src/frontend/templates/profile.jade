@@ -116,14 +116,14 @@ block content
 
             .small_info
               .location 
-                span
-                | #{profile.live.location}
+                span.spritesheet.icon_location
+                span.text #{profile.live.location}
               .likes 
-                span
-                | #{profile.live.loves}
+                span.spritesheet.icon_guests
+                span.text #{profile.live.loves}
               .guests 
-                span
-                | #{profile.live.guests}
+                span.spritesheet.icon_plays
+                span.text #{profile.live.guests}
 
             .live 
               p.label now live
@@ -154,14 +154,14 @@ block content
                   
                 .small_info
                   .location 
-                    span
-                    | #{room.location}
+                    span.spritesheet.icon_location
+                    span.text #{room.location}
                   .likes 
-                    span
-                    | #{room.loves}
+                    span.spritesheet.icon_likes
+                    span.text #{room.loves}
                   .guests 
-                    span
-                    | #{room.guests}
+                    span.spritesheet.icon_plays
+                    span.text #{room.guests}
 
                 .edit_session_wrapper
                   a.spritesheet.settings_button.settings_profile_set_hover(href="#", title="Setting Session", data-view="components/click_trigger" data-target="#session_recorded_#{room.id} .edit_session_popup") Settings Session
