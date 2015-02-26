@@ -68,27 +68,6 @@ block content
             input.cloud_name(type="hidden", name="cloud_name", value="#{cloudinary.cloud_name}")
             input.unsigned_id(type="hidden", name="unsigned_id", value="#{cloudinary.unsigned_ids.cover}")
 
-
-    //- TODO: should always be in the doom, but just show
-    //- if it own user profile
-    //- .controls(data-view="components/stream_controls")
-
-    //-   .devices
-    //-     select(id="input_devices" data-view="components/input_devices")
-    //-       option(value="test")
-
-    //-   .streaming
-    //-     button.start_streaming(data-view="buttons/start_stream")
-    //-       | start_streaming
-    //-     button.stop_streaming(data-view="buttons/stop_stream")
-    //-       | stop_streaming
-
-    //-   .recording
-    //-     button.start_recording(data-view="buttons/start_recording")
-    //-       | start_recording
-    //-     button.stop_recording(data-view="buttons/stop_recording")
-    //-       | stop_recording
-
     .profile_content
       .profile_left
         .profile_bio.outline_box
@@ -162,7 +141,8 @@ block content
             span.alert_text 1 hour free storage remaining
 
           for room in profile.recorded
-            .session.outline_box(id="session_recorded_#{room.id}")
+            .session.outline_box(id="session_recorded_#{room.id}", data-view="components/user_set")
+
               a.image(href="#", title="#{room.title}", style="background-image:url(/images/profile_session_1.jpg)")
                 span.room_play.spritesheet
               .content
@@ -193,11 +173,11 @@ block content
                     a.edit_button.button.yellow_button.small_button_4(href="#", title="Edit") Edit
                     a.delete_button.button.red_button.small_button_4(href="#", title="Delete") Delete
 
+              .delete_screen
+                .content
+                  h2 Are you sure you want to delete this recording?
+                  a.button.red_button.small_button_4.confirm_delete(href="#", title="Delete") Delete
+                  a.button.white_button.small_button_4.cancel_delete(href="#", title="Cancel") Cancel
 
 
-    //- .player(data-view="components/player")
-    //-   .status
-    //-   audio( controls autoplay data-src="http://radio.loopcast.fm:8000/#{profile.id}" )
-    //-   .vu
-    //-     .meter_left
-    //-     .meter_right
+  include ./createroom_modal.jade

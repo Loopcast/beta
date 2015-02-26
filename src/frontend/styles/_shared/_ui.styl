@@ -56,7 +56,12 @@ DARK_PERCENTAGE = 5
 		color: BLACK
 		font-weight: 800
 		border: 1px solid #E9AC1A
-		
+	
+	&.white_button
+		background: white
+		border: 1px solid #CED0D0
+		color: BLACK
+			
 	&.white_transparent_button
 		background: transparent
 		border: 1px solid white
@@ -141,6 +146,10 @@ DARK_PERCENTAGE = 5
 	.button.white_transparent_button:hover
 		background: white
 		color: BLACK
+		
+	.button.white_button:hover
+		background: darken( white, DARK_PERCENTAGE )
+		border: 1px solid #CED0D0
 		
 
 		
