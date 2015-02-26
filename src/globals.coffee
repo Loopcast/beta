@@ -1,5 +1,3 @@
-path  = require 'path'
-
 global.s  = require './settings'
 
 # function shortcuts
@@ -9,7 +7,26 @@ global.lib = ( path ) ->
 global.models = ( path ) -> 
   require __dirname + "/models/#{path}"
 
+global.schema = ( path ) -> 
+  require __dirname + "/models/schemas/#{path}"
+
+# everyone users
+
+moment = require 'moment'
+
+global.joi = require 'joi'
+
+global.happens = require 'happens'
+
+global.aware   = require 'aware'
+
+global.now = ( value ) -> moment( value ).utc()
+
 # path shortcuts
+
+path  = require 'path'
+
+global.pack = require '../package'
 
 global.root = path.join( __dirname + "/.."  )
 
@@ -22,7 +39,7 @@ global.www = ( path ) -> __dirname + "/../www/#{path}"
 # set skip_report to true if no need to report to newrelic
 global.failed = ( request, reply, error, data, skip_report ) ->
   
-  if typeof( error ) is 'string' then error = new Error error
+  # if typeof( error ) is 'string' then error = new Error error
 
   if not error?
     console.error "Couldnt reply and report error"
@@ -33,10 +50,9 @@ global.failed = ( request, reply, error, data, skip_report ) ->
 
   # send error down the pipe to the user
   if typeof reply == 'function'
-    reply 
-      success: false
-      error  : 
-        message: error.message
+
+    console.log "replying error ->", error
+    reply error : error
 
   # no need to do extra work when running test
   if s.in_tests then return

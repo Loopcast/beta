@@ -11,6 +11,14 @@ s =
   server:
     url: 'http://beta.loopcast.fm'
 
+###
+#  when running locally s.base_path will be overwritten by "server.coffee"
+#  which will set it to be the address of the running machine
+###
+if s.is_beta
+  s.base_path = "http://beta.loopcast.fm"
+else
+  s.base_path = "http://development.loopcast.fm"
 
 s.cloudinary =
   cloud_name      : 'loopcast', 

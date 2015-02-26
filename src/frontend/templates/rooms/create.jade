@@ -1,4 +1,4 @@
-extends layout
+extends ../layout
 
 block content
   .createroom.profile_theme.centered(data-menu="create_room", data-view="room")
@@ -29,19 +29,19 @@ block content
 
         .sidebar_right
           .big_number
-            span.number 2
-            span.text Followers
+            span.number 20
+            span.text Listeners
 
           .big_number
-            span.number 0
-            span.text Rooms
+            span.number 4
+            span.text Favourites
 
           .big_number
-            span.number 2
+            span.number 32
             span.text 
               | Total 
               br
-              | visitors
+              | Visitors  
 
     .dashboard_bar(data-view="room/dashboard")
       .source_controls
@@ -66,4 +66,8 @@ block content
     .profile_content
       
 
-    include ./createroom_modal.jade
+    include ./create_modal.jade
+
+
+
+
