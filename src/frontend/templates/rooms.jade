@@ -1,24 +1,11 @@
 extends layout
 
 block content
-	.explore(data-menu="explore")
-		.sub_header
-			ul.centered
-				li.selected
-					p 
-						span.spritesheet.rooms_icon
-						span Rooms
-				li
-					a(href="/people" title="People")
-						span.spritesheet.people_icon
-						span People
-				li
-					a(href="#" title="Sets")
-						span.spritesheet.sets_icon
-						span Sets
+	.explore(data-menu="explore", data-submenu="sub_header_rooms")
+		
+		include ./shared/sub_header_explore.jade
 
-
-		.explore_content.flex.centered(data-view="rooms")
+		.explore_content.flex.centered(data-view="explore")
 			.flex_sidebar.genres_list
 				a.selected(title="All genres", href="#", data-genre-id="all-genres") All genres
 				each val, key in genres
@@ -27,28 +14,28 @@ block content
 
 			.flex_content.rooms_grid
 
-				for room in rooms
+				for item in rooms
 
 					- klasses = "item-all-genres"
-					for g in room.genres
+					for g in item.genres
 						- klasses += " item-" + g 
 
 					.room_cell.item(class="#{klasses}")
-						a(href="#{room.url}", title="#{room.title}", class="thumb_wrapper") 
-							img.room_thumb(src="#{room.thumb}")
+						a(href="#{item.url}", title="#{item.title}", class="thumb_wrapper") 
+							img.room_thumb(src="#{item.thumb}")
 							span.spritesheet.room_play
 						.room_content
 							.text
 								h2.room_title 
-									a(href="#{room.url}", title="#{room.title}") #{room.title}
-								a.room_subtitle.blue(title="#{room.author}", href="#{room.url}") #{room.author}
+									a(href="#{item.url}", title="#{item.title}") #{item.title}
+								a.room_subtitle.blue(title="#{item.author}", href="#{item.url}") #{item.author}
 								.genres.small
-									for g in room.genres
+									for g in item.genres
 										a.tag(href="#", title="#{g}", data-genre-id="#{g}") #{genres[g]}
 
 								p.room_location
 									span.spritesheet.icon_location 
-									| #{room.location}
+									| #{item.location}
 								p.now_live Now Live
 
-							a.enter_room(href="#{room.url}", class="button yellow_button no_shadow small_button small_button_2", title="Enter Room") Enter Room
+							a.enter_room(href="#{item.url}", class="button yellow_button no_shadow small_button small_button_2", title="Enter Room") Enter Room

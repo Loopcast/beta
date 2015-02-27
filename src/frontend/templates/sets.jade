@@ -1,26 +1,41 @@
 extends layout
 
 block content
-  h1 Sets
-
-  br
-  br
+  .explore(data-menu="explore", data-submenu="sub_header_sets")
     
-  h4 genres
+    include ./shared/sub_header_explore.jade
 
-  ul
-    for genre in genres
-      li #{genre}
+    .explore_content.flex.centered(data-view="explore")
+      .flex_sidebar.genres_list
+        a.selected(title="All genres", href="#", data-genre-id="all-genres") All genres
+        each val, key in genres
+          a(title="#{val}" href="#", data-genre-id="#{key}") #{val}
 
-  br
-  br
-    
-  h4 sets
 
-  ul
-    for set in sets
-      li 
-        pre
-          | author: #{set.author}
-          | kind  : #{set.kind}
-          | ---
+      .flex_content.rooms_grid
+
+        for item in sets
+
+          - klasses = "item-all-genres"
+          for g in item.genres
+            - klasses += " item-" + g 
+
+          .room_cell.item(class="#{klasses}")
+            a(href="#{item.url}", title="#{item.title}", class="thumb_wrapper") 
+              img.room_thumb(src="#{item.thumb}")
+            .room_content
+              .text
+                h2.room_title 
+                  a(href="#{item.url}", title="#{item.title}") #{item.title}
+                a.room_subtitle.blue(title="#{item.author}", href="#{item.url}") #{item.author}
+                .genres.small
+                  for g in item.genres
+                    a.tag(href="#", title="#{g}", data-genre-id="#{g}") #{genres[g]}
+
+                p.room_location
+                  span.spritesheet.icon_location 
+                  | #{item.location}
+                p.now_live Now Live
+
+              a.enter_room.not_following_item(href="#{item.url}", class="button yellow_button no_shadow small_button small_button_2", title="Follow") Follow
+              a.enter_room.following_item(href="#{item.url}", class="button gray_button_2 no_shadow small_button small_button_2", title="Follow") Following

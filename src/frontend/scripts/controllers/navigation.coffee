@@ -2,6 +2,7 @@ settings  	= require 'app/utils/settings'
 happens  	= require 'happens'
 ways    	= require 'ways'
 ways.use require 'ways-browser'
+url_parser = require 'app/utils/url_parser'
 
 class Navigation
 
@@ -121,8 +122,15 @@ class Navigation
 			else if href.indexOf( "javascript" ) is 0 or href.indexOf( "tel:" ) is 0
 				return true
 			else
-				$item.click -> 
-					return Navigation.instance.go $( @ ).attr 'href'
+				$item.click ->
+					href = $( @ ).attr 'href'
+
+					a = url_parser.get_pathname href
+					b = url_parser.get_pathname location.pathname
+
+					return false if a is b
+
+					return Navigation.instance.go href
 
 
 # will always export the same instance

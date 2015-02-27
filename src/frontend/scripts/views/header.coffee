@@ -27,6 +27,12 @@ module.exports = class Header
 			@current_page = page
 
 
+		obj = $( '[data-submenu]' )
+		if obj.length > 0
+			submenu = obj.data 'submenu'
+			$( ".#{submenu}" ).addClass 'selected'
+
+
 	on_user_logged: ( data ) =>
 
 		return if @user_logged
