@@ -18,7 +18,7 @@ block content
             else
               li #{genre}
         .profile_image.upload_wrapper(data-view="components/image_uploader", data-id="profile_picture")
-          img(src="/images/profile_big.png")
+          img(src="#{profile.image}")
           a.upload_element.edit_image(href="#")
             span.spritesheet.camera_icon
             span Update profile picture

@@ -1,3 +1,4 @@
+transform       = require 'app/utils/images/transform'
 happens = require 'happens'
 
 module.exports = happens
@@ -22,6 +23,11 @@ module.exports = happens
 	login: ( user ) ->
 
 		loopcast.user = user
+
+		# Add images urls
+		loopcast.user.images =
+			top_bar: transform.top_bar user.avatar
+			avatar: transform.avatar user.avatar
 
 		app.body.addClass "logged"
 

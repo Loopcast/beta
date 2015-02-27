@@ -1,6 +1,5 @@
 navigation      = require 'app/controllers/navigation'
 user_controller = require 'app/controllers/user'
-
 module.exports = class Header
 
 	current_page: ""
@@ -35,7 +34,9 @@ module.exports = class Header
 		
 		wrapper = @dom.find( '.user_logged' )
 		tmpl    = require 'templates/shared/header_user_logged'
+
 		html    = tmpl data
+
 
 		log "[Header] on_user_logged", data, html
 
