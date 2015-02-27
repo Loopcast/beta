@@ -6,11 +6,6 @@ Compiles a stylus file and return a compiled css file
 
 fs     = require 'fs'
 path   = require 'path'
-stylus = require 'stylus'
-
-# stylus plugins
-autoprefixer = require 'autoprefixer-stylus'
-rupture      = require 'rupture'
 
 module.exports = 
 
