@@ -1,4 +1,5 @@
 Cloudinary = require 'app/controllers/cloudinary'
+transform  = require 'app/utils/images/transform'
 
 module.exports = class Profile 
 	elements: null
@@ -87,7 +88,9 @@ module.exports = class Profile
 
 			@user_data.profile_picture = data.result.url
 
-			@dom.find( 'img' ).attr 'src', data.result.url
+			url = transform.avatar data.result.url
+
+			@dom.find( 'img' ).attr 'src', url
 
 
 	# Open the write/edit mode

@@ -1,5 +1,5 @@
-transform       = require 'app/utils/images/transform'
-happens = require 'happens'
+transform = require 'app/utils/images/transform'
+happens   = require 'happens'
 
 module.exports = happens
 	logout: ( callback = -> ) ->
