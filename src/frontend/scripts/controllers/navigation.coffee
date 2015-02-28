@@ -110,26 +110,34 @@ class Navigation
 			$item = $ item
 			href = $item.attr( 'href' )
 
-			if !href? then return 
+			if !href?
+				log "[Navigation] return 1"
+				return 
 
 			# if the link has http and the domain is different
 			if href.indexOf( 'http' ) >= 0 and href.indexOf( document.domain ) < 0 
+				log "[Navigation] return 2", href
 				return 
 
 			if href.indexOf( "#" ) is 0
-				$item.click -> return false
+				$item.click -> 
+					log "[Navigation] return 3", href
+					return false
 
 			else if href.indexOf( "javascript" ) is 0 or href.indexOf( "tel:" ) is 0
+				log "[Navigation] return 4", href
 				return true
 			else
 				$item.click ->
 					href = $( @ ).attr 'href'
+					log "[Navigation] return 5", href
 
 					a = url_parser.get_pathname href
 					b = url_parser.get_pathname location.pathname
 
 					return false if a is b
 
+					log "[Navigation] return LAST"
 					return Navigation.instance.go href
 
 

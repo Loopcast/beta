@@ -51,6 +51,7 @@ module.exports = class Header
 		wrapper.empty().append html
 
 		view.bind wrapper
+		navigation.bind wrapper
 
 
 
