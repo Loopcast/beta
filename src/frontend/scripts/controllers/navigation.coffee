@@ -75,9 +75,7 @@ class Navigation
 
 				# populate with the loaded content
 				@content_div.append new_content
-				delay 10, =>
-					log "[Navigation] after_render", req.url
-					@emit 'after_render'
+				delay 10, => @emit 'after_render'
 
 	##
 	# Navigates to a given URL using Html 5 history API
@@ -110,34 +108,26 @@ class Navigation
 			$item = $ item
 			href = $item.attr( 'href' )
 
-			if !href?
-				log "[Navigation] return 1"
-				return 
+			if !href? then return 
 
 			# if the link has http and the domain is different
 			if href.indexOf( 'http' ) >= 0 and href.indexOf( document.domain ) < 0 
-				log "[Navigation] return 2", href
 				return 
 
 			if href.indexOf( "#" ) is 0
-				$item.click -> 
-					log "[Navigation] return 3", href
-					return false
+				$item.click -> return false
 
 			else if href.indexOf( "javascript" ) is 0 or href.indexOf( "tel:" ) is 0
-				log "[Navigation] return 4", href
 				return true
 			else
 				$item.click ->
 					href = $( @ ).attr 'href'
-					log "[Navigation] return 5", href
 
 					a = url_parser.get_pathname href
 					b = url_parser.get_pathname location.pathname
 
 					return false if a is b
 
-					log "[Navigation] return LAST"
 					return Navigation.instance.go href
 
 
