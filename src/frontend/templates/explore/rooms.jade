@@ -1,0 +1,33 @@
+extends ./_explore
+
+block submenu
+  span(data-submenu="sub_header_rooms")
+
+    
+block grid
+
+  for item in rooms
+
+    - klasses = "item-all-genres"
+    for g in item.genres
+      - klasses += " item-" + slugify(g)
+
+    .room_cell.item(class="#{klasses}")
+      a(href="#{item.url}", title="#{item.title}", class="thumb_wrapper") 
+        img.room_thumb(src="#{item.thumb}")
+        span.spritesheet.room_play
+      .room_content
+        .text
+          h2.room_title 
+            a(href="#{item.url}", title="#{item.title}") #{item.title}
+          a.room_subtitle.blue(title="#{item.author}", href="#{item.url}") #{item.author}
+          .genres.small
+            for g in item.genres
+              a.tag(href="#", title="#{g}", data-genre-id="#{g}") #{g}
+
+          p.room_location
+            span.spritesheet.icon_location 
+            | #{item.location}
+          p.now_live Now Live
+
+        a.enter_room(href="#{item.url}", class="button yellow_button no_shadow small_button small_button_2", title="Enter Room") Enter Room

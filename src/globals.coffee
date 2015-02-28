@@ -10,6 +10,9 @@ global.models = ( path ) ->
 global.schema = ( path ) -> 
   require __dirname + "/models/schemas/#{path}"
 
+global.slugify = (str) ->
+  return str.split( " " ).join( "-" )
+
 # everyone users
 
 moment = require 'moment'
