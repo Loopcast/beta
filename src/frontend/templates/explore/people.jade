@@ -24,7 +24,7 @@ block grid
           p.room_subtitle #{item.kind}
           .genres.small
             for g in item.genres
-              a.tag(href="#", title="#{g}", data-genre-id="#{g}") #{genres[g]}
+              a.tag(href="#", title="#{g}", data-genre-id="#{g}") #{g}
 
           p.room_location
             span.spritesheet.icon_location 

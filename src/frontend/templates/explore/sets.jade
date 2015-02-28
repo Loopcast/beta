@@ -21,7 +21,7 @@ block grid
           a.room_subtitle.blue(title="#{item.author}", href="#{item.url}") #{item.author}
           .genres.small
             for g in item.genres
-              a.tag(href="#", title="#{g}", data-genre-id="#{g}") #{genres[g]}
+              a.tag(href="#", title="#{g}", data-genre-id="#{g}") #{g}
 
           .likes 
             span.spritesheet.icon_likes_small
