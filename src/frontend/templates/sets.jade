@@ -32,10 +32,15 @@ block content
                   for g in item.genres
                     a.tag(href="#", title="#{g}", data-genre-id="#{g}") #{genres[g]}
 
-                p.room_location
-                  span.spritesheet.icon_location 
-                  | #{item.location}
-                p.now_live Now Live
+                .likes 
+                  span.spritesheet.icon_likes_small
+                  span.text #{item.loves}
+                .plays
+                  span.spritesheet.icon_plays_small
+                  span.text #{item.plays}
+                
 
-              a.enter_room.not_following_item(href="#{item.url}", class="button yellow_button no_shadow small_button small_button_2", title="Follow") Follow
-              a.enter_room.following_item(href="#{item.url}", class="button gray_button_2 no_shadow small_button small_button_2", title="Follow") Following
+              a.share_set.left.rounded_border(href="#", title="Share Set")
+                span.spritesheet.icon_share
+              a.like_set.right(href="#", title="Like Set")
+                span.spritesheet.icon_like_transparent
