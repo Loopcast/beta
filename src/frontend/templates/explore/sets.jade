@@ -9,7 +9,7 @@ block grid
 
     - klasses = "item-all-genres"
     for g in item.genres
-      - klasses += " item-" + g 
+      - klasses += " item-" + slugify(g)
 
     .room_cell.item(class="#{klasses}")
       a(href="#{item.url}", title="#{item.title}", class="thumb_wrapper") 

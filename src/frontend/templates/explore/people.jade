@@ -9,7 +9,7 @@ block grid
 
     - klasses = "item-all-genres"
     for g in item.genres
-      - klasses += " item-" + g 
+      - klasses += " item-" + slugify(g)
 
     if item.following
       - klasses += " following"
