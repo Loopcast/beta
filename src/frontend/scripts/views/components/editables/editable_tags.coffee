@@ -63,9 +63,7 @@ module.exports = class EditableTags
       @current_data = data[200].form
       @emit 'change', @current_data
 
-  add_tags: ->
-    tags = [ "One", "Two", "Three" ]
-
+  add_tags: (tags)->
     @tags_plugin.addTags tags
 
   get_tags: -> @current_data

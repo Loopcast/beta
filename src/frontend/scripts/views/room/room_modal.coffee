@@ -97,7 +97,7 @@ module.exports = class RoomModal extends Modal
 
 		@dom.addClass 'edit_modal'
 		@title.val data.title
-		@genre.val data.genres.join(", ")
+		@genre.add_tags data.genres
 		@location.val data.location
 		@description.val data.about
 
