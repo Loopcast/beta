@@ -8,23 +8,16 @@ module.exports = class RoomModal extends Modal
 		super @dom
 
 		@title = @dom.find '.roomname'
-		@genre = @dom.find '.genre'
+
+		
+		
 		@location = @dom.find '.location'
 		@description = @dom.find '.description'
 		@message = @dom.find '.message'
 
 		@submit = @dom.find '.submit_button'
 
-		@title.on 'keyup'      , @_on_title_changed
-		@genre.on 'keyup'      , @_on_genre_changed
-		@location.on 'keyup'   , @_on_location_changed
-		@description.on 'keyup', @_on_description_changed
-
-		@submit.on 'click', @_submit
-
 		view.once 'binded', @on_views_binded
-
-		window.modal = @
 
 	on_views_binded: ( ) =>
 
@@ -34,8 +27,19 @@ module.exports = class RoomModal extends Modal
 			log "[rooms/createModal] views not binded yet!!!"
 			return
 
-		room_image_uploader.on 'completed', @_on_cover_changed
 
+		@genre = view.get_by_dom @dom.find( '.genre' )
+
+
+		room_image_uploader.on 'completed', @_on_cover_changed
+		@title.on 'keyup'                 , @_on_title_changed
+		@location.on 'keyup'              , @_on_location_changed
+		@description.on 'keyup'           , @_on_description_changed
+		@genre.on 'change'                , @_on_genre_changed
+		@submit.on 'click'                , @_submit
+
+
+		log "genre", @genre
 		
 
 	_on_cover_changed: (data) =>
@@ -49,8 +53,8 @@ module.exports = class RoomModal extends Modal
 		@_check_length @title
 		@emit 'input:changed', { name: 'title', value: @title.val() }
 
-	_on_genre_changed: ( ) =>
-		@emit 'input:changed', { name: 'genre', value: @genre.val() }
+	_on_genre_changed: ( data ) =>
+		@emit 'input:changed', { name: 'genre', value: data.join( ', ' ) }
 
 	_on_location_changed: ( ) =>
 		@emit 'input:changed', { name: 'location', value: @location.val() }
