@@ -1,5 +1,6 @@
 transform = require 'app/utils/images/transform'
 happens   = require 'happens'
+navigation = require 'app/controllers/navigation'
 
 module.exports = happens
 	logout: ( callback = -> ) ->
@@ -17,6 +18,8 @@ module.exports = happens
 
 			log "[User Controller] deleting user variable"
 			delete loopcast.user
+
+			navigation.go '/'
 
 			callback?()
 	
