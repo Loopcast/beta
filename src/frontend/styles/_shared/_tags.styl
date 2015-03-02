@@ -1,0 +1,139 @@
+.text-core
+  position relative
+  .text-wrap
+    background #dedede
+    position absolute
+    .text-arrow
+      -webkit-box-sizing border-box
+      -moz-box-sizing border-box
+      box-sizing border-box
+      position absolute
+      top 0
+      right 0
+      width 22px
+      height 22px
+      background url("/images/tag-arrow.png") 50% 50% no-repeat
+      cursor pointer
+      z-index 2
+    .text-dropdown
+      -webkit-box-sizing border-box
+      -moz-box-sizing border-box
+      box-sizing border-box
+      padding 0
+      position absolute
+      z-index 3
+      background #fff
+      border 1px solid #9daccc
+      width 100%
+      max-height 100px
+      padding 1px
+      font 11px "lucida grande", tahoma, verdana, arial, sans-serif
+      display none
+      overflow-x hidden
+      overflow-y auto
+      &.text-position-below
+        margin-top 1px
+      &.text-position-above
+        margin-bottom 1px
+      .text-list
+        .text-suggestion
+          padding 3px 5px
+          cursor pointer
+          em
+            font-style normal
+            text-decoration underline
+          &.text-selected
+            color #fff
+            background #6d84b4
+    .text-clear
+      -webkit-box-sizing border-box
+      -moz-box-sizing border-box
+      box-sizing border-box
+      position absolute
+      top 0
+      right 14px
+      width 22px
+      height 22px
+      background: block
+      cursor pointer
+      z-index 2
+      
+    .text-focus
+      box-shadow 0px 0px 6px #6d84b4
+      position absolute
+      width 100%
+      height 100%
+      display none
+      &.text-show-focus
+        display block
+    .text-prompt
+      box-sizing border-box
+      position absolute
+      width 100%
+      height 100%
+      margin 1px 0 0 2px
+      font 11px "lucida grande", tahoma, verdana, arial, sans-serif
+      color #c0c0c0
+      overflow hidden
+      white-space pre
+      &.text-hide-prompt
+        display none
+    .text-tags
+      box-sizing border-box
+      position absolute
+      width 100%
+      height 100%
+      padding 3px 35px 3px 3px
+      cursor text
+      &.text-tags-on-top
+        z-index 2
+      .text-tag
+        float left
+        .text-button
+          border-radius 2px
+          box-sizing border-box
+          position relative
+          float left
+          
+          background TAG_COLOR
+          color #000
+          padding 0px 17px 0px 3px
+          margin 0 5px 2px 0
+          cursor pointer
+          height 16px
+          color: white
+          font-size: 0.8em;
+          font-weight: 600;
+          line-height: 1.1em;
+          a
+            &.text-remove
+              position absolute
+              right 3px
+              top 2px
+              display block
+              width 11px
+              height 11px
+              background url("/images/tag-close.png") 0 0 no-repeat
+              &:hover
+                background-position 0 -11px
+              &:active
+                background-position 0 -22px
+
+.text-core .text-wrap textarea,
+.text-core .text-wrap input
+  box-sizing border-box
+  border-radius 0px
+  border 1px solid #9daccc
+  outline none
+  resize none
+  position absolute
+  z-index 1
+  background none
+  overflow hidden
+  margin 0
+  padding 3px 5px 4px 5px
+  white-space nowrap
+  font 11px "lucida grande", tahoma, verdana, arial, sans-serif
+  line-height 13px
+  height auto
+

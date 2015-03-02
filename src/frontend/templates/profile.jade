@@ -11,12 +11,9 @@ block content
         h3.type.black_background(data-view="components/editables/editable_select")
           span.text DJ/Producer
         br
-        ul.genres.black_background
-          for genre, i in profile.genres
-            if i < profile.genres.length - 1
-              li #{genre},
-            else
-              li #{genre}
+        p.genres.black_background(data-view="components/editables/editable_tags")
+          span.text #{profile.genres.join( ", " )}
+
         .profile_image.upload_wrapper(data-view="components/image_uploader", data-id="profile_picture")
           img(src="#{profile.image}")
           p.upload_element.edit_image
