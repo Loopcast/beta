@@ -54,6 +54,7 @@ module.exports = class RoomModal extends Modal
 		@emit 'input:changed', { name: 'title', value: @title.val() }
 
 	_on_genre_changed: ( data ) =>
+		log "_on_genre_changed", data
 		@emit 'input:changed', { name: 'genre', value: data.join( ', ' ) }
 
 	_on_location_changed: ( ) =>
@@ -78,7 +79,7 @@ module.exports = class RoomModal extends Modal
 
 		data = 
 			title    : @title.val()
-			genres   : @genre.val()
+			genres   : @genre.get_tags( true )
 			location : @location.val()
 			about    : @description.val()
 			cover    : @cover_uploaded
