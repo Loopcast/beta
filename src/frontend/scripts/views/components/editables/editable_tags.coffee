@@ -10,23 +10,18 @@ module.exports = class EditableTags
     happens @
 
     list = [
-        'Basic'
-        'Closure'
-        'Cobol'
-        'Delphi'
-        'Erlang'
-        'Fortran'
-        'Go'
-        'Groovy'
-        'Haskel'
-        'Java'
-        'JavaScript'
-        'OCAML'
-        'PHP'
-        'Perl'
-        'Python'
-        'Ruby'
-        'Scala'
+      "House",
+      "Tech House",
+      "Electro House",
+      "Ambient",
+      "Alternative",
+      "Experimental",
+      "Reggae",
+      "Ska",
+      "Fusion",
+      "Funky",
+      "Punk",
+      "Metal"
       ]
 
     @dom.tagsInput 
@@ -35,6 +30,8 @@ module.exports = class EditableTags
       onAddTag: @on_add_tag
       onRemoveTag: @on_remove_tag
       autocomplete_url: list
+      autocomplete: 
+        width: 200
 
     
   populate_tags: ( list ) ->
