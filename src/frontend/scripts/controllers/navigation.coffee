@@ -91,6 +91,7 @@ class Navigation
 
 		# If it's a popup, bypass ways and seamless navigation
 		if window.opener?
+			location.href = url
 			return true
 
 		@first_loading = off
