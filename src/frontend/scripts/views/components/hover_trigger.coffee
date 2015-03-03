@@ -18,8 +18,6 @@ module.exports = class HoverTrigger
 		@dom.addClass "hover_dropdown_trigger"
 		@set_listeners()
 
-		app.on "dropdown:opened", @on_dropdown_opened
-		app.on "dropdown:closed", @on_dropdown_closed
 
 	set_listeners: ( ) ->
 
@@ -31,6 +29,8 @@ module.exports = class HoverTrigger
 
 		app.window.on "body:clicked", @close
 
+		app.on "dropdown:opened", @on_dropdown_opened
+		app.on "dropdown:closed", @on_dropdown_closed
 	toggle: ( e ) =>
 		if @opened
 			do @close
@@ -67,5 +67,18 @@ module.exports = class HoverTrigger
 		@close() if data isnt @uid
 
 	on_dropdown_closed: ( data ) =>
+
+
+	destroy: ->
+		if app.settings.touch_device
+			@dom.off 'click', @toggle
+		else
+			@dom.off 'mouseover', @open
+			@target.off 'mouseleave', @close
+
+		app.window.off "body:clicked", @close
+
+		app.off "dropdown:opened", @on_dropdown_opened
+		app.off "dropdown:closed", @on_dropdown_closed
 
 
