@@ -1,13 +1,15 @@
 settings  	= require 'app/utils/settings'
 happens  	= require 'happens'
-ways    	= require 'ways'
-ways.use require 'ways-browser'
+# ways    	= require 'ways'
+# ways.use require 'ways-browser'
 url_parser = require 'app/utils/url_parser'
+page = require 'page'
 
 class Navigation
 
 	instance = null
 	first_loading: on
+	first_url_change: true
 
 	constructor: ->
 
@@ -23,10 +25,12 @@ class Navigation
 		happens @
 	
 		# export to window
-		window.ways = ways;
+		# window.ways = ways;
 		
 		# routing
-		ways '*', @url_changed
+		page '*', @url_changed
+		page();
+		# ways '*', @url_changed
 
 
 		# For the first screen, emit the event after_render.
@@ -37,12 +41,15 @@ class Navigation
 
 
 	url_changed: ( req ) =>
+		if @first_url_change
+			@first_url_change = off
+			return
 
+		log "url_changed", req, req.path
 
-		log "url_changed", req.url
 
 		# ie hack for hash urls
-		req.url = req.url.replace( "/#", '' )
+		req.url = req.path.replace( "/#", '' )
 
 		# log " controllers/navigation/url_changed:: #{req.url}"
 		# TODO: 
@@ -88,15 +95,15 @@ class Navigation
 
 		@first_loading = off
 
-		ways.go url
+		log "[Navigates] go", url
+		page url
+		# ways.go url
 
 		return false
 
 	go_silent: ( url, title ) ->
-		if title?
-			ways.go.silent url, title
-		else
-			ways.go.silent url
+		page.replace url, null, null, false
+		
 	##
 	# Looks for internal links and bind then to client side navigation
 	# as in: html History api
