@@ -10,9 +10,9 @@ module.exports = class EditableSelect extends EditableText
 		@dom.append html
 
 		text = @dom.find '.text'
-		select = @dom.find 'select'
+		@select = @dom.find 'select'
 
-		select.on 'change', (e)->
+		@select.on 'change', (e)->
 			t = this.options[e.target.selectedIndex].text
 			log "text", t
 			text.text t
@@ -24,4 +24,11 @@ module.exports = class EditableSelect extends EditableText
 			log "get_template", data
 
 			callback tmpl( values: data )
+
+	destroy: ->
+		@select.off 'change'
+		@select = null
+
+		super()
+
 

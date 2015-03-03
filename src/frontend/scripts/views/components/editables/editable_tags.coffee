@@ -57,4 +57,14 @@ module.exports = class EditableTags
     for t in tags
       @dom.addTag t + "", { focus:true, unique:true }
 
-  # get_tags: -> @current_data
+  destroy: ->
+    log "[EditableTags] destroy"
+    @dom.destroy_tagsinput()
+    @on            = null
+    @off           = null
+    @once          = null
+    @emit          = null
+    @on_add_tag    = null
+    @on_remove_tag = null
+    @dom           = null
+    # super()

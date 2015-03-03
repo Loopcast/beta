@@ -37,9 +37,6 @@ module.exports = class RoomModal extends Modal
 		@description.on 'keyup'           , @_on_description_changed
 		@genre.on 'change'                , @_on_genre_changed
 		@submit.on 'click'                , @_submit
-
-
-		log "genre", @genre
 		
 
 	_on_cover_changed: (data) =>
@@ -107,6 +104,7 @@ module.exports = class RoomModal extends Modal
 		return false
 
 	destroy: ->
+		log "[RoomModal] removed"
 		@title.off 'keyup'                 , @_on_title_changed
 		@location.off 'keyup'              , @_on_location_changed
 		@description.off 'keyup'           , @_on_description_changed
@@ -114,6 +112,8 @@ module.exports = class RoomModal extends Modal
 		@submit.off 'click'                , @_submit
 
 		@genre = null
+
+		super()
 
 
 

@@ -62,6 +62,9 @@ module.exports = class EditableText
 
 		app.window.once 'body:clicked', @close_read_mode
 
+	destroy: ->
+		# @text_el.off 'click', @open_edit_mode
+
 
 
 

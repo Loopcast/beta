@@ -72,6 +72,15 @@
     input.data('tester_id', testerId);
     input.css('width', minWidth);
   };
+
+  $.fn.destroy_tagsinput = function() { 
+  	for( k in tags_callbacks ){
+  		tags_callbacks[k].onAddTag = null;
+  		tags_callbacks[k].onChange = null;
+  		tags_callbacks[k].onRemoveTag = null;
+  		tags_callbacks[k] = null;
+  	}
+	};
   
 	$.fn.addTag = function(value,options) {
 			options = jQuery.extend({focus:false,callback:true},options);
@@ -331,7 +340,7 @@
 		return this;
 	
 	};
-	
+
 	$.fn.tagsInput.updateTagsField = function(obj,tagslist) { 
 		var id = $(obj).attr('id');
 		$(obj).val(tagslist.join(delimiter[id]));
