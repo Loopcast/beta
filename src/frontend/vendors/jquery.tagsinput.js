@@ -75,14 +75,17 @@
 
   $.fn.destroy_tagsinput = function() { 
   	for( k in tags_callbacks ){
-  		if( tags_callbacks[k].onAddTag != undefined){
-  			tags_callbacks[k].onAddTag = null;
-  		}
-  		if( tags_callbacks[k].onChange != undefined){
-  			tags_callbacks[k].onChange = null;
-  		}
-  		if( tags_callbacks[k].onRemoveTag != undefined){
-  			tags_callbacks[k].onRemoveTag = null;
+  		if( tags_callbacks[k] != undefined ){
+  			
+	  		if( tags_callbacks[k].onAddTag != undefined){
+	  			tags_callbacks[k].onAddTag = null;
+	  		}
+	  		if( tags_callbacks[k].onChange != undefined){
+	  			tags_callbacks[k].onChange = null;
+	  		}
+	  		if( tags_callbacks[k].onRemoveTag != undefined){
+	  			tags_callbacks[k].onRemoveTag = null;
+	  		}
   		}
   		tags_callbacks[k] = null;
   	}
