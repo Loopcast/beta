@@ -38,12 +38,20 @@ header.header
 				cursor: pointer
 				height: HEADER_HEIGHT
 				position: relative
-				span
+				.ss-settings
 					transition: transform .1s linear
+					display: block
+					transform-origin: 48% 51%;
+					text-align: center
+					width: 22px
+					height: 22px
+					display: inline-block
+					font-size: 1.2em
+						
 					
 				&.hovered
-					span
-						transform: rotate(360deg)
+					.ss-settings
+						transform: rotate(180deg)
 						
 	.menu_item
 		position: relative
@@ -110,8 +118,11 @@ header.header
 	.user_dropdown
 		right: 0px
 		
-	.messages_icon
+	.ss-mail
 		display: block
+		position: relative
+		top: 3px
+		font-size: 1.2em
 	
 .first_loaded
 	header

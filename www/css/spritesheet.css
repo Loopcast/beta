@@ -3,13 +3,13 @@
   background-size: 228px 210px;
 }
 
-.spritesheet.medium_black_logo {
+.spritesheet.medium_white_logo {
   width: 114px;
   height: 70px;
   background-position: 0 0;
 }
 
-.spritesheet.medium_white_logo {
+.spritesheet.medium_black_logo {
   width: 114px;
   height: 70px;
   background-position: -114px 0;
@@ -27,7 +27,7 @@
   background-position: -60px -70px;
 }
 
-.spritesheet.profile_spotify {
+.spritesheet.profile_facebook {
   width: 48px;
   height: 48px;
   background-position: -110px -70px;
@@ -39,7 +39,7 @@
   background-position: -158px -70px;
 }
 
-.spritesheet.profile_facebook {
+.spritesheet.profile_spotify {
   width: 48px;
   height: 48px;
   background-position: 0 -130px;
@@ -75,34 +75,28 @@
   background-position: -89px -130px;
 }
 
-.spritesheet.header_settings {
+.spritesheet.header_settings_hover {
   width: 21px;
   height: 21px;
   background-position: -114px -130px;
 }
 
-.spritesheet.header_settings_hover {
+.spritesheet.header_settings {
   width: 21px;
   height: 21px;
   background-position: -135px -130px;
 }
 
-.spritesheet.settings_profile_set {
+.spritesheet.settings_profile_set_hover {
   width: 20px;
   height: 20px;
   background-position: -156px -130px;
 }
 
-.spritesheet.settings_profile_set_hover {
+.spritesheet.settings_profile_set {
   width: 20px;
   height: 20px;
   background-position: -176px -130px;
-}
-
-.spritesheet.messages_icon {
-  width: 20px;
-  height: 16px;
-  background-position: -206px -101px;
 }
 
 .spritesheet.edit_icon {
@@ -117,16 +111,22 @@
   background-position: -210px -130px;
 }
 
-.spritesheet.session_icon {
+.spritesheet.alert_icon {
   width: 18px;
   height: 18px;
   background-position: -48px -155px;
 }
 
-.spritesheet.alert_icon {
+.spritesheet.session_icon {
   width: 18px;
   height: 18px;
   background-position: -66px -155px;
+}
+
+.spritesheet.people_icon {
+  width: 18px;
+  height: 16px;
+  background-position: -206px -101px;
 }
 
 .spritesheet.sets_icon {
@@ -141,28 +141,22 @@
   background-position: -102px -155px;
 }
 
-.spritesheet.people_icon {
-  width: 18px;
-  height: 16px;
-  background-position: -120px -155px;
-}
-
 .spritesheet.icon_like_transparent {
   width: 16px;
   height: 16px;
-  background-position: -138px -155px;
+  background-position: -120px -155px;
 }
 
 .spritesheet.header_search_icon {
   width: 16px;
   height: 15px;
-  background-position: -154px -155px;
+  background-position: -136px -155px;
 }
 
 .spritesheet.icon_share {
   width: 15px;
   height: 13px;
-  background-position: -170px -155px;
+  background-position: -152px -155px;
 }
 
 .spritesheet.icon_guests {
@@ -180,19 +174,19 @@
 .spritesheet.icon_likes {
   width: 13px;
   height: 12px;
-  background-position: -185px -155px;
+  background-position: -167px -155px;
 }
 
 .spritesheet.icon_location {
   width: 12px;
   height: 12px;
-  background-position: -198px -155px;
+  background-position: -180px -155px;
 }
 
 .spritesheet.icon_likes_small {
   width: 12px;
   height: 11px;
-  background-position: -210px -155px;
+  background-position: -192px -155px;
 }
 
 .spritesheet.icon_plays_small {
