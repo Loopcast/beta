@@ -1,11 +1,11 @@
 extends ./../layout
 
 block content
-  .explore(data-menu="explore")
+  .explore(data-menu="explore", data-menu-fixed="false")
 
     block submenu
 
-    .sub_header
+    .sub_header(data-view="components/fixed_bar")
       ul.centered
         li.sub_header_rooms
           a(href="/rooms", title="Rooms")

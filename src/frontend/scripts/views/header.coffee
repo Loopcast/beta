@@ -33,6 +33,15 @@ module.exports = class Header
 			$( ".#{submenu}" ).addClass 'selected'
 
 
+		obj = $( '[data-menu-fixed]' )
+		if obj.length > 0
+			if obj.data( 'menu-fixed') is false
+				app.body.addClass 'unfixed'
+		else
+			app.body.removeClass 'unfixed'
+
+
+
 	on_user_logged: ( data ) =>
 
 		return if @user_logged

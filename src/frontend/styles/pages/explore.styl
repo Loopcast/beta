@@ -2,162 +2,170 @@
 
 HEIGHT_SUBHEADER = 45px
 .explore
-	.sub_header
-		background: #EFF3F6
-		height: HEIGHT_SUBHEADER
-		border-bottom: 1px solid #d5d4d4
-		color: GRAY_2
-		font-size: .9em
-		font-weight: 600
-		li
-			display: inline-block
-			height: HEIGHT_SUBHEADER
-			padding: 10px 40px 0
-			
-			.spritesheet
-				position: relative
-				top: 2px
-				margin-right: 5px
-				
-			&.selected
-				background: GRAY
-				border-left: 1px solid #d5d4d4
-				border-right: 1px solid #d5d4d4
-				a
-					cursor: default
-					
+  position: relative
+  padding-top: HEIGHT_SUBHEADER
+  .sub_header
+    background: #EFF3F6
+    height: HEIGHT_SUBHEADER
+    border-bottom: 1px solid #d5d4d4
+    color: GRAY_2
+    font-size: .9em
+    font-weight: 600
+    absolute top 0 left 0
+    width: 100%
+    z-index: 1;
+    li
+      display: inline-block
+      height: HEIGHT_SUBHEADER
+      padding: 10px 40px 0
+      
+      .spritesheet
+        position: relative
+        top: 2px
+        margin-right: 5px
+        
+      &.selected
+        background: GRAY
+        border-left: 1px solid #d5d4d4
+        border-right: 1px solid #d5d4d4
+        a
+          cursor: default
+          
+    &.fixed
+      position: fixed;
+          
 
-	.likes, .plays
-		font-size: .7em
-		color: GRAY_2
-		margin: 5px 0
-		.spritesheet
-			position: relative
-			top: 2px
-		.text
-			margin-left: 5px
-			
-	.plays
-		.spritesheet
-			margin-left: 3px
-			margin-right: 1px
-				
-	.explore_content
-		padding-top: 40px
-		padding-left: 20px	
-	
+  .likes, .plays
+    font-size: .7em
+    color: GRAY_2
+    margin: 5px 0
+    .spritesheet
+      position: relative
+      top: 2px
+    .text
+      margin-left: 5px
+      
+  .plays
+    .spritesheet
+      margin-left: 3px
+      margin-right: 1px
+        
+  .explore_content
+    padding-top: 40px
+    padding-left: 20px  
+  
 
-	MARGIN_GRID = 30px
-	
-	.now_live
-		display: inline-block
-		background: #d82030
-		color: white
-		text-transform: uppercase
-		font-size: 0.7em
-		padding: 2px 6px
-		margin-bottom: 10px
-		
-		
-	.genres_list
-		width: 150px
-		margin-right: MARGIN_GRID
-		font-size: 0.8em
-		a
-			display: block
-			background: #dedede
-			color: #444235
-			padding: 6px 12px;
-			text-align: left;
-			margin-bottom: 5px;
-			border-radius: 4px; 
-			&.selected
-				background: #747C83
-				color: #dedede
-				font-weight: 600
-				
-			
-		
-	.rooms_grid
-		overflow: hidden
-		.room_cell
-			width: 210px
-			text-align: left
-			background: white
-			// margin-right: MARGIN_GRID
-			margin-bottom: MARGIN_GRID
-			
-			// float: left
-			overflow: hidden
-			position: relative
-			border: 1px solid #DDD7D7
-			border-radius: 5px
-			.room_content
-				padding: 10px 5px 5px
-				
-			.text
-				padding: 0 5px
-			
-			.thumb_wrapper
-				position: relative
-				display: block
-				
-				.spritesheet
-					absolute left 50% top 50%
-					transform: translateX(-50%) translateY(-50%)
-				
-			.room_thumb
-				width: 100%
-				display: block
-				
-			h2
-				color: BLACK
-				font-size: 1em
-				font-weight: 800
-				line-height: 1.3em
-				margin-bottom: 5px
-				
-			.room_subtitle
-				font-size: 0.8em
-				line-height: 1em
-				display: block
-				margin-bottom: 10px
-				font-weight: 600
-				&.blue
-					color: BLUE
-					font-weight: 400
-					
-				
-			.room_location
-				color: GRAY_2
-				font-size: .8em
-				margin-bottom: 5px
-				.spritesheet
-					position: relative
-					top: 2px
-				
+  MARGIN_GRID = 30px
+  
+  .now_live
+    display: inline-block
+    background: #d82030
+    color: white
+    text-transform: uppercase
+    font-size: 0.7em
+    padding: 2px 6px
+    margin-bottom: 10px
+    
+    
+  .genres_list
+    width: 150px
+    margin-right: MARGIN_GRID
+    font-size: 0.8em
+    a
+      display: block
+      background: #dedede
+      color: #444235
+      padding: 6px 12px;
+      text-align: left;
+      margin-bottom: 5px;
+      border-radius: 4px; 
+      &.selected
+        background: #747C83
+        color: #dedede
+        font-weight: 600
+        
+      
+    
+  .rooms_grid
+    overflow: hidden
+    .room_cell
+      width: 210px
+      text-align: left
+      background: white
+      // margin-right: MARGIN_GRID
+      margin-bottom: MARGIN_GRID
+      
+      // float: left
+      overflow: hidden
+      position: relative
+      border: 1px solid #DDD7D7
+      border-radius: 5px
+      .room_content
+        padding: 10px 5px 5px
+        
+      .text
+        padding: 0 5px
+      
+      .thumb_wrapper
+        position: relative
+        display: block
+        
+        .spritesheet
+          absolute left 50% top 50%
+          transform: translateX(-50%) translateY(-50%)
+        
+      .room_thumb
+        width: 100%
+        display: block
+        
+      h2
+        color: BLACK
+        font-size: 1em
+        font-weight: 800
+        line-height: 1.3em
+        margin-bottom: 5px
+        
+      .room_subtitle
+        font-size: 0.8em
+        line-height: 1em
+        display: block
+        margin-bottom: 10px
+        font-weight: 600
+        &.blue
+          color: BLUE
+          font-weight: 400
+          
+        
+      .room_location
+        color: GRAY_2
+        font-size: .8em
+        margin-bottom: 5px
+        .spritesheet
+          position: relative
+          top: 2px
+        
 
 .share_set, .like_set
-	margin: 9px 4px
+  margin: 9px 4px
 
 .like_set
-	position: relative;
-	top: 6px;
-	left: -10px;
-	
-	
+  position: relative;
+  top: 6px;
+  left: -10px;
+  
+  
 .following_item
-	display: none
-	
+  display: none
+  
 .following
-	.not_following_item
-		display: none
-	.following_item
-		display: block
-		
+  .not_following_item
+    display: none
+  .following_item
+    display: block
+    
 .no_touch_device
-	.explore
-		.genres_list
-			a:hover
-				background:  #747C83
-				color: #dedede
+  .explore
+    .genres_list
+      a:hover
+        background:  #747C83
+        color: #dedede

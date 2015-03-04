@@ -1,7 +1,15 @@
 happens = require 'happens'
 
 # create and export a new happens object
-module.exports = happens( win = {} )
+win =
+  obj : Object
+  w   : 0
+  h   : 0
+  y   : 0
+
+module.exports = happens( win )
+
+
 
 # event handling for window resize
 win.obj = $ window
@@ -15,3 +23,12 @@ delay 100, on_resize
 
 # global click event
 $( 'html,body' ).on 'click', -> win.emit "body:clicked"
+
+
+# scroll event
+win.obj.on 'scroll', on_scroll = ->
+  win.y = win.obj.scrollTop();
+  win.emit 'scroll', win.y
+
+# trigger scroll automatically after 100 ms
+delay 100, on_scroll
