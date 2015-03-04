@@ -111,32 +111,33 @@ class Navigation
 	##
 	bind: ( scope = 'body' ) ->
 
-		$( scope ).find( 'a' ).each ( index, item ) ->
+		$( scope ).find( 'a' ).on 'click', ->
+			$item = $ @
 
-			$item = $ item
-			href = $item.attr( 'href' )
+			href = $item.attr 'href'
 
-			if !href? then return 
+			if !href? then return false
 
 			# if the link has http and the domain is different
 			if href.indexOf( 'http' ) >= 0 and href.indexOf( document.domain ) < 0 
-				return 
+				return true
+
+			if href.indexOf( "javascript" ) is 0 or href.indexOf( "tel:" ) is 0
+				return true
+
+			if $item.attr( 'target' )?
+				return true
 
 			if href.indexOf( "#" ) is 0
-				$item.click -> return false
+				return false
 
-			else if href.indexOf( "javascript" ) is 0 or href.indexOf( "tel:" ) is 0
-				return true
-			else
-				$item.click ->
-					href = $( @ ).attr 'href'
+			# Check if the url is the same
+			a = url_parser.get_pathname href
+			b = url_parser.get_pathname location.pathname
+			if a is b
+				return false 
 
-					a = url_parser.get_pathname href
-					b = url_parser.get_pathname location.pathname
-
-					return false if a is b
-
-					return Navigation.instance.go href
+			return Navigation.instance.go href
 
 
 # will always export the same instance
