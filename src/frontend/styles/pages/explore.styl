@@ -1,13 +1,14 @@
 @import '../_shared/_bootstrap.styl'
 
 HEIGHT_SUBHEADER = 45px
+GRAY_SUBHEADER_BORDER = #d5d4d4
 .explore
   position: relative
   padding-top: HEIGHT_SUBHEADER
   .sub_header
     background: #EFF3F6
     height: HEIGHT_SUBHEADER
-    border-bottom: 1px solid #d5d4d4
+    border-bottom: 1px solid GRAY_SUBHEADER_BORDER
     color: GRAY_2
     font-size: .9em
     font-weight: 600
@@ -26,13 +27,17 @@ HEIGHT_SUBHEADER = 45px
         
       &.selected
         background: GRAY
-        border-left: 1px solid #d5d4d4
-        border-right: 1px solid #d5d4d4
+        border-left: 1px solid GRAY_SUBHEADER_BORDER
+        border-right: 1px solid GRAY_SUBHEADER_BORDER
+        border-bottom: 1px solid GRAY
+        transition: border-color .3s linear
         a
           cursor: default
           
     &.fixed
       position: fixed;
+      li.selected
+        border-bottom-color: GRAY_SUBHEADER_BORDER
           
 
   .likes, .plays
