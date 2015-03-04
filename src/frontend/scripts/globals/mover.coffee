@@ -12,5 +12,7 @@ module.exports =
 			y -= app.settings.header_height
 
 		log "[mover] scroll_to_y", y
+
+		y += 20
 		
 		$( 'html, body' ).animate scrollTop: y, speed
