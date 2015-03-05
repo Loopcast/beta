@@ -1,6 +1,6 @@
 .spritesheet {
   background: url( '../images/spritesheet.png' ) no-repeat;
-  background-size: 228px 209px;
+  background-size: 228px 186px;
 }
 
 .spritesheet.medium_white_logo {
@@ -21,154 +21,118 @@
   background-position: 0 -70px;
 }
 
-.spritesheet.play_icon {
-  width: 50px;
-  height: 50px;
+.spritesheet.profile_spotify {
+  width: 48px;
+  height: 48px;
   background-position: -60px -70px;
 }
 
 .spritesheet.profile_soundcloud {
   width: 48px;
   height: 48px;
-  background-position: -110px -70px;
+  background-position: -108px -70px;
 }
 
 .spritesheet.profile_facebook {
   width: 48px;
   height: 48px;
-  background-position: -158px -70px;
-}
-
-.spritesheet.profile_spotify {
-  width: 48px;
-  height: 48px;
-  background-position: 0 -130px;
+  background-position: -156px -70px;
 }
 
 .spritesheet.sprite_small_logo {
   width: 41px;
   height: 25px;
-  background-position: -48px -130px;
+  background-position: 0 -130px;
 }
 
 .spritesheet.google_button_icon {
   width: 20px;
   height: 31px;
-  background-position: -206px -70px;
+  background-position: -204px -70px;
 }
 
 .spritesheet.facebook_button_icon {
   width: 16px;
   height: 31px;
-  background-position: 0 -178px;
+  background-position: 0 -155px;
 }
 
 .spritesheet.camera_icon {
   width: 25px;
   height: 21px;
-  background-position: -89px -130px;
-}
-
-.spritesheet.settings_profile_set {
-  width: 20px;
-  height: 20px;
-  background-position: -114px -130px;
+  background-position: -41px -130px;
 }
 
 .spritesheet.settings_profile_set_hover {
   width: 20px;
   height: 20px;
-  background-position: -134px -130px;
+  background-position: -66px -130px;
 }
 
-.spritesheet.edit_icon {
-  width: 14px;
-  height: 19px;
-  background-position: -154px -130px;
+.spritesheet.settings_profile_set {
+  width: 20px;
+  height: 20px;
+  background-position: -86px -130px;
 }
 
 .spritesheet.edit_icon_white {
   width: 14px;
   height: 19px;
-  background-position: -168px -130px;
+  background-position: -106px -130px;
 }
 
-.spritesheet.alert_icon {
-  width: 18px;
-  height: 18px;
-  background-position: -182px -130px;
+.spritesheet.edit_icon {
+  width: 14px;
+  height: 19px;
+  background-position: -120px -130px;
 }
 
 .spritesheet.session_icon {
   width: 18px;
   height: 18px;
-  background-position: -200px -130px;
+  background-position: -134px -130px;
+}
+
+.spritesheet.alert_icon {
+  width: 18px;
+  height: 18px;
+  background-position: -152px -130px;
 }
 
 .spritesheet.rooms_icon {
   width: 18px;
   height: 16px;
-  background-position: -206px -101px;
+  background-position: -204px -101px;
 }
 
 .spritesheet.icon_like_transparent {
   width: 16px;
   height: 16px;
-  background-position: -48px -155px;
+  background-position: -170px -130px;
 }
 
 .spritesheet.header_search_icon {
   width: 16px;
   height: 15px;
-  background-position: -64px -155px;
+  background-position: -186px -130px;
 }
 
 .spritesheet.icon_share {
   width: 15px;
   height: 13px;
-  background-position: -80px -155px;
-}
-
-.spritesheet.icon_guests {
-  width: 14px;
-  height: 14px;
-  background-position: -16px -178px;
-}
-
-.spritesheet.icon_plays {
-  width: 9px;
-  height: 14px;
-  background-position: -218px -130px;
-}
-
-.spritesheet.icon_likes {
-  width: 13px;
-  height: 12px;
-  background-position: -95px -155px;
+  background-position: -202px -130px;
 }
 
 .spritesheet.icon_location {
   width: 12px;
   height: 12px;
-  background-position: -108px -155px;
-}
-
-.spritesheet.icon_likes_small {
-  width: 12px;
-  height: 11px;
-  background-position: -120px -155px;
-}
-
-.spritesheet.icon_plays_small {
-  width: 8px;
-  height: 12px;
-  background-position: -30px -178px;
+  background-position: -60px -118px;
 }
 
 .spritesheet.small_arrow_white {
   width: 10px;
   height: 5px;
-  background-position: -60px -120px;
+  background-position: -72px -118px;
 }
 
 
@@ -179,7 +143,7 @@
 (min-device-pixel-ratio: 2) {
 .spritesheet {
   background: url( '../images/spritesheet-retina.png' ) no-repeat;
-  background-size: 228px 208.5px;
+  background-size: 228px 185.5px;
 }
 
 }

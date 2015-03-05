@@ -24,14 +24,18 @@ block grid
               a.tag(href="#", title="#{g}", data-genre-id="#{g}") #{g}
 
           .likes 
-            span.spritesheet.icon_likes_small
+            span.icon.ss-heart
+            //- span.spritesheet.icon_likes_small
             span.text #{item.loves}
           .plays
-            span.spritesheet.icon_plays_small
+            span.icon.ss-play
+            //- span.spritesheet.icon_plays_small
             span.text #{item.plays}
           
 
         a.share_set.left.rounded_border(href="#", title="Share Set")
-          span.spritesheet.icon_share
+          //- span.spritesheet.icon_share
+          span.icon.ss-action
         a.like_set.right(href="#", title="Like Set")
-          span.spritesheet.icon_like_transparent
+          span.icon.ss-heart
+          //- span.spritesheet.icon_like_transparent

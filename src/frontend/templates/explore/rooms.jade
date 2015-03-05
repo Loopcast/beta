@@ -15,7 +15,8 @@ block grid
     .room_cell.item(class="#{klasses}")
       a(href="#{item.url}", title="#{item.title}", class="thumb_wrapper") 
         img.room_thumb(src="#{item.thumb}")
-        span.spritesheet.room_play
+        span.icon.ss-play
+          //- span.spritesheet.room_play
       .room_content
         .text
           h2.room_title 
@@ -26,7 +27,8 @@ block grid
               a.tag(href="#", title="#{g}", data-genre-id="#{g}") #{g}
 
           p.room_location
-            span.spritesheet.icon_location 
+            //- span.spritesheet.icon_location 
+            span.icon.ss-location
             | #{item.location}
           p.now_live Now Live
 

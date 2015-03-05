@@ -195,16 +195,20 @@
 				margin-bottom: 15px
 				
 			.small_info
-				color: GRAY_2
+				color: GRAY_4
 				& > *
 					display: inline-block
 					margin-right: 10px
 					font-size: .8em
-					span.spritesheet
+					span.spritesheet, span.icon
 						display: inline-block
 						margin-right: 5px
 						position: relative
 						top: 2px
+						
+					span.ss-play
+						font-size: 0.8em
+						top: 1px
 			.live
 				position: absolute
 				bottom: 10px
@@ -416,6 +420,10 @@ POPUP_GRAY = #353535
 			background: #fff
 			// color: #E5E9E8
 		.profile_content .session:hover
+			
+
+			.small_info
+				color: GRAY_2
 			.image .spritesheet
 				opacity: 1
 				

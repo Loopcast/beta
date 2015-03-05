@@ -2,6 +2,8 @@
 
 HEIGHT_SUBHEADER = 45px
 GRAY_SUBHEADER_BORDER = #d5d4d4
+PLAY_BUTTON_COLOR = 200
+PLAY_BUTTON_W = 50px
 .explore
   position: relative
   padding-top: HEIGHT_SUBHEADER
@@ -14,7 +16,7 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
     font-weight: 600
     absolute top 0 left 0
     width: 100%
-    z-index: 1;
+    z-index: 1
     li
       display: inline-block
       height: HEIGHT_SUBHEADER
@@ -39,14 +41,14 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
           cursor: default
           
     &.fixed
-      position: fixed;
+      position: fixed
       li.selected
         border-bottom-color: GRAY_SUBHEADER_BORDER
           
 
   .likes, .plays
     font-size: .7em
-    color: GRAY_2
+    color: GRAY_4
     margin: 5px 0
     .spritesheet
       position: relative
@@ -84,10 +86,10 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
       display: block
       background: #dedede
       color: #444235
-      padding: 6px 12px;
-      text-align: left;
-      margin-bottom: 5px;
-      border-radius: 4px; 
+      padding: 6px 12px
+      text-align: left
+      margin-bottom: 5px
+      border-radius: 4px 
       &.selected
         background: #747C83
         color: #dedede
@@ -112,6 +114,11 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
       .room_content
         padding: 10px 5px 5px
         
+        .text .ss-play
+          font-size: .8em
+          position: relative
+          padding-left: 1px
+        
       .text
         padding: 0 5px
       
@@ -119,7 +126,16 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
         position: relative
         display: block
         
-        .spritesheet
+        .icon
+          color: white
+          background: rgba(PLAY_BUTTON_COLOR,PLAY_BUTTON_COLOR,PLAY_BUTTON_COLOR,0.6)
+          width: PLAY_BUTTON_W
+          height: PLAY_BUTTON_W
+          text-align: center
+          padding-top: 13px
+          padding-left: 5px
+          font-size: 20px
+          border-radius: 50%
           absolute left 50% top 50%
           transform: translateX(-50%) translateY(-50%)
         
@@ -146,21 +162,33 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
           
         
       .room_location
-        color: GRAY_2
+        color: GRAY_4
         font-size: .8em
         margin-bottom: 5px
-        .spritesheet
+        .icon
           position: relative
           top: 2px
+          margin-right: 3px
         
 
 .share_set, .like_set
   margin: 9px 4px
+  color: GRAY_4
+
+.share_set
+  top: 2px
+  position: relative
+  left: 2px
 
 .like_set
-  position: relative;
-  top: 6px;
-  left: -10px;
+  border-radius: 50%
+  width: 30px
+  height: 30px
+  text-align: center
+  padding-top: 7px
+  position: relative
+  top: -1px
+  left: -1px
   
   
 .following_item
@@ -178,3 +206,14 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
       a:hover
         background:  #747C83
         color: #dedede
+    .room_cell:hover
+      .likes, .plays, .share_set, .like_set
+        color: GRAY_2
+        
+      .like_set:hover
+        background: GRAY_2
+        color: white
+      
+        
+  .explore .rooms_grid .room_cell .thumb_wrapper .icon:hover
+    background: rgba(PLAY_BUTTON_COLOR,PLAY_BUTTON_COLOR,PLAY_BUTTON_COLOR,0.7)

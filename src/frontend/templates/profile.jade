@@ -113,13 +113,16 @@ block content
 
             .small_info
               .location 
-                span.spritesheet.icon_location
+                span.icon.ss-location
+                //- span.spritesheet.icon_location
                 span.text #{profile.live.location}
               .likes 
-                span.spritesheet.icon_guests
+                span.icon.ss-heart
+                //- span.spritesheet.icon_guests
                 span.text #{profile.live.loves}
               .guests 
-                span.spritesheet.icon_plays
+                span.icon.ss-users
+                //- span.spritesheet.icon_plays
                 span.text #{profile.live.guests}
 
             .live 
@@ -151,13 +154,13 @@ block content
                   
                 .small_info
                   .location 
-                    span.spritesheet.icon_location
+                    span.icon.ss-location
                     span.text #{room.location}
                   .likes 
-                    span.spritesheet.icon_likes
+                    span.icon.ss-heart
                     span.text #{room.loves}
                   .guests 
-                    span.spritesheet.icon_plays
+                    span.icon.ss-play
                     span.text #{room.guests}
 
                 .edit_session_wrapper
