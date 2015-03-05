@@ -4,23 +4,36 @@ block content
 	#login.popup(data-menu="login")
 		.md_wrapper(data-view="login")
 			.md_header
-				span.spritesheet(class="md_logo sprite_small_logo")
+				.md_login
+					h1 
+						span.spritesheet(class="md_logo sprite_small_logo")
+						| Join Loopcast in seconds
 
-				.tabs
-					//- a(title="Sign Up") Sign Up
-					a(href="#", class="active" title="Sign In") Sign In
-			.md_content
-				h4 Go live on Loopcast for free
+				.triangle
+				
+			.md_content.md_login
 
-		
-				a.button.social.facebook.shadow(href="/login/facebook" title="Sign in with Facebook") 
-					span.spritesheet.facebook_button_icon
-					span Sign in with Facebook
-				a.button.social.google.shadow(href="/login/google" title="Sign in with Google") 
-					span.spritesheet.google_button_icon
-					span Sign in with Google
+				p
+					span.icon.ss-music
+					| Go live in your browser for free
 
-				.clear
+				p
+					span.icon.ss-users
+					| Interact with your audience
+
+				p
+					span.icon.ss-record
+					| Record, save and share instantly
+				
+				.buttons
+					a.button.social.facebook.shadow(href="/login/facebook" title="Sign in with Facebook") 
+						span.spritesheet.facebook_button_icon
+						span Sign in with Facebook
+					a.button.social.google.shadow(href="/login/google" title="Sign in with Google") 
+						span.spritesheet.google_button_icon
+						span Sign in with Google
+
+					.clear
 
 				//- .middle_line
 				//- 	span or
