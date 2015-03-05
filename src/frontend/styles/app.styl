@@ -14,17 +14,17 @@
 // Inheriting box-sizing Probably Slightly Better Best-Practice
 // http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
 html
-	box-sizing: border-box;
+	box-sizing: border-box
 
 *, *:before, *:after
-	box-sizing: inherit;
+	box-sizing: inherit
 
 
 *
 	margin  0
 	padding 0
 	border  0
-	user-select: none;
+	user-select: none
 
 a
 	color: inherit
@@ -48,6 +48,13 @@ li
 .centered
 	max-width: MAX_WIDTH
 	margin: 0 auto
+	
+.white_box
+	background: white
+	border-radius: 5px
+	margin-top: 35px
+	
+	box-shadow: 1px 2px 9px -2px rgba(0,0,0,0.36)
 
 .clear
 	clear: both
@@ -110,7 +117,7 @@ html
 body
 	background: GRAY
 	color: BLACK
-	font-size: 100%;
+	font-size: 100%
 	open_sans()
 	
 	// Pull the content down because of the header fixed
