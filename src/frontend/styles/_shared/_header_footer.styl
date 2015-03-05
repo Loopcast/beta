@@ -41,7 +41,7 @@ header.header
 				.ss-settings
 					transition: transform .1s linear
 					display: block
-					transform-origin: 48% 51%;
+					transform-origin: 49.5% 51%;
 					text-align: center
 					width: 22px
 					height: 22px
@@ -104,15 +104,17 @@ header.header
 			vertical-align: middle
 		.thumb_wrapper
 			padding-right: 30px
-			margin-right: 10px
+			margin-right: 20px
 			position: relative
 			height: HEADER_HEIGHT
-			.spritesheet
+			span
 				position: absolute
-				top: 46%
+				top: 42%
 				right: 10px
+				font-size: 0.6em
 			&.hovered
-				.spritesheet
+				span
+					top: 36%
 					transform: rotate(180deg)
 				
 	.user_dropdown
