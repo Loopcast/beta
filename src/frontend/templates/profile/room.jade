@@ -9,7 +9,7 @@ block content
         br
         h3.genres.black_background
         br
-        h3.location.black_background
+        h3.location.black_background(style="display: none")
         
         .profile_image.upload_wrapper(data-view="components/image_uploader", data-id="profile_picture")
           img(src="/images/profile_big.png")
@@ -44,23 +44,28 @@ block content
               | Visitors  
 
     .dashboard_bar(data-view="room/dashboard")
-      .source_controls
-        select.source_select
-          option Traktor audio 10
-          option Traktor audio 20
-          option Traktor audio 30
+      .centered
+        .half._left
+          .source_controls
+            select.source_select
+              option Traktor audio 10
+              option Traktor audio 20
+              option Traktor audio 30
 
-        input.source_volume(type="range", name="volume", min="0", max="10")
+            input.source_volume(type="range", name="volume", min="0", max="10")
 
-      .broadcast_controls(data-view="buttons/start_stop", data-width="fixed")
-        a.button.green_button.small_button_3.start(title="Start Broadcast") Start Broadcast
-        a.button.green_button.small_button_3.stop(title="Stop Broadcast") Stop Broadcast
+        .half._right
+          p altro        
 
-      p.broadcast_time 00:00:00
+      //- .broadcast_controls(data-view="buttons/start_stop", data-width="fixed")
+      //-   a.button.green_button.small_button_3.start(title="Start Broadcast") Start Broadcast
+      //-   a.button.green_button.small_button_3.stop(title="Stop Broadcast") Stop Broadcast
 
-      .recording_controls(data-view="buttons/start_stop", data-width="fixed")
-        a.button.red_button.small_button_3.start(title="Start Recording") Start Recording
-        a.button.red_button.small_button_3.stop(title="Stop Recording") Stop Recording
+      //- p.broadcast_time 00:00:00
+
+      //- .recording_controls(data-view="buttons/start_stop", data-width="fixed")
+      //-   a.button.red_button.small_button_3.start(title="Start Recording") Start Recording
+      //-   a.button.red_button.small_button_3.stop(title="Stop Recording") Stop Recording
 
 
     .profile_content

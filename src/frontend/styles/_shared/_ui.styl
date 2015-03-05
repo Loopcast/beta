@@ -95,8 +95,8 @@ DARK_PERCENTAGE = 5
 		font-weight: 800
 		
 	&.normal_button_2
-		font-size: 13px;
-		line-height: 21px;
+		font-size: 13px
+		line-height: 21px
 		font-weight: 600
 		
 		
@@ -120,6 +120,48 @@ DARK_PERCENTAGE = 5
 			display: block
 			text-align: right
 		
+	&.dashboard_button
+		background: #46505A
+		text-transform: uppercase
+		color: white
+		font-size: 10px
+		font-weight: 600
+		padding-bottom: 11px
+		line-height: 1em
+		height: auto
+		padding: 11px 10px 12px
+		padding-top: 10px
+		border-radius: 4px
+		border: 1px solid BLACK
+		display: inline-block
+		overflow: hidden
+		height: 32px
+		
+	&.dashboard_button.with_timer
+		padding: 0
+		background: transparent
+		& > *
+			display: inline-block
+			vertical-align: top
+			padding: 11px 20px 9px
+			font-size: 12px
+		
+		.left_part
+			background: #46505A
+			text-align: center
+			// padding-left: 30px
+			// padding-right: 30px
+		.right_part
+			cursor: default
+			text-align: left
+			font-size: 18px
+			padding-top: 8px
+			padding-bottom: 9px
+			line-height: 15px
+			
+		.yellow_part
+			background: #1F1E1E
+			color: #FFC80A
 
 .no_touch_device
 	.button:hover
@@ -150,6 +192,15 @@ DARK_PERCENTAGE = 5
 		
 	.button.red_button:hover
 		background: darken( RED, DARK_PERCENTAGE )
+		
+	.button.dashboard_button:hover
+		background: GREEN
+		border-radius: 4px
+		
+	.button.dashboard_button.with_timer:hover
+		background: transparent
+		.left_part
+			background: GREEN
 		
 	.button.yellow_button:hover
 		background-image: linear-gradient(180deg, rgb(0, 0, 0) 11%, rgb(0, 0, 0) 42%, rgb(0, 0, 0) 73%)
