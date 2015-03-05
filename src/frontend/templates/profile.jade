@@ -17,7 +17,7 @@ block content
         .profile_image.upload_wrapper(data-view="components/image_uploader", data-id="profile_picture")
           img(src="#{profile.image}")
           p.upload_element.edit_image
-            span.spritesheet.camera_icon
+            span.icon.ss-camera
             span Update profile picture
             span.progress
 
@@ -47,16 +47,18 @@ block content
               | 
 
         a.cover_button.button_with_icon.element_on_read_mode(href="#", data-profile="set-write-mode")
-          span.spritesheet.edit_icon
+          //- span.spritesheet.edit_icon
+          span.icon.ss-write
           span Edit Profile
 
         a.cover_button.button_with_icon.element_on_write_mode(href="#", data-profile="set-read-mode")
-          span.spritesheet.edit_icon
+          //- span.spritesheet.edit_icon
+          span.icon.ss-write
           span Save Profile
 
         .change_cover.upload_wrapper(data-view="components/image_uploader", data-id="profile_cover")
           a.upload_element.button_with_icon.black_button.element_on_write_mode(href="#", data-profile="set-write-mode")
-            span.spritesheet.camera_icon
+            span.icon.ss-camera
             span Change Cover
             span.progress
 
@@ -70,7 +72,8 @@ block content
         .profile_bio.outline_box
           .element_on_read_mode
             a.outline_icon(href="#", title="Edit Profile", data-profile="set-write-mode")
-              span.spritesheet.edit_icon
+              //- span.spritesheet.edit_icon
+              span.icon.ss-write
             h4.location London - UK
             .bio 
               | Thomas Amundsen from Oslo, now based in London has from an early age lots of musical influences, experimenting from acoustic instruments to electronic music production and DJing.
@@ -143,7 +146,7 @@ block content
             .session.outline_box(id="session_recorded_#{room.id}", data-view="components/user_set", data-data="#{JSON.stringify(room)}")
 
               a.image(href="#", title="#{room.title}", style="background-image:url(/images/profile_session_1.jpg)")
-                span.room_play.spritesheet
+                span.icon.ss-play.circle_play
               .content
                 h2.session_title 
                   a(href="#", title="#{room.title}") #{room.title}
@@ -164,7 +167,7 @@ block content
                     span.text #{room.guests}
 
                 .edit_session_wrapper
-                  a.spritesheet.settings_button.settings_profile_set_hover(href="#", title="Setting Session", data-view="components/click_trigger" data-target="#session_recorded_#{room.id} .edit_session_popup") Settings Session
+                  a.icon.settings_button.ss-settings(href="#", title="Setting Session", data-view="components/click_trigger" data-target="#session_recorded_#{room.id} .edit_session_popup")
                   .edit_session_popup
                     .triangle
                     a.download_button.button.yellow_button.small_button_4(href="#", title="Download") Download

@@ -2,8 +2,23 @@
 
 HEIGHT_SUBHEADER = 45px
 GRAY_SUBHEADER_BORDER = #d5d4d4
-PLAY_BUTTON_COLOR = 200
-PLAY_BUTTON_W = 50px
+
+
+.circle_play
+  color: white
+  background: rgba(PLAY_BUTTON_COLOR,PLAY_BUTTON_COLOR,PLAY_BUTTON_COLOR,0.6)
+  width: PLAY_BUTTON_W
+  height: PLAY_BUTTON_W
+  text-align: center
+  padding-top: 13px
+  padding-left: 5px
+  font-size: 20px
+  border-radius: 50%
+  absolute left 50% top 50%
+  transform: translateX(-50%) translateY(-50%)
+  
+
+
 .explore
   position: relative
   padding-top: HEIGHT_SUBHEADER
@@ -126,18 +141,6 @@ PLAY_BUTTON_W = 50px
         position: relative
         display: block
         
-        .icon
-          color: white
-          background: rgba(PLAY_BUTTON_COLOR,PLAY_BUTTON_COLOR,PLAY_BUTTON_COLOR,0.6)
-          width: PLAY_BUTTON_W
-          height: PLAY_BUTTON_W
-          text-align: center
-          padding-top: 13px
-          padding-left: 5px
-          font-size: 20px
-          border-radius: 50%
-          absolute left 50% top 50%
-          transform: translateX(-50%) translateY(-50%)
         
       .room_thumb
         width: 100%
@@ -213,7 +216,10 @@ PLAY_BUTTON_W = 50px
       .like_set:hover
         background: GRAY_2
         color: white
-      
         
-  .explore .rooms_grid .room_cell .thumb_wrapper .icon:hover
+  
+  .circle_play:hover
     background: rgba(PLAY_BUTTON_COLOR,PLAY_BUTTON_COLOR,PLAY_BUTTON_COLOR,0.7)
+  
+
+      

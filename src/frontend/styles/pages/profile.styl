@@ -35,6 +35,10 @@
 		transform: translateX(-50%) translateY(-50%)
 		overflow: hidden
 		
+		.ss-camera
+			font-size: 23px
+			top: 5px
+			margin-right: 8px
 	
 	.cover
 		height: 350px
@@ -96,9 +100,10 @@
 				font-weight: 600
 				transition: transform .3s ease-out
 				transform: translateY(100%)
-				.spritesheet
+				.spritesheet, .icon
 					absolute left 15px top 50%
 					transform: translateY(-50%)
+					font-size: 23px
 				
 	.sidebar_right
 		background: rgba(0,0,0,0.9)
@@ -145,6 +150,7 @@
 				position: absolute
 				top: 5px
 				right: 10px
+				padding-top: 9px
 			h4
 				font-size: 1.1em
 				margin-bottom: 14px
@@ -172,7 +178,7 @@
 				background-size: cover
 				background-position: 50% 50%
 				position: relative
-				.spritesheet
+				.icon
 					absolute left 50% top 50%
 					transform: translateX(-50%) translateY(-50%)
 					opacity: 0
@@ -310,6 +316,8 @@ POPUP_GRAY = #353535
 	.settings_button
 		opacity: 0.6
 		transition: transform .1s linear
+		font-size: 21px;
+		transform-origin: 50% 40%;
 		&.hovered
 			opacity: 1
 			transform: rotate(-180deg)
@@ -424,7 +432,7 @@ POPUP_GRAY = #353535
 
 			.small_info
 				color: GRAY_2
-			.image .spritesheet
+			.image .icon
 				opacity: 1
 				
 	.edit_session_wrapper
