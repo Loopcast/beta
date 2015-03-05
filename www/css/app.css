@@ -113,7 +113,7 @@ header.header .right > * {
 /* line 35 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .left > *.settings,
 header.header .right > *.settings {
-  padding-top: 15px;
+  padding-top: 13px;
   padding-bottom: 0;
   cursor: pointer;
   height: 49px;
