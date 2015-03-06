@@ -24,6 +24,10 @@ module.exports = (dom) ->
 		volume.left.set_volume 0.7
 		volume.right.set_volume 0.78
 
+		input_select = view.get_by_dom dom.find( '.input_select' )
+		input_select.on 'changed', (data) ->
+			log "[Dashboard] input changed", data
+
 
 
 

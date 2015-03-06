@@ -1,7 +1,16 @@
-module.exports = (dom) ->
-  handler = dom.find '.handler'
-  select = dom.find 'select'
+happens = require 'happens'
 
-  dom.addClass 'select_wrapper'
+module.exports = class Select
+  constructor: ( @dom ) ->
+    happens @
+    @dom.addClass 'select_wrapper'
 
-  
+    handler = @dom.find '.handler .text'
+    select = @dom.find 'select'
+    
+    ref = @
+
+    select.on 'change', ->
+      handler.html select.val()
+
+      ref.emit 'changed', select.val()
