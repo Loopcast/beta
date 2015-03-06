@@ -1,6 +1,6 @@
 .spritesheet {
   background: url( '../images/spritesheet.png' ) no-repeat;
-  background-size: 228px 149px;
+  background-size: 228px 191px;
 }
 
 .spritesheet.medium_black_logo {
@@ -15,13 +15,13 @@
   background-position: -114px 0;
 }
 
-.spritesheet.profile_facebook {
+.spritesheet.profile_spotify {
   width: 48px;
   height: 48px;
   background-position: 0 -70px;
 }
 
-.spritesheet.profile_spotify {
+.spritesheet.profile_facebook {
   width: 48px;
   height: 48px;
   background-position: -48px -70px;
@@ -33,46 +33,76 @@
   background-position: -96px -70px;
 }
 
+.spritesheet.share_twitter {
+  width: 42px;
+  height: 42px;
+  background-position: -144px -70px;
+}
+
+.spritesheet.share_share {
+  width: 42px;
+  height: 42px;
+  background-position: -186px -70px;
+}
+
+.spritesheet.share_google {
+  width: 42px;
+  height: 42px;
+  background-position: 0 -118px;
+}
+
+.spritesheet.share_friends {
+  width: 42px;
+  height: 42px;
+  background-position: -42px -118px;
+}
+
+.spritesheet.share_fb {
+  width: 42px;
+  height: 42px;
+  background-position: -84px -118px;
+}
+
 .spritesheet.sprite_small_logo {
   width: 41px;
   height: 25px;
-  background-position: -144px -70px;
+  background-position: -126px -118px;
 }
 
 .spritesheet.google_button_icon {
   width: 20px;
   height: 31px;
-  background-position: 0 -118px;
+  background-position: 0 -160px;
 }
 
 .spritesheet.facebook_button_icon {
   width: 16px;
   height: 31px;
-  background-position: -20px -118px;
+  background-position: -20px -160px;
 }
 
 .spritesheet.session_icon {
   width: 18px;
   height: 18px;
-  background-position: -185px -70px;
+  background-position: -167px -118px;
 }
 
 .spritesheet.alert_icon {
   width: 18px;
   height: 18px;
-  background-position: -203px -70px;
+  background-position: -185px -118px;
 }
 
 .spritesheet.rooms_icon {
   width: 18px;
   height: 16px;
-  background-position: -144px -95px;
+  background-position: -203px -118px;
 }
 
 .spritesheet.icon_like_transparent {
   width: 16px;
   height: 16px;
-  background-position: -162px -95px;
+  background-position: -126px -143px;
 }
 
 
@@ -83,7 +113,7 @@
 (min-device-pixel-ratio: 2) {
 .spritesheet {
   background: url( '../images/spritesheet-retina.png' ) no-repeat;
-  background-size: 228px 149px;
+  background-size: 228px 191px;
 }
 
 }

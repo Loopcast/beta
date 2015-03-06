@@ -1,0 +1,35 @@
+.profile_content.chat
+  .chat_main
+    .chat_header
+      p Playing some organic house tracks from early chicago. Please visit my soundcloud for more info: soundcloud/thomasmundsen
+    .chat_content.no_chat_yet
+      p.no_chat 
+        span No one has typed a chat yet
+
+      .inner
+
+    .chat_footer
+      .img_wrapper
+        img(src="/images/profile_big.png", width="36")
+      textarea(placeholder="Type here to join the chat")
+
+  .chat_sidebar
+    .inner
+      h3 
+        | People in this room 
+        span.number (0)
+
+      .users
+        each i in [0,1,2,3,4,5,6,7]
+          .img_wrapper
+            a(href="#", title="User name")
+              img(src="/images/profile_big.png", width="55")
+
+    .share
+      h3 Share this room
+      .social
+        a.spritesheet.share_twitter(href="#", title="Share on Twitter") Share on Twitter
+        a.spritesheet.share_fb(href="#", title="Share on Facebook") Share on Facebook
+        a.spritesheet.share_friends(href="#", title="Share qwith friends") Share with friends
+        a.spritesheet.share_share(href="#", title="Share") Share
+
