@@ -158,10 +158,44 @@ DARK_PERCENTAGE = 5
 			padding-top: 8px
 			padding-bottom: 9px
 			line-height: 15px
+			letter-spacing: 3px
 			
 		.yellow_part
 			background: #1F1E1E
 			color: #FFC80A
+			
+	&.dashboard_button.with_icon
+		.icon
+			margin-left: 30px
+			margin-right: 2px
+			position: relative
+			top: 2px
+			
+.meter_wrapper
+	position: relative
+	text-transform: uppercase
+	display: block
+	width: 203px
+	height: 10px
+	font-size: 0.8em
+	color: GRAY
+	.letter
+		absolute right 103% top 50%
+		transform: translateY(-50%)
+	.meter
+		display: block
+		height: 100%
+		width: 100%
+		background: url("/images/meter_off.jpg")
+		position: relative
+		overflow: hidden
+		span
+			display: block
+			absolute top 0 left 0
+			width: 0%
+			height: 100%
+			background: url("/images/meter_on.jpg")
+			transition: width .1s linear
 
 .no_touch_device
 	.button:hover
@@ -199,7 +233,9 @@ DARK_PERCENTAGE = 5
 		
 	.button.dashboard_button.with_timer:hover
 		background: transparent
-		.left_part
+		
+	.button.dashboard_button.with_timer
+		.left_part:hover
 			background: GREEN
 		
 	.button.yellow_button:hover
@@ -578,10 +614,27 @@ input, textarea, div.tagsinput
 	border-bottom-width: 2px
 
 
+.select_wrapper
+	position: relative
+	display: inline-block
+	.handler
+		position: relative
+		z-index: 0
+	select
+		cursor: pointer
+		position: absolute
+		z-index: 1
+		top: 0 
+		left: 0
+		width: 100%
+		height: 100%
+		opacity: 0
 
 
 .no_touch_device
-
+	.select_wrapper:hover
+		.handler
+			background: GRAY_3
 
 
 	.rounded_border:hover

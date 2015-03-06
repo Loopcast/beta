@@ -46,7 +46,24 @@ block content
     .dashboard_bar(data-view="room/dashboard")
       .centered
         .half._left
-          a.button.dashboard_button(href="#") Select your input source
+          .inner
+            .select_wrapper(data-view="components/select")
+              a.button.dashboard_button.with_icon.handler(href="#") 
+                span.text Select your input source
+                span.icon.ss-dropdown
+              select
+                option Traktor audio 10
+                option Traktor audio 20
+                option Traktor audio 30
+          
+            .meter_wrapper.left(data-view="components/audio/meter")
+              span.letter l
+              .meter
+                span.inner_meter
+            .meter_wrapper.right(data-view="components/audio/meter")
+              span.letter r
+              .meter
+                span.inner_meter
           //- select.source_select
           //-   option Traktor audio 10
           //-   option Traktor audio 20
