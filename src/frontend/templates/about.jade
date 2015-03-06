@@ -1,20 +1,21 @@
 extends layout
 
 block content
-  .centered.white_box.about_page
-    h1.about_title #{title}
+  .centered.about_page
+    .white_box
+      h1.about_title #{title}
 
-    .about_content
-      p.about_description #{description}
+      .about_content
+        p.about_description #{description}
 
-      for col in columns
-        .about_column
-          img(width="200", src="/images/#{col.icon}")
+        for col in columns
+          .about_column
+            img(width="200", src="/images/#{col.icon}")
 
-          h4 #{col.title}
-          p #{col.text}
+            h4 #{col.title}
+            p #{col.text}
 
-      .clear
+        .clear
 
-      h2.about_title Sound good?
-      a.button.save_button.normal_button_2(href="#", title="Go live now") Go live now
+        h2.about_title Sound good?
+        a.button.save_button.normal_button_2(href="#", title="Go live now") Go live now
