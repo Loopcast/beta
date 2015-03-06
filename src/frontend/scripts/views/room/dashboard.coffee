@@ -9,7 +9,8 @@ module.exports = (dom) ->
 		broadcast_trigger = view.get_by_dom dom.find( '.broadcast_controls' )
 		recording_trigger = view.get_by_dom dom.find( '.recording_controls' )
 
-		broadcast_trigger.on 'change', on_broadcast_click
+		if broadcast_trigger.length > 0 
+			broadcast_trigger.on 'change', on_broadcast_click
 
 	on_broadcast_click = (data) ->
 		log "on_broadcast_click", data
