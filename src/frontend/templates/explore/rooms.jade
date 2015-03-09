@@ -16,6 +16,7 @@ block grid
       a(href="#{item.url}", title="#{item.title}", class="thumb_wrapper") 
         img.room_thumb(src="#{item.thumb}")
         span.icon.ss-play.circle_play
+        span.now_live Now Live
           //- span.spritesheet.room_play
       .room_content
         .text
@@ -30,6 +31,5 @@ block grid
             //- span.spritesheet.icon_location 
             span.icon.ss-location
             | #{item.location}
-          p.now_live Now Live
 
         a.enter_room(href="#{item.url}", class="button yellow_button no_shadow small_button small_button_2", title="Enter Room") Enter Room
