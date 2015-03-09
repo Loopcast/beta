@@ -11,9 +11,11 @@ block grid
     for g in item.genres
       - klasses += " item-" + slugify(g)
 
-    .room_cell.item(class="#{klasses}")
-      a(href="#{item.url}", title="#{item.title}", class="thumb_wrapper") 
+    .room_cell.item(class="#{klasses}", data-view="components/audio/player_preview")
+      a(href="#", title="#{item.title}", class="thumb_wrapper") 
         img.room_thumb(src="#{item.thumb}")
+        span.icon.ss-play.circle_icon
+
       .room_content
         .text
           h2.room_title 

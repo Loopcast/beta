@@ -4,20 +4,26 @@ HEIGHT_SUBHEADER = 45px
 GRAY_SUBHEADER_BORDER = #d5d4d4
 
 
-.circle_play
+.circle_icon
   color: white
   background: rgba(PLAY_BUTTON_COLOR,PLAY_BUTTON_COLOR,PLAY_BUTTON_COLOR,0.6)
   width: PLAY_BUTTON_W
   height: PLAY_BUTTON_W
   text-align: center
-  padding-top: 13px
-  padding-left: 5px
-  font-size: 20px
+  padding-top: 14px
+  padding-left: 7px
+  font-size: 28px
   border-radius: 50%
   absolute left 50% top 50%
   transform: translateX(-50%) translateY(-50%)
   
+  &.ss-pause
+    font-size: 24px
+    padding-left: 1px
+    padding-top: 16px
+  
 
+  
 
 .explore
   position: relative
@@ -128,6 +134,7 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
       position: relative
       border: 1px solid #DDD7D7
       border-radius: 5px
+        
       .room_content
         padding: 10px 5px 5px
         
@@ -205,6 +212,14 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
   .following_item
     display: block
     
+
+.player_preview
+  .circle_icon
+    opacity: 0
+  &.playing
+    .circle_icon
+      opacity: 1  
+    
 .no_touch_device
   .explore
     .genres_list
@@ -219,8 +234,13 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
         background: GRAY_2
         color: white
         
+  .player_preview:hover
+    .circle_icon
+      opacity: 1
+        
+        
   
-  .circle_play:hover
+  .circle_icon:hover
     background: rgba(PLAY_BUTTON_COLOR,PLAY_BUTTON_COLOR,PLAY_BUTTON_COLOR,0.7)
   
 

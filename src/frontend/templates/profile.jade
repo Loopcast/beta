@@ -143,10 +143,10 @@ block content
             span.alert_text #{profile.free_storage} free storage remaining
 
           for room in profile.recorded
-            .session.outline_box(id="session_recorded_#{room.id}", data-view="components/user_set", data-data="#{JSON.stringify(room)}")
+            .session.outline_box(id="session_recorded_#{room.id}", data-view="[components/user_set,components/audio/player_preview]", data-data="#{JSON.stringify(room)}")
 
               a.image(href="#", title="#{room.title}", style="background-image:url(/images/profile_session_1.jpg)")
-                span.icon.ss-play.circle_play
+                span.icon.ss-play.circle_icon
               .content
                 h2.session_title 
                   a(href="#", title="#{room.title}") #{room.title}
