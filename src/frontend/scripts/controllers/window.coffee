@@ -21,8 +21,11 @@ win.obj.on 'resize', on_resize = ->
 # trigger resize automatically after 100 ms
 delay 100, on_resize
 
+log "one"
+
+
 # global click event
-$( 'html,body' ).on 'click', -> win.emit "body:clicked"
+$( 'body' ).on 'click', -> win.emit "body:clicked"
 
 
 # scroll event
