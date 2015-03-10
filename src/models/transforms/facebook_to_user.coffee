@@ -24,6 +24,7 @@ module.exports = ( info, callback ) ->
         avatar  : picture_info.secure_url
 
       data :
+        email   : info.profile.email
         facebook: info
         images:
           profile:

@@ -81,6 +81,10 @@ if s.is_beta
     secret : "super-duper-secret-that-nobody-would-evah-guess-saxophone"
     key    : "loopcast.sid"
 
+  s.intercom = 
+    key: "50c73c97d2be733425b373a6bd9e26c595390e44"
+    id : "uk6rn1dt"
+
 # IF LOCAL OR DEVELOPMENT
 else
 
@@ -102,6 +106,10 @@ else
   s.session =
     secret : "super-duper-secret-that-nobody-would-evah-guess-saxophone"
     key    : "loopcast.sid"
+
+  s.intercom = 
+    key: "0ccd5941f4f1658d00ca02e8c0cea5dca7a1e01d"
+    id : "e8diaexy"
 
 
 module.exports = s

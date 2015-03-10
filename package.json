@@ -15,6 +15,7 @@
     "hapi-auth-cookie": "^2.0.0",
     "hapi-swagger": "^0.6.6",
     "happens": "^0.5.0",
+    "intercom.io": "^1.0.7",
     "jade": "^1.9.1",
     "joi": "^5.1.0",
     "moment": "^2.9.0",
