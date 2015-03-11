@@ -22,8 +22,11 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
     padding-left: 1px
     padding-top: 16px
   
-
-  
+.player_preview
+  .share_wrapper
+    absolute top 5px right 5px
+    opacity: 0
+    transition: opacity .2s linear
 
 .explore
   position: relative
@@ -121,7 +124,7 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
       
     
   .rooms_grid
-    overflow: hidden
+    // overflow: hidden
     .room_cell
       width: 210px
       text-align: left
@@ -130,7 +133,7 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
       margin-bottom: MARGIN_GRID
       
       // float: left
-      overflow: hidden
+      // overflow: hidden
       position: relative
       border: 1px solid #DDD7D7
       border-radius: 5px
@@ -216,6 +219,7 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
 .player_preview
   .circle_icon
     opacity: 0
+    transition: opacity .2s linear
   &.playing
     .circle_icon
       opacity: 1  
@@ -233,6 +237,9 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
       .like_set:hover
         background: GRAY_2
         color: white
+        
+      .share_wrapper
+        opacity: 1
         
   .player_preview:hover
     .circle_icon
