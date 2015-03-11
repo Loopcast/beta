@@ -8,7 +8,11 @@ module.exports = (dom) ->
 
   init = ->
     html = require 'templates/buttons/share'
-    dom.append html()
+
+    data = 
+      link: dom.data 'permalink'
+      
+    dom.append html( data )
 
 
     handler   = dom.find '.ss-action'

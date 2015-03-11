@@ -145,8 +145,12 @@ block content
           for room in profile.recorded
             .session.outline_box(id="session_recorded_#{room.id}", data-view="[components/user_set,components/audio/player_preview]", data-data="#{JSON.stringify(room)}")
 
-              a.image(href="#", title="#{room.title}", style="background-image:url(/images/profile_session_1.jpg)")
-                span.icon.ss-play.circle_icon
+              .image(style="background-image:url(/images/profile_session_1.jpg)")
+                a.icon.ss-play.circle_icon(href="#",title="Play") 
+                .share_wrapper(data-view="buttons/share", data-permalink="https://loopcast.com/stefanoortisi/set-1")
+                  a.yellow.ss-action(href="#", title="Share")
+
+
               .content
                 h2.session_title 
                   a(href="#", title="#{room.title}") #{room.title}
