@@ -329,6 +329,14 @@ input, textarea, div.tagsinput
 			width: 150%
 			background-color: lighten( #2c2c2c, 10 )
 			
+	&.link_input
+		background: white
+		text-decoration: underline
+		font-weight: 600
+		font-size: 0.8em
+		padding: 8px
+		color: BLACK
+			
 .squared_input
 	background: none
 	border-radius: 0px
@@ -376,7 +384,7 @@ input, textarea, div.tagsinput
 		absolute top 0 left 0
 		width: 100%
 		height: 100%
-		background: #292C2F
+		background: BLACK_BOX_COLOR
 		opacity: 0.9
 		
 	&.opaque
@@ -636,8 +644,86 @@ input, textarea, div.tagsinput
 		height: 100%
 		opacity: 0
 
+.yellow.ss-action
+	color: BLACK
+	background: YELLOW
+	border-radius: 3px
+	text-align: center
+	display: inline-block
+	width: 23px
+	height: 23px
+	padding-left: 2px
+	font-size: 0.9em
+	padding-top: 3px
+	border: 1px solid YELLOW
+	
+.share_wrapper
+	COLOR_BOX = #4E5052
 
+	.share_box
+		absolute bottom 180% left 50%
+		transform: translateX(-50%)
+		z-index: 2
+		background: COLOR_BOX
+		width: 290px
+		padding: 10px 12px
+		border-radius: 5px
+		display: none
+		&:after
+			content: ""
+			absolute top 100% left 50%
+			transform: translateX(-50%)
+			width: 0
+			height: 0
+			border-style: solid
+			border-width: 10px 10px 0 10px
+			border-color: COLOR_BOX transparent transparent transparent
+			
+		h4 
+			color: white
+			font-size: 1.3em
+			font-weight: 600
+			margin-bottom: 5px
+			
+		.share_row
+			display: flex
+			input
+				flex: 5
+				margin-right: 10px
+			.button
+				flex: 1
+				display: inline-block
+				font-size: 0.9em
+				padding-top: 5px
+				
+		.socials
+			a
+				display: inline-block
+				margin-right: 8px
+				text-indent: -9999px
+				
+	&.on_bottom
+		.share_box
+			bottom: auto
+			absolute top 180% left 50%
+			
+			&:after
+				content: ""
+				top: auto
+				absolute bottom 100% left 50%
+				border-width: 0 10px 10px 10px
+				border-color: transparent transparent COLOR_BOX transparent
+	&.opened
+		opacity: 1!important
+		.share_box
+			display: block
+	
 .no_touch_device
+	.yellow.ss-action:hover
+		background: BLACK
+		color: YELLOW
+		// border-color: YELLOW
+
 	.select_wrapper:hover
 		.handler
 			background: GRAY_3
@@ -662,5 +748,8 @@ input, textarea, div.tagsinput
 		&.black_button
 			color: GRAY
 			background: BLACK
+			
+	.share_wrapper .share_box .socials a:hover
+		opacity: 0.8
 			
 
