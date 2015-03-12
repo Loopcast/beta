@@ -5,7 +5,13 @@ block content
     .cover
       .cover_image(style="background-image:url(/images/homepage_2.jpg)")
       .content
+        h1.room_name.black_background
+          if room
+            | #{room.info.title}
+        br
         h1.name.black_background
+          if user
+            | #{user['info.name']}
         br
         h3.genres.black_background
         br
