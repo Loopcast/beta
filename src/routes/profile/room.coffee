@@ -29,83 +29,66 @@ module.exports =
 
       Room.findOne( { } )
         .where( "url"  , "#{profile}/#{room_id}" )
-        .select( "info" )
+        .select( "info.title status.is_streaming" )
         .sort( _id: -1 )
         .lean()
         .exec ( error, room ) -> 
 
           if error then return failed request, reply, error
 
-          model.set 'room', room
+          # if not authenticated
+          if not request.auth.isAuthenticated
 
-          # if is authenticated and owner of the room
-          # render the room
-          if request.auth.isAuthenticated
+            # and not live
+            if not room.status?.is_streaming
 
-            data = request.auth.credentials
-
-            if room.info.owner_user == data.user.username
-
-              data.room = model.get 'room'
-
-              template '/rooms/create', data, ( error, response ) ->
-
-                if not error then return reply response
-
-                reply( "Page not found" ).code 404
-
-              return
-
-          if not room.status?.is_live
-
-            return reply( "Page not found" ).code 404
-
-          console.log "found room!"
-
+              # return 404
+              return reply( "Page not found" ).code 404
 
           model.set 'room', room
 
-      return
+          # TODO: get user from the database and return real data
+          model.set 'user',
+            'info.name': profile
+            username   : profile
 
-      response = ->
+          return
 
-        return if not model.get 'user'
-        return if not model.get 'room'
+          # find user in order to return user name
+          User.find( { }, _id: off )
+            .where( 'info.username', profile )
+            .select( 'info' )
+            .lean()
+            .exec( error, user ) -> 
 
-        # always inject user data into requests
-        data = request.auth.credentials || {}
-        data.room  = model.get 'room'
-        data.owner = model.get 'user'
+              if error then return failed request, reply, error
 
-        template '/profile/room', data, ( error, response ) ->
+              model.set 'user', user
+
+      model.on 'user', ( user ) ->
+
+        data =
+          user: model.get 'user'
+          room: model.get 'room'
+
+        console.log 'data ->', data
+
+        # if is authenticated and owner of the room
+        # render the room
+        if request.auth.isAuthenticated
+
+          if data.room.info.owner_user == data.user.username
+
+            template '/rooms/create', data, ( error, response ) ->
+
+              if not error then return reply response
+
+              reply( "Page not found" ).code 404
+
+            return
+
+        template '/rooms/create', data, ( error, response ) ->
 
           if not error then return reply response
 
           reply( "Page not found" ).code 404
-
-
-
-      model.on 'user', response
-      model.on 'room', response
-
-
-
-      Room.find( { } )
-        .where( "url"  , "#{profile}/#{room_id}" )
-        .select( "info" )
-        .lean()
-        .exec ( error, room ) -> 
-
-          if error then return failed request, reply, error
-
-          model.set 'room', room
-
-      User.find( { }, _id: off )
-        .where( 'info.username', profile )
-        .select( 'info' )
-        .lean()
-        .exec( error, user ) -> 
-
-          if error then return failed request, reply, error
-
-          model.set 'user', user

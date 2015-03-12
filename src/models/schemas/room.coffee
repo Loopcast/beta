@@ -23,7 +23,10 @@ schema = new Schema
 
   updated_at: Date
   created_at: Date
-      
+
+schema.statics.findAndModify = (query, sort, doc, options, callback) ->
+  @collection.findAndModify query, sort, doc, options, callback
+
 Room = mongoose.model 'Room', schema
 
 #

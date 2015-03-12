@@ -87,8 +87,6 @@ appcast.connect = ->
     reader.onload = ( e ) ->
       buffer = new Float32Array e.target.result
 
-      console.log "got vu value, broadcasting"
-
       appcast.set 'stream:vu', buffer  
 
     reader.readAsArrayBuffer e.data

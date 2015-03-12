@@ -8,9 +8,9 @@ module.exports = class Meter
     appcast.on 'stream:vu', ( meter ) =>
 
       if @is_left
-        set_volume meter[0] * 100
+        @set_volume meter[0] * 5
       else
-        set_volume meter[1] * 100
+        @set_volume meter[1] * 5
 
   set_volume: ( perc ) ->
 
