@@ -5,6 +5,7 @@ require '../vendors/parallax.min.js'
 
 views           = require './controllers/views'
 navigation      = require './controllers/navigation'
+appcast         = require './controllers/appcast'
 user_controller = require './controllers/user'
 cloudinary      = require './controllers/cloudinary'
 # motion   = require 'app/controllers/motion'
@@ -52,6 +53,9 @@ class App
 			views.bind       '#content'
 			navigation.bind '#content'
 			do user_controller.check_user
+
+		# TODO: try to connect only once on profile page?
+		appcast.connect()
 
 			
 	
