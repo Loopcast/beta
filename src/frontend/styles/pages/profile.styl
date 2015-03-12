@@ -1,7 +1,8 @@
 @import '../_shared/_bootstrap.styl'
 
-.profile_theme
+.createroom
 	background: white
+.profile_theme
 	position  : relative
 	
 	// maybe player should be a global thing right?
@@ -24,9 +25,9 @@
 		background #222
 	
 	h2
-		font-size: 1.3em
+		font-size: 1.2em
 		line-height: 1em
-		margin-bottom: 5px
+		margin-bottom: 0px
 
 	.change_cover
 		position: absolute
@@ -35,6 +36,10 @@
 		transform: translateX(-50%) translateY(-50%)
 		overflow: hidden
 		
+		.ss-camera
+			font-size: 23px
+			top: 5px
+			margin-right: 8px
 	
 	.cover
 		height: 350px
@@ -57,13 +62,17 @@
 			
 		.name
 			font-size: 2.5em
-			margin-bottom: 3px
+			margin-bottom: 0
 			font-weight: 600
 			padding: 5px 10px 10px
 			letter-spacing: 0.03em
 			line-height: 1em
-			margin-top: 3px
+			margin-top: 10px
+			
 			color: GRAY
+			
+		.name, .type, .genres
+			margin-left: 15px
 			
 		.type, .genres, .location
 			font-size: 1em
@@ -96,9 +105,10 @@
 				font-weight: 600
 				transition: transform .3s ease-out
 				transform: translateY(100%)
-				.spritesheet
+				.spritesheet, .icon
 					absolute left 15px top 50%
 					transform: translateY(-50%)
+					font-size: 23px
 				
 	.sidebar_right
 		background: rgba(0,0,0,0.9)
@@ -129,13 +139,13 @@
 			transform: scale(.7,.7)
 				
 	.profile_content
-		padding: 40px 50px
+		padding: 40px 0px
 		display: flex
 		text-align: left
 		.profile_left
 			position: relative
 			width: 290px
-			margin-right: 50px
+			margin-right: 40px
 		.profile_bio
 			width: 100%
 			position: relative
@@ -145,6 +155,7 @@
 				position: absolute
 				top: 5px
 				right: 10px
+				padding-top: 9px
 			h4
 				font-size: 1.1em
 				margin-bottom: 14px
@@ -167,15 +178,19 @@
 			margin-bottom: 40px
 			display: flex
 			height: 170px
+			overflow: visible
+			
 			.image
 				width: 200px
 				background-size: cover
 				background-position: 50% 50%
 				position: relative
-				.spritesheet
+				border-top-left-radius: 5px
+				border-bottom-left-radius: 5px
+				.icon
 					absolute left 50% top 50%
 					transform: translateX(-50%) translateY(-50%)
-					opacity: 0
+					
 			.content
 				flex: 1
 				padding: 16px 20px
@@ -183,28 +198,33 @@
 			
 			h2
 				padding-right: 20px
+				margin-bottom: 8px
 				
 			.session_author
 				color: BLUE
-				font-size: .9em
+				font-size: .86em
 				margin-bottom: 10px
 				display: block
 				
 			
 			.genres
-				margin-bottom: 15px
+				margin-bottom: 4px
 				
 			.small_info
-				color: GRAY_2
+				color: GRAY_4
 				& > *
 					display: inline-block
 					margin-right: 10px
 					font-size: .8em
-					span.spritesheet
+					span.spritesheet, span.icon
 						display: inline-block
 						margin-right: 5px
 						position: relative
 						top: 2px
+						
+					span.ss-play
+						font-size: 0.8em
+						top: 1px
 			.live
 				position: absolute
 				bottom: 10px
@@ -249,8 +269,6 @@
 					
 				
 
-	
-
 	.recorded_sessions
 		.title 
 			margin-bottom: 30px
@@ -259,6 +277,14 @@
 				vertical-align: top
 			h2
 				margin-right: 30px
+				
+			.ss-record-wrapper, .ss-alert
+				position: relative
+				top: 2px
+				margin-right: 5px
+				
+			.ss-alert
+				color: RED
 				
 			.session_icon
 				position: relative
@@ -295,20 +321,7 @@
 	.tag
 		float: left
 		margin-bottom: 5px
-.tag
-	display: inline-block
-	color: white
-	background: #C1C7C6
-	border-radius: 2px
-	padding: 3px
-	margin-right: 5px
-	text-transform: uppercase
-	font-size: .8em
-	line-height: 0.9em
-	
-	
-.small > .tag
-	font-size: 0.6em
+
 	
 
 POPUP_GRAY = #353535
@@ -319,6 +332,8 @@ POPUP_GRAY = #353535
 	.settings_button
 		opacity: 0.6
 		transition: transform .1s linear
+		font-size: 21px
+		transform-origin: 50% 40%
 		&.hovered
 			opacity: 1
 			transform: rotate(-180deg)
@@ -344,8 +359,8 @@ POPUP_GRAY = #353535
 			position: absolute
 			left: 100%
 			top: 10px
-			width: 0;
-			height: 0;
+			width: 0
+			height: 0
 			border-top: SIZE solid transparent
 			border-bottom: SIZE solid transparent
 			border-left: SIZE solid POPUP_GRAY
@@ -415,7 +430,7 @@ POPUP_GRAY = #353535
 	
 .no_touch_device
 	.tag:hover
-		background: darken( #C1C7C6, 10 )
+		background: darken( TAG_COLOR, 10 )
 		
 	.profile_theme
 		.header_settings_hover:hover
@@ -429,8 +444,11 @@ POPUP_GRAY = #353535
 			background: #fff
 			// color: #E5E9E8
 		.profile_content .session:hover
-			.image .spritesheet
-				opacity: 1
+			
+
+			.small_info
+				color: GRAY_2
+			
 				
 	.edit_session_wrapper
 		.settings_button:hover

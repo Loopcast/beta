@@ -1,12 +1,15 @@
 settings  	= require 'app/utils/settings'
 happens  	= require 'happens'
-ways    	= require 'ways'
-ways.use require 'ways-browser'
+# ways    	= require 'ways'
+# ways.use require 'ways-browser'
+url_parser = require 'app/utils/url_parser'
+page = require 'page'
 
 class Navigation
 
 	instance = null
 	first_loading: on
+	first_url_change: true
 
 	constructor: ->
 
@@ -22,10 +25,12 @@ class Navigation
 		happens @
 	
 		# export to window
-		window.ways = ways;
+		# window.ways = ways;
 		
 		# routing
-		ways '*', @url_changed
+		page '*', @url_changed
+		page();
+		# ways '*', @url_changed
 
 
 		# For the first screen, emit the event after_render.
@@ -36,12 +41,15 @@ class Navigation
 
 
 	url_changed: ( req ) =>
+		if @first_url_change
+			@first_url_change = off
+			return
 
+		log "url_changed", req, req.path
 
-		log "url_changed", req.url
 
 		# ie hack for hash urls
-		req.url = req.url.replace( "/#", '' )
+		req.url = req.path.replace( "/#", '' )
 
 		# log " controllers/navigation/url_changed:: #{req.url}"
 		# TODO: 
@@ -74,9 +82,7 @@ class Navigation
 
 				# populate with the loaded content
 				@content_div.append new_content
-				delay 10, =>
-					log "[Navigation] after_render", req.url
-					@emit 'after_render'
+				delay 10, => @emit 'after_render'
 
 	##
 	# Navigates to a given URL using Html 5 history API
@@ -85,44 +91,53 @@ class Navigation
 
 		# If it's a popup, bypass ways and seamless navigation
 		if window.opener?
+			location.href = url
 			return true
 
 		@first_loading = off
 
-		ways.go url
+		log "[Navigates] go", url
+		page url
+		# ways.go url
 
 		return false
 
 	go_silent: ( url, title ) ->
-		if title?
-			ways.go.silent url, title
-		else
-			ways.go.silent url
+		page.replace url, null, null, false
+		
 	##
 	# Looks for internal links and bind then to client side navigation
 	# as in: html History api
 	##
 	bind: ( scope = 'body' ) ->
 
-		$( scope ).find( 'a' ).each ( index, item ) ->
+		$( scope ).find( 'a' ).on 'click', ->
+			$item = $ @
 
-			$item = $ item
-			href = $item.attr( 'href' )
+			href = $item.attr 'href'
 
-			if !href? then return 
+			if !href? then return false
 
 			# if the link has http and the domain is different
 			if href.indexOf( 'http' ) >= 0 and href.indexOf( document.domain ) < 0 
-				return 
+				return true
+
+			if href.indexOf( "javascript" ) is 0 or href.indexOf( "tel:" ) is 0
+				return true
+
+			if $item.attr( 'target' )?
+				return true
 
 			if href.indexOf( "#" ) is 0
-				$item.click -> return false
+				return false
 
-			else if href.indexOf( "javascript" ) is 0 or href.indexOf( "tel:" ) is 0
-				return true
-			else
-				$item.click -> 
-					return Navigation.instance.go $( @ ).attr 'href'
+			# Check if the url is the same
+			a = url_parser.get_pathname href
+			b = url_parser.get_pathname location.pathname
+			if a is b
+				return false 
+
+			return Navigation.instance.go href
 
 
 # will always export the same instance

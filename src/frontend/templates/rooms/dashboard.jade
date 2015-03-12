@@ -1,0 +1,53 @@
+.dashboard_bar(data-view="room/dashboard")
+  .centered
+    .half._left
+      .inner
+
+        .instructions(style="display:none")
+          | PLEASE DOWNLOAD APPCAST AND RUN IT!
+          //- if it's OSX show link to OSX
+          //- if it's WIN show link to WIN
+
+        .select_wrapper.input_select(data-view="components/input_devices")
+          a.button.dashboard_button.with_icon.handler(href="#") 
+            span.text Select your input source
+            span.icon.ss-dropdown
+          select
+            option Select your input source
+            //- option Traktor audio 10
+            //- option Traktor audio 20
+            //- option Traktor audio 30
+      
+        .meter_wrapper.left(data-view="components/audio/meter")
+          span.letter l
+          .meter
+            span.inner_meter
+        .meter_wrapper.right(data-view="components/audio/meter")
+          span.letter r
+          .meter
+            span.inner_meter
+      //- select.source_select
+      //-   option Traktor audio 10
+      //-   option Traktor audio 20
+      //-   option Traktor audio 30
+
+      //- input.source_volume(type="range", name="volume", min="0", max="10")
+
+    .half._right
+      p.button.dashboard_button.with_timer(data-view="components/buttons/go_live")
+        a.gray_part.left_part(href="#") Go live
+        span.yellow_part.right_part 00:00:04
+
+      p.button.dashboard_button.with_timer(data-view="components/buttons/record")
+        a.gray_part.left_part(href="#") Record
+        span.yellow_part.right_part 00:00:04
+
+  //- .broadcast_controls(data-view="buttons/start_stop", data-width="fixed")
+  //-   a.button.green_button.small_button_3.start(title="Start Broadcast") Start Broadcast
+  //-   a.button.green_button.small_button_3.stop(title="Stop Broadcast") Stop Broadcast
+
+  //- p.broadcast_time 00:00:00
+
+  //- .recording_controls(data-view="buttons/start_stop", data-width="fixed")
+  //-   a.button.red_button.small_button_3.start(title="Start Recording") Start Recording
+  //-   a.button.red_button.small_button_3.stop(title="Stop Recording") Stop Recording

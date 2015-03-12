@@ -49,6 +49,8 @@ module.exports = class EditableText
 		@input.off 'keyup'
 
 	open_edit_mode : (e) =>
+		return unless app.body.hasClass( 'write_mode' )
+
 		e?.stopPropagation()
 		log 'open_edit_mode'
 		@dom.addClass 'edit_mode'
@@ -59,6 +61,9 @@ module.exports = class EditableText
 				@close_read_mode()
 
 		app.window.once 'body:clicked', @close_read_mode
+
+	destroy: ->
+		# @text_el.off 'click', @open_edit_mode
 
 
 

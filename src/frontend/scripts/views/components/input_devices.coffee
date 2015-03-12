@@ -1,19 +1,24 @@
 appcast  = require 'app/controllers/appcast'
 happens = require 'happens'
 
-module.exports = ( dom ) ->
+Select = require './select'
 
-  happens @
+module.exports = class InputDevices extends Select
 
-  dom.on 'change', ->
+  constructor: ( dom ) ->
 
-    appcast.set 'input_device', dom.val()
+    super dom
 
-  appcast.on 'input_devices', ( devices ) ->
+    appcast.on 'input_devices', ( devices ) ->
 
-    # clear options
-    # TODO: keep the choosen option selected
-    # TODO: let the user know if previouly selected isn't available anymore
-    dom.html " "
-    for device in devices
-      dom.append "<option value='#{device}'>#{device}</option>"
+      # clear options
+      # TODO: keep the choosen option selected
+      # TODO: let the user know if previouly selected isn't available anymore
+      dom.find( "select" ).html " "
+      
+      for device in devices
+        dom.find( "select" ).append "<option value='#{device}'>#{device}</option>"
+
+    @on 'changed', ( device ) ->
+
+      appcast.set 'input_device', dom.val()

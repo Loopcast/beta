@@ -62,10 +62,6 @@ MARGIN_MODAL = 20px
 	font-size: 1em
 	overflow: hidden
 	
-	
-		
-
-
 
 .md_header
 	margin: 0
@@ -74,12 +70,28 @@ MARGIN_MODAL = 20px
 	font-size: 1em
 	font-weight: 300
 	opacity: 1
-	background: BLACK
+	background: HEADER
 	color: white
 	border-radius: 3px 3px 0 0
 	position: relative
-	padding: 13px MARGIN_MODAL 13px
+	padding: MARGIN_MODAL
 	margin: 0
+	
+	.triangle
+		width: 0;
+		height: 0;
+		border-style: solid;
+		W = 10px
+		border-width: 8px 8px 0 8px;
+		border-color: HEADER transparent transparent transparent;
+		position: absolute
+		left: 50%
+		margin-left: -4px
+		top: 100%
+	
+	h1
+		font-size: 1em
+		text-transform: uppercase
 	.md_logo
 		display: block
 		
@@ -106,6 +118,23 @@ MARGIN_MODAL = 20px
 	p
 		margin: 0
 		padding: 10px 0
+		
+	&.md_login
+		color: HEADER
+		text-align: left
+		font-weight: 600
+		font-size: 0.9em
+		padding: 18px 0 30px
+		
+		.icon
+			font-size: 1.4em
+			margin-right: 10px
+			margin-left: 10px
+			position: relative
+			top: 4px
+			
+		.buttons
+			margin-top: 40px
 		
 	
 #room_modal
@@ -156,6 +185,15 @@ MARGIN_MODAL = 20px
 			
 		.create_label
 			display: none
+			
+
+.md_login
+	width: 300px
+	margin: 0 auto
+	.md_logo
+		display: inline-block
+		vertical-align: middle
+		margin-right: 10px
 		
 .no_touch_device
 	#room_modal

@@ -10,7 +10,10 @@ global.models = ( path ) ->
 global.schema = ( path ) -> 
   require __dirname + "/models/schemas/#{path}"
 
-# everyone users
+global.slugify = (str) ->
+  return str.split( " " ).join( "-" )
+
+# everyone uses
 
 moment = require 'moment'
 
@@ -33,6 +36,12 @@ global.root = path.join( __dirname + "/.."  )
 global.www = ( path ) -> __dirname + "/../www/#{path}"
 
 # widely used functions
+
+Intercom = require( "intercom.io" )
+
+global.intercom = new Intercom 
+  apiKey: s.intercom.key
+  appId : s.intercom.id
 
 # data -> object containing extra info about the error
 # set reply to null if no reply needed

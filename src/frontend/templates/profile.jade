@@ -11,16 +11,13 @@ block content
         h3.type.black_background(data-view="components/editables/editable_select")
           span.text DJ/Producer
         br
-        ul.genres.black_background
-          for genre, i in profile.genres
-            if i < profile.genres.length - 1
-              li #{genre},
-            else
-              li #{genre}
+        p.genres.black_background
+          span.text #{profile.genres.join( ", " )}
+
         .profile_image.upload_wrapper(data-view="components/image_uploader", data-id="profile_picture")
-          img(src="/images/profile_big.png")
-          a.upload_element.edit_image(href="#")
-            span.spritesheet.camera_icon
+          img(src="#{profile.image}")
+          p.upload_element.edit_image
+            span.icon.ss-camera
             span Update profile picture
             span.progress
 
@@ -50,16 +47,18 @@ block content
               | 
 
         a.cover_button.button_with_icon.element_on_read_mode(href="#", data-profile="set-write-mode")
-          span.spritesheet.edit_icon
+          //- span.spritesheet.edit_icon
+          span.icon.ss-write
           span Edit Profile
 
         a.cover_button.button_with_icon.element_on_write_mode(href="#", data-profile="set-read-mode")
-          span.spritesheet.edit_icon
+          //- span.spritesheet.edit_icon
+          span.icon.ss-write
           span Save Profile
 
         .change_cover.upload_wrapper(data-view="components/image_uploader", data-id="profile_cover")
           a.upload_element.button_with_icon.black_button.element_on_write_mode(href="#", data-profile="set-write-mode")
-            span.spritesheet.camera_icon
+            span.icon.ss-camera
             span Change Cover
             span.progress
 
@@ -73,7 +72,8 @@ block content
         .profile_bio.outline_box
           .element_on_read_mode
             a.outline_icon(href="#", title="Edit Profile", data-profile="set-write-mode")
-              span.spritesheet.edit_icon
+              //- span.spritesheet.edit_icon
+              span.icon.ss-write
             h4.location London - UK
             .bio 
               | Thomas Amundsen from Oslo, now based in London has from an early age lots of musical influences, experimenting from acoustic instruments to electronic music production and DJing.
@@ -82,11 +82,11 @@ block content
               | He released his debut EP “I Feel” on Fusion recordings, sub-label of Dj Center Records, and has since released frequently on labels such as; Dobara, Susurrous Music, Incognitus Recordings, Koolwaters and gained support from the likes of Amine Edge, Stacey Pullen, Detlef, Slam, Marc Vedo, Loverdose, Ashley Wild, Jobe and many more
 
             .social
-              a.spotify_link(href="#" title="Spotify")
+              a.spotify_link(href="#" title="Spotify", target="_blank")
                 .spritesheet.profile_spotify
-              a.soundcloud_link(href="#" title="Soundcloud")
+              a.soundcloud_link(href="#" title="Soundcloud", target="_blank")
                 .spritesheet.profile_soundcloud
-              a.facebook_link(href="#" title="Facebook")
+              a.facebook_link(href="#" title="Facebook", target="_blank")
                 .spritesheet.profile_facebook
 
           form.element_on_write_mode.profile_form
@@ -116,13 +116,16 @@ block content
 
             .small_info
               .location 
-                span.spritesheet.icon_location
+                span.icon.ss-location
+                //- span.spritesheet.icon_location
                 span.text #{profile.live.location}
               .likes 
-                span.spritesheet.icon_guests
+                span.icon.ss-heart
+                //- span.spritesheet.icon_guests
                 span.text #{profile.live.loves}
               .guests 
-                span.spritesheet.icon_plays
+                span.icon.ss-users
+                //- span.spritesheet.icon_plays
                 span.text #{profile.live.guests}
 
             .live 
@@ -132,18 +135,23 @@ block content
 
         .recorded_sessions
           .title
-            h2 Recorded session
-            span.session_icon.spritesheet
+            h2 Recorded sessions
+            .icon.ss-record-wrapper
+              span.ss-record
             span.session_text #{profile.recorded.length}
 
-            span.alert_icon.spritesheet
+            span.icon.ss-alert
             span.alert_text #{profile.free_storage} free storage remaining
 
           for room in profile.recorded
-            .session.outline_box(id="session_recorded_#{room.id}", data-view="components/user_set", data-data="#{JSON.stringify(room)}")
+            .session.outline_box(id="session_recorded_#{room.id}", data-view="[components/user_set,components/audio/player_preview]", data-data="#{JSON.stringify(room)}")
 
-              a.image(href="#", title="#{room.title}", style="background-image:url(/images/profile_session_1.jpg)")
-                span.room_play.spritesheet
+              .image(style="background-image:url(/images/profile_session_1.jpg)")
+                a.icon.ss-play.circle_icon(href="#",title="Play") 
+                .share_wrapper(data-view="buttons/share", data-permalink="https://loopcast.com/stefanoortisi/set-1")
+                  a.yellow.ss-action(href="#", title="Share")
+
+
               .content
                 h2.session_title 
                   a(href="#", title="#{room.title}") #{room.title}
@@ -154,17 +162,17 @@ block content
                   
                 .small_info
                   .location 
-                    span.spritesheet.icon_location
+                    span.icon.ss-location
                     span.text #{room.location}
                   .likes 
-                    span.spritesheet.icon_likes
+                    span.icon.ss-heart
                     span.text #{room.loves}
                   .guests 
-                    span.spritesheet.icon_plays
+                    span.icon.ss-play
                     span.text #{room.guests}
 
                 .edit_session_wrapper
-                  a.spritesheet.settings_button.settings_profile_set_hover(href="#", title="Setting Session", data-view="components/click_trigger" data-target="#session_recorded_#{room.id} .edit_session_popup") Settings Session
+                  a.icon.settings_button.ss-settings(href="#", title="Setting Session", data-view="components/click_trigger" data-target="#session_recorded_#{room.id} .edit_session_popup")
                   .edit_session_popup
                     .triangle
                     a.download_button.button.yellow_button.small_button_4(href="#", title="Download") Download

@@ -7,20 +7,20 @@ Compiles a stylus file and return a compiled css file
 fs     = require 'fs'
 path   = require 'path'
 
-# stylus plugins
-
 module.exports = 
 
-	method: 'GET'
-	path  : '/css/{file}'
+  method: 'GET'
+  path  : '/css/{file}'
 
-	handler: ( request, reply ) ->
+  handler: ( request, reply ) ->
 
-		url  = root + '/www/css/' + request.params.file
+    url  = root + '/www/css/' + request.params.file
 
-		# try find on the file system first
-		fs.readFile url, encoding: 'utf-8', ( error, content ) ->
+    console.log "url ->", url
 
-			if error then return reply error
+    # try find on the file system first
+    fs.readFile url, encoding: 'utf-8', ( error, content ) ->
 
-			reply( content ).type( 'text/css')
+      if error then return reply error
+
+      reply( content ).type( 'text/css')

@@ -1,186 +1,126 @@
 .spritesheet {
   background: url( '../images/spritesheet.png' ) no-repeat;
-  background-size: 228px 210px;
-}
-
-.spritesheet.medium_white_logo {
-  width: 114px;
-  height: 70px;
-  background-position: 0 0;
+  background-size: 228px 192px;
 }
 
 .spritesheet.medium_black_logo {
   width: 114px;
   height: 70px;
+  background-position: 0 0;
+}
+
+.spritesheet.medium_white_logo {
+  width: 114px;
+  height: 70px;
   background-position: -114px 0;
-}
-
-.spritesheet.room_play {
-  width: 60px;
-  height: 60px;
-  background-position: 0 -70px;
-}
-
-.spritesheet.play_icon {
-  width: 50px;
-  height: 50px;
-  background-position: -60px -70px;
-}
-
-.spritesheet.profile_soundcloud {
-  width: 48px;
-  height: 48px;
-  background-position: -110px -70px;
 }
 
 .spritesheet.profile_facebook {
   width: 48px;
   height: 48px;
-  background-position: -158px -70px;
+  background-position: 0 -70px;
+}
+
+.spritesheet.profile_soundcloud {
+  width: 48px;
+  height: 48px;
+  background-position: -48px -70px;
 }
 
 .spritesheet.profile_spotify {
   width: 48px;
   height: 48px;
-  background-position: 0 -130px;
+  background-position: -96px -70px;
+}
+
+.spritesheet.share_share {
+  width: 42px;
+  height: 42px;
+  background-position: -144px -70px;
+}
+
+.spritesheet.share_twitter {
+  width: 42px;
+  height: 42px;
+  background-position: -186px -70px;
+}
+
+.spritesheet.share_google {
+  width: 42px;
+  height: 42px;
+  background-position: 0 -118px;
+}
+
+.spritesheet.share_friends {
+  width: 42px;
+  height: 42px;
+  background-position: -42px -118px;
+}
+
+.spritesheet.share_fb {
+  width: 42px;
+  height: 42px;
+  background-position: -84px -118px;
 }
 
 .spritesheet.sprite_small_logo {
   width: 41px;
   height: 25px;
-  background-position: -48px -130px;
+  background-position: -126px -118px;
 }
 
-.spritesheet.sprite_arrow_down_white {
+.spritesheet.share_popup_facebook {
   width: 32px;
   height: 32px;
-  background-position: 0 -178px;
+  background-position: 0 -160px;
+}
+
+.spritesheet.share_popup_google {
+  width: 32px;
+  height: 32px;
+  background-position: -32px -160px;
+}
+
+.spritesheet.share_popup_twitter {
+  width: 32px;
+  height: 32px;
+  background-position: -64px -160px;
 }
 
 .spritesheet.google_button_icon {
   width: 20px;
   height: 31px;
-  background-position: -206px -70px;
+  background-position: -96px -160px;
 }
 
 .spritesheet.facebook_button_icon {
   width: 16px;
   height: 31px;
-  background-position: -32px -178px;
-}
-
-.spritesheet.camera_icon {
-  width: 25px;
-  height: 21px;
-  background-position: -89px -130px;
-}
-
-.spritesheet.header_settings_hover {
-  width: 21px;
-  height: 21px;
-  background-position: -114px -130px;
-}
-
-.spritesheet.header_settings {
-  width: 21px;
-  height: 21px;
-  background-position: -135px -130px;
-}
-
-.spritesheet.settings_profile_set {
-  width: 20px;
-  height: 20px;
-  background-position: -156px -130px;
-}
-
-.spritesheet.settings_profile_set_hover {
-  width: 20px;
-  height: 20px;
-  background-position: -176px -130px;
-}
-
-.spritesheet.messages_icon {
-  width: 20px;
-  height: 16px;
-  background-position: -206px -101px;
-}
-
-.spritesheet.edit_icon {
-  width: 14px;
-  height: 19px;
-  background-position: -196px -130px;
-}
-
-.spritesheet.edit_icon_white {
-  width: 14px;
-  height: 19px;
-  background-position: -210px -130px;
-}
-
-.spritesheet.session_icon {
-  width: 18px;
-  height: 18px;
-  background-position: -48px -155px;
+  background-position: -116px -160px;
 }
 
 .spritesheet.alert_icon {
   width: 18px;
   height: 18px;
-  background-position: -66px -155px;
+  background-position: -167px -118px;
+}
+
+.spritesheet.session_icon {
+  width: 18px;
+  height: 18px;
+  background-position: -185px -118px;
 }
 
 .spritesheet.rooms_icon {
   width: 18px;
   height: 16px;
-  background-position: -84px -155px;
+  background-position: -203px -118px;
 }
 
-.spritesheet.sets_icon {
-  width: 18px;
-  height: 16px;
-  background-position: -102px -155px;
-}
-
-.spritesheet.people_icon {
-  width: 18px;
-  height: 16px;
-  background-position: -120px -155px;
-}
-
-.spritesheet.header_search_icon {
+.spritesheet.icon_like_transparent {
   width: 16px;
-  height: 15px;
-  background-position: -138px -155px;
-}
-
-.spritesheet.icon_guests {
-  width: 14px;
-  height: 14px;
-  background-position: -154px -155px;
-}
-
-.spritesheet.icon_plays {
-  width: 9px;
-  height: 14px;
-  background-position: -168px -155px;
-}
-
-.spritesheet.icon_likes {
-  width: 13px;
-  height: 12px;
-  background-position: -177px -155px;
-}
-
-.spritesheet.icon_location {
-  width: 12px;
-  height: 12px;
-  background-position: -190px -155px;
-}
-
-.spritesheet.small_arrow_white {
-  width: 10px;
-  height: 5px;
-  background-position: -60px -120px;
+  height: 16px;
+  background-position: -126px -143px;
 }
 
 
@@ -191,7 +131,7 @@
 (min-device-pixel-ratio: 2) {
 .spritesheet {
   background: url( '../images/spritesheet-retina.png' ) no-repeat;
-  background-size: 228px 210px;
+  background-size: 228px 192px;
 }
 
 }

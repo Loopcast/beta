@@ -1,0 +1,174 @@
+@import '../_shared/_bootstrap.styl'
+
+.profile_theme.createroom
+  .cover
+    border-bottom: none
+    
+
+    
+
+.source_controls
+  width: 220px
+  
+  input, select
+    display: block
+    width: 100%
+    
+.dashboard_bar
+  color: white
+  height: 100px
+  width: 100%
+  background: url("/images/dashboard_gradient.png")
+  text-align: left
+  padding: 12px
+  
+  .centered
+    position: relative
+    overflow: hidden
+    
+  .half
+    float: left
+    width: 50%
+    padding: 0 1.5%
+    
+    &._left
+      text-align: right
+      .inner
+        width: 222px
+        display: inline-block
+        overflow: hidden
+        & > *
+          float: right
+          
+      .select_wrapper
+        margin-bottom: 13px
+        
+      .meter_wrapper
+        margin-bottom: 3px
+      
+    &._right
+      text-align: left
+    & > *
+      margin-bottom: 7px
+      
+    br
+      margin-bottom: 0
+    
+    .meter_wrapper
+      margin-bottom: 0
+  .left_part
+  .right_part
+    width: 150px
+    
+  .select_wrapper
+    .button
+      overflow: visible
+    
+
+
+// Chat System
+.profile_content.chat
+  min-height: 440px
+  display: flex
+  flex-direction: row
+  padding: 0
+  color: GRAY_2
+  font-size: 0.8em
+  line-height: 1.2em
+    
+  .chat_sidebar    
+    width: 300px
+    border-left: 1px solid #d5d5d5
+    padding: 16px
+    display: flex
+    
+    flex-direction: column
+    .inner
+      flex: 1
+    h3
+      text-transform: uppercase
+      color: black
+      font-weight: 600
+      span
+        color: BLUE
+        
+    h3
+    .social
+      padding-left: 5px
+
+    .users
+      text-align: center
+      margin-top: 20px
+    .img_wrapper
+      display: inline-block
+      overflow: hidden
+      border-radius: 50%
+      margin: 4px
+      img
+        display: block
+        
+    .spritesheet
+      display: inline-block
+      margin-right: 8px
+      text-indent: -9999px
+        
+  .chat_main
+    flex: 1
+    flex-direction: column
+    display: flex
+    .chat_header
+    .chat_footer
+      position: relative
+      overflow: hidden
+      
+    .chat_header
+      height: 64px
+      padding: 16px
+    .chat_content
+      flex: 1
+      border-bottom: 1px solid #d5d5d5
+      border-top: 1px solid #d5d5d5
+      
+      &.no_chat_yet
+        display: flex
+        align-items: center
+        justify-content: center
+        .no_chat
+          display: block
+      
+  .no_chat
+    display: none
+    font-size: 2em
+    text-align: center
+    font-weight: 600
+
+  
+      
+    
+    
+  .chat_footer
+    padding: 16px
+    padding-left: 60px
+    
+    textarea
+      position: relative
+      top: -7px
+      background: none
+      outline: none
+      font-size: 1.2em
+      
+
+    .img_wrapper
+      display: inline-block
+      border-radius: 4px
+      overflow: hidden
+      absolute left 16px top 16px
+      img
+        display: block
+
+    
+    
+.no_touch_device
+  .profile_content.chat .chat_sidebar .spritesheet:hover
+    opacity: 0.8
+    

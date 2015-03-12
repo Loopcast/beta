@@ -10,7 +10,8 @@
       label(for="username") Title*
       input.roomname(name="name", type="text", placeholder="Enter room name")
       label(for="genre") Genre
-      input.genre(name="genre", type="text", placeholder="Choose genre")
+      .tags_wrapper.genre(data-view="components/editables/editable_tags")
+        textarea( id="genre_input", rows="1", style="width:310px")
       label(for="location") Location
       input.location(name="location", type="text", placeholder="Where are you?")
       textarea.description.white_textarea(name="description", placeholder="Describe your event")

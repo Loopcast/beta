@@ -50,3 +50,10 @@ module.exports = class Modal
 
 	hide_loading: ( ) ->
 		@dom.removeClass 'loading'
+
+	destroy: ->
+		log "[Modal] removed"
+		@dom = null
+		@on = null
+		@off = null
+		@once = null

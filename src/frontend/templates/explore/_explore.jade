@@ -1,0 +1,32 @@
+extends ./../layout
+
+block content
+  .explore(data-menu="explore", data-menu-fixed="false")
+
+    block submenu
+
+    .sub_header(data-view="components/fixed_bar")
+      ul.centered
+        li.sub_header_rooms
+          a(href="/rooms", title="Rooms")
+            span.spritesheet.rooms_icon
+            span Rooms
+        li.sub_header_people
+          a(href="/people" title="People")
+            span.icon.ss-users
+            span People
+        li.sub_header_sets
+          a(href="/sets" title="Sets")
+            .icon.ss-record-wrapper
+              span.ss-record
+            span Sets
+
+    .explore_content.flex.centered(data-view="explore")
+      .flex_sidebar.genres_list
+        a.selected(title="All genres", href="#", data-genre-id="all-genres") All genres
+        each g in genres
+          a(title="#{g}" href="#", data-genre-id="#{slugify(g)}") #{g}
+
+
+      .flex_content.rooms_grid
+        block grid

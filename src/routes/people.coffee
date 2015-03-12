@@ -12,7 +12,7 @@ module.exports =
   path  : '/people'
   handler: ( request, reply )->
 
-    url = request.url.href
+    url = "/explore/" + request.url.href
 
     load ( error, data ) ->
 

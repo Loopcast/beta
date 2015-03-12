@@ -1,4 +1,5 @@
 happens = require 'happens'
+happens_destroy = require 'app/utils/happens_destroy'
 
 class View
 
@@ -88,7 +89,9 @@ class View
 			v = view.get_by_uid id
 
 			if v
+				happens_destroy v
 				v.destroy?()
+				v.view_name = null
 				view.on_view_destroyed id
 
 		).promise().done => @emit "unbinded"

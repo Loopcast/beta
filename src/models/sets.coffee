@@ -7,28 +7,32 @@ module.exports = ( callback ) ->
 
 
   callback null,
-    genres: [
-      "Deep House"
-      "Disco"
-      "Drum'n Bass"
-      "Techno"
-    ]
+    genres:
+      "house"        : "House",
+      "tech-house"   : "Tech House",
+      "electro-house": "Electro House",
+      "ambient"      : "Ambient",
+      "alternative"  : "Alternative",
+      "experimental" : "Experimental"
+
     sets: [
         title    : "Last Saturday Set"
         author   : "Thomas Amundsen"
         kind     : "Dj/Producer"
-        genres   : [ "House", "Tech House", "Electro House" ]
+        genres   : [ "house", "tech-house", "electro-house" ]
         location : "London/UK"
         loves    : 26
         plays    : 273
+        thumb    : "/images/room_thumb.png"
         url      : "/thomas/last-saturday-set"
       ,
         title    : "Deeeeeeelicious"
         author   : "hems"
         kind     : "Dj/Producer"
-        genres  : [ "Ambient", "Alternative", "Experimental" ]
+        genres  : [ "house", "ambient", "alternative", "experimental" ]
         location : "London/UK"
         loves    : 26
         plays    : 273
+        thumb    : "/images/room_thumb.png"
         url      : "/hems/deeeeeeelicious"
       ]

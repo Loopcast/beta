@@ -8,3 +8,6 @@ module.exports = class ScrollHandler
 		
 		@dom.on 'click', ->
 			mover.scroll_to target
+
+  destroy: ->
+    @dom.off 'click'

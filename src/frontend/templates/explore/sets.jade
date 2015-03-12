@@ -1,0 +1,43 @@
+extends ./_explore
+
+block submenu
+  span(data-submenu="sub_header_sets")
+
+block grid
+
+  for item in sets
+
+    - klasses = "item-all-genres"
+    for g in item.genres
+      - klasses += " item-" + slugify(g)
+
+    .room_cell.item(class="#{klasses}", data-view="components/audio/player_preview")
+      a(href="#", title="#{item.title}", class="thumb_wrapper") 
+        img.room_thumb(src="#{item.thumb}")
+        span.icon.ss-play.circle_icon
+
+      .room_content
+        .text
+          h2.room_title 
+            a(href="#{item.url}", title="#{item.title}") #{item.title}
+          a.room_subtitle.blue(title="#{item.author}", href="#{item.url}") #{item.author}
+          .genres.small
+            for g in item.genres
+              a.tag(href="#", title="#{g}", data-genre-id="#{g}") #{g}
+
+          .likes 
+            span.icon.ss-heart
+            //- span.spritesheet.icon_likes_small
+            span.text #{item.loves}
+          .plays
+            span.icon.ss-play
+            //- span.spritesheet.icon_plays_small
+            span.text #{item.plays}
+          
+
+        a.share_set.left.rounded_border(href="#", title="Share Set")
+          //- span.spritesheet.icon_share
+          span.icon.ss-action
+        a.like_set.right(href="#", title="Like Set")
+          span.icon.ss-heart
+          //- span.spritesheet.icon_like_transparent

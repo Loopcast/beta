@@ -36,7 +36,7 @@ module.exports = ( dom ) ->
     genres_dom = dom.find( '.genres' )
     str = ''
     for genre in genres
-      str += "<a class='tag' title='#{genre}'>#{genre}</a>"
+      str += "<a class='tag' href='#' title='#{genre}'>#{genre}</a>"
 
     genres_dom.html str
 

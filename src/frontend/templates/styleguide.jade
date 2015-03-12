@@ -4,6 +4,7 @@ block content
 	.centered.styleguide
 		.buttons_wrapper
 			p Colors
+			a.button.yellow_button.black_hover(href="#") .yellow_button.black_hover
 			a.button.yellow_button(href="#") .yellow_button
 			a.button.save_button(href="#") .save_button
 			a.button.green_button(href="#") .green_button
@@ -12,15 +13,39 @@ block content
 			a.button.gray_button_2(href="#") .gray_button_2
 			a.button.white_transparent_button(href="#") .white_transparent_button
 			a.button.white_button(href="#") .white_button
+			a.button.dashboard_button(href="#") .dashboard_button
+			a.button.dashboard_button.with_icon(href="#") 
+				span.text .dashboard_button.with_icon
+				span.icon.ss-dropdown
+			p.button.dashboard_button.with_timer
+				a.gray_part.left_part(href="#") .gray_part
+				span.yellow_part.right_part(href="#") .yellow_part
 			br
 			p Sizes
 			a.button.yellow_button.small_button_3(href="#") .small_button_3
 			a.button.yellow_button.small_button(href="#") .small_button
 			a.button.yellow_button.small_button_2(href="#") .small_button_2
 			a.button.yellow_button.small_button_4(href="#") .small_button_4
+			a.button.save_button.normal_button_2(href="#") .normal_button_2
 
 		.loading_wrapper
 			.loading_spin.large
 			.loading_spin.medium
 			.loading_spin
 			.loading_spin.small
+
+			a.rounded_border(href="#") .rounded_border
+
+			.meter_wrapper
+				span.letter l
+				.meter
+					span.inner_meter
+
+			a.icon.ss-action.yellow(href="#")
+
+
+		.tags_wrapper
+			input(type="text", class="tags", value="foo,bar", data-view="components/editables/editable_tags")
+			input.link_input(type="text", readonly="readonly" value="https://loopcast.com/stefanoortisi/set-1")
+
+

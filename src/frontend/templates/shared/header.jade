@@ -1,41 +1,42 @@
 header.header(data-view="header")
-	.background
-	.centered
-		.left
-			a.homepage_item.menu_item(href="/" class="menu_logo" title="Loopcast Logo")
-				span.spritesheet(class="sprite_small_logo") Loopcast Logo
-			a.explore_item.menu_item(href="/rooms" title="Explore") Explore
-			a.create_room_item.menu_item(href="/rooms/create" title="Create Room", data-view="components/logged_link") Create Room
-			.search_box.no_border
+  .background
+  .centered
+    .left
+      a.homepage_item.menu_item(href="/" class="menu_logo" title="Loopcast Logo")
+        span.spritesheet(class="sprite_small_logo") Loopcast Logo
+      a.explore_item.menu_item.header_shadow_item(href="/rooms" title="Explore") Explore
+      a.create_room_item.menu_item.header_shadow_item(href="/rooms/create" title="Create Room", data-view="components/logged_link") Create Room
+      .search_box.no_border
 
-				span.spritesheet.header_search_icon
-				form
-					input.dark_input(type="text" name="search" placeholder="Search...")
+        span.icon.ss-icon &#x1F50E;
+        form
+          input.dark_input(type="text" name="search" placeholder="Search...")
 
 
-		.right
-			//- a(href="#" title="Sign Up") Sign Up
-			.user_logged
+    .right
+      //- a(href="#" title="Sign Up") Sign Up
+      .user_logged
 
-			a.login_link(
-				title="Log In", 
-				data-view="components/login_popup_handler",
-				href="#"
-			) Log In
-			div.settings.hover_dropdown_trigger(title="Settings" data-view="components/click_trigger" data-target=".settings_dropdown")
-				span.spritesheet.header_settings
+      a.login_link(
+        title="Log In", 
+        data-view="components/login_popup_handler",
+        href="#"
+      ) Log In
+      div.settings.hover_dropdown_trigger(title="Settings" data-view="components/click_trigger" data-target=".settings_dropdown")
+        span.icon.ss-settings
+        //- span.spritesheet.header_settings
 
-				ul.settings_dropdown.hover_dropdown
-					li
-						a(href="#" title="About Loopcast") About Loopcast
-					li
-						a(href="#" title="Help") Help
-					li
-						a(href="#" title="Blog") Blog
-					li
-						a(href="#" title="Advertising") Advertising
-					li
-						a(href="#" title="Privacy") Privacy
-					li
-						a(href="#" title="Terms of use") Terms of use
-		
+        ul.settings_dropdown.hover_dropdown
+          li
+            a(href="/about" title="About Loopcast") About Loopcast
+          li
+            a(href="https://loopcast.desk.com/" target="_blank" title="Help") Help
+          li
+            a(href="http://blog.loopcast.fm/" target="_blank" title="Blog") Blog
+          li
+            a(href="https://loopcast.desk.com/customer/portal/articles/1461785-why-advertise-on-loopcast" target="_blank" title="Advertising") Advertising
+          li
+            a(href="#" title="Privacy") Privacy
+          li
+            a(href="#" title="Terms of use") Terms of use
+    

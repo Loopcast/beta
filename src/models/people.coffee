@@ -7,19 +7,20 @@ module.exports = ( callback ) ->
 
 
   callback null,
-    genres:
-      "house"        : "House",
-      "tech-house"   : "Tech House",
-      "electro-house": "Electro House",
-      "ambient"      : "Ambient",
-      "alternative"  : "Alternative",
-      "experimental" : "Experimental"
+    genres: [
+      "House",
+      "Tech House",
+      "Electro House",
+      "Ambient",
+      "Alternative",
+      "Experimental"
+    ]
     
     people: [
         id       : 'thomas-amundsen'
         author   : "Thomas Amundsen"
         kind     : "Dj/Producer"
-        genres   : [ "house", "tech-house", "electro-house" ]
+        genres   : [ "House", "Tech House", "Electro House" ]
         location : "London/UK"
         followers: 45
         url      : "/thomas"
@@ -29,7 +30,7 @@ module.exports = ( callback ) ->
         id       : 'hems'
         author   : "hems"
         kind     : "Dj/Producer"
-        genres  : [ "house", "ambient", "alternative", "experimental" ]
+        genres  : [ "House", "Ambient", "Alternative", "Experimental" ]
         location : "London/UK"
         followers: 45
         url      : "/hems"

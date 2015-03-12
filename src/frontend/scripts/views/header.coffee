@@ -1,6 +1,5 @@
 navigation      = require 'app/controllers/navigation'
 user_controller = require 'app/controllers/user'
-
 module.exports = class Header
 
 	current_page: ""
@@ -28,6 +27,21 @@ module.exports = class Header
 			@current_page = page
 
 
+		obj = $( '[data-submenu]' )
+		if obj.length > 0
+			submenu = obj.data 'submenu'
+			$( ".#{submenu}" ).addClass 'selected'
+
+
+		obj = $( '[data-menu-fixed]' )
+		if obj.length > 0
+			if obj.data( 'menu-fixed') is false
+				app.body.addClass 'unfixed'
+		else
+			app.body.removeClass 'unfixed'
+
+
+
 	on_user_logged: ( data ) =>
 
 		return if @user_logged
@@ -35,7 +49,9 @@ module.exports = class Header
 		
 		wrapper = @dom.find( '.user_logged' )
 		tmpl    = require 'templates/shared/header_user_logged'
+
 		html    = tmpl data
+
 
 		log "[Header] on_user_logged", data, html
 
@@ -44,6 +60,7 @@ module.exports = class Header
 		wrapper.empty().append html
 
 		view.bind wrapper
+		navigation.bind wrapper
 
 
 

@@ -12,3 +12,7 @@ module.exports = class Fullscreen
 		@dom.css
  			'width' : '100%'
  			'height' : (app.window.h - app.settings.header_height)*@factor
+
+
+  destroy: ->
+    app.window.off 'resize', @on_resize    

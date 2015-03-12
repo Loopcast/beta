@@ -15,3 +15,7 @@ module.exports = class Hover
 
 	on_mouse_leave: ( ) =>
 		@dom.removeClass 'hovered'
+
+	destroy: ->
+		@dom.off 'mouseover', @on_mouse_over
+		@dom.off 'mouseleave', @on_mouse_leave

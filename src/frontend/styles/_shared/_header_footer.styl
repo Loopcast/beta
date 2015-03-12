@@ -5,15 +5,18 @@ header.header
 	top: 0
 	left: 0
 	color: white
-	height: 42px
+	height: HEADER_HEIGHT
 	z-index: 3
+	
+	.header_shadow_item
+		transition: box-shadow .2s linear
 	
 	.background
 		absolute top 0 left 0
 		width: 100%
 		height: 100%
 		z-index: 1
-		background: BLACK
+		background: HEADER  
 		
 	.centered
 		position: relative
@@ -25,22 +28,30 @@ header.header
 		& > *
 		
 			display: inline-block
-			padding: 9px 22px
+			padding: 13px 22px
 			vertical-align: top
 			height: HEADER_HEIGHT
 			
 			&.settings
-				padding-top: 10px
+				padding-top: 13px
 				padding-bottom: 0
 				cursor: pointer
 				height: HEADER_HEIGHT
 				position: relative
-				span
+				.ss-settings
 					transition: transform .1s linear
+					display: block
+					transform-origin: 49.5% 51%;
+					text-align: center
+					width: 22px
+					height: 22px
+					display: inline-block
+					font-size: 1.2em
+						
 					
 				&.hovered
-					span
-						transform: rotate(360deg)
+					.ss-settings
+						transform: rotate(180deg)
 						
 	.menu_item
 		position: relative
@@ -62,7 +73,7 @@ header.header
 		float: left
 		& > *
 			border-right: 1px solid #333
-			padding: 9px 25px
+			padding: 13px 25px
 			
 			&.no_border
 				border-right: none
@@ -78,9 +89,9 @@ header.header
 	.search_box
 		position: relative
 		padding-left: 56px
-		.spritesheet
+		.icon
 			position: absolute;
-			top: 14px
+			top: 16px
 			left: 25px;
 		form
 			display: inline-block
@@ -93,22 +104,27 @@ header.header
 			vertical-align: middle
 		.thumb_wrapper
 			padding-right: 30px
-			margin-right: 10px
+			margin-right: 20px
 			position: relative
 			height: HEADER_HEIGHT
-			.spritesheet
+			span
 				position: absolute
-				top: 43%
+				top: 42%
 				right: 10px
+				font-size: 0.6em
 			&.hovered
-				.spritesheet
+				span
+					top: 36%
 					transform: rotate(180deg)
 				
 	.user_dropdown
 		right: 0px
 		
-	.messages_icon
+	.ss-mail
 		display: block
+		position: relative
+		top: 3px
+		font-size: 1.2em
 	
 .first_loaded
 	header
@@ -119,7 +135,18 @@ header.header
 			display: inline-block
 		.login_link
 			display: none
-		
+
+.unfixed
+	padding-top: 0
+	header
+		position: relative
+
+
+.no_touch_device
+	.header_shadow_item.selected
+		box-shadow: inset 0 0 10px rgba(0,0,0,.4)
+	.header_shadow_item:hover
+		box-shadow: inset 0 0 10px rgba(0,0,0,.2)
 
 footer
 	background: BLACK

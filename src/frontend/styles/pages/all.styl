@@ -14,27 +14,83 @@
 		background: white
 		padding: 10px
 		border: 1px solid #ccc
-
-// CREATEROOM
-.profile_theme.createroom
-	.cover
-		border-bottom: none
 		
+	.tags_wrapper
+	.loading_wrapper
+		width: 50%
+		margin: 10px
+		vertical-align: top
+		
+	.tags_wrapper
+		background: BLACK
+		color: GRAY
+		padding: 10px
 
-.source_controls
-	width: 220px
-	
-	input, select
-		display: block
-		width: 100%
-.dashboard_bar
-	color: white
-	height: 100px
-	width: 100%
-	background: url("/images/dashboard_gradient.png")
+
+// ABOUT
+.about_page
+	color: #808184
 	text-align: left
-	padding: 20px
+	padding: 0 20px
 	
-	& > *
+	.about_title
+		font-size: 1.8em
+		font-weight: 800
+		
+	h1
+		border-bottom: 1px solid GRAY
+		
+		padding: 11px 30px
+		position: relative
+		&:after
+			content: ""
+			position: absolute
+			bottom: 0px
+			left: 0
+			height: 1px
+			width: 100%
+			background: #f5f5f5
+
+	.about_content
+		padding: 50px 30px
+		font-size: 0.9em
+		line-height: 1.9em
+		overflow: hidden
+		letter-spacing: 0.01em
+		text-align: center
+
+	.about_description
+		text-align: left
+	.about_column
+		margin-top: 40px
+		margin-bottom: 60px
+		float: left
+		width: 33%
+		padding: 0 30px
+		img
+			width: 100%
+			max-width: 200px
+			margin: 0 auto
+			display: block
+			
+		h4
+			color: #5ca7b3
+			font-size: 1.4em
+			font-weight: 600
+			margin-bottom: 30px
+			
+		p
+			line-height: 21px
+			
+	.button
+		margin: 20px 0
 		display: inline-block
-		margin-right: 20px
+		padding-left: 60px
+		padding-right: 60px
+		
+@media (max-width: 950px)
+	.about_page
+		.about_column
+			width: 100%
+			float: none
+		
