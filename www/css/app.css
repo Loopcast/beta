@@ -3300,6 +3300,34 @@ body {
   transform: translateX(-50%);
 }
 
+/* line 67 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/index.styl */
+@media (max-height: 600px) {
+
+/* line 68 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/index.styl */
+  .landing .black_box {
+    padding-top: 30px;
+  }
+
+/* line 70 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/index.styl */
+  .landing .black_box .spritesheet {
+    -webkit-transform: scale(0.7, 0.7);
+    -moz-transform: scale(0.7, 0.7);
+    -o-transform: scale(0.7, 0.7);
+    -ms-transform: scale(0.7, 0.7);
+    transform: scale(0.7, 0.7);
+    position: relative;
+    left: -16px;
+    margin-bottom: 0;
+  }
+
+/* line 76 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/index.styl */
+  .landing .black_box h1 {
+    line-height: 28px;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+  }
+}
+
 
 /* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
