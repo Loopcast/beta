@@ -19,6 +19,8 @@ module.exports = class Profile
 
 	constructor: ( @dom ) ->
 
+
+
 		@elements = 
 			profile_picture: @dom.find( '.profile_image img' )
 			cover_picture: @dom.find( '.cover_image' )
@@ -66,7 +68,6 @@ module.exports = class Profile
 
 
 	on_views_binded: =>
-
 
 		log "[Profile] on_views_binded"
 		# Listen to images upload events

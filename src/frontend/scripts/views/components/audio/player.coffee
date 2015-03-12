@@ -1,7 +1,5 @@
 module.exports = class Player
   constructor: ( @dom ) ->
-    log "Player"
-
     @cover = @dom.find '.player_icon img'
     @title = @dom.find '.player_title'
     @author = @dom.find '.player_author'

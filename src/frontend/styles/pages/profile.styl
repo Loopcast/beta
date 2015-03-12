@@ -111,25 +111,37 @@
 					font-size: 23px
 				
 	.sidebar_right
-		background: rgba(0,0,0,0.9)
+		
 		absolute top 0 right 0
 		height: 100%
 		text-align: center
 		color: GRAY_1
-		padding: 30px 15px
+		
 		transition: background .5s linear, color .5s linear
+		display: flex
+		flex-direction: column
 	.big_number
-		margin-bottom: 20px
+		flex: 1
+		padding: 0px 15px
+		background: rgba(0,0,0,0.9)
+		border-bottom: 1px solid GRAY_2
+		display: flex
+		align-items: center
+		text-align: center
+		&:last-child
+			border-bottom: none
+		.inner
+			width: 100%
+			display: block
 		span
 			display: block
 			
 			&.number
-				font-size: 2.4em
-				line-height: 1.1em
+				font-size: 2.0rem
 				
 			&.text
-				font-size: .9em
-				line-height: 1em
+				font-size: .7rem
+		
 				
 	.cover_button
 		position: absolute
