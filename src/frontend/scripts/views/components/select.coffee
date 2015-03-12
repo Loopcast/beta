@@ -1,7 +1,9 @@
 happens = require 'happens'
 
 module.exports = class Select
+
   constructor: ( @dom ) ->
+
     happens @
     @dom.addClass 'select_wrapper'
 
@@ -11,6 +13,7 @@ module.exports = class Select
     ref = @
 
     select.on 'change', ->
+      
       handler.html select.val()
 
       ref.emit 'changed', select.val()

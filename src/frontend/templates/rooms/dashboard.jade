@@ -2,15 +2,21 @@
   .centered
     .half._left
       .inner
-        .select_wrapper.input_select(data-view="components/select")
+
+        .instructions(style="display:none")
+          | PLEASE DOWNLOAD APPCAST AND RUN IT!
+          //- if it's OSX show link to OSX
+          //- if it's WIN show link to WIN
+
+        .select_wrapper.input_select(data-view="components/input_devices")
           a.button.dashboard_button.with_icon.handler(href="#") 
             span.text Select your input source
             span.icon.ss-dropdown
           select
             option Select your input source
-            option Traktor audio 10
-            option Traktor audio 20
-            option Traktor audio 30
+            //- option Traktor audio 10
+            //- option Traktor audio 20
+            //- option Traktor audio 30
       
         .meter_wrapper.left(data-view="components/audio/meter")
           span.letter l
@@ -28,11 +34,11 @@
       //- input.source_volume(type="range", name="volume", min="0", max="10")
 
     .half._right
-      p.button.dashboard_button.with_timer
+      p.button.dashboard_button.with_timer(data-view="components/buttons/go_live")
         a.gray_part.left_part(href="#") Go live
         span.yellow_part.right_part 00:00:04
 
-      p.button.dashboard_button.with_timer
+      p.button.dashboard_button.with_timer(data-view="components/buttons/record")
         a.gray_part.left_part(href="#") Record
         span.yellow_part.right_part 00:00:04
 

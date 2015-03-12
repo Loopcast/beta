@@ -86,11 +86,25 @@ appcast.connect = ->
     reader.onload = ( e ) ->
       buffer = new Float32Array e.target.result
 
+      console.log "got vu value, broadcasting"
+      
       appcast.set 'stream:vu', buffer  
 
     reader.readAsArrayBuffer e.data
 
 appcast.start_stream = ( device_name ) ->
+
+  console.info " START STRAEM!!!"
+
+  if appcast.get( "stream:starting" )
+    console.error "waiting stream to start, cant start again"
+
+    return
+
+  if appcast.get( "stream:online" )
+    console.error "stream is already online, cant start again"
+
+    return
 
   mount_point = "hems"
   password    = "loopcast2015"
@@ -99,6 +113,8 @@ appcast.start_stream = ( device_name ) ->
     device_name : device_name
     mount_point : mount_point
     password    : password
+
+  console.info "SENDING START STREAM TO APPCAST"
 
   appcast.set "stream:starting", true
   appcast.messages.send JSON.stringify [ "start_stream", payload ]
@@ -134,6 +150,8 @@ appcast.callbacks =
 
       return
 
+    console.info "APPCAST REPLIED: STREAM STARTED!"
+
     # save current stream:online status
     appcast.set 'stream:online', true
 
@@ -157,6 +175,6 @@ appcast.on 'input_device', ->
     console.error '? what should we do'
 
 # should try to connect only on it's own profile page
-appcast.connect()
+# appcast.connect()
 
-module.exports = appcast
+module.exports = window.appcast = appcast
