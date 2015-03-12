@@ -96,12 +96,15 @@ module.exports = class RoomModal extends Modal
 		@dom.addClass 'edit_modal'
 		@title.val data.title
 		@genre.add_tags data.genres
-		@location.val data.location
-		@description.val data.about
+		# @location.val data.location
+		# @description.val data.about
+		@location.hide()
+		@description.hide()
 
 		@open()
 
 		return false
+
 
 	destroy: ->
 		log "[RoomModal] removed"

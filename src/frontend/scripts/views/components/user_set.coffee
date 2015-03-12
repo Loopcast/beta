@@ -21,6 +21,7 @@ module.exports = ( dom ) ->
 
   _edit = ->
     settings_handler.close()
+
     edit_modal.open_with_data dom.data( 'data' )
     edit_modal.once 'submit', _on_edit_submit
 
