@@ -91,7 +91,7 @@ appcast.connect = ->
 
     reader.readAsArrayBuffer e.data
 
-appcast.start_stream = ( device_name ) ->
+appcast.start_stream = ( username, device_name ) ->
 
   console.info " START STRAEM!!!"
 
@@ -106,6 +106,7 @@ appcast.start_stream = ( device_name ) ->
     return
 
   mount_point = "hems"
+  mount_point = username
   password    = "loopcast2015"
 
   payload = 
