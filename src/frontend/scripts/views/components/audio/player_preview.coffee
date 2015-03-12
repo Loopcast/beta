@@ -1,7 +1,13 @@
 module.exports = (dom) ->
   
   is_playing = false
-  icon       = dom.find '.circle_icon'
+  icon       = dom.find '.ss-play'
+  if icon.length <= 0
+    icon       = dom.find '.ss-pause'
+
+    if icon.length <= 0
+      log "ERROR -> [PLAYER PREVIEW]. icon.length <= 0"
+      return
 
   ref = @
 
