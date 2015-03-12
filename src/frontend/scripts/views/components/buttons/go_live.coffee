@@ -13,8 +13,11 @@ module.exports = ( dom ) ->
 
       return
 
+    # TODO: make it clever
+    username = location.pathname.split("/")[1]
+
     # start Appcast streaming
-    appcast.start_stream appcast.get( 'input_device' )
+    appcast.start_stream username, appcast.get( 'input_device' )
 
     dom.find('a').html "WAITING APPCAST"
 
