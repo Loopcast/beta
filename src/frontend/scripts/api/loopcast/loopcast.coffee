@@ -40,11 +40,11 @@ module.exports =
 
       data = room_id: room_id
 
-      request = $.post api_url + 'rooms/start_stream', data
+      request = $.post api_url + 'stream/start', data
 
       request.error ( error ) ->
 
-        console.error 'error creating calling room/start_stream'
+        console.error 'error creating calling stream/start'
         console.error error
 
         callback error
@@ -63,11 +63,11 @@ module.exports =
 
       data = room_id: room_id
 
-      request = $.post api_url + 'rooms/start_recording', data
+      request = $.post api_url + 'tape/start', data
 
       request.error ( error ) ->
 
-        console.error 'error creating calling room/start_recording'
+        console.error 'error creating calling tape/start'
         console.error error
 
         callback error
