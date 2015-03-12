@@ -18,8 +18,7 @@ module.exports = class HoverTrigger
 		@dom.addClass "hover_dropdown_trigger"
 		@set_listeners()
 
-		app.on "dropdown:opened", @on_dropdown_opened
-		app.on "dropdown:closed", @on_dropdown_closed
+
 
 	set_listeners: ( ) ->
 
@@ -29,7 +28,10 @@ module.exports = class HoverTrigger
 			@dom.on 'mouseover', @open
 			@target.on 'mouseleave', @close
 
+		app.on "dropdown:opened", @on_dropdown_opened
+		app.on "dropdown:closed", @on_dropdown_closed
 		app.window.on "body:clicked", @close
+		app.window.on "scroll", @close
 
 		
 	toggle: ( e ) =>
@@ -78,6 +80,7 @@ module.exports = class HoverTrigger
 			@target.off 'mouseleave', @close
 
 		app.window.off "body:clicked", @close
+		app.window.off "scroll", @close
 
 		app.off "dropdown:opened", @on_dropdown_opened
 		app.off "dropdown:closed", @on_dropdown_closed

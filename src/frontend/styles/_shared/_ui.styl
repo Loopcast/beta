@@ -402,7 +402,7 @@ input, textarea, div.tagsinput
 .hover_dropdown
 	position: absolute
 	right: 0
-	background: lighten( HEADER, 2 )
+	background: SHARE_BOX
 	color: GRAY
 	font-size: .85rem
 	width: 140px
@@ -668,13 +668,12 @@ input, textarea, div.tagsinput
 	
 .share_wrapper
 	position: relative
-	COLOR_BOX = #4E5052
 
 	.share_box
 		absolute bottom 180% left 50%
 		transform: translateX(-50%)
 		z-index: 2
-		background: COLOR_BOX
+		background: SHARE_BOX
 		width: 290px
 		padding: 10px 12px
 		border-radius: 5px
@@ -687,7 +686,7 @@ input, textarea, div.tagsinput
 			height: 0
 			border-style: solid
 			border-width: 10px 10px 0 10px
-			border-color: COLOR_BOX transparent transparent transparent
+			border-color: SHARE_BOX transparent transparent transparent
 			
 		h4 
 			color: white
@@ -722,7 +721,7 @@ input, textarea, div.tagsinput
 				top: auto
 				absolute bottom 100% left 50%
 				border-width: 0 10px 10px 10px
-				border-color: transparent transparent COLOR_BOX transparent
+				border-color: transparent transparent SHARE_BOX transparent
 	&.opened
 		opacity: 1!important
 		.share_box

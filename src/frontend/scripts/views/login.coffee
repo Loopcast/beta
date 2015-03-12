@@ -6,6 +6,8 @@ module.exports = class Login
 		unless window.opener?
 			app.body.removeClass "login_page"
 			Navigation.go '/'
+
+		$('#player').hide()
 		
 		@username = @dom.find( '.username' )
 		@password = @dom.find( '.password' )
