@@ -2,6 +2,8 @@ require 'happens'
 require 'vendors/jquery.autocomplete.min.js'
 require 'vendors/jquery.tagsinput.js'
 
+L = require '../../../api/loopcast/loopcast'
+
 module.exports = class EditableTags
   current_data: []
 
@@ -9,29 +11,16 @@ module.exports = class EditableTags
 
     happens @
 
-    list = [
-      "House",
-      "Tech House",
-      "Electro House",
-      "Ambient",
-      "Alternative",
-      "Experimental",
-      "Reggae",
-      "Ska",
-      "Fusion",
-      "Funky",
-      "Punk",
-      "Metal"
-      ]
+    L.genres.all ( error, list ) ->
 
-    @dom.tagsInput 
-      width:'auto'
-      height: 'auto'
-      onAddTag: @on_add_tag
-      onRemoveTag: @on_remove_tag
-      autocomplete_url: list
-      autocomplete: 
-        width: 200
+      @dom.tagsInput 
+        width:'auto'
+        height: 'auto'
+        onAddTag: @on_add_tag
+        onRemoveTag: @on_remove_tag
+        autocomplete_url: list
+        autocomplete: 
+          width: 200
 
     
   populate_tags: ( list ) ->

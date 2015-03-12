@@ -15,6 +15,58 @@ module.exports =
 
     handler: ( request, reply )->
 
+      # if not authenticated, must check if the room is live
+      # if not live should return a 404
+      # if !request.auth.isAuthenticated
+
+      model = aware {}
+
+      profile = request.params.profile
+      room_id = request.params.room
+
+
+      console.log "looking for room #{profile}/#{room_id}"
+
+      Room.findOne( { } )
+        .where( "url"  , "#{profile}/#{room_id}" )
+        .select( "info" )
+        .sort( _id: -1 )
+        .lean()
+        .exec ( error, room ) -> 
+
+          if error then return failed request, reply, error
+
+          model.set 'room', room
+
+          # if is authenticated and owner of the room
+          # render the room
+          if request.auth.isAuthenticated
+
+            data = request.auth.credentials
+
+            if room.info.owner_user == data.user.username
+
+              data.room = model.get 'room'
+
+              template '/rooms/create', data, ( error, response ) ->
+
+                if not error then return reply response
+
+                reply( "Page not found" ).code 404
+
+              return
+
+          if not room.status?.is_live
+
+            return reply( "Page not found" ).code 404
+
+          console.log "found room!"
+
+
+          model.set 'room', room
+
+      return
+
       response = ->
 
         return if not model.get 'user'
@@ -31,12 +83,12 @@ module.exports =
 
           reply( "Page not found" ).code 404
 
-      model = aware {}
+
+
       model.on 'user', response
       model.on 'room', response
 
-      profile = request.params.profile
-      room_id = request.params.room
+
 
       Room.find( { } )
         .where( "url"  , "#{profile}/#{room_id}" )
@@ -46,7 +98,7 @@ module.exports =
 
           if error then return failed request, reply, error
 
-          aware.set 'room', room
+          model.set 'room', room
 
       User.find( { }, _id: off )
         .where( 'info.username', profile )
@@ -56,4 +108,4 @@ module.exports =
 
           if error then return failed request, reply, error
 
-          aware.set 'user', user
+          model.set 'user', user

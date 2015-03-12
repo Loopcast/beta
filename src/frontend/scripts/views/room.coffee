@@ -1,5 +1,6 @@
 L     = require 'api/loopcast/loopcast'
 navigation      = require 'app/controllers/navigation'
+
 module.exports = class Room
 	constructor: ( @dom ) ->
 		view.once 'binded', @on_view_binded
@@ -25,7 +26,10 @@ module.exports = class Room
 		@modal = view.get_by_dom '#room_modal'
 		@modal.on 'input:changed', @on_input_changed
 		@modal.on 'submit', @on_modal_submit
-		@modal.open()
+
+		if location.pathname is '/rooms/create'
+			@modal.open()
+		
 
 	on_input_changed: ( data ) =>
 		switch data.name

@@ -25,6 +25,7 @@ appcast.connect = ->
     return console.info '+ socket controller wont connect'
 
   messages_socket = 'ws://localhost:51234/loopcast/messages'
+
   appcast.messages = new v.ReconnectingWebsocket messages_socket
 
   appcast.messages.onopen = ->
@@ -87,7 +88,7 @@ appcast.connect = ->
       buffer = new Float32Array e.target.result
 
       console.log "got vu value, broadcasting"
-      
+
       appcast.set 'stream:vu', buffer  
 
     reader.readAsArrayBuffer e.data
