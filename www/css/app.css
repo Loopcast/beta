@@ -1598,7 +1598,7 @@ div.tagsinput.link_input {
   padding: 3px;
   margin-right: 5px;
   text-transform: uppercase;
-  font-size: 0.8em;
+  font-size: 0.7em;
   line-height: 0.9em;
   font-weight: 800;
 }
@@ -3339,9 +3339,9 @@ body {
 
 /* line 27 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme h2 {
-  font-size: 1.3em;
+  font-size: 1.2em;
   line-height: 1em;
-  margin-bottom: 5px;
+  margin-bottom: 0px;
 }
 
 /* line 32 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
@@ -3672,7 +3672,7 @@ body {
 /* line 202 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .session_author {
   color: #4592d4;
-  font-size: 0.9em;
+  font-size: 0.8em;
   margin-bottom: 10px;
   display: block;
 }
