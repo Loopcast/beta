@@ -25,7 +25,7 @@ module.exports = class Room
 		@modal = view.get_by_dom '#room_modal'
 		@modal.on 'input:changed', @on_input_changed
 		@modal.on 'submit', @on_modal_submit
-		# @modal.open()
+		@modal.open()
 
 	on_input_changed: ( data ) =>
 		switch data.name
