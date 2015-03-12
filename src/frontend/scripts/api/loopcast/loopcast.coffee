@@ -39,3 +39,15 @@ module.exports =
     start_stream: ( callback ) ->
 
       callback null, 'blah'
+
+    stop_stream: ( callback ) ->
+
+      callback null, 'blah'
+
+    start_recording: ( callback ) ->
+
+      callback null, 'blah'
+
+    stop_recording: ( callback ) ->
+
+      callback null, 'blah'
