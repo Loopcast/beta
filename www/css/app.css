@@ -3666,7 +3666,7 @@ body {
 .profile_theme .cover .profile_image {
   position: absolute;
   bottom: 0;
-  left: 50px;
+  left: 25px;
   width: 150px;
   overflow: hidden;
   -webkit-box-shadow: 0px 20px 37px 12px rgba(0,0,0,0.75);
