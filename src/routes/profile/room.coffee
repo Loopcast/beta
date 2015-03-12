@@ -36,6 +36,9 @@ module.exports =
 
           if error then return failed request, reply, error
 
+          # if room doesn't exist
+          if not room then return reply( "Page not found" ).code 404
+
           # if not authenticated
           if not request.auth.isAuthenticated
 
