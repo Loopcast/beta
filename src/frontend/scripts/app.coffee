@@ -54,8 +54,6 @@ class App
 			navigation.bind '#content'
 			do user_controller.check_user
 
-		# TODO: try to connect only once on profile page?
-		appcast.connect()
 
 			
 	

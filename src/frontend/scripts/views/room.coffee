@@ -19,6 +19,24 @@ module.exports = class Room
 
 		if @elements.location.html().length <= 0
 			@elements.location.addClass 'hidden'
+
+
+		# TODO: try to connect only once on profile page?
+		# Check if the url contains the username
+		is_guest = true
+
+		if is_guest
+			$( 'body' ).addClass 'guest'
+
+			###
+			 Play the player on the url provided by the backend
+			 for example:
+			 http://radio.loopcast.fm:8000/stefanoortisi
+			###
+
+		else
+			$( 'body' ).removeClass 'guest'
+			appcast.connect()
 		
 
 
