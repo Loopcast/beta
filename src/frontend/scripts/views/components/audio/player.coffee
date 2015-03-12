@@ -31,6 +31,9 @@ module.exports = class Player
       @author.attr 'href', data.author_link
       @title.attr 'href', data.url
 
+      @cover.parent().attr 'href', data.url
+      @cover.parent().attr 'title', data.title
+
       @share.update_link data.url
 
     @dom.addClass 'visible'
