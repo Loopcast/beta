@@ -1,5 +1,7 @@
 module.exports = class Fullscreen
 	factor: 1
+	min_height: 500
+
 	constructor: ( @dom ) ->
 		@dom.addClass 'fullscreen'
 		if @dom.data 'factor'
@@ -9,9 +11,12 @@ module.exports = class Fullscreen
 		do @on_resize
 
 	on_resize: ( ) =>
+		h = (app.window.h - app.settings.header_height)*@factor
+
+		h = Math.max @min_height, h
 		@dom.css
  			'width' : '100%'
- 			'height' : (app.window.h - app.settings.header_height)*@factor
+ 			'height' : h
 
 
   destroy: ->

@@ -11,7 +11,7 @@ module.exports = class EditableTags
 
     happens @
 
-    L.genres.all ( error, list ) ->
+    L.genres.all ( error, list ) =>
 
       @dom.tagsInput 
         width:'auto'
