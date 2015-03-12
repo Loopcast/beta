@@ -29,7 +29,7 @@ module.exports =
 
       Room.findOne( { } )
         .where( "url"  , "#{profile}/#{room_id}" )
-        .select( "info.title" )
+        .select( "info.title status.is_streaming" )
         .sort( _id: -1 )
         .lean()
         .exec ( error, room ) -> 
@@ -40,7 +40,7 @@ module.exports =
           if not request.auth.isAuthenticated
 
             # and not live
-            if not room.status?.is_live
+            if not room.status?.is_streaming
 
               # return 404
               return reply( "Page not found" ).code 404
