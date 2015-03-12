@@ -136,10 +136,11 @@ block content
         .recorded_sessions
           .title
             h2 Recorded sessions
-            span.session_icon.spritesheet
+            .icon.ss-record-wrapper
+              span.ss-record
             span.session_text #{profile.recorded.length}
 
-            span.alert_icon.spritesheet
+            span.icon.ss-alert
             span.alert_text #{profile.free_storage} free storage remaining
 
           for room in profile.recorded
