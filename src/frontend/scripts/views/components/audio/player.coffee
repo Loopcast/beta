@@ -11,7 +11,8 @@ module.exports = class Player
         cover: "/images/profile_big.png"
         title: "Live from Siracusa"
         author: "Stefano Ortisi"
-        url: "http://google.com"
+        url: "http://loopcast.com/stefanoortisi/live"
+        author_link: "http://loopcast.com/stefanoortisi"
 
     view.once 'binded', @on_views_binded
 
@@ -22,7 +23,13 @@ module.exports = class Player
     if data?
       @cover.attr 'src', data.cover
       @title.html data.title
-      @author.html data.author
+      @author.html "By " + data.author
+
+      @author.attr 'title', data.title
+      @title.attr 'title', data.author
+
+      @author.attr 'href', data.author_link
+      @title.attr 'href', data.url
 
       @share.update_link data.url
 

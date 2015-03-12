@@ -613,7 +613,12 @@ input, textarea, div.tagsinput
 	100%
 		transform: rotateZ(0deg)
 	
-	
+.ss-play, .ss-pause
+	&:before
+		text-shadow: 0px 0px 0px black
+		transition: text-shadow .2s linear
+		
+
 .ss-record-wrapper
 	border-radius: 2px
 	background: GRAY_2
@@ -729,6 +734,12 @@ input, textarea, div.tagsinput
 
 
 .no_touch_device
+	
+	.ss-play, .ss-pause
+		&:hover:before
+			text-shadow: 1px 1px 4px black
+			
+
 	.yellow.ss-action:hover
 		background: BLACK
 		color: YELLOW
