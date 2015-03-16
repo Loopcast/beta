@@ -55,9 +55,24 @@ module.exports =
 
         callback  null, response
 
-    stop_stream: ( callback ) ->
+    stop_stream: ( room_id, callback ) ->
 
-      callback null, 'blah'
+      data = room_id: room_id
+
+      request = $.post api_url + 'stream/stop', data
+
+      request.error ( error ) ->
+
+        console.error 'error creating calling stream/stop'
+        console.error error
+
+        callback error
+
+      request.done ( response ) ->
+
+        if response.error then return callback response.error
+
+        callback  null, response
 
     start_recording: ( callback ) ->
 
@@ -78,6 +93,21 @@ module.exports =
 
         callback  null, response
 
-    stop_recording: ( callback ) ->
+    stop_recording: ( room_id, callback ) ->
 
-      callback null, 'blah'
+      data = room_id: room_id
+
+      request = $.post api_url + 'stape/stop', data
+
+      request.error ( error ) ->
+
+        console.error 'error creating calling stape/stop'
+        console.error error
+
+        callback error
+
+      request.done ( response ) ->
+
+        if response.error then return callback response.error
+
+        callback  null, response
