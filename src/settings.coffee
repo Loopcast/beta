@@ -71,9 +71,10 @@ if s.is_beta
       pass: 'l00pc4st2015'
 
   s.redis =
-    host     : 'pub-redis-17738.eu-west-1-1.2.ec2.garantiadata.com'
-    port     : 17738
-    password : '9b83PvcXCgqJPspO'
+    host     : 'pub-redis-11676.eu-west-1-1.1.ec2.garantiadata.com'
+    port     : 11676
+    password : 'loopcast2015'
+    kue_db   : 0
 
   # ~ app session
 
@@ -97,9 +98,10 @@ else
       pass: 'l00pc4st2015'
 
   s.redis =
-    host     : 'pub-redis-17738.eu-west-1-1.2.ec2.garantiadata.com'
-    port     : 17738
-    password : '9b83PvcXCgqJPspO'
+    host     : 'pub-redis-11676.eu-west-1-1.1.ec2.garantiadata.com'
+    port     : 11676
+    password : 'loopcast2015'
+    kue_db   : 0
 
   # ~ app session
 
