@@ -10,11 +10,12 @@ fs   = require 'fs'
 util = require 'util'
 url  = require 'url'
 
+radio  = 'http://radio.loopcast.fm:8000'
 server = http.createServer (req, res) ->
 
-  console.log 'requested ->', url.parse(req.url).pathname
+  mount_point = url.parse(req.url).pathname
 
-  res.writeHead 302, Location: 'http://radio.loopcast.fm:8000/hems'
+  res.writeHead 302, Location: "#{radio}#{mount_point}"
   res.end();
 
 server.listen 8080
