@@ -1,0 +1,46 @@
+extends ../layout
+
+block content
+  if room
+    - data_menu = "room"
+  else
+    - data_menu = "create_room"
+  .createroom.profile_theme.centered(data-menu="#{data_menu}", data-view="room")
+    .cover
+      .cover_image(style="background-image:url(/images/homepage_2.jpg)")
+      .content
+        h1.name.black_background
+          if room
+            | #{room.info.title}
+        br
+        h3.genres.black_background
+        br
+        h3.location.black_background
+        
+        .profile_image.upload_wrapper
+          img(src="/images/profile-150.jpg")
+
+        .sidebar_right
+          .big_number
+            .inner
+              span.number 20
+              span.text Listeners
+
+          .big_number
+            .inner
+              span.number 4
+              span.text Favourites
+
+          .big_number
+            .inner
+              span.number 32
+              span.text 
+                | Total 
+                br
+                | Visitors  
+
+    include ./dashboard.jade
+
+    include ./chat.jade    
+      
+    include ./room_modal.jade

@@ -19,7 +19,7 @@ module.exports =
 
     handler: ( request, reply )->
 
-      url = '/rooms/create'
+      url = '/profile/room'
 
       # always inject user data into requests
       data = request.auth.credentials || {}

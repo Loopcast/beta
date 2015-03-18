@@ -58,6 +58,7 @@ module.exports = class Room
 
 		m = @modal
 
+		ref = @
 		L.rooms.create data, ( error, room ) ->
 
 			if error
@@ -74,9 +75,11 @@ module.exports = class Room
 
 				navigation.go_silent "/#{room.url}"
 
-				@check_guest()
+				ref.check_guest()
 
 				m.close()
+
+				$( '.create_room_item' ).removeClass 'selected'
 
 	on_user_logged: ( data ) =>
 		@check_guest()

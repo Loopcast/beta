@@ -82,7 +82,7 @@ module.exports =
 
           if data.room.info.owner_user == data.user.username
 
-            template '/rooms/create', data, ( error, response ) ->
+            template '/profile/room', data, ( error, response ) ->
 
               if not error then return reply response
 
@@ -90,7 +90,7 @@ module.exports =
 
             return
 
-        template '/rooms/create', data, ( error, response ) ->
+        template '/profile/room', data, ( error, response ) ->
 
           if not error then return reply response
 
