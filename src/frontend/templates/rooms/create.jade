@@ -13,17 +13,8 @@ block content
         br
         h3.location.black_background
         
-        .profile_image.upload_wrapper(data-view="components/image_uploader", data-id="profile_picture")
-          img(src="/images/profile_big.png")
-          a.upload_element.edit_image(href="#")
-            span.spritesheet.camera_icon
-            span Update profile picture
-            span.progress
-
-          //- form.element_on_write_mode(class="cloudinary_form")
-          //-   input.api_key(type="hidden", name="api_key", value="#{cloudinary.api_key}")
-          //-   input.cloud_name(type="hidden", name="cloud_name", value="#{cloudinary.cloud_name}")
-          //-   input.unsigned_id(type="hidden", name="unsigned_id", value="#{cloudinary.unsigned_ids.profile}")
+        .profile_image.upload_wrapper
+          img(src="/images/profile-150.jpg")
 
         .sidebar_right
           .big_number

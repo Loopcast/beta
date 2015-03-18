@@ -1,16 +1,20 @@
 L           = require 'api/loopcast/loopcast'
 navigation  = require 'app/controllers/navigation'
 Strings     = require 'app/utils/string'
+user_controller = require 'app/controllers/user'
 
 module.exports = class Room
 	constructor: ( @dom ) ->
 		view.once 'binded', @on_view_binded
+		user_controller.on 'user:logged', @on_user_logged
+		user_controller.on 'user:unlogged', @on_user_unlogged
 
 		@elements = 
-			title   : @dom.find '.cover .name'
-			genre   : @dom.find '.cover .genres'
-			location: @dom.find '.cover .location'
-			cover   : @dom.find '.cover .cover_image'
+			title       : @dom.find '.cover .name'
+			genre       : @dom.find '.cover .genres'
+			location    : @dom.find '.cover .location'
+			cover       : @dom.find '.cover .cover_image'
+			description : @dom.find '.chat_header p'
 
 		if Strings.is_empty( @elements.title.html() )
 			@elements.title.addClass 'hidden'
@@ -51,7 +55,7 @@ module.exports = class Room
 
 	on_input_changed: ( data ) =>
 		switch data.name
-			when 'title', 'genre', 'location'
+			when 'title', 'genre', 'location', 'description'
 				@elements[ data.name ].html data.value
 
 				if data.value.length > 0
@@ -92,6 +96,14 @@ module.exports = class Room
 				navigation.go_silent "/#{room.url}"
 
 				m.close()
+
+	on_user_logged: ( data ) =>
+		
+	on_user_unlogged: ( data ) =>
+
+	destroy: ->
+		user_controller.off 'user:logged', @on_user_logged
+		user_controller.off 'user:unlogged', @on_user_unlogged
 
 		
 		
