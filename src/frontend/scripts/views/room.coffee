@@ -25,23 +25,6 @@ module.exports = class Room
 		if Strings.is_empty( @elements.location.html() )
 			@elements.location.addClass 'hidden'
 
-		# TODO: try to connect only once on profile page?
-		# Check if the url contains the username
-		is_guest = true
-
-		if is_guest
-			$( 'body' ).addClass 'guest'
-
-			###
-			 Play the player on the url provided by the backend
-			 for example:
-			 http://radio.loopcast.fm:8000/stefanoortisi
-			###
-
-		else
-			$( 'body' ).removeClass 'guest'
-			appcast.connect()
-
 
 
 	on_view_binded: ( ) =>
@@ -91,15 +74,37 @@ module.exports = class Room
 			console.warn room
 			console.info " We should swap url HERE!"
 
-			delay 1000, ->
+			delay 1000, =>
 
 				navigation.go_silent "/#{room.url}"
+
+				@check_if_guest()
 
 				m.close()
 
 	on_user_logged: ( data ) =>
-		
+		@check_if_guest()
+
 	on_user_unlogged: ( data ) =>
+		@check_if_guest()
+
+
+	check_if_guest: ( ) ->
+
+		###
+		If the url path starts with /username, 
+		then the user is not a guest
+		###
+		u = user_controller.get_user()
+		guest = location.pathname.indexOf( "/#{u.username}" ) isnt 0
+
+		log "[Room] check_if_guest", guest
+
+		if guest
+			app.body.addClass 'guest'
+		else
+			app.body.removeClass 'guest'		
+			appcast.connect()
 
 	destroy: ->
 		user_controller.off 'user:logged', @on_user_logged
