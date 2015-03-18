@@ -32,7 +32,7 @@ module.exports = class Room
 		@modal.on 'input:changed', @on_input_changed
 		@modal.on 'submit', @on_modal_submit
 
-		if location.pathname is '/rooms/create'
+		if @is_create_page()
 			@modal.open()
 		
 
@@ -69,27 +69,23 @@ module.exports = class Room
 				m.hide_loading()
 				m.show_message msg
 				return console.error error
-				
-			console.info " ! Got room info!"
-			console.warn room
-			console.info " We should swap url HERE!"
 
 			delay 1000, =>
 
 				navigation.go_silent "/#{room.url}"
 
-				@check_if_guest()
+				@is_guest()
 
 				m.close()
 
 	on_user_logged: ( data ) =>
-		@check_if_guest()
+		@is_guest()
 
 	on_user_unlogged: ( data ) =>
-		@check_if_guest()
+		@is_guest()
 
 
-	check_if_guest: ( ) ->
+	is_guest: ( ) ->
 
 		###
 		If the url path starts with /username, 
@@ -98,13 +94,16 @@ module.exports = class Room
 		u = user_controller.get_user()
 		guest = location.pathname.indexOf( "/#{u.username}" ) isnt 0
 
-		log "[Room] check_if_guest", guest
+		log "[Room] is_guest", guest
 
 		if guest
 			app.body.addClass 'guest'
 		else
 			app.body.removeClass 'guest'		
 			appcast.connect()
+
+	is_create_page: ( ) ->
+		location.pathname is '/rooms/create'
 
 	destroy: ->
 		user_controller.off 'user:logged', @on_user_logged
