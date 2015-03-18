@@ -5,11 +5,11 @@ mongoose = require 'mongoose'
 
 module.exports =
   method : 'POST'
-  path   : '/api/v1/rooms/start_recording'
+  path   : '/api/v1/stream/stop'
 
   config:
 
-    description: "Start stream"
+    description: "Stop stream"
     plugins: "hapi-swagger:": responseMessages: [
       { code: 400, message: 'Bad Request' }
       { code: 500, message: 'Internal Server Error'}
@@ -37,13 +37,13 @@ module.exports =
         url : "#{username}/#{room_id}"
 
       update =
-        $set : 'status.is_streaming': true
+        $set : 'status.is_streaming': false
 
 
       options = 
         fields:
           _id                  : off
-          'status.is_recording': on
+          'status.is_streaming': on
         'new': true
 
       Room.findAndModify query, null, update, options, ( error, status ) ->

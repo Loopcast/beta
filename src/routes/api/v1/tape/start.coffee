@@ -5,7 +5,7 @@ mongoose = require 'mongoose'
 
 module.exports =
   method : 'POST'
-  path   : '/api/v1/rooms/start_stream'
+  path   : '/api/v1/tape/start'
 
   config:
 
@@ -43,7 +43,7 @@ module.exports =
       options = 
         fields:
           _id                  : off
-          'status.is_streaming': on
+          'status.is_recording': on
         'new': true
 
       Room.findAndModify query, null, update, options, ( error, status ) ->
