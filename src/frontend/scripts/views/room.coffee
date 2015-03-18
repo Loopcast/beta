@@ -74,33 +74,32 @@ module.exports = class Room
 
 				navigation.go_silent "/#{room.url}"
 
-				@is_guest()
+				@check_guest()
 
 				m.close()
 
 	on_user_logged: ( data ) =>
-		@is_guest()
+		@check_guest()
 
 	on_user_unlogged: ( data ) =>
-		@is_guest()
+		@check_guest()
 
 
-	is_guest: ( ) ->
+	check_guest: ( ) ->
 
 		###
 		If the url path starts with /username, 
 		then the user is not a guest
 		###
-		u = user_controller.get_user()
-		guest = location.pathname.indexOf( "/#{u.username}" ) isnt 0
-
-		log "[Room] is_guest", guest
-
-		if guest
+		if @is_guest()
 			app.body.addClass 'guest'
 		else
 			app.body.removeClass 'guest'		
-			appcast.connect()
+			# appcast.connect()
+
+	is_guest: ( ) ->
+		u = user_controller.get_user()
+		guest = location.pathname.indexOf( "/#{u.username}" ) isnt 0
 
 	is_create_page: ( ) ->
 		location.pathname is '/rooms/create'
