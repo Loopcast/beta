@@ -1,5 +1,6 @@
-L     = require 'api/loopcast/loopcast'
-navigation      = require 'app/controllers/navigation'
+L           = require 'api/loopcast/loopcast'
+navigation  = require 'app/controllers/navigation'
+Strings     = require 'app/utils/string'
 
 module.exports = class Room
 	constructor: ( @dom ) ->
@@ -11,15 +12,14 @@ module.exports = class Room
 			location: @dom.find '.cover .location'
 			cover   : @dom.find '.cover .cover_image'
 
-		if @elements.title.html().length <= 0
+		if Strings.is_empty( @elements.title.html() )
 			@elements.title.addClass 'hidden'
 
-		if @elements.genre.html().length <= 0
+		if Strings.is_empty( @elements.genre.html() )
 			@elements.genre.addClass 'hidden'
 
-		if @elements.location.html().length <= 0
+		if Strings.is_empty( @elements.location.html() )
 			@elements.location.addClass 'hidden'
-
 
 		# TODO: try to connect only once on profile page?
 		# Check if the url contains the username
@@ -37,7 +37,7 @@ module.exports = class Room
 		else
 			$( 'body' ).removeClass 'guest'
 			appcast.connect()
-		
+
 
 
 	on_view_binded: ( ) =>
