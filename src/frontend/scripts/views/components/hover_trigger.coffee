@@ -10,7 +10,6 @@ module.exports = class HoverTrigger
 
 	constructor: ( @dom ) ->
 
-		log "HOVER TRIGGER!!!!!"
 		@target = $ @dom.data 'target'
 
 		if @target.length <= 0

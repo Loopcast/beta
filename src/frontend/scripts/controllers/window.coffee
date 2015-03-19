@@ -21,9 +21,6 @@ win.obj.on 'resize', on_resize = ->
 # trigger resize automatically after 100 ms
 delay 100, on_resize
 
-log "one"
-
-
 # global click event
 $( 'body' ).on 'click', -> win.emit "body:clicked"
 

@@ -12,6 +12,7 @@ module.exports = class Header
 		navigation.on 'after_render', @check_menu
 
 	check_menu: =>
+		
 		obj = $( '[data-menu]' )
 		if obj.length > 0
 			page = obj.data 'menu'

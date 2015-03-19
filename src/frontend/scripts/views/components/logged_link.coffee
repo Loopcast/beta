@@ -11,12 +11,10 @@ module.exports = (dom) ->
 		return false
 
 	on_user_logged = (data) ->
-		log "[Logged Link] on_user_logged", data
 		dom.attr 'href', original_url
 		dom.off 'click', on_click
 
 	on_user_unlogged = (data) ->
-		log "[Logged Link] on_user_unlogged", data
 		dom.attr 'href', '#'
 		dom.on 'click', on_click
 
