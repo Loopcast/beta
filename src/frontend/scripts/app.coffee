@@ -1,7 +1,5 @@
 require './globals'
 require './vendors'
-require '../vendors/parallax.min.js'
-
 
 views           = require './controllers/views'
 navigation      = require './controllers/navigation'
@@ -9,6 +7,9 @@ appcast         = require './controllers/appcast'
 user_controller = require './controllers/user'
 cloudinary      = require './controllers/cloudinary'
 # motion   = require 'app/controllers/motion'
+
+
+
 
 class App
 
@@ -21,6 +22,9 @@ class App
 	# link to controller/local_connection
 	local: null
 
+	# link to controller/session
+	session: null
+
 	constructor: -> 	
 
 		happens @
@@ -30,11 +34,15 @@ class App
 
 	start: ->
 		
-		@local  = require 'app/controllers/local_connection'
-		@window = require 'app/controllers/window'
+		@local   = require 'app/controllers/local_connection'
+		@session = require 'app/controllers/storage'
+		@window  = require 'app/controllers/window'
 
-		@body   = $ 'body'
+		@body    = $ 'body'
 
+		
+		# u = Session.get( 'user', false )
+		# log "[Session] user", u
 		
 		@settings = require 'app/utils/settings'
 		@settings.bind @body
@@ -46,7 +54,6 @@ class App
 		# when the new are is rendered, do the same with the new content
 
 		navigation.on 'before_destroy', =>
-			log "--------- BEFORE DESTROY"
 			views.unbind '#content'
 
 		navigation.on 'after_render', => 

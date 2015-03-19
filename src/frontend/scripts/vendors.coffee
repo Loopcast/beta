@@ -15,4 +15,9 @@ vendors =
   FileUpload           : require '../vendors/jquery.fileupload.js'
   Cloudinary           : require '../vendors/jquery.cloudinary.js'
 
+  # Documentation: https://github.com/andris9/jStorage
+  Jstorage             : require '../vendors/jstorage.js'
+
+  Parallax             : require '../vendors/parallax.min.js'
+
 module.exports = vendors
