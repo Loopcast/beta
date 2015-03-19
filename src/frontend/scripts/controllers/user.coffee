@@ -21,7 +21,8 @@ module.exports = happens
 			app.body.removeClass "logged"
 
 			log "[User Controller] deleting user variable"
-			delete loopcast.user
+			
+			app.session.delete 'user'
 
 			navigation.go '/'
 
@@ -29,18 +30,18 @@ module.exports = happens
 	
 	login: ( user ) ->
 
-		loopcast.user = user
-
-		log "login", user
 		# Add images urls
 
 		if not user.avatar?
+			log "[User Controller] user.avatar is undefined. Setting default."
 			user.avatar = this.USER_DEFAULT_AVATAR
 		
-			
-		loopcast.user.images =
+		
+		user.images =
 			top_bar: transform.top_bar user.avatar
 			avatar: transform.avatar user.avatar
+
+		@set_user user
 
 		app.body.addClass "logged"
 
@@ -49,14 +50,14 @@ module.exports = happens
 		log "[User Controller] login", @get_user()
 
 	check_user: -> 
-		log '[User Controller] check_user', loopcast
+		log "[User Controller] check_user", @is_logged()
 		if @is_logged()
 			@login @get_user()
 		else
 			@logout()
 
-	is_logged: -> @get_user()?
+	is_logged: -> @get_user()
 
-	get_user: -> loopcast.user
+	get_user: -> app.session.get 'user', false
 
-	set_user: (user) -> loopcast.user = user
+	set_user: (user) -> app.session.set 'user', user
