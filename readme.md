@@ -1,6 +1,8 @@
 # ~ beta.loopcast.fm
 
-[ ![Codeship Status for Loopcast/beta](https://codeship.com/projects/0663b7f0-9522-0132-d4fc-466960a0e7d2/status?branch=development)](https://codeship.com/projects/62741)
+staging: 
+  
+  [ ![Codeship Status for Loopcast/beta](https://codeship.com/projects/0663b7f0-9522-0132-d4fc-466960a0e7d2/status?branch=staging)](https://codeship.com/projects/62741)
 
 ### requirements
 
