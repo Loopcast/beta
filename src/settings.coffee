@@ -18,7 +18,7 @@ s =
 if s.is_beta
   s.base_path = "http://beta.loopcast.fm"
 else
-  s.base_path = "http://development.loopcast.fm"
+  s.base_path = "http://staging.loopcast.fm"
 
 s.cloudinary =
   cloud_name      : 'loopcast', 
