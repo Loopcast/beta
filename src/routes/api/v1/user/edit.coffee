@@ -31,8 +31,7 @@ module.exports =
 
         console.log "got user from intercom:", response
 
-        update =
-          email: response.email
+        update = id: response.id
 
         if request.payload.followers
           update.custom_attributes = update.custom_attributes || {}
@@ -55,8 +54,8 @@ module.exports =
           update.custom_attributes.genres = request.payload.genres.join( "," )
 
         # updating user_id is an issue at the moment, it's creating a new user
-        # if request.payload.user_id
-        #   update.user_id = request.payload.user_id
+        if request.payload.user_id
+          update.user_id = request.payload.user_id
 
         intercom.updateUser update, ( error, res ) ->
 
