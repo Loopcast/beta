@@ -5,7 +5,7 @@ module.exports =
   config:
 
     description: "Logs user out and clear user session"
-    plugins: "hapi-swagger:": responseMessages: [
+    plugins: "hapi-swagger": responseMessages: [
       { code: 400, message: 'Bad Request' }
       { code: 500, message: 'Internal Server Error'}
     ]

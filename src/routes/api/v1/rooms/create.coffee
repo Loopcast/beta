@@ -8,7 +8,7 @@ module.exports =
   config:
 
     description: "Create room"
-    plugins: "hapi-swagger:": responseMessages: [
+    plugins: "hapi-swagger": responseMessages: [
       { code: 400, message: 'Bad Request' }
       { code: 500, message: 'Internal Server Error'}
     ]

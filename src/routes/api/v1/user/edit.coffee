@@ -9,9 +9,27 @@ module.exports =
   path   : '/api/v1/user/edit'
 
   config:
+    description: "Create room"
+    plugins: "hapi-swagger": responseMessages: [
+      { code: 400, message: 'Bad Request' }
+      { code: 401, message: 'Needs authentication' } # Boom.unauthorized
+      { code: 422, message: 'Error fetching user information' } # Boom.badData
+      { code: 500, message: 'Internal Server Error'}
+    ]
+    tags   : [ "api", "v1" ]
+
     auth:
       strategy: 'session'
       mode    : 'try'
+
+    # TODO: write the corret validation
+    # validate:
+    #   payload:
+    #     title    : joi.string().required()
+    #     genres   : joi.string()
+    #     location : joi.string()
+    #     about    : joi.string()
+    #     cover    : joi.any()
 
     handler: ( request, reply )->
 
