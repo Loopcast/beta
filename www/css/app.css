@@ -2516,8 +2516,8 @@ body {
 
 /* line 142 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/all.styl */
 #player .player_progress {
-  border: 1px solid #000;
-  height: 7px;
+  background: #3e3e40;
+  height: 6px;
   -o-box-flex: 6;
   box-flex: 6;
   -webkit-flex: 6;
