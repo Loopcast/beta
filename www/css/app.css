@@ -3825,7 +3825,7 @@ body {
   -ms-flex: 1;
   flex: 1;
   padding: 0px 15px;
-  background: rgba(0,0,0,0.9);
+  background: rgba(0,0,0,0.8);
   border-bottom: 1px solid #605b5b;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3863,7 +3863,7 @@ body {
 
 /* line 154 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .big_number span.text {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
 }
 
 /* line 158 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
