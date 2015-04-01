@@ -45,7 +45,7 @@ module.exports =
           console.log "error fetching user data"
           console.log user
 
-          return reply Boom.badData 'error updating user data'
+          return reply Boom.badData 'error fetching user information'
 
         console.log "got user from intercom:", response
 
