@@ -40,7 +40,7 @@ module.exports =
                 email     : user.data.email
                 name      : user.data.facebook.profile.displayName
                 created_at: now().unix()
-                # user_agent: request.headers[ 'user-agent' ]
+                last_seen_user_agent: request.headers[ 'user-agent' ]
                 # avatar    :
                 #   type     : 'avatar'
                 #   image_url: user.session.avatar
@@ -57,6 +57,8 @@ module.exports =
 
             else
 
+              # maybe update last_seen_user_agent or integrate this from
+              # client side intercom
               console.log " -> user already on intercom"
               # console.log res
 
