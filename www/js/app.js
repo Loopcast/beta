@@ -12695,7 +12695,7 @@ module.exports = RoomModal = (function(_super) {
 }, {"../components/modal":"src/frontend/scripts/views/components/modal"});
 require.register('src/frontend/templates/buttons/share', function(require, module, exports){
 module.exports = function anonymous(locals) {
-jade.debug = [{ lineno: 1, filename: "/Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/templates/buttons/share.jade" }];
+jade.debug = [{ lineno: 1, filename: "/Users/thomasamundsen/Documents/loopcast/beta/src/frontend/templates/buttons/share.jade" }];
 try {
 var buf = [];
 var locals_ = (locals || {}),link = locals_.link;jade.debug.unshift({ lineno: 1, filename: jade.debug[0].filename });
@@ -12773,7 +12773,7 @@ jade.debug.shift();;return buf.join("");
 }, {});
 require.register('src/frontend/templates/components/editables/editable_select', function(require, module, exports){
 module.exports = function anonymous(locals) {
-jade.debug = [{ lineno: 1, filename: "/Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/templates/components/editables/editable_select.jade" }];
+jade.debug = [{ lineno: 1, filename: "/Users/thomasamundsen/Documents/loopcast/beta/src/frontend/templates/components/editables/editable_select.jade" }];
 try {
 var buf = [];
 var locals_ = (locals || {}),values = locals_.values;jade.debug.unshift({ lineno: 1, filename: jade.debug[0].filename });
@@ -12841,7 +12841,7 @@ jade.debug.shift();;return buf.join("");
 }, {});
 require.register('src/frontend/templates/components/editables/editable_text', function(require, module, exports){
 module.exports = function anonymous(locals) {
-jade.debug = [{ lineno: 1, filename: "/Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/templates/components/editables/editable_text.jade" }];
+jade.debug = [{ lineno: 1, filename: "/Users/thomasamundsen/Documents/loopcast/beta/src/frontend/templates/components/editables/editable_text.jade" }];
 try {
 var buf = [];
 jade.debug.unshift({ lineno: 1, filename: jade.debug[0].filename });
@@ -12862,7 +12862,7 @@ jade.debug.shift();;return buf.join("");
 }, {});
 require.register('src/frontend/templates/shared/header_user_logged', function(require, module, exports){
 module.exports = function anonymous(locals) {
-jade.debug = [{ lineno: 1, filename: "/Users/thomasamundsen/Documents/loopcastbeta/beta/src/frontend/templates/shared/header_user_logged.jade" }];
+jade.debug = [{ lineno: 1, filename: "/Users/thomasamundsen/Documents/loopcast/beta/src/frontend/templates/shared/header_user_logged.jade" }];
 try {
 var buf = [];
 var locals_ = (locals || {}),images = locals_.images,username = locals_.username;jade.debug.unshift({ lineno: 1, filename: jade.debug[0].filename });
