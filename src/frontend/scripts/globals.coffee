@@ -16,5 +16,7 @@ window.mover = require './globals/mover'
 
 window.happens = require 'happens'
 
+window.api = 
+  loopcast: require './api/loopcast/loopcast'
 
 module.exports = window
