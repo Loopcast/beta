@@ -33,18 +33,23 @@ module.exports =
 
             if not res
 
-              console.log " -> user not on intercom yet"
-              console.log " -> adding!"
+              console.log " -> adding user to intercom"
 
               data =
-                email : user.data.email
-                name  : user.data.facebook.profile.displayName
+                user_id   : user.session.username
+                email     : user.data.email
+                name      : user.data.facebook.profile.displayName
+                created_at: now().unix()
+                # user_agent: request.headers[ 'user-agent' ]
+                # avatar    :
+                #   type     : 'avatar'
+                #   image_url: user.session.avatar
 
               intercom.createUser data, ( error, res ) ->
 
                 if error
                   console.log "error creating user at intercom"
-                  console.log error
+                  console.log JSON.stringify( error, null, 2)
 
                   return
 
