@@ -19,6 +19,8 @@ moment = require 'moment'
 
 global.joi = require 'joi'
 
+global.Boom = require 'boom'
+
 global.happens = require 'happens'
 
 global.aware   = require 'aware'

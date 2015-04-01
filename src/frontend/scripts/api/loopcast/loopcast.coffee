@@ -21,7 +21,10 @@ module.exports =
 
   rooms :
     create: ( data, callback ) ->
-      request = $.post api_url + 'rooms/create', data
+      on_status_code:
+        401: ( response ) -> console.error 'unauthorized, need to be logged in!'
+
+      request = $.post api_url + 'rooms/create', data, on_status_code
 
       request.error ( error ) ->
 
@@ -32,15 +35,15 @@ module.exports =
 
       request.done ( response ) ->
 
-        if response.error then return callback response.error
-
         callback  null, response
 
     start_stream: ( room_id, callback ) ->
+      on_status_code:
+        401: ( response ) -> console.error 'unauthorized, need to be logged in!'
 
       data = room_id: room_id
 
-      request = $.post api_url + 'stream/start', data
+      request = $.post api_url + 'stream/start', data, on_status_code
 
       request.error ( error ) ->
 
@@ -56,10 +59,12 @@ module.exports =
         callback  null, response
 
     stop_stream: ( room_id, callback ) ->
+      on_status_code:
+        401: ( response ) -> console.error 'unauthorized, need to be logged in!'
 
       data = room_id: room_id
 
-      request = $.post api_url + 'stream/stop', data
+      request = $.post api_url + 'stream/stop', data, on_status_code
 
       request.error ( error ) ->
 
@@ -75,10 +80,12 @@ module.exports =
         callback  null, response
 
     start_recording: ( callback ) ->
+      on_status_code:
+        401: ( response ) -> console.error 'unauthorized, need to be logged in!'
 
       data = room_id: room_id
 
-      request = $.post api_url + 'tape/start', data
+      request = $.post api_url + 'tape/start', data, on_status_code
 
       request.error ( error ) ->
 
@@ -94,10 +101,12 @@ module.exports =
         callback  null, response
 
     stop_recording: ( room_id, callback ) ->
+      on_status_code:
+        401: ( response ) -> console.error 'unauthorized, need to be logged in!'
 
       data = room_id: room_id
 
-      request = $.post api_url + 'stape/stop', data
+      request = $.post api_url + 'stape/stop', data, on_status_code
 
       request.error ( error ) ->
 

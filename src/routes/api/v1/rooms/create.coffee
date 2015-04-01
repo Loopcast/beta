@@ -34,7 +34,7 @@ module.exports =
 
       if not request.auth.isAuthenticated
 
-        return reply error: 'needs_authentication'
+        return reply Boom.unauthorized('needs authentication')
 
       user    = request.auth.credentials.user
 

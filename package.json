@@ -6,6 +6,7 @@
   "dependencies": {
     "aware": "^0.3.0",
     "bell": "^2.1.0",
+    "boom": "^2.7.0",
     "cloudinary": "^1.1.1",
     "coffee-script": "^1.9.0",
     "crypto": "0.0.3",

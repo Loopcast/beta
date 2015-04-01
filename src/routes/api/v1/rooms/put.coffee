@@ -17,6 +17,6 @@ module.exports =
 
       if not request.auth.isAuthenticated
 
-        return reply error: 'needs_authentication'
+        return reply Boom.unauthorized('needs authentication')
       
       reply recording: true

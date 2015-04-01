@@ -28,7 +28,7 @@ module.exports =
 
       if not request.auth.isAuthenticated
 
-        return reply error: 'needs_authentication'
+        return reply Boom.unauthorized('needs authentication')
 
       username = request.auth.credentials.user.username
       room_id  = request.payload.room_id.toLowerCase()
