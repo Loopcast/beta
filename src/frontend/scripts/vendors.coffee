@@ -20,4 +20,7 @@ vendors =
 
   Parallax             : require '../vendors/parallax.min.js'
 
+  # Documentation: http://notifyjs.com/
+  NotifyJs             : require '../vendors/notify.min.js'
+
 module.exports = vendors

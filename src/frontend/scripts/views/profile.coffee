@@ -1,5 +1,6 @@
 Cloudinary = require 'app/controllers/cloudinary'
 transform  = require 'app/utils/images/transform'
+notify     = require 'app/controllers/notify'
 
 module.exports = class Profile 
 	elements: null
@@ -92,6 +93,12 @@ module.exports = class Profile
 			url = transform.avatar data.result.url
 
 			@dom.find( 'img' ).attr 'src', url
+
+
+		
+
+
+		delay 2000, -> notify.info 'hello world'
 
 
 	# Open the write/edit mode
