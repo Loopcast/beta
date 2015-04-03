@@ -60,25 +60,25 @@ module.exports = class Room
 		m = @modal
 
 		ref = @
-		L.rooms.create data, ( data, d ) ->
-			json = data.responseJSON
-			log "[Room] create callback", data, json, d
-			if json.error?
-				notify.error json.message
+		L.rooms.create data, ( error, data ) ->
+
+			if error?
+
+				notify.error error.responseJSON.message
 
 				m.hide_loading()
 
 				return false
 
-			# delay 1000, =>
+			delay 1000, =>
 
-			# 	navigation.go_silent "/#{room.url}"
+				navigation.go_silent "/#{data.url}"
 
-			# 	ref.check_guest()
+				ref.check_guest()
 
-			# 	m.close()
+				m.close()
 
-			# 	$( '.create_room_item' ).removeClass 'selected'
+				$( '.create_room_item' ).removeClass 'selected'
 
 	on_user_logged: ( data ) =>
 		@check_guest()

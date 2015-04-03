@@ -4,13 +4,13 @@ module.exports = class Player
     @title = @dom.find '.player_title'
     @author = @dom.find '.player_author'
 
-    delay 2000, =>
-      @open 
-        cover: "/images/profile_big.png"
-        title: "Live from Siracusa"
-        author: "Stefano Ortisi"
-        url: "http://loopcast.com/stefanoortisi/live"
-        author_link: "http://loopcast.com/stefanoortisi"
+    # delay 2000, =>
+    #   @open 
+    #     cover: "/images/profile_big.png"
+    #     title: "Live from Siracusa"
+    #     author: "Stefano Ortisi"
+    #     url: "http://loopcast.com/stefanoortisi/live"
+    #     author_link: "http://loopcast.com/stefanoortisi"
 
     view.once 'binded', @on_views_binded
 
