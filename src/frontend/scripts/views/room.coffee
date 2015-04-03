@@ -2,6 +2,7 @@ L           = require 'api/loopcast/loopcast'
 navigation  = require 'app/controllers/navigation'
 Strings     = require 'app/utils/string'
 user_controller = require 'app/controllers/user'
+notify = require 'app/controllers/notify'
 
 module.exports = class Room
 	constructor: ( @dom ) ->
@@ -59,27 +60,25 @@ module.exports = class Room
 		m = @modal
 
 		ref = @
-		L.rooms.create data, ( error, room ) ->
+		L.rooms.create data, ( data, d ) ->
+			json = data.responseJSON
+			log "[Room] create callback", data, json, d
+			if json.error?
+				notify.error json.message
 
-			if error
-
-				msg = "Error. Try again."
-				if error is "cant_have_two_live_rooms_with_same_url"
-					console.error "Cant have two live rooms with same url"
-					msg = "Cant have two live rooms with same url"
 				m.hide_loading()
-				m.show_message msg
-				return console.error error
 
-			delay 1000, =>
+				return false
 
-				navigation.go_silent "/#{room.url}"
+			# delay 1000, =>
 
-				ref.check_guest()
+			# 	navigation.go_silent "/#{room.url}"
 
-				m.close()
+			# 	ref.check_guest()
 
-				$( '.create_room_item' ).removeClass 'selected'
+			# 	m.close()
+
+			# 	$( '.create_room_item' ).removeClass 'selected'
 
 	on_user_logged: ( data ) =>
 		@check_guest()

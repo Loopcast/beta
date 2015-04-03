@@ -1,6 +1,7 @@
 transform = require 'app/utils/images/transform'
 happens   = require 'happens'
 navigation = require 'app/controllers/navigation'
+notify = require 'app/controllers/notify'
 
 module.exports = happens
 	
@@ -26,6 +27,8 @@ module.exports = happens
 
 			navigation.go '/'
 
+			notify.info "You've successufully logged out."
+
 			callback?()
 	
 	login: ( user ) ->
@@ -48,6 +51,8 @@ module.exports = happens
 		@emit 'user:logged', @get_user()
 
 		log "[User Controller] login", @get_user()
+
+		notify.info "You've successufully logged in."
 
 	check_user: -> 
 		log "[User Controller] check_user", @is_logged()

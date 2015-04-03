@@ -95,12 +95,6 @@ module.exports = class Profile
 			@dom.find( 'img' ).attr 'src', url
 
 
-		
-
-
-		delay 2000, -> notify.info 'hello world'
-
-
 	# Open the write/edit mode
 	write_mode : ->
 		app.body.addClass 'write_mode'

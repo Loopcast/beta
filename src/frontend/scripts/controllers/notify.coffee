@@ -4,3 +4,6 @@
 module.exports = 
   info: (msg) ->
     $.notify msg, 'info'
+
+  error: (msg) ->
+    $.notify msg, 'error'
