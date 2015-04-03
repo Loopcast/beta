@@ -23,8 +23,6 @@ block grid
         img.room_thumb(src="#{item.thumb}")
         span.icon.ss-play.circle_icon
 
-        .share_wrapper(data-view="buttons/share", data-permalink="https://loopcast.com/stefanoortisi/set-1")
-          a.yellow.ss-action(href="#", title="Share")
       .room_content
         .text
           h2.room_title 
@@ -38,7 +36,6 @@ block grid
             //- span.spritesheet.icon_location 
             span.icon.ss-location
             | #{item.location}
-          p.now_live Now Live
 
         a.enter_room.not_following_item(href="#{item.url}", class="button yellow_button no_shadow small_button small_button_2", title="Follow") Follow
         a.enter_room.following_item(href="#{item.url}", class="button gray_button_2 no_shadow small_button small_button_2", title="Follow") Following
