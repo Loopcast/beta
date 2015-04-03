@@ -476,7 +476,7 @@ input, textarea, div.tagsinput
 .upload_wrapper
 	position: relative
 	overflow: hidden
-	.upload_elrement
+	.upload_element
 		position: relative
 		z-index: 0
 		.progress
@@ -531,10 +531,37 @@ input, textarea, div.tagsinput
 		cursor: pointer
 
 		
-	.spritesheet
-		absolute top 50% right -25px
+	.icon
+		absolute top 50% right -45px
 		transform: translateY(-50%) scale(0.7)
 		display: none
+		color: rgba(0,0,0,0.7)
+		
+	&.editable_select
+		.icon
+			right: -22px
+			top: 60%
+			
+	&.editable_profile_tags
+		.text
+			width: 100%
+			display: block
+		.tagsinput
+			display: none
+			margin-bottom: 0
+			background: transparent
+			span.tag
+				background: #3D484F
+				
+			input
+				color: white!important
+			
+		&.edit_mode
+			.tagsinput
+				display: block
+				
+			.text
+				display: none
 		
 	&.edit_mode
 		input

@@ -20,8 +20,6 @@ module.exports = class Profile
 
 	constructor: ( @dom ) ->
 
-
-
 		@elements = 
 			profile_picture: @dom.find( '.profile_image img' )
 			cover_picture: @dom.find( '.cover_image' )
@@ -45,7 +43,7 @@ module.exports = class Profile
 		@form_bio.on 'submit', (e) -> e.preventDefault()
 		@form_bio.find( 'input' ).keyup (e) =>
 			if e.keyCode is 13
-				@read_mode()
+				@save_data()
 
 		ref = @
 
@@ -57,7 +55,7 @@ module.exports = class Profile
 				when 'set-write-mode'
 					do ref.write_mode
 				when 'set-read-mode'
-					do ref.read_mode
+					do ref.save_data
 
 
 		@update_dom_from_user_data()
@@ -94,6 +92,12 @@ module.exports = class Profile
 
 			@dom.find( 'img' ).attr 'src', url
 
+		@editables = []
+		@editables.push view.get_by_dom( '.cover h1.name' )
+		@editables.push view.get_by_dom( '.cover h3.type' )
+		@editables.push view.get_by_dom( '.cover .genres' )
+
+
 
 	# Open the write/edit mode
 	write_mode : ->
@@ -102,8 +106,12 @@ module.exports = class Profile
 	
 	
 	
-	read_mode : ->
+	save_data : ->
 		# - Update the user_data from the inputs
+
+		for item in @editables
+			item.close_read_mode()
+
 		@update_user_data_from_dom()
 
 		# - Update the dom (labels and inputs) from the user_data

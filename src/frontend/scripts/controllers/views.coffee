@@ -56,6 +56,7 @@ class View
 
 
 	bind: ( scope = 'body', tolog = false ) ->
+		
 
 		# console.error "Bindings views: #{scope}"
 		$( scope ).find( '[data-view]' ).each( ( index, item ) =>
@@ -63,6 +64,9 @@ class View
 			$item = $ item
 
 			view_name = $item.data( 'view' )
+
+			if tolog
+				log "[View] binding", view_name
 
 			$item.removeAttr 'data-view'
 
@@ -77,7 +81,10 @@ class View
 			# remove the data-view attribute, so it won't be instantiated twice!
 			$item.removeAttr 'data-view'
 
-		).promise().done => @emit "binded"
+		).promise().done => 
+			if tolog
+				log "DONE!!!!!"
+			@emit "binded"
 
 	unbind: ( scope = 'body' ) ->
 		$( scope ).find( '[data-uid]' ).each( ( index, item ) =>

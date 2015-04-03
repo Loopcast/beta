@@ -5,6 +5,7 @@ module.exports = class EditableSelect extends EditableText
 
 	constructor: ( @dom ) ->
 		super @dom
+		@dom.addClass 'editable_select'
 
 	on_ready: ( html ) =>
 		@dom.append html
@@ -24,6 +25,8 @@ module.exports = class EditableSelect extends EditableText
 			log "get_template", data
 
 			callback tmpl( values: data )
+
+	close_read_mode : => # empty
 
 	destroy: ->
 		@select.off 'change'

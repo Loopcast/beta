@@ -6,6 +6,7 @@ L = require '../../../api/loopcast/loopcast'
 
 module.exports = class EditableTags
   current_data: []
+  ready: false
 
   constructor: ( @dom ) ->
 
@@ -13,6 +14,8 @@ module.exports = class EditableTags
 
     L.genres.all ( error, list ) =>
 
+      log "[EditableTags] all", list, error
+      
       @dom.tagsInput 
         width:'auto'
         height: 'auto'
@@ -21,6 +24,10 @@ module.exports = class EditableTags
         autocomplete_url: list
         autocomplete: 
           width: 200
+
+      delay 10, =>
+        @ready = true
+        @emit 'ready'
 
     
   populate_tags: ( list ) ->
