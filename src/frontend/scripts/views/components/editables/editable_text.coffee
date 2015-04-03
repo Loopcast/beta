@@ -41,13 +41,6 @@ module.exports = class EditableText
 		
 		callback tmpl()
 
-	close_read_mode : =>
-		log 'close_edit_mode'
-		@text_el.text @input.val()
-		@dom.removeClass 'edit_mode'
-
-		@input.off 'keyup'
-
 	open_edit_mode : (e) =>
 		return unless app.body.hasClass( 'write_mode' )
 
@@ -60,7 +53,16 @@ module.exports = class EditableText
 			if e.keyCode is 13
 				@close_read_mode()
 
-		app.window.once 'body:clicked', @close_read_mode
+		app.window.on 'body:clicked', @close_read_mode
+
+	close_read_mode : =>
+		log 'close_edit_mode'
+		@text_el.text @input.val()
+		@dom.removeClass 'edit_mode'
+
+		@input.off 'keyup'
+
+		app.window.off 'body:clicked', @close_read_mode
 
 	destroy: ->
 		# @text_el.off 'click', @open_edit_mode

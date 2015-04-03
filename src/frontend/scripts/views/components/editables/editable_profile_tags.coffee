@@ -30,13 +30,15 @@ module.exports = class EditableProfileTags extends EditableText
     log 'open_edit_mode'
     @dom.addClass 'edit_mode'
 
-    app.window.once 'body:clicked', @close_read_mode
+    app.window.on 'body:clicked', @close_read_mode
 
   close_read_mode : =>
     log '[EditableProfileTags] close_edit_mode'
     @dom.removeClass 'edit_mode'
     list = @tags.get_tags()
     @text.html list.join( ', ' )
+
+    app.window.off 'body:clicked', @close_read_mode
 
 
   get_template: ( callback ) ->
