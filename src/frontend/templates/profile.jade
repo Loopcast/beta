@@ -5,7 +5,7 @@ block seo
 extends layout
 
 block content
-  .profile_theme.centered(data-menu="profile", data-view="profile")
+  .profile_theme.centered.no_information_yet(data-menu="profile", data-view="profile")
     .cover
       .cover_image(style="background-image:url(/images/homepage_2.jpg)")
       .content
@@ -13,7 +13,7 @@ block content
           span.text #{profile.name}
         br
         h3.type.black_background(data-view="components/editables/editable_select")
-          span.text DJ/Producer
+          span.text Select Profession
         br
         .genres.black_background(data-view="components/editables/editable_profile_tags")
           span.text #{profile.genres.join( ", " )}
@@ -37,7 +37,7 @@ block content
         .sidebar_right
           .big_number
             .inner
-              span.number 2
+              span.number 0
               span.text Followers
 
           .big_number
@@ -47,7 +47,7 @@ block content
 
           .big_number
             .inner
-              span.number 2
+              span.number 0
               span.text 
                 | Listeners 
                 br
@@ -77,16 +77,22 @@ block content
     .profile_content
       .profile_left
         .profile_bio.outline_box
-          .element_on_read_mode
+          .profile_bio_without_information.element_on_read_mode
+            .text
+              p 1. Add your location
+              p 2. Add your bio
+              p 3. Add your social links
+
+            a.rounded_border.big.add_information(href="#", data-profile="set-write-mode")
+              span.icon.ss-write
+              | Add
+
+          .element_on_read_mode.profile_bio_with_information
             a.outline_icon(href="#", title="Edit Profile", data-profile="set-write-mode")
               //- span.spritesheet.edit_icon
               span.icon.ss-write
-            h4.location London - UK
+            h4.location
             .bio 
-              | Thomas Amundsen from Oslo, now based in London has from an early age lots of musical influences, experimenting from acoustic instruments to electronic music production and DJing.
-              br
-              br
-              | He released his debut EP “I Feel” on Fusion recordings, sub-label of Dj Center Records, and has since released frequently on labels such as; Dobara, Susurrous Music, Incognitus Recordings, Koolwaters and gained support from the likes of Amine Edge, Stacey Pullen, Detlef, Slam, Marc Vedo, Loverdose, Ashley Wild, Jobe and many more
 
             .social
               a.spotify_link(href="#" title="Spotify", target="_blank")

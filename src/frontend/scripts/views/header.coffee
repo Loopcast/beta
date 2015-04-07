@@ -52,8 +52,6 @@ module.exports = class Header
 		tmpl    = require 'templates/shared/header_user_logged'
 		html    = tmpl data
 
-		log "[Header] on_user_logged", data, html
-
 		wrapper.empty().append html
 
 		view.bind wrapper
@@ -64,4 +62,3 @@ module.exports = class Header
 	on_user_unlogged: ( data ) =>
 		return if not @user_logged
 		@user_logged = false
-		log "[Header] on_user_unlogged", data

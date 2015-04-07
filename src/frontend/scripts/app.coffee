@@ -66,7 +66,7 @@ class App
 	
 	# User Proxies
 	login : ( user ) -> 
-		log "--------> login called from outside"
+		log "--------> login called from outside", user
 
 		if @settings.after_login_url.length > 0
 			url = @settings.after_login_url

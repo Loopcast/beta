@@ -3,22 +3,23 @@ transform  = require 'app/utils/images/transform'
 notify     = require 'app/controllers/notify'
 user_controller = require 'app/controllers/user'
 LoggedView = require 'app/views/logged_view'
+api = require 'app/api/loopcast/loopcast'
 
 module.exports = class Profile extends LoggedView
 	elements: null
 	form_bio: null
 
 	# TODO: replace this fake data object
-	user_data :
-		profile_picture: "/images/profile_big.png"
-		cover_picture: "/images/homepage_2.jpg"
-		location: "London - UK"
-		bio: "Thomas Amundsen from Oslo, now based in London has from an early age lots of musical influences, experimenting from acoustic instruments to electronic music production and DJing.<br/><br/>He released his debut EP “I Feel” on Fusion recordings, sub-label of Dj Center Records, and has since released frequently on labels such as; Dobara, Susurrous Music, Incognitus Recordings, Koolwaters and gained support from the likes of Amine Edge, Stacey Pullen, Detlef, Slam, Marc Vedo, Loverdose, Ashley Wild, Jobe and many more"
-		links: [
-			{type:"spotify", url:"http://spotify.com"},
-			{type:"soundcloud", url:"http://soundcloud.com"},
-			{type:"facebook", url:"http://facebook.com"}
-		]
+	# user_data :
+	# 	profile_picture: "/images/profile_big.png"
+	# 	cover_picture: "/images/homepage_2.jpg"
+	# 	location: "London - UK"
+	# 	bio: "Thomas Amundsen from Oslo, now based in London has from an early age lots of musical influences, experimenting from acoustic instruments to electronic music production and DJing.<br/><br/>He released his debut EP “I Feel” on Fusion recordings, sub-label of Dj Center Records, and has since released frequently on labels such as; Dobara, Susurrous Music, Incognitus Recordings, Koolwaters and gained support from the likes of Amine Edge, Stacey Pullen, Detlef, Slam, Marc Vedo, Loverdose, Ashley Wild, Jobe and many more"
+	# 	links: [
+	# 		{type:"spotify", url:"http://spotify.com"},
+	# 		{type:"soundcloud", url:"http://soundcloud.com"},
+	# 		{type:"facebook", url:"http://facebook.com"}
+	# 	]
 
 	constructor: ( @dom ) ->
 
@@ -60,8 +61,6 @@ module.exports = class Profile extends LoggedView
 					do ref.save_data
 
 
-		@update_dom_from_user_data()
-
 		$( '#room_modal' ).data( 'modal-close', true )
 
 		view.once 'binded', @on_views_binded
@@ -72,11 +71,11 @@ module.exports = class Profile extends LoggedView
 		super()
 
 
-	on_user_logged: ( user_data ) =>
+	on_user_logged: ( @user_data ) =>
 
 		@dom.addClass 'user_logged'
 
-		log "[Profile] on_user_logged"
+		log "[Profile] on_user_logged", @user_data
 
 		# Listen to images upload events
 		@change_cover_uploader = view.get_by_dom @dom.find( '.change_cover' )
@@ -106,9 +105,19 @@ module.exports = class Profile extends LoggedView
 		@editables.push view.get_by_dom( '.cover h3.type' )
 		@editables.push view.get_by_dom( '.cover .genres' )
 
+		if user_controller.has_informations()
+			@dom.removeClass 'no_information_yet'
+			@update_dom_from_user_data()
+		else
+			log "[Profile] it doesn't have informations yet"
+
+		
+
+
+
 	on_user_unlogged: =>
 		log "[Profile] on_user_unlogged"
-		@dom.removeClass 'user_logged'
+		@dom.removeClass( 'user_logged' ).addClass( 'no_information_yet' )
 
 
 	# Open the write/edit mode
@@ -140,6 +149,8 @@ module.exports = class Profile extends LoggedView
 
 	update_user_data_from_dom: ->
 
+		log "[Profile] update_user_data_from_dom"
+
 		# - TODO: Update the images
 
 		@user_data.location = @elements.location_input.val()
@@ -154,6 +165,7 @@ module.exports = class Profile extends LoggedView
 
 	update_dom_from_user_data : ->
 
+		log "[Profile] update_dom_from_user_data"
 		e = @elements
 		d = @user_data
 
@@ -178,7 +190,19 @@ module.exports = class Profile extends LoggedView
 		return str.replace re, to_replace
 
 	send_to_server: ->
-		log "[Profile] save", @user_data
+		log "[Profile] saving", @user_data
+
+		api.user.edit
+			about: @user_data.bio
+		, ( error, response ) =>
+			log "[Profile] user edit response", error, response
+			if error
+				log "---> Error Profile edit user", error.statusText
+			# if error
+			# 	console.error error 
+			# console.log response
+
+
 		return
 		$.post "/api/v1/user/save", @user_data, (data) =>
 			log "[Profile] server response", data

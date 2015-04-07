@@ -11,6 +11,33 @@
 .profile_theme
 	position  : relative
 	
+	.profile_bio_without_information
+		display: none
+		color: #787676
+		font-weight: bold
+		font-size: 0.9rem
+		padding: 40px 30px 6px
+		text-align: center
+		p
+			margin-bottom: 5px
+			
+		.text
+			text-align: left
+			margin-bottom: 90px
+
+			
+
+
+	&.no_information_yet
+		.profile_bio_with_information
+			display: none
+		.profile_bio_without_information
+			display: block
+		
+
+
+
+
 	// maybe player should be a global thing right?
 	.player
 		display: none

@@ -54,6 +54,16 @@ module.exports = happens
 
 		# notify.info "You've successufully logged in."
 
+	has_informations: ->
+		user = @get_user()
+		if not user
+			return false
+
+		if user.bio? or user.location?
+			return true
+
+		return false
+
 	check_user: -> 
 		log "[User Controller] check_user", @is_logged()
 		if @is_logged()
