@@ -52,7 +52,7 @@ module.exports = happens
 
 		log "[User Controller] login", @get_user()
 
-		notify.info "You've successufully logged in."
+		# notify.info "You've successufully logged in."
 
 	check_user: -> 
 		log "[User Controller] check_user", @is_logged()

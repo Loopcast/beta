@@ -1,8 +1,10 @@
 Cloudinary = require 'app/controllers/cloudinary'
 transform  = require 'app/utils/images/transform'
 notify     = require 'app/controllers/notify'
+user_controller = require 'app/controllers/user'
+LoggedView = require 'app/views/logged_view'
 
-module.exports = class Profile 
+module.exports = class Profile extends LoggedView
 	elements: null
 	form_bio: null
 
@@ -67,24 +69,31 @@ module.exports = class Profile
 
 
 	on_views_binded: =>
+		super()
 
-		log "[Profile] on_views_binded"
+
+	on_user_logged: ( user_data ) =>
+
+		@dom.addClass 'user_logged'
+
+		log "[Profile] on_user_logged"
+
 		# Listen to images upload events
-		change_cover_uploader = view.get_by_dom @dom.find( '.change_cover' )
+		@change_cover_uploader = view.get_by_dom @dom.find( '.change_cover' )
 
-		if not change_cover_uploader
+		if not @change_cover_uploader
 			log "[Profile] views not binded yet!!!"
 			return
 
-		change_cover_uploader.on 'completed', (data) =>
+		@change_cover_uploader.on 'completed', (data) =>
 
 			@user_data.cover_picture = data.result.url
 
 			@dom.find( '.cover_image' ).css
 				'background-image': "url(#{data.result.url})"
 
-		change_picture_uploader = view.get_by_dom @dom.find( '.profile_image' )
-		change_picture_uploader.on 'completed', (data) =>
+		@change_picture_uploader = view.get_by_dom @dom.find( '.profile_image' )
+		@change_picture_uploader.on 'completed', (data) =>
 
 			@user_data.profile_picture = data.result.url
 
@@ -97,6 +106,9 @@ module.exports = class Profile
 		@editables.push view.get_by_dom( '.cover h3.type' )
 		@editables.push view.get_by_dom( '.cover .genres' )
 
+	on_user_unlogged: =>
+		log "[Profile] on_user_unlogged"
+		@dom.removeClass 'user_logged'
 
 
 	# Open the write/edit mode
@@ -170,3 +182,6 @@ module.exports = class Profile
 		return
 		$.post "/api/v1/user/save", @user_data, (data) =>
 			log "[Profile] server response", data
+
+	destroy: =>
+		super()

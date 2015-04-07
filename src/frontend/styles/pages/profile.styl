@@ -169,6 +169,7 @@
 		position: absolute
 		bottom: 20px
 		right: 130px
+		display: none
 		span.spritesheet
 			transform: scale(.7,.7)
 				
@@ -190,6 +191,7 @@
 				top: 5px
 				right: 10px
 				padding-top: 9px
+				display: none
 			h4
 				font-size: 1.1em
 				margin-bottom: 14px
@@ -340,6 +342,28 @@
 				font-weight: 800
 				padding-top: 4px
 				
+	&.user_logged
+		.cover_button
+			display: block
+			
+		.profile_content .profile_bio .outline_icon
+			display: block
+			
+		.edit_session_wrapper
+			display: block
+			
+		.element_on_write_mode
+			display: none
+			
+.write_mode
+	.profile_theme.user_logged
+		.element_on_write_mode
+			display: block
+			
+		.element_on_read_mode
+			display: none
+
+
 .profile_form				
 	padding-top: 10px
 	textarea
@@ -361,6 +385,7 @@
 	position: absolute
 	top: 10px
 	right: 10px
+	display: none
 	.settings_button
 		opacity: 0.6
 		transition: transform .1s linear

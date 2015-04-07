@@ -16,7 +16,7 @@ module.exports = class Header
 		obj = $( '[data-menu]' )
 		if obj.length > 0
 			page = obj.data 'menu'
-			log "[Header] check_menu", page
+			# log "[Header] check_menu", page
 			
 			if @current_page.length > 0
 				@dom.find( ".#{@current_page}_item" ).removeClass "selected"
@@ -50,13 +50,9 @@ module.exports = class Header
 		
 		wrapper = @dom.find( '.user_logged' )
 		tmpl    = require 'templates/shared/header_user_logged'
-
 		html    = tmpl data
 
-
 		log "[Header] on_user_logged", data, html
-
-		log "wrapper", wrapper.length, wrapper
 
 		wrapper.empty().append html
 
