@@ -8,8 +8,6 @@ module.exports = ( id, callback ) ->
 
   intercom.getUser user_id: id, ( error, intercom ) ->
 
-    console.log "got information from intercom ->", intercom
-
     profile =
       id         : intercom.user_id
 
