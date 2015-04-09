@@ -2,10 +2,12 @@
 # Transforms facebook information into session information
 ###
 
-request = require 'request'
+
+slug    = require 'slug'
 hash    = lib 'tools/hash'
 graph   = lib 'facebook/call_graph'
 upload  = lib 'cloudinary/upload'
+
 
 # args
 #  - "info" is the information received from facebook
@@ -14,12 +16,13 @@ module.exports = ( info, callback ) ->
 
   after_upload = ( picture_info ) ->
 
-    username = info.profile.email
-    username = username.substr 0, username.indexOf '@'
+    # remove white spaces
+    username = info.profile.displayName.replace /\s/g, ''
+    username = username.toLowerCase()
 
     user = 
       session :
-        username: username
+        username: slug username
         name    : info.profile.displayName
         avatar  : picture_info.secure_url
 

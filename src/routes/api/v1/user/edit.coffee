@@ -39,6 +39,8 @@ module.exports =
 
       user = request.auth.credentials.user
 
+      console.log 'payload ->', request.payload
+
       intercom.getUser user_id: user.username, ( error, response ) ->
 
         if error 
@@ -51,29 +53,34 @@ module.exports =
 
         update = id: response.id
 
+        # top info on profile page
+        if request.payload.user_id
+          update.user_id = request.payload.user_id
+
+        if request.payload.name
+          update.name = request.payload.name
+
+        if request.payload.occupation
+          update.custom_attributes = update.custom_attributes || {}
+          update.custom_attributes.occupation = request.payload.occupation
+
+        if request.payload.genres
+          update.custom_attributes = update.custom_attributes || {}
+          update.custom_attributes.genres = request.payload.genres.join( "," )
+
+
+        # left bar info
         if request.payload.followers
           update.custom_attributes = update.custom_attributes || {}
 
           update.custom_attributes.followers = request.payload.followers
-
-        if request.payload.occupation
-          update.custom_attributes = update.custom_attributes || {}
-
-          update.custom_attributes.occupation = request.payload.occupation
 
         if request.payload.about
           update.custom_attributes = update.custom_attributes || {}
 
           update.custom_attributes.about = request.payload.about
 
-        if request.payload.genres
-          update.custom_attributes = update.custom_attributes || {}
 
-          update.custom_attributes.genres = request.payload.genres.join( "," )
-
-        # updating user_id is an issue at the moment, it's creating a new user
-        if request.payload.user_id
-          update.user_id = request.payload.user_id
 
         intercom.updateUser update, ( error, res ) ->
 

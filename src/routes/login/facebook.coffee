@@ -28,34 +28,32 @@ module.exports =
 
           if error then return reply error
 
-          intercom.getUser email: user.data.email, ( error, intercom ) ->
+          # populates "data" with intercom data
+          intercom.getUser email: user.data.email, ( error, data ) ->
 
-            if not intercom
+            if not data
 
               # if not yet on intercom, use facebook info
               request.auth.session.set user: user.session
 
-              console.log " -> adding user to intercom"
-
               data =
-                user_id   : user.session.username
-                email     : user.data.email
-                name      : user.data.facebook.profile.displayName
-                created_at: now().unix()
+                user_id             : user.session.username
+                email               : user.data.email
+                name                : user.data.facebook.profile.displayName
+                created_at          : now().unix()
                 last_seen_user_agent: request.headers[ 'user-agent' ]
-                # avatar    :
-                #   type     : 'avatar'
-                #   image_url: user.session.avatar
+                custom_attributes   :
+                  avatar: user.session.avatar
 
-              intercom.createUser data, ( error, intercom ) ->
+              intercom.createUser data, ( error, data ) ->
 
                 if error
                   console.log "error creating user at intercom"
-                  console.log JSON.stringify( error, null, 2)
+                  console.log JSON.stringify( error, null, 2 )
 
-                  return
+                  return Boom.expectationFailed 'couldnt create user, please contact support'
 
-                console.log "created intercom user!! ->", intercom
+                # console.log "created intercom user!! ->", data
 
                 return reply.redirect '/login/successful'
 
@@ -63,14 +61,11 @@ module.exports =
 
               # if not yet on intercom, use facebook info
 
-              user.session.username = intercom.user_id
-              user.session.name     = intercom.name
+              user.session.username = data.user_id
+              user.session.name     = data.name
 
               request.auth.session.set user: user.session
 
-              # maybe update last_seen_user_agent or integrate this from
-              # client side intercom
-              console.log " -> user already on intercom"
+              # console.log " -> user already on intercom"
 
-              # redirect to succesful login
               return reply.redirect '/login/successful'
