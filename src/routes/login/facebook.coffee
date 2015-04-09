@@ -23,15 +23,17 @@ module.exports =
         credentials = request.auth.credentials
 
 
+        # populates user informaiton with facebook data
         transform credentials, ( error, user ) ->
 
           if error then return reply error
 
-          request.auth.session.set user: user.session
+          intercom.getUser email: user.data.email, ( error, intercom ) ->
 
-          intercom.getUser email: user.data.email, ( error, res ) ->
+            if not intercom
 
-            if not res
+              # if not yet on intercom, use facebook info
+              request.auth.session.set user: user.session
 
               console.log " -> adding user to intercom"
 
@@ -45,7 +47,7 @@ module.exports =
                 #   type     : 'avatar'
                 #   image_url: user.session.avatar
 
-              intercom.createUser data, ( error, res ) ->
+              intercom.createUser data, ( error, intercom ) ->
 
                 if error
                   console.log "error creating user at intercom"
@@ -53,14 +55,22 @@ module.exports =
 
                   return
 
-                console.log "created intercom user!! ->", res
+                console.log "created intercom user!! ->", intercom
+
+                return reply.redirect '/login/successful'
 
             else
+
+              # if not yet on intercom, use facebook info
+
+              user.session.username = intercom.user_id
+              user.session.name     = intercom.name
+
+              request.auth.session.set user: user.session
 
               # maybe update last_seen_user_agent or integrate this from
               # client side intercom
               console.log " -> user already on intercom"
-              # console.log res
 
-          # redirect to succesful login
-          return reply.redirect '/login/successful'
+              # redirect to succesful login
+              return reply.redirect '/login/successful'
