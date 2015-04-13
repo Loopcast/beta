@@ -40,10 +40,6 @@ module.exports =
 
       payload = request.payload
 
-
-      console.log "====PAYLOAD====="
-      console.log payload
-
       if payload.genres.length > 0
         payload.genres = payload.genres.split ','
 
