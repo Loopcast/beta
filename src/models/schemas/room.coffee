@@ -17,6 +17,9 @@ schema = new Schema
   status:
     is_live     : Boolean
     is_recording: Boolean
+    is_streaming: Boolean
+    started_at  : Date
+    stopped_at  : Date
 
   images:
     cover: Object # cloudinary information
