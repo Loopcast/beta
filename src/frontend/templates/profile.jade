@@ -19,7 +19,7 @@ block content
           span.text #{profile.genres.join( ", " )}
 
         .profile_image.upload_wrapper(data-view="components/image_uploader", data-id="profile_picture")
-          img(src="#{profile.image}")
+          img(src="#{profile.avatar}")
           p.upload_element.edit_image
             span.icon.ss-camera
             span Update profile picture
@@ -37,17 +37,17 @@ block content
         .sidebar_right
           .big_number
             .inner
-              span.number 0
+              span.number #{profile.followers}
               span.text Followers
 
           .big_number
             .inner
-              span.number 0
+              span.number #{profile.streams}
               span.text Streams 
 
           .big_number
             .inner
-              span.number 0
+              span.number #{profile.listeners}
               span.text 
                 | Listeners 
                 br

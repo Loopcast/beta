@@ -85,11 +85,6 @@ module.exports =
 
 
         # left bar info
-        if request.payload.followers
-
-          data.custom_attributes.followers = request.payload.followers
-
-
         if request.payload.location
 
           data.custom_attributes.location = request.payload.location
@@ -98,10 +93,30 @@ module.exports =
 
           data.custom_attributes.about = request.payload.about
 
-        if request.payload.about
+        if request.payload.social
 
-          data.custom_attributes.about = request.payload.about
+          data.custom_attributes.social = request.payload.social.join ','
 
+
+        if request.payload.avatar
+          data.custom_attributes.avatar = request.payload.avatar
+
+          # TODO: pic old avatar id and push to remove from cloudinary
+          # remove_from_cloudinary ||= []
+          # remove_from_cloudinary.push
+
+        if request.payload.cover
+          data.custom_attributes.cover = request.payload.cover
+
+          # TODO: pic old avatar id and push to remove from cloudinary
+          # remove_from_cloudinary ||= []
+          # remove_from_cloudinary.push
+
+        if remove_from_cloudinary
+          cloudinary.api.delete_resources remove_from_cloudinary, ( result ) ->
+            if result.error
+              console.log "error deleting image from cloudinary"
+              console.log result.error
 
         # HACK: since we still don't have an interface to update user_id
         # we will be updating user_id everytime a user updates his name

@@ -18,11 +18,15 @@ module.exports = ( id, callback ) ->
 
       # left bar info
       about     : intercom.custom_attributes.about
+      location  : intercom.custom_attributes.location
+      social    : intercom.custom_attributes.social?.split ','
 
-      image    : intercom.custom_attributes.avatar
-      followers: 2
-      rooms    : 0
-      visitors : 2
+      avatar    : intercom.custom_attributes.avatar
+      cover     : intercom.custom_attributes.cover
+
+      followers : intercom.custom_attributes.followers || 0
+      streams   : intercom.custom_attributes.streams   || 0
+      listeners : intercom.custom_attributes.listeners || 0
 
       live     :
         title    : "Last Saturday Set"
@@ -66,5 +70,7 @@ module.exports = ( id, callback ) ->
         ]
 
     if not profile.genres then profile.genres = []
+
+    if not profile.social then profile.social = []
 
     callback null, profile
