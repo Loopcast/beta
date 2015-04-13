@@ -115,88 +115,91 @@ block content
 
 
 
-
       .list_sessions
-        .session.outline_box
-          a.image(href="#", title="Old School House session", style="background-image:url(/images/profile_session_1.jpg)")
-          .content
-            h2.session_title 
-              a(href="#", title="#{profile.live.title}") #{profile.live.title}
-            a.session_author.underline_link(href="#", title="#{profile.live.author}") #{profile.live.author}
-            .genres
-              for genre in profile.live.genres
-                a.tag(href="#", title="#{genre}") #{genre}
 
-            .small_info
-              .location 
-                span.icon.ss-location
-                //- span.spritesheet.icon_location
-                span.text #{profile.live.location}
-              .likes 
-                span.icon.ss-heart
-                //- span.spritesheet.icon_guests
-                span.text #{profile.live.loves}
-              .guests 
-                span.icon.ss-users
-                //- span.spritesheet.icon_plays
-                span.text #{profile.live.guests}
+        if profile.live
+          .session.outline_box
+            a.image(href="#", title="Old School House session", style="background-image:url(/images/profile_session_1.jpg)")
+            .content
+              h2.session_title 
+                a(href="#", title="#{profile.live.title}") #{profile.live.title}
+              a.session_author.underline_link(href="#", title="#{profile.live.author}") #{profile.live.author}
+              .genres
+                for genre in profile.live.genres
+                  a.tag(href="#", title="#{genre}") #{genre}
 
-            .live 
-              p.label now live
-              p.time 02:33
+              .small_info
+                .location 
+                  span.icon.ss-location
+                  //- span.spritesheet.icon_location
+                  span.text #{profile.live.location}
+                .likes 
+                  span.icon.ss-heart
+                  //- span.spritesheet.icon_guests
+                  span.text #{profile.live.loves}
+                .guests 
+                  span.icon.ss-users
+                  //- span.spritesheet.icon_plays
+                  span.text #{profile.live.guests}
+
+              .live 
+                p.label now live
+                p.time 02:33
+
+        if profile.recorded
+          .recorded_sessions
+            .title
+              h2 Recorded sessions
+              .icon.ss-record-wrapper
+                span.ss-record
+              span.session_text #{profile.recorded.length}
+
+              span.icon.ss-alert
+              span.alert_text #{profile.free_storage} free storage remaining
+
+            for room in profile.recorded
+              .session.outline_box(id="session_recorded_#{room.id}", data-view="[components/user_set,components/audio/player_preview]", data-data="#{JSON.stringify(room)}")
+
+                .image(style="background-image:url(/images/profile_session_1.jpg)")
+                  a.icon.ss-play.circle_icon(href="#",title="Play") 
+                  .share_wrapper(data-view="buttons/share", data-permalink="https://loopcast.com/stefanoortisi/set-1")
+                    a.yellow.ss-action(href="#", title="Share")
 
 
-        .recorded_sessions
-          .title
-            h2 Recorded sessions
-            .icon.ss-record-wrapper
-              span.ss-record
-            span.session_text #{profile.recorded.length}
-
-            span.icon.ss-alert
-            span.alert_text #{profile.free_storage} free storage remaining
-
-          for room in profile.recorded
-            .session.outline_box(id="session_recorded_#{room.id}", data-view="[components/user_set,components/audio/player_preview]", data-data="#{JSON.stringify(room)}")
-
-              .image(style="background-image:url(/images/profile_session_1.jpg)")
-                a.icon.ss-play.circle_icon(href="#",title="Play") 
-                .share_wrapper(data-view="buttons/share", data-permalink="https://loopcast.com/stefanoortisi/set-1")
-                  a.yellow.ss-action(href="#", title="Share")
-
-
-              .content
-                h2.session_title 
-                  a(href="#", title="#{room.title}") #{room.title}
-                a.session_author.underline_link(href="#", title="#{room.author}") #{room.author}
-                .genres
-                  for genre in room.genres
-                    a.tag(href="#", title="#{genre}") #{genre}
-                  
-                .small_info
-                  .location 
-                    span.icon.ss-location
-                    span.text #{room.location}
-                  .likes 
-                    span.icon.ss-heart
-                    span.text #{room.loves}
-                  .guests 
-                    span.icon.ss-play
-                    span.text #{room.guests}
-
-                .edit_session_wrapper
-                  a.icon.settings_button.ss-settings(href="#", title="Setting Session", data-view="components/click_trigger" data-target="#session_recorded_#{room.id} .edit_session_popup")
-                  .edit_session_popup
-                    .triangle
-                    a.download_button.button.yellow_button.small_button_4(href="#", title="Download") Download
-                    a.edit_button.button.yellow_button.small_button_4(href="#", title="Edit") Edit
-                    a.delete_button.button.red_button.small_button_4(href="#", title="Delete") Delete
-
-              .delete_screen
                 .content
-                  h2 Are you sure you want to delete this recording?
-                  a.button.red_button.small_button_4.confirm_delete(href="#", title="Delete") Delete
-                  a.button.white_button.small_button_4.cancel_delete(href="#", title="Cancel") Cancel
+                  h2.session_title 
+                    a(href="#", title="#{room.title}") #{room.title}
+                  a.session_author.underline_link(href="#", title="#{room.author}") #{room.author}
+                  .genres
+                    for genre in room.genres
+                      a.tag(href="#", title="#{genre}") #{genre}
+                    
+                  .small_info
+                    .location 
+                      span.icon.ss-location
+                      span.text #{room.location}
+                    .likes 
+                      span.icon.ss-heart
+                      span.text #{room.loves}
+                    .guests 
+                      span.icon.ss-play
+                      span.text #{room.guests}
 
+                  .edit_session_wrapper
+                    a.icon.settings_button.ss-settings(href="#", title="Setting Session", data-view="components/click_trigger" data-target="#session_recorded_#{room.id} .edit_session_popup")
+                    .edit_session_popup
+                      .triangle
+                      a.download_button.button.yellow_button.small_button_4(href="#", title="Download") Download
+                      a.edit_button.button.yellow_button.small_button_4(href="#", title="Edit") Edit
+                      a.delete_button.button.red_button.small_button_4(href="#", title="Delete") Delete
+
+                .delete_screen
+                  .content
+                    h2 Are you sure you want to delete this recording?
+                    a.button.red_button.small_button_4.confirm_delete(href="#", title="Delete") Delete
+                    a.button.white_button.small_button_4.cancel_delete(href="#", title="Cancel") Cancel
+
+        if !profile.recorded && !profile.live
+          | NO RECORDED SETS YET
 
   include ./profile/room_modal.jade
