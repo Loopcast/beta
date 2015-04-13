@@ -1,3 +1,4 @@
+L       = require '../loopcast/loopcast'
 appcast = require 'app/controllers/appcast'
 
 module.exports =
@@ -45,17 +46,30 @@ module.exports =
 
 
 
-  start_stream : ->
+  start_stream : ( user_id, callback ) ->
     if not appcast.get 'input_device'
 
       console.error '- cant start stream before selecting input device'
+
+      callback 'no_input_device'
+
       return
 
     console.log 'starting streaming with', appcast.get 'input_device'
     
     appcast.start_stream appcast.get 'input_device'
 
+    appcast.on 'stream:online', ( status ) ->
 
+      if not status
+
+        dom.find('a').html "WENT OFFLINE : ("
+
+        alert 'APPCAST went offline'
+        return
+
+      # call the api
+      L.rooms.start_stream user_id, callback
 
   stop_stream : -> 
     if not appcast.get 'streaming:online'
@@ -66,3 +80,6 @@ module.exports =
     console.log '+ stoping streaming with', appcast.get 'input_device'
     
     appcast.stop_stream()
+
+    # call the api
+    L.rooms.stop_stream user_id, callback
