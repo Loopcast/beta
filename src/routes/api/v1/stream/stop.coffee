@@ -37,7 +37,9 @@ module.exports =
         url : "#{username}/#{room_id}"
 
       update =
-        $set : 'status.is_streaming': false
+        $set : 
+          'status.is_streaming': false
+          'status.stopped_at'  : now()
 
 
       options = 
