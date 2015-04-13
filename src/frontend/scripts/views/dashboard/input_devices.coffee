@@ -1,7 +1,7 @@
 appcast  = require 'app/controllers/appcast'
 happens = require 'happens'
 
-Select = require './select'
+Select = require '../components/select'
 
 module.exports = class InputDevices extends Select
 
