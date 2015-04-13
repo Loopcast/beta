@@ -1,5 +1,5 @@
 ###
-# Socket controller will be used to communicate with desktop app AppCast
+# Manages local connection to Appcast
 ###
 
 aware    = require 'aware'
