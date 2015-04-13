@@ -25,7 +25,7 @@ global.happens = require 'happens'
 
 global.aware   = require 'aware'
 
-global.now = ( value ) -> moment( value ).utc()
+global.now = ( value ) -> moment.utc(value)
 
 # path shortcuts
 

@@ -2,17 +2,17 @@ mongoose   = require( 'mongoose')
 Schema     = mongoose.Schema
 
 schema = new Schema
-  # url is automatically generated #{owner_user}/#{info.slug}
+  # url is automatically generated #{user}/#{info.slug}
   url    : type: String, required: true
 
   info   :
-    owner_user: type: String, required: true
-    title     : type: String, required: true
-    slug      : type: String, required: true
-    genres    : Array
-    location  : String
-    about     : String
-    cover     : String
+    user     : type: String, required: true
+    title    : type: String, required: true
+    slug     : type: String, required: true
+    genres   : Array
+    location : String
+    about    : String
+    cover    : String
 
   status:
     is_live     : Boolean
@@ -59,7 +59,7 @@ schema.pre 'save', ( next, done ) ->
   doc = @
 
   Room.find( { }, _id: off )
-    .where( "url"  , "#{@info.owner_user}/#{@info.slug}" )
+    .where( "url"  , "#{@info.user}/#{@info.slug}" )
     .where( "status.is_live", true )
     .select( "url" )
     .lean()

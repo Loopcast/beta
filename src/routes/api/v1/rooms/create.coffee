@@ -52,12 +52,12 @@ module.exports =
 
       doc = 
         info:
-          owner_user : user.username
-          title      : payload.title
-          slug       : slug payload.title.toLowerCase()
-          genres     : payload.genres # potential error!
-          location   : payload.location
-          about      : payload.about
+          user     : user.username
+          title    : payload.title
+          slug     : slug payload.title.toLowerCase()
+          genres   : payload.genres # potential error!
+          location : payload.location
+          about    : payload.about
 
       doc.url = "#{user.username}/#{doc.info.slug}"
       # doc.updated_at = doc.created_at = now().toDate()

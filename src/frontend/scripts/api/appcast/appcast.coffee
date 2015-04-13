@@ -46,7 +46,7 @@ module.exports =
 
 
 
-  start_stream : ( user_id, callback ) ->
+  start_stream : ( user_id, room_id, callback ) ->
     if not appcast.get 'input_device'
 
       console.error '- cant start stream before selecting input device'
@@ -57,7 +57,7 @@ module.exports =
 
     console.log 'starting streaming with', appcast.get 'input_device'
     
-    appcast.start_stream appcast.get 'input_device'
+    appcast.start_stream user_id, appcast.get 'input_device'
 
     appcast.on 'stream:online', ( status ) ->
 
@@ -69,10 +69,10 @@ module.exports =
         return
 
       # call the api
-      L.rooms.start_stream user_id, callback
+      L.rooms.start_stream room_id, callback
 
-  stop_stream : -> 
-    if not appcast.get 'streaming:online'
+  stop_stream : ( user_id, room_id, callback ) -> 
+    if not appcast.get 'stream:online'
 
       console.error '- cant stop stream if not streaming'
       return
@@ -82,4 +82,4 @@ module.exports =
     appcast.stop_stream()
 
     # call the api
-    L.rooms.stop_stream user_id, callback
+    L.rooms.stop_stream room_id, callback

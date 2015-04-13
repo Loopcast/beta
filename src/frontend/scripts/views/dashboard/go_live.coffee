@@ -9,22 +9,25 @@ module.exports = ( dom ) ->
 
   dom.find('a').click ->
 
+    # TODO: make it clever
+    user_id = location.pathname.split("/")[1]
+    room_id = location.pathname.split("/")[2]
+
     if not live
       console.log "clicked go live!"
 
-      # TODO: make it clever
-      user_id = location.pathname.split("/")[1]
+      if not appcast.get 'input_device'
+
+        alert 'select input device first'
+
+        return
+
 
       dom.find('a').html "..."
 
-      A.start_stream user_id, ( error, callback ) ->
+      A.start_stream user_id, room_id, ( error, callback ) ->
 
-        if error is 'no_input_device'
-
-          alert 'select input device first'
-          console.error "can't got live without selecting input device"
-
-          return
+        live = true
 
         dom.find('a').html "GO OFFLINE"
 
@@ -33,7 +36,7 @@ module.exports = ( dom ) ->
 
       dom.find('a').html "..."
 
-      A.stop_stream user_id, ( error, callback ) ->
+      A.stop_stream user_id, room_id, ( error, callback ) ->
 
         if error is 'no_input_device'
 
@@ -41,6 +44,8 @@ module.exports = ( dom ) ->
           console.error "can't got live without selecting input device"
 
           return
+
+        live = false
 
         dom.find('a').html "GO LIVE"
 
