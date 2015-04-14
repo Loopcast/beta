@@ -30,7 +30,7 @@ module.exports =
       query =
         'info.user'       : profile
         'info.slug'       : room_id
-        'status.is_public': on
+        # 'status.is_public': on
 
       Room.findOne( query )
         .select( "info.title status.is_streaming" )
