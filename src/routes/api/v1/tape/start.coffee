@@ -43,10 +43,10 @@ module.exports =
           'status.recording.started_at' : now().format()
 
 
+      # TODO: use Room.update instead of findAndModify
       options = 
         fields:
           _id                  : off
-          'status.is_recording': on
         'new': true
 
       Room.findAndModify query, null, update, options, ( error, status ) ->

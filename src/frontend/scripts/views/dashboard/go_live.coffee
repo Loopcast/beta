@@ -1,5 +1,4 @@
 L       = require '../../api/loopcast/loopcast'
-A       = require '../../api/appcast/appcast'
 appcast = require '../../controllers/appcast'
 
 # fetch information from backend
@@ -7,11 +6,52 @@ live = false
 
 module.exports = ( dom ) ->
 
+  # listens for appcast streaming status while streaming
+  while_streaming = ( status ) ->
+
+    if not status
+
+      alert 'streaming went offline while streaming'
+
+      return
+
+    if status
+      alert 'streaming went online while streaming'
+
+      return      
+
+  # listens for appcast streaming status when starting the stream
+  waiting_stream = ( status ) ->
+
+    if not status then return
+
+    # TODO: make it clever
+    room_id = location.pathname.split("/")[2]
+    # call the api
+    L.rooms.start_stream room_id, ( error, result ) ->
+
+      if error
+        dom.find('a').html "error"
+
+        console.error error
+
+        # LATER: CHECK IF USER IS OFFLINE AND WAIT FOR CONNECTION?
+        return
+
+      appcast.off waiting_stream
+
+      # TODO: fix this error being thrown
+      # appcast.on while_streaming
+
+      live = true
+
+      dom.find('a').html "GO OFFLINE"
+
+
   dom.find('a').click ->
 
     # TODO: make it clever
     user_id = location.pathname.split("/")[1]
-    room_id = location.pathname.split("/")[2]
 
     if not live
       console.log "clicked go live!"
@@ -23,27 +63,30 @@ module.exports = ( dom ) ->
         return
 
 
+      # waiting stream status
       dom.find('a').html "..."
 
-      A.start_stream user_id, room_id, ( error, callback ) ->
+      appcast.start_stream user_id, appcast.get 'input_device'
 
-        live = true
+      appcast.on 'stream:online', waiting_stream
 
-        dom.find('a').html "GO OFFLINE"
 
     if live
       console.log "clicked go offline!"
 
+      if not appcast.get 'stream:online'
+
+        alert '- cant stop stream if not streaming'
+
+        return
+
       dom.find('a').html "..."
 
-      A.stop_stream user_id, room_id, ( error, callback ) ->
+      appcast.stop_stream()
 
-        if error is 'no_input_device'
-
-          alert 'select input device first'
-          console.error "can't got live without selecting input device"
-
-          return
+      # TODO: make it clever
+      room_id = location.pathname.split("/")[2]
+      L.rooms.stop_stream room_id, ( error, callback ) ->
 
         live = false
 

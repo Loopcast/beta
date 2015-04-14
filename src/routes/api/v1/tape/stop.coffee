@@ -47,7 +47,6 @@ module.exports =
           _id                  : off
           'status.recording.started_at'  : on
           'status.recording.stopped_at'  : on
-          'status.is_streaming'          : on
         'new': true
 
       Room.findAndModify query, null, update, options, ( error, response ) ->

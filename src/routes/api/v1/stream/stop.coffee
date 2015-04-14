@@ -39,16 +39,17 @@ module.exports =
 
       update =
         $set : 
-          'status.is_streaming': false
-          'status.streaming.stopped_at'  : now().format()
+          'status.is_streaming'         : false
+          'status.is_public'            : false
+          'status.streaming.stopped_at' : now().format()
 
 
       options = 
         fields:
-          _id                  : off
-          'status.streaming.started_at'  : on
-          'status.streaming.stopped_at'  : on
-          'status.is_streaming'          : on
+          _id                           : off
+          'status.streaming.started_at' : on
+          'status.streaming.stopped_at' : on
+          'status.is_streaming'         : on
         'new': true
 
       Room.findAndModify query, null, update, options, ( error, response ) ->
