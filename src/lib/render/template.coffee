@@ -20,6 +20,9 @@ module.exports = ( url, data, callback ) ->
     cloud_name  : s.cloudinary.cloud_name
     unsigned_ids: s.cloudinary.api_unsigned_ids
 
+  data.pusher =
+    key: s.pusher.key
+
   root = path.join( __dirname + '/../../frontend/templates' )
 
   url  = root + url + '.jade'
