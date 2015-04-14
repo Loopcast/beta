@@ -161,7 +161,7 @@
 		absolute top 0 right 0
 		height: 100%
 		text-align: center
-		color: GRAY_1
+		color: white
 		
 		transition: background .5s linear, color .5s linear
 		display: flex
@@ -169,11 +169,15 @@
 	.big_number
 		flex: 1
 		padding: 0px 15px
-		background: rgba(0,0,0,0.9)
-		border-bottom: 1px solid GRAY_2
+		background: BLACK_BOX_COLOR
+		border-bottom: 1px solid BLACK
+		border-top: 1px solid GRAY_3
 		display: flex
 		align-items: center
 		text-align: center
+		
+		&:first-child
+			border-top: none 
 
 		&:last-child
 			border-bottom: none
