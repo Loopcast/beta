@@ -3,23 +3,25 @@ Schema     = mongoose.Schema
 
 schema = new Schema
   # url is automatically generated #{user}/#{info.slug}
-  url    : type: String, required: true
-
   info   :
-    user     : type: String, required: true
-    title    : type: String, required: true
-    slug     : type: String, required: true
+    user     : type: String, required: on
+    title    : type: String, required: on
+    slug     : type: String, required: on
     genres   : Array
     location : String
     about    : String
     cover    : String
 
   status:
-    is_live     : Boolean
-    is_recording: Boolean
-    is_streaming: Boolean
-    started_at  : Date
-    stopped_at  : Date
+    is_live     : { type: Boolean, default: off }
+    is_recording: { type: Boolean, default: off }
+    is_public   : { type: Boolean, default: off }
+    streaming:
+      started_at  : Date
+      stopped_at  : Date
+    recording:
+      started_at  : Date
+      stopped_at  : Date
 
   images:
     cover: Object # cloudinary information
@@ -48,7 +50,10 @@ schema.post 'remove', ( doc ) ->
 
 schema.pre 'save', ( next ) ->
 
-  @created_at = @updated_at = now().toDate()
+  if not @created_at
+    @created_at = now().format()
+
+  @updated_at = now().format()
 
   next()
 
@@ -60,6 +65,9 @@ schema.pre 'save', ( next, done ) ->
   # we can simply delete or return that entry instead
   
   doc = @
+
+  query = 
+    'info.user'
 
   Room.find( { }, _id: off )
     .where( "url"  , "#{@info.user}/#{@info.slug}" )

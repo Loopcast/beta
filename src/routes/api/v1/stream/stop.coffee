@@ -40,26 +40,27 @@ module.exports =
       update =
         $set : 
           'status.is_streaming': false
-          'status.stopped_at'  : now().format()
+          'status.streaming.stopped_at'  : now().format()
 
 
       options = 
         fields:
           _id                  : off
-          'status.started_at'  : on
-          'status.is_streaming': on
+          'status.streaming.started_at'  : on
+          'status.streaming.stopped_at'  : on
+          'status.is_streaming'          : on
         'new': true
 
       Room.findAndModify query, null, update, options, ( error, response ) ->
 
         if error then return failed request, reply, error
 
-        started_at = now( response.status.started_at )
-        stopped_at = now( update.$set['status.stopped_at'] )
+        started_at = now( response.status.streaming.started_at )
+        stopped_at = now( update.$set['status.streaming.stopped_at'] )
 
-        recorded_length = stopped_at.diff( started_at, 'seconds' )
+        stream_duration = stopped_at.diff( started_at, 'seconds' )
         
         # recorded for this length
-        console.log "length ->", recorded_length
+        console.log "length ->", stream_duration
 
         reply response

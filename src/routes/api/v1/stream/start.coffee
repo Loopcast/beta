@@ -40,7 +40,7 @@ module.exports =
       update =
         $set : 
           'status.is_streaming': true
-          'status.started_at'  : now().format()
+          'status.streaming.started_at'  : now().format()
 
       options = 
         fields:

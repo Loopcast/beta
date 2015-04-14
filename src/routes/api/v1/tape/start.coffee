@@ -34,10 +34,13 @@ module.exports =
       room_id  = request.payload.room_id.toLowerCase()
 
       query =
-        url : "#{username}/#{room_id}"
+        'info.user' : username
+        'info.slug' : room_id
 
       update =
-        $set : 'status.is_streaming': true
+        $set : 
+          'status.is_recording'         : true
+          'status.recording.started_at' : now().format()
 
 
       options = 
