@@ -83,7 +83,7 @@ module.exports = class Room
 
 			delay 1000, =>
 
-				navigation.go_silent "/#{data.url}"
+				navigation.go_silent "/#{data.info.user}/#{data.info.slug}"
 
 				ref.check_guest()
 
