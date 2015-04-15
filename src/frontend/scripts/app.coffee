@@ -6,6 +6,7 @@ navigation      = require './controllers/navigation'
 appcast         = require './controllers/appcast'
 user_controller = require './controllers/user'
 cloudinary      = require './controllers/cloudinary'
+GUI             = require './controllers/gui'
 # motion   = require 'app/controllers/motion'
 
 
@@ -37,9 +38,9 @@ class App
 		@local   = require 'app/controllers/local_connection'
 		@session = require 'app/controllers/storage'
 		@window  = require 'app/controllers/window'
+		@gui     = new GUI
 
 		@body    = $ 'body'
-
 		
 		# u = Session.get( 'user', false )
 		# log "[Session] user", u

@@ -52,6 +52,8 @@ module.exports = happens
 
 		log "[User Controller] login", @get_user()
 
+		app.gui.watch @get_user()
+
 		# notify.info "You've successufully logged in."
 
 	has_informations: ->

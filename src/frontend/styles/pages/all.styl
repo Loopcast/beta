@@ -199,7 +199,57 @@ PLAYER_HEIGHT = 70px
 			color: RED
 		.share_wrapper:hover
 			color: YELLOW
+			
+// GUI
+#gui
+	position: fixed
+	z-index: 10
+	bottom: 0
+	left: 0
+	background: white
+	
+	
+	color: black
+	text-align: left
+	&.clickable
+		cursor: pointer
+		&.closed:hover
+			background: black
+			color: white
+	
+	pre 
+		outline: 1px solid #ccc 
+		padding: 5px 
+		margin: 5px
+	.string 
+		color: green
+	.number 
+		color: darkorange
+	.boolean 
+		color: blue
+	.null 
+		color: magenta
+	.key 
+		color: red
 
+	.icon
+		display: none
+		padding-top: 4px
+		font-weight: bold
+	
+	&.closed
+		text-align: center
+		width: 30px
+		height: 30px
+		overflow: hidden	
+		.icon
+			display: block
+		.content
+			display: none
+			
+	
+		
+		
 @media (max-width: 950px)
 	.about_page
 		.about_column

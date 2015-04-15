@@ -33,7 +33,8 @@
     "isotope-layout": "^2.1.1",
     "live-spritesheet": "0.0.2",
     "nodemon": "^1.3.6",
-    "polvo": "^0.6.5"
+    "polvo": "^0.6.5",
+    "watchjs": "0.0.0"
   },
   "scripts": {
     "start": "coffee src/app.coffee",
