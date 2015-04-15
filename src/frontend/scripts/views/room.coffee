@@ -111,7 +111,6 @@ module.exports = class Room
 			appcast.connect()
 
 	is_guest: ->
-		console.log 'user ->', user_controller.get_user()
 		u = user_controller.get_user()
 		guest = location.pathname.indexOf( "/#{u.username}" ) isnt 0
 

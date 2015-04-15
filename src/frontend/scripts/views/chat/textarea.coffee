@@ -1,6 +1,6 @@
 module.exports = ( dom ) ->
 
-  dom.on 'keydown', ( e ) ->
+  dom.on 'keyup', ( e ) ->
     if e.keyCode is 13
 
       # grabs the message
@@ -10,7 +10,7 @@ module.exports = ( dom ) ->
         
 
       # clear the field
-      dom.html ''
+      dom.val ""
 
       # POST MOFO!!
       request = $.post '/api/v1/chat/message', data
