@@ -10,7 +10,7 @@ module.exports = ( dom ) ->
         
 
       # clear the field
-      dom.val ''
+      dom.html ''
 
       # POST MOFO!!
       request = $.post '/api/v1/chat/message', data
