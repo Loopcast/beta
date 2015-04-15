@@ -40,24 +40,20 @@ module.exports =
 
       payload = request.payload
 
-
-      console.log "====PAYLOAD====="
-      console.log payload
-
       if payload.genres.length > 0
         payload.genres = payload.genres.split ','
-
-      # If we delete payload.genres, we gonna have an error below
-      # if not payload.genres.length then delete payload.genres
+      else
+        payload.genres = []
 
       doc = 
+        created_at : now().format()
         info:
-          owner_user : user.username
-          title      : payload.title
-          slug       : slug payload.title.toLowerCase()
-          genres     : payload.genres # potential error!
-          location   : payload.location
-          about      : payload.about
+          user     : user.username
+          title    : payload.title
+          slug     : slug payload.title.toLowerCase()
+          genres   : payload.genres
+          location : payload.location
+          about    : payload.about
 
       doc.url = "#{user.username}/#{doc.info.slug}"
       # doc.updated_at = doc.created_at = now().toDate()
@@ -70,6 +66,9 @@ module.exports =
 
       room.save ( error, doc ) ->
 
-        if error then return failed request, reply, error
+        if error 
+          console.log "error creating room ->", error
+          
+          return failed request, reply, error
 
         reply doc

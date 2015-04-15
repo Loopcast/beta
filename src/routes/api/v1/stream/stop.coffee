@@ -34,20 +34,34 @@ module.exports =
       room_id  = request.payload.room_id.toLowerCase()
 
       query =
-        url : "#{username}/#{room_id}"
+        'info.user' : username
+        'info.slug' : room_id
 
       update =
-        $set : 'status.is_streaming': false
+        $set : 
+          'status.is_streaming'         : false
+          'status.is_public'            : false
+          'status.streaming.stopped_at' : now().format()
 
 
       options = 
         fields:
-          _id                  : off
-          'status.is_streaming': on
+          _id                           : off
+          'status.streaming.started_at' : on
+          'status.streaming.stopped_at' : on
+          'status.is_streaming'         : on
         'new': true
 
-      Room.findAndModify query, null, update, options, ( error, status ) ->
+      Room.findAndModify query, null, update, options, ( error, response ) ->
 
         if error then return failed request, reply, error
 
-        reply status
+        started_at = now( response.status.streaming.started_at )
+        stopped_at = now( update.$set['status.streaming.stopped_at'] )
+
+        stream_duration = stopped_at.diff( started_at, 'seconds' )
+        
+        # recorded for this length
+        console.log "length ->", stream_duration
+
+        reply response

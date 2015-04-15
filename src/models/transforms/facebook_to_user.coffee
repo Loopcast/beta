@@ -2,10 +2,12 @@
 # Transforms facebook information into session information
 ###
 
-request = require 'request'
+
 hash    = lib 'tools/hash'
 graph   = lib 'facebook/call_graph'
 upload  = lib 'cloudinary/upload'
+
+transform = models 'transforms/name_to_username'
 
 # args
 #  - "info" is the information received from facebook
@@ -14,25 +16,24 @@ module.exports = ( info, callback ) ->
 
   after_upload = ( picture_info ) ->
 
-    username = info.profile.email
-    username = username.substr 0, username.indexOf '@'
+    transform info.profile.displayName, ( error, username ) ->
 
-    user = 
-      session :
-        username: username
-        name    : info.profile.displayName
-        avatar  : picture_info.secure_url
+      user = 
+        session :
+          username: username
+          name    : info.profile.displayName
+          avatar  : picture_info.secure_url
 
-      data :
-        email   : info.profile.email
-        facebook: info
-        images:
-          profile:
-            id : avatar.id
-            cdn: picture_info
+        data :
+          email   : info.profile.email
+          facebook: info
+          images:
+            profile:
+              id : avatar.id
+              cdn: picture_info
 
 
-    callback null, user
+      callback null, user
 
   ###
   # fetch large profile picture from facebook and upload to cloudinary

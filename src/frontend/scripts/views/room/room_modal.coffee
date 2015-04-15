@@ -108,11 +108,12 @@ module.exports = class RoomModal extends Modal
 
 	destroy: ->
 		log "[RoomModal] removed"
-		@title.off 'keyup'                 , @_on_title_changed
-		@location.off 'keyup'              , @_on_location_changed
-		@description.off 'keyup'           , @_on_description_changed
-		@genre.off 'change'                , @_on_genre_changed
-		@submit.off 'click'                , @_submit
+		
+		@title.off       'keyup'  , @_on_title_changed
+		@location.off    'keyup'  , @_on_location_changed
+		@description.off 'keyup'  , @_on_description_changed
+		@genre.off       'change' , @_on_genre_changed
+		@submit.off      'click'  , @_submit
 
 		@genre = null
 

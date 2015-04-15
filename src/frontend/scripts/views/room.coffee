@@ -1,10 +1,11 @@
-L           = require 'api/loopcast/loopcast'
-navigation  = require 'app/controllers/navigation'
-Strings     = require 'app/utils/string'
+L               = require 'api/loopcast/loopcast'
+navigation      = require 'app/controllers/navigation'
+Strings         = require 'app/utils/string'
 user_controller = require 'app/controllers/user'
-notify = require 'app/controllers/notify'
+notify          = require 'app/controllers/notify'
 
 module.exports = class Room
+
 	constructor: ( @dom ) ->
 		view.once 'binded', @on_view_binded
 		user_controller.on 'user:logged', @on_user_logged
@@ -35,6 +36,16 @@ module.exports = class Room
 
 		if @is_create_page()
 			@modal.open()
+
+		# check if it's guest onload
+		@check_guest()
+
+		@player = view.get_by_dom '#player'
+
+		if @is_guest()
+			user = location.pathname.split( '/' )[1]
+
+			@player.play( user )
 		
 
 	on_input_changed: ( data ) =>
@@ -72,7 +83,7 @@ module.exports = class Room
 
 			delay 1000, =>
 
-				navigation.go_silent "/#{data.url}"
+				navigation.go_silent "/#{data.info.user}/#{data.info.slug}"
 
 				ref.check_guest()
 
@@ -97,9 +108,9 @@ module.exports = class Room
 			app.body.addClass 'guest'
 		else
 			app.body.removeClass 'guest'		
-			# appcast.connect()
+			appcast.connect()
 
-	is_guest: ( ) ->
+	is_guest: ->
 		u = user_controller.get_user()
 		guest = location.pathname.indexOf( "/#{u.username}" ) isnt 0
 

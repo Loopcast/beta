@@ -1,8 +1,9 @@
 module.exports = class Player
   constructor: ( @dom ) ->
-    @cover = @dom.find '.player_icon img'
-    @title = @dom.find '.player_title'
+    @cover  = @dom.find '.player_icon img'
+    @title  = @dom.find '.player_title'
     @author = @dom.find '.player_author'
+    @audio  = @dom.find 'audio'
 
     # delay 2000, =>
     #   @open 
@@ -38,6 +39,11 @@ module.exports = class Player
 
   close: ( ) ->
     @dom.removeClass 'visible'
+
+  play: ( mountpoint ) ->
+    @open()
+
+    @audio.attr 'src', "http://radio.loopcast.fm:8000/#{mountpoint}"
 
 
 

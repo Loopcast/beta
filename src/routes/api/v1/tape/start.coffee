@@ -34,16 +34,19 @@ module.exports =
       room_id  = request.payload.room_id.toLowerCase()
 
       query =
-        url : "#{username}/#{room_id}"
+        'info.user' : username
+        'info.slug' : room_id
 
       update =
-        $set : 'status.is_streaming': true
+        $set : 
+          'status.is_recording'         : true
+          'status.recording.started_at' : now().format()
 
 
+      # TODO: use Room.update instead of findAndModify
       options = 
         fields:
           _id                  : off
-          'status.is_recording': on
         'new': true
 
       Room.findAndModify query, null, update, options, ( error, status ) ->

@@ -1,4 +1,4 @@
-appcast = require '../controllers/appcast'
+appcast = require '../../controllers/appcast'
 
 module.exports = ( dom ) ->
 

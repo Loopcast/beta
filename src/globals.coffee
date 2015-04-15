@@ -25,7 +25,7 @@ global.happens = require 'happens'
 
 global.aware   = require 'aware'
 
-global.now = ( value ) -> moment( value ).utc()
+global.now = ( value ) -> moment.utc(value)
 
 # path shortcuts
 
@@ -39,11 +39,19 @@ global.www = ( path ) -> __dirname + "/../www/#{path}"
 
 # widely used functions
 
-Intercom = require( "intercom.io" )
+Intercom = require "intercom.io"
 
 global.intercom = new Intercom 
   apiKey: s.intercom.key
   appId : s.intercom.id
+
+Pusher = require 'pusher'
+
+global.pusher = new Pusher
+  appId : s.pusher.appId
+  key   : s.pusher.key
+  secret: s.pusher.secret
+
 
 # data -> object containing extra info about the error
 # set reply to null if no reply needed

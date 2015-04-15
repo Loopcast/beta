@@ -16,8 +16,6 @@ module.exports =
 
     url  = root + '/www/css/' + request.params.file
 
-    console.log "url ->", url
-
     # try find on the file system first
     fs.readFile url, encoding: 'utf-8', ( error, content ) ->
 

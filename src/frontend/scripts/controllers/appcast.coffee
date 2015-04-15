@@ -1,5 +1,5 @@
 ###
-# Socket controller will be used to communicate with desktop app AppCast
+# Manages local connection to Appcast
 ###
 
 aware    = require 'aware'
@@ -91,7 +91,7 @@ appcast.connect = ->
 
     reader.readAsArrayBuffer e.data
 
-appcast.start_stream = ( username, device_name ) ->
+appcast.start_stream = ( mount_point, device_name ) ->
 
   console.info " START STRAEM!!!"
 
@@ -105,16 +105,12 @@ appcast.start_stream = ( username, device_name ) ->
 
     return
 
-  mount_point = "hems"
-  mount_point = username
   password    = "loopcast2015"
 
   payload = 
     device_name : device_name
     mount_point : mount_point
     password    : password
-
-  console.info "SENDING START STREAM TO APPCAST"
 
   appcast.set "stream:starting", true
   appcast.messages.send JSON.stringify [ "start_stream", payload ]

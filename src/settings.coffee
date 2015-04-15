@@ -86,6 +86,11 @@ if s.is_beta
     key: "50c73c97d2be733425b373a6bd9e26c595390e44"
     id : "uk6rn1dt"
 
+  s.pusher = 
+    appId: '115738',
+    key: '23e67be659fc6663206d',
+    secret: 'b324ac27d8ec6f3f589a'    
+
 # IF LOCAL OR DEVELOPMENT
 else
 
@@ -112,6 +117,11 @@ else
   s.intercom = 
     key: "0ccd5941f4f1658d00ca02e8c0cea5dca7a1e01d"
     id : "e8diaexy"
+
+  s.pusher = 
+    appId: '115735',
+    key: 'e269699ecff3c224a612',
+    secret: '5a05943c7bf757cdd315'
 
 
 module.exports = s

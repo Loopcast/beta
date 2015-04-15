@@ -34,18 +34,20 @@ module.exports =
       room_id  = request.payload.room_id.toLowerCase()
 
       query =
-        url : "#{username}/#{room_id}"
+        'info.user' : username
+        'info.slug' : room_id
 
       update =
-        $set : 'status.is_streaming': true
-
+        $set : 
+          'status.is_streaming': true
+          'status.is_public'   : true
+          'status.streaming.started_at' : now().format()
 
       options = 
         fields:
           _id                  : off
-          'status.is_streaming': on
-        'new': true
 
+      # TODO: just use a simple update?
       Room.findAndModify query, null, update, options, ( error, status ) ->
 
         if error then return failed request, reply, error

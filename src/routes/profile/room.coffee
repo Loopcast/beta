@@ -27,8 +27,12 @@ module.exports =
 
       console.log "looking for room #{profile}/#{room_id}"
 
-      Room.findOne( { } )
-        .where( "url"  , "#{profile}/#{room_id}" )
+      query =
+        'info.user'       : profile
+        'info.slug'       : room_id
+        # 'status.is_public': on
+
+      Room.findOne( query )
         .select( "info.title status.is_streaming" )
         .sort( _id: -1 )
         .lean()

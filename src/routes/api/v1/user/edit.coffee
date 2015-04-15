@@ -1,8 +1,10 @@
 ###
 
-Updates cover image for a given Room
+Updates user's profile information
 
 ###
+
+transform = models 'transforms/name_to_username'
 
 module.exports =
   method : 'POST'
@@ -13,6 +15,7 @@ module.exports =
     plugins: "hapi-swagger": responseMessages: [
       { code: 400, message: 'Bad Request' }
       { code: 401, message: 'Needs authentication' } # Boom.unauthorized
+      { code: 409, message: 'Error updating user name ' } # Boom.conflict
       { code: 422, message: 'Error fetching user information' } # Boom.badData
       { code: 500, message: 'Internal Server Error'}
     ]
@@ -39,43 +42,11 @@ module.exports =
 
       user = request.auth.credentials.user
 
-      intercom.getUser user_id: user.username, ( error, response ) ->
+      console.log "payload ->", request.payload
 
-        if error 
-          console.log "error fetching user data"
-          console.log user
-
-          return reply Boom.badData 'error fetching user information'
-
-        console.log "got user from intercom:", response
-
-        update = id: response.id
-
-        if request.payload.followers
-          update.custom_attributes = update.custom_attributes || {}
-
-          update.custom_attributes.followers = request.payload.followers
-
-        if request.payload.occupation
-          update.custom_attributes = update.custom_attributes || {}
-
-          update.custom_attributes.occupation = request.payload.occupation
-
-        if request.payload.about
-          update.custom_attributes = update.custom_attributes || {}
-
-          update.custom_attributes.about = request.payload.about
-
-        if request.payload.genres
-          update.custom_attributes = update.custom_attributes || {}
-
-          update.custom_attributes.genres = request.payload.genres.join( "," )
-
-        # updating user_id is an issue at the moment, it's creating a new user
-        if request.payload.user_id
-          update.user_id = request.payload.user_id
-
-        intercom.updateUser update, ( error, res ) ->
+      # save user data to intercom
+      save = ( user_data ) ->
+        intercom.updateUser user_data, ( error, res ) ->
 
           if error 
             console.log "error while updating user"
@@ -83,6 +54,87 @@ module.exports =
 
             return reply Boom.badData 'error updating user data'
 
-          # console.log "got response from updated user", res
+          # exposes all edited data
+          reply user_data
 
-          reply edited: true
+      # fetch user data from intercom
+      intercom.getUser user_id: user.username, ( error, response ) ->
+
+        if error
+          console.log "error fetching user data"
+          console.log user
+
+          return reply Boom.badData 'error fetching user information'
+
+        data = 
+          id               : response.id
+          custom_attributes: {}
+
+        # top info on profile page
+        if request.payload.user_id
+          data.user_id = request.payload.user_id
+
+        if request.payload.name
+          data.name = request.payload.name
+
+        if request.payload.occupation
+          data.custom_attributes.occupation = request.payload.occupation
+
+        if request.payload.genres
+          data.custom_attributes.genres = request.payload.genres.join( "," )
+
+
+        # left bar info
+        if request.payload.location
+
+          data.custom_attributes.location = request.payload.location
+
+        if request.payload.about
+
+          data.custom_attributes.about = request.payload.about
+
+        if request.payload.social
+
+          data.custom_attributes.social = request.payload.social.join ','
+
+
+        if request.payload.avatar
+          data.custom_attributes.avatar = request.payload.avatar
+
+          # TODO: pic old avatar id and push to remove from cloudinary
+          # remove_from_cloudinary ||= []
+          # remove_from_cloudinary.push
+
+        if request.payload.cover
+          data.custom_attributes.cover = request.payload.cover
+
+          # TODO: pic old avatar id and push to remove from cloudinary
+          # remove_from_cloudinary ||= []
+          # remove_from_cloudinary.push
+
+        if remove_from_cloudinary
+          cloudinary.api.delete_resources remove_from_cloudinary, ( result ) ->
+            if result.error
+              console.log "error deleting image from cloudinary"
+              console.log result.error
+
+        # HACK: since we still don't have an interface to update user_id
+        # we will be updating user_id everytime a user updates his name
+        if data.name and not request.payload.user_id
+
+          transform data.name, ( error, username ) ->
+            if error
+              console.log "error fetching user data"
+              console.log user
+
+              return reply Boom.conflict 'error updating username'
+
+            data.user_id = username
+
+            # save to intercom
+            save( data )
+
+        else
+
+          # save to intercom
+          save( data )

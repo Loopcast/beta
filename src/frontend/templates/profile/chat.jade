@@ -3,15 +3,15 @@
     .chat_header
       p
     .chat_content.no_chat_yet
-      p.no_chat 
-        span No one has typed a chat yet
+      p.no_chat(data-view="chat/messages")
+        span(class='no-message') No one has typed a chat yet
 
       .inner
 
     .chat_footer
       .img_wrapper
         img(src="/images/profile_big.png", width="36")
-      textarea(placeholder="Type here to join the chat")
+      textarea(placeholder="Type here to join the chat", data-view="chat/textarea")
 
   .chat_sidebar
     .inner
