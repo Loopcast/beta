@@ -1,8 +1,7 @@
 module.exports = ( dom ) ->
 
   dom.on 'keydown', ( e ) ->
-    # CMD + ENTER to submit...
-    if e.keyCode is 13 && e.metaKey
+    if e.keyCode is 13
 
       # grabs the message
       data = 
