@@ -88,6 +88,26 @@ module.exports =
 
         callback  null, response
 
+  chat:
+    message: ( profile_id, room_id, message, callback ) ->
+      on_status_code =
+        400: -> callback 'bad request'
+        401: -> callback 'unauthorized'
+        500: -> callback 'server error'
+
+      data = 
+        message   : message
+        room_id   : room_id
+        profile_id: profile_id
+
+      request = $.post api_url + 'chat/message', data, on_status_code
+
+      request.error on_error 'tape/start', callback
+
+      request.done ( response ) ->
+
+        callback  null, response
+
   user:
     edit: ( data, callback ) ->
       on_status_code =

@@ -2,9 +2,10 @@ module.exports = ( dom ) ->
 
   # TODO: make it smart, subscribed when needed, unsuscribe when leaving
   # the room, etcs
+  user_id = location.pathname.split( "/" )[1] 
   room_id = location.pathname.split( "/" )[2] 
 
-  channel = pusher.subscribe room_id
+  channel = pusher.subscribe "#{user_id}.#{room_id}.chat"
 
   chat = $ '.chat_content'
 
