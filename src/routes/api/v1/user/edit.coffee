@@ -112,7 +112,7 @@ module.exports =
           # remove_from_cloudinary ||= []
           # remove_from_cloudinary.push
 
-        if remove_from_cloudinary
+        if remove_from_cloudinary?
           cloudinary.api.delete_resources remove_from_cloudinary, ( result ) ->
             if result.error
               console.log "error deleting image from cloudinary"
