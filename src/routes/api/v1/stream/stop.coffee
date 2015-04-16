@@ -43,7 +43,6 @@ module.exports =
           'status.is_public'            : false
           'status.streaming.stopped_at' : now().format()
 
-
       options = 
         fields:
           _id                           : off
@@ -56,12 +55,12 @@ module.exports =
 
         if error then return failed request, reply, error
 
-        started_at = now( response.status.streaming.started_at )
+        started_at = now( response.value.status.streaming.started_at )
         stopped_at = now( update.$set['status.streaming.stopped_at'] )
 
-        stream_duration = stopped_at.diff( started_at, 'seconds' )
+        duration = stopped_at.diff( started_at, 'seconds' )
         
-        # recorded for this length
-        console.log "length ->", stream_duration
+        # streamed for this length
+        console.log "Streamed #{duration} seconds"
 
         reply response

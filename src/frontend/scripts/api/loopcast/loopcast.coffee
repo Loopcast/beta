@@ -60,7 +60,7 @@ module.exports =
 
         callback  null, response
 
-    start_recording: ( callback ) ->
+    start_recording: ( room_id, callback ) ->
       on_status_code =
         401: ( response ) -> callback 'unauthorized, need log in!'
 
@@ -80,7 +80,7 @@ module.exports =
 
       data = room_id: room_id
 
-      request = $.post api_url + 'stape/stop', data, on_status_code
+      request = $.post api_url + 'tape/stop', data, on_status_code
 
       request.error on_error 'tape/stop', callback
 

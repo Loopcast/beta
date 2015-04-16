@@ -24,14 +24,14 @@ module.exports =
       payload:
         room_id  : joi.string().required()
 
-    handler: ( request, reply ) ->
+    handler: ( req, reply ) ->
 
-      if not request.auth.isAuthenticated
+      if not req.auth.isAuthenticated
 
         return reply Boom.unauthorized('needs authentication')
 
-      username = request.auth.credentials.user.username
-      room_id  = request.payload.room_id.toLowerCase()
+      username = req.auth.credentials.user.username
+      room_id  = req.payload.room_id.toLowerCase()
 
       query =
         'info.user' : username
@@ -39,26 +39,40 @@ module.exports =
 
       update =
         $set : 
-          'status.is_recording'         : false
+          'status.is_recording'         : off
           'status.recording.stopped_at' : now().format()
 
       options = 
         fields:
-          _id                  : off
-          'status.recording.started_at'  : on
-          'status.recording.stopped_at'  : on
+          _id                           : off
+          'status.recording.started_at' : on
+          'status.recording.stopped_at' : on
+          'status.is_recording'         : on
         'new': true
 
-      Room.findAndModify query, null, update, options, ( error, response ) ->
+      request "#{s.tape}/stop/#{username}", ( error, response, body ) ->
+        if error
 
-        if error then return failed request, reply, error
+          console.log "error starting tape"
+          console.log error
 
-        started_at = now( response.status.streaming.started_at )
-        stopped_at = now( update.$set['status.streaming.stopped_at'] )
+          return      
 
-        stop_duration = stopped_at.diff( started_at, 'seconds' )
-        
-        # recorded for this length
-        console.log "length ->", stop_duration
+        # JSON from tape server
+        body = JSON.parse body
 
-        reply response
+        console.log "got response from tape stop", body 
+
+        Room.findAndModify query, null, update, options, ( error, response ) ->
+
+          if error then return failed request, reply, error
+
+          started_at = now( response.value.status.recording.started_at )
+          stopped_at = now( update.$set['status.recording.stopped_at'] )
+
+          duration = stopped_at.diff( started_at, 'seconds' )
+          
+          # streamed for this length
+          console.log "Recorded #{duration} seconds"
+
+          reply response

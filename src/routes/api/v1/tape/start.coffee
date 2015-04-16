@@ -1,8 +1,6 @@
 slug = require 'slug'
 Room = schema 'room'
 
-mongoose = require 'mongoose'
-
 module.exports =
   method : 'POST'
   path   : '/api/v1/tape/start'
@@ -24,14 +22,14 @@ module.exports =
       payload:
         room_id  : joi.string().required()
 
-    handler: ( request, reply ) ->
+    handler: ( req, reply ) ->
 
-      if not request.auth.isAuthenticated
+      if not req.auth.isAuthenticated
 
         return reply Boom.unauthorized('needs authentication')
 
-      username = request.auth.credentials.user.username
-      room_id  = request.payload.room_id.toLowerCase()
+      username = req.auth.credentials.user.username
+      room_id  = req.payload.room_id.toLowerCase()
 
       query =
         'info.user' : username
@@ -46,11 +44,23 @@ module.exports =
       # TODO: use Room.update instead of findAndModify
       options = 
         fields:
-          _id                  : off
-        'new': true
+          _id  : off
+        'new'  : true
 
-      Room.findAndModify query, null, update, options, ( error, status ) ->
+      request "#{s.tape}/start/#{username}", ( error, response, body ) ->
 
-        if error then return failed request, reply, error
+        if error
 
-        reply status
+          console.log "error starting tape"
+          console.log error
+
+          return      
+
+        # JSON from tape server
+        body = JSON.parse body
+
+        Room.findAndModify query, null, update, options, ( error, status ) ->
+
+          if error then return failed req, reply, error
+
+          reply status

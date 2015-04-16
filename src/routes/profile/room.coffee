@@ -78,8 +78,6 @@ module.exports =
           user: model.get 'user'
           room: model.get 'room'
 
-        console.log 'data ->', data
-
         # if is authenticated and owner of the room
         # render the room
         if request.auth.isAuthenticated

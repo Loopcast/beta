@@ -1,14 +1,27 @@
-L = require '../../api/loopcast/loopcast'
+L       = require '../../api/loopcast/loopcast'
+appcast = require '../../controllers/appcast'
 
 recording = false
 
 module.exports = ( dom ) ->
 
-  dom.find('a').click ->
-
-    # TODO: make it clever
-    user_id = location.pathname.split("/")[1]
+  start_recording = ( callback ) ->
     room_id = location.pathname.split("/")[2]
+
+    L.rooms.start_recording room_id, ( error, response ) ->
+
+      if error
+
+        console.error "error when recording room", error
+
+        dom.find('a').html "ERROR"
+
+        return
+
+      recording = true
+      dom.find('a').html "STOP REC"
+    
+  dom.find('a').click ->
 
     if not recording
       console.log "clicked go recording!"
@@ -19,32 +32,40 @@ module.exports = ( dom ) ->
 
         return
 
-
       dom.find('a').html "..."
 
-      A.start_stream user_id, room_id, ( error, callback ) ->
+      if appcast.get 'stream:online'
+        # if streaming, start recording!
 
-        recording = true
+        start_recording()
 
-        dom.find('a').html "GO OFFLINE"
+      else
+      # TODO: make it clever
+        user_id = location.pathname.split("/")[1]
+        
+        # start streaming then start recording
+        appcast.start_stream user_id, appcast.get 'input_device'
+
+        appcast.on 'stream:online', start_recording
 
     if recording
-      console.log "clicked go offline!"
+      console.log "clicked stop recording!"
 
       dom.find('a').html "..."
 
-      A.stop_stream user_id, room_id, ( error, callback ) ->
+      room_id = location.pathname.split("/")[2]
 
-        if error is 'no_input_device'
+      L.rooms.stop_recording room_id, ( error, callback ) ->
 
-          alert 'select input device first'
-          console.error "can't got recording without selecting input device"
+        if error
+
+          console.error "error while stopping recording"
 
           return
 
         recording = false
 
-        dom.find('a').html "GO LIVE"
+        dom.find('a').html "RECORDED"
 
     # cancels click action
     return false
