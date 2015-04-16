@@ -16,7 +16,8 @@ block content
           span.text Select Profession
         br
         .genres.black_background(data-view="components/editables/editable_profile_tags")
-          span.text #{profile.genres.join( ", " )}
+          span.text.empty Add your genres
+          span.text.values #{profile.genres.join( ", " )}
 
         .profile_image.upload_wrapper(data-view="components/image_uploader", data-id="profile_picture")
           img(src="#{profile.avatar}")
@@ -162,14 +163,14 @@ block content
 
                 .image(style="background-image:url(/images/profile_session_1.jpg)")
                   a.icon.ss-play.circle_icon(href="#",title="Play") 
-                  .share_wrapper(data-view="buttons/share", data-permalink="https://loopcast.com/stefanoortisi/set-1")
+                  .share_wrapper(data-view="buttons/share", data-permalink="#{room.url}")
                     a.yellow.ss-action(href="#", title="Share")
 
 
                 .content
                   h2.session_title 
-                    a(href="#", title="#{room.title}") #{room.title}
-                  a.session_author.underline_link(href="#", title="#{room.author}") #{room.author}
+                    a(href="#{room.url}", title="#{room.title}") #{room.title}
+                  a.session_author.underline_link(href="#{room.url}", title="#{room.author}") #{room.author}
                   .genres
                     for genre in room.genres
                       a.tag(href="#", title="#{genre}") #{genre}

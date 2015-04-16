@@ -107,4 +107,5 @@ module.exports = ( id, callback ) ->
         else
           profile.recorded.push item
 
+      console.log "profile --->", profile
       callback null, profile

@@ -5,7 +5,9 @@ module.exports = class EditableProfileTags extends EditableText
   constructor: ( @dom ) ->
     super @dom
     @dom.addClass 'editable_profile_tags'
-    @text = @dom.find '.text'
+    @text = @dom.find '.text.values'
+    @empty_text = @dom.find '.text.empty'
+    
 
   on_ready: ( html ) =>
     @dom.append html
@@ -17,10 +19,16 @@ module.exports = class EditableProfileTags extends EditableText
 
     @tags = view.get_by_dom @dom.find( '.tags_wrapper' )
 
+    t = @text.html()
+    log "[EditableProfileTags] text", t.length
+    if t.length > 0
+      list = t.split ', '
+      @tags.add_tags list
+    else
+      @empty_text.show()
 
-    list = @text.html().split ', '
-    @tags.add_tags list
     @text.on 'click', @open_edit_mode
+    @empty_text.on 'click', @open_edit_mode
 
 
   open_edit_mode: (e) =>
@@ -28,6 +36,7 @@ module.exports = class EditableProfileTags extends EditableText
 
     e?.stopPropagation()
     log 'open_edit_mode'
+    @empty_text.hide()
     @dom.addClass 'edit_mode'
 
     app.window.on 'body:clicked', @close_read_mode
@@ -35,7 +44,12 @@ module.exports = class EditableProfileTags extends EditableText
   close_read_mode : =>
     @dom.removeClass 'edit_mode'
     list = @tags.get_tags()
-    @text.html list.join( ', ' )
+
+    if list.length is 0 or list[ 0 ].length is 0
+      @empty_text.show()
+      @text.html ""
+    else
+      @text.html list.join( ', ' )
 
     app.window.off 'body:clicked', @close_read_mode
 
@@ -45,5 +59,10 @@ module.exports = class EditableProfileTags extends EditableText
       tmpl = require 'templates/components/editables/editable_profile_tags'
 
       callback tmpl( values: data )
+
+  destroy: ->
+    @text.off 'click', @open_edit_mode
+    @empty_text.off 'click', @open_edit_mode
+    super()
 
 
