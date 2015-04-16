@@ -65,10 +65,10 @@ schema.pre 'save', ( next, done ) ->
   doc = @
 
   query = 
-    'info.user'
+    'info.user': @info.user
+    'info.slug': @info.slug
 
-  Room.find( { }, _id: off )
-    .where( "url"  , "#{@info.user}/#{@info.slug}" )
+  Room.find( query, _id: off )
     .where( "status.is_live", true )
     .select( "url" )
     .lean()
