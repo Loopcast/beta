@@ -4,7 +4,6 @@ require './vendors'
 views           = require './controllers/views'
 navigation      = require './controllers/navigation'
 appcast         = require './controllers/appcast'
-user_controller = require './controllers/user'
 cloudinary      = require './controllers/cloudinary'
 GUI             = require './controllers/gui'
 # motion   = require 'app/controllers/motion'
@@ -38,6 +37,7 @@ class App
 		@local   = require 'app/controllers/local_connection'
 		@session = require 'app/controllers/storage'
 		@window  = require 'app/controllers/window'
+		@user    = require './controllers/user'
 		@gui     = new GUI
 
 		@body    = $ 'body'
@@ -49,39 +49,41 @@ class App
 		@settings.bind @body
 
 		# Controllers binding
-		do views.bind
+		views.bind 'body'
 		do navigation.bind
 
 		# when the new are is rendered, do the same with the new content
+
+		first_render = true
 
 		navigation.on 'before_destroy', =>
 			views.unbind '#content'
 
 		navigation.on 'after_render', => 
-			views.bind       '#content'
+
+			if not first_render
+				views.bind '#content'
+
 			navigation.bind '#content'
-			do user_controller.check_user
-
-
-			
+	
+			first_render = false
 	
 	# User Proxies
-	login : ( user ) -> 
-		log "--------> login called from outside", user
+	login : ( user_data ) -> 
+		log "--------> login called from outside", user_data
 
 		if @settings.after_login_url.length > 0
 			url = @settings.after_login_url
 			@settings.after_login_url = ""
 		else
-			url = "/#{user.username}"
+			url = "/#{user_data.username}"
 			
+
 		navigation.go url
-		user_controller.login user
+		@user.login user_data
 
 	logout: -> 
-		log "[logged out]", user
-		
-		user_controller.logout()
+		@user.logout()
 
 
 	###

@@ -22,8 +22,6 @@ module.exports = class EditableSelect extends EditableText
 		$.get '/api/v1/occupations/all', (data) ->
 			tmpl = require 'templates/components/editables/editable_select'
 
-			log "get_template", data
-
 			callback tmpl( values: data )
 
 	close_read_mode : => # empty

@@ -11,7 +11,7 @@ module.exports = class EditableProfileTags extends EditableText
     @dom.append html
 
     view.once 'binded', @on_binded
-    view.bind @dom, true
+    view.bind @dom
 
   on_binded: =>
 
@@ -33,7 +33,6 @@ module.exports = class EditableProfileTags extends EditableText
     app.window.on 'body:clicked', @close_read_mode
 
   close_read_mode : =>
-    log '[EditableProfileTags] close_edit_mode'
     @dom.removeClass 'edit_mode'
     list = @tags.get_tags()
     @text.html list.join( ', ' )

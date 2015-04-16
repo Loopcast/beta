@@ -15,7 +15,7 @@ module.exports = class Player
 
     view.once 'binded', @on_views_binded
 
-  on_views_binded: =>
+  on_views_binded: (scope) =>
     @share = view.get_by_dom @dom.find( '.share_wrapper' )
     
   open: ( data ) ->

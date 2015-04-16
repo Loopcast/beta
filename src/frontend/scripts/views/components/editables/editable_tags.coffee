@@ -13,8 +13,6 @@ module.exports = class EditableTags
     happens @
 
     L.genres.all ( error, list ) =>
-
-      log "[EditableTags] all", list, error
       
       @dom.tagsInput 
         width:'auto'

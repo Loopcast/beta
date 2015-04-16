@@ -111,7 +111,7 @@ module.exports = class Room
 			appcast.connect()
 
 	is_guest: ->
-		u = user_controller.get_user()
+		u = user_controller.data
 		guest = location.pathname.indexOf( "/#{u.username}" ) isnt 0
 
 	is_create_page: ( ) ->

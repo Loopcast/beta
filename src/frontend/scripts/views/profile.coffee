@@ -1,3 +1,15 @@
+###
+ user_data :
+ 	profile_picture: "/images/profile_big.png"
+ 	cover_picture: "/images/homepage_2.jpg"
+ 	location: "London - UK"
+ 	bio: "Thomas Amundsen from Oslo, now based in London has from an early age lots of musical influences, experimenting from acoustic instruments to electronic music production and DJing.<br/><br/>He released his debut EP “I Feel” on Fusion recordings, sub-label of Dj Center Records, and has since released frequently on labels such as; Dobara, Susurrous Music, Incognitus Recordings, Koolwaters and gained support from the likes of Amine Edge, Stacey Pullen, Detlef, Slam, Marc Vedo, Loverdose, Ashley Wild, Jobe and many more"
+ 	links: [
+ 		{type:"spotify", url:"http://spotify.com"},
+ 		{type:"soundcloud", url:"http://soundcloud.com"},
+ 		{type:"facebook", url:"http://facebook.com"}
+ 	]
+###
 Cloudinary = require 'app/controllers/cloudinary'
 transform  = require 'app/utils/images/transform'
 notify     = require 'app/controllers/notify'
@@ -9,19 +21,8 @@ module.exports = class Profile extends LoggedView
 	elements: null
 	form_bio: null
 
-	# TODO: replace this fake data object
-	# user_data :
-	# 	profile_picture: "/images/profile_big.png"
-	# 	cover_picture: "/images/homepage_2.jpg"
-	# 	location: "London - UK"
-	# 	bio: "Thomas Amundsen from Oslo, now based in London has from an early age lots of musical influences, experimenting from acoustic instruments to electronic music production and DJing.<br/><br/>He released his debut EP “I Feel” on Fusion recordings, sub-label of Dj Center Records, and has since released frequently on labels such as; Dobara, Susurrous Music, Incognitus Recordings, Koolwaters and gained support from the likes of Amine Edge, Stacey Pullen, Detlef, Slam, Marc Vedo, Loverdose, Ashley Wild, Jobe and many more"
-	# 	links: [
-	# 		{type:"spotify", url:"http://spotify.com"},
-	# 		{type:"soundcloud", url:"http://soundcloud.com"},
-	# 		{type:"facebook", url:"http://facebook.com"}
-	# 	]
-
 	constructor: ( @dom ) ->
+		super()
 
 		@elements = 
 			profile_picture: @dom.find( '.profile_image img' )
@@ -63,19 +64,9 @@ module.exports = class Profile extends LoggedView
 
 		$( '#room_modal' ).data( 'modal-close', true )
 
-		view.once 'binded', @on_views_binded
-
-
-
-	on_views_binded: =>
-		super()
-
-
 	on_user_logged: ( @user_data ) =>
 
 		@dom.addClass 'user_logged'
-
-		log "[Profile] on_user_logged", @user_data
 
 		# Listen to images upload events
 		@change_cover_uploader = view.get_by_dom @dom.find( '.change_cover' )
@@ -116,7 +107,7 @@ module.exports = class Profile extends LoggedView
 
 
 	on_user_unlogged: =>
-		log "[Profile] on_user_unlogged"
+		log "[Profile] on_user_unlogged!!!!!"
 		@dom.removeClass( 'user_logged' ).addClass( 'no_information_yet' )
 
 
