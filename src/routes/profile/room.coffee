@@ -40,15 +40,6 @@ module.exports =
           # if room doesn't exist
           if not room then return reply( "Page not found" ).code 404
 
-          # if not authenticated
-          if not request.auth.isAuthenticated
-
-            # and not live
-            if not room.status?.is_streaming
-
-              # return 404
-              return reply( "Page not found" ).code 404
-
           model.set 'room', room
 
           # TODO: get user from the database and return real data
