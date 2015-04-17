@@ -38,7 +38,7 @@ class UserController
   ###
   login: ( @data ) ->
 
-    log "[UserController] user:logged", @data
+    # log "[UserController] user:logged", @data
 
     @_normalize_data()
 
@@ -53,14 +53,14 @@ class UserController
   ###
   logout: ( callback = -> ) ->
 
-    log "[UserController] logout"
+    # log "[UserController] logout"
     
     if not @is_logged() then return callback error: code: 'node_logged'
 
-    log "[User] trying to logout..."
+    # log "[User] trying to logout..."
 
     $.post '/api/v1/logout', {}, (data) =>
-      log "[User] logout ~ success", data
+      # log "[User] logout ~ success", data
       
       @delete_session()
 
