@@ -20,9 +20,9 @@ module.exports =
 
     validate:
       payload:
-        profile_id : joi.string().required()
-        room_id    : joi.string().required()
-        message    : joi.string().required()
+        user_id : joi.string().required()
+        room_id : joi.string().required()
+        message : joi.string().required()
 
     # response: schema:
     #   error : joi.any()
@@ -37,10 +37,10 @@ module.exports =
       user = request.auth.credentials.user
 
       room    = request.payload.room_id
-      profile = request.payload.profile_id
+      user_id = request.payload.user_id
 
       # build channel string
-      room    = "#{profile}.#{room}.chat"
+      room    = "#{user_id}.#{room}"
 
       message = request.payload.message
       message = escape message
@@ -51,6 +51,6 @@ module.exports =
         time   : now().format()
         message: message
 
-      response = pusher.trigger room, "chat_message", data
+      response = pusher.trigger room, "message", data
 
       reply( response ).header "Cache-Control", "no-cache, must-revalidate"

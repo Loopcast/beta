@@ -5,11 +5,11 @@ module.exports = ( dom ) ->
   user_id = location.pathname.split( "/" )[1] 
   room_id = location.pathname.split( "/" )[2] 
 
-  channel = pusher.subscribe "#{user_id}.#{room_id}.chat"
+  channel = pusher.subscribe "#{user_id}.#{room_id}"
 
   chat = $ '.chat_content'
 
-  channel.bind 'chat_message', ( data ) ->
+  channel.bind 'message', ( data ) ->
 
     if dom.find( '.no-message' ).length
       dom.find( '.no-message' ).remove()

@@ -9,13 +9,13 @@ module.exports = ( dom ) ->
 
       # grabs the message
       message = dom.val()
-      profile = location.pathname.split( "/" )[1]
-      room    = location.pathname.split( "/" )[2] # TODO: make it smart
+      user_id = location.pathname.split( "/" )[1]
+      room_id = location.pathname.split( "/" )[2] # TODO: make it smart
 
       # clear the field
       dom.val ""
 
-      L.chat.message profile, room, message, ( error, response ) ->
+      L.chat.message user_id, room_id, message, ( error, response ) ->
 
         if error
 
