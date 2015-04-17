@@ -24,9 +24,6 @@ class Navigation
 		@content_div = $ @content_selector
 
 		happens @
-	
-		# export to window
-		# window.ways = ways;
 		
 		# routing
 		page '*', @url_changed

@@ -247,6 +247,32 @@ PLAYER_HEIGHT = 70px
 		.content
 			display: none
 			
+// OWNERSHIP
+.for_owner
+	display: none
+.for_guest
+	display: block
+	
+.is_owner
+	.for_owner
+		display: block
+	.for_guest
+		display: none
+		
+.status_debug
+	position: fixed
+	bottom: 0
+	right: 0
+	& > *
+		float: left
+		text-align: right
+		
+	.square
+		background: white
+		
+		padding: 4px
+		font-weight: bold
+			
 	
 		
 		

@@ -63,6 +63,7 @@ class App
 				views.bind '#content'
 
 			navigation.bind '#content'
+			@user.check_guest_owner()
 	
 			first_render = false
 

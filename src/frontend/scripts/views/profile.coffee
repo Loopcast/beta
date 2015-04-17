@@ -24,6 +24,10 @@ module.exports = class Profile extends LoggedView
 	constructor: ( @dom ) ->
 		super()
 
+		log "[=== PAGE OWNER: #{owner_id} ===]"
+
+		app.gui.watch profile_info
+
 		@elements = 
 			profile_picture: @dom.find( '.profile_image img' )
 			cover_picture: @dom.find( '.cover_image' )
@@ -64,7 +68,12 @@ module.exports = class Profile extends LoggedView
 
 		$( '#room_modal' ).data( 'modal-close', true )
 
+		# Check the information of the owner of the page
+		@check_informations()
+
 	on_user_logged: ( @user_data ) =>
+
+		super @user_data
 
 		@dom.addClass 'user_logged'
 
@@ -72,7 +81,6 @@ module.exports = class Profile extends LoggedView
 		@change_cover_uploader = view.get_by_dom @dom.find( '.change_cover' )
 
 		if not @change_cover_uploader
-			log "[Profile] views not binded yet!!!"
 			return
 
 		@change_cover_uploader.on 'completed', (data) =>
@@ -96,26 +104,15 @@ module.exports = class Profile extends LoggedView
 		@editables.push view.get_by_dom( '.cover h3.type' )
 		@editables.push view.get_by_dom( '.cover .genres' )
 
-		if user_controller.has_informations()
-			@dom.removeClass 'no_information_yet'
-			@update_dom_from_user_data()
-		else
-			log "[Profile] it doesn't have informations yet"
-
-		
-
-
 
 	on_user_unlogged: =>
-		log "[Profile] on_user_unlogged!!!!!"
-		@dom.removeClass( 'user_logged' ).addClass( 'no_information_yet' )
+		super()
+		@dom.removeClass( 'user_logged' )
 
 
 	# Open the write/edit mode
 	write_mode : ->
 		app.body.addClass 'write_mode'
-
-	
 	
 	
 	save_data : ->
@@ -130,6 +127,8 @@ module.exports = class Profile extends LoggedView
 		# 	This action is mostly done for updating labels (inputs are already updated)
 		@update_dom_from_user_data()
 
+		@check_informations()
+
 		# - TODO: Send the data to the backend
 		@send_to_server()
 
@@ -139,8 +138,6 @@ module.exports = class Profile extends LoggedView
 
 
 	update_user_data_from_dom: ->
-
-		log "[Profile] update_user_data_from_dom"
 
 		# - TODO: Update the images
 
@@ -156,7 +153,6 @@ module.exports = class Profile extends LoggedView
 
 	update_dom_from_user_data : ->
 
-		log "[Profile] update_dom_from_user_data"
 		e = @elements
 		d = @user_data
 
@@ -180,23 +176,36 @@ module.exports = class Profile extends LoggedView
 
 		return str.replace re, to_replace
 
+	check_informations: ->
+		l = @elements.location.html().length
+		b = @elements.bio.html().length
+
+		# log "[Profile] check_informations", l, b
+		# log "---> location", @elements.location.html(), @elements.location.html().length
+		# log "---> location", @elements.bio.html(), @elements.bio.html().length
+		if l > 0 or b > 0
+			@dom.removeClass 'no_information_yet'
+		else
+			@dom.addClass 'no_information_yet'
+
+
+
+
 	send_to_server: ->
 		log "[Profile] saving", @user_data
 
-		api.user.edit
-			about: @user_data.bio
-		, ( error, response ) =>
+		# user_id
+		# name: String
+		# occupation: String
+		# genres
+		# about: String
+		# location: String
+		# social: Array
+		# avatar: String
+		# cover: String
+
+
+		api.user.edit @user_data, ( error, response ) =>
 			log "[Profile] user edit response", error, response
 			if error
 				log "---> Error Profile edit user", error.statusText
-			# if error
-			# 	console.error error 
-			# console.log response
-
-
-		return
-		$.post "/api/v1/user/save", @user_data, (data) =>
-			log "[Profile] server response", data
-
-	destroy: =>
-		super()

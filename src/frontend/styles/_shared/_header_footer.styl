@@ -28,7 +28,7 @@ header.header
 	.left, .right
 		& > *
 		
-			display: inline-block
+			float: left
 			padding: 13px 22px
 			vertical-align: top
 			height: HEADER_HEIGHT
@@ -71,11 +71,15 @@ header.header
 			height: 0
 			
 	.left
-		float: left
+		float: none
 		& > *
-			border-right: 1px solid #333
+			
+			border-right: 1px solid #1f1f1f
+			border-left: 1px solid #353535
 			padding: 13px 25px
 			
+			&:first-child
+				border-left: none
 			&.no_border
 				border-right: none
 		

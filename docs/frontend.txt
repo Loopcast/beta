@@ -1,0 +1,7 @@
+OWNERSHIP
+- user owner of the page
+- guest
+
+LOGIN
+- unlogged user
+- logged user
