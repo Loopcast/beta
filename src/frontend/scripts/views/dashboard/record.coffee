@@ -53,6 +53,7 @@ module.exports = ( dom ) ->
 
       dom.find('a').html "..."
 
+      user_id = location.pathname.split("/")[1]
       room_id = location.pathname.split("/")[2]
 
       L.rooms.stop_recording room_id, ( error, callback ) ->
@@ -66,6 +67,12 @@ module.exports = ( dom ) ->
         recording = false
 
         dom.find('a').html "RECORDED"
+
+        channel = pusher.subscribe "tape.#{user_id}"
+
+        channel.bind "upload:finished", ( file ) ->
+          console.log "finished uploading file ->", file
+          alert "Uploaded file! #{file}"
 
     # cancels click action
     return false
