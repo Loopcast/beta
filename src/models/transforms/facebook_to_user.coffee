@@ -25,7 +25,7 @@ module.exports = ( info, callback ) ->
           avatar  : picture_info.secure_url
 
         data :
-          email   : info.profile.email
+          email   : info.profile.email || username # quick hack for users without email
           facebook: info
           images:
             profile:
