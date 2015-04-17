@@ -83,6 +83,11 @@ module.exports = class Room
 
 			delay 1000, =>
 
+				# appends room_id to body in order to be compatible with 
+				# server side rendered template
+				hidden = "<input type='hidden' id='room_id' value='#{data._id}'>"
+				$( 'body' ).append hidden
+
 				navigation.go_silent "/#{data.info.user}/#{data.info.slug}"
 
 				ref.check_guest()
