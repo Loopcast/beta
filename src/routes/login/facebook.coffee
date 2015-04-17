@@ -22,7 +22,6 @@ module.exports =
 
         credentials = request.auth.credentials
 
-
         # populates user informaiton with facebook data
         transform credentials, ( error, user ) ->
 
