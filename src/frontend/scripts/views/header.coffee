@@ -44,8 +44,6 @@ module.exports = class Header
 
 
 	on_user_logged: ( data ) =>
-
-		log "[Header] on_user_logged", data
 		return if @user_logged
 		@user_logged = true
 		

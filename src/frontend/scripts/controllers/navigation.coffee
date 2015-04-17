@@ -50,9 +50,6 @@ class Navigation
 				log "[Navigation] return same path "
 				return
 
-		log "url_changed", req, req.path
-
-
 		# ie hack for hash urls
 		req.url = req.path.replace( "/#", '' )
 

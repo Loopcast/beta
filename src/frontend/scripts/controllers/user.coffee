@@ -75,10 +75,8 @@ class UserController
   check_guest_owner: ->
 
     if owner_id? and @is_logged() and @data.username is owner_id
-      console.error '[User] owner', owner_id, @data.username
       app.body.addClass( 'is_owner' ).removeClass( 'is_guest' )
     else
-      console.error '[User] guest'
       app.body.removeClass( 'is_owner' ).addClass( 'is_guest' )
   
   ###

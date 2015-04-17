@@ -8,6 +8,7 @@ module.exports = class Loading
 		app.on 'loading:show', =>
 			app.body.addClass( 'loading' ).removeClass( 'loaded' )
 			Opacity.show @dom, 100
+			console.error "[Loading] show"
 
 		# navigation.on 'after_render', => 
 		app.on 'loading:hide', =>
@@ -16,3 +17,5 @@ module.exports = class Loading
 				@first_time = off
 			app.body.removeClass( 'loading' ).addClass( 'loaded' )
 			Opacity.hide @dom	
+
+			console.error "[Loading] hide"
