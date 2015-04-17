@@ -32,6 +32,10 @@ schema = new Schema
   created_at: Date
 
 schema.statics.findAndModify = (query, sort, doc, options, callback) ->
+  # automatically transform string to ObjectId
+  if query._id
+    query._id = mongoose.Types.ObjectId query._id
+
   @collection.findAndModify query, sort, doc, options, callback
 
 Room = mongoose.model 'Room', schema

@@ -1,9 +1,11 @@
 L       = require '../../api/loopcast/loopcast'
 appcast = require '../../controllers/appcast'
 
-recording = false
 
 module.exports = ( dom ) ->
+
+  # TODO: fetch information from backend
+  recording = false
 
   start_recording = ( callback ) ->
     room_id = location.pathname.split("/")[2]

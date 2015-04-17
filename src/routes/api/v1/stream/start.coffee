@@ -12,6 +12,9 @@ module.exports =
     description: "Start stream"
     plugins: "hapi-swagger": responseMessages: [
       { code: 400, message: 'Bad Request' }
+      { code: 401, message: 'Needs authentication' }
+      { code: 410, message: "Room not found or user not owner" }
+      { code: 412, message: "Database error" }
       { code: 500, message: 'Internal Server Error'}
     ]
     tags   : [ "api", "v1" ]
@@ -22,34 +25,49 @@ module.exports =
 
     validate:
       payload:
-        room_id  : joi.string().required()
+        room_id : joi.string().required()
 
-    handler: ( request, reply ) ->
+    handler: ( req, reply ) ->
 
-      if not request.auth.isAuthenticated
+      if not req.auth.isAuthenticated
 
-        return reply Boom.unauthorized('needs authentication')
+        return reply Boom.unauthorized( 'needs authentication' )
 
-      username = request.auth.credentials.user.username
-      room_id  = request.payload.room_id.toLowerCase()
+      username = req.auth.credentials.user.username
+      room_id  = req.payload.room_id
 
       query =
+        _id: room_id
         'info.user' : username
-        'info.slug' : room_id
 
-      update =
-        $set : 
-          'status.is_streaming': true
-          'status.is_public'   : true
-          'status.streaming.started_at' : now().format()
+      Room.findOne( query )
+        .select( "_id" )
+        .lean()
+        .exec ( error, room ) -> 
 
-      options = 
-        fields:
-          _id                  : off
+          if error
 
-      # TODO: just use a simple update?
-      Room.findAndModify query, null, update, options, ( error, status ) ->
+            failed req, reply, error
 
-        if error then return failed request, reply, error
+            return reply Boom.preconditionFailed( "Database error" )
 
-        reply status
+          if not room 
+
+            return reply Boom.resourceGone( "room not found or user not owner" )
+
+          update =
+            'status.is_streaming': true
+            'status.is_public'   : true
+            'status.streaming.started_at' : now().format()
+          
+          Room.update( _id: room_id, update )
+            .lean()
+            .exec ( error, docs_updated ) ->
+
+              if error
+
+                failed req, reply, error
+
+                return reply Boom.preconditionFailed( "Database error" )
+
+              reply update

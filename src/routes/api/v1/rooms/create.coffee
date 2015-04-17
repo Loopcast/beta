@@ -71,4 +71,5 @@ module.exports =
           
           return failed request, reply, error
 
-        reply doc
+        # returns only the data, not the mongoose crap
+        reply doc.toObject()

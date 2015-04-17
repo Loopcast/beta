@@ -49,6 +49,7 @@ module.exports =
     stop_stream: ( room_id, callback ) ->
       on_status_code =
         401: ( response ) -> callback 'unauthorized, need log in!'
+        412: ( response ) -> callback 'Room not found or user not owner!'
 
       data = room_id: room_id
 
@@ -63,6 +64,7 @@ module.exports =
     start_recording: ( room_id, callback ) ->
       on_status_code =
         401: ( response ) -> callback 'unauthorized, need log in!'
+        412: ( response ) -> callback 'Room not found or user not owner!'
 
       data = room_id: room_id
 
