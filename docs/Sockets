@@ -31,3 +31,13 @@ Channels / messages
 
         Which sends
           file
+
+      - upload:error
+
+        Which sends
+          error
+
+      - upload:failed
+
+        Which sends
+          error
