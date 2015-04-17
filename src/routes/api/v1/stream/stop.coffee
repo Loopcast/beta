@@ -58,12 +58,12 @@ module.exports =
           update =
             $set:
               'status.is_live'         : false
-              'status.is_public'            : false
+              'status.is_public'       : false
               'status.live.stopped_at' : now().format()
 
           options = 
             fields:
-              _id                           : off
+              _id                      : off
               'status.live.started_at' : on
               'status.live.stopped_at' : on
               'status.is_live'         : on
