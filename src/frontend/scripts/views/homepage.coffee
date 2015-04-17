@@ -1,7 +1,11 @@
 preload = require 'app/utils/preload'
-
+happens = require 'happens'
 module.exports = class Homepage
 	constructor: (@dom) ->
+
+		happens @
+
+		@dom.addClass 'request_preloading'
 
 		elements = []
 		images = []
@@ -10,6 +14,7 @@ module.exports = class Homepage
 			elements.push $( @ )
 			images.push $( @ ).data( 'image-parallax' )
 
+		ref = @
 		preload images, ( images_loaded )->
 
 			for el, i in elements
@@ -20,7 +25,10 @@ module.exports = class Homepage
 					naturalWidth : images_loaded[ i ].width
 					naturalheight: images_loaded[ i ].height
 
+			
+
 			delay 100, => app.window.obj.trigger 'resize'
+			delay 200, => ref.emit 'ready'
 
 
 	destroy: ( ) ->

@@ -25,12 +25,8 @@ class App
 	# link to controller/session
 	session: null
 
-	constructor: -> 	
-
+	constructor: ->
 		happens @
-
-		# are we using this?
-		@on 'ready', @after_render
 
 	start: ->
 		
@@ -49,14 +45,12 @@ class App
 		@settings.bind @body
 
 		# Controllers binding
-		views.bind 'body'
-		do navigation.bind
-
-		# when the new are is rendered, do the same with the new content
-
 		first_render = true
 
+		views.on 'binded', @on_views_binded
+
 		navigation.on 'before_destroy', =>
+			@emit 'loading:show'
 			views.unbind '#content'
 
 		navigation.on 'after_render', => 
@@ -67,6 +61,25 @@ class App
 			navigation.bind '#content'
 	
 			first_render = false
+
+		views.bind 'body'
+		navigation.bind()
+
+	on_views_binded: ( scope ) =>
+		return if not scope.main
+
+		# Check if some view is requesting the preload
+		view_preloading = $( scope.scope ).find( '.request_preloading' )
+
+		# If some view is preloading, wait for its ready event
+		if view_preloading.length > 0
+			v = views.get_by_dom view_preloading
+			v.once 'ready', => @emit 'loading:hide'
+
+		# Otherwise just hide the loading screen
+		else
+			@emit 'loading:hide'
+
 	
 	# User Proxies
 	login : ( user_data ) -> 
@@ -78,21 +91,12 @@ class App
 		else
 			url = "/#{user_data.username}"
 			
-
 		navigation.go url
 		@user.login user_data
 
-	logout: -> 
-		@user.logout()
+	logout: -> @user.logout()
 
-
-	###
-	# After the views have been rendered
-	###
-	after_render: ( ) =>
-		log "after_render"
-		# Hide the loading
-		delay 10, => @body.addClass "loaded"
+	
 
 		
 app = new App
