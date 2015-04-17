@@ -25,6 +25,8 @@ class App
 	# link to controller/session
 	session: null
 
+	main_view_binded_counter: 0
+
 	constructor: ->
 		happens @
 
@@ -53,8 +55,10 @@ class App
 			@emit 'loading:show'
 			views.unbind '#content'
 
-		navigation.on 'after_render', => 
+		navigation.on 'after_render', =>
 
+
+			log "[navigation] after_render", first_render
 			if not first_render
 				views.bind '#content'
 
@@ -67,6 +71,12 @@ class App
 
 	on_views_binded: ( scope ) =>
 		return if not scope.main
+
+		@main_view_binded_counter++
+		log "[App] on_views_binded", @main_view_binded_counter, window.opener?
+
+		if window.opener? and @main_view_binded_counter <= 1
+			return
 
 		# Check if some view is requesting the preload
 		view_preloading = $( scope.scope ).find( '.request_preloading' )

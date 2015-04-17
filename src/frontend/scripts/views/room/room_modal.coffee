@@ -5,7 +5,6 @@ module.exports = class RoomModal extends Modal
 
 	cover_uploaded: ""
 	constructor: ( @dom ) ->
-		log "[Room Modal] Created"
 		super @dom
 
 		@title = @dom.find '.roomname'
@@ -22,7 +21,7 @@ module.exports = class RoomModal extends Modal
 
 	on_views_binded: ( scope ) =>
 		return if not scope.main
-		log "[Room Modal] on_views_binded"
+
 		room_image_uploader = view.get_by_dom @dom.find( '.room_image' )
 
 		if not room_image_uploader

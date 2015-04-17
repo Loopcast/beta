@@ -13,7 +13,7 @@ module.exports = class LoggedView
 
     user = user_controller.data
 
-    if user?
+    if user
       @on_user_logged user
     else
       @on_user_unlogged()

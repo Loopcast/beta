@@ -15,4 +15,4 @@ module.exports = class Loading
 				app.body.addClass 'first_loaded'
 				@first_time = off
 			app.body.removeClass( 'loading' ).addClass( 'loaded' )
-			Opacity.hide @dom
+			Opacity.hide @dom	
