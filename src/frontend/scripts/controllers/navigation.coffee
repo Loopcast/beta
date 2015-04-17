@@ -10,6 +10,7 @@ class Navigation
 	instance = null
 	first_loading: on
 	first_url_change: true
+	first_same_path: true
 
 	constructor: ->
 
@@ -47,8 +48,10 @@ class Navigation
 			return
 
 		if req.path is location.pathname
-			log "[Navigation] return same path "
-			return
+			if @first_same_path
+				@first_same_path = false
+				log "[Navigation] return same path "
+				return
 
 		log "url_changed", req, req.path
 
