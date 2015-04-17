@@ -12,6 +12,9 @@ module.exports =
     description: "Stop recording"
     plugins: "hapi-swagger": responseMessages: [
       { code: 400, message: 'Bad Request' }
+      { code: 401, message: 'Needs authentication' }
+      { code: 410, message: "Room not found or user not owner" }
+      { code: 412, message: "Database error" }
       { code: 500, message: 'Internal Server Error'}
     ]
     tags   : [ "api", "v1" ]
@@ -34,45 +37,57 @@ module.exports =
       room_id  = req.payload.room_id.toLowerCase()
 
       query =
+        _id: room_id
         'info.user' : username
-        'info.slug' : room_id
 
-      update =
-        $set : 
-          'status.is_recording'         : off
-          'status.recording.stopped_at' : now().format()
+      Room.findOne( query )
+        .select( "_id" )
+        .lean()
+        .exec ( error, room ) -> 
 
-      options = 
-        fields:
-          _id                           : off
-          'status.recording.started_at' : on
-          'status.recording.stopped_at' : on
-          'status.is_recording'         : on
-        'new': true
+          if error
 
-      request "#{s.tape}/stop/#{username}", ( error, response, body ) ->
-        if error
+            failed req, reply, error
 
-          console.log "error starting tape"
-          console.log error
+            return reply Boom.preconditionFailed( "Database error" )
 
-          return      
+          if not room 
 
-        # JSON from tape server
-        body = JSON.parse body
+            return reply Boom.resourceGone( "room not found or user not owner" )
 
-        console.log "got response from tape stop", body 
+          update =
+            $set:
+              'status.is_recording'         : off
+              'status.recording.stopped_at' : now().format()
 
-        Room.findAndModify query, null, update, options, ( error, response ) ->
+          options = 
+            fields:
+              _id                           : off
+              'status.recording.started_at' : on
+              'status.recording.stopped_at' : on
+              'status.is_recording'         : on
 
-          if error then return failed request, reply, error
+          request "#{s.tape}/stop/#{username}", ( error, response, body ) ->
+            if error
 
-          started_at = now( response.value.status.recording.started_at )
-          stopped_at = now( update.$set['status.recording.stopped_at'] )
+              console.log "error starting tape"
+              console.log error
 
-          duration = stopped_at.diff( started_at, 'seconds' )
-          
-          # streamed for this length
-          console.log "Recorded #{duration} seconds"
+              return      
 
-          reply response
+            # JSON from tape server
+            body = JSON.parse body
+
+            Room.findAndModify query, null, update, options, ( error, response ) ->
+
+              if error then return failed request, reply, error
+
+              started_at = now( response.value.status.recording.started_at )
+              stopped_at = now( update['status.recording.stopped_at'] )
+
+              duration = stopped_at.diff( started_at, 'seconds' )
+              
+              # recorded for this length
+              console.log "Recorded #{duration} seconds"
+
+              reply response

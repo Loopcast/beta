@@ -56,9 +56,10 @@ module.exports =
             return reply Boom.resourceGone( "room not found or user not owner" )
 
           update =
-            'status.is_streaming'         : false
-            'status.is_public'            : false
-            'status.streaming.stopped_at' : now().format()
+            $set:
+              'status.is_streaming'         : false
+              'status.is_public'            : false
+              'status.streaming.stopped_at' : now().format()
 
           options = 
             fields:

@@ -10,6 +10,9 @@ module.exports =
     description: "Start stream"
     plugins: "hapi-swagger": responseMessages: [
       { code: 400, message: 'Bad Request' }
+      { code: 401, message: 'Needs authentication' }
+      { code: 410, message: "Room not found or user not owner" }
+      { code: 412, message: "Database error" }
       { code: 500, message: 'Internal Server Error'}
     ]
     tags   : [ "api", "v1" ]
@@ -20,7 +23,7 @@ module.exports =
 
     validate:
       payload:
-        room_id  : joi.string().required()
+        room_id : joi.string().required()
 
     handler: ( req, reply ) ->
 
@@ -32,37 +35,51 @@ module.exports =
       room_id  = req.payload.room_id.toLowerCase()
 
       query =
+        _id: room_id
         'info.user' : username
-        'info.slug' : room_id
 
-      update =
-        $set : 
-          'status.is_recording'         : true
-          'status.recording.started_at' : now().format()
+      Room.findOne( query )
+        .select( "_id" )
+        .lean()
+        .exec ( error, room ) -> 
+
+          if error
+
+            failed req, reply, error
+
+            return reply Boom.preconditionFailed( "Database error" )
+
+          if not room 
+
+            return reply Boom.resourceGone( "room not found or user not owner" )
+
+          update =
+            'status.is_recording'         : true
+            'status.recording.started_at' : now().format()
 
 
-      # TODO: use Room.update instead of findAndModify
-      options = 
-        fields:
-          _id  : off
-        'new'  : true
+          request "#{s.tape}/start/#{username}", ( error, response, body ) ->
 
-      request "#{s.tape}/start/#{username}", ( error, response, body ) ->
+            if error
 
-        if error
+              console.log "error starting tape"
+              console.log error
 
-          console.log "error starting tape"
-          console.log error
+              return      
 
-          return      
+            # JSON from tape server
+            body = JSON.parse body
 
-        # JSON from tape server
-        body = JSON.parse body
+            update[ 'recording.file' ] = body.file
+            
+            Room.update( _id: room_id, update )
+              .lean()
+              .exec ( error, docs_updated ) ->
 
-        update.$set[ 'recording.file' ] = body.file
-        
-        Room.findAndModify query, null, update, options, ( error, status ) ->
+                if error
 
-          if error then return failed req, reply, error
+                  failed req, reply, error
 
-          reply status
+                  return reply Boom.preconditionFailed( "Database error" )
+
+                reply update

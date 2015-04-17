@@ -8,9 +8,8 @@ module.exports = ( dom ) ->
   recording = false
 
   start_recording = ( callback ) ->
-    room_id = location.pathname.split("/")[2]
 
-    L.rooms.start_recording room_id, ( error, response ) ->
+    L.rooms.start_recording $( '#room_id' ).val(), ( error, response ) ->
 
       if error
 
@@ -56,9 +55,8 @@ module.exports = ( dom ) ->
       dom.find('a').html "..."
 
       user_id = location.pathname.split("/")[1]
-      room_id = location.pathname.split("/")[2]
 
-      L.rooms.stop_recording room_id, ( error, callback ) ->
+      L.rooms.stop_recording $( '#room_id' ).val(), ( error, callback ) ->
 
         if error
 
