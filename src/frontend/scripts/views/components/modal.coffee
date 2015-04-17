@@ -52,7 +52,6 @@ module.exports = class Modal
 		@dom.removeClass 'loading'
 
 	destroy: ->
-		log "[Modal] removed"
 		@dom = null
 		@on = null
 		@off = null

@@ -4,13 +4,18 @@ Opacity 			= require 'app/utils/opacity'
 module.exports = class Loading
 	first_time: on
 	constructor: ( @dom ) ->
-		navigation.on 'before_destroy', =>
+		# navigation.on 'before_destroy', =>
+		app.on 'loading:show', =>
 			app.body.addClass( 'loading' ).removeClass( 'loaded' )
 			Opacity.show @dom, 100
+			# console.error "[Loading] show"
 
-		navigation.on 'after_render', => 
+		# navigation.on 'after_render', => 
+		app.on 'loading:hide', =>
 			if @first_time
 				app.body.addClass 'first_loaded'
 				@first_time = off
 			app.body.removeClass( 'loading' ).addClass( 'loaded' )
-			Opacity.hide @dom
+			Opacity.hide @dom	
+
+			# console.error "[Loading] hide"

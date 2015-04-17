@@ -8,6 +8,7 @@ module.exports = class Header
 	constructor: ( @dom ) ->
 		user_controller.on 'user:logged', @on_user_logged
 		user_controller.on 'user:unlogged', @on_user_unlogged
+		user_controller.on 'user:updated', @on_user_updated
 
 		navigation.on 'after_render', @check_menu
 
@@ -44,8 +45,6 @@ module.exports = class Header
 
 
 	on_user_logged: ( data ) =>
-
-		log "[Header] on_user_logged", data
 		return if @user_logged
 		@user_logged = true
 		
@@ -57,6 +56,11 @@ module.exports = class Header
 
 		view.bind wrapper
 		navigation.bind wrapper
+
+	on_user_updated: ( data ) =>
+		log "[Header] udpating image", data.images.top_bar
+		@dom.find( '.top_bar_icon' ).attr 'src', data.images.top_bar
+
 
 
 

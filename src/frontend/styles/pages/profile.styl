@@ -24,6 +24,10 @@
 		.text
 			text-align: left
 			margin-bottom: 90px
+			
+		.for_guest
+			margin-bottom: 30px
+			text-align: center
 
 			
 
@@ -171,7 +175,7 @@
 		padding: 0px 15px
 		background: BLACK_BOX_COLOR
 		border-bottom: 1px solid BLACK
-		border-top: 1px solid GRAY_3
+		border-top: 1px solid #353535
 		display: flex
 		align-items: center
 		text-align: center
@@ -238,6 +242,11 @@
 			
 		.list_sessions
 			flex: 1
+			.no_activity
+				color: BLACK
+			.button.bold_button
+				width: 300px
+				margin-top: 20px
 		
 		.session
 			height: 100px
@@ -472,7 +481,9 @@
 	&.deleted
 		transform: scale(1, 0.001)
 		
-			
+.no_activity_wrapper
+	padding-right: 20px
+		
 .delete_screen
 	absolute top 0 left 0
 	width: 100%
@@ -514,7 +525,9 @@
 		transform: translateY(0)
 // --------------------------
 
-
+.is_guest
+	.cover_button
+		display: none!important
 	
 .no_touch_device
 	.tag:hover

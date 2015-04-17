@@ -10,6 +10,7 @@ class Navigation
 	instance = null
 	first_loading: on
 	first_url_change: true
+	first_same_path: true
 
 	constructor: ->
 
@@ -23,9 +24,6 @@ class Navigation
 		@content_div = $ @content_selector
 
 		happens @
-	
-		# export to window
-		# window.ways = ways;
 		
 		# routing
 		page '*', @url_changed
@@ -41,12 +39,16 @@ class Navigation
 
 
 	url_changed: ( req ) =>
+
 		if @first_url_change
 			@first_url_change = off
 			return
 
-		log "url_changed", req, req.path
-
+		if req.path is location.pathname
+			if @first_same_path
+				@first_same_path = false
+				log "[Navigation] return same path "
+				return
 
 		# ie hack for hash urls
 		req.url = req.path.replace( "/#", '' )
