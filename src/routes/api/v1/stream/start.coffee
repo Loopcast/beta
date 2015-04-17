@@ -56,9 +56,9 @@ module.exports =
             return reply Boom.resourceGone( "room not found or user not owner" )
 
           update =
-            'status.is_streaming': true
+            'status.is_live'     : true
             'status.is_public'   : true
-            'status.streaming.started_at' : now().format()
+            'status.live.started_at' : now().format()
           
           Room.update( _id: room_id, update )
             .lean()

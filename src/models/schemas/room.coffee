@@ -17,7 +17,7 @@ schema = new Schema
     is_recording : { type: Boolean, default: off } # when user press start recording
     is_public    : { type: Boolean, default: off } # while user is live or after publishing a set
     # is_streaming : { type: Boolean, default: off } # when appcast is connected to the server ?
-    streaming:
+    live:
       started_at  : Date
       stopped_at  : Date
     recording:
