@@ -72,7 +72,18 @@ module.exports = ( dom ) ->
 
         channel.bind "upload:finished", ( file ) ->
           console.log "finished uploading file ->", file
+          
           alert "Uploaded file! #{file}"
+
+        channel.bind "upload:error", ( error ) ->
+          console.error "failed uploading ->", error
+          
+          alert "Error uploading file :("
+
+        channel.bind "upload:failed", ( error ) ->
+          console.log "failed uploading ->", error
+          
+          alert "Failed uploading file :("
 
     # cancels click action
     return false
