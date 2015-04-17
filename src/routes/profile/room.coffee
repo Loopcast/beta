@@ -24,9 +24,6 @@ module.exports =
       profile = request.params.profile
       room_id = request.params.room
 
-
-      console.log "looking for room #{profile}/#{room_id}"
-
       query =
         'info.user'       : profile
         'info.slug'       : room_id
