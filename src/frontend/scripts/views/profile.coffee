@@ -1,21 +1,10 @@
-###
- user_data :
- 	profile_picture: "/images/profile_big.png"
- 	cover_picture: "/images/homepage_2.jpg"
- 	location: "London - UK"
- 	bio: "Thomas Amundsen from Oslo, now based in London has from an early age lots of musical influences, experimenting from acoustic instruments to electronic music production and DJing.<br/><br/>He released his debut EP “I Feel” on Fusion recordings, sub-label of Dj Center Records, and has since released frequently on labels such as; Dobara, Susurrous Music, Incognitus Recordings, Koolwaters and gained support from the likes of Amine Edge, Stacey Pullen, Detlef, Slam, Marc Vedo, Loverdose, Ashley Wild, Jobe and many more"
- 	links: [
- 		{type:"spotify", url:"http://spotify.com"},
- 		{type:"soundcloud", url:"http://soundcloud.com"},
- 		{type:"facebook", url:"http://facebook.com"}
- 	]
-###
 Cloudinary = require 'app/controllers/cloudinary'
 transform  = require 'app/utils/images/transform'
 notify     = require 'app/controllers/notify'
 user_controller = require 'app/controllers/user'
 LoggedView = require 'app/views/logged_view'
 api = require 'app/api/loopcast/loopcast'
+happens = require 'happens'
 
 module.exports = class Profile extends LoggedView
 	elements: null
@@ -23,18 +12,19 @@ module.exports = class Profile extends LoggedView
 
 	constructor: ( @dom ) ->
 		super()
+		happens @
 
 		log "[=== PAGE OWNER: #{owner_id} ===]"
 
 		app.gui.watch profile_info
 
 		@elements = 
-			profile_picture: @dom.find( '.profile_image img' )
+			avatar: @dom.find( '.profile_image img' )
 			cover_picture: @dom.find( '.cover_image' )
 			location: @dom.find( '.profile_bio .location' )
 			location_input: @dom.find( '.location_input' )
-			bio: @dom.find( '.bio' )
-			bio_input: @dom.find( '.bio_input' )
+			about: @dom.find( '.bio' )
+			about_input: @dom.find( '.bio_input' )
 			links: [
 				{type:"spotify", el:@dom.find( '.spotify_link' )},
 				{type:"soundcloud", el:@dom.find( '.soundcloud_link' )},
@@ -45,6 +35,8 @@ module.exports = class Profile extends LoggedView
 				{type:"soundcloud", el:@dom.find( '.soundcloud_input' )},
 				{type:"facebook", el:@dom.find( '.facebook_input' )}
 			]
+
+		@elements.avatar.attr 'src', transform.avatar( profile_info.avatar )
 
 
 		@form_bio = @dom.find( '.profile_form' )
@@ -71,11 +63,19 @@ module.exports = class Profile extends LoggedView
 		# Check the information of the owner of the page
 		@check_informations()
 
+		delay 100, => @emit 'ready'
+
 	on_user_logged: ( @user_data ) =>
 
 		super @user_data
 
 		@dom.addClass 'user_logged'
+
+		if not user_controller.is_owner
+			return
+
+		@user_data = profile_info
+		@update_dom_from_user_data()
 
 		# Listen to images upload events
 		@change_cover_uploader = view.get_by_dom @dom.find( '.change_cover' )
@@ -93,9 +93,10 @@ module.exports = class Profile extends LoggedView
 		@change_picture_uploader = view.get_by_dom @dom.find( '.profile_image' )
 		@change_picture_uploader.on 'completed', (data) =>
 
-			@user_data.profile_picture = data.result.url
+			user_controller.data.avatar = data.result.url
+			@user_data = user_controller.normalize_data()
 
-			url = transform.avatar data.result.url
+			url = @user_data.images.avatar
 
 			@dom.find( 'img' ).attr 'src', url
 
@@ -140,9 +141,9 @@ module.exports = class Profile extends LoggedView
 	update_user_data_from_dom: ->
 
 		# - TODO: Update the images
-
+		log "[Profile] update_user_data_from_dom"
 		@user_data.location = @elements.location_input.val()
-		@user_data.bio = @elements.bio_input.val()
+		@user_data.about = @elements.about_input.val()
 
 		@user_data.links = []
 		for l, i in @elements.links_input
@@ -153,21 +154,25 @@ module.exports = class Profile extends LoggedView
 
 	update_dom_from_user_data : ->
 
+		log "[Profile] update_dom_from_user_data"
 		e = @elements
 		d = @user_data
 
-		e.profile_picture.css 'background-image', d.profile_picture
+		e.avatar.css 'background-image', d.avatar
 		e.cover_picture.css 'background-image', d.cover_picture
 
-		e.location.html d.location
-		e.location_input.val d.location
+		if d.location
+			e.location.html d.location
+			e.location_input.val d.location
 
-		e.bio.html d.bio
-		e.bio_input.val @html_to_textarea( d.bio )
+		if d.about
+			e.about.html d.about
+			e.about_input.val @html_to_textarea( d.about )
 
-		for link, i in d.links
-			e.links[ i ].el.attr 'href', link.url
-			e.links_input[ i ].el.val link.url
+		if d.links
+			for link, i in d.links
+				e.links[ i ].el.attr 'href', link.url
+				e.links_input[ i ].el.val link.url
 
 	html_to_textarea : ( str ) ->
 		to_find = "<br/>"
@@ -178,7 +183,7 @@ module.exports = class Profile extends LoggedView
 
 	check_informations: ->
 		l = @elements.location.html().length
-		b = @elements.bio.html().length
+		b = @elements.about.html().length
 
 		# log "[Profile] check_informations", l, b
 		# log "---> location", @elements.location.html(), @elements.location.html().length
@@ -206,6 +211,10 @@ module.exports = class Profile extends LoggedView
 
 
 		api.user.edit @user_data, ( error, response ) =>
-			log "[Profile] user edit response", error, response
+
+			log "[Profile] fields updated", response.custom_attributes
 			if error
 				log "---> Error Profile edit user", error.statusText
+				return
+
+			user_controller.write_to_session()

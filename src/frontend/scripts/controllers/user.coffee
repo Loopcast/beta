@@ -12,6 +12,7 @@ class UserController
 
   # Object variables
   data : null
+  is_owner: false
 
 
   constructor: ->
@@ -40,7 +41,7 @@ class UserController
 
     # log "[UserController] user:logged", @data
 
-    @_normalize_data()
+    @normalize_data()
 
     @write_to_session()
 
@@ -76,8 +77,23 @@ class UserController
 
     if owner_id? and @is_logged() and @data.username is owner_id
       app.body.addClass( 'is_owner' ).removeClass( 'is_guest' )
+      @is_owner = true
     else
       app.body.removeClass( 'is_owner' ).addClass( 'is_guest' )
+      @is_owner = false
+
+  normalize_data: ->
+    if not @data.avatar?
+      log "[User Controller] user.avatar is undefined. Setting default."
+      user.avatar = UserController.USER_DEFAULT_AVATAR
+
+    @data.images =
+      top_bar: transform.top_bar @data.avatar
+      avatar: transform.avatar @data.avatar
+
+    @emit 'user:updated', @data
+
+    return @data
   
   ###
   Private Methods
@@ -101,14 +117,7 @@ class UserController
     app.body.removeClass "logged"
     @emit 'user:unlogged'
 
-  _normalize_data: ->
-    if not @data.avatar?
-      log "[User Controller] user.avatar is undefined. Setting default."
-      user.avatar = UserController.USER_DEFAULT_AVATAR
-
-    @data.images =
-      top_bar: transform.top_bar @data.avatar
-      avatar: transform.avatar @data.avatar
+  
 
 
   ###

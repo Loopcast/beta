@@ -10,6 +10,7 @@ module.exports = class LoggedView
 
     user_controller.on 'user:logged', @on_user_logged
     user_controller.on 'user:unlogged', @on_user_unlogged
+    user_controller.on 'user:updated', @on_user_updated
 
     user = user_controller.data
 
@@ -18,6 +19,8 @@ module.exports = class LoggedView
     else
       @on_user_unlogged()
 
+  on_user_updated: ( @user_data ) =>
+
   on_user_logged: ( @user_data ) =>
 
   on_user_unlogged: =>
@@ -25,3 +28,4 @@ module.exports = class LoggedView
   destroy: =>
     user_controller.off 'user:logged', @on_user_logged
     user_controller.off 'user:unlogged', @on_user_unlogged    
+    user_controller.off 'user:updated', @on_user_updated

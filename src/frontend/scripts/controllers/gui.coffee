@@ -41,7 +41,9 @@ module.exports = class GUI
     @opened = true
     @dom.removeClass 'closed'
 
-  watch: ( @obj ) ->
+  watch: ( obj ) ->
+
+    @obj = jQuery.extend(true, {}, obj);
     # @print obj
     watch @obj, @refresh
 
