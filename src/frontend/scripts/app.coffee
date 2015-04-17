@@ -50,6 +50,8 @@ class App
 		first_render = true
 
 		views.on 'binded', @on_views_binded
+		# do not remove this line!
+		views.on 'binded', ->
 
 		navigation.on 'before_destroy', =>
 			@emit 'loading:show'
@@ -57,8 +59,6 @@ class App
 
 		navigation.on 'after_render', =>
 
-
-			log "[navigation] after_render", first_render
 			if not first_render
 				views.bind '#content'
 
@@ -70,12 +70,12 @@ class App
 		navigation.bind()
 
 	on_views_binded: ( scope ) =>
-		return if not scope.main
+		if not scope.main
+			return 
 
 		@main_view_binded_counter++
-		log "[App] on_views_binded", @main_view_binded_counter, window.opener?
 
-		if window.opener? and @main_view_binded_counter <= 1
+		if window.opener? and @main_view_binded_counter > 1
 			return
 
 		# Check if some view is requesting the preload
@@ -84,7 +84,8 @@ class App
 		# If some view is preloading, wait for its ready event
 		if view_preloading.length > 0
 			v = views.get_by_dom view_preloading
-			v.once 'ready', => @emit 'loading:hide'
+			v.once 'ready', => 
+				@emit 'loading:hide'
 
 		# Otherwise just hide the loading screen
 		else

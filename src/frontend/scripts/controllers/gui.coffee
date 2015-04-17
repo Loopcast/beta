@@ -42,14 +42,12 @@ module.exports = class GUI
     @dom.removeClass 'closed'
 
   watch: ( @obj ) ->
-    log "[GUI] watching", @obj
     # @print obj
     watch @obj, @refresh
 
     @refresh()
 
   refresh: =>
-    log "[GUI] refresh"
     html = @print( JSON.stringify(@obj, undefined, 4) )
     @content.html html
 

@@ -41,8 +41,13 @@ class Navigation
 
 
 	url_changed: ( req ) =>
+
 		if @first_url_change
 			@first_url_change = off
+			return
+
+		if req.path is location.pathname
+			log "[Navigation] return same path "
 			return
 
 		log "url_changed", req, req.path

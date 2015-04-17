@@ -14,8 +14,7 @@ module.exports = class Homepage
 			elements.push $( @ )
 			images.push $( @ ).data( 'image-parallax' )
 
-		ref = @
-		preload images, ( images_loaded )->
+		preload images, ( images_loaded ) =>
 
 			for el, i in elements
 				el.parallax
@@ -26,9 +25,11 @@ module.exports = class Homepage
 					naturalheight: images_loaded[ i ].height
 
 			
+			@ready()
 
-			delay 100, => app.window.obj.trigger 'resize'
-			delay 200, => ref.emit 'ready'
+	ready: ->
+		delay 100, -> app.window.obj.trigger 'resize'
+		delay 200, => @emit 'ready'
 
 
 	destroy: ( ) ->
