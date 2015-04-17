@@ -1,0 +1,33 @@
+Socket messages are broadcasted and listened via http://pusher.com
+
+NOTE: staging and beta have their own pusher accounts
+
+
+Channels / messages
+
+  The web server works on the following channels
+
+  - #{user_id}.#{room}
+
+    This channel broadcast the following message
+
+      - message
+
+        Which sends
+          data = 
+            name   : user.name
+            avatar : user.avatar
+            time   : now().format()
+            message: message
+
+
+  The tape server works on the following channels
+
+  - tape.#{mount_point}
+
+    This channel broadcast the following message
+
+      - upload:finished
+
+        Which sends
+          file
