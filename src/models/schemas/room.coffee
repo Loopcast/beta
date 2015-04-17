@@ -23,6 +23,7 @@ schema = new Schema
     recording:
       started_at  : Date
       stopped_at  : Date
+      file        : String
 
   images:
     cover: Object # cloudinary information

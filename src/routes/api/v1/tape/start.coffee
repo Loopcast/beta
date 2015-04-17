@@ -59,6 +59,8 @@ module.exports =
         # JSON from tape server
         body = JSON.parse body
 
+        update.$set[ 'recording.file' ] = body.file
+        
         Room.findAndModify query, null, update, options, ( error, status ) ->
 
           if error then return failed req, reply, error
