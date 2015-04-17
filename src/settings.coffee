@@ -89,7 +89,9 @@ if s.is_beta
   s.pusher = 
     appId: '115738',
     key: '23e67be659fc6663206d',
-    secret: 'b324ac27d8ec6f3f589a'    
+    secret: 'b324ac27d8ec6f3f589a'
+
+  s.tape = 'http://tape.loopcast.fm:8000'
 
 # IF LOCAL OR DEVELOPMENT
 else
@@ -122,6 +124,8 @@ else
     appId: '115735',
     key: 'e269699ecff3c224a612',
     secret: '5a05943c7bf757cdd315'
+
+  s.tape = 'http://tape.loopcast.fm:8000'
 
 
 module.exports = s

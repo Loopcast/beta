@@ -1,10 +1,10 @@
 L       = require '../../api/loopcast/loopcast'
 appcast = require '../../controllers/appcast'
 
-# fetch information from backend
-live = false
-
 module.exports = ( dom ) ->
+
+  # TODO: fetch information from backend
+  live = false
 
   # listens for appcast streaming status while streaming
   while_streaming = ( status ) ->
@@ -25,10 +25,8 @@ module.exports = ( dom ) ->
 
     if not status then return
 
-    # TODO: make it clever
-    room_id = location.pathname.split("/")[2]
     # call the api
-    L.rooms.start_stream room_id, ( error, result ) ->
+    L.rooms.start_stream $( '#room_id' ).val(), ( error, result ) ->
 
       if error
         dom.find('a').html "error"
@@ -85,8 +83,15 @@ module.exports = ( dom ) ->
       appcast.stop_stream()
 
       # TODO: make it clever
-      room_id = location.pathname.split("/")[2]
-      L.rooms.stop_stream room_id, ( error, callback ) ->
+      L.rooms.stop_stream $( '#room_id' ).val(), ( error, callback ) ->
+
+        if error
+          dom.find('a').html "error"
+
+          console.error error
+
+          # LATER: CHECK IF USER IS OFFLINE AND WAIT FOR CONNECTION?
+          return
 
         live = false
 

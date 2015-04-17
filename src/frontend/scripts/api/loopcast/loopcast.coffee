@@ -49,6 +49,7 @@ module.exports =
     stop_stream: ( room_id, callback ) ->
       on_status_code =
         401: ( response ) -> callback 'unauthorized, need log in!'
+        412: ( response ) -> callback 'Room not found or user not owner!'
 
       data = room_id: room_id
 
@@ -60,9 +61,10 @@ module.exports =
 
         callback  null, response
 
-    start_recording: ( callback ) ->
+    start_recording: ( room_id, callback ) ->
       on_status_code =
         401: ( response ) -> callback 'unauthorized, need log in!'
+        412: ( response ) -> callback 'Room not found or user not owner!'
 
       data = room_id: room_id
 
@@ -80,9 +82,29 @@ module.exports =
 
       data = room_id: room_id
 
-      request = $.post api_url + 'stape/stop', data, on_status_code
+      request = $.post api_url + 'tape/stop', data, on_status_code
 
       request.error on_error 'tape/stop', callback
+
+      request.done ( response ) ->
+
+        callback  null, response
+
+  chat:
+    message: ( user_id, room_id, message, callback ) ->
+      on_status_code =
+        400: -> callback 'bad request'
+        401: -> callback 'unauthorized'
+        500: -> callback 'server error'
+
+      data = 
+        message : message
+        room_id : room_id
+        user_id : user_id
+
+      request = $.post api_url + 'chat/message', data, on_status_code
+
+      request.error on_error 'tape/start', callback
 
       request.done ( response ) ->
 

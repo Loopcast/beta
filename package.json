@@ -28,7 +28,7 @@
     "page": "^1.6.1",
     "pusher": "^1.0.4",
     "redis": "^0.12.1",
-    "request": "^2.53.0",
+    "request": "^2.55.0",
     "slug": "^0.8.0"
   },
   "devDependencies": {

@@ -12,6 +12,9 @@ module.exports =
     description: "Stop recording"
     plugins: "hapi-swagger": responseMessages: [
       { code: 400, message: 'Bad Request' }
+      { code: 401, message: 'Needs authentication' }
+      { code: 410, message: "Room not found or user not owner" }
+      { code: 412, message: "Database error" }
       { code: 500, message: 'Internal Server Error'}
     ]
     tags   : [ "api", "v1" ]
@@ -24,41 +27,67 @@ module.exports =
       payload:
         room_id  : joi.string().required()
 
-    handler: ( request, reply ) ->
+    handler: ( req, reply ) ->
 
-      if not request.auth.isAuthenticated
+      if not req.auth.isAuthenticated
 
         return reply Boom.unauthorized('needs authentication')
 
-      username = request.auth.credentials.user.username
-      room_id  = request.payload.room_id.toLowerCase()
+      username = req.auth.credentials.user.username
+      room_id  = req.payload.room_id.toLowerCase()
 
       query =
+        _id: room_id
         'info.user' : username
-        'info.slug' : room_id
 
-      update =
-        $set : 
-          'status.is_recording'         : false
-          'status.recording.stopped_at' : now().format()
+      Room.findOne( query )
+        .select( "_id" )
+        .lean()
+        .exec ( error, room ) -> 
 
-      options = 
-        fields:
-          _id                  : off
-          'status.recording.started_at'  : on
-          'status.recording.stopped_at'  : on
-        'new': true
+          if error
 
-      Room.findAndModify query, null, update, options, ( error, response ) ->
+            failed req, reply, error
 
-        if error then return failed request, reply, error
+            return reply Boom.preconditionFailed( "Database error" )
 
-        started_at = now( response.status.streaming.started_at )
-        stopped_at = now( update.$set['status.streaming.stopped_at'] )
+          if not room 
 
-        stop_duration = stopped_at.diff( started_at, 'seconds' )
-        
-        # recorded for this length
-        console.log "length ->", stop_duration
+            return reply Boom.resourceGone( "room not found or user not owner" )
 
-        reply response
+          update =
+            $set:
+              'status.is_recording'         : off
+              'status.recording.stopped_at' : now().format()
+
+          options = 
+            fields:
+              _id                           : off
+              'status.recording.started_at' : on
+              'status.recording.stopped_at' : on
+              'status.is_recording'         : on
+
+          request "#{s.tape}/stop/#{username}", ( error, response, body ) ->
+            if error
+
+              console.log "error starting tape"
+              console.log error
+
+              return      
+
+            # JSON from tape server
+            body = JSON.parse body
+
+            Room.findAndModify query, null, update, options, ( error, response ) ->
+
+              if error then return failed request, reply, error
+
+              started_at = now( response.value.status.recording.started_at )
+              stopped_at = now( update['status.recording.stopped_at'] )
+
+              duration = stopped_at.diff( started_at, 'seconds' )
+              
+              # recorded for this length
+              console.log "Recorded #{duration} seconds"
+
+              reply response

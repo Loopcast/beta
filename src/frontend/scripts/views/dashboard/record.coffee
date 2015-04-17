@@ -1,14 +1,28 @@
-L = require '../../api/loopcast/loopcast'
+L       = require '../../api/loopcast/loopcast'
+appcast = require '../../controllers/appcast'
 
-recording = false
 
 module.exports = ( dom ) ->
 
-  dom.find('a').click ->
+  # TODO: fetch information from backend
+  recording = false
 
-    # TODO: make it clever
-    user_id = location.pathname.split("/")[1]
-    room_id = location.pathname.split("/")[2]
+  start_recording = ( callback ) ->
+
+    L.rooms.start_recording $( '#room_id' ).val(), ( error, response ) ->
+
+      if error
+
+        console.error "error when recording room", error
+
+        dom.find('a').html "ERROR"
+
+        return
+
+      recording = true
+      dom.find('a').html "STOP REC"
+    
+  dom.find('a').click ->
 
     if not recording
       console.log "clicked go recording!"
@@ -19,32 +33,57 @@ module.exports = ( dom ) ->
 
         return
 
-
       dom.find('a').html "..."
 
-      A.start_stream user_id, room_id, ( error, callback ) ->
+      if appcast.get 'stream:online'
+        # if streaming, start recording!
 
-        recording = true
+        start_recording()
 
-        dom.find('a').html "GO OFFLINE"
+      else
+      # TODO: make it clever
+        user_id = location.pathname.split("/")[1]
+        
+        # start streaming then start recording
+        appcast.start_stream user_id, appcast.get 'input_device'
+
+        appcast.on 'stream:online', start_recording
 
     if recording
-      console.log "clicked go offline!"
+      console.log "clicked stop recording!"
 
       dom.find('a').html "..."
 
-      A.stop_stream user_id, room_id, ( error, callback ) ->
+      user_id = location.pathname.split("/")[1]
 
-        if error is 'no_input_device'
+      L.rooms.stop_recording $( '#room_id' ).val(), ( error, callback ) ->
 
-          alert 'select input device first'
-          console.error "can't got recording without selecting input device"
+        if error
+
+          console.error "error while stopping recording"
 
           return
 
         recording = false
 
-        dom.find('a').html "GO LIVE"
+        dom.find('a').html "RECORDED"
+
+        channel = pusher.subscribe "tape.#{user_id}"
+
+        channel.bind "upload:finished", ( file ) ->
+          console.log "finished uploading file ->", file
+          
+          alert "Uploaded file! #{file}"
+
+        channel.bind "upload:error", ( error ) ->
+          console.error "failed uploading ->", error
+          
+          alert "Error uploading file :("
+
+        channel.bind "upload:failed", ( error ) ->
+          console.log "failed uploading ->", error
+          
+          alert "Failed uploading file :("
 
     # cancels click action
     return false

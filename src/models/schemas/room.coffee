@@ -16,13 +16,14 @@ schema = new Schema
     is_live      : { type: Boolean, default: off } # when user press go live
     is_recording : { type: Boolean, default: off } # when user press start recording
     is_public    : { type: Boolean, default: off } # while user is live or after publishing a set
-    is_streaming : { type: Boolean, default: off } # when appcast is connected to the server ?
-    streaming:
+    # is_streaming : { type: Boolean, default: off } # when appcast is connected to the server ?
+    live:
       started_at  : Date
       stopped_at  : Date
     recording:
       started_at  : Date
       stopped_at  : Date
+      file        : String
 
   images:
     cover: Object # cloudinary information
@@ -31,6 +32,10 @@ schema = new Schema
   created_at: Date
 
 schema.statics.findAndModify = (query, sort, doc, options, callback) ->
+  # automatically transform string to ObjectId
+  if query._id
+    query._id = mongoose.Types.ObjectId query._id
+
   @collection.findAndModify query, sort, doc, options, callback
 
 Room = mongoose.model 'Room', schema
@@ -65,10 +70,10 @@ schema.pre 'save', ( next, done ) ->
   doc = @
 
   query = 
-    'info.user'
+    'info.user': @info.user
+    'info.slug': @info.slug
 
-  Room.find( { }, _id: off )
-    .where( "url"  , "#{@info.user}/#{@info.slug}" )
+  Room.find( query, _id: off )
     .where( "status.is_live", true )
     .select( "url" )
     .lean()

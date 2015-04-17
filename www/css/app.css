@@ -2539,7 +2539,7 @@ body .notifyjs-bootstrap-base {
 
 /* line 37 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/all.styl */
 .about_page {
-  color: #808184;
+  color: #474343;
   text-align: left;
   padding: 0 20px;
 }
@@ -3155,7 +3155,7 @@ body .notifyjs-bootstrap-base {
 /* line 98 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .now_live {
   display: inline-block;
-  background: #f0081d;
+  background: #f23131;
   color: #fff;
   text-transform: uppercase;
   font-size: 0.7em;

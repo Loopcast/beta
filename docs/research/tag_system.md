@@ -1,1 +1,0 @@
-http://aehlke.github.io/tag-it/examples.html

@@ -12,6 +12,9 @@ module.exports =
     description: "Stop stream"
     plugins: "hapi-swagger": responseMessages: [
       { code: 400, message: 'Bad Request' }
+      { code: 401, message: 'Needs authentication' }
+      { code: 410, message: "Room not found or user not owner" }
+      { code: 412, message: "Database error" }
       { code: 500, message: 'Internal Server Error'}
     ]
     tags   : [ "api", "v1" ]
@@ -22,7 +25,7 @@ module.exports =
 
     validate:
       payload:
-        room_id  : joi.string().required()
+        room_id : joi.string().required()
 
     handler: ( request, reply ) ->
 
@@ -34,34 +37,47 @@ module.exports =
       room_id  = request.payload.room_id.toLowerCase()
 
       query =
+        _id: room_id
         'info.user' : username
-        'info.slug' : room_id
 
-      update =
-        $set : 
-          'status.is_streaming'         : false
-          'status.is_public'            : false
-          'status.streaming.stopped_at' : now().format()
+      Room.findOne( query )
+        .select( "_id" )
+        .lean()
+        .exec ( error, room ) -> 
 
+          if error
 
-      options = 
-        fields:
-          _id                           : off
-          'status.streaming.started_at' : on
-          'status.streaming.stopped_at' : on
-          'status.is_streaming'         : on
-        'new': true
+            failed req, reply, error
 
-      Room.findAndModify query, null, update, options, ( error, response ) ->
+            return reply Boom.preconditionFailed( "Database error" )
 
-        if error then return failed request, reply, error
+          if not room 
 
-        started_at = now( response.status.streaming.started_at )
-        stopped_at = now( update.$set['status.streaming.stopped_at'] )
+            return reply Boom.resourceGone( "room not found or user not owner" )
 
-        stream_duration = stopped_at.diff( started_at, 'seconds' )
-        
-        # recorded for this length
-        console.log "length ->", stream_duration
+          update =
+            $set:
+              'status.is_live'         : false
+              'status.is_public'            : false
+              'status.live.stopped_at' : now().format()
 
-        reply response
+          options = 
+            fields:
+              _id                           : off
+              'status.live.started_at' : on
+              'status.live.stopped_at' : on
+              'status.is_live'         : on
+
+          Room.findAndModify query, null, update, options, ( error, response ) ->
+
+            if error then return failed request, reply, error
+
+            started_at = now( response.value.status.live.started_at )
+            stopped_at = now( update['status.live.stopped_at'] )
+
+            duration = stopped_at.diff( started_at, 'seconds' )
+            
+            # streamed for this length
+            console.log "Streamed #{duration} seconds"
+
+            reply response

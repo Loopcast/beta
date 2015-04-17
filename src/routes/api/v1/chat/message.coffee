@@ -9,6 +9,7 @@ module.exports =
     description: "Sends a message to the chat room"
     plugins: "hapi-swagger": responseMessages: [
       { code: 400, message: 'Bad Request' }
+      { code: 401, message: 'Needs authentication' }
       { code: 500, message: 'Internal Server Error'}
     ]
     tags   : [ "api", "v1" ]
@@ -19,8 +20,9 @@ module.exports =
 
     validate:
       payload:
-        room     : joi.string().required()
-        message  : joi.string().required()
+        user_id : joi.string().required()
+        room_id : joi.string().required()
+        message : joi.string().required()
 
     # response: schema:
     #   error : joi.any()
@@ -34,7 +36,12 @@ module.exports =
 
       user = request.auth.credentials.user
 
-      room    = request.payload.room
+      room    = request.payload.room_id
+      user_id = request.payload.user_id
+
+      # build channel string
+      room    = "#{user_id}.#{room}"
+
       message = request.payload.message
       message = escape message
 
@@ -44,6 +51,6 @@ module.exports =
         time   : now().format()
         message: message
 
-      response = pusher.trigger room, "chat_message", data
+      response = pusher.trigger room, "message", data
 
       reply( response ).header "Cache-Control", "no-cache, must-revalidate"

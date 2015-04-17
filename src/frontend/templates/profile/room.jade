@@ -3,8 +3,11 @@ extends ../layout
 block content
   if room
     - data_menu = "room"
+    //- used in by live/record buttons
+    input(type='hidden' id='room_id' value=room._id)
   else
     - data_menu = "create_room"
+
   .createroom.profile_theme.centered(data-menu="#{data_menu}", data-view="room")
     .cover
       .cover_image(style="background-image:url(/images/homepage_2.jpg)")
