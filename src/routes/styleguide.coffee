@@ -12,7 +12,7 @@ module.exports =
   path  : '/styleguide'
   handler: ( request, reply )->
 
-    url = request.url.href
+    url = request.url.pathname
 
     load ( error, data ) ->
 

@@ -1,6 +1,6 @@
 module.exports =
   method : 'GET'
-  path   : '/api/v1/sets/all'
+  path   : '/api/v1/sets'
 
   config:
     description: "Returns a list of sets"

@@ -1,6 +1,6 @@
 module.exports =
   method : 'GET'
-  path   : '/api/v1/people/all'
+  path   : '/api/v1/people'
 
   config:
     description: "Returns a list of users"

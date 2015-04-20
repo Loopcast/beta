@@ -7,7 +7,9 @@ server.hapi = hapi = new Hapi.Server
 
 server.start = ( when_done ) ->
 
-  hapi.connection port: s.port
+  hapi.connection 
+    port: s.port
+    router: stripTrailingSlash: true
 
   hapi.start ->
     console.log 'Server running at:', hapi.info.uri

@@ -20,7 +20,7 @@ module.exports =
     # if user is not logged, redirect to explore page
     if not request.auth.isAuthenticated then return reply.redirect '/login'
 
-    url = request.url.href
+    url = request.url.pathname
 
     # follows just the bare minimun information needed
     data = request.auth.credentials

@@ -66,7 +66,7 @@ module.exports = class EditableProfileTags extends EditableText
 
 
   get_template: ( callback ) ->
-    $.get '/api/v1/occupations/all', (data) ->
+    $.get '/api/v1/occupations', (data) ->
       tmpl = require 'templates/components/editables/editable_profile_tags'
 
       callback tmpl( values: data )

@@ -20,7 +20,7 @@ module.exports =
 
     handler: ( request, reply )->
 
-      url = request.url.href
+      url = request.url.pathname
 
       render = ( response ) -> reply response
 

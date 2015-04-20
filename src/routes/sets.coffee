@@ -12,7 +12,7 @@ module.exports =
   path  : '/sets'
   handler: ( request, reply )->
 
-    url = "/explore/" + request.url.href
+    url = "/explore/" + request.url.pathname
 
     load ( error, data ) ->
 

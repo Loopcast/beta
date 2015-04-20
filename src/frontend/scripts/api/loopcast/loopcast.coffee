@@ -11,7 +11,7 @@ module.exports =
 
   genres : 
     all: ( callback ) ->
-      request = $.get api_url + 'genres/all'
+      request = $.get api_url + 'genres'
 
       request.error on_error 'genres', callback
 

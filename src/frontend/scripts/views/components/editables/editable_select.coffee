@@ -56,7 +56,7 @@ module.exports = class EditableSelect extends EditableText
 
 
 	get_template: ( callback ) ->
-		$.get '/api/v1/occupations/all', (data) ->
+		$.get '/api/v1/occupations', (data) ->
 			tmpl = require 'templates/components/editables/editable_select'
 
 			callback tmpl( values: data )

@@ -1,6 +1,6 @@
 module.exports =
   method : 'GET'
-  path   : '/api/v1/occupations/all'
+  path   : '/api/v1/occupations'
 
   config:
     description: "Returns a list of occupations"
