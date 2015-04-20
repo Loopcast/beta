@@ -58,7 +58,7 @@ module.exports =
           update =
             $set:
               'status.is_live'         : false
-              'status.is_public'       : false
+              # 'status.is_public'       : false
               'status.live.stopped_at' : now().format()
 
           options = 

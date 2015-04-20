@@ -55,11 +55,20 @@ module.exports =
 
             return reply Boom.resourceGone( "room not found or user not owner" )
 
+          # status object to be sent down a socket Channel
+          status: 
+            is_live: true
+            live: 
+              started_at: now().format()
+
+          room     = "#{username}.#{room_id}"
+          response = pusher.trigger room, "status", status
+
+          # update for mongodb
           update =
             'status.is_live'     : true
-            'status.is_public'   : true
-            'status.live.started_at' : now().format()
-          
+            'status.live.started_at' : status.live.started_at
+
           Room.update( _id: room_id, update )
             .lean()
             .exec ( error, docs_updated ) ->
