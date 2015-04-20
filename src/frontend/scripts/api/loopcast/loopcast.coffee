@@ -13,7 +13,7 @@ module.exports =
     all: ( callback ) ->
       request = $.get api_url + 'genres/all'
 
-      request.error on_error 'genres/all', callback
+      request.error on_error 'genres', callback
 
       request.done ( response ) ->
 

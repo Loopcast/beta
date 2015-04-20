@@ -1,6 +1,6 @@
 module.exports =
   method : 'GET'
-  path   : '/api/v1/genres/all'
+  path   : '/api/v1/genres'
 
   config:
     description: "Returns a list of genres"
