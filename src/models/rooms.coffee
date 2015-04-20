@@ -5,32 +5,47 @@ Room = schema 'room'
 # rooms.jade template
 ###
 
-module.exports = ( callback ) ->
+page_limit = 50
 
+module.exports = ( page = 0, tags, callback ) ->
+
+  data = aware {}
   # called once all data is fetched
-
   respond = ->
     callback null,
       genres: data.get 'genres'
       rooms : data.get 'rooms'
 
+  # ~ base query for genres and finding rooms
   query = $or: [ 
     { 'status.is_live': true }
     { 'status.is_public': true }
   ]
 
+
+  # ~ fetch genres
+  Room.find( query ).distinct( "info.genres" ).lean().exec ( error, genres ) ->
+
+    if error then return callback error
+
+    data.set 'genres', genres
+
+    if data.get( "rooms" ) then respond()
+
+  # ~ fetch rooms
+
   fields  = null
   options = 
     sort : 'is_live': 1
-    limit: 50
-    skip : 0
+    limit: page_limit
+    skip : page_limit * page
 
-  data = aware {}
+  if tags and tags.length
+    query['info.genres'] = $in: tags
 
-  # fetch rooms
   Room.find( query, fields, options ).lean().exec ( error, response ) ->
 
-    if error then return failed request, reply, error
+    if error then return callback error
 
     rooms = []
 
@@ -46,12 +61,3 @@ module.exports = ( callback ) ->
     data.set 'rooms', rooms
 
     if data.get( "genres" ) then respond()
-
-  # fetch genres
-  Room.find( query ).distinct( "info.genres" ).lean().exec ( error, genres ) ->
-
-    if error then return failed request, reply, error
-
-    data.set 'genres', genres
-
-    if data.get( "rooms" ) then respond()

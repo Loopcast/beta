@@ -8,15 +8,18 @@ load     = models 'rooms'
 template = lib 'render/template'
 
 module.exports =
-  method: 'GET'
+  method: [ 'GET', 'POST' ]
   path  : '/rooms'
   handler: ( request, reply )->
 
-    url = "/explore/" + request.url.href
+    page = 0
+    tags = []
 
-    load ( error, data ) ->
+    load page, tags, ( error, data ) ->
 
       if error then return reply error
+
+      url = "/explore/" + request.url.href
 
       template url, data, ( error, response ) ->
 
