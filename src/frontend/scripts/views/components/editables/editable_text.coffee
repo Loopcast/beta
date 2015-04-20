@@ -1,7 +1,11 @@
+happens = require 'happens'
 module.exports = class EditableText
 
+	default_state : on
+	default_text: ""
+
 	constructor: ( @dom ) ->
-		
+		happens @
 
 		@dom.addClass 'editable_text'
 

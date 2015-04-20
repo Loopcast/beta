@@ -35,6 +35,8 @@ module.exports = class Profile extends LoggedView
 				{type:"soundcloud", el:@dom.find( '.soundcloud_input' )},
 				{type:"facebook", el:@dom.find( '.facebook_input' )}
 			]
+			occupation_input: null
+			genre_input: null
 
 		@elements.avatar.attr 'src', transform.avatar( profile_info.avatar )
 
@@ -63,7 +65,24 @@ module.exports = class Profile extends LoggedView
 		# Check the information of the owner of the page
 		@check_informations()
 
-		delay 100, => @emit 'ready'
+		delay 100, => 
+			@emit 'ready'
+
+	on_views_binded: (scope) =>
+		return if not scope.main
+
+		o = view.get_by_dom @dom.find( '.cover h3.type' )
+		g = view.get_by_dom @dom.find( '.cover .genres' )
+
+		if o and g
+			@elements.occupation_input = o
+			@elements.genre_input = g
+		else
+			console.error "[Profile] couldn't find occupation and genres component."
+
+		super scope
+		
+
 
 	on_user_logged: ( @user_data ) =>
 
@@ -72,6 +91,8 @@ module.exports = class Profile extends LoggedView
 		super @user_data
 
 		@dom.addClass 'user_logged'
+
+		@check_visibility_editables()
 
 		if not user_controller.is_owner
 			return
@@ -107,10 +128,36 @@ module.exports = class Profile extends LoggedView
 		@editables.push view.get_by_dom( '.cover h3.type' )
 		@editables.push view.get_by_dom( '.cover .genres' )
 
+		
+
+
+	check_visibility_editables: =>
+
+		if user_controller.is_owner
+
+			@elements.occupation_input.dom.show()
+			@elements.genre_input.dom.show()
+		else
+
+			if @elements.occupation_input.default_state
+				@elements.occupation_input.dom.hide()
+
+			if @elements.genre_input.default_state
+				@elements.genre_input.dom.hide()
+
+			# @elements.occupation_input
+			# @elements.genre_input
+
 
 	on_user_unlogged: =>
+		log "[Profile] on_user_unlogged"
 		super()
 		@dom.removeClass( 'user_logged' )
+
+		@change_cover_uploader.off 'completed'
+		@change_picture_uploader.off 'completed'
+
+		@check_visibility_editables()
 
 
 	# Open the write/edit mode

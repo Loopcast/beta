@@ -1,4 +1,5 @@
 span.icon.ss-write.element_on_write_mode
 select.editable_input.element_on_write_mode
-	each val in values
-		option(value="#{val}") #{val}
+  option.default_value(value="")
+  each val in values
+    option(value="#{val}") #{val}

@@ -13,8 +13,15 @@ block content
         h1.name.black_background(data-view="components/editables/editable_text")
           span.text #{profile.name}
         br
-        h3.type.black_background(data-view="components/editables/editable_select")
-          span.text Select Profession
+
+        if profile.occupation
+          h3.type.black_background(data-view="components/editables/editable_select", data-text="#{profile.occupation}", data-default-selected="false")
+            span.text Select Profession
+        else
+          h3.type.black_background(data-view="components/editables/editable_select", data-text="", data-default-selected="true")
+            span.text Select Profession
+          
+        
         br
         .genres.black_background(data-view="components/editables/editable_profile_tags")
           span.text.empty Add your genres
@@ -215,7 +222,8 @@ block content
 
         if profile.recorded.length <= 0 && !profile.live
           .no_activity_wrapper
-            h3.no_activity #{profile.name} does not have any live or recorded sessions
+            h3.no_activity.for_guest #{profile.name} does not have any live or recorded sessions
+            h3.no_activity.for_owner You don't have any live or recorded sessions
             a.button.bold_button.yellow_button.small_button_2.for_owner(href="/rooms/create") Get Started
 
   include ./profile/room_modal.jade

@@ -20,6 +20,7 @@ module.exports = class EditableTags
         onAddTag: @on_add_tag
         onRemoveTag: @on_remove_tag
         autocomplete_url: list
+        defaultText: "Add new"
         autocomplete: 
           width: 200
 

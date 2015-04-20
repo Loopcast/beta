@@ -30,6 +30,14 @@ module.exports = class EditableProfileTags extends EditableText
     @text.on 'click', @open_edit_mode
     @empty_text.on 'click', @open_edit_mode
 
+    @tags.on 'change', (data)=>
+      if data.length > 1 or data[0].length > 0
+        @default_state = off
+      else
+        @default_state = on
+      
+      @emit 'changed', default_state: @default_state
+
 
   open_edit_mode: (e) =>
     return unless app.body.hasClass( 'write_mode' )
