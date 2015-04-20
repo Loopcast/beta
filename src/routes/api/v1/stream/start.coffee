@@ -56,7 +56,7 @@ module.exports =
             return reply Boom.resourceGone( "room not found or user not owner" )
 
           # status object to be sent down a socket Channel
-          status: 
+          status =
             is_live: true
             live: 
               started_at: now().format()
