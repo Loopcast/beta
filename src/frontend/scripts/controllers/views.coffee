@@ -56,7 +56,7 @@ class View
 
 
 	bind: ( scope = 'body', tolog = false ) ->
-		# console.error "Bindings views: #{scope}"
+		# console.error "[views] Bindings views: #{scope}"
 		$( scope ).find( '[data-view]' ).each( ( index, item ) =>
 
 			$item = $ item
@@ -64,7 +64,7 @@ class View
 			view_name = $item.data( 'view' )
 
 			if tolog
-				log "[View] binding", view_name
+				log "[views] binding", view_name
 
 			$item.removeAttr 'data-view'
 
@@ -80,9 +80,12 @@ class View
 			$item.removeAttr 'data-view'
 
 		).promise().done => 
-			@emit "binded", 
+			data = 
 				scope: scope
 				main: scope in [ 'body', '#content' ]
+
+			@emit "binded", data
+			app.on_views_binded data
 
 	unbind: ( scope = 'body' ) ->
 		$( scope ).find( '[data-uid]' ).each( ( index, item ) =>
@@ -100,9 +103,11 @@ class View
 				view.on_view_destroyed id
 
 		).promise().done => 
-			@emit "unbinded", 
+			data = 
 				scope: scope
 				main: scope in [ 'body', '#content' ]
+
+			@emit "unbinded", data
 
 
 

@@ -49,10 +49,6 @@ class App
 		# Controllers binding
 		first_render = true
 
-		views.on 'binded', @on_views_binded
-		# do not remove this line!
-		views.on 'binded', ->
-
 		navigation.on 'before_destroy', =>
 			@emit 'loading:show'
 			views.unbind '#content'

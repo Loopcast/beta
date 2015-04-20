@@ -67,6 +67,8 @@ module.exports = class Profile extends LoggedView
 
 	on_user_logged: ( @user_data ) =>
 
+		log "[Profile] on_user_logged"
+
 		super @user_data
 
 		@dom.addClass 'user_logged'
