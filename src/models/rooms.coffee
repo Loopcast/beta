@@ -1,3 +1,5 @@
+Room = schema 'room'
+
 ###
 # Returns an array of Rooms ready to be rendered by
 # rooms.jade template
@@ -5,70 +7,51 @@
 
 module.exports = ( callback ) ->
 
+  # called once all data is fetched
 
-  callback null,
-    genres: [
-      "House",
-      "Tech House",
-      "Electro House",
-      "Ambient",
-      "Alternative",
-      "Experimental",
-      "Reggae",
-      "Ska",
-      "Fusion",
-      "Funky",
-      "Punk",
-      "Metal"
-    ]
+  respond = ->
+    callback null,
+      genres: data.get 'genres'
+      rooms : data.get 'rooms'
 
-    rooms: [
-        title   : "Live at EGG London with Brine7Q"
-        author  : "Thomas Amundsen"
-        thumb   : "/images/room_thumb.png"
-        genres  : [ "House", "Tech House", "Electro House", "Metal" ]
-        location: "London/UK"
-        url     : "/thomas/live-at-egg-london-with-brine7q"
-      ,
-        title   : "crazylicious"
-        author  : "hems"
-        thumb   : "/images/room_thumb.png"
-        genres  : [ "Ambient", "Alternative", "Punk", "Experimental", "House" ]
-        location: "London/UK"
-        url     : "/hems/crazylicious"
-      ,
-        title   : "My personal idea about techno"
-        author  : "Stefano Ortisi"
-        thumb   : "/images/room_thumb.png"
-        genres  : [ "Reggae", "Ska", "Fusion", "Funky" ]
-        location: "Siracusa/IT"
-        url     : "/stefanoortisi/my-personal"
-      ,
-        title   : "Live from Salisbury"
-        author  : "DPR"
-        thumb   : "/images/room_thumb.png"
-        genres  : [ "Punk", "Metal" ]
-        location: "Salisbury/UK"
-        url     : "/dpr/fuck-that-shit"
-      ,
-        title   : "Live from Dublin"
-        author  : "Scott Hamilton"
-        thumb   : "/images/room_thumb.png"
-        genres  : [ "Ska", "Fusion", "Tech House" ]
-        location: "Dublin/UK"
-        url     : "/scott/dublin"
-      ,
-        title   : "Testing my new machine"
-        author  : "Nicola Antonazzo"
-        thumb   : "/images/room_thumb.png"
-        genres  : [ "Electro House", "Ambient" ]
-        location: "Bergamo/IT"
-        url     : "/antonazzo/test"
-      ,
-        title   : "Le jeux sont fan"
-        author  : "Franz Duregne"
-        thumb   : "/images/room_thumb.png"
-        genres  : [ "Ambient", "Alternative", "Reggae" ]
-        location: "Paris/FR"
-        url     : "/franz/jeux"
-      ]
+  query = $or: [ 
+    { 'status.is_live': true }
+    { 'status.is_public': true }
+  ]
+
+  fields  = null
+  options = 
+    sort : 'is_live': 1
+    limit: 50
+    skip : 0
+
+  data = aware {}
+
+  # fetch rooms
+  Room.find( query, fields, options ).lean().exec ( error, response ) ->
+
+    if error then return failed request, reply, error
+
+    rooms = []
+
+    for room in response
+      rooms.push
+        title    : room.info.title
+        author   : room.info.user
+        genres   : room.info.genres
+        thumb    : "/images/room_thumb.png"
+        location : room.info.location
+        url      : "/#{room.info.user}/#{room.info.slug}"
+
+    data.set 'rooms', rooms
+
+    if data.get( "genres" ) then respond()
+
+  # fetch genres
+  Room.find( query ).distinct( "info.genres" ).lean().exec ( error, genres ) ->
+
+    if error then return failed request, reply, error
+
+    data.set 'genres', genres
+
+    if data.get( "rooms" ) then respond()
