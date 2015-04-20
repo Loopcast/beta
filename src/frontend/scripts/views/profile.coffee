@@ -19,22 +19,25 @@ module.exports = class Profile extends LoggedView
 		console.log profile_info
 
 		@elements = 
-			avatar: @dom.find( '.profile_image img' )
-			cover_picture: @dom.find( '.cover_image' )
-			location: @dom.find( '.profile_bio .location' )
-			location_input: @dom.find( '.location_input' )
-			about: @dom.find( '.bio' )
-			about_input: @dom.find( '.bio_input' )
+			avatar        : @dom.find '.profile_image img'
+			cover_picture : @dom.find '.cover_image'
+			location      : @dom.find '.profile_bio .location'
+			location_input: @dom.find '.location_input'
+			about         : @dom.find '.bio'
+			about_input   : @dom.find '.bio_input'
+
 			links: [
-				{type:"spotify", el:@dom.find( '.spotify_link' )},
-				{type:"soundcloud", el:@dom.find( '.soundcloud_link' )},
-				{type:"facebook", el:@dom.find( '.facebook_link' )}
+				{ type:"spotify"   , el:@dom.find '.spotify_link'    }
+				{ type:"soundcloud", el:@dom.find '.soundcloud_link' }
+				{ type:"facebook"  , el:@dom.find '.facebook_link'   }
 			]
+
 			links_input: [
-				{type:"spotify", el:@dom.find( '.spotify_input' )},
-				{type:"soundcloud", el:@dom.find( '.soundcloud_input' )},
-				{type:"facebook", el:@dom.find( '.facebook_input' )}
+				{ type: "spotify"   , el:@dom.find '.spotify_input'    }
+				{ type: "soundcloud", el:@dom.find '.soundcloud_input' }
+				{ type: "facebook"  , el:@dom.find '.facebook_input'   }
 			]
+
 			occupation_input: null
 			genre_input: null
 
@@ -74,9 +77,9 @@ module.exports = class Profile extends LoggedView
 		@user_data = profile_info
 		@update_dom_from_user_data()
 
-		o = view.get_by_dom @dom.find( '.cover h3.type' )
-		g = view.get_by_dom @dom.find( '.cover .genres' )
-		l = view.get_by_dom @dom.find( '.social_links' )
+		o = view.get_by_dom @dom.find '.cover h3.type'
+		g = view.get_by_dom @dom.find '.cover .genres'
+		l = view.get_by_dom @dom.find '.social_links'
 
 		if o and g
 			@elements.occupation_input = o
