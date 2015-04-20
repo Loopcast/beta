@@ -81,7 +81,7 @@ module.exports =
             return
 
         template '/profile/room', data, ( error, response ) ->
-
+          console.log 'room loaded ->', data
           if not error then return reply response
 
           reply( "Page not found" ).code 404
