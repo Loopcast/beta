@@ -20,6 +20,22 @@ Channels / messages
             time   : now().format()
             message: message
 
+        # Happens when a message is sent in this room
+
+      - status
+
+        Which can send any of this
+          is_live ( Boolean )
+          is_recording ( Boolean )
+          live
+            started_at ( UTC time )
+            stopped_at ( UTC time )
+          recording
+            started_at ( UTC time )
+            stopped_at ( UTC time )
+
+        # Happens when a room goes live / offline
+
 
   The tape server works on the following channels
 

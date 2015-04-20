@@ -42,8 +42,6 @@ module.exports =
 
       user = request.auth.credentials.user
 
-      console.log "payload ->", request.payload
-
       # save user data to intercom
       save = ( user_data ) ->
         intercom.updateUser user_data, ( error, res ) ->
@@ -97,13 +95,28 @@ module.exports =
 
           data.custom_attributes.social = request.payload.social
 
-
+        # store ids to be remove from cloudinary
+        remove_from_cloudinary = []
         if request.payload.avatar
+          if response.custom_attributes.avatar
+            current_id = response.custom_attributes.avatar.match /(\w+)(\.\w+)+(?!.*(\w+)(\.\w+)+)/
+            current_id = current_id[1]
+
+            new_id = request.payload.avatar.match /(\w+)(\.\w+)+(?!.*(\w+)(\.\w+)+)/
+            new_id = new_id[1]
+
+            console.log 'current_id ->', current_id
+            console.log 'new_id ->'  , new_id
+
+            if current_id != new_id
+              remove_from_cloudinary.push current_id
+
+              console.log "new cloudinary image, delete current one!", current_id
+
           data.custom_attributes.avatar = request.payload.avatar
 
           # TODO: pic old avatar id and push to remove from cloudinary
-          # remove_from_cloudinary ||= []
-          # remove_from_cloudinary.push
+
 
         if request.payload.cover
           data.custom_attributes.cover = request.payload.cover
@@ -112,7 +125,7 @@ module.exports =
           # remove_from_cloudinary ||= []
           # remove_from_cloudinary.push
 
-        if remove_from_cloudinary?
+        if remove_from_cloudinary.length
           cloudinary.api.delete_resources remove_from_cloudinary, ( result ) ->
             if result.error
               console.log "error deleting image from cloudinary"
