@@ -36,7 +36,10 @@ module.exports = ( page = 0, tags, callback ) ->
 
   fields  = null
   options = 
-    sort : 'is_live': 1
+    sort : 
+      'is_live': 1
+      '_id': -1
+    
     limit: page_limit
     skip : page_limit * page
 
