@@ -30,7 +30,7 @@ module.exports =
         # 'status.is_public': on
 
       Room.findOne( query )
-        .select( "info" )
+        .select( "info status" )
         .sort( _id: -1 )
         .lean()
         .exec ( error, room ) -> 
