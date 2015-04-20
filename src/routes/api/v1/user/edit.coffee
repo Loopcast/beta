@@ -95,7 +95,7 @@ module.exports =
 
         if request.payload.social
 
-          data.custom_attributes.social = request.payload.social.join ','
+          data.custom_attributes.social = request.payload.social
 
 
         if request.payload.avatar

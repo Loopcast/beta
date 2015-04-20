@@ -76,10 +76,12 @@ module.exports = class Profile extends LoggedView
 
 		o = view.get_by_dom @dom.find( '.cover h3.type' )
 		g = view.get_by_dom @dom.find( '.cover .genres' )
+		l = view.get_by_dom @dom.find( '.social_links' )
 
 		if o and g
 			@elements.occupation_input = o
 			@elements.genre_input = g
+			@elements.links_input = l
 		else
 			console.error "[Profile] couldn't find occupation and genres component."
 
@@ -129,6 +131,7 @@ module.exports = class Profile extends LoggedView
 		@editables.push view.get_by_dom( '.cover h1.name' )
 		@editables.push view.get_by_dom( '.cover h3.type' )
 		@editables.push view.get_by_dom( '.cover .genres' )
+		@editables.push view.get_by_dom( '.social_links' )
 
 		
 
@@ -199,11 +202,7 @@ module.exports = class Profile extends LoggedView
 		@user_data.occupation = @elements.occupation_input.get_current_value()
 		@user_data.genres = @elements.genre_input.get_current_value()
 
-		@user_data.links = []
-		for l, i in @elements.links_input
-			@user_data.links.push
-				type: l.type
-				url: l.el.val()
+		@user_data.social = @elements.links_input.get_current_value()
 
 
 	update_dom_from_user_data : ->
@@ -223,10 +222,6 @@ module.exports = class Profile extends LoggedView
 			e.about.html d.about
 			e.about_input.val @html_to_textarea( d.about )
 
-		if d.links
-			for link, i in d.links
-				e.links[ i ].el.attr 'href', link.url
-				e.links_input[ i ].el.val link.url
 
 	html_to_textarea : ( str ) ->
 		to_find = "<br/>"
@@ -252,6 +247,8 @@ module.exports = class Profile extends LoggedView
 
 	send_to_server: ->
 		log "[Profile] saving", @user_data
+
+		# return
 		# user_id
 		# name: String
 		# occupation: String

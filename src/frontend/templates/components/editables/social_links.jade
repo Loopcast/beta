@@ -1,0 +1,12 @@
+//- a.spotify_link(href="#" title="Spotify", target="_blank")
+//-   .spritesheet.profile_spotify
+//- a.soundcloud_link(href="#" title="Soundcloud", target="_blank")
+//-   .spritesheet.profile_soundcloud
+//- a.facebook_link(href="#" title="Facebook", target="_blank")
+//-   .spritesheet.profile_facebook
+if links.length > 0
+  for item in links
+    input.squared_input(placeholder="http://", type="text", value="#{item.value}")
+else
+  input.squared_input(placeholder="http://", type="text")
+a.button.white_button.small_button_4.add_new_link(href="#") Add new link

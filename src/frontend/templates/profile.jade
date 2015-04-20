@@ -117,20 +117,12 @@ block content
             else
               .bio
 
-            .social
-              a.spotify_link(href="#" title="Spotify", target="_blank")
-                .spritesheet.profile_spotify
-              a.soundcloud_link(href="#" title="Soundcloud", target="_blank")
-                .spritesheet.profile_soundcloud
-              a.facebook_link(href="#" title="Facebook", target="_blank")
-                .spritesheet.profile_facebook
+            .social.social_read_mode
 
           form.element_on_write_mode.profile_form
             input.squared_input.location_input(type="text", placeholder="Add your location", name="location")
             textarea.squared_input.bio_input(placeholder="Add a bio to your profile", name="bio")
-            input.squared_input.spotify_input(type="text", placeholder="Spotify", name="spotify")
-            input.squared_input.soundcloud_input(type="text", placeholder="Soundcloud", name="soundcloud")
-            input.squared_input.facebook_input(type="text", placeholder="Facebook", name="facebook")
+            .social_links(data-view="components/editables/social_links", data-links="#{profile.social}")
             button.button.save_button.no_shadow(data-profile="set-read-mode") Save
 
 
