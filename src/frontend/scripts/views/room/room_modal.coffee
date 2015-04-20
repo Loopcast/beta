@@ -28,7 +28,7 @@ module.exports = class RoomModal extends Modal
 			log "[rooms/createModal] views not binded yet!!!"
 			return
 
-		log "[Room Modal] room_image_uploader", room_image_uploader
+		# log "[Room Modal] room_image_uploader", room_image_uploader
 
 		@genre = view.get_by_dom @dom.find( '.genre' )
 
@@ -43,9 +43,6 @@ module.exports = class RoomModal extends Modal
 
 	_on_cover_changed: (data) =>
 		@cover_uploaded = data.result.url
-
-		console.log "got image result ->", @cover_uploaded
-
 		@emit 'input:changed', { name: 'cover', value: data.result }
 
 	_on_title_changed: ( ) =>

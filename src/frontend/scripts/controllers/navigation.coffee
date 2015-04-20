@@ -48,7 +48,7 @@ class Navigation
 			if @first_same_path
 				@first_same_path = false
 				log "[Navigation] return same path "
-				return
+				# return
 
 		# ie hack for hash urls
 		req.url = req.path.replace( "/#", '' )

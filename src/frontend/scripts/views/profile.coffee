@@ -9,14 +9,14 @@ happens = require 'happens'
 module.exports = class Profile extends LoggedView
 	elements: null
 	form_bio: null
+	cover_url: ""
 
 	constructor: ( @dom ) ->
 		super()
 		happens @
 
 		log "[=== PAGE OWNER: #{owner_id} ===]"
-
-		app.gui.watch profile_info
+		console.log profile_info
 
 		@elements = 
 			avatar: @dom.find( '.profile_image img' )
@@ -93,8 +93,6 @@ module.exports = class Profile extends LoggedView
 
 	on_user_logged: ( @user_data ) =>
 
-		log "[Profile] on_user_logged"
-
 		super @user_data
 
 		@dom.addClass 'user_logged'
@@ -111,9 +109,13 @@ module.exports = class Profile extends LoggedView
 			return
 
 		@change_cover_uploader.on 'completed', (data) =>
-			log "[Cover uploader]", data
-			user_controller.data.cover = data.result.url
-			user_controller.normalize_data()
+			log "[Cover uploader]", data.result.url
+
+			@cover_url = data.result.url
+
+
+			
+			
 			@dom.find( '.cover_image' ).css
 				'background-image': "url(#{data.result.url})"
 
@@ -147,7 +149,6 @@ module.exports = class Profile extends LoggedView
 			if @elements.occupation_input.default_state
 				@elements.occupation_input.dom.hide()
 
-			log "check_visibility_editables", @elements.genre_input.default_state
 			if @elements.genre_input.default_state
 				@elements.genre_input.dom.hide()
 
@@ -156,7 +157,7 @@ module.exports = class Profile extends LoggedView
 
 
 	on_user_unlogged: =>
-		log "[Profile] on_user_unlogged"
+		# log "[Profile] on_user_unlogged"
 		super()
 		@dom.removeClass( 'user_logged' )
 
@@ -207,13 +208,12 @@ module.exports = class Profile extends LoggedView
 
 		if user_controller.data.avatar?
 			@user_data.avatar = user_controller.data.avatar
-		if user_controller.data.cover?
-			@user_data.cover = user_controller.data.cover
+		if @cover_url.length > 0
+			@user_data.cover = @cover_url
 
 
 	update_dom_from_user_data : ->
 
-		log "[Profile] update_dom_from_user_data"
 		e = @elements
 		d = @user_data
 

@@ -20,7 +20,7 @@ module.exports = class EditableProfileTags extends EditableText
     @tags = view.get_by_dom @dom.find( '.tags_wrapper' )
 
     t = @text.html()
-    log "[EditableProfileTags] text", t.length
+    # log "[EditableProfileTags] text", t.length
     if t.length > 0
       @data = t.split ', '
       @tags.add_tags @data
@@ -46,7 +46,7 @@ module.exports = class EditableProfileTags extends EditableText
     return unless app.body.hasClass( 'write_mode' )
 
     e?.stopPropagation()
-    log 'open_edit_mode'
+    # log 'open_edit_mode'
     @empty_text.hide()
     @dom.addClass 'edit_mode'
 

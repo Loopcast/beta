@@ -39,7 +39,7 @@ module.exports = class EditableSelect extends EditableText
 
 
 	update_text: ( str ) ->
-		log "[EditableSelect] update_text", str, @default_state
+		# log "[EditableSelect] update_text", str, @default_state
 		@text.text str
 		@dom.data 'text', str
 		@dom.data 'default-selected', @default_state

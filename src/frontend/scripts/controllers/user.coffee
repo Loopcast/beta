@@ -40,9 +40,9 @@ class UserController
   ###
   login: ( @data ) ->
 
-    # log "[UserController] user:logged", @data
+    log "[UserController] user:logged", @data
 
-    @normalize_data()
+    @create_images()
 
     @write_to_session()
 
@@ -83,14 +83,19 @@ class UserController
       app.body.removeClass( 'is_owner' ).addClass( 'is_guest' )
       @is_owner = false
 
-  normalize_data: ->
+  create_images: ->
+
+    console.log "[UserController] NORMALIZE DATA before", @data
+    
     if not @data.avatar?
       log "[User Controller] user.avatar is undefined. Setting default."
-      user.avatar = UserController.USER_DEFAULT_AVATAR
+      @data.avatar = UserController.USER_DEFAULT_AVATAR
 
-    if not @data.cover?
-      log "[User Controller] user.cover is undefined. Setting default."
-      user.avatar = UserController.USER_DEFAULT_AVATAR
+    # if not @data.cover?
+    #   log "[User Controller] user.cover is undefined. Setting default."
+    #   @data.cover = UserController.USER_DEFAULT_COVER
+
+    console.log "[UserController] NORMALIZE DATA after", @data
 
     @data.images =
       top_bar: transform.top_bar @data.avatar
@@ -98,8 +103,6 @@ class UserController
       cover: transform.cover @data.cover
 
     @emit 'user:updated', @data
-
-    return @data
   
   ###
   Private Methods

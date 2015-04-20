@@ -20,8 +20,7 @@ module.exports = class SocialLinks
     @write_template = require 'templates/components/editables/social_links'
 
     data = @dom.data 'links'
-    log "[SocialLinks] reading initial data", data
-    # data = "http://facebook.com,http://spotify.com/stefano,http://ortisi.co.uk"
+
     if data.length > 0
       @data = @string_to_social_data data
 
@@ -33,12 +32,10 @@ module.exports = class SocialLinks
 
     @new_link_btn = @dom.find '.add_new_link'
     @template_input = @dom.find( 'input' ).clone().val( '' )
-    log '[SocialLinks]', data, @template_input
 
     @new_link_btn.on 'click', @add_new
 
   close_read_mode: ->
-    log "[SocialLinks] close_read_mode"
     links = @dom.find 'input'
     @data = []
     # Update the read mode
@@ -73,7 +70,6 @@ module.exports = class SocialLinks
     @dom_read_mode.html html
 
   build_write_mode_from_data: ->
-    log "[build_write_mode_from_data]", @data
     html = @write_template links: @data
     @dom.html html
 

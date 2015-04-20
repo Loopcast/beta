@@ -1,5 +1,6 @@
 .thumb_wrapper(data-view="components/click_trigger" data-target=".user_dropdown")
-	img.top_bar_icon(src="#{images.top_bar}")
+	if images
+		img.top_bar_icon(src="#{images.top_bar}")
 	span.icon.ss-dropdown
 	//- span.spritesheet.small_arrow_white
 
