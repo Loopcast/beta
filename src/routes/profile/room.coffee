@@ -30,7 +30,7 @@ module.exports =
         # 'status.is_public': on
 
       Room.findOne( query )
-        .select( "info.title status.is_streaming" )
+        .select( "info" )
         .sort( _id: -1 )
         .lean()
         .exec ( error, room ) -> 
@@ -39,6 +39,8 @@ module.exports =
 
           # if room doesn't exist
           if not room then return reply( "Page not found" ).code 404
+
+          console.log 'returning room info ->', room
 
           model.set 'room', room
 
