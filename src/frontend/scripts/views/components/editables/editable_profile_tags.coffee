@@ -24,14 +24,16 @@ module.exports = class EditableProfileTags extends EditableText
     if t.length > 0
       list = t.split ', '
       @tags.add_tags list
+      @default_state = off
     else
       @empty_text.show()
+      @default_state = on
 
     @text.on 'click', @open_edit_mode
     @empty_text.on 'click', @open_edit_mode
 
-    @tags.on 'change', (data)=>
-      if data.length > 1 or data[0].length > 0
+    @tags.on 'change', (@data)=>
+      if @data.length > 1 or @data[0].length > 0
         @default_state = off
       else
         @default_state = on
@@ -67,6 +69,12 @@ module.exports = class EditableProfileTags extends EditableText
       tmpl = require 'templates/components/editables/editable_profile_tags'
 
       callback tmpl( values: data )
+
+  get_current_value: ->
+    if @default_state
+      return []
+    else
+      return @data
 
   destroy: ->
     @text.off 'click', @open_edit_mode

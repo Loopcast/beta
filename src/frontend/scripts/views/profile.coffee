@@ -71,6 +71,9 @@ module.exports = class Profile extends LoggedView
 	on_views_binded: (scope) =>
 		return if not scope.main
 
+		@user_data = profile_info
+		@update_dom_from_user_data()
+
 		o = view.get_by_dom @dom.find( '.cover h3.type' )
 		g = view.get_by_dom @dom.find( '.cover .genres' )
 
@@ -79,6 +82,8 @@ module.exports = class Profile extends LoggedView
 			@elements.genre_input = g
 		else
 			console.error "[Profile] couldn't find occupation and genres component."
+
+
 
 		super scope
 		
@@ -96,9 +101,6 @@ module.exports = class Profile extends LoggedView
 
 		if not user_controller.is_owner
 			return
-
-		@user_data = profile_info
-		@update_dom_from_user_data()
 
 		# Listen to images upload events
 		@change_cover_uploader = view.get_by_dom @dom.find( '.change_cover' )
@@ -142,6 +144,7 @@ module.exports = class Profile extends LoggedView
 			if @elements.occupation_input.default_state
 				@elements.occupation_input.dom.hide()
 
+			log "check_visibility_editables", @elements.genre_input.default_state
 			if @elements.genre_input.default_state
 				@elements.genre_input.dom.hide()
 
@@ -154,10 +157,9 @@ module.exports = class Profile extends LoggedView
 		super()
 		@dom.removeClass( 'user_logged' )
 
-		@change_cover_uploader.off 'completed'
-		@change_picture_uploader.off 'completed'
-
-		@check_visibility_editables()
+		@change_cover_uploader?.off 'completed'
+		@change_picture_uploader?.off 'completed'
+		delay 1, => @check_visibility_editables()
 
 
 	# Open the write/edit mode
@@ -193,6 +195,9 @@ module.exports = class Profile extends LoggedView
 		log "[Profile] update_user_data_from_dom"
 		@user_data.location = @elements.location_input.val()
 		@user_data.about = @elements.about_input.val()
+
+		@user_data.occupation = @elements.occupation_input.get_current_value()
+		@user_data.genres = @elements.genre_input.get_current_value()
 
 		@user_data.links = []
 		for l, i in @elements.links_input
@@ -247,7 +252,6 @@ module.exports = class Profile extends LoggedView
 
 	send_to_server: ->
 		log "[Profile] saving", @user_data
-
 		# user_id
 		# name: String
 		# occupation: String

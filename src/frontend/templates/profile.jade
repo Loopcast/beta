@@ -112,8 +112,10 @@ block content
               h4.location
             
 
-
-            .bio
+            if profile.about
+              .bio #{profile.about}
+            else
+              .bio
 
             .social
               a.spotify_link(href="#" title="Spotify", target="_blank")

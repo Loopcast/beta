@@ -48,6 +48,12 @@ module.exports = class EditableSelect extends EditableText
 			value: str
 			default_state: @default_state
 
+	get_current_value: ->
+		if @default_state
+			return ""
+		else
+			return @text.text()
+
 
 	get_template: ( callback ) ->
 		$.get '/api/v1/occupations/all', (data) ->
