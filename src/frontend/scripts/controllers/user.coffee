@@ -9,6 +9,7 @@ class UserController
   # Class variables
   instance = null
   USER_DEFAULT_AVATAR = "/images/profile-1.jpg"
+  USER_DEFAULT_COVER = "/images/homepage.jpg"
 
   # Object variables
   data : null
@@ -87,9 +88,14 @@ class UserController
       log "[User Controller] user.avatar is undefined. Setting default."
       user.avatar = UserController.USER_DEFAULT_AVATAR
 
+    if not @data.cover?
+      log "[User Controller] user.cover is undefined. Setting default."
+      user.avatar = UserController.USER_DEFAULT_AVATAR
+
     @data.images =
       top_bar: transform.top_bar @data.avatar
       avatar: transform.avatar @data.avatar
+      cover: transform.cover @data.cover
 
     @emit 'user:updated', @data
 

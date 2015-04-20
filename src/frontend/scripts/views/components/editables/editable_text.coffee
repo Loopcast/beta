@@ -28,11 +28,11 @@ module.exports = class EditableText
 		# copy style to input
 
 		style = 
-			# 'font-size'      : text_el.css 'font-size'
-			# 'font-weight'    : text_el.css 'font-weight'
-			# 'padding'        : text_el.parent().css 'padding'
-			# 'letter-spacing' : text_el.css 'letter-spacing'
-			# 'line-height'    : text_el.css 'line-height'
+			'font-size'      : '36px'
+			'font-weight'    : @text_el.css 'font-weight'
+			'padding'        : '4px 10px 10px'
+			'letter-spacing' : @text_el.css 'letter-spacing'
+			'line-height'    : @text_el.css 'line-height'
 			'color'          : @text_el.css 'color'
 
 		@input.css style

@@ -22,8 +22,9 @@ module.exports = class EditableProfileTags extends EditableText
     t = @text.html()
     log "[EditableProfileTags] text", t.length
     if t.length > 0
-      list = t.split ', '
-      @tags.add_tags list
+      @data = t.split ', '
+      @tags.add_tags @data
+
       @default_state = off
     else
       @empty_text.show()

@@ -111,9 +111,9 @@ module.exports = class Profile extends LoggedView
 			return
 
 		@change_cover_uploader.on 'completed', (data) =>
-
-			@user_data.cover_picture = data.result.url
-
+			log "[Cover uploader]", data
+			user_controller.data.cover = data.result.url
+			user_controller.normalize_data()
 			@dom.find( '.cover_image' ).css
 				'background-image': "url(#{data.result.url})"
 
@@ -121,9 +121,9 @@ module.exports = class Profile extends LoggedView
 		@change_picture_uploader.on 'completed', (data) =>
 
 			user_controller.data.avatar = data.result.url
-			@user_data = user_controller.normalize_data()
+			user_controller.normalize_data()
 
-			url = @user_data.images.avatar
+			url = user_controller.data.images.avatar
 
 			@dom.find( 'img' ).attr 'src', url
 
@@ -195,14 +195,20 @@ module.exports = class Profile extends LoggedView
 	update_user_data_from_dom: ->
 
 		# - TODO: Update the images
-		log "[Profile] update_user_data_from_dom"
 		@user_data.location = @elements.location_input.val()
 		@user_data.about = @elements.about_input.val()
 
 		@user_data.occupation = @elements.occupation_input.get_current_value()
 		@user_data.genres = @elements.genre_input.get_current_value()
 
+		log "[Profile] update_user_data_from_dom", @elements.genre_input, @user_data.genres
 		@user_data.social = @elements.links_input.get_current_value()
+
+
+		if user_controller.data.avatar?
+			@user_data.avatar = user_controller.data.avatar
+		if user_controller.data.cover?
+			@user_data.cover = user_controller.data.cover
 
 
 	update_dom_from_user_data : ->
@@ -247,8 +253,7 @@ module.exports = class Profile extends LoggedView
 
 	send_to_server: ->
 		log "[Profile] saving", @user_data
-
-		# return
+	
 		# user_id
 		# name: String
 		# occupation: String

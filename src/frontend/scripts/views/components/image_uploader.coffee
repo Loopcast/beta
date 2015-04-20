@@ -83,6 +83,7 @@ module.exports = class ImageUploader
 			return e.currentTarget
 
 
+
 		# Initialise the form with cloudinary
 		form = dom.find( 'form' )
 		form.append( $.cloudinary.unsigned_upload_tag( unsigned_id, {

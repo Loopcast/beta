@@ -8,7 +8,10 @@ block content
 
   .profile_theme.request_preloading.centered.no_information_yet(data-menu="profile", data-view="profile")
     .cover
-      .cover_image(style="background-image:url(/images/homepage_2.jpg)")
+      if profile.cover
+        .cover_image(style="background-image:url(#{profile.cover})")
+      else
+        .cover_image(style="background-image:url(/images/homepage_2.jpg)")
       .content
         h1.name.black_background(data-view="components/editables/editable_text")
           span.text #{profile.name}
