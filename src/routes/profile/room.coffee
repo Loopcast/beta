@@ -2,6 +2,7 @@ template = lib 'render/template'
 profile  = lib 'render/profile'
 
 Room     = schema 'room'
+User     = schema 'user'
 
 module.exports =
   method: 'GET'
@@ -40,27 +41,15 @@ module.exports =
           # if room doesn't exist
           if not room then return reply( "Page not found" ).code 404
 
-          console.log 'returning room info ->', room
-
           model.set 'room', room
 
-          # TODO: get user from the database and return real data
-          model.set 'user',
-            'info.name': profile
-            username   : profile
+          intercom.getUser user_id: room.info.user, ( error, response ) ->
 
-          return
+            model.set 'user', 
+              username: response.user_id
+              avatar: response.custom_attributes.avatar
+              name: response.name
 
-          # find user in order to return user name
-          User.find( { }, _id: off )
-            .where( 'info.username', profile )
-            .select( 'info' )
-            .lean()
-            .exec( error, user ) -> 
-
-              if error then return failed request, reply, error
-
-              model.set 'user', user
 
       model.on 'user', ( user ) ->
 

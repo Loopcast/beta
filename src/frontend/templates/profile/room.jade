@@ -26,7 +26,7 @@ block content
         h3.location.black_background
         
         .profile_image.upload_wrapper
-          img(src="/images/profile-150.jpg")
+          img(src="#{user.avatar}")
 
         .sidebar_right
           .big_number
@@ -58,5 +58,6 @@ block content
       if room
         | var room_info = !{JSON.stringify(room)};;
         | console.log( 'room_info', room_info )
+      if user
         | var user = !{JSON.stringify(user)};;
         | console.log( 'user_info', user )
