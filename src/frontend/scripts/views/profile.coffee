@@ -15,7 +15,7 @@ module.exports = class Profile extends LoggedView
 		super()
 		happens @
 
-		log "[=== PAGE OWNER: #{owner_id} ===]"
+		log "[=== PAGE OWNER: #{user_controller.owner_id()} ===]"
 		console.log profile_info
 
 		@elements = 

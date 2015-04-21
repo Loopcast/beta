@@ -6,6 +6,8 @@ extends layout
 
 block content
 
+  input#owner_id(type="hidden", value="#{id}")
+
   .profile_theme.request_preloading.centered.no_information_yet(data-menu="profile", data-view="profile")
     .cover
       .cover_image(style="background-image:url(#{cover})")
@@ -174,18 +176,20 @@ block content
               span.alert_text #{free_storage} free storage remaining
 
             for room in recorded
+              - room.url = "/" + room.info.user + "/" + room.info.slug 
+              - room.genres = [ 'Classic', 'Rock' ]
               .session.outline_box(id="session_recorded_#{room.id}", data-view="[components/user_set,components/audio/player_preview]", data-data="#{JSON.stringify(room)}")
 
-                .image(style="background-image:url(#{live.info.cover_url})")
+                .image(style="background-image:url(#{room.info.cover_url})")
                   a.icon.ss-play.circle_icon(href="#",title="Play") 
-                  .share_wrapper(data-view="buttons/share", data-permalink="#{room.recorded.url}")
+                  .share_wrapper(data-view="buttons/share", data-permalink="#{room.url}")
                     a.yellow.ss-action(href="#", title="Share")
 
 
                 .content
                   h2.session_title 
-                    a(href="#{room.recorded.url}", title="#{room.title}") #{room.title}
-                  a.session_author.underline_link(href="#{room.recorded.url}", title="#{room.info.title}") #{room.info.title}
+                    a(href="#{room.url}", title="#{room.title}") #{room.title}
+                  a.session_author.underline_link(href="#{room.url}", title="#{room.info.title}") #{room.info.title}
                   .genres
                     for genre in room.genres
                       a.tag(href="#", title="#{genre}") #{genre}
@@ -224,5 +228,4 @@ block content
   include ./profile/room_modal.jade
 
   script
-    | var owner_id     = !{JSON.stringify(id)};;
     | var profile_info = !{JSON.stringify(locals)};;

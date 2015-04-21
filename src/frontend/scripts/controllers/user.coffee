@@ -74,8 +74,13 @@ class UserController
 
       callback?()
 
+  owner_id: ->
+    document.getElementById( 'owner_id' )?.value
+    
   check_guest_owner: ->
+    owner_id = @owner_id()
 
+    log "[User] check owner_id", owner_id
     if owner_id? and @is_logged() and @data.username is owner_id
       app.body.addClass( 'is_owner' ).removeClass( 'is_guest' )
       @is_owner = true

@@ -1,6 +1,8 @@
 extends ../layout
 
 block content
+  input(type='hidden' id='owner_id' value="#{user.username}")
+
   if room
     - data_menu = "room"
     //- used in by live/record buttons
@@ -10,7 +12,7 @@ block content
 
   .createroom.profile_theme.centered(data-menu="#{data_menu}", data-view="room")
     .cover
-      if room.info.cover_url
+      if room && room.info.cover_url
         .cover_image(style="background-image:url(#{room.info.cover_url})")
       else
         .cover_image
@@ -52,5 +54,9 @@ block content
     include ./room_modal.jade
 
     script
-      | var room_info = !{JSON.stringify(room)};;
-      | console.log( room_info )
+      //- TEMP
+      if room
+        | var room_info = !{JSON.stringify(room)};;
+        | console.log( 'room_info', room_info )
+        | var user = !{JSON.stringify(user)};;
+        | console.log( 'user_info', user )
