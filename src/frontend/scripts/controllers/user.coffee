@@ -42,8 +42,6 @@ class UserController
 
     log "[UserController] user:logged", @data
 
-    @create_images()
-
     @write_to_session()
 
     @_dispatch_login()
@@ -80,7 +78,7 @@ class UserController
   check_guest_owner: ->
     owner_id = @owner_id()
 
-    log "[User] check owner_id", owner_id
+    # log "[User] check owner_id", owner_id
     if owner_id? and @is_logged() and @data.username is owner_id
       app.body.addClass( 'is_owner' ).removeClass( 'is_guest' )
       @is_owner = true
@@ -90,7 +88,7 @@ class UserController
 
   create_images: ->
 
-    console.log "[UserController] NORMALIZE DATA before", @data
+    # console.log "[UserController] NORMALIZE DATA before", @data
     
     if not @data.avatar?
       log "[User Controller] user.avatar is undefined. Setting default."
@@ -100,12 +98,11 @@ class UserController
     #   log "[User Controller] user.cover is undefined. Setting default."
     #   @data.cover = UserController.USER_DEFAULT_COVER
 
-    console.log "[UserController] NORMALIZE DATA after", @data
-
     @data.images =
       top_bar: transform.top_bar @data.avatar
       avatar: transform.avatar @data.avatar
       cover: transform.cover @data.cover
+      chat_thumb: transform.chat_thumb @data.avatar
 
     @emit 'user:updated', @data
   
@@ -113,6 +110,9 @@ class UserController
   Private Methods
   ###
   _dispatch_login: ->
+
+    @create_images()
+
     log "[====== USER LOGGED =======]"
     log "#{@data.username} / #{@data.name}"
     log @data

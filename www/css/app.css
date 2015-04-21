@@ -5138,11 +5138,19 @@ body .notifyjs-bootstrap-base {
 
 /* line 165 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_footer {
-  padding: 6px 20px 0;
-  padding-left: 60px;
+  padding: 6px 60px 0;
 }
 
-/* line 169 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 168 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/room.styl */
+.profile_content.chat .chat_footer .icon {
+  position: absolute;
+  top: 27px;
+  right: 20px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* line 175 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_footer textarea {
   position: relative;
   top: -7px;
@@ -5152,27 +5160,27 @@ body .notifyjs-bootstrap-base {
   margin-bottom: 0;
 }
 
-/* line 178 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 184 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_footer textarea::-webkit-input-placeholder {
   color: #7b7878;
 }
 
-/* line 180 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 186 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_footer textarea:-moz-placeholder {
   color: #7b7878;
 }
 
-/* line 182 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 188 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_footer textarea::-moz-placeholder {
   color: #7b7878;
 }
 
-/* line 184 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 190 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_footer textarea:-ms-input-placeholder {
   color: #7b7878;
 }
 
-/* line 189 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 195 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_footer .img_wrapper {
   display: inline-block;
   -webkit-border-radius: 4px;
@@ -5183,14 +5191,14 @@ body .notifyjs-bootstrap-base {
   top: 10px;
 }
 
-/* line 194 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 200 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_footer .img_wrapper img {
   display: block;
 }
 
-/* line 199 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 205 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/room.styl */
 
-/* line 200 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 206 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/room.styl */
 .no_touch_device .profile_content.chat .chat_sidebar .spritesheet:hover {
   opacity: 0.8;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";

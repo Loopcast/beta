@@ -3,13 +3,12 @@ navigation      = require 'app/controllers/navigation'
 Strings         = require 'app/utils/string'
 user_controller = require 'app/controllers/user'
 notify          = require 'app/controllers/notify'
+LoggedView      = require 'app/views/logged_view'
 
-module.exports = class Room
+module.exports = class Room extends LoggedView
 
 	constructor: ( @dom ) ->
-		view.once 'binded', @on_view_binded
-		user_controller.on 'user:logged', @on_user_logged
-		user_controller.on 'user:unlogged', @on_user_unlogged
+		super @dom
 
 		@elements = 
 			title       : @dom.find '.cover .name'
@@ -29,23 +28,18 @@ module.exports = class Room
 
 
 
-	on_view_binded: ( ) =>
+	on_view_binded: ( scope ) =>
+		super scope
+		return if not scope.main
 		@modal = view.get_by_dom '#room_modal'
 		@modal.on 'input:changed', @on_input_changed
 		@modal.on 'submit', @on_modal_submit
 
 		if @is_create_page()
 			@modal.open()
+		else
+			@on_room_created()
 
-		# check if it's guest onload
-		@check_guest()
-
-		@player = view.get_by_dom '#player'
-
-		if @is_guest()
-			user = location.pathname.split( '/' )[1]
-
-			@player.play( user )
 		
 
 	on_input_changed: ( data ) =>
@@ -90,18 +84,26 @@ module.exports = class Room
 
 				navigation.go_silent "/#{data.info.user}/#{data.info.slug}"
 
-				ref.check_guest()
-
 				m.close()
 
 				$( '.create_room_item' ).removeClass 'selected'
 
+				@on_room_created()
+
+	on_room_created: ->
+		log "[Room] on room created"
+
+
 	on_user_logged: ( data ) =>
-		@check_guest()
+		log "[Room] on_user_logged", data
+		img = @dom.find '.author_chat_thumb'
+		if not img.data( 'original' )?
+			img.data( 'original', img[0].src )
+
+		img[0].src = user_controller.data.images.chat_thumb
 
 	on_user_unlogged: ( data ) =>
-		@check_guest()
-
+		
 
 	check_guest: ( ) ->
 
@@ -121,10 +123,6 @@ module.exports = class Room
 
 	is_create_page: ( ) ->
 		location.pathname is '/rooms/create'
-
-	destroy: ->
-		user_controller.off 'user:logged', @on_user_logged
-		user_controller.off 'user:unlogged', @on_user_unlogged
 
 		
 		
