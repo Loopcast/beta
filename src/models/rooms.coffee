@@ -5,7 +5,7 @@
 
 page_limit = 50
 
-module.exports = ( page = 0, tags, callback ) ->
+module.exports = ( page = 0, tags, search, callback ) ->
 
   data = aware {}
   # called once all data is fetched
@@ -23,7 +23,9 @@ module.exports = ( page = 0, tags, callback ) ->
     { 'status.is_public': true }
   ]
 
-
+  if search
+    query.$text = $search: search
+  
   # ~ fetch genres
   find( 'genres' ) query, 'info.genres', ( error, genres ) ->
 

@@ -53,12 +53,9 @@ text_indexes =
 mongoose.connection.collections['rooms'].ensureIndex text_indexes, ( error ) ->
 
   if error
-
-    consol.error "error indexing fields for text search"
-
-    return
-  else
-    console.log "created text index succesfully"
+    console.error "error indexing fields for text search"
+    console.error error
+    return 
 
 #
 # hooks

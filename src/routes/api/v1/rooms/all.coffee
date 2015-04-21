@@ -17,15 +17,17 @@ module.exports =
 
     validate:
       payload:
-        page : joi.number().default 0
-        tags : joi.array().default  []
+        page   : joi.number().default 0
+        search : joi.string().default ''
+        tags   : joi.array().default  []
 
   handler: ( req, reply )->
 
     page   = req.payload.page
+    search = req.payload.search
     genres = req.payload.genres
 
-    load page, genres, ( error, data ) ->
+    load page, genres, search, ( error, data ) ->
 
       if error then return failed req, reply, error
 

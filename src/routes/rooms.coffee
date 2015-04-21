@@ -14,12 +14,14 @@ module.exports =
   config:
     validate:
       query:
-        page  : joi.number().default 0
-        genres: joi.string().default ''
+        page   : joi.number().default 0
+        genres : joi.string().default ''
+        search : joi.string().default ''
 
   handler: ( req, reply )->
 
     page   = req.query.page
+    search = req.query.search
     genres = req.query.genres
 
     if genres
@@ -27,7 +29,7 @@ module.exports =
     else
       genres = []
 
-    load page, genres, ( error, data ) ->
+    load page, genres, search, ( error, data ) ->
 
       if error then return reply error
 
