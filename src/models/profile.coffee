@@ -98,7 +98,7 @@ module.exports = ( id, callback ) ->
           loves     : 0
           guests    : 0
           url       : "/#{id}/#{session.info.slug}"
-          cover     : "/images/homepage.jpg"
+          cover     : "/images/profile_session_1.jpg"
           started_at: session.status.started_at
           stopped_at: session.status.stopped_at
 
