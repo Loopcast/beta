@@ -40,6 +40,23 @@ schema.statics.findAndModify = (query, sort, doc, options, callback) ->
 
 Room = mongoose.model 'Room', schema
 
+text_indexes = 
+  'info.user'    : 'text'
+  'info.title'   : 'text'
+  'info.genres'  : 'text'
+  'info.location': 'text'
+  'info.about'   : 'text'
+
+mongoose.connection.collections['rooms'].ensureIndex text_indexes, ( error ) ->
+
+  if error
+
+    consol.error "error indexing fields for text search"
+
+    return
+  else
+    console.log "created text index succesfully"
+
 #
 # hooks
 #
