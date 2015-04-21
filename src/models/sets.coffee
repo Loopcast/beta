@@ -23,7 +23,7 @@ module.exports = ( callback ) ->
         location : "London/UK"
         loves    : 26
         plays    : 273
-        thumb    : "/images/room_thumb.png"
+        thumb    : "/images/default_room_cover.jpg"
         url      : "/thomas/last-saturday-set"
       ,
         title    : "Deeeeeeelicious"
@@ -33,6 +33,6 @@ module.exports = ( callback ) ->
         location : "London/UK"
         loves    : 26
         plays    : 273
-        thumb    : "/images/room_thumb.png"
+        thumb    : "/images/default_room_cover.jpg"
         url      : "/hems/deeeeeeelicious"
       ]
