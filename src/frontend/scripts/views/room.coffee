@@ -23,14 +23,12 @@ module.exports = class Room extends LoggedView
 
 
 	on_views_binded: ( scope ) =>
-		log "[Room] #####", scope.main
 		super scope
 		return if not scope.main
 		@modal = view.get_by_dom '#room_modal'
 		@modal.on 'input:changed', @on_input_changed
 		@modal.on 'submit', @on_modal_submit
 
-		log "[Room] on_view_binded", @is_create_page()
 		if @is_create_page()
 			@modal.open()
 			@dom.addClass 'page_create'
@@ -88,14 +86,12 @@ module.exports = class Room extends LoggedView
 				ref.on_room_created( data )
 
 	on_room_created: (data) ->
-		log "[Room] on room created"
 		@dom.removeClass 'page_create'
 
 		if data
 			@dom.find( '.chat_header.v_center' ).html data.about
 
 	on_user_logged: ( data ) =>
-		log "[Room] on_user_logged", data
 		img = @dom.find '.author_chat_thumb'
 		if not img.data( 'original' )?
 			img.data( 'original', img[0].src )

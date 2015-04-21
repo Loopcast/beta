@@ -4,10 +4,8 @@ module.exports = class LoggedView
 
   constructor: ->
     view.on 'binded', @on_views_binded
-    console.log "LOGGED VIEW CONSTRUCTOR"
 
   on_views_binded: (scope) =>
-    log "#############", scope.main
     return unless scope.main
 
     user_controller.on 'user:logged', @on_user_logged
