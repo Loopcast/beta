@@ -126,7 +126,7 @@ module.exports = class Profile extends LoggedView
 		@change_picture_uploader.on 'completed', (data) =>
 
 			user_controller.data.avatar = data.result.url
-			user_controller.normalize_data()
+			user_controller.create_images()
 
 			url = user_controller.data.images.avatar
 
