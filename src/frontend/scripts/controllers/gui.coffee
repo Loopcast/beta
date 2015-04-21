@@ -3,8 +3,8 @@ watch = WatchJS.watch
 
 module.exports = class GUI
   opened: false
-  use_keys: true
-  use_click: false
+  use_keys: false
+  use_click: true
   toggle_key: 68
 
   constructor: ->
