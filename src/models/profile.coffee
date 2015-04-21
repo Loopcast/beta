@@ -9,27 +9,27 @@ module.exports = ( id, callback ) ->
   # if somebody types Uppercase letters, we read as lowercase
   id = id.toLowerCase()
 
-  intercom.getUser user_id: id, ( error, intercom ) ->
+  intercom.getUser user_id: id, ( error, data ) ->
 
     profile =
-      id         : intercom.user_id
+      id         : data.user_id
 
       # top bar info
-      name       : intercom.name
-      occupation : intercom.custom_attributes.occupation
-      genres     : intercom.custom_attributes.genres?.split ','
+      name       : data.name
+      occupation : data.custom_attributes.occupation
+      genres     : data.custom_attributes.genres?.split ','
 
       # left bar info
-      about     : intercom.custom_attributes.about
-      location  : intercom.custom_attributes.location
-      social    : intercom.custom_attributes.social?.split ','
+      about     : data.custom_attributes.about
+      location  : data.custom_attributes.location
+      social    : data.custom_attributes.social?.split ','
 
-      avatar    : intercom.custom_attributes.avatar
-      cover     : intercom.custom_attributes.cover
+      avatar    : data.custom_attributes.avatar
+      cover     : data.custom_attributes.cover
 
-      followers : intercom.custom_attributes.followers || 0
-      streams   : intercom.custom_attributes.streams   || 0
-      listeners : intercom.custom_attributes.listeners || 0
+      followers : data.custom_attributes.followers || 0
+      streams   : data.custom_attributes.streams   || 0
+      listeners : data.custom_attributes.listeners || 0
 
     if not profile.genres   then profile.genres   = []
     if not profile.social   then profile.social   = []

@@ -142,7 +142,7 @@ block content
               a.session_author.underline_link(href="/#{live.info.user}", title="#{live.info.user}") #{live.info.user}
               .genres
                 for genre in live.info.genres
-                  a.tag(href="/rooms?genres=#{genre}", title="#{genre}") #{genre}
+                  a.tag(href="/explore?genres=#{genre}", title="#{genre}") #{genre}
 
               .small_info
                 .location 

@@ -19,23 +19,24 @@ block grid
       - klasses += " following"
 
     .room_cell.item(class="#{klasses}", data-view="components/audio/player_preview")
-      a(href="#", title="#{item.author}", class="thumb_wrapper") 
-        img.room_thumb(src="#{item.thumb}")
+      a(href="/#{item.id}", title="#{item.name}", class="thumb_wrapper") 
+        img.room_thumb(src="#{item.avatar}")
         span.icon.ss-play.circle_icon
 
       .room_content
         .text
           h2.room_title 
-            a(href="#{item.url}", title="#{item.author}") #{item.author}
+            a(href="/#{item.id}", title="#{item.name}") #{item.name}
           p.room_subtitle #{item.kind}
           .genres.small
             for g in item.genres
-              a.tag(href="#", title="#{g}", data-genre-id="#{g}") #{g}
+              a.tag(href="?genres=#{g}", title="#{g}", data-genre-id="#{g}") #{g}
 
-          p.room_location
-            //- span.spritesheet.icon_location 
-            span.icon.ss-location
-            | #{item.location}
+          if item.location
+            p.room_location
+              //- span.spritesheet.icon_location 
+              span.icon.ss-location
+              | #{item.location}
 
-        a.enter_room.not_following_item(href="#{item.url}", class="button yellow_button no_shadow small_button small_button_2", title="Follow") Follow
-        a.enter_room.following_item(href="#{item.url}", class="button gray_button_2 no_shadow small_button small_button_2", title="Follow") Following
+        a.enter_room.not_following_item(href="/#{item.id}", class="button yellow_button no_shadow small_button small_button_2", title="Follow") Follow
+        a.enter_room.following_item(href="/#{item.id}", class="button gray_button_2 no_shadow small_button small_button_2", title="Follow") Following

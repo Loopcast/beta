@@ -9,7 +9,7 @@ template = lib 'render/template'
 
 module.exports =
   method: 'GET'
-  path  : '/rooms'
+  path  : '/explore'
 
   config:
     validate:

@@ -27,11 +27,11 @@ module.exports = ( page = 0, tags, search, callback ) ->
     query.$text = $search: search
   
   # ~ fetch genres
-  find( 'genres' ) query, 'info.genres', ( error, genres ) ->
+  find( 'rooms/genres' ) query, 'info.genres', ( error, genres ) ->
 
     if error then return callback error
 
-    data.set 'genres', genres
+    data.set 'genres', genres.sort()
 
     respond()
 
@@ -48,7 +48,7 @@ module.exports = ( page = 0, tags, search, callback ) ->
   if tags and tags.length
     query['info.genres'] = $in: tags
 
-  find( 'rooms' ) query, fields, options, ( error, rooms ) ->
+  find( 'rooms/rooms' ) query, fields, options, ( error, rooms ) ->
 
     if error then return callback error
 
