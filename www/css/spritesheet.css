@@ -105,16 +105,22 @@
   background-position: -210px -118px;
 }
 
+.spritesheet.headphone {
+  width: 22px;
+  height: 22px;
+  background-position: -41px -160px;
+}
+
 .spritesheet.session_icon {
   width: 18px;
   height: 18px;
-  background-position: -41px -160px;
+  background-position: -63px -160px;
 }
 
 .spritesheet.alert_icon {
   width: 18px;
   height: 18px;
-  background-position: -59px -160px;
+  background-position: -81px -160px;
 }
 
 .spritesheet.rooms_icon {

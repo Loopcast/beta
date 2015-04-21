@@ -1,21 +1,32 @@
 L = require '../../api/loopcast/loopcast'
+user = require 'app/controllers/user'
+RoomView = require 'app/views/room/room_view'
+StringUtils = require 'app/utils/string'
 
-module.exports = ( dom ) ->
+module.exports = class Textarea extends RoomView
 
-  dom.on 'keyup', ( e ) ->
+  constructor: ( @dom ) ->
+    super @dom
 
-    # when pressing enter
-    if e.keyCode is 13
+  on_room_created: ( @room_id, @owner_id ) =>
+    log "[Textarea] on_room_created", @room_id
+    @dom.on 'keyup', (e) =>
 
+      return if e.keyCode isnt 13
+      # when pressing enter
       # grabs the message
-      message = dom.val()
-      user_id = location.pathname.split( "/" )[1]
-      room_id = location.pathname.split( "/" )[2] # TODO: make it smart
+      message = StringUtils.trim @dom.val()
 
       # clear the field
-      dom.val ""
+      @dom.val ""
 
-      L.chat.message user_id, room_id, message, ( error, response ) ->
+      data = 
+        message: message
+        owner_id: @owner_id
+        user_id: user.data.username
+        room_id: @room_id
+
+      L.chat.message data, ( error, response ) ->
 
         if error
 
@@ -23,3 +34,6 @@ module.exports = ( dom ) ->
           return
 
         console.log "got response", response
+
+  destroy: ->
+    @dom.off 'keyup'

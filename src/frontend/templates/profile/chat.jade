@@ -4,14 +4,48 @@
       p
         if room && room.info.about
           | #{room.info.about}
-    .chat_content.no_chat_yet
-      p.no_chat(data-view="chat/messages")
-        span(class='no-message') No one has typed a chat yet
 
-      .inner
+    //- .chat_content.no_chat_yet(data-view="chat/messages")
+    .chat_content(data-view="chat/messages")
+      span(class='no-message') No one has typed a chat yet
+
+
+      //- .message
+      //-   a.img_wrapper_2(href="#", title="Name")
+      //-     img(src="/images/profile-36.jpg")
+      //-   .text
+      //-     h4.name 
+      //-       | Thomas Amundsen
+      //-       span.time - 1 min ago
+
+      //-     p.content Thanks for the feedback. How are you?
+
+      //-   span.spritesheet.headphone
+
+      //- .message
+      //-   a.img_wrapper_2(href="#", title="Name")
+      //-     img(src="/images/profile-36.jpg")
+      //-   .text
+      //-     h4.name 
+      //-       | Thomas Amundsen
+      //-       span.time - 1 min ago
+
+      //-     p.content Thanks for the feedback. How are you?
+
+      //- .message
+      //-   a.img_wrapper_2(href="#", title="Name")
+      //-     img(src="/images/profile-36.jpg")
+      //-   .text
+      //-     h4.name 
+      //-       | Thomas Amundsen
+      //-       span.time - 1 min ago
+
+      //-     p.content Thanks for the feedback. How are you?
+
+
 
     .chat_footer
-      .img_wrapper
+      .img_wrapper_2
         img.author_chat_thumb(src="/images/profile-36.jpg")
       textarea(placeholder="Type here to join the chat", data-view="chat/textarea")
       span.icon.ss-heart

@@ -20,6 +20,7 @@ module.exports =
 
     validate:
       payload:
+        owner_id : joi.string().required()
         user_id : joi.string().required()
         room_id : joi.string().required()
         message : joi.string().required()
@@ -31,26 +32,25 @@ module.exports =
     handler: ( request, reply ) ->
 
       if not request.auth.isAuthenticated
-
         return reply Boom.unauthorized('needs authentication')
 
       user = request.auth.credentials.user
 
       room    = request.payload.room_id
+      owner_id = request.payload.owner_id
       user_id = request.payload.user_id
 
       # build channel string
-      room    = "#{user_id}.#{room}"
-
-      message = request.payload.message
-      message = escape message
+      room_subscribe_id    = "#{owner_id}.#{room}"
 
       data = 
         name   : user.name
+        username: user_id
         avatar : user.avatar
         time   : now().format()
-        message: message
+        message: escape request.payload.message
 
-      response = pusher.trigger room, "message", data
+      response = pusher.trigger room_subscribe_id, "message", data
 
       reply( response ).header "Cache-Control", "no-cache, must-revalidate"
+

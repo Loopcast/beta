@@ -4,11 +4,13 @@ Strings         = require 'app/utils/string'
 user_controller = require 'app/controllers/user'
 notify          = require 'app/controllers/notify'
 LoggedView      = require 'app/views/logged_view'
-
+happens         = require 'happens'
 module.exports = class Room extends LoggedView
 
 	constructor: ( @dom ) ->
 		super @dom
+
+		happens @
 
 		@elements = 
 			title       : @dom.find '.cover .name'
@@ -87,6 +89,8 @@ module.exports = class Room extends LoggedView
 
 	on_room_created: (data) ->
 		@dom.removeClass 'page_create'
+
+		@emit 'room:created', data
 
 		if data
 			@dom.find( '.chat_header.v_center' ).html data.about

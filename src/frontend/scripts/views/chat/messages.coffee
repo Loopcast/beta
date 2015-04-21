@@ -1,25 +1,48 @@
-module.exports = ( dom ) ->
+transform = require 'app/utils/images/transform'
+RoomView = require 'app/views/room/room_view'
+user = require 'app/controllers/user'
 
-  # TODO: make it smart, subscribed when needed, unsuscribe when leaving
-  # the room, etcs
-  user_id = location.pathname.split( "/" )[1] 
-  room_id = location.pathname.split( "/" )[2] 
+module.exports = class Messages extends RoomView
+  first_message: true
 
-  channel = pusher.subscribe "#{user_id}.#{room_id}"
+  constructor: ( @dom ) ->
+    super @dom
+    
+  on_room_created: ( @room_id, @owner_id ) =>
+    @tmpl = require 'templates/profile/chat_message'
 
-  chat = $ '.chat_content'
+    @chat = $ '.chat_content'
+    
+    subscribe_id = "#{@owner_id}.#{@room_id}"
 
-  channel.bind 'message', ( data ) ->
-
-    if dom.find( '.no-message' ).length
-      dom.find( '.no-message' ).remove()
-
-    dom.append "<div><img src='#{data.avatar}' width='30' height='30'>#{data.message}</div>"
-
-    console.log 'dom.scrollTop ->', dom.scrollTop
-    console.log 'dom[0].scrollHeight ->', dom[0].scrollHeight
+    log "[Messages] on_room_created", @room_id
+    log "[Message] subscribing to", subscribe_id
+    @channel = pusher.subscribe subscribe_id
+    @channel.bind 'message', @on_message
 
 
-    chat.scrollTop( chat[0].scrollHeight )
+  on_message: (data) =>
+    log "got data!!!", data
 
-    console.log "got data!!!", data
+    if @first_message
+      @dom.removeClass 'no_chat_yet'
+      @first_message = false
+
+
+    html = @tmpl
+      message: data.message
+      time: data.time
+      user: 
+        url: "/" + data.username
+        name: data.name
+        thumb: transform.chat_thumb( data.avatar )
+        author: @owner_id is data.username 
+
+    @dom.append html
+
+    # scroll to the bottom
+    @chat.scrollTop @chat[0].scrollHeight
+
+
+  destroy: ->
+    @channel.unbind 'message', @on_message
