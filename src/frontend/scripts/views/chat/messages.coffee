@@ -38,7 +38,11 @@ module.exports = class Messages extends RoomView
         thumb: transform.chat_thumb( data.avatar )
         author: @owner_id is data.username 
 
-    @dom.append html
+    h = $(html)
+    @dom.append h
+
+    delay 10, -> h.addClass 'show'
+
 
     # scroll to the bottom
     @chat.scrollTop @chat[0].scrollHeight

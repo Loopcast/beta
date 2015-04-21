@@ -1,12 +1,13 @@
 .message
-  a.img_wrapper_2(href="#{user.url}", title="#{user.name}")
-    img(src="#{user.thumb}")
-  .text
-    h4.name
-      a(href="#{user.url}", title="#{user.name}") #{user.name}
-      span.time - 1 min ago
+  .inner
+    a.img_wrapper_2(href="#{user.url}", title="#{user.name}")
+      img(src="#{user.thumb}")
+    .text
+      h4.name
+        a(href="#{user.url}", title="#{user.name}") #{user.name}
+        span.time - 1 min ago
 
-    p.content #{message}
+      p.content #{message}
 
-  if user.author
-    span.spritesheet.headphone
+    if user.author
+      span.spritesheet.headphone

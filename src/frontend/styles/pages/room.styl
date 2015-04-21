@@ -164,8 +164,18 @@
   .message
     position: relative
     margin-bottom: 30px
-    padding-left: 58px
+    overflow: hidden
     
+    &.show
+      .inner
+        transform: translate3d(0,0px, 0)  
+    .inner
+      padding-left: 58px
+      padding-right: 58px
+      transform: translate3d(0,-100px, 0)
+      transition: transform .2s ease-out
+      
+
     .headphone
       absolute top 0 right SIDE_PADDING
     
