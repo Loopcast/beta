@@ -24,8 +24,12 @@ module.exports =
       # always inject user data into requests
       data = request.auth.credentials || {}
 
-      template url, data, ( error, response ) ->
+      # Getting the social for the user
+      intercom.getUser user_id: data.user.username, ( error, response ) ->
+        data.user.social = response.custom_attributes.social
 
-        if not error then return reply response
+        template url, data, ( error, response ) ->
 
-        return reply( "Page not found" ).code 404
+          if not error then return reply response
+
+          return reply( "Page not found" ).code 404

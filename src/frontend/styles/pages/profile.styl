@@ -11,6 +11,9 @@
 .profile_theme
 	position  : relative
 	
+	&.page_create
+		.genres, .socials_room
+			display: none
 	.profile_bio_without_information
 		display: none
 		color: #787676
@@ -108,8 +111,15 @@
 			
 			color: GRAY
 			
-		.name, .type, .genres
+		.name, .type, .genres, .socials_room
 			margin-left: SIDE_PADDING
+			
+		.socials_room
+			margin-top: 5px
+			a
+				
+				.spritesheet
+					transform: scale(0.8,0.8)
 			
 		.type, .genres, .location
 			font-size: 1em

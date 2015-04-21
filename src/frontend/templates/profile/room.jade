@@ -21,9 +21,9 @@ block content
           if room
             | #{room.info.title}
         br
-        h3.genres.black_background
-        br
-        h3.location.black_background
+        h3.genres.black_background #{user.name}
+
+        .socials_room(data-view="components/room_social_links", data-links="#{user.social}")
         
         .profile_image.upload_wrapper
           img(src="#{user.avatar}")

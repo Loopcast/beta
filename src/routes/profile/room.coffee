@@ -49,6 +49,7 @@ module.exports =
               username: response.user_id
               avatar: response.custom_attributes.avatar
               name: response.name
+              social: response.custom_attributes.social
 
 
       model.on 'user', ( user ) ->

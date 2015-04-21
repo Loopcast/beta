@@ -148,6 +148,53 @@ class UserController
 
 
   ###
+  Social Methods
+  ###
+  
+
+  get_social_info_from_url: ( s ) ->
+
+    # facebook, spotify, soundcloud
+    if s.indexOf( 'facebook.com' ) > -1
+      social = "facebook"
+      title = "facebook"
+
+    else if s.indexOf( 'spotify.com' ) > -1
+      social = "spotify"
+      title = "spotify"
+
+    else if s.indexOf( 'soundcloud.com' ) > -1
+      social = "soundcloud"
+      title = "soundcloud"
+
+    else
+      social = "generic"
+      title = "user link"
+
+    return {
+      social: social
+      title: title
+      value: s
+    }
+
+  string_to_social_data: ( data ) ->
+    data = data.split ','
+    output = []
+    for item in data
+      output.push @get_social_info_from_url( item )
+
+    return output
+
+
+  social_data_to_string: ( data ) ->
+    output = []
+    for item in data
+      output.push item.value
+
+    return output.join ','
+
+
+  ###
   Session (cookie) Methods 
   ###
   fetch_from_session: ->

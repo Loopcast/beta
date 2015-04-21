@@ -177,7 +177,6 @@ block content
 
             for room in recorded
               - room.url = "/" + room.info.user + "/" + room.info.slug 
-              - room.genres = [ 'Classic', 'Rock' ]
               .session.outline_box(id="session_recorded_#{room.id}", data-view="[components/user_set,components/audio/player_preview]", data-data="#{JSON.stringify(room)}")
 
                 .image(style="background-image:url(#{room.info.cover_url})")
@@ -188,22 +187,22 @@ block content
 
                 .content
                   h2.session_title 
-                    a(href="#{room.url}", title="#{room.title}") #{room.title}
-                  a.session_author.underline_link(href="#{room.url}", title="#{room.info.title}") #{room.info.title}
+                    a(href="#{room.url}", title="#{room.info.title}") #{room.info.title}
+                  a.session_author.underline_link(href="#{room.url}", title="#{name}") #{name}
                   .genres
-                    for genre in room.genres
+                    for genre in room.info.genres
                       a.tag(href="#", title="#{genre}") #{genre}
                     
                   .small_info
                     .location 
                       span.icon.ss-location
-                      span.text #{room.location}
+                      span.text #{room.info.location}
                     .likes 
                       span.icon.ss-heart
-                      span.text #{room.loves}
+                      span.text #{room.status.loves}
                     .guests 
                       span.icon.ss-play
-                      span.text #{room.guests}
+                      span.text #{room.status.recording.plays}
 
                   .edit_session_wrapper
                     a.icon.settings_button.ss-settings(href="#", title="Setting Session", data-view="components/click_trigger" data-target="#session_recorded_#{room.id} .edit_session_popup")

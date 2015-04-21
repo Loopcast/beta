@@ -1,8 +1,9 @@
 .profile_content.chat
   .chat_main
     .chat_header.v_center
-      if room && room.info.about
-        p #{room.info.about}
+      p
+        if room && room.info.about
+          | #{room.info.about}
     .chat_content.no_chat_yet
       p.no_chat(data-view="chat/messages")
         span(class='no-message') No one has typed a chat yet

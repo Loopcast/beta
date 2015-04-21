@@ -1,4 +1,7 @@
 happens = require 'happens'
+user_controller = require 'app/controllers/user'
+Url = require 'app/utils/url_parser'
+
 module.exports = class SocialLinks
 
   default_state : on
@@ -22,13 +25,11 @@ module.exports = class SocialLinks
     data = @dom.data 'links'
 
     if data.length > 0
-      @data = @string_to_social_data data
+      @data = user_controller.string_to_social_data data
 
     @build_write_mode_from_data()
     # TEMP
     @build_read_mode_from_data()
-
-
 
     @new_link_btn = @dom.find '.add_new_link'
     @template_input = @dom.find( 'input' ).clone().val( '' )
@@ -40,28 +41,12 @@ module.exports = class SocialLinks
     @data = []
     # Update the read mode
     for item in links
-      if @is_url item.value
-        data = @get_social_info_from_url item.value
+      if Url.is_url item.value
+        data = user_controller.get_social_info_from_url item.value
         @data.push data
 
     @build_read_mode_from_data()
         
-
-  string_to_social_data: ( data ) ->
-    data = data.split ','
-    output = []
-    for item in data
-      output.push @get_social_info_from_url( item )
-
-    return output
-
-
-  social_data_to_string: ( data ) ->
-    output = []
-    for item in data
-      output.push item.value
-
-    return output.join ','
 
   build_read_mode_from_data: ->
     html = ""
@@ -74,37 +59,8 @@ module.exports = class SocialLinks
     @dom.html html
 
 
-  get_social_info_from_url: ( s ) ->
-
-    # facebook, spotify, soundcloud
-    if s.indexOf( 'facebook.com' ) > -1
-      social = "facebook"
-      title = "facebook"
-
-    else if s.indexOf( 'spotify.com' ) > -1
-      social = "spotify"
-      title = "spotify"
-
-    else if s.indexOf( 'soundcloud.com' ) > -1
-      social = "soundcloud"
-      title = "soundcloud"
-
-    else
-      social = "generic"
-      title = "user link"
-
-    return {
-      social: social
-      title: title
-      value: s
-    }
-
   get_current_value: ->
-    return @social_data_to_string( @data )
-
-  is_url: ( s ) ->
-    regexp = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/
-    return regexp.test(s)
+    return user_controller.social_data_to_string( @data )
 
   add_new: =>
     @new_link_btn.before @template_input.clone()
