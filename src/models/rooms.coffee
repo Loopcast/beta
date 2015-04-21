@@ -1,5 +1,3 @@
-Room = schema 'room'
-
 ###
 # Returns an array of Rooms ready to be rendered by
 # rooms.jade template
@@ -12,6 +10,9 @@ module.exports = ( page = 0, tags, callback ) ->
   data = aware {}
   # called once all data is fetched
   respond = ->
+    if not data.get "rooms"  then return
+    if not data.get "genres" then return
+
     callback null,
       genres: data.get 'genres'
       rooms : data.get 'rooms'
@@ -24,16 +25,15 @@ module.exports = ( page = 0, tags, callback ) ->
 
 
   # ~ fetch genres
-  Room.find( query ).distinct( "info.genres" ).lean().exec ( error, genres ) ->
+  find( 'genres' ) query, 'info.genres', ( error, genres ) ->
 
     if error then return callback error
 
     data.set 'genres', genres
 
-    if data.get( "rooms" ) then respond()
+    respond()
 
   # ~ fetch rooms
-
   fields  = null
   options = 
     sort : 
@@ -46,21 +46,10 @@ module.exports = ( page = 0, tags, callback ) ->
   if tags and tags.length
     query['info.genres'] = $in: tags
 
-  Room.find( query, fields, options ).lean().exec ( error, response ) ->
+  find( 'rooms' ) query, fields, options, ( error, rooms ) ->
 
     if error then return callback error
 
-    rooms = []
-
-    for room in response
-      rooms.push
-        title    : room.info.title
-        author   : room.info.user
-        genres   : room.info.genres
-        thumb    : "/images/room_thumb.png"
-        location : room.info.location
-        url      : "/#{room.info.user}/#{room.info.slug}"
-
     data.set 'rooms', rooms
 
-    if data.get( "genres" ) then respond()
+    respond()

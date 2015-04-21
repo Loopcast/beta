@@ -99,7 +99,7 @@ else
   # ~ databases
 
   s.mongo =
-    url: "mongodb://l00pc4st:l00pc4st2015@dogen.mongohq.com:10071/loopcast-staging"
+    url: "mongodb://l00pc4st:l00pc4st2015@c456.lamppost.2.mongolayer.com:10456,c499.lamppost.7.mongolayer.com:10499/beta?replicaSet=set-54e241573646b81682000bbf"
     options: 
       user: 'l00pc4st',
       pass: 'l00pc4st2015'

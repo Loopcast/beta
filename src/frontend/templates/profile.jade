@@ -8,17 +8,15 @@ block content
 
   .profile_theme.request_preloading.centered.no_information_yet(data-menu="profile", data-view="profile")
     .cover
-      if profile.cover
-        .cover_image(style="background-image:url(#{profile.cover})")
-      else
-        .cover_image(style="background-image:url(/images/homepage_2.jpg)")
+      .cover_image(style="background-image:url(#{cover})")
+        
       .content
         h1.name.black_background(data-view="components/editables/editable_text")
-          span.text #{profile.name}
+          span.text #{name}
         br
 
-        if profile.occupation
-          h3.type.black_background(data-view="components/editables/editable_select", data-text="#{profile.occupation}", data-default-selected="false")
+        if occupation
+          h3.type.black_background(data-view="components/editables/editable_select", data-text="#{occupation}", data-default-selected="false")
             span.text Select Profession
         else
           h3.type.black_background(data-view="components/editables/editable_select", data-text="", data-default-selected="true")
@@ -28,7 +26,7 @@ block content
         br
         .genres.black_background(data-view="components/editables/editable_profile_tags")
           span.text.empty Add your genres
-          span.text.values #{profile.genres.join( ", " )}
+          span.text.values #{genres.join( ", " )}
 
         .profile_image.upload_wrapper(data-view="components/image_uploader", data-id="profile_picture")
           img(src="/images/profile-150.jpg")
@@ -49,17 +47,17 @@ block content
         .sidebar_right
           .big_number
             .inner
-              span.number #{profile.followers}
+              span.number #{followers}
               span.text Followers
 
           .big_number
             .inner
-              span.number #{profile.streams}
+              span.number #{streams}
               span.text Streams 
 
           .big_number
             .inner
-              span.number #{profile.listeners}
+              span.number #{listeners}
               span.text 
                 | Listeners 
                 br
@@ -109,14 +107,14 @@ block content
               //- span.spritesheet.edit_icon
               span.icon.ss-write
 
-            if profile.location
-              h4.location #{profile.location}
+            if location
+              h4.location #{location}
             else
               h4.location
             
 
-            if profile.about
-              .bio #{profile.about}
+            if about
+              .bio #{about}
             else
               .bio
 
@@ -125,7 +123,7 @@ block content
           form.element_on_write_mode.profile_form
             input.squared_input.location_input(type="text", placeholder="Add your location", name="location")
             textarea.squared_input.bio_input(placeholder="Add a bio to your profile", name="bio")
-            .social_links(data-view="components/editables/social_links", data-links="#{profile.social}")
+            .social_links(data-view="components/editables/social_links", data-links="#{social}")
             button.button.save_button.no_shadow(data-profile="set-read-mode") Save
 
 
@@ -135,59 +133,59 @@ block content
 
       .list_sessions
 
-        if profile.live
+        if live
           .session.outline_box
-            a.image(href="#", title="Old School House session", style="background-image:url(/images/profile_session_1.jpg)")
+            a.image(href="/#{live.info.user}/#{live.info.slug}", title="Old School House session", style="background-image:url(#{live.info.cover_url})")
             .content
               h2.session_title 
-                a(href="#", title="#{profile.live.title}") #{profile.live.title}
-              a.session_author.underline_link(href="#", title="#{profile.live.author}") #{profile.live.author}
+                a(href="/#{live.info.user}/#{live.info.slug}", title="#{live.info.title}") #{live.info.title}
+              a.session_author.underline_link(href="/#{live.info.user}", title="#{live.info.user}") #{live.info.user}
               .genres
-                for genre in profile.live.genres
-                  a.tag(href="#", title="#{genre}") #{genre}
+                for genre in live.info.genres
+                  a.tag(href="/rooms?genres=#{genre}", title="#{genre}") #{genre}
 
               .small_info
                 .location 
                   span.icon.ss-location
                   //- span.spritesheet.icon_location
-                  span.text #{profile.live.location}
+                  span.text #{live.info.location}
                 .likes 
                   span.icon.ss-heart
                   //- span.spritesheet.icon_guests
-                  span.text #{profile.live.loves}
+                  span.text #{live.status.loves}
                 .guests 
                   span.icon.ss-users
                   //- span.spritesheet.icon_plays
-                  span.text #{profile.live.guests}
+                  span.text #{live.status.live.listeners}
 
-              .live 
+              a.live(href="/#{live.info.user}/#{live.info.slug}", title="#{live.info.title}")
                 p.label now live
                 p.time 02:33
 
-        if profile.recorded && profile.recorded.length
+        if recorded && recorded.length
           .recorded_sessions
             .title
               h2 Recorded sessions
               .icon.ss-record-wrapper
                 span.ss-record
-              span.session_text #{profile.recorded.length}
+              span.session_text #{recorded.length}
 
               span.icon.ss-alert
-              span.alert_text #{profile.free_storage} free storage remaining
+              span.alert_text #{free_storage} free storage remaining
 
-            for room in profile.recorded
+            for room in recorded
               .session.outline_box(id="session_recorded_#{room.id}", data-view="[components/user_set,components/audio/player_preview]", data-data="#{JSON.stringify(room)}")
 
-                .image(style="background-image:url(/images/profile_session_1.jpg)")
+                .image(style="background-image:url(#{live.info.cover_url})")
                   a.icon.ss-play.circle_icon(href="#",title="Play") 
-                  .share_wrapper(data-view="buttons/share", data-permalink="#{room.url}")
+                  .share_wrapper(data-view="buttons/share", data-permalink="#{room.recorded.url}")
                     a.yellow.ss-action(href="#", title="Share")
 
 
                 .content
                   h2.session_title 
-                    a(href="#{room.url}", title="#{room.title}") #{room.title}
-                  a.session_author.underline_link(href="#{room.url}", title="#{room.author}") #{room.author}
+                    a(href="#{room.recorded.url}", title="#{room.title}") #{room.title}
+                  a.session_author.underline_link(href="#{room.recorded.url}", title="#{room.info.title}") #{room.info.title}
                   .genres
                     for genre in room.genres
                       a.tag(href="#", title="#{genre}") #{genre}
@@ -217,14 +215,14 @@ block content
                     a.button.red_button.small_button_4.confirm_delete(href="#", title="Delete") Delete
                     a.button.white_button.small_button_4.cancel_delete(href="#", title="Cancel") Cancel
 
-        if profile.recorded.length <= 0 && !profile.live
+        if recorded.length <= 0 && !live
           .no_activity_wrapper
-            h3.no_activity.for_guest #{profile.name} does not have any live or recorded sessions
+            h3.no_activity.for_guest #{name} does not have any live or recorded sessions
             h3.no_activity.for_owner You don't have any live or recorded sessions
             a.button.bold_button.yellow_button.small_button_2.for_owner(href="/rooms/create") Get Started
 
   include ./profile/room_modal.jade
 
   script
-    | var owner_id = !{JSON.stringify(profile.id)};;
-    | var profile_info = !{JSON.stringify(profile)};;
+    | var owner_id     = !{JSON.stringify(id)};;
+    | var profile_info = !{JSON.stringify(locals)};;
