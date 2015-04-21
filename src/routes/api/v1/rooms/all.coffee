@@ -7,7 +7,7 @@ module.exports =
   config:
     description: """
       Returns a list of rooms,
-      - filterable by tags
+      - filterable by genres
       - paginable via page parameter
     """
     plugins: "hapi-swagger": responseMessages: [
@@ -22,10 +22,10 @@ module.exports =
 
   handler: ( req, reply )->
 
-    page = req.payload.page
-    tags = req.payload.tags
+    page   = req.payload.page
+    genres = req.payload.genres
 
-    load page, tags, ( error, data ) ->
+    load page, genres, ( error, data ) ->
 
       if error then return failed req, reply, error
 

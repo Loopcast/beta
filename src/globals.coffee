@@ -7,6 +7,9 @@ global.lib = ( path ) ->
 global.models = ( path ) -> 
   require __dirname + "/models/#{path}"
 
+global.find = ( path ) -> 
+  require __dirname + "/models/find/#{path}"
+
 global.schema = ( path ) -> 
   require __dirname + "/models/schemas/#{path}"
 

@@ -14,20 +14,20 @@ module.exports =
   config:
     validate:
       query:
-        page: joi.number().default 0
-        tags: joi.string().default ''
+        page  : joi.number().default 0
+        genres: joi.string().default ''
 
   handler: ( req, reply )->
 
-    page = req.query.page
-    tags = req.query.tags
+    page   = req.query.page
+    genres = req.query.genres
 
-    if tags
-      tags = req.query.tags.split(",")
+    if genres
+      genres = req.query.genres.split(",")
     else
-      tags = []
+      genres = []
 
-    load page, tags, ( error, data ) ->
+    load page, genres, ( error, data ) ->
 
       if error then return reply error
 

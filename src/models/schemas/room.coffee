@@ -4,26 +4,29 @@ Schema     = mongoose.Schema
 schema = new Schema
   # url is automatically generated #{user}/#{info.slug}
   info   :
-    user     : type: String, required: on
-    title    : type: String, required: on
-    slug     : type: String, required: on
-    genres   : Array
-    location : String
-    about    : String
-    cover    : String
+    user      : type: String, required: on
+    title     : type: String, required: on
+    slug      : type: String, required: on
+    genres    : Array
+    location  : String
+    about     : String
+    cover_url : { type: String, default: '/images/room_thumb.png' }
 
   status:
     is_live      : { type: Boolean, default: off } # when user press go live
     is_recording : { type: Boolean, default: off } # when user press start recording
     is_public    : { type: Boolean, default: off } # while user is live or after publishing a set
     # is_streaming : { type: Boolean, default: off } # when appcast is connected to the server ?
+    loves        : { type: Number, default: 0 }
     live:
+      listeners    : { type: Number, default: 0 }
       started_at  : Date
       stopped_at  : Date
     recording:
+      plays       : { type: Number, default: 0 }
       started_at  : Date
       stopped_at  : Date
-      file        : String
+      url         : String
 
   images:
     cover: Object # cloudinary information
