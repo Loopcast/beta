@@ -10,7 +10,10 @@ block content
 
   .createroom.profile_theme.centered(data-menu="#{data_menu}", data-view="room")
     .cover
-      .cover_image(style="background-image:url(/images/homepage_2.jpg)")
+      if room.info.cover_url
+        .cover_image(style="background-image:url(#{room.info.cover_url})")
+      else
+        .cover_image
       .content
         h1.name.black_background
           if room
@@ -47,3 +50,7 @@ block content
     include ./chat.jade    
       
     include ./room_modal.jade
+
+    script
+      | var room_info = !{JSON.stringify(room)};;
+      | console.log( room_info )

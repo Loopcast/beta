@@ -129,6 +129,8 @@
     .chat_footer
       position: relative
       overflow: hidden
+      p
+        width: 100%
       
     .chat_header
       height: 64px
@@ -161,7 +163,7 @@
     
     
   .chat_footer
-    padding: 16px SIDE_PADDING
+    padding: 6px SIDE_PADDING 0
     padding-left: 60px
     
     textarea
@@ -169,14 +171,25 @@
       top: -7px
       background: none
       outline: none
-      font-size: 1.2em
+      font-size: 1.1em
+      margin-bottom: 0
+      
+      &::-webkit-input-placeholder 
+        color: #7B7878
+      &:-moz-placeholder
+        color: #7B7878  
+      &::-moz-placeholder
+        color: #7B7878  
+      &:-ms-input-placeholder   
+        color: #7B7878  
+      
       
 
     .img_wrapper
       display: inline-block
       border-radius: 4px
       overflow: hidden
-      absolute left SIDE_PADDING top 16px
+      absolute left SIDE_PADDING top 10px
       img
         display: block
 
