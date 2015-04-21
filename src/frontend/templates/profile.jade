@@ -172,8 +172,8 @@ block content
                 span.ss-record
               span.session_text #{recorded.length}
 
-              span.icon.ss-alert
-              span.alert_text #{free_storage} free storage remaining
+              span.icon.ss-alert.for_owner
+              span.alert_text.for_owner #{free_storage} free storage remaining
 
             for room in recorded
               - room.url = "/" + room.info.user + "/" + room.info.slug 

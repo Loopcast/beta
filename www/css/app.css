@@ -4757,47 +4757,50 @@ body .notifyjs-bootstrap-base {
 
 /* line 543 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .is_guest .cover_button,
-.is_guest .profile_bio .outline_icon {
+.is_guest .profile_bio .outline_icon,
+.is_guest .icon.ss-alert,
+.is_guest .alert_text,
+.is_guest .edit_session_wrapper .settings_button {
   display: none !important;
 }
 
-/* line 549 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 555 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
 
-/* line 550 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 556 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .no_touch_device .tag:hover {
   background: #8ea6b1;
 }
 
-/* line 553 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 559 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
 
-/* line 554 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 560 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .no_touch_device .profile_theme .header_settings_hover:hover {
   opacity: 0.8;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
   filter: alpha(opacity=80);
 }
 
-/* line 557 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 563 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .no_touch_device .profile_theme .sidebar_right:hover {
   background: rgba(0,0,0,0.7);
   color: #e8e8e8;
 }
 
-/* line 561 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 567 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .no_touch_device .profile_theme .cover_button:hover {
   background: #fff;
 }
 
-/* line 564 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 570 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
 
-/* line 567 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 573 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .no_touch_device .profile_theme .profile_content .session:hover .small_info {
   color: #605b5b;
 }
 
-/* line 571 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 577 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
 
-/* line 572 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 578 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .no_touch_device .edit_session_wrapper .settings_button:hover {
   opacity: 1;
   -ms-filter: none;
