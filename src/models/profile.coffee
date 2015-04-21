@@ -47,6 +47,6 @@ module.exports = ( id, callback ) ->
         if room.status.is_live
           profile.live = room
         else
-          profile.recorded.push item
+          profile.recorded.push room
 
       callback null, profile
