@@ -5,6 +5,7 @@ user_controller = require 'app/controllers/user'
 LoggedView = require 'app/views/logged_view'
 api = require 'app/api/loopcast/loopcast'
 happens = require 'happens'
+StringUtils = require 'app/utils/string'
 
 module.exports = class Profile extends LoggedView
 	elements: null
@@ -198,9 +199,9 @@ module.exports = class Profile extends LoggedView
 
 	update_user_data_from_dom: ->
 
-		# - TODO: Update the images
 		@user_data.location = @elements.location_input.val()
-		@user_data.about = @elements.about_input.val()
+		log "about", @elements.about_input.val()
+		@user_data.about = StringUtils.line_breaks_to_br @elements.about_input.val()
 
 		@user_data.occupation = @elements.occupation_input.get_current_value()
 		@user_data.genres = @elements.genre_input.get_current_value()
@@ -233,7 +234,7 @@ module.exports = class Profile extends LoggedView
 
 
 	html_to_textarea : ( str ) ->
-		to_find = "<br/>"
+		to_find = "<br />"
 		to_replace = "\n"
 		re = new RegExp to_find, 'g'
 
