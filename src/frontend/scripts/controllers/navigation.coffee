@@ -47,8 +47,11 @@ class Navigation
 		if req.path is location.pathname
 			if @first_same_path
 				@first_same_path = false
-				log "[Navigation] return same path "
-				return
+				log "[Navigation] return same path ", req.path, location.pathname
+
+				# TEMP (to fix)
+				if app.settings.browser.id is 'Safari'
+					return
 
 		# ie hack for hash urls
 		req.url = req.path.replace( "/#", '' )

@@ -1,4 +1,4 @@
-transform = require 'app/utils/images/transform'
+transform = require 'shared/transform'
 RoomView = require 'app/views/room/room_view'
 user = require 'app/controllers/user'
 

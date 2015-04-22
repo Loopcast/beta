@@ -15,6 +15,7 @@ alias:
   api: src/frontend/scripts/api/
   templates: src/frontend/templates/
   vendors: src/frontend/vendors
+  shared: src/lib/shared
 
 minify:
   js : true

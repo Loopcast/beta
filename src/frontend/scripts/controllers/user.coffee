@@ -1,4 +1,4 @@
-transform = require 'app/utils/images/transform'
+transform = require 'shared/transform'
 happens   = require 'happens'
 navigation = require 'app/controllers/navigation'
 notify = require 'app/controllers/notify'

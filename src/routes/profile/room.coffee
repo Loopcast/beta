@@ -1,5 +1,6 @@
 template = lib 'render/template'
 profile  = lib 'render/profile'
+transform = lib 'shared/transform'
 
 Room     = schema 'room'
 User     = schema 'user'
@@ -47,7 +48,7 @@ module.exports =
 
             model.set 'user', 
               username: response.user_id
-              avatar: response.custom_attributes.avatar
+              avatar: transform.avatar response.custom_attributes.avatar
               name: response.name
               social: response.custom_attributes.social
 
