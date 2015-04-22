@@ -1,9 +1,9 @@
 L = require '../../api/loopcast/loopcast'
 user = require 'app/controllers/user'
-RoomView = require 'app/views/room/room_view'
+ChatView = require 'app/views/room/chat_view'
 StringUtils = require 'app/utils/string'
 
-module.exports = class Textarea extends RoomView
+module.exports = class Textarea extends ChatView
 
   on_room_created: ( @room_id, @owner_id ) =>
     super @room_id, @owner_id

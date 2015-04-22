@@ -1,8 +1,8 @@
 transform = require 'shared/transform'
-RoomView = require 'app/views/room/room_view'
+ChatView = require 'app/views/room/chat_view'
 user = require 'app/controllers/user'
 
-module.exports = class Messages extends RoomView
+module.exports = class Messages extends ChatView
   first_message: true
     
   on_room_created: ( @room_id, @owner_id ) =>

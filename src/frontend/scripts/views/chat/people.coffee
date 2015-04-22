@@ -1,9 +1,9 @@
 L = require '../../api/loopcast/loopcast'
 transform = require 'shared/transform'
-RoomView = require 'app/views/room/room_view'
+ChatView = require 'app/views/room/chat_view'
 user = require 'app/controllers/user'
 
-module.exports = class People extends RoomView
+module.exports = class People extends ChatView
 
   listeners: []
 
