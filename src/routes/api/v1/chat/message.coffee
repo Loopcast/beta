@@ -1,4 +1,5 @@
 escape = require 'escape-html'
+pusher_utils = lib 'shared/pusher_utils'
 
 module.exports =
   method : 'POST'
@@ -42,7 +43,7 @@ module.exports =
       user_id = request.payload.user_id
 
       # build channel string
-      room_subscribe_id    = "#{owner_id}.#{room}"
+      room_subscribe_id    = pusher_utils.get_room_subscribe_id owner_id, room
 
       data = 
         name   : user.name

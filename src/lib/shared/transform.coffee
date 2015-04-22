@@ -4,6 +4,7 @@ Transform =
       top_bar: Transform.top_bar url
       avatar: Transform.avatar url
       chat_thumb: Transform.chat_thumb url
+      chat_sidebar: Transform.chat_sidebar url
     }
 
   top_bar: ( url ) -> 
@@ -30,6 +31,12 @@ Transform =
       return "/images/profile-36.jpg"
     else
       url.replace "upload/", "upload/w_36,h_36,c_fill,g_north/"
+
+  chat_sidebar: ( url ) -> 
+    if not url? or url.indexOf( "upload/" ) < 0
+      return "/images/profile-36.jpg"
+    else
+      url.replace "upload/", "upload/w_55,h_55,c_fill,g_north/"
 
   
 

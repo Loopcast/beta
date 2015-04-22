@@ -5043,7 +5043,7 @@ body .notifyjs-bootstrap-base {
 
 /* line 108 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_sidebar .users {
-  text-align: center;
+  text-align: left;
   margin-top: 20px;
 }
 

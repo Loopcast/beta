@@ -5,9 +5,6 @@ StringUtils = require 'app/utils/string'
 
 module.exports = class Textarea extends RoomView
 
-  constructor: ( @dom ) ->
-    super @dom
-
   on_room_created: ( @room_id, @owner_id ) =>
     super @room_id, @owner_id
     

@@ -4,22 +4,17 @@ user = require 'app/controllers/user'
 
 module.exports = class Messages extends RoomView
   first_message: true
-
-  constructor: ( @dom ) ->
-    super @dom
     
   on_room_created: ( @room_id, @owner_id ) =>
     super @room_id, @owner_id
 
-    @tmpl = require 'templates/profile/chat_message'
+    @tmpl = require 'templates/chat/chat_message'
 
     @chat = $ '.chat_content'
-    
-    subscribe_id = "#{@owner_id}.#{@room_id}"
 
     log "[Messages] on_room_created", @room_id
-    log "[Message] subscribing to", subscribe_id
-    @channel = pusher.subscribe subscribe_id
+    log "[Message] subscribing to", @room_subscribe_id
+    @channel = pusher.subscribe @room_subscribe_id
     @channel.bind 'message', @on_message
 
 
@@ -58,3 +53,4 @@ module.exports = class Messages extends RoomView
   destroy: ->
     if @room_created
       @channel.unbind 'message', @on_message
+      pusher.unsubscribe @room_subscribe_id

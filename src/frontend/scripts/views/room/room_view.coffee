@@ -1,7 +1,9 @@
 user = require 'app/controllers/user'
+pusher_utils = require 'shared/pusher_utils'
 
 module.exports = class RoomView
   room_created: false
+  room_subscribe_id: String
   constructor: ( @dom ) ->
     view.on 'binded', @on_views_binded
 
@@ -22,3 +24,5 @@ module.exports = class RoomView
 
   on_room_created: ( @room_id, @owner_id ) =>
     @room_created = true
+    @room_subscribe_id = pusher_utils.get_room_subscribe_id @owner_id, @room_id
+

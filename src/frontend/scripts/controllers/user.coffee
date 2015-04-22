@@ -98,11 +98,7 @@ class UserController
     #   log "[User Controller] user.cover is undefined. Setting default."
     #   @data.cover = UserController.USER_DEFAULT_COVER
 
-    @data.images =
-      top_bar: transform.top_bar @data.avatar
-      avatar: transform.avatar @data.avatar
-      cover: transform.cover @data.cover
-      chat_thumb: transform.chat_thumb @data.avatar
+    @data.images = transform.all @data.avatar
 
     @emit 'user:updated', @data
   
