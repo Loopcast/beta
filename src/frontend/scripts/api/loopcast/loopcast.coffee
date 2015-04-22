@@ -106,6 +106,20 @@ module.exports =
 
         callback  null, response
 
+    listener: ( data, callback ) ->
+      on_status_code =
+        400: -> callback 'bad request'
+        401: -> callback 'unauthorized'
+        500: -> callback 'server error'
+
+      request = $.post "#{api_url}chat/listener", data, on_status_code
+
+      request.error on_error "chat/listener", callback
+
+      request.done ( response ) ->
+
+        callback  null, response
+
   user:
     edit: ( data, callback ) ->
       on_status_code =

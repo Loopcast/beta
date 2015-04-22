@@ -13,9 +13,6 @@ module.exports = class Messages extends RoomView
     @chat = $ '.chat_content'
 
     log "[Messages] on_room_created", @room_id
-    log "[Message] subscribing to", @room_subscribe_id
-    @channel = pusher.subscribe @room_subscribe_id
-    @channel.bind 'message', @on_message
 
 
   on_message: (data) =>
@@ -48,9 +45,3 @@ module.exports = class Messages extends RoomView
 
     # scroll to the bottom
     @chat.scrollTop @chat[0].scrollHeight
-
-
-  destroy: ->
-    if @room_created
-      @channel.unbind 'message', @on_message
-      pusher.unsubscribe @room_subscribe_id
