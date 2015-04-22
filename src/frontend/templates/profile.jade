@@ -31,7 +31,7 @@ block content
           span.text.values #{genres.join( ", " )}
 
         .profile_image.upload_wrapper(data-view="components/image_uploader", data-id="profile_picture")
-          img(src="/images/profile-150.jpg")
+          img(src="#{images.avatar}")
           p.upload_element.edit_image
             span.icon.ss-camera
             span Update profile picture
@@ -228,3 +228,4 @@ block content
 
   script
     | var profile_info = !{JSON.stringify(locals)};;
+    | console.log( 'profile_info', profile_info ); 

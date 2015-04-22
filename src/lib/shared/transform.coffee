@@ -1,4 +1,11 @@
-module.exports = 
+Transform = 
+  all: ( url ) ->
+    return {
+      top_bar: Transform.top_bar url
+      avatar: Transform.avatar url
+      chat_thumb: Transform.chat_thumb url
+    }
+
   top_bar: ( url ) -> 
 
     if not url? or url.indexOf( "upload/" ) < 0
@@ -23,3 +30,7 @@ module.exports =
       return "/images/profile-36.jpg"
     else
       url.replace "upload/", "upload/w_36,h_36,c_fill,g_north/"
+
+  
+
+module.exports = Transform
