@@ -119,15 +119,15 @@ module.exports = class Room extends LoggedView
   on_user_unlogged: ( data ) =>
 
   on_listener_added: ( listener ) =>
-    log "[Room] on_listener_added", listener
+    # log "[Room] on_listener_added", listener
     @emit 'listener:added', listener
 
   on_listener_removed: ( listener ) =>
-    log "[Room] on_listener_removed", listener
+    # log "[Room] on_listener_removed", listener
     @emit 'listener:removed', listener
 
   on_message: ( message ) =>
-    log "[Room] on_message", message
+    # log "[Room] on_message", message
     @emit 'message', message
     
 

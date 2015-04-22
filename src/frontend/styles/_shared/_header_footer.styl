@@ -84,8 +84,13 @@ header.header
 				border-right: none
 		
 	.right
-		float: right
-		position: relative
+		float: none
+		position: absolute
+		top: 0
+		right: 0
+		& > *
+			float: none
+			display: inline-block
 		
 	.settings_dropdown
 		width: 140px

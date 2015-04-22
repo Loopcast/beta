@@ -12,11 +12,11 @@ module.exports = class Messages extends RoomView
 
     @chat = $ '.chat_content'
 
-    log "[Messages] on_room_created", @room_id
+    # log "[Messages] on_room_created", @room_id
 
 
   on_message: (data) =>
-    log "got data!!!", data
+    # log "got data!!!", data
 
     if @first_message
       @dom.removeClass 'no_chat_yet'

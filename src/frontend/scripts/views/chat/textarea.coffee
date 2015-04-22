@@ -8,7 +8,7 @@ module.exports = class Textarea extends RoomView
   on_room_created: ( @room_id, @owner_id ) =>
     super @room_id, @owner_id
     
-    log "[Textarea] on_room_created", @room_id
+    # log "[Textarea] on_room_created", @room_id
     @dom.on 'keyup', @on_key_up
     @heart = @dom.parent().find '.ss-heart'
 
@@ -38,7 +38,7 @@ module.exports = class Textarea extends RoomView
       message: message
       additional_data: additional_data
 
-    log "[Textarea] send_message", data
+    # log "[Textarea] send_message", data
 
     L.chat.message data, ( error, response ) ->
 
@@ -47,7 +47,7 @@ module.exports = class Textarea extends RoomView
         console.error "sending message: ", error
         return
 
-      console.log "got response", response
+      # console.log "got response", response
 
   destroy: ->
     @dom.off 'keyup'

@@ -45,6 +45,11 @@ module.exports =
           model.set 'room', room
 
           intercom.getUser user_id: room.info.user, ( error, response ) ->
+            if error
+              console.log "error fetching user data"
+              console.log response
+
+              return reply Boom.badData 'error fetching user information'
 
             model.set 'user', 
               username: response.user_id

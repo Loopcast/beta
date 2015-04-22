@@ -35,7 +35,7 @@ module.exports = class RoomView
   on_message: ( message ) =>
 
   destroy: ->
-    if @room_created
+    if @room_created and @room
       @room.off 'listener:added', @on_listener_added
       @room.off 'listener:removed', @on_listener_removed
       @room.off 'message', @on_message
