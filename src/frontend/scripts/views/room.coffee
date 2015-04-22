@@ -96,7 +96,7 @@ module.exports = class Room extends LoggedView
     @room_id  = document.getElementById( 'room_id' ).value
     
     @room_created = true
-    @dom.removeClass 'page_create'
+    @dom.removeClass( 'page_create' ).addClass( 'room_ready' )
 
     @room_subscribe_id = pusher_utils.get_room_subscribe_id @owner_id, @room_id
     @channel = pusher.subscribe @room_subscribe_id

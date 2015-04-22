@@ -1,5 +1,7 @@
 # appcast = require 'app/utils/appcast'
 RoomView = require 'app/views/room/room_view'
+user = require 'app/controllers/user'
+
 module.exports = class Dashboard extends RoomView
   volume : 
     left : null
@@ -8,6 +10,10 @@ module.exports = class Dashboard extends RoomView
   on_room_created: (@room_id, @owner_id) =>
     
     super @room_id, @owner_id
+
+    if @owner_id isnt user.data.username
+      @dom.find( '.centered' ).remove()
+      return
 
     broadcast_trigger = view.get_by_dom @dom.find( '.broadcast_controls' )
     recording_trigger = view.get_by_dom @dom.find( '.recording_controls' )
