@@ -1,7 +1,10 @@
 .message
   .inner
     a.img_wrapper_2(href="#{user.url}", title="#{user.name}")
-      img(src="#{user.thumb}")
+      if like
+        span.icon.ss-heart
+      else
+        img(src="#{user.thumb}")
     .text
       h4.name
         a(href="#{user.url}", title="#{user.name}") #{user.name}

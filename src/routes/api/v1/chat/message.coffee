@@ -20,10 +20,11 @@ module.exports =
 
     validate:
       payload:
-        owner_id : joi.string().required()
-        user_id : joi.string().required()
-        room_id : joi.string().required()
-        message : joi.string().required()
+        owner_id        : joi.string().required()
+        user_id         : joi.string().required()
+        room_id         : joi.string().required()
+        message         : joi.string().optional()
+        additional_data : joi.object().optional()
 
     # response: schema:
     #   error : joi.any()
@@ -49,6 +50,9 @@ module.exports =
         avatar : user.avatar
         time   : now().format()
         message: escape request.payload.message
+
+      if request.payload.additional_data?
+        data.additional_data = request.payload.additional_data
 
       response = pusher.trigger room_subscribe_id, "message", data
 

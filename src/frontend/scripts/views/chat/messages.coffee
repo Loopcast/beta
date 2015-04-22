@@ -28,8 +28,7 @@ module.exports = class Messages extends RoomView
       @dom.removeClass 'no_chat_yet'
       @first_message = false
 
-
-    html = @tmpl
+    obj =
       message: data.message
       time: data.time
       user: 
@@ -37,6 +36,12 @@ module.exports = class Messages extends RoomView
         name: data.name
         thumb: transform.chat_thumb( data.avatar )
         author: @owner_id is data.username 
+
+    if data.additional_data? and data.additional_data.like
+      obj.like = true
+
+    html = @tmpl obj
+      
 
     h = $(html)
     @dom.append h
