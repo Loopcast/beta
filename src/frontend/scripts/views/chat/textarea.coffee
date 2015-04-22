@@ -9,6 +9,8 @@ module.exports = class Textarea extends RoomView
     super @dom
 
   on_room_created: ( @room_id, @owner_id ) =>
+    super @room_id, @owner_id
+    
     log "[Textarea] on_room_created", @room_id
     @dom.on 'keyup', @on_key_up
     @heart = @dom.parent().find '.ss-heart'

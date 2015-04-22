@@ -1,6 +1,7 @@
 user = require 'app/controllers/user'
 
 module.exports = class RoomView
+  room_created: false
   constructor: ( @dom ) ->
     view.on 'binded', @on_views_binded
 
@@ -20,3 +21,4 @@ module.exports = class RoomView
     view.off 'binded', @on_views_binded
 
   on_room_created: ( @room_id, @owner_id ) =>
+    @room_created = true

@@ -9,6 +9,8 @@ module.exports = class Messages extends RoomView
     super @dom
     
   on_room_created: ( @room_id, @owner_id ) =>
+    super @room_id, @owner_id
+
     @tmpl = require 'templates/profile/chat_message'
 
     @chat = $ '.chat_content'
@@ -54,4 +56,5 @@ module.exports = class Messages extends RoomView
 
 
   destroy: ->
-    @channel.unbind 'message', @on_message
+    if @room_created
+      @channel.unbind 'message', @on_message

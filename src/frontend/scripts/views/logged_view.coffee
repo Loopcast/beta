@@ -8,6 +8,8 @@ module.exports = class LoggedView
   on_views_binded: (scope) =>
     return unless scope.main
 
+    view.off 'binded', @on_views_binded
+
     user_controller.on 'user:logged', @on_user_logged
     user_controller.on 'user:unlogged', @on_user_unlogged
     user_controller.on 'user:updated', @on_user_updated
