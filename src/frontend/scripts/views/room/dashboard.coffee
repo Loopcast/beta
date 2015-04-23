@@ -38,7 +38,9 @@ module.exports = class Dashboard extends RoomView
     @input_select = view.get_by_dom @dom.find( '.input_select' )
     @input_select.on 'changed', (data) ->
       log "[Dashboard] input changed", data
+      appcast.set 'input_device', data
 
+    appcast.connect()
     appcast.on 'connected', @on_appcast_connected
 
   on_appcast_connected: ( is_connected ) =>

@@ -20,5 +20,5 @@ module.exports = class InputDevices extends Select
         dom.find( "select" ).append "<option value='#{device}'>#{device}</option>"
 
     @on 'changed', ( device ) ->
-
+      log "[device] changed", device
       appcast.set 'input_device', dom.find( "select" ).val()
