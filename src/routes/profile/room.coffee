@@ -51,11 +51,17 @@ module.exports =
 
               return reply Boom.badData 'error fetching user information'
 
-            model.set 'user', 
+
+            data = 
               username: response.user_id
-              avatar: transform.avatar response.custom_attributes.avatar
-              name: response.name
-              social: response.custom_attributes.social
+              avatar  : transform.avatar response.custom_attributes.avatar
+              name    : response.name
+              social  : response.custom_attributes.social
+
+            if data.social?
+              data.social = data.social.split( "," )
+
+            model.set 'user', data
 
 
       model.on 'user', ( user ) ->
