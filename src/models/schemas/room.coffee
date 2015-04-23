@@ -11,6 +11,7 @@ schema = new Schema
     location  : String
     about     : String
     cover_url : String
+    url       : String
 
   status:
     is_live      : { type: Boolean, default: off } # when user press go live

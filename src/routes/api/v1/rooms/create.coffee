@@ -54,6 +54,7 @@ module.exports =
           genres   : payload.genres
           location : payload.location
           about    : payload.about
+          url      : "http://radio.loopcast.fm:8000/#{user.username}"
 
       doc.url = "#{user.username}/#{doc.info.slug}"
       # doc.updated_at = doc.created_at = now().toDate()
