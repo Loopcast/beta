@@ -17,7 +17,7 @@ module.exports = class Profile extends LoggedView
 		happens @
 
 		log "[=== PAGE OWNER: #{user_controller.owner_id()} ===]"
-		console.log profile_info
+		log profile_info
 
 		@elements = 
 			avatar        : @dom.find '.profile_image img'
@@ -103,13 +103,16 @@ module.exports = class Profile extends LoggedView
 
 		@check_visibility_editables()
 
+		user_controller.check_guest_owner()
 		if not user_controller.is_owner
+			log "[Profile] returning because user_controller is not owner"
 			return
 
 		# Listen to images upload events
 		@change_cover_uploader = view.get_by_dom @dom.find( '.change_cover' )
 
 		if not @change_cover_uploader
+			log "[Profile] returning because change_cover_uploader is not defined"
 			return
 
 		@change_cover_uploader.on 'completed', (data) =>
@@ -200,13 +203,9 @@ module.exports = class Profile extends LoggedView
 	update_user_data_from_dom: ->
 
 		@user_data.location = @elements.location_input.val()
-		log "about", @elements.about_input.val()
 		@user_data.about = StringUtils.line_breaks_to_br @elements.about_input.val()
-
 		@user_data.occupation = @elements.occupation_input.get_current_value()
 		@user_data.genres = @elements.genre_input.get_current_value()
-
-		log "[Profile] update_user_data_from_dom", @elements.genre_input, @user_data.genres
 		@user_data.social = @elements.links_input.get_current_value()
 
 
@@ -271,9 +270,9 @@ module.exports = class Profile extends LoggedView
 
 		api.user.edit @user_data, ( error, response ) =>
 
-			log "[Profile] fields updated", response.custom_attributes
 			if error
 				log "---> Error Profile edit user", error.statusText
 				return
 
+			log "[Profile] fields updated", response.custom_attributes
 			user_controller.write_to_session()
