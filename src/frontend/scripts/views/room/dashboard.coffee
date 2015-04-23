@@ -32,14 +32,7 @@ module.exports = class Dashboard extends RoomView
 
     if broadcast_trigger.length > 0 
       broadcast_trigger.on 'change', on_broadcast_click
-
-    @volume.left = view.get_by_dom @dom.find( '.meter_wrapper.left' )
-    @volume.right = view.get_by_dom @dom.find( '.meter_wrapper.right' )
-
-    # Example of how to use the volume object
-    @volume.left.set_volume 0.7
-    @volume.right.set_volume 0.78
-
+    
     input_select = view.get_by_dom @dom.find( '.input_select' )
     input_select.on 'changed', (data) ->
       log "[Dashboard] input changed", data
