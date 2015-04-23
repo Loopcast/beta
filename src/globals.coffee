@@ -57,6 +57,10 @@ global.pusher = new Pusher
   key   : s.pusher.key
   secret: s.pusher.secret
 
+cloudinary = require 'cloudinary'
+cloudinary.config s.cloudinary
+
+global.cloudinary = cloudinary
 
 # data -> object containing extra info about the error
 # set reply to null if no reply needed
