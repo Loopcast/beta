@@ -58,8 +58,8 @@ module.exports =
               name    : response.name
               social  : response.custom_attributes.social
 
-            if data.social?
-              data.social = data.social.split( "," )
+            # if data.social?
+              # data.social = data.social.split( "," )
 
             model.set 'user', data
 
