@@ -32,6 +32,18 @@ module.exports =
 
         callback  null, response
 
+    update: ( id, data, callback ) ->
+      on_status_code =
+        401: ( response ) -> callback 'unauthorized, need log in!'
+
+      request = $.put api_url + "rooms/#{id}", data, on_status_code
+
+      request.error on_error 'rooms/#{id}', callback
+
+      request.done ( response ) ->
+
+        callback  null, response
+
     start_stream: ( room_id, callback ) ->
       on_status_code =
         401: ( response ) -> callback 'unauthorized, need log in!'

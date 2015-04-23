@@ -23,4 +23,7 @@ vendors =
   # Documentation: http://notifyjs.com/
   NotifyJs             : require '../vendors/notify.min.js'
 
+  # $.put / $.delete method
+  JPutDel              : require '../vendors/jquery.put.delete.js'
+
 module.exports = vendors
