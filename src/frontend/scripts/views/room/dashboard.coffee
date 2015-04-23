@@ -16,41 +16,47 @@ module.exports = class Dashboard extends RoomView
     
     super @room_id, @owner_id
 
-    if @owner_id isnt user.data.username
+    unless @is_room_owner
       @dom.find( '.centered' ).remove()
+      log "[Dashboard] on_room_created (is not owner) returning."
       return
+
+    log "[Dashboard] on_room_created (it'is the owner)"
 
     @balloons = 
       appcast: view.get_by_dom @dom.find( '#appcast_not_running_balloon' )
       go_live: view.get_by_dom @dom.find( '#go_live_balloon' )
       record: view.get_by_dom @dom.find( '#record_balloon' )
 
-    log "[Dashboard] balloons", @balloons
+    @meter = view.get_by_dom @dom.find( '.meter_wrapper' )
+    @broadcast_trigger = view.get_by_dom @dom.find( '.broadcast_controls' )
+    @recording_trigger = view.get_by_dom @dom.find( '.recording_controls' )
 
-    broadcast_trigger = view.get_by_dom @dom.find( '.broadcast_controls' )
-    recording_trigger = view.get_by_dom @dom.find( '.recording_controls' )
-
-    if broadcast_trigger.length > 0 
-      broadcast_trigger.on 'change', on_broadcast_click
+    if @broadcast_trigger.length > 0 
+      @broadcast_trigger.on 'change', @on_broadcast_click
     
-    input_select = view.get_by_dom @dom.find( '.input_select' )
-    input_select.on 'changed', (data) ->
-      log "[Dashboard] input changed", data
+    @input_select = view.get_by_dom @dom.find( '.input_select' )
+    # @input_select.on 'changed', (data) ->
+    #   log "[Dashboard] input changed", data
 
-    appcast.on 'connected', ( is_connected ) =>
-      if is_connected
-        @on_appcast_running()
-      else
-        @on_appcast_not_running()
+    appcast.on 'connected', @on_appcast_connected
+
+  on_appcast_connected: ( is_connected ) =>
+    if is_connected
+      @on_appcast_running()
+    else
+      @on_appcast_not_running()
 
   on_appcast_running: =>
     log "[Dashboard] on_appcast_running"
     @dom.addClass( 'appcast_running' ).removeClass( 'appcast_not_running' )
+    @meter.activate()
 
   on_appcast_not_running: =>
     log "[Dashboard] on_appcast_not_running"
     @dom.removeClass( 'appcast_running' ).addClass( 'appcast_not_running' )
 
+    @meter.deactivate()
     @balloons.appcast.show()
 
   on_broadcast_click : (data) ->
@@ -70,5 +76,13 @@ module.exports = class Dashboard extends RoomView
       # do appcast.stop_recording
 
   destroy: ->
-    for item of @balloons
-      view.destroy_view @balloons[ item ]
+    if @is_room_owner
+      for item of @balloons
+        view.destroy_view @balloons[ item ]
+      if @broadcast_trigger.length > 0 
+        @broadcast_trigger.off 'change', @on_broadcast_click
+
+      appcast.off 'connected', @on_appcast_connected
+
+
+

@@ -3,6 +3,7 @@ user = require 'app/controllers/user'
 module.exports = class RoomView
   room_created: false
   room_subscribe_id: String
+  is_room_owner: false
   constructor: ( @dom ) ->
     view.on 'binded', @on_views_binded
 
@@ -23,3 +24,4 @@ module.exports = class RoomView
 
   on_room_created: ( @room_id, @owner_id ) =>
     @room_created = true
+    @is_room_owner = @owner_id is user.data.username
