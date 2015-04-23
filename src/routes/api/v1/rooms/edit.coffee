@@ -1,5 +1,6 @@
 slug = require 'slug'
 Room = schema 'room'
+extract_id = lib 'cloudinary/extract_id'
 
 module.exports =
   method : 'PUT'
@@ -42,7 +43,7 @@ module.exports =
         'info.user' : username
 
       Room.findOne( query )
-        .select( "_id" )
+        .select( "_id info.cover_url" )
         .lean()
         .exec ( error, room ) -> 
 
@@ -70,6 +71,20 @@ module.exports =
 
           if payload.cover_url
             update[ 'info.cover_url' ] = payload.cover_url
+
+            current_id = extract_id room.info.cover_url
+            new_id     = extract_id payload.cover_url
+
+            if current_id != new_id
+              console.log 'will remove old cover fromcloudinary'
+
+              cloudinary.api.delete_resources [ current_id ], ( result ) ->
+                if result.error
+                  console.log "error deleting old cover from cloudinary"
+                  console.log result.error
+                else
+                  console.log 'succesfully deleted old cover from cloudinary'
+                  console.log result
 
           if payload.genres
             update[ 'info.genres' ] = payload.genres

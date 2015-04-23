@@ -125,11 +125,14 @@ module.exports =
           # remove_from_cloudinary ||= []
           # remove_from_cloudinary.push
 
-        # if remove_from_cloudinary.length
-          # cloudinary.api.delete_resources remove_from_cloudinary, ( result ) ->
-          #   if result.error
-          #     console.log "error deleting image from cloudinary"
-          #     console.log result.error
+        if remove_from_cloudinary.length
+          cloudinary.api.delete_resources remove_from_cloudinary, ( result ) ->
+            if result.error
+              console.log "error deleting image from cloudinary"
+              console.log result.error
+            else
+              console.log 'succesfully deleted from cloudinary'
+              console.log result
 
         # HACK: since we still don't have an interface to update user_id
         # we will be updating user_id everytime a user updates his name
