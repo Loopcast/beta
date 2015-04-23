@@ -16,8 +16,5 @@ module.exports =
 
     handler: ( request, reply ) ->
 
-      if request.auth.isAuthenticated
-        reply logged: true
-
-      else
-         reply logged: false
+      # true if logged in, false if not logged
+      reply logged: request.auth.isAuthenticated
