@@ -66,6 +66,7 @@ module.exports = class Meter extends RoomView
     @playhead.removeClass( 'inactive' ).addClass( 'color_' + @values[0].color )
 
   set_volume: ( perc ) =>
+    log "[Meter] set_volume", perc
     if perc.constructor is Array
       perc = perc[ 0 ]
 

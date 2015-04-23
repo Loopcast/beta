@@ -109,6 +109,9 @@ module.exports = class Room extends LoggedView
     if data
       @dom.find( '.chat_header.v_center' ).html data.about
 
+    if @owner_id is user_controller.data.username
+      appcast.connect()
+
   on_user_logged: ( data ) =>
     img = @dom.find '.author_chat_thumb'
     if not img.data( 'original' )?
@@ -129,19 +132,6 @@ module.exports = class Room extends LoggedView
   on_message: ( message ) =>
     # log "[Room] on_message", message
     @emit 'message', message
-    
-
-  check_guest: ( ) ->
-
-    ###
-    If the url path starts with /username, 
-    then the user is not a guest
-    ###
-    if @is_guest()
-      app.body.addClass 'guest'
-    else
-      app.body.removeClass 'guest'    
-      appcast.connect()
 
   is_guest: ->
     u = user_controller.data

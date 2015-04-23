@@ -36,8 +36,8 @@ module.exports = class Dashboard extends RoomView
       @broadcast_trigger.on 'change', @on_broadcast_click
     
     @input_select = view.get_by_dom @dom.find( '.input_select' )
-    # @input_select.on 'changed', (data) ->
-    #   log "[Dashboard] input changed", data
+    @input_select.on 'changed', (data) ->
+      log "[Dashboard] input changed", data
 
     appcast.on 'connected', @on_appcast_connected
 
@@ -51,6 +51,7 @@ module.exports = class Dashboard extends RoomView
     log "[Dashboard] on_appcast_running"
     @dom.addClass( 'appcast_running' ).removeClass( 'appcast_not_running' )
     @meter.activate()
+    @balloons.appcast.hide()
 
   on_appcast_not_running: =>
     log "[Dashboard] on_appcast_not_running"
