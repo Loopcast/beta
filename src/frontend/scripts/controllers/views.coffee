@@ -97,10 +97,7 @@ class View
 			v = view.get_by_uid id
 
 			if v
-				happens_destroy v
-				v.destroy?()
-				v.view_name = null
-				view.on_view_destroyed id
+				@destroy_view v
 
 		).promise().done => 
 			data = 
@@ -109,7 +106,11 @@ class View
 
 			@emit "unbinded", data
 
-
+	destroy_view: ( v ) ->
+		happens_destroy v
+		v.destroy?()
+		v.view_name = null
+		view.on_view_destroyed v.uid
 
 	_add_view: ( $item, view_name ) ->
 

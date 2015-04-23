@@ -1,823 +1,864 @@
 DARK_PERCENTAGE = 5
 
 .button
-	border-radius: 2px
-	text-align: center
-	display: block
-	color: white
-	letter-spacing: 0.04rem
-	font-size: 0.9rem
-	padding: 10px
-	padding-top: 9px
-	height: 39px
-	
-	position: relative
-	transition: background-color .1s linear	
-	cursor: pointer
-	
-	&.shadow
-		box-shadow: inset 0px -3px 1px rgba(0, 0, 0, 0.15), 0px 2px 2px rgba(0, 0, 0, 0.05)
-		
-	&.save_button
-		background: BLUE
-		color: white
-		font-size: .8rem
-		
-	&.green_button
-		background: GREEN
-		color: white
-		
+  border-radius: 2px
+  text-align: center
+  display: block
+  color: white
+  letter-spacing: 0.04rem
+  font-size: 0.9rem
+  padding: 10px
+  padding-top: 9px
+  height: 39px
+  
+  position: relative
+  transition: background-color .1s linear 
+  cursor: pointer
+  
+  &.shadow
+    box-shadow: inset 0px -3px 1px rgba(0, 0, 0, 0.15), 0px 2px 2px rgba(0, 0, 0, 0.05)
+    
+  &.save_button
+    background: BLUE
+    color: white
+    font-size: .8rem
+    
+  &.green_button
+    background: GREEN
+    color: white
+    
 
-		
-	&.red_button
-		background: RED
-		color: white
+    
+  &.red_button
+    background: RED
+    color: white
 
-	&.facebook
-		background-color: #2e5d94
-		
-	&.soundcloud
-		background-color: #ff5224
-		
-	&.google
-		background-color: #dc4b38
-		
-	&.signin
-		background-color: #2095cf
-		
-	&.half
-		display: inline-block
-		width: 48%
-	
-	&.gray_button
-		background-color: #383838
-		
-	&.gray_button_2
-		background-color: #A4A5A6
+  &.facebook
+    background-color: #2e5d94
+    
+  &.soundcloud
+    background-color: #ff5224
+    
+  &.google
+    background-color: #dc4b38
+    
+  &.signin
+    background-color: #2095cf
+    
+  &.half
+    display: inline-block
+    width: 48%
+  
+  &.gray_button
+    background-color: #383838
+    
+  &.gray_button_2
+    background-color: #A4A5A6
 
-	&.yellow_button
-		// background-color : YELLOW
-		background-image: linear-gradient(180deg, rgb(255, 200, 10) 11%, rgb(245, 190, 0) 42%, rgb(229, 177, 0) 73%)
-		color: BLACK
-		font-weight: 800
-		border: 1px solid #E9AC1A
-	
-	&.white_button
-		background: white
-		border: 1px solid #CED0D0
-		color: BLACK
-			
-	&.white_transparent_button
-		background: transparent
-		border: 1px solid white
-		color: white
-	
-	&.small_button
-		font-size: .75rem
-		padding: 10px
-		font-weight: 600
-		
-	&.small_button_2
-		font-size: .75rem
-		padding: 7px 10px
-		height: 32px
-		font-weight: 600
-		
-	&.small_button_3
-		font-size: 0.8rem
-		padding: 9px 40px 10px
-		font-weight: 600
-		
-	&.small_button_4
-		font-size: .7rem
-		padding: 6px 15px
-		border-radius: 3px
-		letter-spacing: 0.004rem
-		height: 29px
-		font-weight: 800
-		
-	&.normal_button_2
-		font-size: 13px
-		line-height: 21px
-		font-weight: 600
-		
-	&.bold_button
-		font-weight: bold
-		
-		
-	&.social
-		padding-left: 50px
-		width: 300px
-		padding-top: 20px
-		height: auto
-		padding-bottom: 20px
-		padding-right: 26px
-		font-size: 1.1rem
-		letter-spacing: .03rem
-		span.spritesheet
-			margin-right: 10px
-			position: absolute
-			left: 26px
-			top: 50%
-			transform: translateY(-50%)
-		span
-			vertical-align: middle
-			display: block
-			text-align: right
-		
-	&.dashboard_button
-		background: #46505A
-		text-transform: uppercase
-		color: white
-		font-size: 10px
-		font-weight: 600
-		padding-bottom: 11px
-		line-height: 1em
-		height: auto
-		padding: 11px 10px 12px
-		padding-top: 10px
-		border-radius: 4px
-		border: 1px solid BLACK
-		display: inline-block
-		overflow: hidden
-		height: 32px
-		
-	&.dashboard_button.with_timer
-		padding: 0
-		background: transparent
-		& > *
-			display: inline-block
-			vertical-align: top
-			padding: 11px 20px 9px
-			font-size: 12px
-		
-		.left_part
-			background: #46505A
-			text-align: center
-			// padding-left: 30px
-			// padding-right: 30px
-		.right_part
-			cursor: default
-			text-align: left
-			font-size: 18px
-			padding-top: 8px
-			padding-bottom: 9px
-			line-height: 15px
-			letter-spacing: 3px
-			
-		.yellow_part
-			background: #1F1E1E
-			color: #FFC80A
-			
-	&.dashboard_button.with_icon
-		text-align: left
-		.icon
-			absolute top 40% right 12px
-			
-			// margin-left: 30px
-			// margin-right: 2px
-			// position: relative
-			// top: 2px
+  &.yellow_button
+    // background-color : YELLOW
+    background-image: linear-gradient(180deg, rgb(255, 200, 10) 11%, rgb(245, 190, 0) 42%, rgb(229, 177, 0) 73%)
+    color: BLACK
+    font-weight: 800
+    border: 1px solid #E9AC1A
+  
+  &.white_button
+    background: white
+    border: 1px solid #CED0D0
+    color: BLACK
+      
+  &.white_transparent_button
+    background: transparent
+    border: 1px solid white
+    color: white
+  
+  &.small_button
+    font-size: .75rem
+    padding: 10px
+    font-weight: 600
+    
+  &.small_button_2
+    font-size: .75rem
+    padding: 7px 10px
+    height: 32px
+    font-weight: 600
+    
+  &.small_button_3
+    font-size: 0.8rem
+    padding: 9px 40px 10px
+    font-weight: 600
+    
+  &.small_button_4
+    font-size: .7rem
+    padding: 6px 15px
+    border-radius: 3px
+    letter-spacing: 0.004rem
+    height: 29px
+    font-weight: 800
+    
+  &.normal_button_2
+    font-size: 13px
+    line-height: 21px
+    font-weight: 600
+    
+  &.bold_button
+    font-weight: bold
+    
+    
+  &.social
+    padding-left: 50px
+    width: 300px
+    padding-top: 20px
+    height: auto
+    padding-bottom: 20px
+    padding-right: 26px
+    font-size: 1.1rem
+    letter-spacing: .03rem
+    span.spritesheet
+      margin-right: 10px
+      position: absolute
+      left: 26px
+      top: 50%
+      transform: translateY(-50%)
+    span
+      vertical-align: middle
+      display: block
+      text-align: right
+    
+  &.dashboard_button
+    background: #46505A
+    text-transform: uppercase
+    color: white
+    font-size: 10px
+    font-weight: 600
+    padding-bottom: 11px
+    line-height: 1em
+    height: auto
+    padding: 11px 10px 12px
+    padding-top: 10px
+    border-radius: 4px
+    border: 1px solid BLACK
+    display: inline-block
+    overflow: hidden
+    height: 32px
+    
+  &.dashboard_button.with_timer
+    padding: 0
+    background: transparent
+    & > *
+      display: inline-block
+      vertical-align: top
+      padding: 11px 20px 9px
+      font-size: 12px
+    
+    .left_part
+      background: #46505A
+      text-align: center
+      // padding-left: 30px
+      // padding-right: 30px
+    .right_part
+      cursor: default
+      text-align: left
+      font-size: 18px
+      padding-top: 8px
+      padding-bottom: 9px
+      line-height: 15px
+      letter-spacing: 3px
+      
+    .yellow_part
+      background: #1F1E1E
+      color: #FFC80A
+      
+  &.dashboard_button.with_icon
+    text-align: left
+    .icon
+      absolute top 40% right 12px
+      
+      // margin-left: 30px
+      // margin-right: 2px
+      // position: relative
+      // top: 2px
 
 .meter_wrapper
-	position: relative
-	text-transform: uppercase
-	display: block
-	width: 203px
-	height: 10px
-	font-size: 0.8rem
-	color: GRAY
-	.letter
-		absolute right 103% top 50%
-		transform: translateY(-50%)
-	.meter
-		display: block
-		height: 100%
-		width: 100%
-		background: url("/images/meter_off.jpg")
-		position: relative
-		overflow: hidden
-		span
-			display: block
-			absolute top 0 left 0
-			width: 0%
-			height: 100%
-			background: url("/images/meter_on.jpg")
-			transition: width .1s linear
+  position: relative
+  text-transform: uppercase
+  display: block
+  width: 203px
+  height: 10px
+  font-size: 0.8rem
+  color: GRAY
+  .letter
+    absolute right 103% top 50%
+    transform: translateY(-50%)
+  .meter
+    display: block
+    height: 100%
+    width: 100%
+    background: url("/images/meter_off.jpg")
+    position: relative
+    overflow: hidden
+    span
+      display: block
+      absolute top 0 left 0
+      width: 0%
+      height: 100%
+      background: url("/images/meter_on.jpg")
+      transition: width .1s linear
 
 .no_touch_device
-	.button:hover
-		border-radius: 2px
-	.button.facebook:hover
-		background-color: darken(#2e5d94, DARK_PERCENTAGE)
-		
-	.button.soundcloud:hover
-		background-color: darken(#ff5224, DARK_PERCENTAGE)
-		
-	.button.google:hover
-		background-color: darken(#dc4b38, DARK_PERCENTAGE)	
+  .button:hover
+    border-radius: 2px
+  .button.facebook:hover
+    background-color: darken(#2e5d94, DARK_PERCENTAGE)
+    
+  .button.soundcloud:hover
+    background-color: darken(#ff5224, DARK_PERCENTAGE)
+    
+  .button.google:hover
+    background-color: darken(#dc4b38, DARK_PERCENTAGE)  
 
-	.button.signin:hover
-		background-color: darken(#2095cf, DARK_PERCENTAGE)
-		
-	.button.gray_button:hover
-		background-color: lighten( #383838, 10 )
-		
-	.button.gray_button_2
-		background-color: darken( #A4A5A6, DARK_PERCENTAGE )
-		
-	.button.save_button:hover
-		background: darken( BLUE, DARK_PERCENTAGE )
-		
-	.button.green_button:hover
-		background: darken( GREEN, DARK_PERCENTAGE )
-		
-	.button.red_button:hover
-		background: darken( RED, DARK_PERCENTAGE )
-		
-	.button.dashboard_button:hover
-		background: GREEN
-		border-radius: 4px
-		
-	.button.dashboard_button.with_timer:hover
-		background: transparent
-		
-	.button.dashboard_button.with_timer
-		.left_part:hover
-			background: GREEN
-		
-		
-	.button.yellow_button:hover
-		background-image: linear-gradient(180deg, rgb(229, 177, 0) 11%, rgb(229, 177, 0) 42%, rgb(229, 177, 0) 73%)
-			
-	.button.yellow_button.black_hover:hover
-		background-image: linear-gradient(180deg, rgb(0, 0, 0) 11%, rgb(0, 0, 0) 42%, rgb(0, 0, 0) 73%)
-		color: YELLOW
-		border: 1px solid YELLOW
-		border-radius: 2px
-	
-	.button.white_transparent_button:hover
-		background: white
-		color: BLACK
-		
-	.button.white_button:hover
-		background: darken( white, DARK_PERCENTAGE )
-		border: 1px solid #CED0D0
-		
+  .button.signin:hover
+    background-color: darken(#2095cf, DARK_PERCENTAGE)
+    
+  .button.gray_button:hover
+    background-color: lighten( #383838, 10 )
+    
+  .button.gray_button_2
+    background-color: darken( #A4A5A6, DARK_PERCENTAGE )
+    
+  .button.save_button:hover
+    background: darken( BLUE, DARK_PERCENTAGE )
+    
+  .button.green_button:hover
+    background: darken( GREEN, DARK_PERCENTAGE )
+    
+  .button.red_button:hover
+    background: darken( RED, DARK_PERCENTAGE )
+    
+  .button.dashboard_button:hover
+    background: GREEN
+    border-radius: 4px
+    &.no_hover
+      background: #46505A
+      
+    
+  .button.dashboard_button.with_timer:hover
+    background: transparent
+    
+  .button.dashboard_button.with_timer
+    .left_part:hover
+      background: GREEN
+    
+    
+  .button.yellow_button:hover
+    background-image: linear-gradient(180deg, rgb(229, 177, 0) 11%, rgb(229, 177, 0) 42%, rgb(229, 177, 0) 73%)
+      
+  .button.yellow_button.black_hover:hover
+    background-image: linear-gradient(180deg, rgb(0, 0, 0) 11%, rgb(0, 0, 0) 42%, rgb(0, 0, 0) 73%)
+    color: YELLOW
+    border: 1px solid YELLOW
+    border-radius: 2px
+  
+  .button.white_transparent_button:hover
+    background: white
+    color: BLACK
+    
+  .button.white_button:hover
+    background: darken( white, DARK_PERCENTAGE )
+    border: 1px solid #CED0D0
+    
+  
+    
 
-		
+    
 .buttons_flex
-	display: flex
-	justify-content: space-around
-	flex-flow: row wrap
-	& > *
-		
-		width: 47%  
-		margin: 0px 1% 10px 
+  display: flex
+  justify-content: space-around
+  flex-flow: row wrap
+  & > *
+    
+    width: 47%  
+    margin: 0px 1% 10px 
 
 .middle_line
-	text-align: center
-	position: relative
-	margin: 40px 0
-	open_bold()
-	color: #99999c
-	span
-		display: inline-block
-		&:before, &:after
+  text-align: center
+  position: relative
+  margin: 40px 0
+  open_bold()
+  color: #99999c
+  span
+    display: inline-block
+    &:before, &:after
 
-			border-top: 1px solid #e5e5e5
-			display: block
-			height: 1px
-			content: " "
-			width: 45%
-			position: absolute
-			left: 0
-			top: 50%
+      border-top: 1px solid #e5e5e5
+      display: block
+      height: 1px
+      content: " "
+      width: 45%
+      position: absolute
+      left: 0
+      top: 50%
 
-		&:after
-			right: 0  
-			left: auto 
-			
+    &:after
+      right: 0  
+      left: auto 
+      
 .tags_wrapper
-	margin-bottom: 20px
-	
+  margin-bottom: 20px
+  
 
 
 input, textarea, div.tagsinput
-	display: block
-	border: none
-	background: TAG_BG
-	color: BLACK
-	border-radius: 3px
-	margin-bottom: 20px
-	width: 100%
-	font-size: 0.9rem
-	padding: 10px 15px
-	&::-webkit-input-placeholder 
-	&:-moz-placeholder 
-	&::-moz-placeholder
-	&:-ms-input-placeholder 
-		color: #A9A9A9
-		
-	&.white_textarea
-		background: white
-		border: 1px solid #A9A9A9
-		height: 100px
-		
-	&.dark_input
-		background-color: lighten( #2c2c2c, 5 )
-		color: white
-		font-size: 0.7rem
-		padding: 6px
-		border-radius: 5px
-		margin: 0
-		transition: width .3s ease-out, background-color .3s linear
-		
-		&:focus
-			outline: 0
-			width: 150%
-			background-color: lighten( #2c2c2c, 10 )
-			
-	&.link_input
-		background: white
-		text-decoration: underline
-		font-weight: 600
-		font-size: 0.8rem
-		padding: 8px
-		color: BLACK
-			
+  display: block
+  border: none
+  background: TAG_BG
+  color: BLACK
+  border-radius: 3px
+  margin-bottom: 20px
+  width: 100%
+  font-size: 0.9rem
+  padding: 10px 15px
+  &::-webkit-input-placeholder 
+  &:-moz-placeholder 
+  &::-moz-placeholder
+  &:-ms-input-placeholder 
+    color: #A9A9A9
+    
+  &.white_textarea
+    background: white
+    border: 1px solid #A9A9A9
+    height: 100px
+    
+  &.dark_input
+    background-color: lighten( #2c2c2c, 5 )
+    color: white
+    font-size: 0.7rem
+    padding: 6px
+    border-radius: 5px
+    margin: 0
+    transition: width .3s ease-out, background-color .3s linear
+    
+    &:focus
+      outline: 0
+      width: 150%
+      background-color: lighten( #2c2c2c, 10 )
+      
+  &.link_input
+    background: white
+    text-decoration: underline
+    font-weight: 600
+    font-size: 0.8rem
+    padding: 8px
+    color: BLACK
+      
 .squared_input
-	background: none
-	border-radius: 0px
-	border: 1px solid OUTLINE_COLOR
-	
-		
+  background: none
+  border-radius: 0px
+  border: 1px solid OUTLINE_COLOR
+  
+    
 .hover_object
-	.normal_state
-		display: block
-		
-	.hover_state
-		display: none
-		
-	&.hovered
-		.normal_state
-			display: none
-			
-		.hover_state
-			display: block
+  .normal_state
+    display: block
+    
+  .hover_state
+    display: none
+    
+  &.hovered
+    .normal_state
+      display: none
+      
+    .hover_state
+      display: block
 
 
 .black_box
-	position: absolute
-	padding: 20px
-	
-	width: 36%
-	min-width: 400px
-	text-align: left
-	color: white
-	z-index: 0
-	h1
-		font-weight: 400
-		line-height: 32px
-		margin-bottom: 30px
-	p
-		font-weight: 300
-		font-size: 1rem
-		margin-bottom: 20px
-		
-	.content
-		position: relative
-		z-index: 1
-	.background
-		border-radius: 3px
-		absolute top 0 left 0
-		width: 100%
-		height: 100%
-		background: BLACK_BOX_COLOR
-		opacity: 0.9
-		
-	&.opaque
-		.background
-			opacity: 1
-			
+  position: absolute
+  padding: 20px
+  
+  width: 36%
+  min-width: 400px
+  text-align: left
+  color: white
+  z-index: 0
+  h1
+    font-weight: 400
+    line-height: 32px
+    margin-bottom: 30px
+  p
+    font-weight: 300
+    font-size: 1rem
+    margin-bottom: 20px
+    
+  .content
+    position: relative
+    z-index: 1
+  .background
+    border-radius: 3px
+    absolute top 0 left 0
+    width: 100%
+    height: 100%
+    background: BLACK_BOX_COLOR
+    opacity: 0.9
+    
+  &.opaque
+    .background
+      opacity: 1
+      
 .hover_dropdown_trigger
-	position: relative
-	cursor: pointer
-	
+  position: relative
+  cursor: pointer
+  
 .hover_dropdown
-	position: absolute
-	right: 0
-	background: BLACK_BOX_COLOR
-	color: GRAY
-	font-size: .85rem
-	width: 140px
-	display: none
-	top: 100%
-	box-shadow: 1px 6px 16px -2px #000
-	li
-		border-bottom: 1px solid #242627
-		transition: box-shadow .2s linear
-	a
-		padding: 9px 14px
-		display: block
-		
-	&.hovered
-		display: block
-		
+  position: absolute
+  right: 0
+  background: BLACK_BOX_COLOR
+  color: GRAY
+  font-size: .85rem
+  width: 140px
+  display: none
+  top: 100%
+  box-shadow: 1px 6px 16px -2px #000
+  li
+    border-bottom: 1px solid #242627
+    transition: box-shadow .2s linear
+  a
+    padding: 9px 14px
+    display: block
+    
+  &.hovered
+    display: block
+    
 .black_background
-	position: relative
-	display: inline-block
-	color: white
-	background: rgba(0,0,0,0.8)
-	padding: 5px
-	&.hidden
-		opacity: 0
-	
+  position: relative
+  display: inline-block
+  color: white
+  background: rgba(0,0,0,0.8)
+  padding: 5px
+  &.hidden
+    opacity: 0
+  
 .outline_box
-	border: 1px solid OUTLINE_COLOR
-	border-bottom: 2px solid OUTLINE_COLOR
-	border-radius: 5px
-	overflow: hidden
-	background: white
-		
+  border: 1px solid OUTLINE_COLOR
+  border-bottom: 2px solid OUTLINE_COLOR
+  border-radius: 5px
+  overflow: hidden
+  background: white
+    
 .outline_icon
-	display: block
-	border: 1px solid OUTLINE_COLOR
-	border-radius: 3px
-	width: 38px
-	height: 38px
-	text-align: center
-	
-	.spritesheet
-		absolute left 50% top 50%
-		transform: translateY(-50%) translateX(-50%) 
-		
-		
+  display: block
+  border: 1px solid OUTLINE_COLOR
+  border-radius: 3px
+  width: 38px
+  height: 38px
+  text-align: center
+  
+  .spritesheet
+    absolute left 50% top 50%
+    transform: translateY(-50%) translateX(-50%) 
+    
+    
 .button_with_icon
-	background: #E5E9E8
-	color: BLACK
-	border: 1px solid #9DACA9
-	border-radius: 4px
-	font-size: .8rem
-	line-height: .85rem
-	vertical-align: top
-	padding: 9px 10px 10px
-	
-	&.black_button
-		padding: 12px 30px 17px
-		color: #ABA9A9
-		font-size: .9rem
-		font-weight: 800
-		background: rgba(0,0,0,0.8)
-	
-	span
-		display: inline-block
-		
-	span.spritesheet, span.icon
-		position: relative
-		top: 2px
-		margin-right: 5px
+  background: #E5E9E8
+  color: BLACK
+  border: 1px solid #9DACA9
+  border-radius: 4px
+  font-size: .8rem
+  line-height: .85rem
+  vertical-align: top
+  padding: 9px 10px 10px
+  
+  &.black_button
+    padding: 12px 30px 17px
+    color: #ABA9A9
+    font-size: .9rem
+    font-weight: 800
+    background: rgba(0,0,0,0.8)
+  
+  span
+    display: inline-block
+    
+  span.spritesheet, span.icon
+    position: relative
+    top: 2px
+    margin-right: 5px
 
 .upload_wrapper
-	position: relative
-	overflow: hidden
-	.upload_element
-		position: relative
-		z-index: 0
-		.progress
-			position: absolute
-			bottom: 0
-			left: 0
-			width: 0%
-			transition: width .3s linear, opacity .3s linear
-			background: GRAY_1
-			height: 3px
-			z-index: 2
-			border-bottom-left-radius: 3px
-			border-bottom-right-radius: 3px
-			
-			&.hide
-				opacity: 0
-	.cloudinary_form
-		position: absolute
-		bottom: 0
-		right: 0
-		z-index: 1
-		cursor: pointer
-		input[type=file]
-			font-size: 20px
-			display: block
-			height: 50px
-			direction: ltr
-			cursor: pointer
-			opacity: 0
-			margin: 0
+  position: relative
+  overflow: hidden
+  .upload_element
+    position: relative
+    z-index: 0
+    .progress
+      position: absolute
+      bottom: 0
+      left: 0
+      width: 0%
+      transition: width .3s linear, opacity .3s linear
+      background: GRAY_1
+      height: 3px
+      z-index: 2
+      border-bottom-left-radius: 3px
+      border-bottom-right-radius: 3px
+      
+      &.hide
+        opacity: 0
+  .cloudinary_form
+    position: absolute
+    bottom: 0
+    right: 0
+    z-index: 1
+    cursor: pointer
+    input[type=file]
+      font-size: 20px
+      display: block
+      height: 50px
+      direction: ltr
+      cursor: pointer
+      opacity: 0
+      margin: 0
 
 .editable_text
-	position: relative
-	.text
-		position: relative
-		z-index: 0
-		
-	input
-		position: absolute
-		top: 0
-		left: 0
-		background: none
-		outline: none
-		display: none
-		z-index: 1
-		
-	select
-		absolute top 0 left 0
-		width: 100%
-		height: 100%
-		opacity: 0
-		cursor: pointer
+  position: relative
+  .text
+    position: relative
+    z-index: 0
+    
+  input
+    position: absolute
+    top: 0
+    left: 0
+    background: none
+    outline: none
+    display: none
+    z-index: 1
+    
+  select
+    absolute top 0 left 0
+    width: 100%
+    height: 100%
+    opacity: 0
+    cursor: pointer
 
-		
-	.icon
-		absolute top 50% right -45px
-		transform: translateY(-50%) scale(0.7)
-		display: none
-		color: rgba(0,0,0,0.7)
-		
-	&.editable_select
-		.icon
-			right: -22px
-			top: 60%
-			
-	&.editable_profile_tags
-		
-		.icon
-			right: -22px
-			top: 15px
-		.text
-			width: 100%
-			display: block
-			
-		.empty
-			display: none
-			
-		.tagsinput
-			display: none
-			margin-bottom: 0
-			background: transparent
-			span.tag
-				background: #3D484F
-				
-			input
-				color: white!important
-			
-		&.edit_mode
-			.tagsinput
-				display: block
-				
-			.text
-				display: none
-		
-	&.edit_mode
-		input
-			display: block
-			
-		.spritesheet
-			display: block
-			
-		.text
-			opacity: 0
+    
+  .icon
+    absolute top 50% right -45px
+    transform: translateY(-50%) scale(0.7)
+    display: none
+    color: rgba(0,0,0,0.7)
+    
+  &.editable_select
+    .icon
+      right: -22px
+      top: 60%
+      
+  &.editable_profile_tags
+    
+    .icon
+      right: -22px
+      top: 15px
+    .text
+      width: 100%
+      display: block
+      
+    .empty
+      display: none
+      
+    .tagsinput
+      display: none
+      margin-bottom: 0
+      background: transparent
+      span.tag
+        background: #3D484F
+        
+      input
+        color: white!important
+      
+    &.edit_mode
+      .tagsinput
+        display: block
+        
+      .text
+        display: none
+    
+  &.edit_mode
+    input
+      display: block
+      
+    .spritesheet
+      display: block
+      
+    .text
+      opacity: 0
 
 .write_mode .editable_text
-	cursor: pointer
-	
+  cursor: pointer
+  
 .tag
-	display: inline-block
-	color: white
-	background: TAG_COLOR
-	border-radius: 2px
-	padding: 3px
-	margin-right: 5px
-	text-transform: uppercase
-	font-size: .7rem
-	line-height: 0.9rem
-	font-weight: 800
-	
-	
+  display: inline-block
+  color: white
+  background: TAG_COLOR
+  border-radius: 2px
+  padding: 3px
+  margin-right: 5px
+  text-transform: uppercase
+  font-size: .7rem
+  line-height: 0.9rem
+  font-weight: 800
+  
+  
 .small > .tag
-	font-size: 0.6rem
-	
+  font-size: 0.6rem
+  
 
 .start_stop
-	.start
-		display: block
-	.stop
-		display: none
-		
-	&.started
-		.start
-			display: none
-		.stop
-			display: block
-			
+  .start
+    display: block
+  .stop
+    display: none
+    
+  &.started
+    .start
+      display: none
+    .stop
+      display: block
+      
 
 .loading_spin
-	&:after
-		content: ''
-		display: block
-		position: relative
-		width: 20px
-		height: 20px
-		animation: rotate 0.6s linear infinite
-		border-radius: 100%
-		border-top: 1px solid #545a6a
-		border-bottom: 1px solid #d4d4db
-		border-left: 1px solid #545a6a
-		border-right: 1px solid #d4d4db
-		opacity: .5
-		
-	&.large:after
-		width: 40px
-		height: 40px
-	
-	&.medium:after
-		width: 30px
-		height: 30px
-	
-	&.small:after
-		width: 10px
-		height: 10px
-		
+  &:after
+    content: ''
+    display: block
+    position: relative
+    width: 20px
+    height: 20px
+    animation: rotate 0.6s linear infinite
+    border-radius: 100%
+    border-top: 1px solid #545a6a
+    border-bottom: 1px solid #d4d4db
+    border-left: 1px solid #545a6a
+    border-right: 1px solid #d4d4db
+    opacity: .5
+    
+  &.large:after
+    width: 40px
+    height: 40px
+  
+  &.medium:after
+    width: 30px
+    height: 30px
+  
+  &.small:after
+    width: 10px
+    height: 10px
+    
 @keyframes rotate
-	0%
-		transform: rotateZ(-360deg)
+  0%
+    transform: rotateZ(-360deg)
 
-	100%
-		transform: rotateZ(0deg)
-	
+  100%
+    transform: rotateZ(0deg)
+  
 .ss-play, .ss-pause
-	&:before
-		text-shadow: 0px 0px 0px black
-		transition: text-shadow .2s linear
-		
+  &:before
+    text-shadow: 0px 0px 0px black
+    transition: text-shadow .2s linear
+    
 
 .ss-record-wrapper
-	border-radius: 2px
-	background: GRAY_2
-	color: white
-	font-size: 8px
-	width: 18px
-	padding-top: 4px
-	padding-bottom: 2px
+  border-radius: 2px
+  background: GRAY_2
+  color: white
+  font-size: 8px
+  width: 18px
+  padding-top: 4px
+  padding-bottom: 2px
 
 .rounded_border
-	border: 1px solid GRAY
-	padding: 2px 10px
-	border-radius: 3px
-	border-bottom-width: 2px
-	
-	&.big
-		padding: 6px 30px
-		color: #404040
-		border-color: #CED0D0
-		span
-			font-size: 10px
-			padding-right: 5px
+  border: 1px solid GRAY
+  padding: 2px 10px
+  border-radius: 3px
+  border-bottom-width: 2px
+  
+  &.big
+    padding: 6px 30px
+    color: #404040
+    border-color: #CED0D0
+    span
+      font-size: 10px
+      padding-right: 5px
 
 
 .select_wrapper
-	position: relative
-	display: inline-block
-	width: 100%
-	.handler
-		position: relative
-		z-index: 0
-		width: 100%
-	select
-		cursor: pointer
-		position: absolute
-		z-index: 1
-		top: 0 
-		left: 0
-		width: 100%
-		height: 100%
-		opacity: 0
+  position: relative
+  display: inline-block
+  width: 100%
+  .handler
+    position: relative
+    z-index: 0
+    width: 100%
+  select
+    cursor: pointer
+    position: absolute
+    z-index: 1
+    top: 0 
+    left: 0
+    width: 100%
+    height: 100%
+    opacity: 0
 
 .yellow.ss-action
-	color: BLACK
-	background: YELLOW
-	border-radius: 3px
-	text-align: center
-	display: inline-block
-	width: 23px
-	height: 23px
-	padding-left: 2px
-	font-size: 0.9rem
-	padding-top: 3px
-	border: 1px solid YELLOW
-	
+  color: BLACK
+  background: YELLOW
+  border-radius: 3px
+  text-align: center
+  display: inline-block
+  width: 23px
+  height: 23px
+  padding-left: 2px
+  font-size: 0.9rem
+  padding-top: 3px
+  border: 1px solid YELLOW
+  
 .share_wrapper
-	position: relative
+  position: relative
 
-	.share_box
-		absolute bottom 180% left 50%
-		transform: translateX(-50%)
-		z-index: 2
-		background: SHARE_BOX
-		width: 290px
-		padding: 10px 12px
-		border-radius: 5px
-		display: none
-		&:after
-			content: ""
-			absolute top 100% left 50%
-			transform: translateX(-50%)
-			width: 0
-			height: 0
-			border-style: solid
-			border-width: 10px 10px 0 10px
-			border-color: SHARE_BOX transparent transparent transparent
-			
-		h4 
-			color: white
-			font-size: 1.3rem
-			font-weight: 600
-			margin-bottom: 5px
-			
-		.share_row
-			display: flex
-			input
-				flex: 5
-				margin-right: 10px
-			.button
-				flex: 1
-				display: inline-block
-				font-size: 0.9rem
-				padding-top: 5px
-				
-		.socials
-			a
-				display: inline-block
-				margin-right: 8px
-				text-indent: -9999px
-				
-	&.on_bottom
-		.share_box
-			bottom: auto
-			absolute top 180% left 50%
-			
-			&:after
-				content: ""
-				top: auto
-				absolute bottom 100% left 50%
-				border-width: 0 10px 10px 10px
-				border-color: transparent transparent SHARE_BOX transparent
-	&.opened
-		opacity: 1!important
-		.share_box
-			display: block
-	
+  .share_box
+    absolute bottom 180% left 50%
+    transform: translateX(-50%)
+    z-index: 2
+    background: SHARE_BOX
+    width: 290px
+    padding: 10px 12px
+    border-radius: 5px
+    display: none
+    &:after
+      content: ""
+      absolute top 100% left 50%
+      transform: translateX(-50%)
+      width: 0
+      height: 0
+      border-style: solid
+      border-width: 10px 10px 0 10px
+      border-color: SHARE_BOX transparent transparent transparent
+      
+    h4 
+      color: white
+      font-size: 1.3rem
+      font-weight: 600
+      margin-bottom: 5px
+      
+    .share_row
+      display: flex
+      input
+        flex: 5
+        margin-right: 10px
+      .button
+        flex: 1
+        display: inline-block
+        font-size: 0.9rem
+        padding-top: 5px
+        
+    .socials
+      a
+        display: inline-block
+        margin-right: 8px
+        text-indent: -9999px
+        
+  &.on_bottom
+    .share_box
+      bottom: auto
+      absolute top 180% left 50%
+      
+      &:after
+        content: ""
+        top: auto
+        absolute bottom 100% left 50%
+        border-width: 0 10px 10px 10px
+        border-color: transparent transparent SHARE_BOX transparent
+  &.opened
+    opacity: 1!important
+    .share_box
+      display: block
+  
 .ss-record-wrapper
-	display: inline-block
-	text-align: center
+  display: inline-block
+  text-align: center
 
+.balloon
+  display: none
+  position: absolute
+  z-index: 10
+  background: SHARE_BOX
+  padding: 12px 14px 15px
+  border-radius: 4px
+  box-shadow: 1px 3px 21px -2px #000
+  top: -80px
+  text-align: left
+  font-size: 0.8rem
+  font-weight: 600
+  color: white
+  width: 250px
+  
+  &.to_show
+    opacity: 0
+    display: block
+    transition: opacity .3s linear, transform .2s ease-out
+    transform: translate3d(0,-20px,0)
+    
+  &.show
+    opacity: 1
+    transform: translate3d(0,0,0)
+  
+  SIZE = 10px
+  &:after
+    content: ""
+    position: absolute
+    left: 60px
+    top: 100%
+    width: 0
+    height: 0
+    border-right: SIZE solid transparent
+    border-left: SIZE solid transparent
+    border-top: SIZE solid SHARE_BOX
 
 .no_touch_device
-	
-	.ss-play, .ss-pause
-		&:hover:before
-			text-shadow: 1px 1px 4px black
-			
+  
+  .ss-play, .ss-pause
+    &:hover:before
+      text-shadow: 1px 1px 4px black
+      
 
-	.yellow.ss-action:hover
-		background: BLACK
-		color: YELLOW
-		// border-color: YELLOW
+  .yellow.ss-action:hover
+    background: BLACK
+    color: YELLOW
+    // border-color: YELLOW
 
-	.select_wrapper:hover
-		.handler
-			background: GRAY_3
+  .select_wrapper:hover
+    .handler
+      background: GRAY_3
 
 
-	.rounded_border:hover
-		// background: GRAY
-		border-color: GRAY_1
-		
-			
-	.underline_link:hover
-		text-decoration: underline
-	.hover_dropdown
-		li:hover
-			color: white
-			box-shadow: inset 0 0 10px rgba(0,0,0,.3)
-			
-	.outline_icon:hover
-		border-color: GRAY_2
-		
-	.button_with_icon:hover
-		&.black_button
-			color: GRAY
-			background: BLACK
-			
-	.share_wrapper .share_box .socials a:hover
-		opacity: 0.8
-			
+  .rounded_border:hover
+    // background: GRAY
+    border-color: GRAY_1
+    
+      
+  .underline_link:hover
+    text-decoration: underline
+  .hover_dropdown
+    li:hover
+      color: white
+      box-shadow: inset 0 0 10px rgba(0,0,0,.3)
+      
+  .outline_icon:hover
+    border-color: GRAY_2
+    
+  .button_with_icon:hover
+    &.black_button
+      color: GRAY
+      background: BLACK
+      
+  .share_wrapper .share_box .socials a:hover
+    opacity: 0.8
+      
 

@@ -28,7 +28,26 @@
       height: 100px
       .centered
         display: block
+     
+#appcast_not_running_balloon
+  width: 330px
+  p
+    margin-bottom: 30px
+  
+  a
+    text-decoration: underline
+    
+  ul
+    margin-bottom: 10px
+    li
+      margin-bottom: 7px
+    a
+      color: BLUE
       
+  a.learn
+    display: block
+    text-align: right
+    color: YELLOW 
 
 .dashboard_bar
   color: white
@@ -39,9 +58,22 @@
   text-align: left
   padding: 12px
   
+
+  
+  &.appcast_running
+    .appcast_not_running_message
+      display: none
+    
+  &.appcast_not_running
+    .appcast_not_running_message
+      display: inline-block
+      
+    .appcast_running_message
+      display: none
+  
   .centered
     position: relative
-    overflow: hidden
+    // overflow: hidden
     display: none
     
   .half
@@ -58,7 +90,8 @@
         & > *
           float: right
           
-      .select_wrapper
+      .appcast_running_message
+      .appcast_not_running_message
         margin-bottom: 13px
         
       .meter_wrapper
@@ -168,6 +201,8 @@
     font-size: 2em
     text-align: center
     font-weight: 600
+    line-height: 32px
+    padding: 0 30px
     
 
   .message
