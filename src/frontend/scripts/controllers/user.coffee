@@ -59,7 +59,7 @@ class UserController
 
     # log "[User] trying to logout..."
 
-    $.post '/api/v1/logout', {}, (data) =>
+    $.post '/api/v1/user/logout', {}, (data) =>
       # log "[User] logout ~ success", data
       
       @delete_session()

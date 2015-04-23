@@ -1,6 +1,6 @@
 module.exports =
   method : 'POST'
-  path   : '/api/v1/logout'
+  path   : '/api/v1/user/logout'
 
   config:
 
