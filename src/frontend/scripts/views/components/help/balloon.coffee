@@ -1,7 +1,17 @@
 module.exports = class Balloon
   visible: false
+  orientation: "left"
+  width: 0
+  dom_offset: 0
   constructor: ( @dom ) ->
     @target = $ @dom.data( 'target' )
+    if @dom.data 'orientation'
+      @orientation = @dom.data 'orientation'
+
+    if @dom.data 'offset'
+      @dom_offset = @dom.data 'offset'
+
+    @dom.addClass 'orientation_' + @orientation
     view.on 'binded', @on_views_binded
 
   on_views_binded: (scope) =>
@@ -12,10 +22,16 @@ module.exports = class Balloon
 
   on_resize: =>
     p = @target.offset()
-
-    @dom.css
-      'left': p.left
+    data = 
       'top': p.top - @offset
+
+    if @orientation is 'left'
+      data.left = p.left
+    else
+      data.left = p.left - @width
+
+    data.left += @dom_offset
+    @dom.css data
 
   show: ->
     @visible = true
@@ -24,8 +40,8 @@ module.exports = class Balloon
 
 
     delay 1, =>
-      @offset = @dom.outerHeight() + @target.outerHeight()
-
+      @offset = @dom.outerHeight() + @target.outerHeight() - 10
+      @width = @dom.width()
       @on_resize()
       @dom.addClass 'show'
 

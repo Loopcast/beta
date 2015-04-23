@@ -48,6 +48,21 @@
     display: block
     text-align: right
     color: YELLOW 
+    
+#help_balloon
+  width: 158px
+  padding-bottom: 3px
+  .dashboard_button
+    margin-bottom: 10px
+    font-size: 11px
+    font-weight: 800
+    letter-spacing: 0
+    display: block
+    
+    &.dashboard_yellow
+      color: BLACK
+      background: YELLOW
+      
 
 .dashboard_bar
   color: white
@@ -71,7 +86,12 @@
       
     .appcast_running_message
       display: none
+  .live_button_wrapper
+    position: relative
+    display: inline-block
+    
   
+
   .centered
     position: relative
     // overflow: hidden
@@ -284,7 +304,21 @@
     img
       display: block
 
-    
+#dashboard_help
+  color: YELLOW
+  display: block
+  text-align: center
+  border-radius: 50%
+  width: 32px
+  height: 32px
+  background: #8B8B8B
+  font-size: 1.3rem
+  font-weight: bold
+  position: absolute
+  left: 100%
+  top: 0px
+  margin-left: 20px
+  padding-top: 1px
     
 .no_touch_device
   .profile_content.chat .chat_sidebar .spritesheet:hover
@@ -292,4 +326,15 @@
     
   .profile_content.chat .message .name:hover
     color: BLUE
+    
+  #dashboard_help:hover
+    background: darken( #8B8B8B, 10 )
+    
+  #help_balloon
+  
+    .dashboard_button:hover
+      background: darken( #46505A, 10)
+    
+    .dashboard_yellow:hover
+      background: darken( YELLOW, 10)
     

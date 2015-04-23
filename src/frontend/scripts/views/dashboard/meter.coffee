@@ -19,6 +19,8 @@ module.exports = class Meter extends RoomView
 
   constructor: (@dom) ->  
     
+    super @dom
+
     # Build the meter
     tmpl = require 'templates/components/audio/meter'
     block_tmpl = require 'templates/components/audio/meter_block'
@@ -36,8 +38,6 @@ module.exports = class Meter extends RoomView
 
     @playhead = @dom.find '.playhead'
 
-    log "[Getting blocks]", @blocks
-    super @dom
 
    on_room_created: (@room_id, @owner_id) =>
     

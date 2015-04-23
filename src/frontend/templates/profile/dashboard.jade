@@ -29,10 +29,17 @@
     .half._right
       #go_live_balloon.balloon(data-view="components/help/balloon", data-target="#go_live_button")
         p Click go live to start your live stream and share it with friends, fans and followers everywhere.
-        
-      p#go_live_button.button.dashboard_button.with_timer(data-view="dashboard/go_live")
-        a.gray_part.left_part(href="#") Go live
-        span.yellow_part.right_part 00:00:00
+      
+      .live_button_wrapper
+        p#go_live_button.button.dashboard_button.with_timer(data-view="dashboard/go_live")
+          a.gray_part.left_part(href="#") Go live
+          span.yellow_part.right_part 00:00:00
+
+        a#dashboard_help(href="#", title="Help", data-view="dashboard/help_button") ?
+
+        #help_balloon.balloon.appcast_not_running_balloon(data-view="components/help/balloon", data-target="#dashboard_help", data-orientation="right", data-offset="27")
+          a.button.small_button_2.dashboard_yellow.dashboard_button(href="#") UPGRADE
+          a.button.small_button_2.dashboard_button(href="#") HELP
 
       #record_balloon.balloon(data-view="components/help/balloon", data-target="#record_button")
         p Click to record your set and publish instantly to your profile. If you only decide to record, others will not be able to enter you room.
@@ -40,6 +47,7 @@
       p#record_button.button.dashboard_button.with_timer(data-view="dashboard/record")
         a.gray_part.left_part(href="#") Record
         span.yellow_part.right_part 00:00:00
+
     .clear
 
   //- .broadcast_controls(data-view="buttons/start_stop", data-width="fixed")
