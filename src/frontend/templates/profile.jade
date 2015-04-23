@@ -136,6 +136,7 @@ block content
       .list_sessions
 
         if live
+          - live.info.cover_url = live.info.cover_url || '/images/default_room_cover.jpg'
           .session.outline_box
             a.image(href="/#{live.info.user}/#{live.info.slug}", title="Old School House session", style="background-image:url(#{live.info.cover_url})")
             .content
@@ -177,6 +178,7 @@ block content
 
             for room in recorded
               - room.url = "/" + room.info.user + "/" + room.info.slug 
+              - item.info.cover_url = item.info.cover_url || '/images/default_room_cover.jpg'
               .session.outline_box(id="session_recorded_#{room.id}", data-view="[components/user_set,components/audio/player_preview]", data-data="#{JSON.stringify(room)}")
 
                 .image(style="background-image:url(#{room.info.cover_url})")

@@ -10,7 +10,7 @@ schema = new Schema
     genres    : Array
     location  : String
     about     : String
-    cover_url : { type: String, default: '/images/default_room_cover.jpg' }
+    cover_url : String
 
   status:
     is_live      : { type: Boolean, default: off } # when user press go live

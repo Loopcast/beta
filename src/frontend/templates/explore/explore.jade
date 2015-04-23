@@ -11,7 +11,8 @@ block submenu
 block grid
 
   for item in rooms
-
+    - item.info.cover_url = item.info.cover_url || '/images/default_room_cover.jpg'
+    
     - klasses = "item-all-genres"
     for g in item.info.genres
       - klasses += " item-" + slugify(g)
