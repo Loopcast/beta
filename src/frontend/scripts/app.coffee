@@ -102,7 +102,13 @@ class App
 		navigation.go url
 		@user.login user_data
 
-	logout: -> @user.logout()
+	logout: -> 
+		@user.logout =>
+			log "[App] logout callback. next url", @settings.after_logout_url
+			if @settings.after_logout_url.length > 0
+				url = @settings.after_logout_url
+				@settings.after_logout_url = ""
+				navigation.go url
 
 	
 

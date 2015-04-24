@@ -6,7 +6,7 @@ module.exports = ( dom ) ->
 		e.preventDefault()
 		e.stopPropagation()
 
-		user_controller.logout ( error ) ->
+		app.logout ( error ) ->
 
       if error then console.error error
       

@@ -5,3 +5,10 @@ OWNERSHIP
 LOGIN
 - unlogged user
 - logged user
+
+
+
+
+- user/status new api
+- meter stereo
+- cambiare impostazione folder /shared nel backend

@@ -132,3 +132,15 @@ module.exports =
       request.done ( response ) ->
 
         callback  null, response
+
+    status: ( data, callback ) ->
+      on_status_code =
+        401: ( response ) -> callback 'unauthorized, need log in!'
+
+      request = $.post api_url + 'user/status', data, on_status_code
+
+      request.error on_error 'user/status', callback
+
+      request.done ( response ) ->
+
+        callback  null, response

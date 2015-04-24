@@ -144,6 +144,7 @@ else
 
 
 settings.after_login_url = ""
+settings.after_logout_url = ""
 
 # Browser class for the body
 settings.browser_class = settings.browser.id + '_' + settings.browser.version

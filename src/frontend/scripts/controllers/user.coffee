@@ -2,6 +2,7 @@ transform = require 'shared/transform'
 happens   = require 'happens'
 navigation = require 'app/controllers/navigation'
 notify = require 'app/controllers/notify'
+api = require 'app/api/loopcast/loopcast'
 
 
 class UserController
@@ -27,14 +28,21 @@ class UserController
 
     @fetch_from_session()
 
-    view.once 'binded', (scope) =>  
-      return unless scope.main
+    view.on 'binded', @on_views_binded 
+      
 
-      if @is_logged()
+  on_views_binded: ( scope ) =>
+    return unless scope.main
+    view.off 'binded', @on_views_binded
+
+    api.user.status {}, (error, response) =>
+      log "[User] checking status from the server", error, response.logged
+      if error or response.logged is false
+        @logout()
+      else if @is_logged()
         @_dispatch_login()
       else
         @_dispatch_logout()
-
   ###
   Called from the outside, when the user logs in
   ###
@@ -65,8 +73,6 @@ class UserController
       @delete_session()
 
       @_dispatch_logout()
-
-      navigation.go '/'
 
       notify.info "You've successufully logged out."
 
