@@ -16,6 +16,7 @@ module.exports = class Meter extends RoomView
   ]
   current_block_index: -1
   blocks: []
+  gain: 5
 
   constructor: (@dom) ->  
     
@@ -55,23 +56,30 @@ module.exports = class Meter extends RoomView
     delay 5000, => clearInterval @interval
 
     appcast.on 'stream:vu', @set_volume
+    appcast.on 'stream:vu', @activate
 
 
   deactivate: ->
     log "[Meter] deactivate"
-    @playhead.addClass 'inactive'
+    return if @current_block_index < 0
+    color = @values[ @current_block_index ].color
+    @playhead
+      .addClass( 'inactive' )
+      .html( @values[ 0 ].value )
 
-  activate: ->
-    log "[Meter] activate"
+    @move_playhead '', 'color_' + color, 0
+
+  activate: (perc) =>
+    return if not perc
+    log "[Meter] activate", perc
     @playhead.removeClass( 'inactive' ).addClass( 'color_' + @values[0].color )
+    appcast.off 'stream:vu', @activate
 
   set_volume: ( perc ) =>
     # log "[Meter] set_volume", perc[0], perc[1]
-
-
-    return
-    if perc.constructor is Array
-      perc = perc[ 0 ]
+    perc[0] *= @gain
+    perc[1] *= @gain
+    perc = perc[ 0 ]
 
     # Convert from percentage to db
     value = 30 * perc - 20
@@ -87,6 +95,7 @@ module.exports = class Meter extends RoomView
 
     # If it's the same block we don't need to move the playhead
     return if i is @current_block_index
+
     if @current_block_index >= 0
       old_color = @values[ @current_block_index ].color
     else
@@ -105,12 +114,14 @@ module.exports = class Meter extends RoomView
 
     # Snap the playead to that block
     b = @values[ i ]
-    css = "translate3d(#{35*i}px,0,0)"
 
-    log "[Meter] color", new_color
+    @move_playhead 'color_' + new_color, 'color_' + old_color, i
+  
+  move_playhead: ( new_color, old_color, x ) ->
+    css = "translate3d(#{35*x}px,0,0)"
     @playhead
-      .removeClass( 'color_' + old_color )
-      .addClass( 'color_' + new_color )
+      .removeClass( old_color )
+      .addClass( new_color )
       .css
         '-webkit-transform' : css
         '-moz-transform' : css

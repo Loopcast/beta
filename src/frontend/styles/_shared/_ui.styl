@@ -249,13 +249,17 @@ DARK_PERCENTAGE = 5
       height: 3px
       margin: 1px
       background: black
-      transition: background .2s linear
+      transition: background 1s linear
     .value
       text-align: center
     
     &.active
+      .square
+        transition: background .2s linear
+        
       &.color_green .square
         background: #75f900
+      
       &.color_yellow .square
         background: YELLOW
       &.color_dark_yellow .square
