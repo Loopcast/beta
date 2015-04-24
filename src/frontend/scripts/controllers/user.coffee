@@ -202,6 +202,9 @@ class UserController
   fetch_from_session: ->
     @data = app.session.get 'user', null
 
+    if not @data.images?
+      @create_images()
+
   write_to_session:  ->
     app.session.set 'user', @data
 
