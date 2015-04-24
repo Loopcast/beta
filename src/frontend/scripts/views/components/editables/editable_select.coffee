@@ -35,18 +35,19 @@ module.exports = class EditableSelect extends EditableText
 
 		# Check if the initial value is not the default
 		if not @default_state
-			@update_text @current_value
+			@update_text @current_value, true
 
 
-	update_text: ( str ) ->
+	update_text: ( str, silent = false ) ->
 		# log "[EditableSelect] update_text", str, @default_state
 		@text.text str
 		@dom.data 'text', str
 		@dom.data 'default-selected', @default_state
 
-		@emit 'changed', 
-			value: str
-			default_state: @default_state
+		if not silent
+			@emit 'changed', 
+				value: str
+				default_state: @default_state
 
 	get_current_value: ->
 		if @default_state

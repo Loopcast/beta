@@ -12,6 +12,7 @@ module.exports = class Profile extends LoggedView
 	elements: null
 	form_bio: null
 	cover_url: ""
+	user_logged: false
 
 	constructor: ( @dom ) ->
 		super()
@@ -27,7 +28,7 @@ module.exports = class Profile extends LoggedView
 
 	on_views_binded: ( scope ) =>
 		return unless scope.main
-		super scope
+		
 
 		@elements = 
 			location         : @dom.find '.profile_bio .location'
@@ -41,6 +42,8 @@ module.exports = class Profile extends LoggedView
 
 		# Check the information of the owner of the page
 		@check_informations()
+
+		super scope
 
 
 
@@ -69,6 +72,13 @@ module.exports = class Profile extends LoggedView
 		
 
 	on_user_logged: ( @user_data ) =>
+		if @user_logged or not @elements?
+			return 
+
+		@user_logged = true
+
+		log "[Profile] on_user_logged", @user_data
+
 
 		super @user_data
 
@@ -219,7 +229,7 @@ module.exports = class Profile extends LoggedView
 		l = @elements.location.html().length
 		b = @elements.about.html().length
 
-		log "[Profile] check_informations", @elements.location.html(), @elements.about.html()
+		# log "[Profile] check_informations", @elements.location.html(), @elements.about.html()
 		if l > 0 or b > 0
 			@dom.removeClass 'no_information_yet'
 		else
