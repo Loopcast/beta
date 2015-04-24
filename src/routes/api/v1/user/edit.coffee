@@ -4,7 +4,8 @@ Updates user's profile information
 
 ###
 
-transform = models 'transforms/name_to_username'
+transform  = models 'transforms/name_to_username'
+extract_id = lib 'cloudinary/extract_id'
 
 module.exports =
   method : 'POST'
@@ -97,13 +98,12 @@ module.exports =
 
         # store ids to be remove from cloudinary
         remove_from_cloudinary = []
+
         if request.payload.avatar
           if response.custom_attributes.avatar
-            current_id = response.custom_attributes.avatar.match /(\w+)(\.\w+)+(?!.*(\w+)(\.\w+)+)/
-            current_id = current_id[1]
+            current_id = extract_id response.custom_attributes.avatar
 
-            new_id = request.payload.avatar.match /(\w+)(\.\w+)+(?!.*(\w+)(\.\w+)+)/
-            new_id = new_id[1]
+            new_id = extract_id request.payload.avatar
 
             console.log 'current_id ->', current_id
             console.log 'new_id ->'  , new_id
@@ -125,11 +125,14 @@ module.exports =
           # remove_from_cloudinary ||= []
           # remove_from_cloudinary.push
 
-        # if remove_from_cloudinary.length
-          # cloudinary.api.delete_resources remove_from_cloudinary, ( result ) ->
-          #   if result.error
-          #     console.log "error deleting image from cloudinary"
-          #     console.log result.error
+        if remove_from_cloudinary.length
+          cloudinary.api.delete_resources remove_from_cloudinary, ( result ) ->
+            if result.error
+              console.log "error deleting image from cloudinary"
+              console.log result.error
+            else
+              console.log 'succesfully deleted from cloudinary'
+              console.log result
 
         # HACK: since we still don't have an interface to update user_id
         # we will be updating user_id everytime a user updates his name

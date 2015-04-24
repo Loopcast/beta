@@ -1,5 +1,3 @@
-cloudinary = require 'cloudinary'
-
 s =
   # beta is our "production"
   is_beta        : process.env.NODE_ENV is 'beta'
@@ -27,9 +25,6 @@ s.cloudinary =
   api_unsigned_ids: 
     cover  : 'loopcast_cover_image'
     profile: 'loopcast_profile_image'
-
-cloudinary.config s.cloudinary
-
 
 s.facebook =
   app:

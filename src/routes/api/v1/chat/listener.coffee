@@ -53,9 +53,9 @@ module.exports =
 
       response = pusher.trigger room_subscribe_id, "listener:#{data.method}", data
 
-      console.log "triggering!", 
-      console.log "room_subscribe_id", room_subscribe_id
-      console.log "data", data
+      # console.log "triggering!", 
+      # console.log "room_subscribe_id", room_subscribe_id
+      # console.log "data", data
 
       reply( response ).header "Cache-Control", "no-cache, must-revalidate"
 
