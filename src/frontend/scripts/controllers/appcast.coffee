@@ -20,7 +20,7 @@ appcast.vu       = {}
 appcast.set 'connected', false
 # connects to AppCast's WebSocket server and listen for messages
 appcast.connect = ->
-
+  return if not app.settings.use_appcast
   if not WebSocket
     return console.info '+ socket controller wont connect'
 

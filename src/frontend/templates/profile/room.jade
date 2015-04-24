@@ -31,12 +31,18 @@ block content
         .sidebar_right
           .big_number
             .inner
-              span.number 20
+              if room
+                span.number #{room.status.live.listeners}
+              else
+                span.number 0
               span.text Listeners
 
           .big_number
             .inner
-              span.number 4
+              if room
+                span.number #{room.status.loves}
+              else
+                span.number 0
               span.text Favourites
 
           .big_number

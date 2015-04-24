@@ -47,7 +47,7 @@ class Navigation
 		if req.path is location.pathname
 			if @first_same_path
 				@first_same_path = false
-				log "[Navigation] return same path ", req.path, location.pathname
+				# log "[Navigation] return same path ", req.path, location.pathname
 
 				# TEMP (to fix)
 				if app.settings.browser.id is 'Safari'

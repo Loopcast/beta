@@ -202,5 +202,7 @@ settings.bind = (body)->
 # settings.video_active = false
 # settings.css_cover_supported = false
 
+settings.use_appcast = false
+
 
 module.exports = settings
