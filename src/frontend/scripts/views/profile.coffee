@@ -6,6 +6,7 @@ LoggedView = require 'app/views/logged_view'
 api = require 'app/api/loopcast/loopcast'
 happens = require 'happens'
 StringUtils = require 'app/utils/string'
+navigation = require 'app/controllers/navigation'
 
 module.exports = class Profile extends LoggedView
 	elements: null
@@ -19,33 +20,34 @@ module.exports = class Profile extends LoggedView
 		log "[=== PAGE OWNER: #{user_controller.owner_id()} ===]"
 		log profile_info
 
+		$( '#room_modal' ).data 'modal-close', true
+
+		delay 100, => @emit 'ready'
+
+
+	on_views_binded: ( scope ) =>
+		return unless scope.main
+		super scope
+
 		@elements = 
-			avatar        : @dom.find '.profile_image img'
-			cover_picture : @dom.find '.cover_image'
-			location      : @dom.find '.profile_bio .location'
-			location_input: @dom.find '.location_input'
-			about         : @dom.find '.bio'
-			about_input   : @dom.find '.bio_input'
+			location         : @dom.find '.profile_bio .location'
+			location_input   : @dom.find '.location_input'
+			about            : @dom.find '.bio'
+			about_input      : @dom.find '.bio_input'
+			name             : view.get_by_dom @dom.find( '.cover h1.name' )
+			occupation       : view.get_by_dom @dom.find( '.cover h3.type' )
+			genre            : view.get_by_dom @dom.find( '.cover .genres' )
+			links            : view.get_by_dom @dom.find( '.social_links'  )
 
-			links: [
-				{ type:"spotify"   , el:@dom.find '.spotify_link'    }
-				{ type:"soundcloud", el:@dom.find '.soundcloud_link' }
-				{ type:"facebook"  , el:@dom.find '.facebook_link'   }
-			]
-
-			links_input: [
-				{ type: "spotify"   , el:@dom.find '.spotify_input'    }
-				{ type: "soundcloud", el:@dom.find '.soundcloud_input' }
-				{ type: "facebook"  , el:@dom.find '.facebook_input'   }
-			]
-
-			occupation_input: null
-			genre_input: null
-
-		@elements.avatar.attr 'src', transform.avatar( profile_info.avatar )
+		# Check the information of the owner of the page
+		@check_informations()
 
 
-		@form_bio = @dom.find( '.profile_form' )
+
+	manage_form: ->
+		
+
+		@form_bio = @dom.find '.profile_form'
 		@form_bio.on 'submit', (e) -> e.preventDefault()
 		@form_bio.find( 'input' ).keyup (e) =>
 			if e.keyCode is 13
@@ -64,36 +66,7 @@ module.exports = class Profile extends LoggedView
 					do ref.save_data
 
 
-		$( '#room_modal' ).data( 'modal-close', true )
-
-		# Check the information of the owner of the page
-		@check_informations()
-
-		delay 100, => 
-			@emit 'ready'
-
-	on_views_binded: (scope) =>
-		return if not scope.main
-
-		@user_data = profile_info
-		@update_dom_from_user_data()
-
-		o = view.get_by_dom @dom.find '.cover h3.type'
-		g = view.get_by_dom @dom.find '.cover .genres'
-		l = view.get_by_dom @dom.find '.social_links'
-
-		if o and g
-			@elements.occupation_input = o
-			@elements.genre_input = g
-			@elements.links_input = l
-		else
-			console.error "[Profile] couldn't find occupation and genres component."
-
-
-
-		super scope
 		
-
 
 	on_user_logged: ( @user_data ) =>
 
@@ -102,70 +75,94 @@ module.exports = class Profile extends LoggedView
 		@dom.addClass 'user_logged'
 
 		@check_visibility_editables()
+		@check_informations()
 
 		user_controller.check_guest_owner()
 		if not user_controller.is_owner
-			log "[Profile] returning because user_controller is not owner"
+			log "[Profile] returning because the user is not owner"
 			return
+
+		@manage_form()
+
+		# Listen to name, occupation and genres changes
+		@elements.name.on 'changed', @on_name_changed
+		@elements.genre.on 'changed', @on_genre_changed
+		@elements.occupation.on 'changed', @on_occupation_changed
 
 		# Listen to images upload events
 		@change_cover_uploader = view.get_by_dom @dom.find( '.change_cover' )
-
-		if not @change_cover_uploader
-			log "[Profile] returning because change_cover_uploader is not defined"
-			return
-
-		@change_cover_uploader.on 'completed', (data) =>
-			log "[Cover uploader]", data.result.url
-
-			@cover_url = data.result.url
-
-
+		@change_cover_uploader.on 'completed', @on_cover_uploaded
 			
-			
-			@dom.find( '.cover_image' ).css
-				'background-image': "url(#{data.result.url})"
-
 		@change_picture_uploader = view.get_by_dom @dom.find( '.profile_image' )
-		@change_picture_uploader.on 'completed', (data) =>
+		@change_picture_uploader.on 'completed', @on_avatar_uploaded
 
-			user_controller.data.avatar = data.result.url
-			user_controller.create_images()
 
-			url = user_controller.data.images.avatar
+	on_name_changed: ( new_name ) =>
+		return if new_name is user_controller.data.name
 
-			@dom.find( 'img' ).attr 'src', url
+		log "[Profile] on_name_changed", new_name
+		if new_name.length > 0
 
-		@editables = []
-		@editables.push view.get_by_dom( '.cover h1.name' )
-		@editables.push view.get_by_dom( '.cover h3.type' )
-		@editables.push view.get_by_dom( '.cover .genres' )
-		@editables.push view.get_by_dom( '.social_links' )
+			ref = @
+			@send_to_server name: new_name, (response) ->
+				log "on_name_changed response", response
 
+				navigation.go_silent "/#{response.user_id}"
+				user_controller.name_updated 
+					username: response.user_id
+					name: response.name
+
+		else
+			# Set the name back
+			@elements.name.set_text user_controller.data.name
+
+	on_genre_changed: ( data ) =>
+		log "[Genre] changed", data
+		@send_to_server genres: data
+
+	on_occupation_changed: ( data ) =>
+		log "[occupation] changed", data
+		return if data.default_state
+		@send_to_server occupation: data.value
 		
+	on_cover_uploaded: (data) =>
+		log "[Cover uploader]", data.result.url
 
+		cover = transform.cover data.result.url
+
+		@dom.find( '.cover_image' ).css
+			'background-image': "url(#{cover})"
+
+		@send_to_server cover: cover
+
+
+	on_avatar_uploaded: (data) =>
+		user_controller.data.avatar = data.result.url
+		user_controller.create_images()
+
+		avatar = user_controller.data.images.avatar
+		@dom.find( 'img' ).attr 'src', avatar
+
+		@send_to_server avatar: avatar
 
 	check_visibility_editables: =>
-
+		user_controller.check_guest_owner()
 		if user_controller.is_owner
 
-			@elements.occupation_input.dom.show()
-			@elements.genre_input.dom.show()
+			@elements.occupation.dom.show()
+			@elements.genre.dom.show()
 		else
 
-			if @elements.occupation_input.default_state
-				@elements.occupation_input.dom.hide()
+			if @elements.occupation.default_state
+				@elements.occupation.dom.hide()
 
-			if @elements.genre_input.default_state
-				@elements.genre_input.dom.hide()
-
-			# @elements.occupation_input
-			# @elements.genre_input
+			if @elements.genre.default_state
+				@elements.genre.dom.hide()
 
 
-	on_user_unlogged: =>
+	on_user_unlogged: (@user_data) =>
 		# log "[Profile] on_user_unlogged"
-		super()
+		super @user_data
 		@dom.removeClass( 'user_logged' )
 
 		@change_cover_uploader?.off 'completed'
@@ -179,57 +176,29 @@ module.exports = class Profile extends LoggedView
 	
 	
 	save_data : ->
-		# - Update the user_data from the inputs
+		
+		# Form submitted.
 
-		for item in @editables
-			item.close_read_mode()
+		# Get the values from the form
+		@elements.links.close_read_mode()
 
-		@update_user_data_from_dom()
+		data = 
+			location : @elements.location_input.val()
+			about    : StringUtils.line_breaks_to_br @elements.about_input.val()
+			social   : @elements.links.get_current_value()
 
-		# - Update the dom (labels and inputs) from the user_data
-		# 	This action is mostly done for updating labels (inputs are already updated)
-		@update_dom_from_user_data()
+		# Update the values on the labels
+		@elements.location.html data.location
+		@elements.about.html data.about
 
-		@check_informations()
-
-		# - TODO: Send the data to the backend
-		@send_to_server()
+		# Save data
+		@send_to_server data
 
 		# - close the write/edit mode and switch to read only mode
 		app.body.removeClass 'write_mode'
 
-
-
-	update_user_data_from_dom: ->
-
-		@user_data.location = @elements.location_input.val()
-		@user_data.about = StringUtils.line_breaks_to_br @elements.about_input.val()
-		@user_data.occupation = @elements.occupation_input.get_current_value()
-		@user_data.genres = @elements.genre_input.get_current_value()
-		@user_data.social = @elements.links_input.get_current_value()
-
-
-		if user_controller.data.avatar?
-			@user_data.avatar = user_controller.data.avatar
-		if @cover_url.length > 0
-			@user_data.cover = @cover_url
-
-
-	update_dom_from_user_data : ->
-
-		e = @elements
-		d = @user_data
-
-		e.avatar.css 'background-image', d.avatar
-		e.cover_picture.css 'background-image', d.cover_picture
-
-		if d.location
-			e.location.html d.location
-			e.location_input.val d.location
-
-		if d.about
-			e.about.html d.about
-			e.about_input.val @html_to_textarea( d.about )
+		# Check if some of the information is now empty
+		@check_informations()
 
 
 	html_to_textarea : ( str ) ->
@@ -237,38 +206,36 @@ module.exports = class Profile extends LoggedView
 		to_replace = "\n"
 		re = new RegExp to_find, 'g'
 
-		return str.replace re, to_replace
+		str = str.replace re, to_replace
+
+		to_find = "<br>"
+		to_replace = "\n"
+		re = new RegExp to_find, 'g'
+		str = str.replace re, to_replace
+
+		return str
 
 	check_informations: ->
 		l = @elements.location.html().length
 		b = @elements.about.html().length
 
-		# log "[Profile] check_informations", l, b
-		# log "---> location", @elements.location.html(), @elements.location.html().length
-		# log "---> location", @elements.bio.html(), @elements.bio.html().length
+		log "[Profile] check_informations", @elements.location.html(), @elements.about.html()
 		if l > 0 or b > 0
 			@dom.removeClass 'no_information_yet'
 		else
 			@dom.addClass 'no_information_yet'
+		
+		if b > 0
+			str = @html_to_textarea @elements.about.html()
+			@elements.about_input.val str
 
 
 
 
-	send_to_server: ->
-		log "[Profile] saving", @user_data
-	
-		# user_id
-		# name: String
-		# occupation: String
-		# genres
-		# about: String
-		# location: String
-		# social: Array
-		# avatar: String
-		# cover: String
+	send_to_server: ( data, callback = -> )->
+		log "[Profile] saving", data
 
-
-		api.user.edit @user_data, ( error, response ) =>
+		api.user.edit data, ( error, response ) =>
 
 			if error
 				log "---> Error Profile edit user", error.statusText
@@ -276,3 +243,14 @@ module.exports = class Profile extends LoggedView
 
 			log "[Profile] fields updated", response.custom_attributes
 			user_controller.write_to_session()
+
+			callback response
+
+
+	destroy: ->
+		super()
+
+		if user_controller.is_owner
+			@change_cover_uploader.off 'completed', @on_cover_uploaded
+			@change_picture_uploader.off 'completed', @on_avatar_uploaded
+

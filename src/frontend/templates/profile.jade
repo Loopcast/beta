@@ -37,7 +37,7 @@ block content
             span Update profile picture
             span.progress
 
-            form.element_on_write_mode(class="cloudinary_form")
+            form(class="cloudinary_form")
               input.api_key(type="hidden", name="api_key", value="#{cloudinary.api_key}")
               input.cloud_name(type="hidden", name="cloud_name", value="#{cloudinary.cloud_name}")
               input.unsigned_id(type="hidden", name="unsigned_id", value="#{cloudinary.unsigned_ids.profile}")
@@ -65,23 +65,23 @@ block content
                 br
                 | 
 
-        a.cover_button.button_with_icon.element_on_read_mode(href="#", data-profile="set-write-mode")
-          //- span.spritesheet.edit_icon
-          span.icon.ss-write
-          span Edit Profile
+        //- a.cover_button.button_with_icon.element_on_read_mode(href="#", data-profile="set-write-mode")
+        //-   //- span.spritesheet.edit_icon
+        //-   span.icon.ss-write
+        //-   span Edit Profile
 
-        a.cover_button.button_with_icon.element_on_write_mode(href="#", data-profile="set-read-mode")
-          //- span.spritesheet.edit_icon
-          span.icon.ss-write
-          span Save Profile
+        //- a.cover_button.button_with_icon.element_on_write_mode(href="#", data-profile="set-read-mode")
+        //-   //- span.spritesheet.edit_icon
+        //-   span.icon.ss-write
+        //-   span Save Profile
 
         .change_cover.upload_wrapper(data-view="components/image_uploader", data-id="profile_cover")
-          a.upload_element.button_with_icon.black_button.element_on_write_mode(href="#", data-profile="set-write-mode")
+          a.upload_element.button_with_icon.black_button(href="#")
             span.icon.ss-camera
             span Change Cover
             span.progress
 
-          form.element_on_write_mode(class="cloudinary_form")
+          form(class="cloudinary_form")
             input.api_key(type="hidden", name="api_key", value="#{cloudinary.api_key}")
             input.cloud_name(type="hidden", name="cloud_name", value="#{cloudinary.cloud_name}")
             input.unsigned_id(type="hidden", name="unsigned_id", value="#{cloudinary.unsigned_ids.cover}")
@@ -109,21 +109,22 @@ block content
               //- span.spritesheet.edit_icon
               span.icon.ss-write
 
-            if location
-              h4.location #{location}
-            else
-              h4.location
-            
 
+            - loc = ""
+            if location
+              - loc = location
+
+            - bio = ""
             if about
-              .bio #{about}
-            else
-              .bio
+              - bio = about
+            
+            h4.location #{loc}
+            .bio !{bio}
 
             .social.social_read_mode
 
           form.element_on_write_mode.profile_form
-            input.squared_input.location_input(type="text", placeholder="Add your location", name="location")
+            input.squared_input.location_input(type="text", placeholder="Add your location", name="location", value="#{loc}")
             textarea.squared_input.bio_input(placeholder="Add a bio to your profile", name="bio")
             .social_links(data-view="components/editables/social_links", data-links="#{social}")
             button.button.save_button.no_shadow(data-profile="set-read-mode") Save

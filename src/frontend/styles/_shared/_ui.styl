@@ -581,6 +581,10 @@ input, textarea, div.tagsinput
       opacity: 0
       margin: 0
 
+.is_owner
+  .editable_text
+    select
+      display: block
 .editable_text
   position: relative
   .text
@@ -602,6 +606,7 @@ input, textarea, div.tagsinput
     height: 100%
     opacity: 0
     cursor: pointer
+    display: none
 
     
   .icon
@@ -654,7 +659,7 @@ input, textarea, div.tagsinput
     .text
       opacity: 0
 
-.write_mode .editable_text
+.editable_text
   cursor: pointer
   
 .tag

@@ -1,4 +1,5 @@
 EditableText = require "./editable_text"
+user = require 'app/controllers/user'
 
 module.exports = class EditableProfileTags extends EditableText
 
@@ -39,12 +40,12 @@ module.exports = class EditableProfileTags extends EditableText
       else
         @default_state = on
       
-      @emit 'changed', default_state: @default_state
+      # @emit 'changed', default_state: @default_state
 
 
   open_edit_mode: (e) =>
-    return unless app.body.hasClass( 'write_mode' )
-
+    # return unless app.body.hasClass( 'write_mode' )
+    return if not user.check_guest_owner()
     e?.stopPropagation()
     # log 'open_edit_mode'
     @empty_text.hide()
@@ -61,6 +62,8 @@ module.exports = class EditableProfileTags extends EditableText
       @text.html ""
     else
       @text.html list.join( ', ' )
+
+    @emit 'changed', @get_current_value()
 
     app.window.off 'body:clicked', @close_read_mode
 

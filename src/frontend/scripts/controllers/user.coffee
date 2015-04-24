@@ -50,9 +50,10 @@ class UserController
 
     log "[UserController] user:logged", @data
 
+    @_dispatch_login()
+    
     @write_to_session()
 
-    @_dispatch_login()
 
     notify.info "You've successufully logged in."
 
@@ -92,6 +93,8 @@ class UserController
       app.body.removeClass( 'is_owner' ).addClass( 'is_guest' )
       @is_owner = false
 
+    return @is_owner
+
   create_images: ->
 
     # console.log "[UserController] NORMALIZE DATA before", @data
@@ -106,7 +109,15 @@ class UserController
 
     @data.images = transform.all @data.avatar
 
-    @emit 'user:updated', @data
+    @write_to_session()
+
+  name_updated: ( data ) ->
+    @data.username = data.username
+    @data.name = data.name
+
+    @write_to_session()
+    
+
   
   ###
   Private Methods
@@ -202,11 +213,12 @@ class UserController
   fetch_from_session: ->
     @data = app.session.get 'user', null
 
-    if not @data.images?
+    if @data and not @data.images?
       @create_images()
 
   write_to_session:  ->
     app.session.set 'user', @data
+    @emit 'user:updated', @data
 
   delete_session: ->
     @data = null

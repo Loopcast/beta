@@ -61,6 +61,7 @@ module.exports = class Header
 	on_user_updated: ( data ) =>
 		# log "[Header] udpating image", data.images.top_bar
 		@dom.find( '.top_bar_icon' ).attr 'src', data.images.top_bar
+		@dom.find( '.myprofile_link' ).attr 'href', "/" + data.username
 
 
 

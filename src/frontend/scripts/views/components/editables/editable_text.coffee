@@ -1,4 +1,6 @@
 happens = require 'happens'
+user = require 'app/controllers/user'
+
 module.exports = class EditableText
 
 	default_state : on
@@ -39,6 +41,9 @@ module.exports = class EditableText
 
 		@text_el.on 'click', @open_edit_mode
 
+	set_text: ( text ) ->
+		@text_el.text text
+		@input.val text
 	get_template: ( callback ) ->
 
 		tmpl = require 'templates/components/editables/editable_text'
@@ -46,7 +51,8 @@ module.exports = class EditableText
 		callback tmpl()
 
 	open_edit_mode : (e) =>
-		return unless app.body.hasClass( 'write_mode' )
+		return if not user.check_guest_owner()
+		# return unless app.body.hasClass( 'write_mode' )
 
 		e?.stopPropagation()
 		log 'open_edit_mode'
@@ -61,12 +67,16 @@ module.exports = class EditableText
 
 	close_read_mode : =>
 		log 'close_edit_mode'
-		@text_el.text @input.val()
+		val = @input.val()
+		@emit 'changed', val
+
+		@text_el.text val
 		@dom.removeClass 'edit_mode'
 
 		@input.off 'keyup'
 
 		app.window.off 'body:clicked', @close_read_mode
+
 
 	destroy: ->
 		# @text_el.off 'click', @open_edit_mode

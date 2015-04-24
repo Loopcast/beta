@@ -14,12 +14,12 @@ module.exports = class LoggedView
     user_controller.on 'user:unlogged', @on_user_unlogged
     user_controller.on 'user:updated', @on_user_updated
 
-    user = user_controller.data
+    # user = user_controller.data
 
-    if user
-      @on_user_logged user
-    else
-      @on_user_unlogged()
+    # if user
+    #   @on_user_logged user
+    # else
+    #   @on_user_unlogged()
 
   on_user_updated: ( @user_data ) =>
 

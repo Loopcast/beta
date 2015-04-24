@@ -31,6 +31,12 @@
 		.for_guest
 			margin-bottom: 30px
 			text-align: center
+	
+	.change_cover
+		display: none
+		
+	.change_cover .upload_element
+		display: block
 
 			
 
@@ -534,9 +540,7 @@
 		
 	.element_on_write_mode
 		display: block
-		
-	.profile_theme .cover .profile_image .edit_image
-		transform: translateY(0)
+	
 // --------------------------
 
 .is_guest
@@ -577,11 +581,15 @@
 	.edit_session_wrapper
 		.settings_button:hover
 			opacity: 1
-			
-
 	
-			
-					
-
+	&.is_owner
+		.cover:hover
+			.change_cover
+				display: block
 				
-			
+			.profile_image .edit_image
+				transform: translateY(0)
+				
+			.editable_text .icon
+				display: block
+				
