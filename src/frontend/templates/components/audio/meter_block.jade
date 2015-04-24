@@ -1,5 +1,5 @@
 .block(class="block_#{id} color_#{color}")
-  .inner_block
+  .inner_block.left_channel(class="color_#{color}")
     .square
     .square
     .square
@@ -13,7 +13,7 @@
     .square
     .square
   p.value #{value}
-  .inner_block
+  .inner_block.right_channel(class="color_#{color}")
     .square
     .square
     .square

@@ -1127,7 +1127,7 @@ footer {
 /* line 256 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 
 /* line 257 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
-.meter_wrapper .block.active .square {
+.meter_wrapper .block .active .square {
   -webkit-transition: background 0.2s linear;
   -moz-transition: background 0.2s linear;
   -o-transition: background 0.2s linear;
@@ -1136,22 +1136,22 @@ footer {
 }
 
 /* line 260 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
-.meter_wrapper .block.active.color_green .square {
+.meter_wrapper .block .active.color_green .square {
   background: #75f900;
 }
 
 /* line 263 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
-.meter_wrapper .block.active.color_yellow .square {
+.meter_wrapper .block .active.color_yellow .square {
   background: #ffc80a;
 }
 
 /* line 265 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
-.meter_wrapper .block.active.color_dark_yellow .square {
+.meter_wrapper .block .active.color_dark_yellow .square {
   background: #d6a600;
 }
 
 /* line 267 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
-.meter_wrapper .block.active.color_red .square {
+.meter_wrapper .block .active.color_red .square {
   background: #f00;
 }
 

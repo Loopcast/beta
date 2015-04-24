@@ -47,7 +47,6 @@ module.exports = class Header
 	on_user_logged: ( data ) =>
 		return if @user_logged
 
-		log "[header] getting data", data
 		@user_logged = true
 		
 		wrapper = @dom.find( '.user_logged' )

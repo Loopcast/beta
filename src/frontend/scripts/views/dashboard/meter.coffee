@@ -18,6 +18,7 @@ module.exports = class Meter extends RoomView
   blocks: []
   gain: 5
 
+
   constructor: (@dom) ->  
     
     super @dom
@@ -35,9 +36,25 @@ module.exports = class Meter extends RoomView
     @dom.find( '.blocks' ).append blocks_html
 
     for item in @dom.find( '.block' )
-      @blocks.push $( item )
+      @blocks.push 
+        'left': $( item ).find( '.left_channel' )
+        'right': $( item ).find( '.right_channel' )
 
     @playhead = @dom.find '.playhead'
+
+    @min_db = @values[ 0 ].value
+    @max_db = @values[ @values.length - 1 ].value
+    @range_db = @max_db - @min_db
+
+
+    # Debug
+    # left = 0.14
+    # right = 0.09
+
+    # @activate [left, right]
+    # @set_volume [left, right]
+
+    # window.meter = @
 
 
    on_room_created: (@room_id, @owner_id) =>
@@ -60,7 +77,7 @@ module.exports = class Meter extends RoomView
 
 
   deactivate: ->
-    log "[Meter] deactivate"
+    log "[Meter] deactivate", @current_block_index
     return if @current_block_index < 0
     color = @values[ @current_block_index ].color
     @playhead
@@ -76,46 +93,59 @@ module.exports = class Meter extends RoomView
     appcast.off 'stream:vu', @activate
 
   set_volume: ( perc ) =>
-    # log "[Meter] set_volume", perc[0], perc[1]
-    perc[0] *= @gain
-    perc[1] *= @gain
-    perc = perc[ 0 ]
 
-    # Convert from percentage to db
-    value = 30 * perc - 20
+    left_data = @set_channel 'left', perc[0]
+    right_data = @set_channel 'right', perc[1]
 
-    # Normalize the value
-    value = Math.max( -20, Math.min( value, 10 ) ).toFixed(1)
+    max_data = left_data
+    if right_data.value > left_data.value
+      max_data = right_data
 
-    # Update the playhead value
-    @playhead.html( value )
+    @manage_playhead max_data
+    
 
-    # get the corrispondent block
-    i = @get_the_block_index_from_value value
+  manage_playhead: ( data ) ->
+    @playhead.html( data.value )
 
-    # If it's the same block we don't need to move the playhead
-    return if i is @current_block_index
-
+    return if @current_block_index is data.index
     if @current_block_index >= 0
       old_color = @values[ @current_block_index ].color
     else
       old_color = ""
 
-    new_color  = @values[ i ].color
-    @current_block_index = i
+    new_color  = @values[ data.index ].color
 
+    @move_playhead 'color_' + new_color, 'color_' + old_color, data.index
+
+    @current_block_index = data.index
+
+
+  set_channel: ( c, raw ) ->
+
+    # Getting value and block index
+    data = @get_info_from_raw_value raw
+  
     # activate the lower blocks
-    for index in [0..i]
-      @blocks[ index ].addClass 'active'
+    for index in [0..data.index]
+      @blocks[ index ][ c ].addClass 'active'
 
     # deactivate the upper blocks
-    for index in [i+1...@blocks.length]
-      @blocks[ index ].removeClass 'active'
+    for index in [data.index+1...@blocks.length]
+      @blocks[ index ][ c ].removeClass 'active'
 
-    # Snap the playead to that block
-    b = @values[ i ]
+    return data
 
-    @move_playhead 'color_' + new_color, 'color_' + old_color, i
+
+  get_info_from_raw_value: ( raw ) ->
+    # Converting the raw value to the db range [@min_db,@max_db]
+    value = @range_db * raw * @gain + @min_db
+    # Normalize the value
+    value = Math.max( @min_db, Math.min( value, @max_db ) ).toFixed(1)
+    
+    index = @get_the_block_index_from_value value
+
+    return value: value, index: index
+
   
   move_playhead: ( new_color, old_color, x ) ->
     css = "translate3d(#{35*x}px,0,0)"

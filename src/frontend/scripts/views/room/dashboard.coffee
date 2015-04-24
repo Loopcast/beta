@@ -40,10 +40,13 @@ module.exports = class Dashboard extends RoomView
       log "[Dashboard] input changed", data
       appcast.set 'input_device', data
 
-    appcast.connect()
+    # TEMP
     appcast.on 'connected', @on_appcast_connected
 
+    # @on_appcast_connected true
+
   on_appcast_connected: ( is_connected ) =>
+
     if is_connected
       @on_appcast_running()
     else
