@@ -3949,7 +3949,7 @@ body .notifyjs-bootstrap-base {
 
 /* line 13 : /Users/thomasamundsen/Documents/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 594 : /Users/thomasamundsen/Documents/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+/* line 595 : /Users/thomasamundsen/Documents/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
 /* line 10 : /Users/thomasamundsen/Documents/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
@@ -3969,7 +3969,7 @@ body .notifyjs-bootstrap-base {
 
 /* line 90 : /Users/thomasamundsen/Documents/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 594 : /Users/thomasamundsen/Documents/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+/* line 595 : /Users/thomasamundsen/Documents/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
 /* line 11 : /Users/thomasamundsen/Documents/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
@@ -3997,7 +3997,7 @@ body .notifyjs-bootstrap-base {
 
 /* line 5 : /Users/thomasamundsen/Documents/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
 
-/* line 594 : /Users/thomasamundsen/Documents/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+/* line 595 : /Users/thomasamundsen/Documents/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
 /* line 12 : /Users/thomasamundsen/Documents/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
@@ -4441,14 +4441,14 @@ body .notifyjs-bootstrap-base {
 
 /* line 246 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .profile_bio h4 {
-  font-size: 1.1em;
+  font-size: 1em;
   margin-bottom: 14px;
 }
 
 /* line 249 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .profile_bio .bio {
   color: #605b5b;
-  font-size: 0.9em;
+  font-size: 0.865em;
 }
 
 /* line 253 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
@@ -4462,7 +4462,7 @@ body .notifyjs-bootstrap-base {
   margin-right: 20px;
 }
 
-/* line 259 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 260 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .list_sessions {
   -o-box-flex: 1;
   box-flex: 1;
@@ -4471,18 +4471,18 @@ body .notifyjs-bootstrap-base {
   flex: 1;
 }
 
-/* line 261 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 262 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .list_sessions .no_activity {
   color: #1f1f1f;
 }
 
-/* line 263 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 264 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .list_sessions .button.bold_button {
   width: 300px;
   margin-top: 20px;
 }
 
-/* line 267 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 268 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session {
   height: 100px;
   width: 100%;
@@ -4495,7 +4495,7 @@ body .notifyjs-bootstrap-base {
   overflow: visible;
 }
 
-/* line 275 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 276 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .image {
   width: 200px;
   background-size: cover;
@@ -4505,7 +4505,7 @@ body .notifyjs-bootstrap-base {
   border-bottom-left-radius: 5px;
 }
 
-/* line 282 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 283 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .image .icon {
   position: absolute;
   left: 50%;
@@ -4515,7 +4515,7 @@ body .notifyjs-bootstrap-base {
   transform: translateX(-50%) translateY(-50%);
 }
 
-/* line 286 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 287 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .content {
   -o-box-flex: 1;
   box-flex: 1;
@@ -4526,13 +4526,13 @@ body .notifyjs-bootstrap-base {
   position: relative;
 }
 
-/* line 291 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 292 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session h2 {
   padding-right: 20px;
   margin-bottom: 8px;
 }
 
-/* line 295 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 296 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .session_author {
   color: #4592d4;
   font-size: 0.86em;
@@ -4540,24 +4540,24 @@ body .notifyjs-bootstrap-base {
   display: block;
 }
 
-/* line 302 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 303 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .genres {
   margin-bottom: 4px;
 }
 
-/* line 305 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 306 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .small_info {
   color: #929292;
 }
 
-/* line 307 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 308 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .small_info > * {
   display: inline-block;
   margin-right: 10px;
   font-size: 0.8em;
 }
 
-/* line 311 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 312 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .small_info > * span.spritesheet,
 .profile_theme .profile_content .session .small_info > * span.icon {
   display: inline-block;
@@ -4566,13 +4566,13 @@ body .notifyjs-bootstrap-base {
   top: 2px;
 }
 
-/* line 317 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 318 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .small_info > * span.ss-play {
   font-size: 0.8em;
   top: 1px;
 }
 
-/* line 320 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 321 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .live {
   position: absolute;
   bottom: 10px;
@@ -4584,13 +4584,13 @@ body .notifyjs-bootstrap-base {
   font-size: 0.7em;
 }
 
-/* line 329 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 330 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .live .time,
 .profile_theme .profile_content .session .live .label {
   display: inline-block;
 }
 
-/* line 332 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 333 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .live .time {
   color: #f23131;
   margin-left: 10px;
@@ -4598,7 +4598,7 @@ body .notifyjs-bootstrap-base {
   font-size: 1.4em;
 }
 
-/* line 338 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 339 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .live .label {
   background: #f23131;
   border-bottom-right-radius: 4px;
@@ -4610,7 +4610,7 @@ body .notifyjs-bootstrap-base {
   text-align: left;
 }
 
-/* line 349 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 350 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .live .label:after {
   content: "";
   background: #fff;
@@ -4625,25 +4625,25 @@ body .notifyjs-bootstrap-base {
   left: 7px;
 }
 
-/* line 364 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
-
 /* line 365 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+
+/* line 366 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .recorded_sessions .title {
   margin-bottom: 30px;
 }
 
-/* line 367 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 368 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .recorded_sessions .title * {
   display: inline-block;
   vertical-align: top;
 }
 
-/* line 370 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 371 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .recorded_sessions .title h2 {
   margin-right: 30px;
 }
 
-/* line 373 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 374 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .recorded_sessions .title .ss-record-wrapper,
 .profile_theme .recorded_sessions .title .ss-alert {
   position: relative;
@@ -4651,32 +4651,32 @@ body .notifyjs-bootstrap-base {
   margin-right: 5px;
 }
 
-/* line 378 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 379 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .recorded_sessions .title .ss-alert {
   color: #f23131;
 }
 
-/* line 381 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 382 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .recorded_sessions .title .session_icon {
   position: relative;
   top: 3px;
   margin-right: 5px;
 }
 
-/* line 386 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 387 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .recorded_sessions .title .session_text {
   margin-right: 15px;
   padding-top: 1px;
 }
 
-/* line 390 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 391 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .recorded_sessions .title .alert_icon {
   position: relative;
   top: 3px;
   margin-right: 5px;
 }
 
-/* line 395 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 396 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .recorded_sessions .title .alert_text {
   font-size: 0.7em;
   color: #f23131;
@@ -4684,76 +4684,76 @@ body .notifyjs-bootstrap-base {
   padding-top: 4px;
 }
 
-/* line 401 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
-
 /* line 402 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+
+/* line 403 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme.user_logged .cover_button {
   display: block;
 }
 
-/* line 405 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 406 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme.user_logged .profile_content .profile_bio .outline_icon {
   display: block;
 }
 
-/* line 408 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 409 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme.user_logged .edit_session_wrapper {
   display: block;
 }
 
-/* line 411 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 412 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme.user_logged .element_on_write_mode {
   display: none;
 }
 
-/* line 414 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
-
 /* line 415 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 
 /* line 416 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+
+/* line 417 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .write_mode .profile_theme.user_logged .element_on_write_mode {
   display: block;
 }
 
-/* line 419 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 420 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .write_mode .profile_theme.user_logged .element_on_read_mode {
   display: none;
 }
 
-/* line 422 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 423 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .add_new_link {
   margin-bottom: 20px;
 }
 
-/* line 425 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 426 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .profile_form {
   padding-top: 10px;
 }
 
-/* line 427 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 428 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .profile_form textarea {
   height: 200px;
 }
 
-/* line 432 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 433 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .profile_form .save_button {
   padding-left: 40px;
   padding-right: 40px;
   margin: 0 auto 20px;
 }
 
-/* line 437 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 438 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .genres {
   overflow: hidden;
 }
 
-/* line 439 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 440 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .genres .tag {
   float: left;
   margin-bottom: 5px;
 }
 
-/* line 444 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 445 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .edit_session_wrapper {
   position: absolute;
   top: 10px;
@@ -4761,7 +4761,7 @@ body .notifyjs-bootstrap-base {
   display: none;
 }
 
-/* line 449 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 450 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .edit_session_wrapper .settings_button {
   opacity: 0.6;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
@@ -4774,7 +4774,7 @@ body .notifyjs-bootstrap-base {
   transform-origin: 50% 40%;
 }
 
-/* line 454 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 455 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .edit_session_wrapper .settings_button.hovered {
   opacity: 1;
   -ms-filter: none;
@@ -4785,7 +4785,7 @@ body .notifyjs-bootstrap-base {
   transform: rotate(-180deg);
 }
 
-/* line 459 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 460 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .edit_session_wrapper .edit_session_popup {
   position: absolute;
   top: -10px;
@@ -4808,7 +4808,7 @@ body .notifyjs-bootstrap-base {
   transform-origin: 110% 14.66%;
 }
 
-/* line 474 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 475 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .edit_session_wrapper .edit_session_popup .triangle {
   content: "";
   position: absolute;
@@ -4821,12 +4821,12 @@ body .notifyjs-bootstrap-base {
   border-left: 10px solid #373b3f;
 }
 
-/* line 485 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 486 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .edit_session_wrapper .edit_session_popup .button {
   margin-bottom: 15px;
 }
 
-/* line 487 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 488 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .edit_session_wrapper .edit_session_popup.hovered {
   display: block;
   -webkit-transform: scale(1, 1);
@@ -4840,7 +4840,7 @@ body .notifyjs-bootstrap-base {
           filter: none;
 }
 
-/* line 493 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 494 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .session {
   position: relative;
   transition: -webkit-transform 0.2s ease-out;
@@ -4850,26 +4850,26 @@ body .notifyjs-bootstrap-base {
   transform-origin: 50% 0;
 }
 
-/* line 497 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
-
 /* line 498 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+
+/* line 499 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .session.to_delete .delete_screen {
   display: block;
 }
 
-/* line 501 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 502 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .session.deleted {
   -webkit-transform: scale(1, 0.001);
   -ms-transform: scale(1, 0.001);
   transform: scale(1, 0.001);
 }
 
-/* line 504 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 505 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .no_activity_wrapper {
   padding-right: 20px;
 }
 
-/* line 507 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 508 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .delete_screen {
   position: absolute;
   top: 0;
@@ -4883,7 +4883,7 @@ body .notifyjs-bootstrap-base {
   display: none;
 }
 
-/* line 516 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 517 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .delete_screen .button {
   display: inline-block;
   margin: 10px;
@@ -4891,44 +4891,44 @@ body .notifyjs-bootstrap-base {
   padding-right: 40px;
 }
 
-/* line 521 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 522 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .delete_screen .content {
   width: 355px;
   margin: 0 auto;
 }
 
-/* line 524 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 525 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .delete_screen h2 {
   color: #1f1f1f;
   font-size: 1.2em;
   font-weight: 600;
 }
 
-/* line 530 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 531 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .element_on_read_mode {
   display: block;
 }
 
-/* line 533 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 534 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .element_on_write_mode {
   display: none;
 }
 
-/* line 537 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
-
 /* line 538 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+
+/* line 539 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .write_mode .element_on_read_mode {
   display: none;
 }
 
-/* line 541 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 542 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .write_mode .element_on_write_mode {
   display: block;
 }
 
-/* line 546 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
-
 /* line 547 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+
+/* line 548 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .is_guest .cover_button,
 .is_guest .profile_bio .outline_icon,
 .is_guest .icon.ss-alert,
@@ -4937,43 +4937,43 @@ body .notifyjs-bootstrap-base {
   display: none !important;
 }
 
-/* line 559 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
-
 /* line 560 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+
+/* line 561 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .no_touch_device .tag:hover {
   background: #8ea6b1;
 }
 
-/* line 563 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
-
 /* line 564 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+
+/* line 565 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .no_touch_device .profile_theme .header_settings_hover:hover {
   opacity: 0.8;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
   filter: alpha(opacity=80);
 }
 
-/* line 567 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 568 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .no_touch_device .profile_theme .sidebar_right:hover {
   background: rgba(0,0,0,0.7);
   color: #e8e8e8;
 }
 
-/* line 571 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 572 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .no_touch_device .profile_theme .cover_button:hover {
   background: #fff;
 }
 
-/* line 574 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 575 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 
-/* line 577 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 578 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .no_touch_device .profile_theme .profile_content .session:hover .small_info {
   color: #605b5b;
 }
 
-/* line 581 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
-
 /* line 582 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+
+/* line 583 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .no_touch_device .edit_session_wrapper .settings_button:hover {
   opacity: 1;
   -ms-filter: none;
@@ -4981,23 +4981,23 @@ body .notifyjs-bootstrap-base {
           filter: none;
 }
 
-/* line 585 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
-
 /* line 586 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 
 /* line 587 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+
+/* line 588 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .no_touch_device.is_owner .cover:hover .change_cover {
   display: block;
 }
 
-/* line 590 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 591 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .no_touch_device.is_owner .cover:hover .profile_image .edit_image {
   -webkit-transform: translateY(0);
   -ms-transform: translateY(0);
   transform: translateY(0);
 }
 
-/* line 593 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 594 : /Users/thomasamundsen/Documents/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .no_touch_device.is_owner .cover:hover .editable_text .icon {
   display: block;
 }
