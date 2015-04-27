@@ -41,7 +41,7 @@ module.exports =
       request.error on_error 'rooms/#{id}', callback
 
       request.done ( response ) ->
-
+        log "[Loopcast] request done", response
         callback  null, response
 
     start_stream: ( room_id, callback ) ->

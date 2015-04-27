@@ -1,18 +1,25 @@
 .profile_content.chat
   .chat_main
+    - str = ""
+    if room && room.info.about
+      - str = room.info.about
+
     .chat_header.v_center
-      p
-        if room && room.info.about
-          | #{room.info.about}
+      .inner
+        p#description_room(data-view="components/editables/editable_text", data-freestyle="true")
+          span.text #{str}
 
     .chat_content.no_chat_yet(data-view="chat/messages")
       span(class='no-message') No one has typed a chat yet
 
     .chat_footer
-      .img_wrapper_2
-        img.author_chat_thumb(src="/images/profile-36.jpg")
-      textarea(placeholder="Type here to join the chat", data-view="chat/textarea")
-      span.icon.ss-heart
+      .for_logged_users
+        .img_wrapper_2
+          img.author_chat_thumb(src="/images/profile-36.jpg")
+        textarea(placeholder="Type here to join the chat", data-view="chat/textarea")
+        span.icon.ss-heart
+      .for_unlogged_users
+        p You need to log in to use the chat
 
   .chat_sidebar(data-view="chat/people")
     .inner

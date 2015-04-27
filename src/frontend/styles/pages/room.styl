@@ -28,6 +28,10 @@
       height: 100px
       .centered
         display: block
+        
+  &.no_touch_device
+    .editable_text:hover .icon
+      display: block
      
 #appcast_not_running_balloon
   width: 330px
@@ -195,6 +199,29 @@
     .chat_header
       height: 64px
       padding: 16px SIDE_PADDING
+      .editable_text 
+        .text
+          padding-left: 10px
+        .icon
+          top: 10px
+          right: -20px
+        input
+          font-size: 12px
+          width: 100%
+          top: -10px
+          left: -5px
+          
+        &.edit_mode
+          display: block
+          .icon
+            display: none
+      
+      .inner
+        width: 100%
+        text-align: left
+        p
+          width: auto
+          display: inline-block
       
     .chat_content
       flex: 1
@@ -271,6 +298,13 @@
   .chat_footer
     padding: 6px 60px 0
     
+    .for_unlogged_users p
+      padding-top: 20px
+      padding-bottom: 20px
+      text-align: center
+      
+
+    
     .icon
       position: absolute
       top: 27px
@@ -308,6 +342,13 @@
     absolute left SIDE_PADDING top 10px
     img
       display: block
+
+.not_logged
+  .for_logged_users
+    display: none
+  .for_unlogged_users
+    display: block
+
 
 #dashboard_help
   color: YELLOW

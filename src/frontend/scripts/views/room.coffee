@@ -6,6 +6,7 @@ notify          = require 'app/controllers/notify'
 LoggedView      = require 'app/views/logged_view'
 happens         = require 'happens'
 pusher_utils    = require 'shared/pusher_utils'
+api             = require 'app/api/loopcast/loopcast'
 
 module.exports = class Room extends LoggedView
   room_created: false
@@ -112,6 +113,30 @@ module.exports = class Room extends LoggedView
     if @owner_id is user_controller.data.username
       appcast.connect()
 
+      @manage_edit()
+
+  manage_edit: ->
+    @description = view.get_by_dom '#description_room'
+    @title = view.get_by_dom @dom.find( '.name' )
+
+    @description.on 'changed', @on_description_changed
+    @title.on 'changed', @on_title_changed
+
+
+  on_description_changed: ( value ) =>
+    @save_data about: value, (response) =>
+
+  on_title_changed: ( value ) =>
+    @save_data title: value, (error, response) =>
+      log "title changed", response
+      if not error
+        navigation.go_silent "/#{user.username}/#{response[ 'info.slug' ]}"
+
+
+
+  save_data: ( data, callback = ->) ->
+    api.rooms.update @room_id, data, callback
+
   on_user_logged: ( data ) =>
     img = @dom.find '.author_chat_thumb'
     if not img.data( 'original' )?
@@ -146,6 +171,11 @@ module.exports = class Room extends LoggedView
       @channel.unbind 'listener:added', @on_listener_added
       @channel.unbind 'listener:removed', @on_listener_removed
       @channel.unbind 'message', @on_message
+
+    if @owner_id is user_controller.data.username
+      appcast.connect()
+
+      @description.off 'changed', @on_description_changed
 
     super()
 

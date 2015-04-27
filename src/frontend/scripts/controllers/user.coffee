@@ -133,7 +133,7 @@ class UserController
 
 
     @check_guest_owner()
-    app.body.addClass "logged"
+    app.body.addClass( "logged" ).removeClass( 'not_logged' )
     @emit 'user:logged', @data
 
   _dispatch_logout: ->
@@ -141,7 +141,7 @@ class UserController
     log "[==========================]"
 
     @check_guest_owner()
-    app.body.removeClass "logged"
+    app.body.removeClass( "logged" ).addClass( 'not_logged' )
     @emit 'user:unlogged'
 
   

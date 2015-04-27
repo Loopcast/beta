@@ -17,9 +17,10 @@ block content
       else
         .cover_image(style="background-image:url(/images/default_room_cover.jpg)")
       .content
-        h1.name.black_background
-          if room
-            | #{room.info.title}
+        h1.name.black_background(data-view="components/editables/editable_text")
+          span.text
+            if room
+              | #{room.info.title}
         br
         h3.genres.black_background #{user.name}
 

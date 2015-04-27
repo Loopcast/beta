@@ -13,6 +13,10 @@ module.exports = class EditableText
 
 		@dom.on 'click', (e) -> e.stopPropagation()
 
+		@is_freestyle = @dom.data( 'freestyle' )?
+
+		log "[EditableText]", @is_freestyle
+
 		@get_template @on_ready
 
 	on_ready: ( html ) =>
@@ -30,12 +34,14 @@ module.exports = class EditableText
 		# copy style to input
 
 		style = 
-			'font-size'      : '36px'
 			'font-weight'    : @text_el.css 'font-weight'
-			'padding'        : '4px 10px 10px'
 			'letter-spacing' : @text_el.css 'letter-spacing'
 			'line-height'    : @text_el.css 'line-height'
 			'color'          : @text_el.css 'color'
+
+		if not @is_freestyle
+			style[ 'font-size' ] = '36px'
+			style[ 'padding' ] = '4px 10px 10px'
 
 		@input.css style
 

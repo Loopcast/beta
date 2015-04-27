@@ -15,15 +15,20 @@ module.exports = class People extends ChatView
     @counter = @dom.find '.number'
     @listeners_wrapper = @dom.find '.users'
 
-    # log "[People] on_room_created", @room_id, @owner_id, user.data
+    @check_user()
 
-    # Adding the user himself
-    @send_message "added"
+    
+  check_user: ->
+    if user.is_logged()
+      # log "[People] on_room_created", @room_id, @owner_id, user.data
 
-    @_on_listener_added
-      name: user.data.name
-      url: "/" + user.data.username
-      image: user.data.images.chat_sidebar
+      # Adding the user himself
+      @send_message "added"
+
+      @_on_listener_added
+        name: user.data.name
+        url: "/" + user.data.username
+        image: user.data.images.chat_sidebar
 
   send_message: ( method ) ->
     data = 

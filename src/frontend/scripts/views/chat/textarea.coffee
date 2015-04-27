@@ -9,10 +9,14 @@ module.exports = class Textarea extends ChatView
     super @room_id, @owner_id
     
     # log "[Textarea] on_room_created", @room_id
-    @dom.on 'keyup', @on_key_up
-    @heart = @dom.parent().find '.ss-heart'
+    @check_user()
 
-    @heart.on 'click', @like_cliked
+  check_user: ->
+    if user.is_logged()
+      @dom.on 'keyup', @on_key_up
+      @heart = @dom.parent().find '.ss-heart'
+
+      @heart.on 'click', @like_cliked
 
   like_cliked: =>
     @send_message "Liked this song", {like: true}
