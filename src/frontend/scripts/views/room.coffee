@@ -7,6 +7,8 @@ LoggedView      = require 'app/views/logged_view'
 happens         = require 'happens'
 pusher_utils    = require 'shared/pusher_utils'
 api             = require 'app/api/loopcast/loopcast'
+Cloudinary      = require 'app/controllers/cloudinary'
+transform       = require 'shared/transform'
 
 module.exports = class Room extends LoggedView
   room_created: false
@@ -118,10 +120,21 @@ module.exports = class Room extends LoggedView
   manage_edit: ->
     @description = view.get_by_dom '#description_room'
     @title = view.get_by_dom @dom.find( '.name' )
+    @change_cover_uploader = view.get_by_dom @dom.find( '.change_cover' )
 
     @description.on 'changed', @on_description_changed
     @title.on 'changed', @on_title_changed
+    @change_cover_uploader.on 'completed', @on_cover_uploaded
 
+  on_cover_uploaded: (data) =>
+    log "[Cover uploader]", data.result.url
+
+    cover = transform.cover data.result.url
+
+    @dom.find( '.cover_image' ).css
+      'background-image': "url(#{cover})"
+
+    @save_data cover_url: cover
 
   on_description_changed: ( value ) =>
     @save_data about: value, (response) =>
@@ -176,7 +189,8 @@ module.exports = class Room extends LoggedView
       appcast.connect()
 
       @description.off 'changed', @on_description_changed
-
+      @title.off 'changed', @on_title_changed
+      @change_cover_uploader.off 'completed', @on_cover_uploaded
     super()
 
     
