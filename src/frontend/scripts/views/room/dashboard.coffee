@@ -23,6 +23,9 @@ module.exports = class Dashboard extends RoomView
 
     log "[Dashboard] on_room_created (it'is the owner)"
 
+    @live_button = view.get_by_dom @dom.find( '#go_live_button' )
+    @live_button.on 'live:changed', @on_live_changed
+
     @balloons = 
       appcast: view.get_by_dom @dom.find( '#appcast_not_running_balloon' )
       go_live: view.get_by_dom @dom.find( '#go_live_balloon' )
@@ -46,6 +49,9 @@ module.exports = class Dashboard extends RoomView
 
   toggle_not_running_balloon: =>
     @balloons.appcast.toggle()
+
+  on_live_changed: ( data ) =>
+    log "[Room] on_live_changed", data
 
   on_appcast_connected: ( is_connected ) =>
 

@@ -1,101 +1,140 @@
+RoomView = require 'app/views/room/room_view'
 L       = require '../../api/loopcast/loopcast'
 appcast = require '../../controllers/appcast'
+notify          = require 'app/controllers/notify'
+happens = require 'happens'
+user = require 'app/controllers/user'
 
-module.exports = ( dom ) ->
-
+module.exports = class GoLive extends RoomView
   # TODO: fetch information from backend
-  live = false
+  is_live: false
 
-  # listens for appcast streaming status while streaming
-  while_streaming = ( status ) ->
+  constructor:  ( @dom ) ->
+    happens @
+    @text = @dom.find 'a'
+    super @dom
 
-    if not status
+  on_room_created: (@room_id, @owner_id) =>
+    
+    super @room_id, @owner_id
 
-      alert 'streaming went offline while streaming'
+    log "[GoLive] on_room_created"
+    return unless @is_room_owner
+
+
+    appcast.on 'stream:error', @on_error
+
+    @text.on 'click', @on_button_clicked
+
+
+
+  on_button_clicked: =>
+    # TODO: make it clever
+    return if @waiting
+
+    if not @live
+      @go_live()
+    else
+      @go_offline()
+
+  wait: ->
+    log "[GoLive] wait"
+    @waiting = true
+    @text.html "..."
+
+  set_live: ( live ) ->
+    log "[GoLive] set_live", live
+    @waiting = false
+    @live = live
+    @emit 'live:changed', @live
+
+    if @live
+      @text.html 'GO OFFLINE'
+    else
+      @text.html 'GO LIVE'
+
+  on_error: ( error ) =>
+    @waiting = false
+    @text.html "ERROR"
+
+    notify.info error
+
+
+
+  go_live: ->
+    log "[GoLive] Clicked go_live"
+    if not appcast.get 'input_device'
+
+      notify.info 'Select your input source'
 
       return
 
-    if status
-      alert 'streaming went online while streaming'
+    @wait()
 
-      return      
+    appcast.start_stream @owner_id, appcast.get 'input_device'
 
-  # listens for appcast streaming status when starting the stream
-  waiting_stream = ( status ) ->
+    appcast.on 'stream:online', @waiting_stream
 
-    if not status then return
+  go_offline: ->
 
-    # call the api
-    L.rooms.start_stream $( '#room_id' ).val(), ( error, result ) ->
+    log "[GoLive] Clicked go_offline"
+
+    if not appcast.get 'stream:online'
+
+      notify.info '- cant stop stream if not streaming'
+
+      return
+
+    @wait()
+
+    appcast.stop_stream()
+
+    ref = @
+
+    L.rooms.stop_stream @room_id, ( error, callback ) ->
 
       if error
-        dom.find('a').html "error"
-
-        console.error error
+        ref.on_error error
 
         # LATER: CHECK IF USER IS OFFLINE AND WAIT FOR CONNECTION?
         return
 
-      appcast.off waiting_stream
+      ref.set_live false
+
+
+  # listens for appcast streaming status while streaming
+  while_streaming : ( status ) ->
+
+    if not status
+      str = 'streaming went offline while streaming'
+
+    else
+      str = 'streaming went online while streaming'
+
+    notify.info str
+
+
+  # listens for appcast streaming status when starting the stream
+  waiting_stream : ( status ) =>
+
+    log "[GoLive] waiting_stream"
+
+    if not status then return
+
+    ref = @
+    # call the api
+    L.rooms.start_stream @room_id, ( error, result ) ->
+
+      if error
+        ref.on_error error
+
+        # LATER: CHECK IF USER IS OFFLINE AND WAIT FOR CONNECTION?
+        return
+
+      appcast.off ref.waiting_stream
 
       # TODO: fix this error being thrown
       # appcast.on while_streaming
+      ref.set_live true
 
-      live = true
-
-      dom.find('a').html "GO OFFLINE"
-
-
-  dom.find('a').click ->
-
-    # TODO: make it clever
-    user_id = location.pathname.split("/")[1]
-
-    if not live
-      console.log "clicked go live!"
-
-      if not appcast.get 'input_device'
-
-        alert 'select input device first'
-
-        return
-
-
-      # waiting stream status
-      dom.find('a').html "..."
-
-      appcast.start_stream user_id, appcast.get 'input_device'
-
-      appcast.on 'stream:online', waiting_stream
-
-
-    if live
-      console.log "clicked go offline!"
-
-      if not appcast.get 'stream:online'
-
-        alert '- cant stop stream if not streaming'
-
-        return
-
-      dom.find('a').html "..."
-
-      appcast.stop_stream()
-
-      # TODO: make it clever
-      L.rooms.stop_stream $( '#room_id' ).val(), ( error, callback ) ->
-
-        if error
-          dom.find('a').html "error"
-
-          console.error error
-
-          # LATER: CHECK IF USER IS OFFLINE AND WAIT FOR CONNECTION?
-          return
-
-        live = false
-
-        dom.find('a').html "GO LIVE"
-
-    # cancels click action
-    return false
+  

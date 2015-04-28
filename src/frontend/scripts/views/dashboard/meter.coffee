@@ -40,7 +40,7 @@ module.exports = class Meter extends RoomView
         'left': $( item ).find( '.left_channel' )
         'right': $( item ).find( '.right_channel' )
 
-    @playhead = @dom.find '.playhead'
+    # @playhead = @dom.find '.playhead'
 
     @min_db = @values[ 0 ].value
     @max_db = @values[ @values.length - 1 ].value
@@ -80,16 +80,16 @@ module.exports = class Meter extends RoomView
     log "[Meter] deactivate", @current_block_index
     return if @current_block_index < 0
     color = @values[ @current_block_index ].color
-    @playhead
-      .addClass( 'inactive' )
-      .html( @values[ 0 ].value )
+    # @playhead
+    #   .addClass( 'inactive' )
+    #   .html( @values[ 0 ].value )
 
-    @move_playhead '', 'color_' + color, 0
+    # @move_playhead '', 'color_' + color, 0
 
   activate: (perc) =>
     return if not perc
     log "[Meter] activate", perc
-    @playhead.removeClass( 'inactive' ).addClass( 'color_' + @values[0].color )
+    # @playhead.removeClass( 'inactive' ).addClass( 'color_' + @values[0].color )
     appcast.off 'stream:vu', @activate
 
   set_volume: ( perc ) =>
@@ -101,23 +101,23 @@ module.exports = class Meter extends RoomView
     if right_data.value > left_data.value
       max_data = right_data
 
-    @manage_playhead max_data
+    # @manage_playhead max_data
     
 
   manage_playhead: ( data ) ->
-    @playhead.html( data.value )
+    # @playhead.html( data.value )
 
-    return if @current_block_index is data.index
-    if @current_block_index >= 0
-      old_color = @values[ @current_block_index ].color
-    else
-      old_color = ""
+    # return if @current_block_index is data.index
+    # if @current_block_index >= 0
+    #   old_color = @values[ @current_block_index ].color
+    # else
+    #   old_color = ""
 
-    new_color  = @values[ data.index ].color
+    # new_color  = @values[ data.index ].color
 
-    @move_playhead 'color_' + new_color, 'color_' + old_color, data.index
+    # @move_playhead 'color_' + new_color, 'color_' + old_color, data.index
 
-    @current_block_index = data.index
+    # @current_block_index = data.index
 
 
   set_channel: ( c, raw ) ->
@@ -148,15 +148,15 @@ module.exports = class Meter extends RoomView
 
   
   move_playhead: ( new_color, old_color, x ) ->
-    css = "translate3d(#{35*x}px,0,0)"
-    @playhead
-      .removeClass( old_color )
-      .addClass( new_color )
-      .css
-        '-webkit-transform' : css
-        '-moz-transform' : css
-        '-ms-transform' : css
-        'transform' : css    
+    # css = "translate3d(#{35*x}px,0,0)"
+    # @playhead
+    #   .removeClass( old_color )
+    #   .addClass( new_color )
+    #   .css
+    #     '-webkit-transform' : css
+    #     '-moz-transform' : css
+    #     '-ms-transform' : css
+    #     'transform' : css    
 
   get_the_block_index_from_value: ( value ) ->
     for item, i in @values
