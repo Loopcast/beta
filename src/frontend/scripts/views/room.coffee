@@ -112,9 +112,18 @@ module.exports = class Room extends LoggedView
     if data
       @dom.find( '.chat_header.v_center' ).html data.about
 
-    u = user_controller.is_logged()
-    if u and @owner_id is u.username
+    if user_controller.check_guest_owner()
       @manage_edit()
+    else
+      @show_guest_popup()
+
+  show_guest_popup: ->
+    link = "/rooms/create"
+    message = 'Do you want to set up your own live room like this?'
+    if user_controller.is_logged()
+      notify.guest_room_logged message
+    else
+      notify.guest_room_unlogged message
 
   manage_edit: ->
     appcast.connect()
