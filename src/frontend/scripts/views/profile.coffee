@@ -19,7 +19,6 @@ module.exports = class Profile extends LoggedView
 		happens @
 
 		log "[=== PAGE OWNER: #{user_controller.owner_id()} ===]"
-		log profile_info
 
 		$( '#room_modal' ).data 'modal-close', true
 
