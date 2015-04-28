@@ -12,7 +12,7 @@ Transform =
     if not url? or url.indexOf( "upload/" ) < 0
       return "/images/profile-49.jpg"
     else
-      url.replace "upload/", "upload/w_49,h_49,c_fill,g_north/"
+      url.replace "upload/", "upload/w_28,h_28,c_fill,g_north/"
 
   avatar: ( url ) -> 
     if not url? or url.indexOf( "upload/" ) < 0
