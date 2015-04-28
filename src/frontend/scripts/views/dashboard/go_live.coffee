@@ -1,9 +1,9 @@
 RoomView = require 'app/views/room/room_view'
-L       = require '../../api/loopcast/loopcast'
-appcast = require '../../controllers/appcast'
-notify          = require 'app/controllers/notify'
-happens = require 'happens'
-user = require 'app/controllers/user'
+L        = require '../../api/loopcast/loopcast'
+appcast  = require '../../controllers/appcast'
+notify   = require 'app/controllers/notify'
+happens  = require 'happens'
+user     = require 'app/controllers/user'
 
 module.exports = class GoLive extends RoomView
   # TODO: fetch information from backend
@@ -53,13 +53,14 @@ module.exports = class GoLive extends RoomView
     else
       @text.html 'GO LIVE'
 
-  on_error: ( error ) =>
+  on_error: ( error, origin = 'stream:error' ) =>
     @waiting = false
+
+    return if not error
     @text.html "ERROR"
+    log "[GoLive] on_error. origin", error, origin
 
     notify.info error
-
-
 
   go_live: ->
     log "[GoLive] Clicked go_live"
@@ -94,7 +95,7 @@ module.exports = class GoLive extends RoomView
     L.rooms.stop_stream @room_id, ( error, callback ) ->
 
       if error
-        ref.on_error error
+        ref.on_error error, 'stop_stream'
 
         # LATER: CHECK IF USER IS OFFLINE AND WAIT FOR CONNECTION?
         return
