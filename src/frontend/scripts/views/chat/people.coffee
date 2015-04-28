@@ -6,6 +6,10 @@ user = require 'app/controllers/user'
 module.exports = class People extends ChatView
 
   listeners: []
+  constructor: ( @dom ) ->
+    super @dom
+    @listeners = []
+
 
   on_room_created: ( @room_id, @owner_id ) =>
     super @room_id, @owner_id
@@ -57,6 +61,7 @@ module.exports = class People extends ChatView
     
 
   _on_listener_added: ( listener ) ->
+    # log "[People] on_listener_added", listener
     @listeners.push listener
     @listeners_wrapper.append @tmpl( listener )
     @update_counter()
@@ -81,6 +86,7 @@ module.exports = class People extends ChatView
     @counter.html "(#{@listeners.length})"
 
   destroy: ->
+    @listeners = []
     @send_message "removed"
     super()
 
