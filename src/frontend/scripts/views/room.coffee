@@ -112,12 +112,12 @@ module.exports = class Room extends LoggedView
     if data
       @dom.find( '.chat_header.v_center' ).html data.about
 
-    if @owner_id is user_controller.data.username
-      appcast.connect()
-
+    u = user_controller.is_logged()
+    if u and @owner_id is u.username
       @manage_edit()
 
   manage_edit: ->
+    appcast.connect()
     @description = view.get_by_dom '#description_room'
     @title = view.get_by_dom @dom.find( '.name' )
     @change_cover_uploader = view.get_by_dom @dom.find( '.change_cover' )
@@ -185,7 +185,7 @@ module.exports = class Room extends LoggedView
       @channel.unbind 'listener:removed', @on_listener_removed
       @channel.unbind 'message', @on_message
 
-    if @owner_id is user_controller.data.username
+    if @owner_id is user_controller.data.username and @description?
       appcast.connect()
 
       @description.off 'changed', @on_description_changed

@@ -29,12 +29,40 @@
 
 // NOTIFY
 body
-	.notifyjs-bootstrap-base
+	.notifyjs-loopcast-base
 		background-image: none
 		padding-left: 15px
+		background: SHARE_BOX
+		color: white
+		border-color: SHARE_BOX
+		font-size: 0.8rem
+		text-shadow: none
+		width: 260px
+		padding: 10px
+		border-radius: 3px
+		position: relative
 		
-	.notifyjs-corner
+		.close-notify
+			position: absolute
+			top: -9px
+			right: -9px
+			background: black
+			border-radius: 50%
+			color: white
+			display: block
+			width: 22px
+			height: 22px
+			text-align: center
+			font-weight: bold
+			padding-top: 2px
+			cursor: pointer
+			
+	.notifyjs-corner 
+		margin-right: 20px
 		margin-top: 50px
+		.notifyjs-wrapper, .notifyjs-container
+			margin-bottom: 12px
+
 
 // ABOUT
 .about_page
@@ -279,10 +307,15 @@ PLAYER_HEIGHT = 70px
 	
 // VERTICAL CENTERING
 .v_center
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	display: flex
+	align-items: center
+	justify-content: center
 	text-align: left
+	
+.no_touch_device
+	.notifyjs-loopcast-base
+		.close-notify:hover
+			background: #222
 		
 @media (max-width: 950px)
 	.about_page

@@ -35,8 +35,11 @@ class UserController
     return unless scope.main
     view.off 'binded', @on_views_binded
 
+
+
     api.user.status {}, (error, response) =>
       log "[User] checking status from the server", error, response.logged
+      
       if error or response.logged is false
         @logout()
       else if @is_logged()
