@@ -51,6 +51,12 @@ module.exports = class Balloon
     @dom.removeClass( 'to_show' ).removeClass( 'show' )
     app.window.off 'resize', @on_resize
 
+  toggle: ->
+    if @visible
+      @hide()
+    else
+      @show()
+
 
   destroy: ->
     if @visible

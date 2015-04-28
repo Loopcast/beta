@@ -28,6 +28,7 @@ module.exports = class Dashboard extends RoomView
       go_live: view.get_by_dom @dom.find( '#go_live_balloon' )
       record: view.get_by_dom @dom.find( '#record_balloon' )
 
+    @appcast_not_running_message = @dom.find '.appcast_not_running_message'
     @meter = view.get_by_dom @dom.find( '.meter_wrapper' )
     @broadcast_trigger = view.get_by_dom @dom.find( '.broadcast_controls' )
     @recording_trigger = view.get_by_dom @dom.find( '.recording_controls' )
@@ -40,10 +41,11 @@ module.exports = class Dashboard extends RoomView
       log "[Dashboard] input changed", data
       appcast.set 'input_device', data
 
-    # TEMP
+    @appcast_not_running_message.on 'click', @toggle_not_running_balloon
     appcast.on 'connected', @on_appcast_connected
 
-    # @on_appcast_connected true
+  toggle_not_running_balloon: =>
+    @balloons.appcast.toggle()
 
   on_appcast_connected: ( is_connected ) =>
 
@@ -64,6 +66,8 @@ module.exports = class Dashboard extends RoomView
 
     @meter.deactivate()
     @balloons.appcast.show()
+
+    delay 4000, => @balloons.appcast.hide()
 
   on_broadcast_click : (data) ->
     log "on_broadcast_click", data
@@ -87,6 +91,7 @@ module.exports = class Dashboard extends RoomView
         view.destroy_view @balloons[ item ]
       if @broadcast_trigger.length > 0 
         @broadcast_trigger.off 'change', @on_broadcast_click
+        @appcast_not_running_message.off 'click', @toggle_not_running_balloon
 
       appcast.off 'connected', @on_appcast_connected
 
