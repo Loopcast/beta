@@ -32,7 +32,7 @@ module.exports =
         # 'status.is_public': on
 
       Room.findOne( query )
-        .select( "info status" )
+        .select( "info status images" )
         .sort( _id: -1 )
         .lean()
         .exec ( error, room ) -> 
@@ -41,6 +41,8 @@ module.exports =
 
           # if room doesn't exist
           if not room then return reply( "Page not found" ).code 404
+
+          room.images.cover = transform.cover room.images.cover
 
           model.set 'room', room
 

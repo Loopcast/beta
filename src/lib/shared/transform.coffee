@@ -25,7 +25,13 @@ Transform =
     if not url? or url.indexOf( "upload/" ) < 0
       return "/images/profile-150.jpg"
     else
-      url.replace "upload/", "upload/w_1000,h_400,c_fill,g_north/"
+      url.replace "upload/", "upload/w_1140,h_350,c_fill,g_north/"
+
+  cover_thumb: ( url ) ->
+    if not url? or url.indexOf( "upload/" ) < 0
+      return "/images/profile-150.jpg"
+    else
+      url.replace "upload/", "upload/w_200,h_167,c_fill,g_north/"    
 
   chat_thumb: ( url ) -> 
     if not url? or url.indexOf( "upload/" ) < 0
