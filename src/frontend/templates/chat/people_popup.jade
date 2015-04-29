@@ -1,0 +1,15 @@
+.inner
+  a.img_wrapper(href="#{url}", title="#{name}")
+    img(src="#{images.chat_sidebar_popup}", alt="#{name}")
+
+  h3.name 
+    a(href="#{url}", title="#{name}") #{name}
+
+  p.occupation #{occupation}
+  p.followers
+    span.number #{followers}
+    |  FOLLOWERS
+
+  a.follow_button(class="button yellow_button small_button_4", href="#") Follow
+
+

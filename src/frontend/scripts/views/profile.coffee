@@ -152,7 +152,7 @@ module.exports = class Profile extends LoggedView
 		avatar = user_controller.data.images.avatar
 		@dom.find( 'img' ).attr 'src', avatar
 
-		@send_to_server avatar: avatar
+		@send_to_server avatar: data.result.url
 
 	check_visibility_editables: =>
 		user_controller.check_guest_owner()

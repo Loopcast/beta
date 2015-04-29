@@ -2,6 +2,8 @@ escape = require 'escape-html'
 pusher_utils = lib 'shared/pusher_utils'
 transform = lib 'shared/transform'
 
+load_profile = models 'profile'
+
 module.exports =
   method : 'POST'
   path   : '/api/v1/chat/listener'
@@ -43,19 +45,19 @@ module.exports =
       # build channel string
       room_subscribe_id    = pusher_utils.get_room_subscribe_id owner_id, room_id
 
-      data = 
-        method: request.payload.method
-        name   : user.name
-        id: user.username
-        url: "/" + user.username
-        image : transform.chat_sidebar user.avatar
+      load_profile user.username, ( error, user_data ) ->
 
+        data = 
+          method: request.payload.method
+          user : 
+            id: user_data.id
+            name: user_data.name
+            occupation: user_data.occupation
+            images: user_data.images
+            followers: user_data.followers
+            url: "/" + user_data.id
 
-      response = pusher.trigger room_subscribe_id, "listener:#{data.method}", data
+        response = pusher.trigger room_subscribe_id, "listener:#{data.method}", data
 
-      # console.log "triggering!", 
-      # console.log "room_subscribe_id", room_subscribe_id
-      # console.log "data", data
-
-      reply( response ).header "Cache-Control", "no-cache, must-revalidate"
+        reply( response ).header "Cache-Control", "no-cache, must-revalidate"
 

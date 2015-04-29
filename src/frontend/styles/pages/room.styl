@@ -113,9 +113,10 @@
     &._left
       text-align: right
           
-      .appcast_running_message
       .appcast_not_running_message
         margin-bottom: 4px
+      .appcast_running_message
+        margin-bottom: 10px
         
       .meter_wrapper
         margin-bottom: 3px
@@ -349,6 +350,41 @@
   .for_unlogged_users
     display: block
 
+.chat_user_popup
+  position: absolute
+  display: none
+  opacity: 0
+  transition: opacity .2s linear
+  top: 380px
+  left: 410px
+  background: white
+  width: 260px
+  border-radius: 5px
+  padding: 10px
+  box-shadow: 0px 0px 21px -2px #000
+  text-align: center
+  color: GRAY_4
+  p
+    font-size: 11px
+    font-weight: bold
+    
+  .img_wrapper
+    display: block
+    width: 84px
+    height: 84px
+    overflow: hidden
+    border-radius: 50%
+    margin: 0 auto 10px
+    
+  .name
+    color: BLACK
+    margin-bottom: 5px
+    
+  .button
+    width: 120px
+    padding-top: 3px
+    height: 24px
+    margin: 10px auto 0
 
 #dashboard_help
   color: YELLOW

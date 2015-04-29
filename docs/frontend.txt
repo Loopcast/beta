@@ -8,3 +8,4 @@ LOGIN
 
 
 - cambiare impostazione folder /shared nel backend
+- save the avatar without any resize
