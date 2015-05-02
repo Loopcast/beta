@@ -15,8 +15,6 @@ module.exports = class EditableText
 
 		@is_freestyle = @dom.data( 'freestyle' )?
 
-		log "[EditableText]", @is_freestyle
-
 		@get_template @on_ready
 
 	on_ready: ( html ) =>

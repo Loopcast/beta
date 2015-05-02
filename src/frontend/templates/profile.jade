@@ -180,6 +180,13 @@ block content
               - room.url = "/" + room.info.user + "/" + room.info.slug 
               //- - room.info.cover_url = room.info.cover_url || '/images/default_room_cover.jpg'
               .session.outline_box(id="session_recorded_#{room.id}", data-view="[components/user_set,components/audio/player_preview]", data-data="#{JSON.stringify(room)}")
+                input(type="hidden", name="room_thumb", value="#{room.thumb}")
+                input(type="hidden", name="room_title", value="#{room.info.title}")
+                input(type="hidden", name="room_link", value="#{room.info.url}")
+                input(type="hidden", name="room_author", value="#{name}")
+                input(type="hidden", name="room_author_id", value="#{id}")
+                input(type="hidden", name="room_author_link", value="/#{id}")
+
 
                 .image(style="background-image:url(#{room.thumb})")
                   a.icon.ss-play.circle_icon(href="#",title="Play") 

@@ -2,6 +2,8 @@ module.exports = (dom) ->
   
   is_playing = false
   icon       = dom.find '.ss-play'
+  data       = null
+
   if icon.length <= 0
     icon       = dom.find '.ss-pause'
 
@@ -13,6 +15,17 @@ module.exports = (dom) ->
 
   dom.addClass 'player_preview'
 
+  is_player_component = dom.find( 'input[name=room_thumb]' ).length <= 0
+
+  if not is_player_component
+    data = 
+      thumb: dom.find( 'input[name=room_thumb]' ).val()
+      title: dom.find( 'input[name=room_title]' ).val()
+      url: dom.find( 'input[name=room_link]' ).val()
+      author: dom.find( 'input[name=room_author]' ).val()
+      author_id: dom.find( 'input[name=room_author_id]' ).val()
+      author_link: dom.find( 'input[name=room_author_link]' ).val()
+
   play = ->
     return if is_playing
 
@@ -20,6 +33,8 @@ module.exports = (dom) ->
     dom.addClass 'playing'
     icon.addClass( 'ss-pause' ).removeClass( 'ss-play' )
 
+    if not is_player_component
+      app.player.open data
 
     app.emit 'audio:started', ref.uid
 
