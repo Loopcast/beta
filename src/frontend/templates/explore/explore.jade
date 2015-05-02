@@ -10,16 +10,14 @@ block submenu
     
 block grid
 
-  for item in rooms
-    - item.info.cover_url = item.info.cover_url || '/images/default_room_cover.jpg'
-    
+  for item in rooms    
     - klasses = "item-all-genres"
     for g in item.info.genres
       - klasses += " item-" + slugify(g)
 
     .room_cell.item(class="#{klasses}", data-view="components/audio/player_preview")
       a(href="/#{item.info.user}/#{item.info.slug}", title="#{item.info.title}", class="thumb_wrapper") 
-        img.room_thumb(src="#{item.info.cover_url}")
+        img.room_thumb(src="#{item.info.images.explore_thumb}")
         
         span.now_live Now Live
 
@@ -43,3 +41,9 @@ block grid
             | #{item.info.location}
 
         a.enter_room(href="/#{item.info.user}/#{item.info.slug}", class="button yellow_button no_shadow small_button small_button_2", title="Enter Room") Enter Room
+
+
+  script
+    //- THIS IS JUST FOR DEBUGGIN. TO BE REMOVED
+    | var data = !{JSON.stringify(locals)};;
+    | console.log( 'explore data', data.rooms[ 0 ] ); 

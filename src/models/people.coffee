@@ -3,6 +3,8 @@
 # people.jade template
 ###
 
+transform = lib 'shared/transform'
+
 module.exports = ( callback ) ->
 
 page_limit = 50
@@ -82,6 +84,7 @@ module.exports = ( page = 0, tags, search, callback ) ->
 
         avatar    : item.custom_attributes.avatar
         cover     : item.custom_attributes.cover
+        images    : transform.all item.custom_attributes.avatar
 
         followers : item.custom_attributes.followers || 0
         streams   : item.custom_attributes.streams   || 0

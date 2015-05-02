@@ -78,8 +78,6 @@ class App
 		# Get the player
 		@player = view.get_by_dom '#player'
 
-		log "[App] player", @player
-
 
 		# Check if some view is requesting the preload
 		view_preloading = $( scope.scope ).find( '.request_preloading' )

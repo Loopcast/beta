@@ -3,6 +3,8 @@
 # rooms.jade template
 ###
 
+transform = lib 'shared/transform'
+
 page_limit = 50
 
 module.exports = ( page = 0, tags, search, callback ) ->
@@ -51,6 +53,11 @@ module.exports = ( page = 0, tags, search, callback ) ->
   find( 'rooms/rooms' ) query, fields, options, ( error, rooms ) ->
 
     if error then return callback error
+
+    for room in rooms
+      room.info.images = 
+        explore_thumb : transform.explore_thumb room.info.cover_url, true
+    console.log 'rooms', rooms
 
     data.set 'rooms', rooms
 

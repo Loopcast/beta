@@ -20,7 +20,7 @@ block grid
 
     .room_cell.item(class="#{klasses}", data-view="components/audio/player_preview")
       a(href="/#{item.id}", title="#{item.name}", class="thumb_wrapper") 
-        img.room_thumb(src="#{item.avatar}")
+        img.room_thumb(src="#{item.images.explore_thumb}")
         span.icon.ss-play.circle_icon
 
       .room_content
@@ -40,3 +40,9 @@ block grid
 
         a.enter_room.not_following_item(href="/#{item.id}", class="button yellow_button no_shadow small_button small_button_2", title="Follow") Follow
         a.enter_room.following_item(href="/#{item.id}", class="button gray_button_2 no_shadow small_button small_button_2", title="Follow") Following
+
+
+  script
+    //- THIS IS JUST FOR DEBUGGIN. TO BE REMOVED
+    //- | var data = !{JSON.stringify(locals)};;
+    //- | console.log( 'people data', data.people[0] ); 

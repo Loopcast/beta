@@ -6,6 +6,7 @@ Transform =
       chat_thumb: Transform.chat_thumb url
       chat_sidebar: Transform.chat_sidebar url
       chat_sidebar_popup: Transform.chat_sidebar_popup url
+      explore_thumb: Transform.explore_thumb url
     }
 
   top_bar: ( url ) -> 
@@ -50,6 +51,15 @@ Transform =
       return "/images/profile-36.jpg"
     else
       url.replace "upload/", "upload/w_84,h_84,c_fill,g_north/"
+
+  explore_thumb: ( url, is_room = false ) -> 
+    if not url? or url.indexOf( "upload/" ) < 0
+      if is_room
+        return "/images/default_room_thumb.jpg"
+      else
+        return "/images/profile-36.jpg"
+    else
+      url.replace "upload/", "upload/w_210,h_210,c_fill,g_north/"
 
   
 
