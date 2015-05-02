@@ -28,8 +28,16 @@ module.exports = class EditableTags
         @ready = true
         @emit 'ready'
 
+        @input = @dom.next().find 'input'
+        @input.on 'focusout', @on_focusout
+
     
   populate_tags: ( list ) ->
+
+  on_focusout: =>
+    t = @input.val() 
+    if t.length > 0
+      @add_tags [t]
     
     
 
@@ -53,6 +61,7 @@ module.exports = class EditableTags
       @dom.addTag t + "", { focus:true, unique:true }
 
   destroy: ->
+    @input.off 'focusout', @on_focusout
     @dom.destroy_tagsinput()
     @on            = null
     @off           = null
@@ -61,4 +70,5 @@ module.exports = class EditableTags
     @on_add_tag    = null
     @on_remove_tag = null
     @dom           = null
+
     # super()
