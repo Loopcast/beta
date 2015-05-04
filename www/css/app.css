@@ -3542,11 +3542,11 @@ body .notifyjs-corner .notifyjs-container {
   height: 100%;
   background: #ececec;
   z-index: 0;
-  -webkit-transition: opacity 0.2s linear;
-  -moz-transition: opacity 0.2s linear;
-  -o-transition: opacity 0.2s linear;
-  -ms-transition: opacity 0.2s linear;
-  transition: opacity 0.2s linear;
+  -webkit-transition: opacity 0.2s linear 0.2s;
+  -moz-transition: opacity 0.2s linear 0.2s;
+  -o-transition: opacity 0.2s linear 0.2s;
+  -ms-transition: opacity 0.2s linear 0.2s;
+  transition: opacity 0.2s linear 0.2s;
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
@@ -3594,8 +3594,8 @@ body .notifyjs-corner .notifyjs-container {
 .explore .rooms_grid .room_cell .thumb_wrapper {
   position: relative;
   display: block;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
   overflow: hidden;
 }
 
@@ -3727,6 +3727,11 @@ body .notifyjs-corner .notifyjs-container {
   opacity: 1;
   -ms-filter: none;
   filter: none;
+  -webkit-transition: opacity 0.1s linear;
+  -moz-transition: opacity 0.1s linear;
+  -o-transition: opacity 0.1s linear;
+  -ms-transition: opacity 0.1s linear;
+  transition: opacity 0.1s linear;
 }
 
 /* line 260 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/explore.styl */
