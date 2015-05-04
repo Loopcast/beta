@@ -18,10 +18,31 @@ block content
 
     .explore_content.flex.centered(data-view="explore")
       .flex_sidebar.genres_list
-        a.selected(title="All genres", href="#", data-genre-id="all-genres") All genres
+        - klass = ""
+        if current_genre.length <= 0
+          - klass = "selected"
+        a(
+          class="#{klass}" 
+          title="All genres", 
+          href="#{url}", 
+          data-nav-load=".flex_content.rooms_grid > .inner"
+        ) All genres
+
         each g in genres
-          a(style='text-transform:capitalize',title="#{g}" href="?genres=#{g}", data-genre-id="#{slugify(g)}") #{g}
+          - g_url = url + "?genres=" + encodeURIComponent( g )
+          - klass = ""
+          if current_genre == g
+            - klass = "selected"
+          a(
+            class="#{klass}", 
+            style='text-transform:capitalize',
+            title="#{g}",
+            href="#{g_url}", 
+            data-nav-load=".flex_content.rooms_grid > .inner"
+          ) #{g}
 
 
       .flex_content.rooms_grid
-        block grid
+        .loading
+        .inner
+          block grid

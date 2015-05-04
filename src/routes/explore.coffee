@@ -35,6 +35,16 @@ module.exports =
 
       url = "/explore" + req.url.pathname
 
+      data.url = "/explore"
+      
+      if genres.length > 0
+        data.current_genre = genres
+      else
+        data.current_genre = ""
+
+
+      console.log "Loading", genres
+
       template url, data, ( error, response ) ->
 
         if not error then return reply response

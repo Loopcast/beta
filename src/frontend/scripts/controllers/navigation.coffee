@@ -11,6 +11,9 @@ class Navigation
 	first_loading: on
 	first_url_change: true
 	first_same_path: true
+	silent: false
+
+	DEFAULT_SELECTOR: '#content .inner_content'
 
 	constructor: ->
 
@@ -20,7 +23,7 @@ class Navigation
 			return
 
 		Navigation.instance = @
-		@content_selector = '#content .inner_content'
+		@content_selector = @DEFAULT_SELECTOR
 		@content_div = $ @content_selector
 
 		happens @
@@ -40,6 +43,10 @@ class Navigation
 
 	url_changed: ( req ) =>
 
+		if @silent
+			@silent = off
+			return
+
 		if @first_url_change
 			@first_url_change = off
 			return
@@ -47,24 +54,21 @@ class Navigation
 		if req.path is location.pathname
 			if @first_same_path
 				@first_same_path = false
-				# log "[Navigation] return same path ", req.path, location.pathname
-
 				# TEMP (to fix)
 				if app.settings.browser.id is 'Safari'
 					return
+
 
 		# ie hack for hash urls
 		req.url = req.path.replace( "/#", '' )
 
 		# log " controllers/navigation/url_changed:: #{req.url}"
-		# TODO: 
-		#  - don't reload if the content is already loaded
-		#  - implement transitions out
-		#  - implement transition  in 
 
-		div = $( '<div>' )
+		div = $ '<div>'
 
 		@emit 'before_load'
+
+		app.body.addClass 'visible custom_loading'
 
 		div.load req.url, =>
 
@@ -80,6 +84,7 @@ class Navigation
 
 				new_content = div.find( @content_selector ).children()
 				
+				# log "[Navigation] loading", @content_selector
 				@content_div = $ @content_selector
 
 				# Remove old content
@@ -88,6 +93,10 @@ class Navigation
 				# populate with the loaded content
 				@content_div.append new_content
 				delay 10, => @emit 'after_render'
+
+
+				app.body.removeClass 'custom_loading'
+				delay 300, => app.body.removeClass 'visible'
 
 	##
 	# Navigates to a given URL using Html 5 history API
@@ -101,35 +110,47 @@ class Navigation
 
 		@first_loading = off
 
-		log "[Navigates] go", url
 		page url
 		# ways.go url
 
 		return false
 
 	go_silent: ( url, title ) ->
+		# log "[Navigation] go_silent method", url
+		@silent = true
 		page.replace url, null, null, false
-		
+
+	main_refresh: ->
+		@DEFAULT_SELECTOR is @content_selector
+
 	##
 	# Looks for internal links and bind then to client side navigation
 	# as in: html History api
 	##
 	bind: ( scope = 'body' ) ->
 
+		ref = @
 		$( scope ).find( 'a' ).on 'click', ->
 			$item = $ @
 
-			href = $item.attr 'href'
 
+			# Check if the link has been already binded
+			return if $item.hasClass 'nav_binded'
+			$item.addClass 'nav_binded'
+
+			# Check if the link has got a proper href
+			href = $item.attr 'href'
 			if !href? then return false
 
-			# if the link has http and the domain is different
+			# if the link has http and the domain is different, skip it
 			if href.indexOf( 'http' ) >= 0 and href.indexOf( document.domain ) < 0 
 				return true
 
+			# if the link has a special href, skip it
 			if href.indexOf( "javascript" ) is 0 or href.indexOf( "tel:" ) is 0
 				return true
 
+			# if the link has a specified target, skip it
 			if $item.attr( 'target' )?
 				return true
 
@@ -142,7 +163,20 @@ class Navigation
 			if a is b
 				return false 
 
-			return Navigation.instance.go href
+			ref.content_selector = ref.DEFAULT_SELECTOR
+
+			if $item.data 'nav-load'
+				ref.content_selector = $item.data 'nav-load'
+				# log "--->", ref.content_selector
+
+			# Check if the link has the class .silent
+			if $item.hasClass 'silent'
+				# log "[Navigation] go silent", href
+				return Navigation.instance.go_silent href
+
+			else
+				# log "[Navigation] go", href
+				return Navigation.instance.go href
 
 
 # will always export the same instance

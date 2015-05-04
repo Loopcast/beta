@@ -35,6 +35,14 @@ module.exports =
 
       url = req.url.pathname
 
+      data.url = "/explore/people"
+
+      if genres.length > 0
+        data.current_genre = genres
+      else
+        data.current_genre = ""
+        
+
       template url, data, ( error, response ) ->
 
         if not error then return reply response

@@ -50,8 +50,9 @@ class App
 		first_render = true
 
 		navigation.on 'before_destroy', =>
-			@emit 'loading:show'
-			views.unbind '#content'
+			if navigation.main_refresh()
+				@emit 'loading:show'
+				views.unbind '#content'
 
 		navigation.on 'after_render', =>
 
@@ -86,11 +87,13 @@ class App
 		if view_preloading.length > 0
 			v = views.get_by_dom view_preloading
 			v.once 'ready', => 
-				@emit 'loading:hide'
+				if navigation.main_refresh()
+					@emit 'loading:hide'
 
 		# Otherwise just hide the loading screen
 		else
-			@emit 'loading:hide'
+			if navigation.main_refresh()
+				@emit 'loading:hide'
 
 	
 	# User Proxies
