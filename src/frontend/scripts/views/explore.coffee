@@ -1,35 +1,46 @@
 Isotope = require 'isotope-layout'
 
 module.exports = class Explore
-	isotope: null
-	constructor: ( @dom ) -> 
-		view.on 'binded', @on_views_binded
+  isotope: null
+  constructor: ( @dom ) -> 
+    log "[Creating explore]"
+    view.on 'binded', @on_views_binded
 
-	on_views_binded: (scope) =>
-		return if not scope.main
+  on_views_binded: (scope) =>
+    return if not scope.main
 
-		container_isotope = @dom.find( '.rooms_grid' )[ 0 ]
+    container_isotope = @dom.find( '.rooms_grid' )[ 0 ]
 
-		@isotope.destroy() if @isotope
-			
-		@isotope = new Isotope container_isotope,
-			itemSelector: '.item',
-			gutter: 30
-			layoutMode: 'masonry'
-			masonry:
-				columnWidth: 210,
-				gutter: 30
+    @isotope.destroy() if @isotope
 
-		delay 1000, => $(window).resize()
+    if $( 'input[name=current_genre]' ).length > 0
+      current_genre = $( 'input[name=current_genre]' ).val()
 
-	on_genre_click: (e) =>
-		genre_id = $(e.currentTarget).data 'genre-id'
-		log "click", genre_id
-		
-		@filters.removeClass 'selected'
-		@dom.find( '.genres_list a[data-genre-id="'+genre_id+'"]' ).addClass 'selected'
+      log 'current_genre', current_genre
+      
+    @isotope = new Isotope container_isotope,
+      itemSelector: '.item',
+      gutter: 30
+      layoutMode: 'masonry'
+      masonry:
+        columnWidth: 210,
+        gutter: 30
 
-		@isotope.arrange filter: ".item-#{genre_id}"
+    @filters = @dom.find '.genres_list a'
+    @filters.removeClass 'selected'
+    @dom.find( '.genres_list a[data-genre-id="'+current_genre+'"]' ).addClass 'selected'
 
-	destroy: ->
-		view.off 'binded', @on_views_binded
+
+    delay 1000, => $(window).resize()
+
+  on_genre_click: (e) =>
+    genre_id = $(e.currentTarget).data 'genre-id'
+    log "click", genre_id
+    
+    @filters.removeClass 'selected'
+    @dom.find( '.genres_list a[data-genre-id="'+genre_id+'"]' ).addClass 'selected'
+
+    @isotope.arrange filter: ".item-#{genre_id}"
+
+  destroy: ->
+    view.off 'binded', @on_views_binded

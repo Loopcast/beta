@@ -25,7 +25,8 @@ block content
           class="#{klass}" 
           title="All genres", 
           href="#{url}", 
-          data-nav-load=".flex_content.rooms_grid > .inner"
+          data-nav-load=".flex_content.rooms_grid > .inner",
+          data-genre-id=""
         ) All genres
 
         each g in genres
@@ -38,11 +39,13 @@ block content
             style='text-transform:capitalize',
             title="#{g}",
             href="#{g_url}", 
-            data-nav-load=".flex_content.rooms_grid > .inner"
+            data-nav-load=".flex_content.rooms_grid > .inner",
+            data-genre-id="#{g}"
           ) #{g}
 
 
       .flex_content.rooms_grid
         .loading
         .inner
+          input(type="hidden", name="current_genre", value="#{current_genre}")
           block grid
