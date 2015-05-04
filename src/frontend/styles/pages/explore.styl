@@ -127,7 +127,23 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
       
     
   .rooms_grid
-    // overflow: hidden
+    .loading
+      absolute top 0 left 0
+      width: 100%
+      height: 100%
+      background: #ececec
+      z-index: 0
+      transition: opacity .2s linear
+      opacity: 0
+      
+
+
+    .inner
+      position: relative;
+      width: 100%;
+      height: 100%;
+      z-index: 0
+      overflow: hidden
     .room_cell
       width: 210px
       text-align: left
@@ -235,7 +251,16 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
   &.playing
     .circle_icon
       opacity: 1  
-    
+
+
+.custom_loading
+  .explore .rooms_grid .loading
+    opacity: 1
+    // transition: opacity .1s linear
+.visible
+  .explore .rooms_grid .loading
+    z-index: 1
+
 .no_touch_device
   .explore
     .genres_list
