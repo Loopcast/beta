@@ -99,6 +99,7 @@ module.exports = class People extends ChatView
 
   destroy: ->
     @listeners = []
+    @listeners_map = []
     @send_message "removed"
 
     if @is_room_created

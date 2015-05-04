@@ -20,6 +20,16 @@ module.exports =
         callback  null, response
 
   rooms :
+    info: (room_id, callback ) ->
+
+      callback
+        thumb: '/images/default_room_thumb.jpg'
+        title: 'The title'
+        url: 'http://radio.loopcast.fm:8000/henriquematias'
+        author: 'Henrique Matias'
+        author_id: 'henriquematias'
+        author_link: '/henriquematias'
+
     create: ( data, callback ) ->
       on_status_code =
         401: ( response ) -> callback 'unauthorized, need log in!'

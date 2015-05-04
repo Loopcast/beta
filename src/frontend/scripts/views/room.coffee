@@ -117,6 +117,17 @@ module.exports = class Room extends LoggedView
     else
       @show_guest_popup()
 
+    if @dom.hasClass 'room_live'
+      @on_room_live()
+
+  on_room_live: ->
+    # TEMP
+    L.rooms.info @room_id, (data) =>
+      log "[Room] on room live", data
+    
+
+
+
   show_guest_popup: ->
     link = "/rooms/create"
     message = 'Do you want to set up your own live room like this?'
