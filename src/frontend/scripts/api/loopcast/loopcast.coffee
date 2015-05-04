@@ -29,6 +29,10 @@ module.exports =
         author: 'Henrique Matias'
         author_id: 'henriquematias'
         author_link: '/henriquematias'
+        liked: false
+        status:
+          live:
+            started_at: "2015-04-24T17:08:40.000Z"
 
     create: ( data, callback ) ->
       on_status_code =

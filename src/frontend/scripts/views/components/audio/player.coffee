@@ -17,12 +17,14 @@ module.exports = class Player
 
   on_views_binded: (scope) =>
     return if not scope.main
+    log "----> on views binded"
     @share = view.get_by_dom @dom.find( '.share_wrapper' )
 
     view.off 'binded', @on_views_binded
     
   open: ( data ) ->
     if data?
+      log "[Player] open", data
 
       @thumb.attr 'src', data.thumb
       @title.html data.title
@@ -39,7 +41,6 @@ module.exports = class Player
 
       @share.update_link data.url
 
-      log "[Player] open", data
 
       @dom.show()
       delay 1, => @dom.addClass 'visible'
