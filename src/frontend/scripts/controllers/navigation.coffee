@@ -43,6 +43,8 @@ class Navigation
 
 	url_changed: ( req ) =>
 
+		log "URL CHANGED", req
+
 		if @silent
 			@silent = off
 			return
@@ -130,18 +132,17 @@ class Navigation
 	bind: ( scope = 'body' ) ->
 
 		ref = @
-		$( scope ).find( 'a' ).on 'click', ->
+		$( scope ).find( 'a' ).on 'click', (e) ->
 			$item = $ @
 
 
-			# Check if the link has been already binded
-			return if $item.hasClass 'nav_binded'
-			$item.addClass 'nav_binded'
+			
 
 			# Check if the link has got a proper href
 			href = $item.attr 'href'
 			if !href? then return false
 
+			log "click", href
 			# if the link has http and the domain is different, skip it
 			if href.indexOf( 'http' ) >= 0 and href.indexOf( document.domain ) < 0 
 				return true
@@ -155,6 +156,7 @@ class Navigation
 				return true
 
 			if href.indexOf( "#" ) is 0
+				e.preventDefault()
 				return false
 
 			# Check if the url is the same
@@ -162,6 +164,10 @@ class Navigation
 			b = url_parser.get_pathname location.pathname
 			if a is b
 				return false 
+
+			# Check if the link has been already binded
+			return if $item.hasClass 'nav_binded'
+			$item.addClass 'nav_binded'
 
 			ref.content_selector = ref.DEFAULT_SELECTOR
 
