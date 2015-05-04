@@ -1,3 +1,5 @@
+DEFAULT = require './default_images'
+
 Transform = 
   all: ( url ) ->
     return {
@@ -24,13 +26,13 @@ Transform =
 
   cover: ( url ) -> 
     if not url? or url.indexOf( "upload/" ) < 0
-      return "/images/profile-150.jpg"
+      return DEFAULT.cover
     else
       url.replace "upload/", "upload/w_1140,h_350,c_fill,g_north/"
 
   cover_thumb: ( url ) ->
     if not url? or url.indexOf( "upload/" ) < 0
-      return "/images/profile-150.jpg"
+      return DEFAULT.cover_thumb
     else
       url.replace "upload/", "upload/w_200,h_167,c_fill,g_north/"    
 
