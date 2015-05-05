@@ -142,7 +142,6 @@ class Navigation
 			href = $item.attr 'href'
 			if !href? then return false
 
-			log "click", href
 			# if the link has http and the domain is different, skip it
 			if href.indexOf( 'http' ) >= 0 and href.indexOf( document.domain ) < 0 
 				return true
