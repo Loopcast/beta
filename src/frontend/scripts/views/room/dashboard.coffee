@@ -7,10 +7,9 @@ module.exports = class Dashboard extends RoomView
     left : null
     right: null
   balloons: []
-
-  constructor: ( @dom ) ->
-    super @dom
-
+  live_button: null
+  record_button: null
+  publish_modal: null
 
   on_room_created: (@room_id, @owner_id) =>
     
@@ -22,9 +21,13 @@ module.exports = class Dashboard extends RoomView
       return
 
     # log "[Dashboard] on_room_created (it is the owner)"
+    @publish_modal = view.get_by_dom '#publish_modal'
+    
 
-    @live_button = view.get_by_dom @dom.find( '#go_live_button' )
+    @live_button   = view.get_by_dom @dom.find( '#go_live_button' )
+    @record_button = view.get_by_dom @dom.find( '#record_button' )
     @live_button.on 'live:changed', @on_live_changed
+    @record_button.on 'record:changed', @on_record_changed
 
     @balloons = 
       appcast: view.get_by_dom( '#appcast_not_running_balloon' )
@@ -33,11 +36,6 @@ module.exports = class Dashboard extends RoomView
 
     @appcast_not_running_message = @dom.find '.appcast_not_running_message'
     @meter = view.get_by_dom @dom.find( '.meter_wrapper' )
-    @broadcast_trigger = view.get_by_dom @dom.find( '.broadcast_controls' )
-    @recording_trigger = view.get_by_dom @dom.find( '.recording_controls' )
-
-    if @broadcast_trigger.length > 0 
-      @broadcast_trigger.on 'change', @on_broadcast_click
     
     @input_select = view.get_by_dom @dom.find( '.input_select' )
     @input_select.on 'changed', (data) ->
@@ -47,11 +45,21 @@ module.exports = class Dashboard extends RoomView
     @appcast_not_running_message.on 'click', @toggle_not_running_balloon
     appcast.on 'connected', @on_appcast_connected
 
+
   toggle_not_running_balloon: =>
     @balloons.appcast.toggle()
 
   on_live_changed: ( data ) =>
     log "[Room] on_live_changed", data
+
+  on_record_changed: ( data ) =>
+    log "[Room] on_record_changed", data
+    log "-> recording", data
+    log "is offline", $('.room_public').length <= 0
+
+    if not data and $('.room_public').length <= 0
+      @publish_modal.open_with_id @room_id
+
 
   on_appcast_connected: ( is_connected ) =>
 
@@ -75,29 +83,17 @@ module.exports = class Dashboard extends RoomView
 
     delay 4000, => @balloons.appcast.hide()
 
-  on_broadcast_click : (data) ->
-    log "on_broadcast_click", data
-
-    if data is "start"
-      # do appcast.start_stream
-    else
-      # do appcast.stop_stream
-
-  on_recording_click : (data) ->
-    log "on_recording_click", data
-
-    if data is "start"
-      # do appcast.start_recording
-    else
-      # do appcast.stop_recording
 
   destroy: ->
     if @is_room_owner
       for item of @balloons
         view.destroy_view @balloons[ item ]
-      if @broadcast_trigger.length > 0 
-        @broadcast_trigger.off 'change', @on_broadcast_click
+      if @appcast_not_running_message.length > 0 
         @appcast_not_running_message.off 'click', @toggle_not_running_balloon
+
+      if @live_button
+        @live_button.off 'click'
+        @record_button.off 'click'
 
       appcast.off 'connected', @on_appcast_connected
 

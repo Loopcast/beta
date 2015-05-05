@@ -14,7 +14,11 @@ block content
   - live_class = ""
   if room && room.status.is_live
     - live_class = "room_live"
-  .createroom.profile_theme.centered(data-menu="#{data_menu}", data-view="room", class="#{live_class}")
+
+  - public_class = ""
+  if room && room.status.is_public
+    - public_class = "room_public"  
+  .createroom.profile_theme.centered(data-menu="#{data_menu}", data-view="room", class="#{live_class} #{public_class}")
     .cover
       if room && room.images.cover
         .cover_image(style="background-image:url(#{room.images.cover})")

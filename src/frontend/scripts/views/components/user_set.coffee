@@ -1,4 +1,5 @@
-api             = require 'app/api/loopcast/loopcast'
+api    = require 'app/api/loopcast/loopcast'
+notify = require 'app/controllers/notify'
 
 module.exports = ( dom ) ->
   settings_handler = null
@@ -11,7 +12,7 @@ module.exports = ( dom ) ->
 
     dom.find( '.confirm_delete' ).on 'click', _confirm_delete
     dom.find( '.cancel_delete' ).on 'click', _cancel_delete
-
+    dom.find( '.set_public' ).on 'click', _set_public
     view.once 'binded', _on_views_binded
 
   _on_views_binded = ->
@@ -87,6 +88,16 @@ module.exports = ( dom ) ->
   _confirm_delete = ->
     log "[Set] delete"
     dom.slideUp()
+
+  _set_public = ->
+    api.rooms.update room_id, is_public: true, (error, response) =>
+
+      if error
+        log "[PublishModal] error", error
+        notify.error "There was an error. Try later."
+      else
+        notify.info "The room now is public!"
+        dom.addClass 'public'
 
 
   init()

@@ -1,621 +1,641 @@
 @import '../_shared/_bootstrap.styl'
 
 .createroom
-	background: white
-	
+  background: white
+  
 .instructions
-	position: absolute
-	left: 0
-	width: 200px
-	text-align: left
+  position: absolute
+  left: 0
+  width: 200px
+  text-align: left
 .profile_theme
-	position  : relative
-	
-	&.page_create
-		.genres, .socials_room
-			display: none
-	.profile_bio_without_information
-		display: none
-		color: #787676
-		font-weight: bold
-		font-size: 0.9rem
-		padding: 40px 30px 6px
-		text-align: center
-		p
-			margin-bottom: 5px
-			
-		.text
-			text-align: left
-			margin-bottom: 90px
-			
-		.for_guest
-			margin-bottom: 30px
-			text-align: center
-	
-	.change_cover
-		display: none
-		
-	.change_cover .upload_element
-		display: block
-		border: none
+  position  : relative
+  
+  &.page_create
+    .genres, .socials_room
+      display: none
+  .profile_bio_without_information
+    display: none
+    color: #787676
+    font-weight: bold
+    font-size: 0.9rem
+    padding: 40px 30px 6px
+    text-align: center
+    p
+      margin-bottom: 5px
+      
+    .text
+      text-align: left
+      margin-bottom: 90px
+      
+    .for_guest
+      margin-bottom: 30px
+      text-align: center
+  
+  .change_cover
+    display: none
+    
+  .change_cover .upload_element
+    display: block
+    border: none
 
-			
-
-
-	&.no_information_yet
-		.profile_bio_with_information
-			display: none
-		.profile_bio_without_information
-			display: block
-		
+      
 
 
+  &.no_information_yet
+    .profile_bio_with_information
+      display: none
+    .profile_bio_without_information
+      display: block
+    
 
 
-	// maybe player should be a global thing right?
-	.player
-		display: none
-		
-		.vu
-			.meter_left, .meter_right
-				height       : 5px
-				margin-bottom: 5px
-				width        : 0
-				
-				background: #6A0
-				display: block
-				
-	.controls
-		display: none
-		
-		width 100%
-		background #222
-	
-	h2
-		font-size: 1.2em
-		line-height: 1em
-		margin-bottom: 0px
-
-	.change_cover
-		position: absolute
-		top: 50%
-		left: 50%
-		transform: translateX(-50%) translateY(-50%)
-		overflow: hidden
-		
-		.ss-camera
-			font-size: 23px
-			top: 5px
-			margin-right: 8px
-	
-	.cover
-		height: 350px
-		position: relative
-		overflow: hidden
-		border-bottom: 1px solid #999
-		.cover_image
-			absolute top 0 left 0
-			width: 100%
-			height: 100%
-			background-size: cover
-			background-position: 50% 50%
-			z-index: 0
-		.content
-			z-index: 1
-			absolute top 0 left 0
-			width: 100%
-			height: 100%
-			text-align: left
-			
-		.name
-			font-size: 2.5em
-			margin-bottom: 0
-			font-weight: 600
-			padding: 5px 10px 10px
-			letter-spacing: 0.03em
-			line-height: 1em
-			margin-top: 10px
-			
-			color: GRAY
-			
-		.name, .type, .genres, .socials_room
-			margin-left: SIDE_PADDING
-			
-		.socials_room
-			margin-top: 5px
-			a
-				
-				.spritesheet
-					transform: scale(0.8,0.8)
-			
-		.type, .genres, .location
-			font-size: 1em
-			font-weight: 600
-			color: GRAY_1
-			line-height: 1em
-			
-
-		.name, .type, .genres, .location
-			margin-bottom: 1px
 
 
-		.location
-			display: none
-		
-		.genres
-			max-width: 300px
-			line-height: 1.2em
-			overflow: visible
-			
-		.genres li
-			display: inline-block
-			
+  // maybe player should be a global thing right?
+  .player
+    display: none
+    
+    .vu
+      .meter_left, .meter_right
+        height       : 5px
+        margin-bottom: 5px
+        width        : 0
+        
+        background: #6A0
+        display: block
+        
+  .controls
+    display: none
+    
+    width 100%
+    background #222
+  
+  h2
+    font-size: 1.2em
+    line-height: 1em
+    margin-bottom: 0px
 
-		.profile_image
-			absolute bottom 0 left SIDE_PADDING
-			width: 150px
-			overflow: hidden
-			box-shadow: 0px 20px 37px 12px rgba(0,0,0,0.75)
-			img
-				box-shadow: 1px 1px 66px 3px #000
-				display: block
-				width: 100%
-			.edit_image
-				absolute left 0 bottom 0
-				background: rgba(0,0,0,.8)
-				padding: 10px
-				padding-left: 50px
-				width: 100%
-				color: GRAY_1
-				font-size: .8em
-				line-height: .9em
-				font-weight: 600
-				transition: transform .3s ease-out
-				transform: translateY(100%)
-				.spritesheet, .icon
-					absolute left 15px top 50%
-					transform: translateY(-50%)
-					font-size: 23px
-				
-	.sidebar_right
-		absolute top 0 right 0
-		height: 100%
-		text-align: center
-		color: white
-		
-		transition: background .5s linear, color .5s linear
-		display: flex
-		flex-direction: column
-	.big_number
-		flex: 1
-		padding: 0px 15px
-		background: BLACK_BOX_COLOR
-		border-bottom: 1px solid BLACK
-		border-top: 1px solid #353535
-		display: flex
-		align-items: center
-		text-align: center
-		
-		&:first-child
-			border-top: none 
+  .change_cover
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translateX(-50%) translateY(-50%)
+    overflow: hidden
+    
+    .ss-camera
+      font-size: 23px
+      top: 5px
+      margin-right: 8px
+  
+  .cover
+    height: 350px
+    position: relative
+    overflow: hidden
+    border-bottom: 1px solid #999
+    .cover_image
+      absolute top 0 left 0
+      width: 100%
+      height: 100%
+      background-size: cover
+      background-position: 50% 50%
+      z-index: 0
+    .content
+      z-index: 1
+      absolute top 0 left 0
+      width: 100%
+      height: 100%
+      text-align: left
+      
+    .name
+      font-size: 2.5em
+      margin-bottom: 0
+      font-weight: 600
+      padding: 5px 10px 10px
+      letter-spacing: 0.03em
+      line-height: 1em
+      margin-top: 10px
+      
+      color: GRAY
+      
+    .name, .type, .genres, .socials_room
+      margin-left: SIDE_PADDING
+      
+    .socials_room
+      margin-top: 5px
+      a
+        
+        .spritesheet
+          transform: scale(0.8,0.8)
+      
+    .type, .genres, .location
+      font-size: 1em
+      font-weight: 600
+      color: GRAY_1
+      line-height: 1em
+      
 
-		&:last-child
-			border-bottom: none
-		.inner
-			width: 100%
-			display: block
-		span
-			display: block
-			
-			&.number
-				font-size: 2.0rem
-				line-height: 1rem
-				margin-bottom: 10px
-				
-			&.text
-				font-size: .8rem
-				
-	.room_status
-		height: 32px
-		font-size: 11px
-		font-weight: 600
-		& > div
-			color: white
-			text-align: center
-			padding: 10px
-			height: 100%
-			width: 100%
-			padding: 9px 0px
-			 
-		.offair
-			background: #8d8d8d
-		.live
-			background: RED
-			display: none
-			
-		
-				
-	.cover_button
-		position: absolute
-		bottom: 20px
-		right: 130px
-		display: none
-		span.spritesheet
-			transform: scale(.7,.7)
-				
-	.profile_content
-		padding: 40px 0px
-		display: flex
-		text-align: left
-		.profile_left
-			position: relative
-			width: 290px
-			margin-right: 40px
-		.profile_bio
-			width: 100%
-			position: relative
-			padding: 13px SIDE_PADDING
-			
-			.outline_icon
-				position: absolute
-				top: 5px
-				right: 10px
-				padding-top: 9px
-				display: none
-			h4
-				font-size: 1em
-				margin-bottom: 14px
-			.bio
-				color: GRAY_2
-				font-size: 0.865em
-				
-		.social
-			margin-top: 20px
-			a
-				display: inline-block
-				margin-right: 20px
-				
-			
-		.list_sessions
-			flex: 1
-			.no_activity
-				color: BLACK
-			.button.bold_button
-				width: 300px
-				margin-top: 20px
-		
-		.session
-			height: 100px
-			width: 100%
-			margin-bottom: 40px
-			display: flex
-			height: 170px
-			overflow: visible
-			
-			.image
-				width: 200px
-				background-size: cover
-				background-position: 50% 50%
-				position: relative
-				border-top-left-radius: 5px
-				border-bottom-left-radius: 5px
-				.icon
-					absolute left 50% top 50%
-					transform: translateX(-50%) translateY(-50%)
-					
-			.content
-				flex: 1
-				padding: 16px 20px
-				position: relative
-			
-			h2
-				padding-right: 20px
-				margin-bottom: 8px
-				
-			.session_author
-				color: BLUE
-				font-size: .86em
-				margin-bottom: 10px
-				display: block
-				
-			
-			.genres
-				margin-bottom: 4px
-				
-			.small_info
-				color: GRAY_4
-				& > *
-					display: inline-block
-					margin-right: 10px
-					font-size: .8em
-					span.spritesheet, span.icon
-						display: inline-block
-						margin-right: 5px
-						position: relative
-						top: 2px
-						
-					span.ss-play
-						font-size: 0.8em
-						top: 1px
-			.live
-				position: absolute
-				bottom: 10px
-				right: 10px
-				width: 100%
-				text-align: right
-				font-weight: 700
-				line-height: 0.8em
-				font-size: 0.7em
-				.time, .label
-					display: inline-block
-					
-				.time
-					color: RED
-					margin-left: 10px
-					text-transform: uppercase
-					font-size: 1.4em
-					
-				.label
-					
-					background: RED
-					border-bottom-right-radius: 4px
-					padding: 7px 20px
-					padding-right: 30px
-					text-transform: uppercase
-					color: #fff
-					position: relative
-					
-					text-align: left
-					&:after
-						content: ""
-						background: white
-						width: 8px
-						height: 8px
-						border-radius: 5px
-						position: absolute
-						top: 50%
-						transform: translateY(-50%)
-						left: 7px
-						
-			
-					
-				
+    .name, .type, .genres, .location
+      margin-bottom: 1px
 
-	.recorded_sessions
-		.title 
-			margin-bottom: 30px
-			*
-				display: inline-block
-				vertical-align: top
-			h2
-				margin-right: 30px
-				
-			.ss-record-wrapper, .ss-alert
-				position: relative
-				top: 2px
-				margin-right: 5px
-				
-			.ss-alert
-				color: RED
-				
-			.session_icon
-				position: relative
-				top: 3px
-				margin-right: 5px
-				
-			.session_text
-				margin-right: 15px
-				padding-top: 1px
-				
-			.alert_icon
-				position: relative
-				top: 3px
-				margin-right: 5px
-			
-			.alert_text
-				font-size: 0.7em
-				color: RED
-				font-weight: 800
-				padding-top: 4px
-				
-	&.user_logged
-		.cover_button
-			display: block
-			
-		.profile_content .profile_bio .outline_icon
-			display: block
-			
-		.edit_session_wrapper
-			display: block
-			
-		.element_on_write_mode
-			display: none
-			
+
+    .location
+      display: none
+    
+    .genres
+      max-width: 300px
+      line-height: 1.2em
+      overflow: visible
+      
+    .genres li
+      display: inline-block
+      
+
+    .profile_image
+      absolute bottom 0 left SIDE_PADDING
+      width: 150px
+      overflow: hidden
+      box-shadow: 0px 20px 37px 12px rgba(0,0,0,0.75)
+      img
+        box-shadow: 1px 1px 66px 3px #000
+        display: block
+        width: 100%
+      .edit_image
+        absolute left 0 bottom 0
+        background: rgba(0,0,0,.8)
+        padding: 10px
+        padding-left: 50px
+        width: 100%
+        color: GRAY_1
+        font-size: .8em
+        line-height: .9em
+        font-weight: 600
+        transition: transform .3s ease-out
+        transform: translateY(100%)
+        .spritesheet, .icon
+          absolute left 15px top 50%
+          transform: translateY(-50%)
+          font-size: 23px
+        
+  .sidebar_right
+    absolute top 0 right 0
+    height: 100%
+    text-align: center
+    color: white
+    
+    transition: background .5s linear, color .5s linear
+    display: flex
+    flex-direction: column
+  .big_number
+    flex: 1
+    padding: 0px 15px
+    background: BLACK_BOX_COLOR
+    border-bottom: 1px solid BLACK
+    border-top: 1px solid #353535
+    display: flex
+    align-items: center
+    text-align: center
+    
+    &:first-child
+      border-top: none 
+
+    &:last-child
+      border-bottom: none
+    .inner
+      width: 100%
+      display: block
+    span
+      display: block
+      
+      &.number
+        font-size: 2.0rem
+        line-height: 1rem
+        margin-bottom: 10px
+        
+      &.text
+        font-size: .8rem
+        
+  .room_status
+    height: 32px
+    font-size: 11px
+    font-weight: 600
+    & > div
+      color: white
+      text-align: center
+      padding: 10px
+      height: 100%
+      width: 100%
+      padding: 9px 0px
+       
+    .offair
+      background: #8d8d8d
+    .live
+      background: RED
+      display: none
+      
+    
+        
+  .cover_button
+    position: absolute
+    bottom: 20px
+    right: 130px
+    display: none
+    span.spritesheet
+      transform: scale(.7,.7)
+        
+  .profile_content
+    padding: 40px 0px
+    display: flex
+    text-align: left
+    .profile_left
+      position: relative
+      width: 290px
+      margin-right: 40px
+    .profile_bio
+      width: 100%
+      position: relative
+      padding: 13px SIDE_PADDING
+      
+      .outline_icon
+        position: absolute
+        top: 5px
+        right: 10px
+        padding-top: 9px
+        display: none
+      h4
+        font-size: 1em
+        margin-bottom: 14px
+      .bio
+        color: GRAY_2
+        font-size: 0.865em
+        
+    .social
+      margin-top: 20px
+      a
+        display: inline-block
+        margin-right: 20px
+        
+      
+    .list_sessions
+      flex: 1
+      .no_activity
+        color: BLACK
+      .button.bold_button
+        width: 300px
+        margin-top: 20px
+    
+    .session
+      height: 100px
+      width: 100%
+      margin-bottom: 40px
+      display: flex
+      height: 170px
+      overflow: visible
+      
+      .image
+        width: 200px
+        background-size: cover
+        background-position: 50% 50%
+        position: relative
+        border-top-left-radius: 5px
+        border-bottom-left-radius: 5px
+        .icon
+          absolute left 50% top 50%
+          transform: translateX(-50%) translateY(-50%)
+          
+      .content
+        flex: 1
+        padding: 16px 20px
+        position: relative
+        
+      .public_screen
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        z-index: 1
+        a
+          font-weight: bold
+        background: rgba(0,0,0,0.7)
+        
+        display: flex
+        align-items: center
+        justify-content: center
+        
+      &.public
+        .public_screen
+          display: none
+      
+      h2
+        padding-right: 20px
+        margin-bottom: 8px
+        
+      .session_author
+        color: BLUE
+        font-size: .86em
+        margin-bottom: 10px
+        display: block
+        
+      
+      .genres
+        margin-bottom: 4px
+        
+      .small_info
+        color: GRAY_4
+        & > *
+          display: inline-block
+          margin-right: 10px
+          font-size: .8em
+          span.spritesheet, span.icon
+            display: inline-block
+            margin-right: 5px
+            position: relative
+            top: 2px
+            
+          span.ss-play
+            font-size: 0.8em
+            top: 1px
+      .live
+        position: absolute
+        bottom: 10px
+        right: 10px
+        width: 100%
+        text-align: right
+        font-weight: 700
+        line-height: 0.8em
+        font-size: 0.7em
+        .time, .label
+          display: inline-block
+          
+        .time
+          color: RED
+          margin-left: 10px
+          text-transform: uppercase
+          font-size: 1.4em
+          
+        .label
+          
+          background: RED
+          border-bottom-right-radius: 4px
+          padding: 7px 20px
+          padding-right: 30px
+          text-transform: uppercase
+          color: #fff
+          position: relative
+          
+          text-align: left
+          &:after
+            content: ""
+            background: white
+            width: 8px
+            height: 8px
+            border-radius: 5px
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+            left: 7px
+            
+      
+          
+        
+
+  .recorded_sessions
+    .title 
+      margin-bottom: 30px
+      *
+        display: inline-block
+        vertical-align: top
+      h2
+        margin-right: 30px
+        
+      .ss-record-wrapper, .ss-alert
+        position: relative
+        top: 2px
+        margin-right: 5px
+        
+      .ss-alert
+        color: RED
+        
+      .session_icon
+        position: relative
+        top: 3px
+        margin-right: 5px
+        
+      .session_text
+        margin-right: 15px
+        padding-top: 1px
+        
+      .alert_icon
+        position: relative
+        top: 3px
+        margin-right: 5px
+      
+      .alert_text
+        font-size: 0.7em
+        color: RED
+        font-weight: 800
+        padding-top: 4px
+        
+  &.user_logged
+    .cover_button
+      display: block
+      
+    .profile_content .profile_bio .outline_icon
+      display: block
+      
+    .edit_session_wrapper
+      display: block
+      
+    .element_on_write_mode
+      display: none
+      
 .write_mode
-	.profile_theme.user_logged
-		.element_on_write_mode
-			display: block
-			
-		.element_on_read_mode
-			display: none
+  .profile_theme.user_logged
+    .element_on_write_mode
+      display: block
+      
+    .element_on_read_mode
+      display: none
 
 .add_new_link
-	margin-bottom: 20px
+  margin-bottom: 20px
 
-.profile_form				
-	padding-top: 10px
-	textarea
-		height: 200px
-		
-	
-		
-	.save_button
-		padding-left: 40px
-		padding-right: 40px
-		margin: 0 auto 20px
+.profile_form       
+  padding-top: 10px
+  textarea
+    height: 200px
+    
+  
+    
+  .save_button
+    padding-left: 40px
+    padding-right: 40px
+    margin: 0 auto 20px
 
 .genres
-	overflow: hidden
-	.tag
-		float: left
-		margin-bottom: 5px
+  overflow: hidden
+  .tag
+    float: left
+    margin-bottom: 5px
 
-	
+  
 .edit_session_wrapper
-	position: absolute
-	top: 10px
-	right: 10px
-	display: none
-	.settings_button
-		opacity: 0.6
-		transition: transform .1s linear
-		font-size: 21px
-		transform-origin: 50% 40%
-		&.hovered
-			opacity: 1
-			transform: rotate(-180deg)
-			
+  position: absolute
+  top: 10px
+  right: 10px
+  display: none
+  z-index: 2
+  .settings_button
+    opacity: 0.6
+    transition: transform .1s linear
+    font-size: 21px
+    transform-origin: 50% 40%
+    &.hovered
+      opacity: 1
+      transform: rotate(-180deg)
+      
 
-	.edit_session_popup
-		absolute top -10px right 40px
-		background: SHARE_BOX
-		border-radius: 5px
-		box-shadow: 0px 0px 5px 1px rgb(27, 25, 25)
-		color: white
-		padding: 15px 20px 0
-		transform: scale(0.001,0.001)
-		opacity: 0
-		transition: transform .15s linear, opacity .1s linear
-		transform-origin: 110% 14.66%
-		SIZE = 10px
-		
+  .edit_session_popup
+    absolute top -10px right 40px
+    background: SHARE_BOX
+    border-radius: 5px
+    box-shadow: 0px 0px 5px 1px rgb(27, 25, 25)
+    color: white
+    padding: 15px 20px 0
+    transform: scale(0.001,0.001)
+    opacity: 0
+    transition: transform .15s linear, opacity .1s linear
+    transform-origin: 110% 14.66%
+    SIZE = 10px
+    
 
 
-		.triangle
-			content: ""
-			position: absolute
-			left: 100%
-			top: 10px
-			width: 0
-			height: 0
-			border-top: SIZE solid transparent
-			border-bottom: SIZE solid transparent
-			border-left: SIZE solid SHARE_BOX
+    .triangle
+      content: ""
+      position: absolute
+      left: 100%
+      top: 10px
+      width: 0
+      height: 0
+      border-top: SIZE solid transparent
+      border-bottom: SIZE solid transparent
+      border-left: SIZE solid SHARE_BOX
 
-		.button
-			margin-bottom: 15px
-		&.hovered
-			display: block
-			transform: scale(1,1)
-			transition: transform .15s linear, opacity .1s linear
-			opacity: 1
-	
+    .button
+      margin-bottom: 15px
+    &.hovered
+      display: block
+      transform: scale(1,1)
+      transition: transform .15s linear, opacity .1s linear
+      opacity: 1
+  
 .session
-	position: relative
-	transition: transform .2s ease-out
-	transform-origin: 50% 0
-	&.to_delete
-		.delete_screen
-			display: block
-			
-	&.deleted
-		transform: scale(1, 0.001)
-		
+  position: relative
+  transition: transform .2s ease-out
+  transform-origin: 50% 0
+  &.to_delete
+    .delete_screen
+      display: block
+      
+  &.deleted
+    transform: scale(1, 0.001)
+    
 .no_activity_wrapper
-	padding-right: 20px
-		
+  padding-right: 20px
+    
 .delete_screen
-	absolute top 0 left 0
-	width: 100%
-	height: 100%
-	background : #ECECEC
-	z-index: 1
-	text-align: center
-	padding-top: 30px
-	display: none
-	.button
-		display: inline-block
-		margin: 10px
-		padding-left: 40px
-		padding-right: 40px
-	.content
-		width: 355px
-		margin: 0 auto
-	h2
-		color: BLACK
-		font-size: 1.2em
-		font-weight: 600
+  absolute top 0 left 0
+  width: 100%
+  height: 100%
+  background : #ECECEC
+  z-index: 1
+  text-align: center
+  padding-top: 30px
+  display: none
+  .button
+    display: inline-block
+    margin: 10px
+    padding-left: 40px
+    padding-right: 40px
+  .content
+    width: 355px
+    margin: 0 auto
+  h2
+    color: BLACK
+    font-size: 1.2em
+    font-weight: 600
 
 // READ / WRITE SECTION
 .element_on_read_mode
-	display: block
-	
+  display: block
+  
 .element_on_write_mode
-	display: none
-	
+  display: none
+  
 
 .write_mode
-	.element_on_read_mode
-		display: none
-		
-	.element_on_write_mode
-		display: block
-	
+  .element_on_read_mode
+    display: none
+    
+  .element_on_write_mode
+    display: block
+  
 // --------------------------
 
 .is_guest
-	.cover_button
-	.profile_bio .outline_icon
-	.icon.ss-alert
-	.alert_text
-	.edit_session_wrapper .settings_button
-		display: none!important
-	
-	
-		
-	.room_live.profile_theme 
-		.room_status 
-			.offair	
-				display: none
-			.live
-				display: block
-				
+  .cover_button
+  .profile_bio .outline_icon
+  .icon.ss-alert
+  .alert_text
+  .edit_session_wrapper .settings_button
+    display: none!important
+  
+  
+    
+  .room_live.profile_theme 
+    .room_status 
+      .offair 
+        display: none
+      .live
+        display: block
+        
 
-	
+  
 .no_touch_device
-	.tag:hover
-		background: darken( TAG_COLOR, 10 )
-		
-	.profile_theme
-		.header_settings_hover:hover
-			opacity: 0.8
-			
-		.sidebar_right:hover
-			background: rgba(0,0,0,0.7)
-			color: lighten( GRAY_1	, 20 )
-			
-		.cover_button:hover
-			background: #fff
-			// color: #E5E9E8
-		.profile_content .session:hover
-			
+  .tag:hover
+    background: darken( TAG_COLOR, 10 )
+    
+  .profile_theme
+    .header_settings_hover:hover
+      opacity: 0.8
+      
+    .sidebar_right:hover
+      background: rgba(0,0,0,0.7)
+      color: lighten( GRAY_1  , 20 )
+      
+    .cover_button:hover
+      background: #fff
+      // color: #E5E9E8
+    .profile_content .session:hover
+      
 
-			.small_info
-				color: GRAY_2
-			
-				
-	.edit_session_wrapper
-		.settings_button:hover
-			opacity: 1
-	
-	&.is_owner
-		.cover:hover
-			.change_cover
-				display: block
-				
-			.profile_image .edit_image
-				transform: translateY(0)
-				
-			.editable_text .icon
-				display: block
-				
+      .small_info
+        color: GRAY_2
+      
+        
+  .edit_session_wrapper
+    .settings_button:hover
+      opacity: 1
+  
+  &.is_owner
+    .cover:hover
+      .change_cover
+        display: block
+        
+      .profile_image .edit_image
+        transform: translateY(0)
+        
+      .editable_text .icon
+        display: block
+        

@@ -12,6 +12,7 @@ transform       = require 'shared/transform'
 
 module.exports = class Room extends LoggedView
   room_created: false
+  publish_modal: null
 
   constructor: ( @dom ) ->
     super @dom
@@ -106,6 +107,8 @@ module.exports = class Room extends LoggedView
     @channel.bind 'listener:added', @on_listener_added
     @channel.bind 'listener:removed', @on_listener_removed
     @channel.bind 'message', @on_message
+    @publish_modal = view.get_by_dom '#publish_modal'
+    @publish_modal.on 'room:published', @on_room_published
 
     @emit 'room:created', data
 
@@ -120,9 +123,12 @@ module.exports = class Room extends LoggedView
     if @dom.hasClass 'room_live'
       @on_room_live()
 
-    @publish_modal = view.get_by_dom '#publish_modal'
+  on_room_published: (room_id) =>
+    log "[Room] on_room_published", room_id, @room_id
+    if room_id is @room_id
+      @dom.addClass 'room_public'
 
-    log "[Room] publish_modal", @publish_modal
+
 
   on_room_live: ->
     # TEMP
@@ -217,6 +223,9 @@ module.exports = class Room extends LoggedView
       @description.off 'changed', @on_description_changed
       @title.off 'changed', @on_title_changed
       @change_cover_uploader.off 'completed', @on_cover_uploaded
+
+    if @publish_modal
+      @publish_modal.on 'room:published', @on_room_published
     super()
 
     

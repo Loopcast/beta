@@ -181,16 +181,11 @@ block content
 
             for room in recorded
               - room.url = "/" + room.info.user + "/" + room.info.slug 
+              - public_class = ""
+              if room.status.is_public
+                - public_class = "public"
               //- - room.info.cover_url = room.info.cover_url || '/images/default_room_cover.jpg'
-              .session.outline_box(id="session_recorded_#{room._id}", data-room-id="#{room._id}" data-view="[components/user_set,components/audio/player_preview]")
-                input(type="hidden", name="room_thumb", value="#{room.thumb}")
-                input(type="hidden", name="room_title", value="#{room.info.title}")
-                input(type="hidden", name="room_link", value="#{room.info.url}")
-                input(type="hidden", name="room_author", value="#{name}")
-                input(type="hidden", name="room_author_id", value="#{id}")
-                input(type="hidden", name="room_author_link", value="/#{id}")
-
-
+              .session.outline_box(class="#{public_class}", id="session_recorded_#{room._id}", data-room-id="#{room._id}" data-view="[components/user_set,components/audio/player_preview]")
                 .image(style="background-image:url(#{room.thumb})")
                   a.icon.ss-play.circle_icon(href="#",title="Play") 
                   .share_wrapper(data-view="buttons/share", data-permalink="#{room.url}")
@@ -223,6 +218,10 @@ block content
                       a.download_button.button.yellow_button.small_button_4(href="#", title="Download") Download
                       a.edit_button.button.yellow_button.small_button_4(href="#", title="Edit") Edit
                       a.delete_button.button.red_button.small_button_4(href="#", title="Delete") Delete
+
+                  .public_screen
+                    a.button.yellow_button.no_shadow.small_button_2.set_public(title="Make set public") Make set public
+
 
                 .delete_screen
                   .content
