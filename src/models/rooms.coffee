@@ -55,8 +55,10 @@ module.exports = ( page = 0, tags, search, callback ) ->
     if error then return callback error
 
     for room in rooms
-      room.info.images = 
-        explore_thumb : transform.explore_thumb room.info.cover_url, true
+      room.info.images = transform.all_cover room.info.cover_url
+      # room.info.images = 
+      #   explore_thumb : transform.explore_thumb room.info.cover_url, true
+      #   cover : transform.cover room.info.cover_url, true
 
     data.set 'rooms', rooms
 

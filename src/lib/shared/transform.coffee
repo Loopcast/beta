@@ -11,6 +11,12 @@ Transform =
       explore_thumb: Transform.explore_thumb url
     }
 
+  all_cover: (url) ->
+    return {
+      explore_thumb: Transform.explore_thumb url
+      cover        : Transform.cover url
+    }
+
   top_bar: ( url ) -> 
 
     if not url? or url.indexOf( "upload/" ) < 0
@@ -54,12 +60,9 @@ Transform =
     else
       url.replace "upload/", "upload/w_84,h_84,c_fill,g_north/"
 
-  explore_thumb: ( url, is_room = false ) -> 
+  explore_thumb: ( url) -> 
     if not url? or url.indexOf( "upload/" ) < 0
-      if is_room
-        return "/images/default_room_thumb.jpg"
-      else
-        return "/images/profile-36.jpg"
+      return "/images/default_room_thumb.jpg"
     else
       url.replace "upload/", "upload/w_210,h_210,c_fill,g_north/"
 

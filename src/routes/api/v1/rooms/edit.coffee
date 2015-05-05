@@ -74,19 +74,21 @@ module.exports =
 
             # Problem while updating the cover of a room from the profile page
             # room.info.cover_url is undefined
-            current_id = extract_id room.info.cover_url
             new_id     = extract_id payload.cover_url
+            if room.info.cover_url
+              
+              current_id = extract_id room.info.cover_url
 
-            if current_id != new_id
-              console.log 'will remove old cover fromcloudinary'
+              if current_id != new_id
+                console.log 'will remove old cover fromcloudinary'
 
-              cloudinary.api.delete_resources [ current_id ], ( result ) ->
-                if result.error
-                  console.log "error deleting old cover from cloudinary"
-                  console.log result.error
-                else
-                  console.log 'succesfully deleted old cover from cloudinary'
-                  console.log result
+                cloudinary.api.delete_resources [ current_id ], ( result ) ->
+                  if result.error
+                    console.log "error deleting old cover from cloudinary"
+                    console.log result.error
+                  else
+                    console.log 'succesfully deleted old cover from cloudinary'
+                    console.log result
 
           if payload.genres
             update[ 'info.genres' ] = payload.genres
