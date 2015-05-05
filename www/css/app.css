@@ -5267,12 +5267,12 @@ body .notifyjs-corner .notifyjs-container {
 /* line 597 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
 
 /* line 598 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
-.is_guest .room_live.profile_theme .room_status .offair {
+.room_live.profile_theme .room_status .offair {
   display: none;
 }
 
 /* line 600 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
-.is_guest .room_live.profile_theme .room_status .live {
+.room_live.profile_theme .room_status .live {
   display: block;
 }
 
