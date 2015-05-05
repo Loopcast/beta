@@ -65,15 +65,10 @@ module.exports = class Meter extends RoomView
       @dom.remove()
       return
 
-    # DEBUG
-    # @interval = setInterval =>
-    #   @set_volume Math.random()
-    # , 500
-
     delay 5000, => clearInterval @interval
 
     appcast.on 'stream:vu', @set_volume
-    appcast.on 'stream:vu', @activate
+    # appcast.on 'stream:vu', @activate
 
 
   deactivate: ->
@@ -94,6 +89,7 @@ module.exports = class Meter extends RoomView
 
   set_volume: ( perc ) =>
 
+    log "[Meter] set_volume", perc
     left_data = @set_channel 'left', perc[0]
     right_data = @set_channel 'right', perc[1]
 

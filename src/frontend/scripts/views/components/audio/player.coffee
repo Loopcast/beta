@@ -72,7 +72,7 @@ module.exports = class Player
 
     @timer_interval = setInterval @check_time, 1000
     
-    @time.html ""
+    @time.html "&nbsp;"
 
     @open()
 
@@ -80,7 +80,7 @@ module.exports = class Player
     log "[Player] stop"
     @is_playing = false
     clearInterval @timer_interval
-
+    @data = null
     @close() if should_close
 
   check_time: =>
@@ -95,9 +95,11 @@ module.exports = class Player
 
 
   close: ( ) ->
+    app.body.removeClass 'player_visible'
     @dom.removeClass 'visible'
 
   open: ( data ) =>
+    app.body.addClass 'player_visible'
     @dom.show()
     delay 1, => @dom.addClass 'visible'
 

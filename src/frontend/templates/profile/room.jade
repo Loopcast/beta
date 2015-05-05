@@ -12,7 +12,7 @@ block content
 
 
   - live_class = ""
-  if room.status.is_live
+  if room && room.status.is_live
     - live_class = "room_live"
   .createroom.profile_theme.centered(data-menu="#{data_menu}", data-view="room", class="#{live_class}")
     .cover
@@ -78,6 +78,8 @@ block content
     include ../chat/chat.jade    
       
     include ./room_modal.jade
+
+    include ./publish_modal.jade
 
     script
       //- THIS IS JUST FOR DEBUGGIN. TO BE REMOVED
