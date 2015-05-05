@@ -34,13 +34,13 @@ module.exports = class Explore
     delay 1000, => $(window).resize()
 
   on_genre_click: (e) =>
-    genre_id = $(e.currentTarget).data 'genre-id'
-    log "click", genre_id
+    # genre_id = $(e.currentTarget).data 'genre-id'
+    # log "click", genre_id
     
-    @filters.removeClass 'selected'
-    @dom.find( '.genres_list a[data-genre-id="'+genre_id+'"]' ).addClass 'selected'
+    # @filters.removeClass 'selected'
+    # @dom.find( '.genres_list a[data-genre-id="'+genre_id+'"]' ).addClass 'selected'
 
-    @isotope.arrange filter: ".item-#{genre_id}"
+    # @isotope.arrange filter: ".item-#{genre_id}"
 
   destroy: ->
     view.off 'binded', @on_views_binded

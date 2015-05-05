@@ -160,7 +160,7 @@ class Navigation
 
 			# Check if the url is the same
 			a = url_parser.get_pathname href
-			b = url_parser.get_pathname location.pathname
+			b = url_parser.get_pathname location.href
 			if a is b
 				return false 
 
