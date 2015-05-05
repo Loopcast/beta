@@ -18,10 +18,9 @@ block grid
     if item.following
       - klasses += " following"
 
-    .room_cell.item(class="#{klasses}", data-view="components/audio/player_preview")
+    .room_cell.item(class="#{klasses}")
       a(href="/#{item.id}", title="#{item.name}", class="thumb_wrapper") 
         img.room_thumb(src="#{item.images.explore_thumb}")
-        span.icon.ss-play.circle_icon
 
       .room_content
         .text

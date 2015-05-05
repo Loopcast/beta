@@ -1,6 +1,14 @@
+ - loc = ""
+if location
+  - loc = location
+
+- bio = ""
+if about
+  - bio = about
+
 block seo
-  title Loopcast | Stream live from anywhere at anytime 
-  meta( name="description" content="Stream, record and save your DJ mixes instantly. Create your own room, interact with your audience and see who’s listening in real time." ) 
+  title #{name} | Loopcast | Stream live from anywhere at anytime 
+  meta( name="description" content="#{bio}" ) 
 
 extends layout
 
@@ -110,13 +118,7 @@ block content
               span.icon.ss-write
 
 
-            - loc = ""
-            if location
-              - loc = location
-
-            - bio = ""
-            if about
-              - bio = about
+           
             
             h4.location #{loc}
             .bio !{bio}
