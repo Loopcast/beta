@@ -26,12 +26,10 @@ module.exports =
   guest_room_logged: (msg) ->
     $.notify msg, 
       style: 'guest_room_logged'
-      autoHide: false
 
   guest_room_unlogged: (msg) ->
     $.notify msg, 
       style: 'guest_room_unlogged'
-      autoHide: false
 
     delay 10, -> view.bind( '.notifyjs-corner' )
 

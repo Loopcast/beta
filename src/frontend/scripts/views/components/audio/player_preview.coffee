@@ -1,8 +1,11 @@
+L = require 'api/loopcast/loopcast'
+
 module.exports = (dom) ->
   
   is_playing = false
   icon       = dom.find '.ss-play'
   data       = null
+  room_id    = dom.find 'room-id'
 
   if icon.length <= 0
     icon       = dom.find '.ss-pause'
@@ -15,16 +18,8 @@ module.exports = (dom) ->
 
   dom.addClass 'player_preview'
 
-  is_player_component = dom.find( 'input[name=room_thumb]' ).length <= 0
-
-  if not is_player_component
-    data = 
-      thumb: dom.find( 'input[name=room_thumb]' ).val()
-      title: dom.find( 'input[name=room_title]' ).val()
-      url: dom.find( 'input[name=room_link]' ).val()
-      author: dom.find( 'input[name=room_author]' ).val()
-      author_id: dom.find( 'input[name=room_author_id]' ).val()
-      author_link: dom.find( 'input[name=room_author_link]' ).val()
+  
+  
 
   play = ->
     return if is_playing
@@ -33,17 +28,19 @@ module.exports = (dom) ->
     dom.addClass 'playing'
     icon.addClass( 'ss-pause' ).removeClass( 'ss-play' )
 
-    if not is_player_component
-      app.player.open data
+    L.rooms.info room_id, (data) -> 
+      app.player.play data
 
-    app.emit 'audio:started', ref.uid
+      app.emit 'audio:started', ref.uid
 
-  stop = ->
+  stop = (stop_player = true) ->
     return if not is_playing
 
     is_playing = false
     dom.removeClass 'playing'
     icon.removeClass( 'ss-pause' ).addClass( 'ss-play' )
+
+    app.player.stop() if stop_player
 
 
   toggle = ->
@@ -57,7 +54,7 @@ module.exports = (dom) ->
 
     app.on 'audio:started', (uid) ->
       if uid isnt ref.uid
-        stop()
+        stop( false )
 
 
   init()

@@ -122,10 +122,10 @@ module.exports = class Room extends LoggedView
 
   on_room_live: ->
     # TEMP
-
-    delay 1, =>
-      L.rooms.info @room_id, (data) =>
-        app.player.open data
+    if @owner_id isnt user_controller.username
+      delay 1, =>
+        L.rooms.info @room_id, (data) =>
+          app.player.play data
     
 
 

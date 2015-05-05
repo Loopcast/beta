@@ -1,5 +1,9 @@
 moment = require 'moment'
+seconds_to_time = require 'app/utils/time/seconds_to_time'
 module.exports = class Player
+  is_playing: false
+
+
   constructor: ( @dom ) ->
     @thumb  = @dom.find '.player_icon img'
     @title  = @dom.find '.player_title'
@@ -7,89 +11,95 @@ module.exports = class Player
     @audio  = @dom.find 'audio'
     @time   = @dom.find '.player_time'
 
-    # delay 2000, =>
-    #   @open 
-    #     thumb: "/images/profile_big.png"
-    #     title: "Live from Siracusa"
-    #     author: "Stefano Ortisi"
-    #     url: "http://loopcast.com/stefanoortisi/live"
-    #     author_link: "http://loopcast.com/stefanoortisi"
-
     view.on 'binded', @on_views_binded
 
   on_views_binded: (scope) =>
     return if not scope.main
-    log "----> on views binded"
+
     @share = view.get_by_dom @dom.find( '.share_wrapper' )
 
     view.off 'binded', @on_views_binded
     
-  open: ( data ) ->
-    if data?
-      log "[Player] open", data
+  
 
-      @thumb.attr 'src', data.thumb
-      @title.html data.title
-      @author.html "By " + data.author
+    
+  play: (data) ->
 
-      @author.attr 'title', data.title
-      @title.attr 'title', data.author
+    if @data?.streaming_url is data.streaming_url
+      log "[Player] play. no action because it's already streaming the same url."
+      return
 
-      @author.attr 'href', data.author_link
-      @title.attr 'href', data.room_url
+    @stop( false ) if @is_playing
 
-      @thumb.parent().attr 'href', data.url
-      @thumb.parent().attr 'title', data.title
+    log "[Player] play", data, @is_playing
 
-      @share.update_link data.room_url
+    @thumb.attr 'src', data.thumb
+    @title.html data.title
+    @author.html "By " + data.author
 
-      if data.status.live
-        @dom.addClass 'is_live'
-      else
-        @dom.removeClass 'is_live'
+    @author.attr 'title', data.title
+    @title.attr 'title', data.author
 
-      log "[Player] setting streaming_url", data.streaming_url
-      @audio.attr 'src', data.streaming_url
+    @author.attr 'href',  "/" + data.author_id
+    @title.attr 'href', data.room_url
+
+    @thumb.parent().attr 'href', data.url
+    @thumb.parent().attr 'title', data.title
+
+    @share.update_link data.room_url
+
+    if data.status.live
+      @dom.addClass 'is_live'
+    else
+      @dom.removeClass 'is_live'
+
+    log "[Player] setting streaming_url", data.streaming_url
+    @audio.attr 'src', data.streaming_url
 
 
-      @data = data
+    @data = data
 
-      # TEMP: It should be called when the streaming works
-      @on_player_started()
+    # TEMP: It should be called when the streaming works
+    @on_player_started()
 
-      @dom.show()
-      delay 1, => @dom.addClass 'visible'
+      
+
 
   on_player_started: =>
     log "[Player] on_player_started", @data
 
+    @is_playing = true
+
     @timer_interval = setInterval @check_time, 1000
     
-    @time.html "00:00"
+    @time.html ""
 
-  on_player_stopped: =>
+    @open()
+
+  stop: (should_close = true) ->
+    log "[Player] stop"
+    @is_playing = false
     clearInterval @timer_interval
+
+    @close() if should_close
 
   check_time: =>
     now      = moment.utc()
     started  = moment.utc @data.status.live.started_at
-
-    hours   = now.diff started, 'hours'
-    minutes = now.diff started, 'minutes'
     seconds = now.diff started, 'seconds'
 
-    log hours, minutes, seconds
-    # log "duration", duration
+    time = seconds_to_time seconds
+
+    @time.html time
 
 
 
   close: ( ) ->
     @dom.removeClass 'visible'
 
-  play: ( mountpoint ) ->
-    @open()
-
-    @audio.attr 'src', "http://radio.loopcast.fm:8000/#{mountpoint}"
+  open: ( data ) =>
+    @dom.show()
+    delay 1, => @dom.addClass 'visible'
 
 
 
