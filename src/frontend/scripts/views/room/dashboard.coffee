@@ -18,18 +18,18 @@ module.exports = class Dashboard extends RoomView
 
     unless @is_room_owner
       @dom.find( '.centered' ).remove()
-      log "[Dashboard] on_room_created (is not owner) returning."
+      log "[Dashboard] on_room_created (it is not owner) returning."
       return
 
-    log "[Dashboard] on_room_created (it'is the owner)"
+    log "[Dashboard] on_room_created (it is the owner)"
 
     @live_button = view.get_by_dom @dom.find( '#go_live_button' )
     @live_button.on 'live:changed', @on_live_changed
 
     @balloons = 
-      appcast: view.get_by_dom @dom.find( '#appcast_not_running_balloon' )
-      go_live: view.get_by_dom @dom.find( '#go_live_balloon' )
-      record: view.get_by_dom @dom.find( '#record_balloon' )
+      appcast: view.get_by_dom( '#appcast_not_running_balloon' )
+      go_live: view.get_by_dom( '#go_live_balloon' )
+      record: view.get_by_dom( '#record_balloon' )
 
     @appcast_not_running_message = @dom.find '.appcast_not_running_message'
     @meter = view.get_by_dom @dom.find( '.meter_wrapper' )
