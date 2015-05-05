@@ -15,6 +15,9 @@ block grid
     for g in item.info.genres
       - klasses += " item-" + slugify(g)
 
+
+    if item.status.is_live
+      - klasses += " is_live"
     .room_cell.item(class="#{klasses}", data-view="components/audio/player_preview")
       a(href="/#{item.info.user}/#{item.info.slug}", title="#{item.info.title}", class="thumb_wrapper") 
         img.room_thumb(src="#{item.info.images.explore_thumb}")

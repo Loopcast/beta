@@ -96,7 +96,6 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
   MARGIN_GRID = 30px
   
   .now_live
-    display: inline-block
     background: RED
     color: white
     text-transform: uppercase
@@ -104,8 +103,11 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
     padding: 2px 6px
     absolute top 0 left 0
     border-bottom-right-radius: 3px
+    display: none
     
-    
+  .is_live
+    .now_live
+      display: inline-block
     
   .genres_list
     width: 150px
