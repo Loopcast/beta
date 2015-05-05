@@ -64,6 +64,11 @@ mongoose.connection.collections['rooms'].ensureIndex text_indexes, ( error ) ->
 
 delete_image = lib 'cloudinary/delete'
 
+###
+For the cover we are using info.cover_url (see rooms/edit.coffee)
+shall we update the lines below?
+###
+
 schema.post 'remove', ( doc ) ->
   # TODO: delete cloudinary image
 

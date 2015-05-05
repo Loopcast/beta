@@ -166,7 +166,7 @@ module.exports = class Room extends LoggedView
     @dom.find( '.cover_image' ).css
       'background-image': "url(#{cover})"
 
-    @save_data cover_url: cover
+    @save_data cover_url: data.result.url
 
   on_description_changed: ( value ) =>
     @save_data about: value, (response) =>
