@@ -140,7 +140,7 @@ block content
       .list_sessions
 
         if live
-          .session.outline_box
+          .session.outline_box(data-view="profile/live_set", data-room-id="#{live._id}", data-room-started-at="#{live.status.live.started_at}")
             a.image(href="/#{live.info.user}/#{live.info.slug}", title="Old School House session", style="background-image:url(#{live.thumb})")
             .content
               h2.session_title 
@@ -166,7 +166,7 @@ block content
 
               a.live(href="/#{live.info.user}/#{live.info.slug}", title="#{live.info.title}")
                 p.label now live
-                p.time 02:33
+                p.time &nbsp;
 
         if recorded && recorded.length
           .recorded_sessions

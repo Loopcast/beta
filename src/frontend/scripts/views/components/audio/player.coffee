@@ -1,5 +1,5 @@
-moment = require 'moment'
-seconds_to_time = require 'app/utils/time/seconds_to_time'
+time_to_string = require 'app/utils/time/time_to_string'
+
 module.exports = class Player
   is_playing: false
 
@@ -84,15 +84,8 @@ module.exports = class Player
     @close() if should_close
 
   check_time: =>
-    now      = moment.utc()
-    started  = moment.utc @data.status.live.started_at
-    seconds = now.diff started, 'seconds'
-
-    time = seconds_to_time seconds
-
+    time = time_to_string @data.status.live.started_at
     @time.html time
-
-
 
   close: ( ) ->
     app.body.removeClass 'player_visible'

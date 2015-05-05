@@ -1,4 +1,11 @@
-module.exports = (s) ->
+moment = require 'moment'
+
+module.exports = (time) ->
+  now      = moment()
+
+  started  = moment time
+  s  = now.diff started, 'seconds'
+
   sec_num = parseInt s, 10
   hours   = Math.floor sec_num / 3600
   minutes = Math.floor((sec_num - (hours * 3600)) / 60)
