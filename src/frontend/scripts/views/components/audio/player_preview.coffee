@@ -5,7 +5,10 @@ module.exports = (dom) ->
   is_playing = false
   icon       = dom.find '.ss-play'
   data       = null
-  room_id    = dom.find 'room-id'
+  room_id    = dom.data 'room-id'
+
+  # temp
+  title = dom.find( '.session_title' ).text()
 
   if icon.length <= 0
     icon       = dom.find '.ss-pause'
@@ -24,17 +27,22 @@ module.exports = (dom) ->
   play = ->
     return if is_playing
 
+    log "[PlayerPreview] play", title
+
     is_playing = true
     dom.addClass 'playing'
     icon.addClass( 'ss-pause' ).removeClass( 'ss-play' )
 
     L.rooms.info room_id, (data) -> 
+      data.title = title
       app.player.play data
 
-      app.emit 'audio:started', ref.uid
+      
 
   stop = (stop_player = true) ->
     return if not is_playing
+
+    log "[PlayerPreview] stop", title
 
     is_playing = false
     dom.removeClass 'playing'
@@ -52,9 +60,19 @@ module.exports = (dom) ->
   init = ->
     icon.on 'click', toggle
 
-    app.on 'audio:started', (uid) ->
-      if uid isnt ref.uid
+    app.on 'audio:started', (_room_id) ->
+      if _room_id isnt room_id
+        log "[PlayerPreview] on audio started. Stopped", title
         stop( false )
+      else
+        log "[PlayerPreview] on audio started. ignoring"
+
+    app.on 'audio:paused', (_room_id) ->
+      if _room_id isnt room_id and is_playing
+        log "[PlayerPreview] on audio paused. Stopped", title, _room_id, room_id
+        stop( false )
+      else
+        log "[PlayerPreview] on audio paused. ignoring"
 
 
   init()

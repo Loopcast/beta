@@ -23,6 +23,7 @@ module.exports =
     info: (room_id, callback ) ->
 
       callback
+        room_id: room_id
         thumb: '/images/default_room_thumb.jpg'
         title: 'The title'
         room_url: '/henriquematias/testing-new-meter'

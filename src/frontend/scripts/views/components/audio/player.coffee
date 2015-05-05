@@ -5,11 +5,14 @@ module.exports = class Player
 
 
   constructor: ( @dom ) ->
-    @thumb  = @dom.find '.player_icon img'
-    @title  = @dom.find '.player_title'
-    @author = @dom.find '.player_author'
-    @audio  = @dom.find 'audio'
-    @time   = @dom.find '.player_time'
+    @thumb    = @dom.find '.player_icon img'
+    @title    = @dom.find '.player_title'
+    @author   = @dom.find '.player_author'
+    @audio    = @dom.find 'audio'
+    @time     = @dom.find '.player_time'
+    @play_btn = @dom.find '.ss-play'
+
+    @play_btn.on 'click', @on_play_clicked
 
     view.on 'binded', @on_views_binded
 
@@ -21,17 +24,22 @@ module.exports = class Player
     view.off 'binded', @on_views_binded
     
   
+  on_play_clicked: =>
+    if @is_playing
+      @stop()
+    else
+      @_play()
 
     
   play: (data) ->
 
-    if @data?.streaming_url is data.streaming_url
+    if @data?.room_id is data.room_id
       log "[Player] play. no action because it's already streaming the same url."
       return
 
     @stop( false ) if @is_playing
 
-    log "[Player] play", data, @is_playing
+    # log "[Player] play", data, @is_playing
 
     @thumb.attr 'src', data.thumb
     @title.html data.title
@@ -53,20 +61,29 @@ module.exports = class Player
     else
       @dom.removeClass 'is_live'
 
-    log "[Player] setting streaming_url", data.streaming_url
     @audio.attr 'src', data.streaming_url
-
 
     @data = data
 
+    @_play()
+
+
+
+  _play: ->
+    
+    log "[Player] _play"
+    @play_btn.addClass( 'ss-pause' ).removeClass( 'ss-play' )
+
+    @audio[0].play()
     # TEMP: It should be called when the streaming works
     @on_player_started()
 
-      
-
 
   on_player_started: =>
-    log "[Player] on_player_started", @data
+    # log "[Player] on_player_started", @data
+
+    app.emit 'audio:started', @data.room_id
+
 
     @is_playing = true
 
@@ -77,11 +94,17 @@ module.exports = class Player
     @open()
 
   stop: (should_close = true) ->
-    log "[Player] stop"
+    # log "[Player] stop"
+
+    @play_btn.removeClass( 'ss-pause' ).addClass( 'ss-play' )
+
     @is_playing = false
     clearInterval @timer_interval
-    @data = null
+    @audio[0].pause?()
+    app.emit 'audio:paused', @data.room_id
     @close() if should_close
+
+    @data = null
 
   check_time: =>
     time = time_to_string @data.status.live.started_at
