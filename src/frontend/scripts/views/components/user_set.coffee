@@ -25,12 +25,12 @@ module.exports = ( dom ) ->
     settings_handler.close()
 
     edit_data = 
-      title: dom.find( '.session_title' ).text()
+      title: dom.find( '.session_title' ).text().trim()
       genres: []
 
     g = dom.find '.genres a'
     for item in g
-      edit_data.genres.push $(item).text()
+      edit_data.genres.push $(item).text().trim()
 
 
     edit_modal.open_with_data edit_data
@@ -68,7 +68,7 @@ module.exports = ( dom ) ->
     if data.genres.length > 0
       to_save.genres = data.genres.split ','
 
-    if data.cover.length > 0
+    if edit_modal.cover_uploaded.length > 0
       to_save.cover_url = data.cover
 
     log "[User Set] saving", to_save, data
