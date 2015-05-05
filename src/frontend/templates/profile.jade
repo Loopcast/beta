@@ -1,14 +1,9 @@
- - loc = ""
-if location
-  - loc = location
-
-- bio = ""
-if about
-  - bio = about
-
 block seo
   title #{name} | Loopcast | Stream live from anywhere at anytime 
-  meta( name="description" content="#{bio}" ) 
+  if about
+    meta( name="description" content="#{about}" ) 
+  else
+    meta( name="description" content="" )
 
 extends layout
 
@@ -118,7 +113,13 @@ block content
               span.icon.ss-write
 
 
-           
+            - loc = ""
+            if location
+              - loc = location
+
+            - bio = ""
+            if about
+              - bio = about
             
             h4.location #{loc}
             .bio !{bio}
