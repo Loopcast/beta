@@ -72,6 +72,8 @@ module.exports =
           if payload.cover_url
             update[ 'info.cover_url' ] = payload.cover_url
 
+            # Problem while updating the cover of a room from the profile page
+            # room.info.cover_url is undefined
             current_id = extract_id room.info.cover_url
             new_id     = extract_id payload.cover_url
 

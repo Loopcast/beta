@@ -1,7 +1,9 @@
+api             = require 'app/api/loopcast/loopcast'
+
 module.exports = ( dom ) ->
   settings_handler = null
   edit_modal       = null
-
+  room_id          = dom.data 'room-id'
   init = ->
     dom.find( '.download_button' ).on 'click', _download
     dom.find( '.edit_button' ).on 'click', _edit
@@ -22,18 +24,29 @@ module.exports = ( dom ) ->
   _edit = ->
     settings_handler.close()
 
-    edit_modal.open_with_data dom.data( 'data' )
+    edit_data = 
+      title: dom.find( '.session_title' ).text()
+      genres: []
+
+    g = dom.find '.genres a'
+    for item in g
+      edit_data.genres.push $(item).text()
+
+
+    edit_modal.open_with_data edit_data
     edit_modal.once 'submit', _on_edit_submit
 
   _on_edit_submit = (data) ->
 
-    log "[User Set] edit submitted", data
+    # log "[User Set] edit submitted", data
+    data.cover_url = data.cover
+
 
     # Update UI
     dom.find( '.session_title a' ).html data.title
     dom.find( '.location .text' ).html data.location
 
-    genres = data.genres.split ', '
+    genres = data.genres.split ','
     genres_dom = dom.find( '.genres' )
     str = ''
     for genre in genres
@@ -45,8 +58,22 @@ module.exports = ( dom ) ->
     edit_modal.hide_message()
     edit_modal.show_loading()
 
-    # TODO: Call the api
-    delay 1000, ->
+    edit_modal.close()
+
+    to_save = {}
+
+    if data.title.length > 0
+      to_save.title = data.title.trim()
+
+    if data.genres.length > 0
+      to_save.genres = data.genres.split ','
+
+    if data.cover.length > 0
+      to_save.cover_url = data.cover
+
+    log "[User Set] saving", to_save, data
+
+    api.rooms.update room_id, to_save, (error, response) ->
       edit_modal.close()
 
 

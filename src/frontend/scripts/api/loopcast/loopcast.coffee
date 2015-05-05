@@ -25,12 +25,14 @@ module.exports =
       callback
         thumb: '/images/default_room_thumb.jpg'
         title: 'The title'
-        url: 'http://radio.loopcast.fm:8000/henriquematias'
+        room_url: '/henriquematias/testing-new-meter'
+        streaming_url: 'http://radio.loopcast.fm:8000/henriquematias'
         author: 'Henrique Matias'
         author_id: 'henriquematias'
         author_link: '/henriquematias'
         liked: false
         status:
+          is_live: true
           live:
             started_at: "2015-04-24T17:08:40.000Z"
 

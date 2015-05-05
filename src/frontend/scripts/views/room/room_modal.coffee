@@ -93,9 +93,9 @@ module.exports = class RoomModal extends Modal
 
 	open_with_data: ( data ) ->
 		log "[RoomModal] open_with_data", data
-
+		
 		@dom.addClass 'edit_modal'
-		@title.val data.title
+		@title.attr( 'placeholder', 'Enter set name' ).val data.title
 		@genre.add_tags data.genres
 		# @location.val data.location
 		# @description.val data.about

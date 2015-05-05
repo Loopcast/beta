@@ -214,6 +214,7 @@ PLAYER_HEIGHT = 70px
 		font-weight: 600
 		margin-bottom: 5px
 		padding-left: 2px
+		text-align: right
 		
 	.player_label
 		background: RED
@@ -223,6 +224,11 @@ PLAYER_HEIGHT = 70px
 		text-align: center
 		font-weight: 600
 		padding: 1px 5px
+		display: none
+		
+	&.is_live
+		.player_label
+			display: block
 		
 	.player_right
 		margin-right: 10px

@@ -179,7 +179,7 @@ block content
             for room in recorded
               - room.url = "/" + room.info.user + "/" + room.info.slug 
               //- - room.info.cover_url = room.info.cover_url || '/images/default_room_cover.jpg'
-              .session.outline_box(id="session_recorded_#{room.id}", data-view="[components/user_set,components/audio/player_preview]", data-data="#{JSON.stringify(room)}")
+              .session.outline_box(id="session_recorded_#{room._id}", data-room-id="#{room._id}" data-view="[components/user_set,components/audio/player_preview]")
                 input(type="hidden", name="room_thumb", value="#{room.thumb}")
                 input(type="hidden", name="room_title", value="#{room.info.title}")
                 input(type="hidden", name="room_link", value="#{room.info.url}")
@@ -214,7 +214,7 @@ block content
                       span.text #{room.status.recording.plays}
 
                   .edit_session_wrapper
-                    a.icon.settings_button.ss-settings(href="#", title="Setting Session", data-view="components/click_trigger" data-target="#session_recorded_#{room.id} .edit_session_popup")
+                    a.icon.settings_button.ss-settings(href="#", title="Setting Session", data-view="components/click_trigger" data-target="#session_recorded_#{room._id} .edit_session_popup")
                     .edit_session_popup
                       .triangle
                       a.download_button.button.yellow_button.small_button_4(href="#", title="Download") Download
