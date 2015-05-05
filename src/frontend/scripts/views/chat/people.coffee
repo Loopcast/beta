@@ -11,6 +11,7 @@ module.exports = class People extends ChatView
   constructor: ( @dom ) ->
     super @dom
     @listeners = []
+    @listeners_map = []
 
 
   on_room_created: ( @room_id, @owner_id ) =>
