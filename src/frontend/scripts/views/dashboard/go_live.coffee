@@ -18,7 +18,7 @@ module.exports = class GoLive extends RoomView
     
     super @room_id, @owner_id
 
-    log "[GoLive] on_room_created"
+    # log "[GoLive] on_room_created"
     return unless @is_room_owner
 
 
@@ -38,12 +38,12 @@ module.exports = class GoLive extends RoomView
       @go_offline()
 
   wait: ->
-    log "[GoLive] wait"
+    # log "[GoLive] wait"
     @waiting = true
     @text.html "..."
 
   set_live: ( live ) ->
-    log "[GoLive] set_live", live
+    # log "[GoLive] set_live", live
     @waiting = false
     @live = live
     @emit 'live:changed', @live
@@ -58,12 +58,12 @@ module.exports = class GoLive extends RoomView
 
     return if not error
     @text.html "ERROR"
-    log "[GoLive] on_error. origin", error, origin
+    # log "[GoLive] on_error. origin", error, origin
 
     notify.info error
 
   go_live: ->
-    log "[GoLive] Clicked go_live"
+    # log "[GoLive] Clicked go_live"
     if not appcast.get 'input_device'
 
       notify.info 'Select your input source'
@@ -78,7 +78,7 @@ module.exports = class GoLive extends RoomView
 
   go_offline: ->
 
-    log "[GoLive] Clicked go_offline"
+    # log "[GoLive] Clicked go_offline"
 
     if not appcast.get 'stream:online'
 
@@ -118,7 +118,7 @@ module.exports = class GoLive extends RoomView
   # listens for appcast streaming status when starting the stream
   waiting_stream : ( status ) =>
 
-    log "[GoLive] waiting_stream"
+    # log "[GoLive] waiting_stream"
 
     if not status then return
 

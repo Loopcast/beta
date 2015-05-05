@@ -38,7 +38,7 @@ class UserController
 
 
     api.user.status {}, (error, response) =>
-      log "[User] checking status from the server", error, response.logged
+      # log "[User] checking status from the server", error, response.logged
       
       if error or response.logged is false
         @logout()

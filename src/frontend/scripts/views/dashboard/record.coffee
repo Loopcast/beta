@@ -19,7 +19,6 @@ module.exports = class Record extends RoomView
     
     super @room_id, @owner_id
 
-    log "[Record] on_room_created"
     return unless @is_room_owner
 
     @text.on 'click', @on_button_clicked

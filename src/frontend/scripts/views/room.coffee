@@ -120,6 +120,10 @@ module.exports = class Room extends LoggedView
     if @dom.hasClass 'room_live'
       @on_room_live()
 
+    @publish_modal = view.get_by_dom '#publish_modal'
+
+    log "[Room] publish_modal", @publish_modal
+
   on_room_live: ->
     # TEMP
     if @owner_id isnt user_controller.username

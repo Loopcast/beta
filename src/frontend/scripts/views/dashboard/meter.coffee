@@ -72,7 +72,7 @@ module.exports = class Meter extends RoomView
 
 
   deactivate: ->
-    log "[Meter] deactivate", @current_block_index
+    # log "[Meter] deactivate", @current_block_index
     return if @current_block_index < 0
     color = @values[ @current_block_index ].color
     # @playhead
@@ -83,13 +83,13 @@ module.exports = class Meter extends RoomView
 
   activate: (perc) =>
     return if not perc
-    log "[Meter] activate", perc
+    # log "[Meter] activate", perc
     # @playhead.removeClass( 'inactive' ).addClass( 'color_' + @values[0].color )
     appcast.off 'stream:vu', @activate
 
   set_volume: ( perc ) =>
 
-    log "[Meter] set_volume", perc
+    # log "[Meter] set_volume", perc
     left_data = @set_channel 'left', perc[0]
     right_data = @set_channel 'right', perc[1]
 

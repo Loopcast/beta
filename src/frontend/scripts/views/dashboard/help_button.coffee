@@ -7,7 +7,7 @@ module.exports = class HelpButton extends RoomView
 
     return if not @is_room_owner
 
-    log "[HelpButton] on_room_created"
+    # log "[HelpButton] on_room_created"
     @balloon = view.get_by_dom '#help_balloon'
 
     @dom.on 'mouseover', @show_popup
