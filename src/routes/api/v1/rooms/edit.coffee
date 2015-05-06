@@ -1,6 +1,7 @@
 slug = require 'slug'
 Room = schema 'room'
-extract_id = lib 'cloudinary/extract_id'
+extract_id   = lib 'cloudinary/extract_id'
+delete_image = lib 'cloudinary/delete'
 
 module.exports =
   method : 'PUT'
@@ -82,10 +83,10 @@ module.exports =
               if current_id != new_id
                 console.log 'will remove old cover fromcloudinary'
 
-                cloudinary.api.delete_resources [ current_id ], ( result ) ->
-                  if result.error
+                delete_image current_id, ( error, result ) ->
+                  if error
                     console.log "error deleting old cover from cloudinary"
-                    console.log result.error
+                    console.log error
                   else
                     console.log 'succesfully deleted old cover from cloudinary'
                     console.log result

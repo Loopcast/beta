@@ -62,20 +62,11 @@ mongoose.connection.collections['rooms'].ensureIndex text_indexes, ( error ) ->
 # hooks
 #
 
-delete_image = lib 'cloudinary/delete'
-
-###
-For the cover we are using info.cover_url (see rooms/edit.coffee)
-shall we update the lines below?
-###
 
 schema.post 'remove', ( doc ) ->
   # TODO: delete cloudinary image
 
-  console.warn " Deleting room -> " + doc._id
-
-  if doc.images?.cover?.cdn?
-    delete_image doc.images.cover.cdn.public_id
+  console.warn "Room Schema Hook post removing room_id: " + doc._id
 
 schema.pre 'save', ( next ) ->
 
