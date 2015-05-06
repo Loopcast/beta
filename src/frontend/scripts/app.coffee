@@ -49,7 +49,7 @@ class App
 		# Controllers binding
 		first_render = true
 
-		navigation.on 'before_destroy', =>
+		navigation.on 'before_load', =>
 			if navigation.main_refresh()
 				@emit 'loading:show'
 				views.unbind '#content'

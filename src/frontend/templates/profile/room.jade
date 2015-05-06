@@ -21,7 +21,7 @@ block content
   .createroom.profile_theme.centered(data-menu="#{data_menu}", data-view="room", class="#{live_class} #{public_class}")
     .cover
       if room
-        .cover_image(style="background-image:url(#{room.info.images.cover})")
+        .cover_image(style="background-image:url(#{transform.cover(room.info.cover_url)})")
       else
         .cover_image(style="background-image:url(/images/default_room_cover.jpg)")
       .content
@@ -36,7 +36,7 @@ block content
         .socials_room(data-view="components/room_social_links", data-links="#{user.social}")
         
         .profile_image.upload_wrapper
-          img(src="#{user.avatar}")
+          img(src="#{transform.avatar(user.avatar)}")
 
         .change_cover.upload_wrapper(data-view="components/image_uploader", data-id="profile_cover")
           a.upload_element.button_with_icon.black_button(href="#")

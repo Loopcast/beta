@@ -1,7 +1,5 @@
 template = lib 'render/template'
 profile  = lib 'render/profile'
-transform = lib 'shared/transform'
-default_images = lib 'shared/default_images'
 
 Room     = schema 'room'
 User     = schema 'user'
@@ -44,7 +42,7 @@ module.exports =
           if not room then return reply( "Page not found" ).code 404
 
           
-          room.info.images = transform.all_cover room.info.cover_url
+          # room.info.images = transform.all_cover room.info.cover_url
 
           model.set 'room', room
 
@@ -58,7 +56,7 @@ module.exports =
 
             data = 
               username: response.user_id
-              avatar  : transform.avatar response.custom_attributes.avatar
+              avatar  : response.custom_attributes.avatar
               name    : response.name
               social  : response.custom_attributes.social
 

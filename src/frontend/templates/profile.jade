@@ -34,7 +34,7 @@ block content
           span.text.values #{genres.join( ", " )}
 
         .profile_image.upload_wrapper(data-view="components/image_uploader", data-id="profile_picture")
-          img(src="#{images.avatar}")
+          img(src="#{transform.avatar(avatar)}")
           p.upload_element.edit_image
             span.icon.ss-camera
             span Update profile picture
@@ -134,7 +134,7 @@ block content
 
         if live
           .session.outline_box(data-view="profile/live_set", data-room-id="#{live._id}", data-room-started-at="#{live.status.live.started_at}")
-            a.image(href="/#{live.info.user}/#{live.info.slug}", title="Old School House session", style="background-image:url(#{live.info.cover_url})")
+            a.image(href="/#{live.info.user}/#{live.info.slug}", title="Old School House session", style="background-image:url(#{transform.cover_thumb(live.info.cover_url)})")
             .content
               h2.session_title 
                 a(href="/#{live.info.user}/#{live.info.slug}", title="#{live.info.title}") #{live.info.title}
@@ -179,7 +179,7 @@ block content
                 - public_class = "public"
               //- - room.info.cover_url = room.info.cover_url || '/images/default_room_cover.jpg'
               .session.outline_box(class="#{public_class}", id="session_recorded_#{room._id}", data-room-id="#{room._id}" data-view="[components/user_set,components/audio/player_preview]")
-                .image(style="background-image:url(#{room.info.cover_url})")
+                .image(style="background-image:url(#{transform.cover_thumb(room.info.cover_url)})")
                   a.icon.ss-play.circle_icon(href="#",title="Play") 
                   .share_wrapper(data-view="buttons/share", data-permalink="#{room.url}")
                     a.yellow.ss-action(href="#", title="Share")

@@ -11,7 +11,7 @@ fs   = require 'fs'
 path = require 'path'
 jade = require 'jade'
 
-cloudinary_transform = lib 'shared/transform'
+cloudinary_transform = lib 'cloudinary/transform'
 
 module.exports = ( url, data, callback ) ->
 

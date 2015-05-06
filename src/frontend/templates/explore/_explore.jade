@@ -17,6 +17,9 @@ block content
             span People
 
     .explore_content.flex.centered(data-view="explore")
+      block no_content
+      
+
       .flex_sidebar.genres_list
         - klass = ""
         if current_genre.length <= 0

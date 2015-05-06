@@ -16,6 +16,7 @@ alias:
   templates: src/frontend/templates/
   vendors: src/frontend/vendors
   shared: src/lib/shared
+  lib: src/lib
 
 minify:
   js : true

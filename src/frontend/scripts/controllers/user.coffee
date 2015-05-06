@@ -1,4 +1,4 @@
-transform = require 'shared/transform'
+transform = require 'lib/cloudinary/transform'
 happens   = require 'happens'
 navigation = require 'app/controllers/navigation'
 notify = require 'app/controllers/notify'

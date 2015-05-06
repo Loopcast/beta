@@ -1,5 +1,5 @@
 Cloudinary = require 'app/controllers/cloudinary'
-transform  = require 'shared/transform'
+transform  = require 'lib/cloudinary/transform'
 notify     = require 'app/controllers/notify'
 user_controller = require 'app/controllers/user'
 LoggedView = require 'app/views/logged_view'

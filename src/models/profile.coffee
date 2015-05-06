@@ -1,7 +1,7 @@
 ###
 # Fetches public information for a given profile
 ###
-transform = lib 'shared/transform'
+
 
 Room = schema 'room'
 
@@ -27,7 +27,6 @@ module.exports = ( id, callback ) ->
 
       avatar    : data.custom_attributes.avatar
       cover     : data.custom_attributes.cover
-      images    : transform.all data.custom_attributes.avatar
 
       followers : data.custom_attributes.followers || 0
       streams   : data.custom_attributes.streams   || 0

@@ -1,6 +1,5 @@
 load     = models 'profile'
 template = lib 'render/template'
-transform = lib 'shared/transform'
 
 module.exports = ( url, data, callback ) ->
 

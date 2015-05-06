@@ -5,10 +5,10 @@ user_controller = require 'app/controllers/user'
 notify          = require 'app/controllers/notify'
 LoggedView      = require 'app/views/logged_view'
 happens         = require 'happens'
-pusher_utils    = require 'shared/pusher_utils'
 api             = require 'app/api/loopcast/loopcast'
 Cloudinary      = require 'app/controllers/cloudinary'
-transform       = require 'shared/transform'
+transform       = require 'lib/cloudinary/transform'
+pusher_room_id  = require 'lib/pusher/get_room_id'
 
 module.exports = class Room extends LoggedView
   room_created: false
@@ -102,7 +102,7 @@ module.exports = class Room extends LoggedView
     @room_created = true
     @dom.removeClass( 'page_create' ).addClass( 'room_ready' )
 
-    @room_subscribe_id = pusher_utils.get_room_subscribe_id @owner_id, @room_id
+    @room_subscribe_id = pusher_room_id @owner_id, @room_id
     @channel = pusher.subscribe @room_subscribe_id
     @channel.bind 'listener:added', @on_listener_added
     @channel.bind 'listener:removed', @on_listener_removed

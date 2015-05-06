@@ -1,5 +1,5 @@
 L = require '../../api/loopcast/loopcast'
-transform = require 'shared/transform'
+transform = require 'lib/cloudinary/transform'
 ChatView = require 'app/views/room/chat_view'
 
 module.exports = class PeopleView extends ChatView
@@ -39,7 +39,7 @@ module.exports = class PeopleView extends ChatView
       w = @dom.width()
 
       left = p.left - (w/2) + 17
-      top = p.top - h - 80
+      top = p.top - h - 90
 
       @dom.css
         left   : left
