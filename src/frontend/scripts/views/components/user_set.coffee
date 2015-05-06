@@ -86,8 +86,16 @@ module.exports = ( dom ) ->
     dom.removeClass 'to_delete'
 
   _confirm_delete = ->
-    log "[Set] delete"
-    dom.slideUp()
+    
+    api.rooms.delete room_id, (error, response) ->
+      if error
+        log "[UserSet] delete", room_id, error
+        # notify.error "There was an error. Try later."
+        return
+
+      dom.slideUp()
+      notify.info "The recording has been deleted."
+
 
   _set_public = ->
     api.rooms.update room_id, is_public: true, (error, response) =>
