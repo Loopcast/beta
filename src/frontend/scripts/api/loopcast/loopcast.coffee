@@ -33,6 +33,13 @@ module.exports =
 
         console.log 'got room info', response
 
+        # i think it should just be
+        # callback null, response
+        # and then the receptor, will use "response.user" and "response.room"
+        # to fill the data.
+        # i have left below the best way to fetch the data at the moment.
+        # since the application is constantly changing now we might need
+        # to update this in the future, but it's the best way i found so far
         callback
           room_id: room_id
           thumb: response.room.info.cover || '/images/default_room_thumb.jpg'
