@@ -1,13 +1,15 @@
+extends ./_explore
+
 block seo
     title Listen to Live DJ Mixes and Podcasts | Loopcast
     meta( name="description" content="Explore live DJ mixes on Loopcast. Chat with other listeners and follow your favourite DJs" ) 
 
-extends ./_explore
 
 block submenu
   span(data-submenu="sub_header_rooms")
 
-    
+
+
 block grid
 
   for item in rooms    
@@ -20,7 +22,7 @@ block grid
       - klasses += " is_live"
     .room_cell.item(class="#{klasses}", data-view="components/audio/player_preview")
       a(href="/#{item.info.user}/#{item.info.slug}", title="#{item.info.title}", class="thumb_wrapper") 
-        img.room_thumb(src="#{item.info.images.explore_thumb}")
+        img.room_thumb(src="#{transform.explore_thumb(item.info.cover_url)}")
         
         span.now_live Now Live
 

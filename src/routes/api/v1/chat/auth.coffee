@@ -1,5 +1,4 @@
 escape = require 'escape-html'
-pusher_utils = lib 'shared/pusher_utils'
 
 module.exports =
   method : 'POST'

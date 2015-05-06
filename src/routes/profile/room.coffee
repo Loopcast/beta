@@ -1,7 +1,5 @@
 template = lib 'render/template'
 profile  = lib 'render/profile'
-transform = lib 'shared/transform'
-default_images = lib 'shared/default_images'
 
 Room     = schema 'room'
 User     = schema 'user'
@@ -43,7 +41,7 @@ module.exports =
           if not room then return reply( "Page not found" ).code 404
 
           
-          room.info.images = transform.all_cover room.info.cover_url
+          # room.info.images = transform.all_cover room.info.cover_url
 
           model.set 'room', room
 
@@ -59,7 +57,6 @@ module.exports =
                 return reply Boom.badData 'error fetching user information'
 
               model.set 'user', user
-
 
       model.on 'user', ( user ) ->
 

@@ -1,7 +1,7 @@
 ###
 # Fetches public information for a given profile
 ###
-transform = lib 'shared/transform'
+
 
 User = schema 'user'
 Room = schema 'room'
@@ -37,7 +37,6 @@ module.exports = ( id, callback ) ->
 
         avatar    : data.info.avatar
         cover     : data.info.cover
-        images    : transform.all data.info.avatar
 
         followers : data.stats.followers
         streams   : data.stats.streams

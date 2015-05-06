@@ -1,4 +1,4 @@
-transform = require 'shared/transform'
+transform = require 'lib/cloudinary/transform'
 ChatView = require 'app/views/room/chat_view'
 user = require 'app/controllers/user'
 

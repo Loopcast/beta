@@ -1,6 +1,5 @@
 escape = require 'escape-html'
-pusher_utils = lib 'shared/pusher_utils'
-transform = lib 'shared/transform'
+pusher_room_id = lib 'pusher/get_room_id'
 
 load_profile = models 'profile'
 
@@ -43,17 +42,17 @@ module.exports =
       owner_id = request.payload.owner_id
 
       # build channel string
-      room_subscribe_id    = pusher_utils.get_room_subscribe_id owner_id, room_id
+      room_subscribe_id    = pusher_room_id owner_id, room_id
 
       load_profile user.username, ( error, user_data ) ->
-
+        console.log "Listener", user_data
         data = 
           method: request.payload.method
           user : 
             id: user_data.id
             name: user_data.name
             occupation: user_data.occupation
-            images: user_data.images
+            avatar: user_data.avatar
             followers: user_data.followers
             url: "/" + user_data.id
 

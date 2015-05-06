@@ -35,13 +35,13 @@ module.exports =
 
         return reply Boom.unauthorized('needs authentication')
 
-      username = req.auth.credentials.user.username
-      room_id  = req.params.id
-      payload  = req.payload
+      user    = req.auth.credentials.user
+      room_id = req.params.id
+      payload = req.payload
 
       query =
-        _id: room_id
-        'info.user' : username
+        _id   : room_id
+        _owner: user._id
 
       Room.findOne( query )
         .select( "_id info.cover_url" )

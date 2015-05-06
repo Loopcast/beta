@@ -1,5 +1,5 @@
 L = require '../../api/loopcast/loopcast'
-transform = require 'shared/transform'
+transform = require 'lib/cloudinary/transform'
 ChatView = require 'app/views/room/chat_view'
 user = require 'app/controllers/user'
 
@@ -67,6 +67,8 @@ module.exports = class People extends ChatView
 
   _on_listener_added: ( listener ) ->
     listener = listener.user
+
+    listener.images = transform.all listener.avatar
     if @listeners_map[ listener.id ]?
       log "[People] listener already added", listener.id
       return
