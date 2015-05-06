@@ -61,6 +61,30 @@ module.exports =
         log "[Loopcast] request done", response
         callback  null, response
 
+    like: ( room_id, callback ) ->
+      on_status_code =
+        401: ( response ) -> callback 'unauthorized, need log in!'
+
+      request = $.put api_url + "rooms/#{room_id}/like", data, on_status_code
+
+      request.error on_error 'rooms/#{room_id}/like', callback
+
+      request.done ( response ) ->
+        log "[Loopcast] request done", response
+        callback  null, response
+
+    dislike: ( room_id, callback ) ->
+      on_status_code =
+        401: ( response ) -> callback 'unauthorized, need log in!'
+
+      request = $.put api_url + "rooms/#{room_id}/dislike", data, on_status_code
+
+      request.error on_error 'rooms/#{room_id}/dislike', callback
+
+      request.done ( response ) ->
+        log "[Loopcast] request done", response
+        callback  null, response
+
     start_stream: ( room_id, callback ) ->
       on_status_code =
         401: ( response ) -> callback 'unauthorized, need log in!'
