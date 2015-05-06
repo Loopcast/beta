@@ -68,9 +68,9 @@ class Navigation
 
 		div = $ '<div>'
 
-		@emit 'before_load'
 
 		app.body.addClass 'visible custom_loading'
+		delay 10, => @emit 'before_load'
 
 		div.load req.url, =>
 
