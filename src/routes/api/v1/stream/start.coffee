@@ -65,7 +65,9 @@ module.exports =
           response = pusher.trigger room, "status", status
 
           # update for mongodb
+          # sets the document URL to be the streaming URL
           update =
+            'info.url'           : "#{s.radio}/#{username}"
             'status.is_live'     : true
             'status.live.started_at' : status.live.started_at
 

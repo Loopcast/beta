@@ -124,5 +124,7 @@ else
 
   s.tape = 'http://tape.loopcast.fm:8000'
 
+  s.radio = 'http://radio.loopcast.fm:8000'
+
 
 module.exports = s

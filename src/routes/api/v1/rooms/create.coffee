@@ -55,13 +55,6 @@ module.exports =
           genres   : payload.genres
           location : payload.location
           about    : payload.about
-          url      : "http://radio.loopcast.fm:8000/#{user.username}"
-
-      # set full path on backend
-      # so later on we can direct new users to a different
-      # server if needed
-      doc.url = "#{s.radio}/#{user.username}/#{doc.info.slug}"
-      # doc.updated_at = doc.created_at = now().toDate()
 
       if payload.cover
         doc.info.cover_url = payload.cover

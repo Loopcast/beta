@@ -33,22 +33,20 @@ module.exports =
 
         console.log 'got room info', response
 
-        # callback  null, response
-
-      callback
-        room_id: room_id
-        thumb: '/images/default_room_thumb.jpg'
-        title: 'The title'
-        room_url: '/henriquematias/testing-new-meter'
-        streaming_url: 'http://radio.loopcast.fm:8000/henriquematias'
-        author: 'Henrique Matias'
-        author_id: 'henriquematias'
-        author_link: '/henriquematias'
-        liked: false
-        status:
-          is_live: true
-          live:
-            started_at: "2015-04-24T17:08:40.000Z"
+        callback
+          room_id: room_id
+          thumb: response.room.info.cover || '/images/default_room_thumb.jpg'
+          title: response.room.info.title
+          room_url: "/#{response.room.info.user}/#{response.room.info.slug}"
+          streaming_url: response.room.info.url
+          author: response.user.info.name
+          author_id: response.user.info.username
+          author_link: "/#{response.user.info.username}"
+          liked: false
+          status:
+            is_live: true
+            live:
+              started_at: "2015-04-24T17:08:40.000Z"
 
     create: ( data, callback ) ->
       on_status_code =
