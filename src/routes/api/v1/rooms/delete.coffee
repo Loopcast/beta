@@ -20,15 +20,6 @@ module.exports =
       strategy: 'session'
       mode    : 'try'
 
-    validate:
-      payload:
-        title     : joi.string()
-        location  : joi.string()
-        about     : joi.string()
-        cover_url : joi.string()
-        genres    : joi.array()
-        is_public : joi.boolean()
-
     handler: ( req, reply ) ->
 
       if not req.auth.isAuthenticated
@@ -43,6 +34,8 @@ module.exports =
         _id: room_id
         'info.user' : username
 
+      console.log 'querying the delete: ->', query
+      
       Room.findOne( query )
         .select( "_id info.cover_url" )
         .lean()
