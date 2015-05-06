@@ -6,6 +6,7 @@ template will look for a user profile, if fails will return a 404
 ###
 
 template = lib 'render/template'
+User     = schema 'user'
 
 module.exports =
   method: 'GET'
@@ -19,17 +20,23 @@ module.exports =
 
     handler: ( request, reply )->
 
+      # TODO: check if the user is authenticated
+
       url = '/profile/room'
 
       # always inject user data into requests
       data = request.auth.credentials || {}
 
-      # Getting the social for the user
-      intercom.getUser user_id: data.user.username, ( error, response ) ->
-        data.user.social = response.custom_attributes.social
+      User
+        .findById( data.user._id )
+        .lean().exec  ( error, user ) ->
 
-        template url, data, ( error, response ) ->
+          # dumps full user for the frontend
+          # TODO: optimise and only bring needed fields
+          data.user = user;
 
-          if not error then return reply response
+          template url, data, ( error, response ) ->
 
-          return reply( "Page not found" ).code 404
+            if not error then return reply response
+
+            return reply( "Page not found" ).code 404

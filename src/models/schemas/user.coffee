@@ -2,35 +2,35 @@ mongoose   = require( 'mongoose')
 Schema     = mongoose.Schema
 
 schema = new Schema
-  _id : Schema.Types.ObjectId
-  
   info :
-    username : type: String, required: true, unique: true
-    name     : String
-    genres   : Array
-    avatar   : String
-    about    : String
+    username   : type: String, required: true, unique: true
+    name       : String
+    avatar     : String
+    cover      : String
+    genres     : type: Array, default: []
+    occupation : type: Array, default: []
+    social     : type: Array, default: []
+    about      : String
+    location   : String
 
   stats:
-    streams   : Number
-    visitors  : Number
-    followers : Number
-    listeners : Number
-    favorited : Number
+    followers : type: Number, default: 0
+    streams   : type: Number, default: 0
+    listeners : type: Number, default: 0
 
   created_at: Date
   updated_at: Date
   
   data:
-    email: type: String, unique: true, required: true
+    email: type: String, unique: true
 
     facebook: Object # facebook information
-
-    images:
-      cover  : Object # cloudinary info
-      profile: Object # cloudinary info
+      id   : String
+      email: String
 
 schema.pre 'save', ( next ) ->
-  @created_at = @updated_at = now()
+  @updated_at = now()
+
+  next()
 
 module.exports = mongoose.model 'User', schema

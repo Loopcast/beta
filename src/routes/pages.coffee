@@ -22,17 +22,15 @@ module.exports =
 
       url = request.url.pathname
 
-      render = ( response ) -> reply response
-
       # always inject user data into requests
       data = request.auth.credentials || {}
 
       template url, data, ( error, response ) ->
 
-        if not error then return render response
+        if not error then return reply response
 
         profile url, data, ( error, response ) ->
 
-          if not error then return render response
+          if not error then return reply response
 
-          return reply( "Page not found" ).code 404
+          return reply( response ).code 404

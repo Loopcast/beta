@@ -1,7 +1,7 @@
 extends ../layout
 
 block content
-  input(type='hidden' id='owner_id' value="#{user.username}")
+  input(type='hidden' id='owner_id' value="#{user.info.username}")
 
   if room
     - data_menu = "room"
@@ -31,12 +31,12 @@ block content
               | #{room.info.title}
         br
         h3.genres.black_background 
-          a(href="/#{user.username}", title="#{user.name}") #{user.name}
+          a(href="/#{user.info.username}", title="#{user.info.name}") #{user.info.name}
 
-        .socials_room(data-view="components/room_social_links", data-links="#{user.social}")
+        .socials_room(data-view="components/room_social_links", data-links="#{user.info.social}")
         
         .profile_image.upload_wrapper
-          img(src="#{user.avatar}")
+          img(src="#{user.info.avatar}")
 
         .change_cover.upload_wrapper(data-view="components/image_uploader", data-id="profile_cover")
           a.upload_element.button_with_icon.black_button(href="#")

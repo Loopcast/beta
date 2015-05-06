@@ -19,18 +19,16 @@ module.exports = ( info, callback ) ->
     transform info.profile.displayName, ( error, username ) ->
 
       user = 
-        session :
+        info :
           username: username
           name    : info.profile.displayName
           avatar  : picture_info.secure_url
 
         data :
-          email   : info.profile.email || username # quick hack for users without email
-          facebook: info
-          images:
-            profile:
-              id : avatar.id
-              cdn: picture_info
+          email   : info.profile.email
+          facebook: 
+            id   : info.profile.id
+            email: info.profile.email
 
 
       callback null, user

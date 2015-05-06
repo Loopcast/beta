@@ -2,7 +2,8 @@ mongoose   = require( 'mongoose')
 Schema     = mongoose.Schema
 
 schema = new Schema
-  # url is automatically generated #{user}/#{info.slug}
+  # _id of the user owning the room
+  _owner  : type: Schema.Types.ObjectId, required: on
   info   :
     user      : type: String, required: on
     title     : type: String, required: on

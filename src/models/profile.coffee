@@ -3,52 +3,63 @@
 ###
 transform = lib 'shared/transform'
 
+User = schema 'user'
 Room = schema 'room'
 
 module.exports = ( id, callback ) ->
 
+  if id is 'undefined'
+
+    console.log 'id is undefined!'
+    console.log 'probably something wrong on the DOM triggering an undefined user'
+
+    return callback 'undefined', null
+
   # if somebody types Uppercase letters, we read as lowercase
   id = id.toLowerCase()
 
-  intercom.getUser user_id: id, ( error, data ) ->
+  User
+    .findOne( 'info.username': id )
+    .lean().exec ( error, data ) ->
 
-    profile =
-      id         : data.user_id
+      profile =
+        id         : data.info.username
 
-      # top bar info
-      name       : data.name
-      occupation : data.custom_attributes.occupation
-      genres     : data.custom_attributes.genres?.split ','
+        # top bar info
+        name       : data.info.name
+        occupation : data.info.occupation
+        genres     : data.info.genres
 
-      # left bar info
-      about     : data.custom_attributes.about
-      location  : data.custom_attributes.location
-      social    : data.custom_attributes.social?.split ','
+        # left bar info
+        about     : data.info.about
+        location  : data.info.location
+        social    : data.info.social
 
-      avatar    : data.custom_attributes.avatar
-      cover     : data.custom_attributes.cover
-      images    : transform.all data.custom_attributes.avatar
+        avatar    : data.info.avatar
+        cover     : data.info.cover
+        images    : transform.all data.info.avatar
 
-      followers : data.custom_attributes.followers || 0
-      streams   : data.custom_attributes.streams   || 0
-      listeners : data.custom_attributes.listeners || 0
+        followers : data.stats.followers
+        streams   : data.stats.streams
+        listeners : data.stats.listeners
 
-    if not profile.genres   then profile.genres   = []
-    if not profile.social   then profile.social   = []
-    if not profile.recorded then profile.recorded = []
-    if not profile.cover    then profile.cover = '/images/homepage_2.jpg'
-    
-    query = 'info.user' : id
+        # list of rooms
+        recorded  : []
+        live      : null
 
-    Room.find query, ( error, rooms ) ->
+      if not profile.cover    then profile.cover = '/images/homepage_2.jpg'
+      
+      query = '_owner' : data._id
 
-      if error then return callback error
+      Room.find query, ( error, rooms ) ->
 
-      for room in rooms
+        if error then return callback error
 
-        if room.status.is_live
-          profile.live = room
-        else
-          profile.recorded.push room
+        for room in rooms
 
-      callback null, profile
+          if room.status.is_live
+            profile.live = room
+          else
+            profile.recorded.push room
+
+        callback null, profile

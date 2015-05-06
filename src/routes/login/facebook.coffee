@@ -1,3 +1,5 @@
+User      = schema 'user'
+create    = lib 'user/create'
 transform = models 'transforms/facebook_to_user'
 
 module.exports = 
@@ -16,55 +18,38 @@ module.exports =
         console.log request.auth.error.message
 
         # redirect to login again
-        reply.redirect '/login'
+        return reply.redirect '/login'
 
-      else
+      data        = aware {}
+      credentials = request.auth.credentials
 
-        credentials = request.auth.credentials
+      User
+        .findOne( 'data.facebook.id': credentials.profile.id )
+        .lean().exec ( error, user ) ->
 
-        # populates user informaiton with facebook data
-        transform credentials, ( error, user ) ->
+          # if found, just update aware
+          if user then return data.set 'user', user
 
-          if error then return reply error
+          # populates user informaiton with facebook data
+          transform credentials, ( error, user ) ->
 
-          # populates "data" with intercom data
-          intercom.getUser email: user.data.email, ( error, data ) ->
+            if error then return reply error
 
-            if not data
+            create user, ( error, user ) ->
+              if error 
+                console.log "error creating user ->", error
+                
+                return reply Boom.expectationFailed 'couldnt create user, please contact support'
 
-              # if not yet on intercom, use facebook info
-              request.auth.session.set user: user.session
+              data.set 'user', user
 
-              data =
-                user_id             : user.session.username
-                email               : user.data.email
-                name                : user.data.facebook.profile.displayName
-                created_at          : now().unix()
-                last_seen_user_agent: request.headers[ 'user-agent' ]
-                custom_attributes   :
-                  avatar: user.session.avatar
+      data.on 'user', ( user ) ->
 
-              intercom.createUser data, ( error, data ) ->
+        # NOTE: might not be good idea to save user_id on the session
+        # let's not print this on the source code, so user can never
+        # figure out other user database _id !
+        user.info._id = user._id
 
-                if error
-                  console.log "error creating user at intercom"
-                  console.log JSON.stringify( error, null, 2 )
+        request.auth.session.set user: user.info
 
-                  return Boom.expectationFailed 'couldnt create user, please contact support'
-
-                # console.log "created intercom user!! ->", data
-
-                return reply.redirect '/login/successful'
-
-            else
-
-              # if not yet on intercom, use facebook info
-
-              user.session.username = data.user_id
-              user.session.name     = data.name
-
-              request.auth.session.set user: user.session
-
-              # console.log " -> user already on intercom"
-
-              return reply.redirect '/login/successful'
+        return reply.redirect '/login/successful'

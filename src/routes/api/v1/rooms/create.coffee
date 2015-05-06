@@ -46,6 +46,7 @@ module.exports =
         payload.genres = []
 
       doc = 
+        _owner     : user._id
         created_at : now().format()
         info:
           user     : user.username

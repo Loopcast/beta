@@ -8,7 +8,7 @@ module.exports = ( url, data, callback ) ->
 
     load url, ( error, data ) ->
 
-      if error then return reply error
+      if error then return callback error
 
       template '/profile', data, ( error, response ) ->
 

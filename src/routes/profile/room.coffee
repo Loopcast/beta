@@ -30,10 +30,9 @@ module.exports =
       query =
         'info.user'       : profile
         'info.slug'       : room_id
-        # 'status.is_public': on
 
       Room.findOne( query )
-        .select( "info status" )
+        .select( "_owner info status" )
         .sort( _id: -1 )
         .lean()
         .exec ( error, room ) -> 
@@ -48,24 +47,18 @@ module.exports =
 
           model.set 'room', room
 
-          intercom.getUser user_id: room.info.user, ( error, response ) ->
-            if error
-              console.log "error fetching user data"
-              console.log response
+          User
+            .findById( room._owner )
+            .select( "info" )
+            .lean().exec  ( error, user ) ->
 
-              return reply Boom.badData 'error fetching user information'
+              if error
+                console.log "error fetching user data"
+                console.log response
 
+                return reply Boom.badData 'error fetching user information'
 
-            data = 
-              username: response.user_id
-              avatar  : transform.avatar response.custom_attributes.avatar
-              name    : response.name
-              social  : response.custom_attributes.social
-
-            if data.social?
-              data.social = data.social.split( "," )
-
-            model.set 'user', data
+              model.set 'user', user
 
 
       model.on 'user', ( user ) ->
@@ -73,20 +66,6 @@ module.exports =
         data =
           user: model.get 'user'
           room: model.get 'room'
-
-        # if is authenticated and owner of the room
-        # render the room
-        if request.auth.isAuthenticated
-
-          if data.room.info.owner_user == data.user.username
-
-            template '/profile/room', data, ( error, response ) ->
-
-              if not error then return reply response
-
-              reply( "Page not found" ).code 404
-
-            return
 
         template '/profile/room', data, ( error, response ) ->
 
