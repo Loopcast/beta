@@ -135,24 +135,24 @@ module.exports = class Profile extends LoggedView
 		@send_to_server occupation: data.value
 		
 	on_cover_uploaded: (data) =>
-		log "[Cover uploader]", data.result.url
+		log "[Cover uploader]", data.result.secure_url, data
 
-		cover = transform.cover data.result.url
+		cover = transform.cover data.result.secure_url
 
 		@dom.find( '.cover_image' ).css
 			'background-image': "url(#{cover})"
 
-		@send_to_server cover: cover
+		@send_to_server cover: data.result.secure_url
 
 
 	on_avatar_uploaded: (data) =>
-		user_controller.data.avatar = data.result.url
+		user_controller.data.avatar = data.result.secure_url
 		user_controller.create_images()
 
 		avatar = user_controller.data.images.avatar
 		@dom.find( 'img' ).attr 'src', avatar
 
-		@send_to_server avatar: data.result.url
+		@send_to_server avatar: data.result.secure_url
 
 	check_visibility_editables: =>
 		user_controller.check_guest_owner()
