@@ -12,6 +12,7 @@ module.exports =
     plugins: "hapi-swagger": responseMessages: [
       { code: 400, message: 'Bad Request' }
       { code: 401, message: 'Needs authentication' } # Boom.unauthorized
+      { code: 410, message: 'Gone' } # Boom.resourceGone
       { code: 500, message: 'Internal Server Error'}
     ]
     tags   : [ "api", "v1" ]
@@ -39,9 +40,17 @@ module.exports =
         .lean()
         .exec ( error, room ) -> 
 
+          if not room
+
+            return reply Boom.resourceGone();
+
+          console.log 'room.info ->', room
+
           if room.info.cover_url
               
             current_id = extract_id room.info.cover_url
+
+            console.log 'deleting image ->', current_id
 
             delete_image current_id, ( error, result ) ->
               if error

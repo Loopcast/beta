@@ -88,6 +88,8 @@ if s.is_beta
 
   s.tape = 'http://tape.loopcast.fm:8000'
 
+  s.radio = 'http://radio.loopcast.fm:8000'
+
 # IF LOCAL OR DEVELOPMENT
 else
 
