@@ -18,7 +18,7 @@ module.exports =
   path   : '/api/v1/user/edit'
 
   config:
-    description: "Create room"
+    description: "Edit user info"
     plugins: "hapi-swagger": responseMessages: [
       { code: 400, message: 'Bad Request' }
       { code: 401, message: 'Needs authentication' } # Boom.unauthorized
