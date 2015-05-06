@@ -2,7 +2,7 @@ cloudinary = require 'cloudinary'
 
 module.exports = ( id, callback ) ->
 
-  cloudinary.api.delete_resources id, ( result ) ->
+  cloudinary.api.delete_resources [].concat( id ), ( result ) ->
 
     if result.error? then return callback result.error
 
