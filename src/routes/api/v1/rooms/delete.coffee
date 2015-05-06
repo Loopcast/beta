@@ -44,13 +44,9 @@ module.exports =
 
             return reply Boom.resourceGone();
 
-          console.log 'room.info ->', room
-
           if room.info.cover_url
               
             current_id = extract_id room.info.cover_url
-
-            console.log 'deleting image ->', current_id
 
             delete_image current_id, ( error, result ) ->
               if error
