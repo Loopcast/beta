@@ -5,7 +5,7 @@
 
 page_limit = 50
 
-module.exports = ( page = 0, tags, search, callback ) ->
+module.exports = ( page = 0, genres, search, callback ) ->
 
   data = aware {}
   # called once all data is fetched
@@ -19,7 +19,7 @@ module.exports = ( page = 0, tags, search, callback ) ->
 
   # ~ base query for genres and finding rooms
   query = $or: [ 
-    { 'status.is_live': true }
+    { 'status.is_live'  : true }
     { 'status.is_public': true }
   ]
 
@@ -45,10 +45,10 @@ module.exports = ( page = 0, tags, search, callback ) ->
     limit: page_limit
     skip : page_limit * page
 
-  if tags and tags.length
-    query['info.genres'] = $in: tags
+  if genres and genres.length
+    query['info.genres'] = $in: genres
 
-  find( 'rooms/rooms' ) query, fields, options, ( error, rooms ) ->
+  find( 'rooms' ) query, fields, options, ( error, rooms ) ->
 
     if error then return callback error
 

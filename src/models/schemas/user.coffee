@@ -28,9 +28,26 @@ schema = new Schema
       id   : String
       email: String
 
+User = mongoose.model 'User', schema
+
+text_indexes = 
+  'info.name'       : 'text'
+  'info.genres'     : 'text'
+  'info.occupation' : 'text'
+  'info.social'     : 'text'
+  'info.about'      : 'text'
+  'info.location'   : 'text'
+
+mongoose.connection.collections['users'].ensureIndex text_indexes, ( error ) ->
+
+  if error
+    console.error "error indexing fields for text search"
+    console.error error
+    return 
+
 schema.pre 'save', ( next ) ->
   @updated_at = now()
 
   next()
 
-module.exports = mongoose.model 'User', schema
+module.exports = User
