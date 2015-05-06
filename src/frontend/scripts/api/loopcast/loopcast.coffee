@@ -218,3 +218,17 @@ module.exports =
       request.done ( response ) ->
         log "[Loopcast] request done", response
         callback  null, response
+
+    is_following: ( ids, callback ) ->
+      on_status_code =
+        401: ( response ) -> callback 'unauthorized, need log in!'
+
+      data = ids: [].concat( ids ) # ids parameter can be 1 id or Array of ids
+
+      request = $.post api_url + 'user/is_following', data, on_status_code
+
+      request.error on_error "user/is_following", callback
+
+      request.done ( response ) ->
+
+        callback  null, response
