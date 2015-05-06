@@ -4,8 +4,6 @@ Updates user's profile information
 
 ###
 
-User = schema 'user'
-
 transform  = models 'transforms/name_to_username'
 
 extract_id    = lib 'cloudinary/extract_id'
@@ -64,6 +62,20 @@ module.exports =
 
           # expose all updated data
           reply user_data
+
+        # update 
+        conditions = _owner: user._id
+        options    = multi : true
+        update     = $set  : 
+          'info.user': user_data['info.username']
+
+        Room.update conditions, update, options, ( error, updated ) ->
+
+          if error
+
+            console.log "Error updating username on rooms"
+            console.log error
+            return
 
         # set _id for intercom to find user
         # user_data.user_id = user_data._id
