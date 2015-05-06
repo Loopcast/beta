@@ -50,9 +50,6 @@ module.exports =
         callback  null, response
 
     update: ( id, data, callback ) ->
-      on_status_code =
-        401: ( response ) -> callback 'unauthorized, need log in!'
-
       request = $.put api_url + "rooms/#{id}", data
 
       request.error on_error "rooms/#{id} PUT", callback
@@ -74,9 +71,6 @@ module.exports =
         callback  null, response
 
     like: ( room_id, callback ) ->
-      on_status_code =
-        401: ( response ) -> callback 'unauthorized, need log in!'
-
       request = $.put api_url + "rooms/#{room_id}/like", data
 
       request.error on_error "rooms/#{room_id}/like", callback
@@ -86,9 +80,6 @@ module.exports =
         callback  null, response
 
     dislike: ( room_id, callback ) ->
-      on_status_code =
-        401: ( response ) -> callback 'unauthorized, need log in!'
-
       request = $.put api_url + "rooms/#{room_id}/dislike", data
 
       request.error on_error "rooms/#{room_id}/dislike", callback
@@ -208,4 +199,22 @@ module.exports =
 
       request.done ( response ) ->
 
+        callback  null, response
+
+    follow: ( username, callback ) ->
+      request = $.put api_url + "user/#{username}follow", data
+
+      request.error on_error "user/#{username}follow", callback
+
+      request.done ( response ) ->
+        log "[Loopcast] request done", response
+        callback  null, response
+
+    unfollow: ( username, callback ) ->
+      request = $.put api_url + "user/#{username}unfollow", data
+
+      request.error on_error "user/#{username}unfollow", callback
+
+      request.done ( response ) ->
+        log "[Loopcast] request done", response
         callback  null, response
