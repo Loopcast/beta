@@ -52,9 +52,9 @@ module.exports =
               if error
                 console.log "error deleting old cover from cloudinary"
                 console.log error
-              else
-                console.log 'succesfully deleted old cover from cloudinary'
-                console.log result
+              # else
+              #   console.log 'succesfully deleted old cover from cloudinary'
+              #   console.log result
 
           Room.remove _id: room_id, ( error ) ->
 
