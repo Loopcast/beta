@@ -27,7 +27,7 @@ module.exports = (dom) ->
   play = ->
     return if is_playing
 
-    log "[PlayerPreview] play", title
+    # log "[PlayerPreview] play", title
 
     is_playing = true
     dom.addClass 'playing'
@@ -42,7 +42,7 @@ module.exports = (dom) ->
   stop = (stop_player = true) ->
     return if not is_playing
 
-    log "[PlayerPreview] stop", title
+    # log "[PlayerPreview] stop", title
 
     is_playing = false
     dom.removeClass 'playing'
@@ -62,17 +62,13 @@ module.exports = (dom) ->
 
     app.on 'audio:started', (_room_id) ->
       if _room_id isnt room_id
-        log "[PlayerPreview] on audio started. Stopped", title
+        # log "[PlayerPreview] on audio started. Stopped", title
         stop( false )
-      else
-        log "[PlayerPreview] on audio started. ignoring"
 
     app.on 'audio:paused', (_room_id) ->
       if _room_id isnt room_id and is_playing
-        log "[PlayerPreview] on audio paused. Stopped", title, _room_id, room_id
+        # log "[PlayerPreview] on audio paused. Stopped", title, _room_id, room_id
         stop( false )
-      else
-        log "[PlayerPreview] on audio paused. ignoring"
 
 
   init()

@@ -319,7 +319,7 @@
           font-weight: bold
         background: rgba(0,0,0,0.7)
         
-        display: flex
+        display: none
         align-items: center
         justify-content: center
         
@@ -629,6 +629,14 @@
       opacity: 1
   
   &.is_owner
+    .profile_theme .profile_content 
+      .session
+        .public_screen
+          display: flex
+      .session.public 
+        .public_screen
+          display: none
+      
     .cover:hover
       .change_cover
         display: block

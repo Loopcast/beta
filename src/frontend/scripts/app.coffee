@@ -111,6 +111,7 @@ class App
 
 	logout: -> 
 		@user.logout =>
+			@settings.after_logout_url = "/"
 			log "[App] logout callback. next url", @settings.after_logout_url
 			if @settings.after_logout_url.length > 0
 				url = @settings.after_logout_url

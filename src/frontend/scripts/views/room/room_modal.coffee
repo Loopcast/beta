@@ -42,7 +42,7 @@ module.exports = class RoomModal extends Modal
 		
 
 	_on_cover_changed: (data) =>
-		@cover_uploaded = data.result.url
+		@cover_uploaded = data.result.secure_url
 		@emit 'input:changed', { name: 'cover', value: data.result }
 
 	_on_title_changed: ( ) =>
