@@ -34,8 +34,6 @@ module.exports =
         _id: room_id
         'info.user' : username
 
-      console.log 'querying the delete: ->', query
-      
       Room.findOne( query )
         .select( "_id info.cover_url" )
         .lean()
