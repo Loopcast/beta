@@ -169,7 +169,7 @@ block content
 
             for room in recorded
               - room.url = "/" + room.info.user + "/" + room.info.slug 
-              - public_class = ""
+              - public_class = "not_public"
               if room.status.is_public
                 - public_class = "public"
               //- - room.info.cover_url = room.info.cover_url || '/images/default_room_cover.jpg'
