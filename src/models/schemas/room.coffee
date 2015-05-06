@@ -29,9 +29,6 @@ schema = new Schema
       stopped_at  : Date
       url         : String
 
-  images:
-    cover: Object # cloudinary information
-
   updated_at: Date
   created_at: Date
 
