@@ -9,7 +9,9 @@ module.exports =
 
   config:
 
-    description: "Sends a message when a listener gets in or out to the chat room"
+    description: """
+    Sends a message when a listener gets in or out to the chat room
+    """
     plugins: "hapi-swagger": responseMessages: [
       { code: 400, message: 'Bad Request' }
       { code: 401, message: 'Needs authentication' }
@@ -45,7 +47,9 @@ module.exports =
       room_subscribe_id    = pusher_room_id owner_id, room_id
 
       load_profile user.username, ( error, user_data ) ->
-        console.log "Listener", user_data
+        
+        # console.log "Listener", user_data
+
         data = 
           method: request.payload.method
           user : 

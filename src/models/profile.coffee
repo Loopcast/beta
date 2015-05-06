@@ -15,19 +15,19 @@ module.exports = ( id, callback ) ->
 
     return callback 'undefined', null
 
-  if id is null
-
-    console.log 'id is null!'
-    console.log 'probably something wrong somwhere, we have to patch this'
-
-    return callback 'undefined', null
-
   # if somebody types Uppercase letters, we read as lowercase
   id = id.toLowerCase()
 
   User
     .findOne( 'info.username': id )
     .lean().exec ( error, data ) ->
+
+      if not data 
+
+        console.log 'did not find user'
+        console.log 'probably something wrong somwhere, we have to patch this'
+
+        return callback null, null
 
       profile =
         id         : data.info.username
