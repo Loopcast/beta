@@ -4784,12 +4784,7 @@ body .notifyjs-corner .notifyjs-container {
   height: 100%;
   z-index: 1;
   background: rgba(0,0,0,0.7);
-  display: -webkit-box;
-  display: -moz-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: box;
-  display: flex;
+  display: none;
   -webkit-box-align: center;
   -moz-box-align: center;
   -o-box-align: center;
@@ -5317,13 +5312,23 @@ body .notifyjs-corner .notifyjs-container {
 /* line 631 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
 
 /* line 632 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+.no_touch_device.is_owner .profile_theme .profile_content .session .public_screen {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+}
 
-/* line 633 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 635 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+
+/* line 636 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .no_touch_device.is_owner .cover:hover .change_cover {
   display: block;
 }
 
-/* line 636 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 639 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .no_touch_device.is_owner .cover:hover .profile_image .edit_image {
   -webkit-transform: translateY(0);
   -moz-transform: translateY(0);
@@ -5332,7 +5337,7 @@ body .notifyjs-corner .notifyjs-container {
   transform: translateY(0);
 }
 
-/* line 639 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
+/* line 642 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
 .no_touch_device.is_owner .cover:hover .editable_text .icon {
   display: block;
 }

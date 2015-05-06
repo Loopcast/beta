@@ -30,7 +30,8 @@ block content
             if room
               | #{room.info.title}
         br
-        h3.genres.black_background #{user.name}
+        h3.genres.black_background 
+          a(href="/#{user.username}", title="#{user.name}") #{user.name}
 
         .socials_room(data-view="components/room_social_links", data-links="#{user.social}")
         
