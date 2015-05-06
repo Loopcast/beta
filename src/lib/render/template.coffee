@@ -11,9 +11,9 @@ fs   = require 'fs'
 path = require 'path'
 jade = require 'jade'
 
-module.exports = ( url, data, callback ) ->
+cloudinary_transform = lib 'shared/transform'
 
-  
+module.exports = ( url, data, callback ) ->
 
   data.cloudinary = 
     api_key     : s.cloudinary.api_key
@@ -22,6 +22,8 @@ module.exports = ( url, data, callback ) ->
 
   data.pusher =
     key: s.pusher.key
+
+  data.transform = cloudinary_transform
 
   root = path.join( __dirname + '/../../frontend/templates' )
 
