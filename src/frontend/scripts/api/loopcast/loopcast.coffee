@@ -13,7 +13,7 @@ module.exports =
     all: ( callback ) ->
       request = $.get api_url + 'genres'
 
-      request.error on_error 'genres', callback
+      request.error on_error "genres", callback
 
       request.done ( response ) ->
 
@@ -43,7 +43,7 @@ module.exports =
 
       request = $.post api_url + 'rooms/create', data, on_status_code
 
-      request.error on_error 'rooms/create', callback
+      request.error on_error "rooms/create", callback
 
       request.done ( response ) ->
 
@@ -53,9 +53,21 @@ module.exports =
       on_status_code =
         401: ( response ) -> callback 'unauthorized, need log in!'
 
-      request = $.put api_url + "rooms/#{id}", data, on_status_code
+      request = $.put api_url + "rooms/#{id} PUT", data, on_status_code
 
-      request.error on_error 'rooms/#{id}', callback
+      request.error on_error "rooms/#{id} PUT", callback
+
+      request.done ( response ) ->
+        log "[Loopcast] request done", response
+        callback  null, response
+
+    delete: ( id, callback ) ->
+      on_status_code =
+        401: ( response ) -> callback 'unauthorized, need log in!'
+
+      request = $.delete api_url + "rooms/#{id} DELETE", data, on_status_code
+
+      request.error on_error "rooms/#{id} DELETE", callback
 
       request.done ( response ) ->
         log "[Loopcast] request done", response
@@ -67,7 +79,7 @@ module.exports =
 
       request = $.put api_url + "rooms/#{room_id}/like", data, on_status_code
 
-      request.error on_error 'rooms/#{room_id}/like', callback
+      request.error on_error "rooms/#{room_id}/like", callback
 
       request.done ( response ) ->
         log "[Loopcast] request done", response
@@ -79,7 +91,7 @@ module.exports =
 
       request = $.put api_url + "rooms/#{room_id}/dislike", data, on_status_code
 
-      request.error on_error 'rooms/#{room_id}/dislike', callback
+      request.error on_error "rooms/#{room_id}/dislike", callback
 
       request.done ( response ) ->
         log "[Loopcast] request done", response
@@ -93,7 +105,7 @@ module.exports =
 
       request = $.post api_url + 'stream/start', data, on_status_code
 
-      request.error on_error 'stream/start', callback
+      request.error on_error "stream/start", callback
 
       request.done ( response ) ->
 
@@ -108,7 +120,7 @@ module.exports =
 
       request = $.post api_url + 'stream/stop', data, on_status_code
 
-      request.error on_error 'stream/stop', callback
+      request.error on_error "stream/stop", callback
 
       request.done ( response ) ->
 
@@ -123,7 +135,7 @@ module.exports =
 
       request = $.post api_url + 'tape/start', data, on_status_code
 
-      request.error on_error 'tape/start', callback
+      request.error on_error "tape/start", callback
 
       request.done ( response ) ->
 
@@ -137,7 +149,7 @@ module.exports =
 
       request = $.post api_url + 'tape/stop', data, on_status_code
 
-      request.error on_error 'tape/stop', callback
+      request.error on_error "tape/stop", callback
 
       request.done ( response ) ->
 
@@ -153,7 +165,7 @@ module.exports =
 
       request = $.post api_url + 'chat/message', data, on_status_code
 
-      request.error on_error 'chat/message', callback
+      request.error on_error "chat/message", callback
 
       request.done ( response ) ->
 
@@ -180,7 +192,7 @@ module.exports =
 
       request = $.post api_url + 'user/edit', data, on_status_code
 
-      request.error on_error 'user/edit', callback
+      request.error on_error "user/edit", callback
 
       request.done ( response ) ->
 
@@ -192,7 +204,7 @@ module.exports =
 
       request = $.post api_url + 'user/status', data, on_status_code
 
-      request.error on_error 'user/status', callback
+      request.error on_error "user/status", callback
 
       request.done ( response ) ->
 
