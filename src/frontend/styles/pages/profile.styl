@@ -629,8 +629,13 @@
       opacity: 1
   
   &.is_owner
-    .profile_theme .profile_content .session .public_screen
-      display: flex
+    .profile_theme .profile_content 
+      .session
+        .public_screen
+          display: flex
+      .session.public 
+        .public_screen
+          display: none
       
     .cover:hover
       .change_cover
