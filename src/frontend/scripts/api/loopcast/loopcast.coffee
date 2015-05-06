@@ -53,7 +53,7 @@ module.exports =
       on_status_code =
         401: ( response ) -> callback 'unauthorized, need log in!'
 
-      request = $.put api_url + "rooms/#{id}", data, on_status_code
+      request = $.put api_url + "rooms/#{id}", data
 
       request.error on_error "rooms/#{id} PUT", callback
 
@@ -65,7 +65,7 @@ module.exports =
       on_status_code =
         401: ( response ) -> callback 'unauthorized, need log in!'
 
-      request = $.delete api_url + "rooms/#{id}", on_status_code
+      request = $.delete api_url + "rooms/#{id}"
 
       request.error on_error "rooms/#{id} DELETE", callback
 
@@ -77,7 +77,7 @@ module.exports =
       on_status_code =
         401: ( response ) -> callback 'unauthorized, need log in!'
 
-      request = $.put api_url + "rooms/#{room_id}/like", data, on_status_code
+      request = $.put api_url + "rooms/#{room_id}/like", data
 
       request.error on_error "rooms/#{room_id}/like", callback
 
@@ -89,7 +89,7 @@ module.exports =
       on_status_code =
         401: ( response ) -> callback 'unauthorized, need log in!'
 
-      request = $.put api_url + "rooms/#{room_id}/dislike", data, on_status_code
+      request = $.put api_url + "rooms/#{room_id}/dislike", data
 
       request.error on_error "rooms/#{room_id}/dislike", callback
 
