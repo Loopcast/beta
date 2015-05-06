@@ -32,6 +32,9 @@ global.request = require 'request'
 
 global.now = ( value ) -> moment.utc(value)
 
+global.User = schema 'user'
+global.Room = schema 'room'
+
 # path shortcuts
 
 path  = require 'path'
