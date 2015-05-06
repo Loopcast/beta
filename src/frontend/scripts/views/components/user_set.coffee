@@ -1,10 +1,12 @@
 api    = require 'app/api/loopcast/loopcast'
 notify = require 'app/controllers/notify'
+navigation = require 'app/controllers/navigation'
 
 module.exports = ( dom ) ->
   settings_handler = null
   edit_modal       = null
   room_id          = dom.data 'room-id'
+  room_url         = dom.find( '.session_title a' ).attr 'href'
   init = ->
     dom.find( '.download_button' ).on 'click', _download
     dom.find( '.edit_button' ).on 'click', _edit
@@ -13,6 +15,9 @@ module.exports = ( dom ) ->
     dom.find( '.confirm_delete' ).on 'click', _confirm_delete
     dom.find( '.cancel_delete' ).on 'click', _cancel_delete
     dom.find( '.set_public' ).on 'click', _set_public
+    dom.find( '.public_screen .bg' ).on 'click', _get_into_the_room
+
+
     view.once 'binded', _on_views_binded
 
   _on_views_binded = ->
@@ -21,6 +26,11 @@ module.exports = ( dom ) ->
 
   _download = ->
     log "[Set] download"
+
+  _get_into_the_room = ->
+    log "[Set] _get_into_the_room", room_url
+
+    navigation.go room_url
 
   _edit = ->
     settings_handler.close()
