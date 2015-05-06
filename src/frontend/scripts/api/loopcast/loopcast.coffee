@@ -22,6 +22,19 @@ module.exports =
   rooms :
     info: (room_id, callback ) ->
 
+      request = $.get api_url + "rooms/#{room_id}/info"
+
+      # request.error on_error "rooms/#{room_id}/info", callback
+
+      request.error on_error "rooms/#{room_id}/info", ->
+        console.log 'error finding room info'
+
+      request.done ( response ) ->
+
+        console.log 'got room info', response
+
+        # callback  null, response
+
       callback
         room_id: room_id
         thumb: '/images/default_room_thumb.jpg'
