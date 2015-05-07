@@ -109,6 +109,7 @@ module.exports = class Profile extends LoggedView
 	on_name_changed: ( new_name ) =>
 		return if new_name is user_controller.data.name
 
+		notify.info "You changed your name"
 		log "[Profile] on_name_changed", new_name
 		if new_name.length > 0
 

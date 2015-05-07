@@ -55,6 +55,7 @@ class UserController
       images: transform.all data.avatar
       name: data.name
       username: data.username
+      following: {}
 
     # log "[UserController] user:logged", @data, data
 
@@ -86,6 +87,9 @@ class UserController
       notify.info "You've successufully logged out."
 
       callback?()
+
+  is_me: ( username ) ->
+    return username is @data.username
 
   owner_id: ->
     document.getElementById( 'owner_id' )?.value
@@ -125,6 +129,12 @@ class UserController
 
     @write_to_session()
     
+
+  check_following: (ids, callback) ->
+    api.user.is_following ids, (error, response) ->
+      log "[User] is_following response", error, response
+
+      callback response
 
   
   ###

@@ -37,8 +37,7 @@ block grid
               span.icon.ss-location
               | #{item.info.location}
 
-        a.enter_room.not_following_item(href="/#{item.info.username}", class="button yellow_button no_shadow small_button small_button_2", title="Follow") Follow
-        a.enter_room.following_item(href="/#{item.info.username}", class="button gray_button_2 no_shadow small_button small_button_2", title="Follow") Following
+        a.enter_room(href="#", class="button yellow_button no_shadow small_button small_button_2", title="Follow", data-view="profile/follow_button", data-user-id="#{item.info.username}") Follow
 
 
   script

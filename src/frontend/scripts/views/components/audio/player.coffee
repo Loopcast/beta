@@ -1,8 +1,9 @@
 time_to_string = require 'app/utils/time/time_to_string'
+api = require 'api/loopcast/loopcast'
 
 module.exports = class Player
   is_playing: false
-
+  like_lock: false
 
   constructor: ( @dom ) ->
     @thumb    = @dom.find '.player_icon img'
@@ -11,8 +12,10 @@ module.exports = class Player
     @audio    = @dom.find 'audio'
     @time     = @dom.find '.player_time'
     @play_btn = @dom.find '.ss-play'
+    @like_btn = @dom.find '.ss-heart'
 
     @play_btn.on 'click', @on_play_clicked
+    @like_btn.on 'click', @on_like_clicked
 
     view.on 'binded', @on_views_binded
 
@@ -23,7 +26,39 @@ module.exports = class Player
 
     view.off 'binded', @on_views_binded
     
-  
+  on_like_clicked: =>
+    return if @like_lock
+
+    @like_lock = true
+
+    if @like_btn.hasClass 'liked'
+      @unlike()
+    else
+      @like()
+
+  unlike: ->
+    api.rooms.dislike @data.room_id, (error, response) =>
+      log "[Player] dislike", error, response
+      @like_lock = false
+      
+      if error
+        notify.error "There was an error. Please try later."
+        return
+        
+      @like_btn.removeClass 'liked'
+
+  like: ->
+    api.rooms.like @data.room_id, (error, response) =>
+      log "[Player] like", error, response
+      @like_lock = false
+
+      if error
+        notify.error "There was an error. Please try later."
+        return
+      @like_btn.addClass 'liked'
+
+
+
   on_play_clicked: =>
     if @is_playing
       @stop()
@@ -33,6 +68,7 @@ module.exports = class Player
     
   play: (data) ->
 
+    log "[Player] play", data
     if @data?.room_id is data.room_id
       log "[Player] play. no action because it's already streaming the same url."
       return

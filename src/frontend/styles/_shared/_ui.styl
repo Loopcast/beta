@@ -125,6 +125,11 @@ DARK_PERCENTAGE = 5
       vertical-align: middle
       display: block
       text-align: right
+      
+  &.following
+    background: GRAY_4
+    color: white
+    border-color: darken(GRAY_4, 10)
     
   &.dashboard_button
     background: #46505A
@@ -340,6 +345,11 @@ DARK_PERCENTAGE = 5
   .button.white_button:hover
     background: darken( white, DARK_PERCENTAGE )
     border: 1px solid #CED0D0
+    
+  .button.following:hover
+    background: darken(GRAY_4, 10)
+    color: white
+    border-color: darken(GRAY_4, 10)
     
   
     

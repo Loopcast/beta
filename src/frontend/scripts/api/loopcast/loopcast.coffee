@@ -89,21 +89,19 @@ module.exports =
         callback  null, response
 
     like: ( room_id, callback ) ->
-      request = $.put api_url + "rooms/#{room_id}/like", data
+      request = $.put api_url + "rooms/#{room_id}/like", {}
 
       request.error on_error "rooms/#{room_id}/like", callback
 
       request.done ( response ) ->
-        log "[Loopcast] request done", response
         callback  null, response
 
     dislike: ( room_id, callback ) ->
-      request = $.put api_url + "rooms/#{room_id}/dislike", data
+      request = $.put api_url + "rooms/#{room_id}/dislike", {} 
 
       request.error on_error "rooms/#{room_id}/dislike", callback
 
       request.done ( response ) ->
-        log "[Loopcast] request done", response
         callback  null, response
 
     start_stream: ( room_id, callback ) ->
