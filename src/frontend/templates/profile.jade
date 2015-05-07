@@ -144,7 +144,7 @@ block content
                   a.tag(href="/explore?genres=#{genre}", title="#{genre}") #{genre}
 
               .small_info
-                .location 
+                a.location(href="/explore?search=#{live.info.location}")
                   span.icon.ss-location
                   //- span.spritesheet.icon_location
                   span.text #{live.info.location}
@@ -194,7 +194,7 @@ block content
                       a.tag(href="#", title="#{genre}") #{genre}
                     
                   .small_info
-                    .location 
+                    a.location(href="/explore?search=#{room.info.location}")
                       span.icon.ss-location
                       span.text #{room.info.location}
                     .likes 

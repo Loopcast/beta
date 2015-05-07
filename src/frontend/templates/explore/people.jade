@@ -33,9 +33,10 @@ block grid
 
           if item.info.location
             p.room_location
-              //- span.spritesheet.icon_location 
-              span.icon.ss-location
-              | #{item.info.location}
+              //- span.spritesheet.icon_location
+              a(href="/explore?search=#{item.info.location}") 
+                span.icon.ss-location
+                | #{item.info.location}
 
         a.enter_room(href="#", class="button yellow_button no_shadow small_button small_button_2", title="Follow", data-view="profile/follow_button", data-user-id="#{item.info.username}") Follow
 

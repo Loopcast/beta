@@ -46,8 +46,9 @@ block grid
 
           p.room_location
             //- span.spritesheet.icon_location 
-            span.icon.ss-location
-            | #{item.info.location}
+            a(href="/explore?search=#{item.info.location}")
+              span.icon.ss-location
+              | #{item.info.location}
 
         a.enter_room(href="/#{item.info.user}/#{item.info.slug}", class="button yellow_button no_shadow small_button small_button_2", title="Enter Room") Enter Room
 
