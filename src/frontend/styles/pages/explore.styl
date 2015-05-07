@@ -96,7 +96,8 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
   MARGIN_GRID = 30px
   
   .now_live
-    background: RED
+  .recorded
+    
     color: white
     text-transform: uppercase
     font-size: 0.7em
@@ -105,8 +106,18 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
     border-bottom-right-radius: 3px
     display: none
     
+  .now_live
+    background: RED
+    
+  .recorded
+    background: #61ed71
+    
   .is_live
     .now_live
+      display: inline-block
+      
+  .is_recorded
+    .recorded
       display: inline-block
     
   .genres_list

@@ -7,6 +7,9 @@ module.exports = (dom) ->
   data       = null
   room_id    = dom.data 'room-id'
 
+  if not room_id
+    return
+
   # temp
   title = dom.find( '.session_title' ).text()
 
@@ -34,7 +37,6 @@ module.exports = (dom) ->
     icon.addClass( 'ss-pause' ).removeClass( 'ss-play' )
 
     L.rooms.info room_id, (data) -> 
-      data.title = title
       app.player.play data
 
       

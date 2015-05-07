@@ -1,5 +1,6 @@
 time_to_string = require 'app/utils/time/time_to_string'
 api = require 'api/loopcast/loopcast'
+transform = require 'lib/cloudinary/transform'
 
 module.exports = class Player
   is_playing: false
@@ -77,7 +78,7 @@ module.exports = class Player
 
     # log "[Player] play", data, @is_playing
 
-    @thumb.attr 'src', data.thumb
+    @thumb.attr 'src', transform.player_thumb data.thumb
     @title.html data.title
     @author.html "By " + data.author
 

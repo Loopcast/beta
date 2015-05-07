@@ -66,6 +66,11 @@ Transform =
     else
       url.replace "upload/", "upload/w_210,h_210,c_fill,g_north/"
 
+  player_thumb: ( url ) ->
+    if not url? or url.indexOf( "upload/" ) < 0
+      return "/images/default_room_thumb.jpg"
+    else
+      url.replace "upload/", "upload/w_70,h_70,c_fill,g_north/"
   
 
 module.exports = Transform

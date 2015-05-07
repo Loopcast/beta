@@ -41,8 +41,8 @@ module.exports =
         # since the application is constantly changing now we might need
         # to update this in the future, but it's the best way i found so far
         callback
-          room_id: room_id
-          thumb: response.room.info.cover || '/images/default_room_thumb.jpg'
+          room_id: response.room._id
+          thumb: response.room.info.cover_url
           title: response.room.info.title
           room_url: "/#{response.room.info.user}/#{response.room.info.slug}"
           streaming_url: response.room.info.url
