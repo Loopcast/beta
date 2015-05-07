@@ -24,4 +24,4 @@ module.exports = class RoomView
 
   on_room_created: ( @room_id, @owner_id ) =>
     @room_created = true
-    @is_room_owner = @owner_id is user.data.username
+    @is_room_owner = user.check_guest_owner()
