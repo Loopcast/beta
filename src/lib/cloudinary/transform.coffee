@@ -26,7 +26,7 @@ Transform =
 
   avatar: ( url ) -> 
     if not url? or url.indexOf( "upload/" ) < 0
-      return "/images/profile-150.jpg"
+      return DEFAULT.avatar
     else
       url.replace "upload/", "upload/w_150,h_150,c_fill,g_north/"
 

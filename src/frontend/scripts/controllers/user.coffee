@@ -9,8 +9,6 @@ class UserController
 
   # Class variables
   instance = null
-  USER_DEFAULT_AVATAR = "/images/profile-1.jpg"
-  USER_DEFAULT_COVER = "/images/homepage.jpg"
 
   # Object variables
   data : null
@@ -49,9 +47,16 @@ class UserController
   ###
   Called from the outside, when the user logs in
   ###
-  login: ( @data ) ->
+  login: ( data ) ->
 
-    log "[UserController] user:logged", @data
+    # This is what we gonna save to the cookie
+    @data = 
+      avatar: data.avatar
+      images: transform.all data.avatar
+      name: data.name
+      username: data.username
+
+    # log "[UserController] user:logged", @data, data
 
     @_dispatch_login()
     
@@ -103,8 +108,8 @@ class UserController
     # console.log "[UserController] NORMALIZE DATA before", @data
     
     if not @data.avatar?
-      log "[User Controller] user.avatar is undefined. Setting default."
-      @data.avatar = UserController.USER_DEFAULT_AVATAR
+      log "[User Controller] user.avatar is undefined."
+      # @data.avatar = UserController.USER_DEFAULT_AVATAR
 
     # if not @data.cover?
     #   log "[User Controller] user.cover is undefined. Setting default."
@@ -216,10 +221,12 @@ class UserController
   fetch_from_session: ->
     @data = app.session.get 'user', null
 
+    # log "[User] fetch_from_session", @data
     if @data and not @data.images?
       @create_images()
 
   write_to_session:  ->
+    # log "[User] writing to session", @data
     app.session.set 'user', @data
     @emit 'user:updated', @data
 

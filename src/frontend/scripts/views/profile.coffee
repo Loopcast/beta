@@ -114,12 +114,12 @@ module.exports = class Profile extends LoggedView
 
 			ref = @
 			@send_to_server name: new_name, (response) ->
-				log "on_name_changed response", response
+				# log "on_name_changed response", response
 
-				navigation.go_silent "/#{response.user_id}"
+				navigation.go_silent "/" + response[ 'info.username' ]
 				user_controller.name_updated 
-					username: response.user_id
-					name: response.name
+					username: response[ 'info.username' ]
+					name: response[ 'info.name' ]
 
 		else
 			# Set the name back
