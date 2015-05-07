@@ -250,7 +250,7 @@ module.exports = class Profile extends LoggedView
 				log "---> Error Profile edit user", error.statusText
 				return
 
-			log "[Profile] fields updated", response.custom_attributes
+			log "[Profile] fields updated", response
 			user_controller.write_to_session()
 
 			callback response

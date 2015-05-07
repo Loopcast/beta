@@ -52,8 +52,6 @@ module.exports = ( id, callback ) ->
         # list of rooms
         recorded  : []
         live      : null
-
-      if not profile.cover    then profile.cover = '/images/homepage_2.jpg'
       
       query = '_owner' : data._id
 
