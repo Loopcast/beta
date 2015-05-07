@@ -217,9 +217,7 @@ module.exports = class Room extends LoggedView
       @channel.unbind 'listener:removed', @on_listener_removed
       @channel.unbind 'message', @on_message
 
-    if @owner_id is user_controller.data.username and @description?
-      appcast.connect()
-
+    if user_controller.check_guest_owner() and @description?
       @description.off 'changed', @on_description_changed
       @title.off 'changed', @on_title_changed
       @change_cover_uploader.off 'completed', @on_cover_uploaded

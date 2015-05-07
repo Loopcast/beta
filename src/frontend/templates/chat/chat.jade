@@ -13,13 +13,13 @@
       span(class='no-message') No one has typed a chat yet
 
     .chat_footer
-      .for_logged_users
-        .img_wrapper_2
-          img.author_chat_thumb(src="/images/profile-36.jpg")
-        textarea(placeholder="Type here to join the chat", data-view="chat/textarea")
-        span.icon.ss-heart
-      .for_unlogged_users
-        p You need to log in to use the chat
+      
+      .img_wrapper_2
+        img.author_chat_thumb(src="/images/profile-36.jpg")
+      textarea(placeholder="Type here to join the chat", data-view="chat/textarea")
+      span.icon.ss-heart
+      //- .for_unlogged_users
+      //-   p You need to log in to use the chat
 
   .chat_sidebar(data-view="chat/people")
     .inner
