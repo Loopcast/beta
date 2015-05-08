@@ -13,17 +13,24 @@ block submenu
 block grid
 
   for item in rooms    
+
     - klasses = "item-all-genres"
+
+    - url = "/#{item.info.user}/#{item.info.slug}"
+    if !item.status.is_live
+      - url = "#"
+
     for g in item.info.genres
       - klasses += " item-" + slugify(g)
 
-
     if item.status.is_live
       - klasses += " is_live"
+    else
+      - klasses += " not_live"
 
-    else if item.status.recording.started_at
+    if item.status.recording.started_at && !item.status.is_live
       - klasses += " is_recorded"
-    .room_cell.item(class="#{klasses}", data-view="components/audio/player_preview",data-room-id="#{item._id}")
+    .room_cell.item(class="#{klasses}", data-view="components/audio/player_preview", data-room-id="#{item._id}")
       a(href="#", title="#{item.info.title}", class="thumb_wrapper") 
         img.room_thumb(src="#{transform.explore_thumb(item.info.cover_url)}")
         
@@ -32,25 +39,33 @@ block grid
 
         span.icon.ss-play.circle_icon
 
-        .share_wrapper(data-view="buttons/share", data-permalink="/#{item.info.user}/#{item.info.slug}")
+        .share_wrapper(data-view="buttons/share", data-permalink="#{url}")
           a.yellow.ss-action(href="#", title="Share")
-          //- span.spritesheet.room_play
+
       .room_content
         .text
-          h2.room_title 
-            a(href="/#{item.info.user}/#{item.info.slug}", title="#{item.info.title}") #{item.info.title}
-          a.room_subtitle.blue(title="#{item.info.user}", href="/#{item.info.user}/#{item.info.slug}") #{item.info.user}
+          h2.room_title
+            a(href="#{url}", title="#{item.info.title}") #{item.info.title}
+          a.room_subtitle.blue(title="#{item.info.user}", href="#{url}") #{item.info.user}
           .genres.small
             for g in item.info.genres
               a.tag(href="?genres=#{g}", title="#{g}", data-genre-id="#{g}") #{g}
 
           p.room_location
-            //- span.spritesheet.icon_location 
             a(href="/explore?search=#{item.info.location}")
               span.icon.ss-location
               | #{item.info.location}
 
-        a.enter_room(href="/#{item.info.user}/#{item.info.slug}", class="button yellow_button no_shadow small_button small_button_2", title="Enter Room") Enter Room
+          if !item.status.is_live
+            .likes 
+              span.icon.ss-heart
+              span.text #{item.status.loves}
+            .plays
+              span.icon.ss-play
+              span.text #{item.status.recording.plays}
+
+        if item.status.is_live
+          a.enter_room(href="#{url}", class="button yellow_button no_shadow small_button small_button_2", title="Enter Room") Enter Room
 
 
   script
