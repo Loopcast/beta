@@ -28,7 +28,7 @@ module.exports = class PublishModal extends Modal
         log "[PublishModal] error", error
         notify.error "There was an error. Try later."
       else
-        notify.info "The room now is public!"
+        notify.info "The recording was published to your profile!"
         @emit 'room:published', @id
 
 
