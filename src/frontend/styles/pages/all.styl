@@ -2,343 +2,363 @@
 
 // STYLEGUIDE
 .styleguide
-	padding: 20px
-	text-align: left
-	.buttons_wrapper, .loading_wrapper
-		& > *
-			display: inline-block
-			margin-right: 10px
-			margin-bottom: 10px
-		
-	.loading_wrapper
-		background: white
-		padding: 10px
-		border: 1px solid #ccc
-		
-	.tags_wrapper
-	.loading_wrapper
-		width: 50%
-		margin: 10px
-		vertical-align: top
-		
-	.tags_wrapper
-		background: BLACK
-		color: GRAY
-		padding: 10px
+  padding: 20px
+  text-align: left
+  .buttons_wrapper, .loading_wrapper
+    & > *
+      display: inline-block
+      margin-right: 10px
+      margin-bottom: 10px
+    
+  .loading_wrapper
+    background: white
+    padding: 10px
+    border: 1px solid #ccc
+    
+  .tags_wrapper
+  .loading_wrapper
+    width: 50%
+    margin: 10px
+    vertical-align: top
+    
+  .tags_wrapper
+    background: BLACK
+    color: GRAY
+    padding: 10px
 
 
 // NOTIFY
 body
-	.notifyjs-container > div
-		background-image: none
-		padding-left: 15px
-		background: SHARE_BOX
-		color: white
-		border-color: SHARE_BOX
-		font-size: 0.9rem
-		font-weight:600
-		text-shadow: none
-		width: 260px
-		padding: 15px
-		border-radius: 3px
-		position: relative
-		a
-			color: BLUE
-			text-decoration: underline
-		
-		.close-notify
-			position: absolute
-			top: -4px
-			right: -4px
-			background: rgba(0,0,0,0.9)
-			border-radius: 50%
-			color: white
-			display: block
-			width: 22px
-			height: 22px
-			text-align: center
-			font-weight: bold
-			padding-top: 2px
-			cursor: pointer
-			
-	.notifyjs-corner 
-		margin-right: 20px
-		margin-top: 50px
-		.notifyjs-wrapper, .notifyjs-container
-			margin-bottom: 12px
+  .notifyjs-container > div
+    background-image: none
+    padding-left: 15px
+    background: SHARE_BOX
+    color: white
+    border-color: SHARE_BOX
+    font-size: 0.9rem
+    font-weight:600
+    text-shadow: none
+    width: 260px
+    padding: 15px
+    border-radius: 3px
+    position: relative
+    .icon
+      margin-right: 10px
+      position: relative
+      top: 2px
+    a
+      color: BLUE
+      text-decoration: underline
+    
+    .close-notify
+      position: absolute
+      top: -4px
+      right: -4px
+      background: rgba(0,0,0,0.9)
+      border-radius: 50%
+      color: white
+      display: block
+      width: 22px
+      height: 22px
+      text-align: center
+      font-weight: bold
+      padding-top: 2px
+      cursor: pointer
+      
+  .notifyjs-corner 
+    margin-right: 20px
+    margin-top: 50px
+    .notifyjs-wrapper, .notifyjs-container
+      margin-bottom: 12px
+      
+  &.is_guest .notifyjs-container .icon.ss-alert
+    display: inline-block!important
+      
+
+  // How to theme notifications
+  // .notifyjs-loopcast_info-base
+  //   background: red
+  //   border-color: red
+  // .notifyjs-loopcast_error-base
+  //   background: red
+  //   border-color: red
+  // .notifyjs-loopcast_success-base
+  //   background: red
+  //   border-color: red
+    
 
 
 // ABOUT
 .about_page
-	color: GRAY_3
-	text-align: left
-	padding: 0 20px
-	
-	.about_title
-		font-size: 1.8em
-		font-weight: 800
-		
-	h1
-		border-bottom: 1px solid GRAY
-		
-		padding: 11px 30px
-		position: relative
-		&:after
-			content: ""
-			position: absolute
-			bottom: 0px
-			left: 0
-			height: 1px
-			width: 100%
-			background: #f5f5f5
+  color: GRAY_3
+  text-align: left
+  padding: 0 20px
+  
+  .about_title
+    font-size: 1.8em
+    font-weight: 800
+    
+  h1
+    border-bottom: 1px solid GRAY
+    
+    padding: 11px 30px
+    position: relative
+    &:after
+      content: ""
+      position: absolute
+      bottom: 0px
+      left: 0
+      height: 1px
+      width: 100%
+      background: #f5f5f5
 
-	.about_content
-		padding: 50px 30px
-		font-size: 0.9em
-		line-height: 1.9em
-		overflow: hidden
-		letter-spacing: 0.01em
-		text-align: center
+  .about_content
+    padding: 50px 30px
+    font-size: 0.9em
+    line-height: 1.9em
+    overflow: hidden
+    letter-spacing: 0.01em
+    text-align: center
 
-	.about_description
-		text-align: left
-	.about_column
-		margin-top: 40px
-		margin-bottom: 60px
-		float: left
-		width: 33%
-		padding: 0 30px
-		img
-			width: 100%
-			max-width: 200px
-			margin: 0 auto
-			display: block
-			
-		h4
-			color: #5ca7b3
-			font-size: 1.4em
-			font-weight: 600
-			margin-bottom: 30px
-			
-		p
-			line-height: 21px
-			
-	.button
-		margin: 20px 0
-		display: inline-block
-		padding-left: 60px
-		padding-right: 60px
-		
+  .about_description
+    text-align: left
+  .about_column
+    margin-top: 40px
+    margin-bottom: 60px
+    float: left
+    width: 33%
+    padding: 0 30px
+    img
+      width: 100%
+      max-width: 200px
+      margin: 0 auto
+      display: block
+      
+    h4
+      color: #5ca7b3
+      font-size: 1.4em
+      font-weight: 600
+      margin-bottom: 30px
+      
+    p
+      line-height: 21px
+      
+  .button
+    margin: 20px 0
+    display: inline-block
+    padding-left: 60px
+    padding-right: 60px
+    
 // PLAYER
 PLAYER_HEIGHT = 70px
 #player
-	z-index: 2
-	background: rgba(41, 44, 47, 0.99)
-	height: PLAYER_HEIGHT
-	width: 100%
-	position: fixed
-	backface-visibility: hidden
-	bottom: 0
-	left: 0
-	box-shadow: -1px 1px 11px 2px rgba(0,0,0,0.75)
-	color: white
-	
-	transform: translateY(100%)
-	transition: transform .15s ease-out
-	&.visible
-		transform: translateY(0)
-		
-	.centered
-		display: flex
-		align-items: center
-		justify-content: left
-		position: relative
+  z-index: 2
+  background: rgba(41, 44, 47, 0.99)
+  height: PLAYER_HEIGHT
+  width: 100%
+  position: fixed
+  backface-visibility: hidden
+  bottom: 0
+  left: 0
+  box-shadow: -1px 1px 11px 2px rgba(0,0,0,0.75)
+  color: white
+  
+  transform: translateY(100%)
+  transition: transform .15s ease-out
+  &.visible
+    transform: translateY(0)
+    
+  .centered
+    display: flex
+    align-items: center
+    justify-content: left
+    position: relative
 
 
-	.player_button
-		font-size: 1.6em
-		margin: 0 25px
-		position: relative
-		top: 3px
-		.icon
-			display: block
-		
+  .player_button
+    font-size: 1.6em
+    margin: 0 25px
+    position: relative
+    top: 3px
+    .icon
+      display: block
+    
 
-	.player_icon
-		width: PLAYER_HEIGHT
-		height: PLAYER_HEIGHT
-		position: relative
-		img
-			display: block
-			width: 100%
-	
-	.player_title	
-	.player_author
-		font-weight: 600
-		display: block
-		
-	.player_title
-		font-size: 1em
-		margin-bottom: 4px
-		
-	.player_author
-		font-size: .7em
-		
-	.player_progress
-		background: #3e3e40
-		height: 6px
-		flex: 6
-		margin: 0 25px
-		position: relative
-		cursor: pointer
-		border-radius: 5px
-		
-		span
-			position: absolute
-			top: 0
-			left: 0
-			height: 100%
-			width: 0%
-			background: YELLOW
-			border-top-left-radius: 5px
-			border-bottom-left-radius: 5px
-			
-	
-	.player_buttons
-		margin-left: 20px
-		font-size: 1.3em
-		flex: 1
-		
-		& > *
-			margin-right: 20px
-			display: inline-block
-	
-	.player_time
-		font-size: 0.9em
-		font-weight: 600
-		margin-bottom: 5px
-		padding-left: 2px
-		text-align: right
-		
-	.player_label
-		background: RED
-		color: white
-		text-transform: uppercase
-		font-size: 0.7em
-		text-align: center
-		font-weight: 600
-		padding: 1px 5px
-		display: none
-		
-	&.is_live
-		.player_label
-			display: block
-		
-	.player_right
-		margin-right: 10px
-		
+  .player_icon
+    width: PLAYER_HEIGHT
+    height: PLAYER_HEIGHT
+    position: relative
+    img
+      display: block
+      width: 100%
+  
+  .player_title 
+  .player_author
+    font-weight: 600
+    display: block
+    
+  .player_title
+    font-size: 1em
+    margin-bottom: 4px
+    
+  .player_author
+    font-size: .7em
+    
+  .player_progress
+    background: #3e3e40
+    height: 6px
+    flex: 6
+    margin: 0 25px
+    position: relative
+    cursor: pointer
+    border-radius: 5px
+    
+    span
+      position: absolute
+      top: 0
+      left: 0
+      height: 100%
+      width: 0%
+      background: YELLOW
+      border-top-left-radius: 5px
+      border-bottom-left-radius: 5px
+      
+  
+  .player_buttons
+    margin-left: 20px
+    font-size: 1.3em
+    flex: 1
+    
+    & > *
+      margin-right: 20px
+      display: inline-block
+  
+  .player_time
+    font-size: 0.9em
+    font-weight: 600
+    margin-bottom: 5px
+    padding-left: 2px
+    text-align: right
+    
+  .player_label
+    background: RED
+    color: white
+    text-transform: uppercase
+    font-size: 0.7em
+    text-align: center
+    font-weight: 600
+    padding: 1px 5px
+    display: none
+    
+  &.is_live
+    .player_label
+      display: block
+    
+  .player_right
+    margin-right: 10px
+    
 .ss-heart.liked
-	color: RED
+  color: RED
 
 .no_touch_device
-	.player_buttons 
-		.ss-heart:hover
-			color: #aaa
-		.ss-heart.liked:hover
-			color: RED
+  .player_buttons 
+    .ss-heart:hover
+      color: #aaa
+    .ss-heart.liked:hover
+      color: RED
 
-		.share_wrapper:hover
-			color: YELLOW
-			
+    .share_wrapper:hover
+      color: YELLOW
+      
 // GUI
 #gui
-	position: fixed
-	z-index: 10
-	bottom: 0
-	left: 0
-	background: white
-	
-	
-	color: black
-	text-align: left
-	&.clickable
-		cursor: pointer
-		&.closed:hover
-			background: black
-			color: white
-	
-	pre 
-		outline: 1px solid #ccc 
-		padding: 5px 
-		margin: 5px
-	.string 
-		color: green
-	.number 
-		color: darkorange
-	.boolean 
-		color: blue
-	.null 
-		color: magenta
-	.key 
-		color: red
+  position: fixed
+  z-index: 10
+  bottom: 0
+  left: 0
+  background: white
+  
+  
+  color: black
+  text-align: left
+  &.clickable
+    cursor: pointer
+    &.closed:hover
+      background: black
+      color: white
+  
+  pre 
+    outline: 1px solid #ccc 
+    padding: 5px 
+    margin: 5px
+  .string 
+    color: green
+  .number 
+    color: darkorange
+  .boolean 
+    color: blue
+  .null 
+    color: magenta
+  .key 
+    color: red
 
-	.icon
-		display: none
-		padding-top: 4px
-		font-weight: bold
-	
-	&.closed
-		text-align: center
-		width: 30px
-		height: 30px
-		overflow: hidden	
-		.icon
-			display: block
-		.content
-			display: none
-			
+  .icon
+    display: none
+    padding-top: 4px
+    font-weight: bold
+  
+  &.closed
+    text-align: center
+    width: 30px
+    height: 30px
+    overflow: hidden  
+    .icon
+      display: block
+    .content
+      display: none
+      
 // OWNERSHIP
 .for_owner
-	display: none
+  display: none
 .for_guest
-	display: block
-	
+  display: block
+  
 .is_owner
-	.for_owner
-		display: block
-	.for_guest
-		display: none
-		
+  .for_owner
+    display: block
+  .for_guest
+    display: none
+    
 .status_debug
-	position: fixed
-	bottom: 0
-	right: 0
-	& > *
-		float: left
-		text-align: right
-		
-	.square
-		background: white
-		
-		padding: 4px
-		font-weight: bold
-			
-	
+  position: fixed
+  bottom: 0
+  right: 0
+  & > *
+    float: left
+    text-align: right
+    
+  .square
+    background: white
+    
+    padding: 4px
+    font-weight: bold
+      
+  
 // VERTICAL CENTERING
 .v_center
-	display: flex
-	align-items: center
-	justify-content: center
-	text-align: left
-	
+  display: flex
+  align-items: center
+  justify-content: center
+  text-align: left
+  
 .no_touch_device
-	.notifyjs-loopcast-base
-		.close-notify:hover
-			background: #222
-		
+  .notifyjs-loopcast-base
+    .close-notify:hover
+      background: #222
+    
 @media (max-width: 950px)
-	.about_page
-		.about_column
-			width: 100%
-			float: none
-		
+  .about_page
+    .about_column
+      width: 100%
+      float: none
+    
