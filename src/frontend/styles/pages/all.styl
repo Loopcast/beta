@@ -142,13 +142,17 @@ PLAYER_HEIGHT = 70px
 	left: 0
 	box-shadow: -1px 1px 11px 2px rgba(0,0,0,0.75)
 	color: white
-	display: flex
-	align-items: center
-	justify-content: left
+	
 	transform: translateY(100%)
 	transition: transform .15s ease-out
 	&.visible
 		transform: translateY(0)
+		
+	.centered
+		display: flex
+		align-items: center
+		justify-content: left
+		position: relative
 
 
 	.player_button
@@ -203,7 +207,7 @@ PLAYER_HEIGHT = 70px
 	.player_buttons
 		margin-left: 20px
 		font-size: 1.3em
-		flex:2
+		flex: 1
 		
 		& > *
 			margin-right: 20px

@@ -1,25 +1,26 @@
 #player(data-view="components/audio/player", style="display: none")
-  a.player_icon(href="#", title="")
-    img(src="/images/player_placeholder.png")
+  .centered
+    a.player_icon(href="#", title="")
+      img(src="/images/player_placeholder.png")
 
-  .player_button
-    a.icon.ss-play(href="#",title="Play") 
+    .player_button
+      a.icon.ss-play(href="#",title="Play") 
 
-  .player_text
-    a.player_title(href="#", title="Title") Funky boogie night
-    a.player_author(href="#", title="Author") By Thomas Amundsen
+    .player_text
+      a.player_title(href="#", title="Title") Funky boogie night
+      a.player_author(href="#", title="Author") By Thomas Amundsen
 
-  .player_progress
-    span
+    .player_progress
+      span
 
-  .player_buttons
-    a.icon.ss-heart(href="#")
+    .player_buttons
+      a.icon.ss-heart(href="#")
 
-    .share_wrapper(data-view="buttons/share", data-permalink="https://loopcast.com/stefanoortisi/set-1")
-      a.player_share.ss-action(href="#", title="Share")
+      .share_wrapper(data-view="buttons/share", data-permalink="https://loopcast.com/stefanoortisi/set-1")
+        a.player_share.ss-action(href="#", title="Share")
 
-  .player_right
-    p.player_time 00:02:06
-    p.player_label Now Live
+    .player_right
+      p.player_time 00:02:06
+      p.player_label Now Live
 
   audio(autoplay="true")
