@@ -16,11 +16,9 @@ module.exports = class PeopleView extends ChatView
     super @dom
 
   on_mouseover: =>
-    log "[Mouse enter]"
     @cancel_hide = true
 
   on_mouseout: =>
-    log "[Mouse out]"
     @cancel_hide = false
     @hide()
 
