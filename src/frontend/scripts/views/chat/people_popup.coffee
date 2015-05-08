@@ -10,15 +10,17 @@ module.exports = class PeopleView extends ChatView
   constructor: (@dom) ->
     @tmpl = require 'templates/chat/people_popup'
 
-    @dom.on 'mouseover', @on_mouseover
-    @dom.on 'mouseout', @on_mouseout
+    @dom.on 'mouseenter', @on_mouseover
+    @dom.on 'mouseleave', @on_mouseout
 
     super @dom
 
   on_mouseover: =>
+    log "[Mouse enter]"
     @cancel_hide = true
 
   on_mouseout: =>
+    log "[Mouse out]"
     @cancel_hide = false
     @hide()
 
@@ -45,6 +47,8 @@ module.exports = class PeopleView extends ChatView
         left   : left
         top    : top
         opacity: 1
+
+    delay 300, => @cancel_hide = false
 
   hide: ->
     delay 200, =>

@@ -37,6 +37,7 @@ module.exports = class People extends ChatView
       @popup.show @listeners_map[ listener_id ], $(e.target)
 
   on_mouse_out: ( e ) =>
+    log "[People] on mouse out" 
     @popup.hide()
 
     
