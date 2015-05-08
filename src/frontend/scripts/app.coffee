@@ -5,7 +5,6 @@ views           = require './controllers/views'
 navigation      = require './controllers/navigation'
 appcast         = require './controllers/appcast'
 cloudinary      = require './controllers/cloudinary'
-GUI             = require './controllers/gui'
 # motion   = require 'app/controllers/motion'
 
 
@@ -36,7 +35,6 @@ class App
 		@session = require 'app/controllers/storage'
 		@window  = require 'app/controllers/window'
 		@user    = require './controllers/user'
-		@gui     = new GUI
 
 		@body    = $ 'body'
 		
