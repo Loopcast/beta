@@ -2,6 +2,9 @@ user = require 'app/controllers/user'
 
 module.exports = (dom) ->
   links = dom.data 'links'
+
+  return if links.length <= 0
+
   l = user.string_to_social_data links
 
   tmpl = require 'templates/components/editables/social_link_read_mode'
