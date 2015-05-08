@@ -38,12 +38,12 @@ class Navigation
 		# if, in the meantime, the navigation goes to another url
 		# we won't emit this first event.
 		delay 200, =>
-			if @first_loading then @emit 'after_render'
+			if @first_loading
+				@emit 'after_render'
 
 
 	url_changed: ( req ) =>
 
-		log "URL CHANGED", req
 
 		if @silent
 			@silent = off
@@ -53,12 +53,14 @@ class Navigation
 			@first_url_change = off
 			return
 
+		log "[Navigation] URL CHANGED", req
+
 		if req.path is location.pathname
 			if @first_same_path
 				@first_same_path = false
 				# TEMP (to fix)
-				if app.settings.browser.id is 'Safari'
-					return
+				# if app.settings.browser.id is 'Safari'
+				# 	return
 
 
 		# ie hack for hash urls
@@ -94,7 +96,8 @@ class Navigation
 
 				# populate with the loaded content
 				@content_div.append new_content
-				delay 10, => @emit 'after_render'
+				delay 10, => 
+					@emit 'after_render'
 
 
 				app.body.removeClass 'custom_loading'
