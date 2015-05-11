@@ -32,9 +32,10 @@ body
   .notifyjs-container > div
     background-image: none
     padding-left: 15px
-    background: SHARE_BOX
-    color: white
+    background: white  
+    color: GRAY_3
     border-color: SHARE_BOX
+    -webkit-box-shadow: 2px 0 19px rgba(0,0,0,.1),0 0 1px rgba(0,0,0,.16)
     font-size: 0.9rem
     font-weight:600
     text-shadow: none
@@ -76,15 +77,16 @@ body
       
 
   // How to theme notifications
-  // .notifyjs-loopcast_info-base
-  //   background: red
-  //   border-color: red
-  // .notifyjs-loopcast_error-base
-  //   background: red
-  //   border-color: red
-  // .notifyjs-loopcast_success-base
-  //   background: red
-  //   border-color: red
+  .notifyjs-loopcast_info-base
+     background: white
+     border-color: red 
+
+   .notifyjs-loopcast_error-base
+     background: red
+     border-color: red
+   .notifyjs-loopcast_success-base
+     background: red
+     border-color: red
     
 
 
@@ -361,4 +363,5 @@ PLAYER_HEIGHT = 70px
     .about_column
       width: 100%
       float: none
-    
+      
+      
