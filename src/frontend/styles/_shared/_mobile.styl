@@ -11,6 +11,16 @@ body
   background-size: cover
   background-position: center center
 
+.mobile_header
+  height: 50px
+  background: BLACK
+  width: 100%
+  top: 0
+  left: 0
+  border-bottom: 2px solid YELLOW
+  color: white
+  position: fixed
+  z-index: 2
 
 @media (max-width: 700px)
   body
@@ -23,15 +33,7 @@ body
     .parallax-mirror
       display: none
 
-    .mobile_header
-      width: 100%
-      position: fixed
-      height: 50px
-      background: BLACK
-      width: 100%
-      top: 0
-      left: 0
-      border-bottom: 2px solid YELLOW
+   
       
     .black_box
       position: relative
@@ -46,6 +48,9 @@ body
       p
         font-size: 1rem
         line-height: 25px
+        
+      .button
+        width: 100%!important
         
         
       

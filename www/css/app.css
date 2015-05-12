@@ -2595,38 +2595,39 @@ body {
   background-size: cover;
   background-position: center center;
 }
+
+/* line 14 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+.mobile_header {
+  height: 50px;
+  background: #1f1f1f;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-bottom: 2px solid #ffc80a;
+  color: #fff;
+  position: fixed;
+  z-index: 2;
+}
 @media (max-width: 700px) {
 
-/* line 16 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 26 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
 
-/* line 17 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 27 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .for_mobile {
     display: block;
   }
 
-/* line 20 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 30 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .for_desktop {
     display: none;
   }
 
-/* line 23 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 33 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .parallax-mirror {
     display: none;
   }
 
-/* line 26 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
-  body .mobile_header {
-    width: 100%;
-    position: fixed;
-    height: 50px;
-    background: #1f1f1f;
-    width: 100%;
-    top: 0;
-    left: 0;
-    border-bottom: 2px solid #ffc80a;
-  }
-
-/* line 36 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 38 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .black_box {
     position: relative;
     margin: 0px auto;
@@ -2635,36 +2636,41 @@ body {
     max-width: 300px;
   }
 
-/* line 42 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 44 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .black_box h1 {
     line-height: 23px;
     font-size: 1.5rem;
     margin-bottom: 20px;
   }
 
-/* line 46 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 48 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .black_box p {
     font-size: 1rem;
     line-height: 25px;
   }
 
 /* line 52 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+  body .black_box .button {
+    width: 100% !important;
+  }
+
+/* line 57 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .buttons .right {
     float: none;
   }
 
-/* line 55 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 60 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .secondary_screen .black_box {
     right: auto;
     top: auto;
   }
 
-/* line 58 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 63 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .secondary_screen .black_box h1 {
     line-height: 23px;
   }
 
-/* line 61 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 66 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .secondary_screen .black_box p {
     padding: 0;
     font-weight: inherit;

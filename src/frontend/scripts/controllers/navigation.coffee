@@ -12,6 +12,7 @@ class Navigation
 	first_url_change: true
 	first_same_path: true
 	silent: false
+	mobile_style: true
 
 	DEFAULT_SELECTOR: '#content .inner_content'
 
