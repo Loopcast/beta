@@ -3302,7 +3302,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 238 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/all.styl */
 #player .player_buttons {
-  margin-left: 20px;
+  margin-left: 0px;
   font-size: 1.3em;
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
@@ -3315,7 +3315,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 243 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/all.styl */
 #player .player_buttons > * {
-  margin-right: 20px;
+  margin-right: 12px;
   display: inline-block;
 }
 
