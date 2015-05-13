@@ -58,7 +58,13 @@ module.exports =
             'status.recording.started_at' : now().format()
 
 
-          request "#{s.tape}/start/#{username}", ( error, response, body ) ->
+          data =
+            url: "#{s.tape}/api/v1/start"
+            form:
+              room_id    : room_id 
+              mount_point: username
+
+          request.post data, ( error, response, body ) ->
 
             if error
 
