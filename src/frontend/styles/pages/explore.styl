@@ -31,6 +31,20 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
 .explore
   position: relative
   padding-top: HEIGHT_SUBHEADER
+  
+  .loading
+    absolute top 0 left 0
+    width: 100%
+    height: 100%
+    background: #ececec
+    z-index: 0
+    transition: opacity .2s linear .2s
+    opacity: 0
+    
+  .explore_content > .loading
+    top: 45px
+    
+
   .sub_header
     background: #EFF3F6
     height: HEIGHT_SUBHEADER
@@ -141,14 +155,7 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
       
     
   .rooms_grid
-    .loading
-      absolute top 0 left 0
-      width: 100%
-      height: 100%
-      background: #ececec
-      z-index: 0
-      transition: opacity .2s linear .2s
-      opacity: 0
+    
       
 
 
@@ -282,12 +289,19 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
 
 
 .custom_loading
-  .explore .rooms_grid .loading
+  &.tab_filter .rooms_grid .loading
+  &.tab_1 .explore_content > .loading
     opacity: 1
     transition: opacity .1s linear
+    
+  
 .visible
-  .explore .rooms_grid .loading
+  &.tab_filter .rooms_grid .loading
+  &.tab_1 .explore_content > .loading
     z-index: 1
+    
+
+
 
 .no_touch_device
   .explore
