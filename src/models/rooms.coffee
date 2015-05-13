@@ -38,10 +38,10 @@ module.exports = ( page = 0, genres, search, callback ) ->
   # ~ fetch rooms
   fields  = null
   options = 
-    sort : 
+    sort :
       'status.is_live': -1
-      '_id': -1
-    
+      'live.listeners': -1
+      
     limit: page_limit
     skip : page_limit * page
 
