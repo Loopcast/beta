@@ -88,6 +88,7 @@ class View
 			# app.on_views_binded data
 
 	unbind: ( scope = 'body' ) ->
+		log "[VIEW] unbind", scope
 		$( scope ).find( '[data-uid]' ).each( ( index, item ) =>
 
 			$item = $ item

@@ -56,8 +56,11 @@ class App
 		views.bind 'body'
 
 	before_load: =>
-		@emit 'loading:show'
-		views.unbind '#content'
+		if navigation.main_refresh()
+			log "----------LOADING SHOW"
+			@emit 'loading:show'
+		log "[View] before_load", navigation.content_selector
+		views.unbind navigation.content_selector
 
 	after_render: =>
 		views.bind '#content'

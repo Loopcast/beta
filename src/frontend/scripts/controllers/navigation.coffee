@@ -11,6 +11,7 @@ class Navigation
   silent: false
   first_time: true
 
+
   DEFAULT_SELECTOR: '#content .inner_content'
 
   constructor: ->
@@ -30,17 +31,26 @@ class Navigation
     page '*', @url_changed
     page()
 
+    ref = @
     $('body').on 'click', 'a', (e) ->
-      href = $(@).attr 'href' 
+      el = $ @
+      href = el.attr 'href' 
       if href is '#'
         return false
+
+      if el.data 'nav-load'
+        ref.content_selector = el.data( 'nav-load' )
+        ref.custom_class = el.data( 'nav-custom-class' ) + " custom_loading"
+
+        log "[Navigation] Changed", ref.content_selector, ref.custom_class
+
 
 
 
   url_changed: ( req, next ) =>
     req.url = req.path.replace "/#", '' 
 
-    log "[Navigation] URL CHANGED", req, window.opener?
+    log "[Navigation] URL CHANGED", req, @custom_class
 
     if not url_parser.is_internal_page req.url
       log "NOT INTERNAL PAGE", req.url
@@ -58,9 +68,11 @@ class Navigation
 
     div = $ '<div>'
 
-    delay 10, => 
-      if @main_refresh()
-        @emit 'before_load'
+    if @custom_class.length > 0
+      app.body.addClass 'visible'
+      delay 1, => app.body.addClass @custom_class
+
+    delay 10, => @emit 'before_load'
 
     div.load req.url, =>
 
@@ -83,6 +95,11 @@ class Navigation
         # populate with the loaded content
         @content_div.append new_content
         delay 10, => @emit 'after_render'
+        delay 200, => 
+          @content_selector = @DEFAULT_SELECTOR
+          app.body.removeClass @custom_class
+          @custom_class = ""
+          delay 300, => app.body.removeClass 'visible'
 
 
   ##
