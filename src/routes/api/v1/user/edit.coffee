@@ -106,10 +106,10 @@ module.exports =
           if request.payload.occupation
             data[ 'info.occupation'] = [].concat( request.payload.occupation )
 
-          if request.payload.genres
+          if request.payload.genres?
             data[ 'info.genres'] = request.payload.genres
 
-          if request.payload.location
+          if request.payload.location?
             data[ 'info.location'] = request.payload.location
 
           # top info on profile page
@@ -117,10 +117,10 @@ module.exports =
             data[ 'info.username'] = request.payload.user_id
             # TODO: update all rooms accordingly
 
-          if request.payload.about
+          if request.payload.about?
             data[ 'info.about'] = request.payload.about
 
-          if request.payload.social
+          if request.payload.social?
             data[ 'info.social'] = request.payload.social
 
           # store ids to be remove from cloudinary
