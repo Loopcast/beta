@@ -10,8 +10,7 @@ class Navigation
   instance = null
   silent: false
   first_time: true
-
-
+  custom_class: ""
   DEFAULT_SELECTOR: '#content .inner_content'
 
   constructor: ->
