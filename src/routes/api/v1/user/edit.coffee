@@ -63,19 +63,28 @@ module.exports =
           # expose all updated data
           reply user_data
 
-        # update 
-        conditions = _owner: user._id
-        options    = multi : true
-        update     = $set  : 
-          'info.user': user_data['info.username']
+        if user_data['info.username']
 
-        Room.update conditions, update, options, ( error, updated ) ->
+          console.log 'user updated username, lets update the room'
 
-          if error
+          # update room's user name
 
-            console.log "Error updating username on rooms"
-            console.log error
-            return
+          conditions = _owner: user._id
+          options    = multi : true
+          update     = $set  : 
+            'info.user': user_data['info.username']
+
+          # console.log 'condition ->', conditions
+          # console.log 'udpate ->', update
+          # console.log 'options ->', options
+          
+          Room.update conditions, update, options, ( error, updated ) ->
+
+            if error
+
+              console.log "Error updating username on rooms"
+              console.log error
+              return
 
         # set _id for intercom to find user
         # user_data.user_id = user_data._id
