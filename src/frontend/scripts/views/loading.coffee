@@ -12,11 +12,9 @@ module.exports = class Loading
 
 		# navigation.on 'after_render', => 
 		app.on 'loading:hide', =>
-			
 			if @first_time
 				app.body.addClass 'first_loaded'
 				@first_time = off
-
 
 
 			app.body.removeClass( 'loading' ).addClass( 'loaded' )

@@ -118,6 +118,7 @@ class Navigation
 		new_content.addClass 'moving'
 		@content_div = $ @content_selector
 
+		app.emit 'loading:hide'
 		callback()
 
 		ref = @
@@ -126,7 +127,7 @@ class Navigation
 
 		# populate with the loaded content
 		@content_div.append new_content
-		delay 10, ->
+		delay 400, ->
 			new_content.addClass 'moved'
 
 		delay 2000, ->
