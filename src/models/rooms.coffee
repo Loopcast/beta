@@ -39,7 +39,7 @@ module.exports = ( page = 0, genres, search, callback ) ->
   fields  = null
   options = 
     sort : 
-      'status.is_live': 1
+      'status.is_live': -1
       '_id': -1
     
     limit: page_limit
