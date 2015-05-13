@@ -48,9 +48,10 @@ class App
 		first_render = true
 
 		navigation.on 'before_load', =>
-			if navigation.main_refresh()
+			views.unbind '#content'
+
+			if navigation.main_refresh() and settings.theme is 'desktop'
 				@emit 'loading:show'
-				views.unbind '#content'
 
 		navigation.on 'after_render', =>
 
@@ -80,10 +81,9 @@ class App
 
 		# Check if some view is requesting the preload
 		view_preloading = $( scope.scope ).find( '.request_preloading' )
-
+		v = views.get_by_dom view_preloading
 		# If some view is preloading, wait for its ready event
-		if view_preloading.length > 0
-			v = views.get_by_dom view_preloading
+		if view_preloading.length > 0 and v
 			v.once 'ready', => 
 				if navigation.main_refresh()
 					@emit 'loading:hide'

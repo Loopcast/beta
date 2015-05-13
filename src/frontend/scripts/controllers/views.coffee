@@ -110,6 +110,7 @@ class View
 		happens_destroy v
 		v.destroy?()
 		v.view_name = null
+		v.dom = null
 		view.on_view_destroyed v.uid
 
 	_add_view: ( $item, view_name ) ->

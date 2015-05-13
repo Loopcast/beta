@@ -42,7 +42,6 @@ class Navigation
 			if @first_loading
 				@emit 'after_render'
 
-
 	url_changed: ( req ) =>
 
 
@@ -89,20 +88,56 @@ class Navigation
 
 				new_content = div.find( @content_selector ).children()
 				
-				# log "[Navigation] loading", @content_selector
-				@content_div = $ @content_selector
+				if settings.theme is 'mobile'
+					@mobile_append new_content, @on_content_ready
+				else
+					@normal_append new_content, @on_content_ready
+					
 
-				# Remove old content
-				@content_div.children().remove()
+	on_content_ready: =>
+		app.body.removeClass 'custom_loading'
+		delay 10, => @emit 'after_render'
+		delay 300, => app.body.removeClass 'visible'
 
-				# populate with the loaded content
-				@content_div.append new_content
-				delay 10, => 
-					@emit 'after_render'
+				
+
+	normal_append: ( new_content, callback ) ->
+		# log "[Navigation] loading", @content_selector
+		@content_div = $ @content_selector
+
+		# Remove old content
+		@content_div.children().remove()
+
+		# populate with the loaded content
+		@content_div.append new_content
+
+		callback()
+
+	mobile_append: ( new_content, callback ) ->
+		log "[Navigation] loading mobile style"
+		new_content.addClass 'moving'
+		@content_div = $ @content_selector
+
+		callback()
+
+		ref = @
+		# Remove old content
+		# @content_div.children().remove()
+
+		# populate with the loaded content
+		@content_div.append new_content
+		delay 10, ->
+			new_content.addClass 'moved'
+
+		delay 2000, ->
+
+			$($( '.dynamic_wrapper' )[ 0 ] ).remove()
+			new_content.removeClass 'moving moved'
+
+			
+		
 
 
-				app.body.removeClass 'custom_loading'
-				delay 300, => app.body.removeClass 'visible'
 
 	##
 	# Navigates to a given URL using Html 5 history API

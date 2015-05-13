@@ -16,7 +16,10 @@ module.exports = class Homepage
 
 		preload images, ( images_loaded ) =>
 
+			log "[Preloaded]", images_loaded
+
 			for el, i in elements
+				log "parallax", i
 				el.parallax
 					imageSrc     : images_loaded[ i ].src
 					bleed        : 10
