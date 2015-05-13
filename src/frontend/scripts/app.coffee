@@ -50,7 +50,7 @@ class App
 		navigation.on 'before_load', =>
 			views.unbind '#content'
 
-			if navigation.main_refresh() and settings.theme is 'desktop'
+			if navigation.main_refresh() and @settings.theme is 'desktop'
 				@emit 'loading:show'
 
 		navigation.on 'after_render', =>

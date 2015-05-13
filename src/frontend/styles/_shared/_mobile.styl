@@ -32,22 +32,26 @@ body
       
 .dynamic_wrapper
   position: relative
-  background: #ececec
-  transition: transform .3s ease-out
-  transform: translate3d(0, 0, 0)
-  &.moving
-    position: absolute
-    top: 0
-    left: 0
-    width: 100%
-    
-    transform: translate3d(-100%, 0, 0)
-  &.moved
-    transform: translate3d(0, 0, 0)
+  
 
 @media (max-width: 700px)
   
   body
+    
+    .dynamic_wrapper
+      background: #ececec
+      transition: transform .3s ease-out
+      transform: translate3d(0, 0, 0)
+      &.moving
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        
+        transform: translate3d(-100%, 0, 0)
+      &.moved
+        transform: translate3d(0, 0, 0)
+
     #loading
       position: fixed
       z-index: 1
