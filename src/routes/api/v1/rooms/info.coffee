@@ -34,5 +34,6 @@ module.exports =
             delete room._owner
 
             reply
-              user: user
-              room: room
+              user : user
+              room : room
+              liked: Math.random() < 0.5
