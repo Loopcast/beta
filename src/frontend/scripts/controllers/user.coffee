@@ -132,7 +132,7 @@ class UserController
 
   check_following: (ids, callback) ->
     api.user.is_following ids, (error, response) ->
-      log "[User] is_following response", error, response
+      # log "[User] is_following response", error, response
 
       callback response
 

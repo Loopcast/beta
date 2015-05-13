@@ -1,12 +1,16 @@
+is_login_page = require 'app/utils/is_login_page'
+
 require './globals'
 require './vendors'
 
-views           = require './controllers/views'
-navigation      = require './controllers/navigation'
-appcast         = require './controllers/appcast'
-cloudinary      = require './controllers/cloudinary'
+
+if not is_login_page()
 # motion   = require 'app/controllers/motion'
 
+	views           = require './controllers/views'
+	navigation      = require './controllers/navigation'
+	appcast         = require './controllers/appcast'
+	cloudinary      = require './controllers/cloudinary'
 
 
 
@@ -44,54 +48,28 @@ class App
 		@settings = require 'app/utils/settings'
 		@settings.bind @body
 
-		# Controllers binding
-		first_render = true
+		navigation.on 'before_load' , @before_load
+		navigation.on 'after_render', @after_render
 
-		navigation.on 'before_load', =>
-			if navigation.main_refresh()
-				@emit 'loading:show'
-				views.unbind '#content'
-
-		navigation.on 'after_render', =>
-
-			if not first_render
-				views.bind '#content'
-
-			navigation.bind '#content'
-			@user.check_guest_owner()
-	
-			first_render = false
+		views.on 'binded', @on_views_binded
 
 		views.bind 'body'
-		navigation.bind()
+
+	before_load: =>
+		@emit 'loading:show'
+		views.unbind '#content'
+
+	after_render: =>
+		views.bind '#content'
+		@user.check_guest_owner()
 
 	on_views_binded: ( scope ) =>
 		if not scope.main
 			return 
 
-		@main_view_binded_counter++
+		log "[App] on_views_binded", scope
 
-		if window.opener? and @main_view_binded_counter > 1
-			return
-
-		# Get the player
-		@player = view.get_by_dom '#player'
-
-
-		# Check if some view is requesting the preload
-		view_preloading = $( scope.scope ).find( '.request_preloading' )
-
-		# If some view is preloading, wait for its ready event
-		if view_preloading.length > 0
-			v = views.get_by_dom view_preloading
-			v.once 'ready', => 
-				if navigation.main_refresh()
-					@emit 'loading:hide'
-
-		# Otherwise just hide the loading screen
-		else
-			if navigation.main_refresh()
-				@emit 'loading:hide'
+		@emit 'loading:hide'
 
 	
 	# User Proxies
@@ -117,10 +95,15 @@ class App
 				navigation.go url
 
 	
+if is_login_page()
+	
+	login = require 'app/controllers/login'
+	$ -> login.start()
+	log "login", login
 
-		
-app = new App
+else
+	app = new App
 
-$ -> app.start()
+	$ -> app.start()
 
-module.exports = window.app = app
+	module.exports = window.app = app

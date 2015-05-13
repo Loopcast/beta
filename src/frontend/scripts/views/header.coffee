@@ -29,12 +29,6 @@ module.exports = class Header
 			@current_page = page
 
 
-		obj = $( '[data-submenu]' )
-		if obj.length > 0
-			submenu = obj.data 'submenu'
-			$( ".#{submenu}" ).addClass 'selected'
-
-
 		obj = $( '[data-menu-fixed]' )
 		if obj.length > 0
 			if obj.data( 'menu-fixed') is false
@@ -56,12 +50,18 @@ module.exports = class Header
 		wrapper.empty().append html
 
 		view.bind wrapper
-		navigation.bind wrapper
+
+		@dom.find( '.myprofile_link' ).off( 'click' ).on( 'click', -> 
+			navigation.go( "/" + user_controller.data.username )
+		)  
+		# navigation.bind wrapper
 
 	on_user_updated: ( data ) =>
 		# log "[Header] udpating image", data.images.top_bar
 		@dom.find( '.top_bar_icon' ).attr 'src', data.images.top_bar
-		@dom.find( '.myprofile_link' ).attr 'href', "/" + data.username
+		# @dom.find( '.myprofile_link' ).off( 'click' ).on( 'click', -> 
+		# 	navigation.go( "/" + data.username )
+		# )  
 
 
 

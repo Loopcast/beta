@@ -8,15 +8,16 @@ block content
     .sub_header(data-view="components/fixed_bar")
       ul.centered
         li.sub_header_rooms
-          a(href="/explore" title="Sets")
+          a(href="/explore" title="Sets", data-nav-load=".explore .explore_content", data-nav-custom-class="tab_1")
             .icon.ss-music 
             span Listen
         li.sub_header_people
-          a(href="/explore/people" title="People")
+          a(href="/explore/people" title="People", data-nav-load=".explore .explore_content", data-nav-custom-class="tab_1")
             span.icon.ss-users
             span People
 
     .explore_content.flex.centered(data-view="explore")
+      .loading
       block no_content
       
 
@@ -29,6 +30,7 @@ block content
           title="All genres", 
           href="#{url}", 
           data-nav-load=".flex_content.rooms_grid > .inner",
+          data-nav-custom-class="tab_filter",
           data-genre-id=""
         ) All genres
 
@@ -42,6 +44,7 @@ block content
             title="#{g}",
             href="#{g_url}", 
             data-nav-load=".flex_content.rooms_grid > .inner",
+            data-nav-custom-class="tab_filter",
             data-genre-id="#{g}"
           ) #{g}
 

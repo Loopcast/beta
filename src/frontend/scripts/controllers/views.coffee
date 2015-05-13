@@ -85,7 +85,7 @@ class View
 				main: scope in [ 'body', '#content' ]
 
 			@emit "binded", data
-			app.on_views_binded data
+			# app.on_views_binded data
 
 	unbind: ( scope = 'body' ) ->
 		$( scope ).find( '[data-uid]' ).each( ( index, item ) =>
@@ -180,7 +180,3 @@ view = new View
 happens view
 
 module.exports = window.view = view
-
-
-# exporting get method for window, so you can retrieve views just with View( id )
-window.View = view
