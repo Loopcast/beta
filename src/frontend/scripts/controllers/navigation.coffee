@@ -12,6 +12,8 @@ class Navigation
   first_time: true
   custom_class: ""
   DEFAULT_SELECTOR: '#content .inner_content'
+  lock_live: false
+  prev_url: ""
 
   constructor: ->
 
@@ -42,12 +44,14 @@ class Navigation
         ref.custom_class = 'loading_on_top ' + el.data( 'nav-custom-class' )
 
 
-
+  set_lock_live: ( lock ) ->
+    log "[Navigation] set_lock_live", lock
+    @lock_live = lock
 
   url_changed: ( req, next ) =>
     req.url = req.path.replace "/#", '' 
 
-    log "[Navigation] URL CHANGED", req, @custom_class
+    log "[Navigation] URL CHANGED", req, @custom_class, @lock_live
 
     if not url_parser.is_internal_page req.url
       log "NOT INTERNAL PAGE", req.url
@@ -65,6 +69,15 @@ class Navigation
       return  
 
 
+    if @lock_live
+      r = confirm( 'If you leave the room your stream will still be live until you click "Stop broadcast", would you like to exit the room anyway?' )
+      if not r
+        log "[Navigation] go silent", @prev_url
+        @go_silent @prev_url
+        next()
+        return
+
+
     div = $ '<div>'
 
     if @custom_class.length > 0
@@ -75,6 +88,7 @@ class Navigation
 
     div.load req.url, =>
 
+      @prev_url = req.url
       @emit 'on_load'
       @emit 'before_destroy'    
 
@@ -103,6 +117,8 @@ class Navigation
             @custom_class = ""
 
 
+
+
   ##
   # Navigates to a given URL using Html 5 history API
   ##
@@ -119,7 +135,7 @@ class Navigation
     return false
 
   go_silent: ( url, title ) ->
-    # log "[Navigation] go_silent method", url
+    log "[Navigation] go_silent method", url
     # @silent = true
     page.replace url, null, null, false
 

@@ -23,10 +23,10 @@ module.exports = class PopupTrigger
     @dom.on 'mouseover', @_on_people_over
     @dom.on 'mouseout', @_on_people_out
 
-  _on_people_over: ->
-    @popup.show data, @dom
+  _on_people_over: =>
+    @popup.show @data, @dom
 
-  _on_people_out: ->
+  _on_people_out: =>
     log "people out"
     @popup.hide()
 

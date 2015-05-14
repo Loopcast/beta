@@ -123,7 +123,7 @@ module.exports = class Room extends LoggedView
       @show_guest_popup()
 
     if @dom.hasClass 'room_live'
-      @on_room_live()
+      delay 1000, => @on_room_live()
 
   on_room_published: (room_id) =>
     log "[Room] on_room_published", room_id, @room_id
@@ -139,15 +139,22 @@ module.exports = class Room extends LoggedView
   on_room_offline: ->
     @dom.removeClass 'room_live'
     app.player.stop()
+    navigation.set_lock_live false
     
   on_room_live: ->
     # TEMP
 
     @dom.addClass 'room_live'
-    if @owner_id isnt user_controller.username
+    if not user_controller.check_guest_owner()
       delay 1, =>
-        L.rooms.info @room_id, (data) =>
-          app.player.play data
+        L.rooms.info @room_id, (error, response) =>
+
+          if not error
+            app.player.play response
+          else
+            log "[Room] on_room_live error", error
+    else
+      navigation.set_lock_live true
     
 
 

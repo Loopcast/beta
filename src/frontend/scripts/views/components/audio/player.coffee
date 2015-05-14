@@ -93,7 +93,9 @@ module.exports = class Player
     return audio_data
 
     
-  play: (@data) ->
+  play: (data = @data) ->
+    log "[Player] play", data
+    @data = data
     @update_info @data
     @audio.set_data @get_audio_data( @data )
     @audio.play()
@@ -107,6 +109,7 @@ module.exports = class Player
 
   update_info: ( data ) ->
 
+    log "[Player] update_info", data
     room_link = "/#{data.user.info.username}/#{data.room.info.slug}"
     @thumb.attr 'src', transform.player_thumb data.room.info.cover_url
     @title.html data.room.info.title
@@ -157,6 +160,8 @@ module.exports = class Player
       @progress.css 'width', data.perc + '%'
 
   on_progress_click: (e) =>
+
+    return if not @audio.data.is_recorded
     x = e.offsetX
     w = @progress_parent.width()
     perc = x / w

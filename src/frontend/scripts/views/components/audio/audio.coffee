@@ -30,8 +30,11 @@ module.exports = class AudioElement
     @dom.attr 'src', @data.src
 
   on_loaded_metadata: =>
-    log "[on loaded metadata]", @dom[0].duration
-    @duration = @dom[0].duration
+    if @data.is_recorded
+      log "[on loaded metadata]", @dom[0].duration
+      @duration = @dom[0].duration
+    else
+      log "[on loaded metadata] it's live!"
     @emit 'loaded'
 
   on_paused: =>
