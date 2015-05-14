@@ -5638,7 +5638,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 /* line 661 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
 
 /* line 662 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
-.no_touch_device.is_owner .profile_theme .profile_content .session .public_screen {
+.no_touch_device.is_owner .profile_theme .profile_content .session.to_publish .public_screen {
   display: -webkit-box;
   display: -moz-box;
   display: -webkit-flex;
@@ -5650,7 +5650,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 /* line 664 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
 
 /* line 665 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/profile.styl */
-.no_touch_device.is_owner .profile_theme .profile_content .session.public .public_screen {
+.no_touch_device.is_owner .profile_theme .profile_content .session .public_screen {
   display: none;
 }
 

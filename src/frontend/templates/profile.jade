@@ -176,9 +176,9 @@ block content
 
             for room in recorded
               - room.url = "/" + room.info.user + "/" + room.info.slug 
-              - public_class = "not_public"
-              if room.status.is_public
-                - public_class = "public"
+              - public_class = ""
+              if !room.status.is_public && room.status.recording.stopped_at
+                - public_class = "to_publish"
               //- - room.info.cover_url = room.info.cover_url || '/images/default_room_cover.jpg'
               .session.outline_box(class="#{public_class}", id="session_recorded_#{room._id}", data-room-id="#{room._id}" data-view="[components/user_set,components/audio/player_preview]")
                 .image(style="background-image:url(#{transform.cover_thumb(room.info.cover_url)})")
