@@ -123,8 +123,12 @@ module.exports = ( dom ) ->
         # notify.error "There was an error. Try later."
         return
 
-      dom.slideUp()
+      dom.slideUp -> 
+        dom.remove()
+        delay 1, -> app.emit 'room:deleted', room_id
+        
       notify.info "The recording has been deleted."
+
 
 
   _set_public = ->

@@ -129,8 +129,10 @@ block content
 
 
 
-
-      .list_sessions
+      - klass = "no_sessions"
+      if live || (recorded && recorded.length)
+        - klass = ""
+      .list_sessions(class="#{klass}", data-view="profile/sets")
 
         if live
           .session.outline_box(data-view="profile/live_set", data-room-id="#{live._id}", data-room-started-at="#{live.status.live.started_at}")
@@ -174,9 +176,9 @@ block content
 
             for room in recorded
               - room.url = "/" + room.info.user + "/" + room.info.slug 
-              - public_class = "not_public"
-              if room.status.is_public
-                - public_class = "public"
+              - public_class = ""
+              if !room.status.is_public && room.status.recording.stopped_at
+                - public_class = "to_publish"
               //- - room.info.cover_url = room.info.cover_url || '/images/default_room_cover.jpg'
               .session.outline_box(class="#{public_class}", id="session_recorded_#{room._id}", data-room-id="#{room._id}" data-view="[components/user_set,components/audio/player_preview]")
                 .image(style="background-image:url(#{transform.cover_thumb(room.info.cover_url)})")
@@ -223,11 +225,11 @@ block content
                     a.button.red_button.small_button_4.confirm_delete(href="#", title="Delete") Delete
                     a.button.white_button.small_button_4.cancel_delete(href="#", title="Cancel") Cancel
 
-        if recorded.length <= 0 && !live
-          .no_activity_wrapper
-            h3.no_activity.for_guest #{name} does not have any live or recorded sessions
-            h3.no_activity.for_owner You don't have any live or recorded sessions
-            a.button.bold_button.yellow_button.small_button_2.for_owner(href="/rooms/create") Get Started
+      
+        .no_activity_wrapper
+          h3.no_activity.for_guest #{name} does not have any live or recorded sessions
+          h3.no_activity.for_owner You don't have any live or recorded sessions
+          a.button.bold_button.yellow_button.small_button_2.for_owner(href="/rooms/create") Get Started
 
   include ./profile/room_modal.jade
 

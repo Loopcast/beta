@@ -70,6 +70,8 @@ class App
 		if not scope.main
 			return 
 
+		@player = view.get_by_dom '#player'
+
 		if $('.request_preloading').length > 0
 			v = view.get_by_dom '.request_preloading'
 			log v
