@@ -2,9 +2,12 @@ time_to_string = require 'app/utils/time/time_to_string'
 api = require 'api/loopcast/loopcast'
 transform = require 'lib/cloudinary/transform'
 
+moment = require 'moment'
+
 module.exports = class Player
   is_playing: false
   like_lock: false
+  is_recorded: false
 
   constructor: ( @dom ) ->
     @thumb    = @dom.find '.player_icon img'
@@ -14,6 +17,7 @@ module.exports = class Player
     @time     = @dom.find '.player_time'
     @play_btn = @dom.find '.ss-play'
     @like_btn = @dom.find '.ss-heart'
+    @progress = @dom.find '.player_progress span'
 
     @play_btn.on 'click', @on_play_clicked
     @like_btn.on 'click', @on_like_clicked
@@ -38,7 +42,7 @@ module.exports = class Player
       @like()
 
   unlike: ->
-    api.rooms.dislike @data.room_id, (error, response) =>
+    api.rooms.dislike @data.room._id, (error, response) =>
       log "[Player] dislike", error, response
       @like_lock = false
       
@@ -49,7 +53,7 @@ module.exports = class Player
       @like_btn.removeClass 'liked'
 
   like: ->
-    api.rooms.like @data.room_id, (error, response) =>
+    api.rooms.like @data.room._id, (error, response) =>
       log "[Player] like", error, response
       @like_lock = false
 
@@ -68,9 +72,8 @@ module.exports = class Player
 
     
   play: (data) ->
-
     log "[Player] play", data
-    if @data?.room_id is data.room_id
+    if @data?.room._id is data.room._id
       log "[Player] play. no action because it's already streaming the same url."
       return
 
@@ -78,27 +81,35 @@ module.exports = class Player
 
     # log "[Player] play", data, @is_playing
 
-    @thumb.attr 'src', transform.player_thumb data.thumb
-    @title.html data.title
-    @author.html "By " + data.author
+    room_link = "/#{data.user.info.username}/#{data.room.slug}"
+    @thumb.attr 'src', transform.player_thumb data.room.info.cover_url
+    @title.html data.room.info.title
+    @author.html "By " + data.user.info.name
 
-    @author.attr 'title', data.title
-    @title.attr 'title', data.author
+    @author.attr 'title', data.user.info.name
+    @title.attr 'title', data.room.info.title
 
-    @author.attr 'href',  "/" + data.author_id
-    @title.attr 'href', data.room_url
+    @author.attr 'href',  "/" + data.user.info.username
+    @title.attr 'href', room_link
 
-    @thumb.parent().attr 'href', data.url
-    @thumb.parent().attr 'title', data.title
+    @thumb.parent().attr 'href', room_link
+    @thumb.parent().attr 'title', data.room.info.title
 
-    @share.update_link data.room_url
+    @share.update_link room_link
 
-    if data.status.live
+    if data.room.status.is_live
       @dom.addClass 'is_live'
     else
       @dom.removeClass 'is_live'
 
-    @audio.attr 'src', data.streaming_url
+    if data.room.info.file
+      @audio.attr 'src', data.room.info.file
+      @start_time = moment()
+      @is_recorded = true
+    else
+      @audio.attr 'src', data.room.info.url
+      @start_time = data.room.status.live.started_at
+      @is_recorded = false
 
     @data = data
 
@@ -112,14 +123,22 @@ module.exports = class Player
     @play_btn.addClass( 'ss-pause' ).removeClass( 'ss-play' )
 
     @audio[0].play()
-    # TEMP: It should be called when the streaming works
-    @on_player_started()
+    if @is_recorded
+      @audio[0].addEventListener 'loadedmetadata', @on_player_started
+      @audio[0].addEventListener 'ended', @on_player_stopped
+
+    else
+      # TEMP: It should be called when the streaming works
+      @on_player_started()
 
 
   on_player_started: =>
     # log "[Player] on_player_started", @data
 
-    app.emit 'audio:started', @data.room_id
+    app.emit 'audio:started', @data.room._id
+
+    if @is_recorded
+      @duration = @audio[0].duration
 
 
     @is_playing = true
@@ -130,22 +149,42 @@ module.exports = class Player
 
     @open()
 
+  on_player_stopped: =>
+    if not @is_playing
+      log "[Player] on_player_stopped. returend bcause is not playing"
+      return 
+    log "[Player] on_player_stopped"
+    @stop()
+
   stop: (should_close = false) ->
-    # log "[Player] stop"
+    
+    if not @is_playing
+      log "[Player] stop. returend bcause is not playing"
+      return 
+
+    log "[Player] stop"
 
     @play_btn.removeClass( 'ss-pause' ).addClass( 'ss-play' )
 
     @is_playing = false
     clearInterval @timer_interval
     @audio[0].pause?()
-    app.emit 'audio:paused', @data.room_id
+    @progress.css 'width', '0%'
+    @time.html "00:00:00"
+    app.emit 'audio:paused', @data.room._id
     @close() if should_close
 
     @data = null
 
   check_time: =>
-    time = time_to_string @data.status.live.started_at
-    @time.html time
+    time = time_to_string @start_time
+    @time.html time.str
+
+    if @is_recorded
+
+      perc = Math.min( 100, time.seconds / @duration * 100 )
+      @progress.css 'width', perc + '%'
+      log @duration, time.seconds
 
   close: ( ) ->
     app.body.removeClass 'player_visible'

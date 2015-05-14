@@ -36,8 +36,10 @@ module.exports = (dom) ->
     dom.addClass 'playing'
     icon.addClass( 'ss-pause' ).removeClass( 'ss-play' )
 
-    L.rooms.info room_id, (data) -> 
-      app.player.play data
+    L.rooms.info room_id, (error, response) -> 
+
+      log 'room info', response
+      app.player.play response
 
       
 
