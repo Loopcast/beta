@@ -130,7 +130,7 @@ module.exports = class Player
 
     @open()
 
-  stop: (should_close = true) ->
+  stop: (should_close = false) ->
     # log "[Player] stop"
 
     @play_btn.removeClass( 'ss-pause' ).addClass( 'ss-play' )
