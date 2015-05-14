@@ -56,9 +56,11 @@ class Navigation
 
     if @first_time
       @first_time = false
+      log "[Navigation] FIRST TIME, returning"
       return
 
     if @silent
+      log "[Navigation] SILENT, returning"
       @silent = off
       return  
 
@@ -118,7 +120,7 @@ class Navigation
 
   go_silent: ( url, title ) ->
     # log "[Navigation] go_silent method", url
-    @silent = true
+    # @silent = true
     page.replace url, null, null, false
 
   main_refresh: ->

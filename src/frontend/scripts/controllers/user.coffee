@@ -127,6 +127,7 @@ class UserController
     @data.username = data.username
     @data.name = data.name
 
+    @emit 'name:updated', @data
     @write_to_session()
     
 
