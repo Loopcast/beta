@@ -31,6 +31,20 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
 .explore
   position: relative
   padding-top: HEIGHT_SUBHEADER
+  
+  .loading
+    absolute top 0 left 0
+    width: 100%
+    height: 100%
+    background: #ececec
+    z-index: 0
+    transition: opacity .3s linear
+    opacity: 0
+    
+  .explore_content > .loading
+    top: 45px
+    
+
   .sub_header
     background: #EFF3F6
     height: HEIGHT_SUBHEADER
@@ -62,7 +76,7 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
         border-left: 1px solid GRAY_SUBHEADER_BORDER
         border-right: 1px solid GRAY_SUBHEADER_BORDER
         border-bottom: 1px solid GRAY
-        transition: border-color .3s linear
+        // transition: border-color .3s linear
         a
           cursor: default
           
@@ -141,14 +155,7 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
       
     
   .rooms_grid
-    .loading
-      absolute top 0 left 0
-      width: 100%
-      height: 100%
-      background: #ececec
-      z-index: 0
-      transition: opacity .2s linear .2s
-      opacity: 0
+    
       
 
 
@@ -281,16 +288,41 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
       opacity: 1  
 
 
-.custom_loading
-  .explore .rooms_grid .loading
-    opacity: 1
-    transition: opacity .1s linear
-.visible
-  .explore .rooms_grid .loading
+
+.loading_on_top
+  &.tab_1 .explore_content > .loading
+  &.tab_filter .rooms_grid .loading
     z-index: 1
+.loading_visible 
+  &.tab_1 .explore_content > .loading
+  &.tab_filter .rooms_grid .loading
+    opacity: 1
+    
+
+// .visible
+//   &.tab_filter .rooms_grid .loading
+//   &.tab_1 .explore_content > .loading
+//     z-index: 1
+    
+// .custom_loading
+//   &.tab_filter .rooms_grid .loading
+//   &.tab_1 .explore_content > .loading
+//     opacity: 1
+//     transition: opacity .1s linear
+    
+  
+// .tab_1
+//   &.visible .explore_content > .loading
+//     opacity: 1
+    
+    
+
+
 
 .no_touch_device
   .explore
+    .sub_header li:hover
+      color: BLACK
     .genres_list
       a:hover
         background:  #747C83

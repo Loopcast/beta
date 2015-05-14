@@ -1,6 +1,8 @@
 api    = require 'app/api/loopcast/loopcast'
 notify = require 'app/controllers/notify'
 navigation = require 'app/controllers/navigation'
+user_controller = require 'app/controllers/user'
+transform_url = require 'app/utils/rooms/update_room_link_by_username'
 
 module.exports = ( dom ) ->
   settings_handler = null
@@ -17,8 +19,26 @@ module.exports = ( dom ) ->
     dom.find( '.set_public' ).on 'click', _set_public
     dom.find( '.public_screen .bg' ).on 'click', _get_into_the_room
 
-
+    user_controller.on 'name:updated', _on_name_updated
     view.once 'binded', _on_views_binded
+
+    log room_url
+
+  _on_name_updated = (data) ->
+    log "name updated", data.username, dom.find( '.share_wrapper' ), dom.find( '.share_wrapper' ).data( 'permalink' )
+
+    room_url = transform_url room_url, data.username
+
+    dom.find( '.room_url' ).each ->
+      $(@).attr 'href', room_url
+
+
+    dom.find( '.share_wrapper' ).data( 'permalink', room_url )
+
+    dom.find( '.session_author' ).text data.name
+
+
+
 
   _on_views_binded = ->
     settings_handler = view.get_by_dom dom.find( '.settings_button' )

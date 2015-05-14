@@ -1,5 +1,5 @@
 block seo
-  title #{name} | Loopcast | Stream live from anywhere at anytime 
+  title #{name} | Live Streaming on Loopcast 
   if about
     meta( name="description" content="#{about}" ) 
   else
@@ -134,11 +134,11 @@ block content
 
         if live
           .session.outline_box(data-view="profile/live_set", data-room-id="#{live._id}", data-room-started-at="#{live.status.live.started_at}")
-            a.image(href="/#{live.info.user}/#{live.info.slug}", title="Old School House session", style="background-image:url(#{transform.cover_thumb(live.info.cover_url)})")
+            a.image.room_url(href="/#{live.info.user}/#{live.info.slug}", title="Old School House session", style="background-image:url(#{transform.cover_thumb(live.info.cover_url)})")
             .content
               h2.session_title 
-                a(href="/#{live.info.user}/#{live.info.slug}", title="#{live.info.title}") #{live.info.title}
-              a.session_author.underline_link(href="/#{live.info.user}", title="#{live.info.user}") #{live.info.user}
+                a.room_url(href="/#{live.info.user}/#{live.info.slug}", title="#{live.info.title}") #{live.info.title}
+              a.session_author.underline_link.room_url(href="/#{live.info.user}/#{live.info.slug}", title="#{live.info.user}") #{live.info.user}
               .genres
                 for genre in live.info.genres
                   a.tag(href="/explore?genres=#{genre}", title="#{genre}") #{genre}
@@ -157,7 +157,7 @@ block content
                   //- span.spritesheet.icon_plays
                   span.text #{live.status.live.listeners}
 
-              a.live(href="/#{live.info.user}/#{live.info.slug}", title="#{live.info.title}")
+              a.live.room_url(href="/#{live.info.user}/#{live.info.slug}", title="#{live.info.title}")
                 p.label now live
                 p.time &nbsp;
 
@@ -187,8 +187,8 @@ block content
 
                 .content
                   h2.session_title 
-                    a(href="#{room.url}", title="#{room.info.title}") #{room.info.title}
-                  a.session_author.underline_link(href="#{room.url}", title="#{name}") #{name}
+                    a.room_url(href="#{room.url}", title="#{room.info.title}") #{room.info.title}
+                  a.session_author.underline_link.room_url(href="#{room.url}", title="#{name}") #{name}
                   .genres
                     for genre in room.info.genres
                       a.tag(href="#", title="#{genre}") #{genre}

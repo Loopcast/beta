@@ -26,9 +26,22 @@
     color: GRAY
     padding: 10px
 
+#debug
+  position: fixed
+  width: 100%
+  bottom: 10px
+  height: 30px
+  color: white
+  font-size: 20px
+  background: red
+  z-index: 10
+  a
+    padding-right: 20px
 
 // NOTIFY
 body
+  &.body_login
+    padding-top: 0
   .notifyjs-container > div
     background-image: none
     padding-left: 15px
@@ -88,14 +101,14 @@ body .notifyjs-container
       
 
   .notifyjs-loopcast_error-base
-    background: white   
+    background: #FFDCDC   
     border: 1px solid RED
-    color: GRAY_3
+    color: RED
     
   .notifyjs-loopcast_success-base
     background: white 
     border: 1px solid green
-    color: GRAY_3 
+    color: #080 
     
 
 

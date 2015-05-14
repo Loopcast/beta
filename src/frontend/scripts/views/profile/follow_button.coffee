@@ -8,7 +8,7 @@ module.exports = class FollowButton
 
     
     user.check_following [ @username_to_follow ], (data) =>
-      log "[FollowButton] got response", data
+      # log "[FollowButton] got response", data
 
     @dom.on 'click', @toggle
 

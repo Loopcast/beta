@@ -127,12 +127,13 @@ class UserController
     @data.username = data.username
     @data.name = data.name
 
+    @emit 'name:updated', @data
     @write_to_session()
     
 
   check_following: (ids, callback) ->
     api.user.is_following ids, (error, response) ->
-      log "[User] is_following response", error, response
+      # log "[User] is_following response", error, response
 
       callback response
 
