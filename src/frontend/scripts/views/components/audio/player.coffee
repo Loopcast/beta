@@ -17,6 +17,7 @@ module.exports = class Player
     @like_btn = @dom.find '.ss-heart'
     @progress = @dom.find '.player_progress span'
     @progress_parent = @dom.find '.player_progress'
+    @loading = @dom.find '.loading_screen'
 
     @play_btn.on 'click', @on_play_clicked
     @like_btn.on 'click', @on_like_clicked
@@ -134,7 +135,7 @@ module.exports = class Player
 
     app.emit 'audio:started', @data.room._id
 
-    @progress_parent.removeClass 'loading'
+    @loading.fadeOut()
 
     @open()
 
@@ -160,7 +161,7 @@ module.exports = class Player
     w = @progress_parent.width()
     perc = x / w
 
-    @progress_parent.addClass 'loading'
+    @loading.fadeIn()
     @audio.snap_to perc
 
   close: ->

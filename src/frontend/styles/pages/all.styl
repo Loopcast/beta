@@ -191,12 +191,25 @@ PLAYER_HEIGHT = 70px
   transition: transform .15s ease-out
   &.visible
     transform: translateY(0)
+  
+  .loading_screen
+    background: rgba(0,0,0,0.6)
     
+    z-index: 2
+    display: none
+    
+    // .loading_spin
+    //   display: none
+
+
+    
+
   .centered
     display: flex
     align-items: center
     justify-content: left
     position: relative
+    z-index: 1
 
 
   .player_button
@@ -248,7 +261,8 @@ PLAYER_HEIGHT = 70px
       border-bottom-left-radius: 5px
       transition: width .1s linear, background .2s linear
       
-    &.loading
+  &.loading
+    .player_progress
       span
         background: darken(YELLOW, 30)
       
