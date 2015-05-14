@@ -38,7 +38,7 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
     height: 100%
     background: #ececec
     z-index: 0
-    transition: opacity .2s linear .2s
+    transition: opacity .3s linear
     opacity: 0
     
   .explore_content > .loading
@@ -288,17 +288,33 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
       opacity: 1  
 
 
-.custom_loading
-  &.tab_filter .rooms_grid .loading
+
+.loading_on_top
   &.tab_1 .explore_content > .loading
+  &.tab_filter .rooms_grid .loading
+    z-index: 1
+.loading_visible 
+  &.tab_1 .explore_content > .loading
+  &.tab_filter .rooms_grid .loading
     opacity: 1
-    transition: opacity .1s linear
+    
+
+// .visible
+//   &.tab_filter .rooms_grid .loading
+//   &.tab_1 .explore_content > .loading
+//     z-index: 1
+    
+// .custom_loading
+//   &.tab_filter .rooms_grid .loading
+//   &.tab_1 .explore_content > .loading
+//     opacity: 1
+//     transition: opacity .1s linear
     
   
-.visible
-  &.tab_filter .rooms_grid .loading
-  &.tab_1 .explore_content > .loading
-    z-index: 1
+// .tab_1
+//   &.visible .explore_content > .loading
+//     opacity: 1
+    
     
 
 

@@ -39,9 +39,7 @@ class Navigation
 
       if el.data 'nav-load'
         ref.content_selector = el.data( 'nav-load' )
-        ref.custom_class = el.data( 'nav-custom-class' ) + " custom_loading"
-
-        log "[Navigation] Changed", ref.content_selector, ref.custom_class
+        ref.custom_class = 'loading_on_top ' + el.data( 'nav-custom-class' )
 
 
 
@@ -68,8 +66,8 @@ class Navigation
     div = $ '<div>'
 
     if @custom_class.length > 0
-      app.body.addClass 'visible'
-      delay 1, => app.body.addClass @custom_class
+      app.body.addClass @custom_class
+      delay 1, => app.body.addClass 'loading_visible'
 
     delay 10, => @emit 'before_load'
 
@@ -96,9 +94,11 @@ class Navigation
         delay 10, => @emit 'after_render'
         delay 200, => 
           @content_selector = @DEFAULT_SELECTOR
-          app.body.removeClass @custom_class
-          @custom_class = ""
-          delay 300, => app.body.removeClass 'visible'
+          app.body.removeClass 'loading_visible'
+          
+          delay 300, => 
+            app.body.removeClass @custom_class
+            @custom_class = ""
 
 
   ##
