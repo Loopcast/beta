@@ -6,6 +6,7 @@ module.exports = (dom) ->
   icon       = dom.find '.ss-play'
   data       = null
   room_id    = dom.data 'room-id'
+  room_info = null
 
   if not room_id
     return
@@ -24,55 +25,42 @@ module.exports = (dom) ->
 
   dom.addClass 'player_preview'
 
-  
-  
 
-  play = ->
-    return if is_playing
+  on_play = (_room_id) ->
+    if _room_id is room_id
+      is_playing = true
+      dom.addClass 'playing'
+      icon.addClass( 'ss-pause' ).removeClass( 'ss-play' )      
+    else
+      on_stop()
 
-    # log "[PlayerPreview] play", title
+  on_stop = (_room_id) ->
+    if _room_id is room_id
+      is_playing = false
+      dom.removeClass 'playing'
+      icon.removeClass( 'ss-pause' ).addClass( 'ss-play' )
 
-    is_playing = true
-    dom.addClass 'playing'
-    icon.addClass( 'ss-pause' ).removeClass( 'ss-play' )
 
-    L.rooms.info room_id, (error, response) -> 
+  request_play = ->
 
-      log 'room info', response
-      app.player.play response
+    if not room_info
+      L.rooms.info room_id, (error, response) -> 
 
-      
-
-  stop = (stop_player = true) ->
-    return if not is_playing
-
-    # log "[PlayerPreview] stop", title
-
-    is_playing = false
-    dom.removeClass 'playing'
-    icon.removeClass( 'ss-pause' ).addClass( 'ss-play' )
-
-    app.player.stop() if stop_player
-
+        log 'room info', response
+        room_info = response
+        app.player.play room_info
+    else
+      app.player.play room_info
 
   toggle = ->
     if is_playing
-      stop()
+      app.player.stop()
     else
-      play()
+      request_play()
 
   init = ->
     icon.on 'click', toggle
-
-    app.on 'audio:started', (_room_id) ->
-      if _room_id isnt room_id
-        # log "[PlayerPreview] on audio started. Stopped", title
-        stop( false )
-
-    app.on 'audio:paused', (_room_id) ->
-      if _room_id isnt room_id and is_playing
-        # log "[PlayerPreview] on audio paused. Stopped", title, _room_id, room_id
-        stop( false )
-
+    app.on  'audio:started', on_play
+    app.on  'audio:paused', on_stop
 
   init()
