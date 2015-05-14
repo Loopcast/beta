@@ -3,7 +3,6 @@ happens = require 'happens'
 module.exports = class Homepage
 	constructor: (@dom) ->
 
-		log "homepage created"
 		happens @
 
 		@dom.addClass 'request_preloading'

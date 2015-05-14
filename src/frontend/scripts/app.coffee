@@ -57,8 +57,8 @@ class App
 
 	before_load: =>
 		if navigation.main_refresh()
-			log "----------LOADING SHOW"
 			@emit 'loading:show'
+
 		log "[View] before_load", navigation.content_selector
 		views.unbind navigation.content_selector
 
@@ -70,9 +70,23 @@ class App
 		if not scope.main
 			return 
 
+		if $('.request_preloading').length > 0
+			v = view.get_by_dom '.request_preloading'
+			log v
+
+			if v
+				v.on 'ready', => 
+					v.off 'ready'
+					v = null
+					@emit 'loading:hide'
+			else
+				@emit 'loading:hide'
+
+		else
+			@emit 'loading:hide'
+
 		log "[App] on_views_binded", scope
 
-		@emit 'loading:hide'
 
 	
 	# User Proxies

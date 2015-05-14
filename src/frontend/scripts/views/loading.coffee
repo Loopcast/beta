@@ -16,7 +16,8 @@ module.exports = class Loading
 			if @first_time
 				app.body.addClass 'first_loaded'
 				@first_time = off
+
+			
+			# console.error "[Loading] hide"
 			app.body.removeClass( 'loading' ).addClass( 'loaded' )
 			Opacity.hide @dom	
-
-			# console.error "[Loading] hide"
