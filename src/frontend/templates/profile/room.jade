@@ -2,6 +2,10 @@ extends ../layout
 
 block content
   input(type='hidden' id='owner_id' value="#{user.info.username}")
+  input(type='hidden' id='owner_avatar' value="#{user.info.avatar}")
+  input(type='hidden' id='owner_name' value="#{user.info.name}")
+  input(type='hidden' id='owner_followers' value="0")
+  input(type='hidden' id='owner_occupation' value="#{user.info.occupation[0]}")
 
   if room
     - data_menu = "room"
@@ -30,7 +34,7 @@ block content
             if room
               | #{room.info.title}
         br
-        h3.genres.black_background 
+        h3.genres.black_background(data-view="room/popup_trigger")
           a(href="/#{user.info.username}", title="#{user.info.name}") #{user.info.name}
 
         .socials_room(data-view="components/room_social_links", data-links="#{user.info.social}")

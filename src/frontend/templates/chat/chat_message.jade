@@ -1,6 +1,6 @@
 .message
   .inner
-    a.img_wrapper_2(href="#{user.url}", title="#{user.name}")
+    a.img_wrapper_2(href="#{user.url}", title="#{user.name}", data-username="#{user.username}")
       if like
         span.icon.ss-heart
       else

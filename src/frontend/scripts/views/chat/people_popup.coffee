@@ -22,7 +22,17 @@ module.exports = class PeopleView extends ChatView
     @cancel_hide = false
     @hide()
 
+  ###
+  avatar: "https://res.cloudinary.com/loopcast/image/upload/v1431006022/ifollzoplab3eft56sfv.jpg"
+  followers: 0
+  id: "stefanoortisi"
+  images: Object
+  name: "Stefano Ortisi"
+  occupation: Array[1]
+  url: "/stefanoortisi"
+  ###
   show: (data, el) -> 
+    log "[Popup] show", data
     @cancel_hide = true
     @visible = true   
     @dom
@@ -38,8 +48,11 @@ module.exports = class PeopleView extends ChatView
       h = @dom.height()
       w = @dom.width()
 
-      left = p.left - (w/2) + 17
+      left = Math.max(0, p.left - (w/2) + 17 )
       top = p.top - h - 90
+
+      if top < 0
+        top = p.top - 10
 
       @dom.css
         left   : left
