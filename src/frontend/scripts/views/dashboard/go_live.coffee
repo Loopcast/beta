@@ -26,7 +26,8 @@ module.exports = class GoLive extends RoomView
 
     @text.on 'click', @on_button_clicked
 
-
+    if $('.room_live' ).length > 0
+      @set_live( true )
 
   on_button_clicked: =>
     # TODO: make it clever

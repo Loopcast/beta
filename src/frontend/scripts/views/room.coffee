@@ -109,6 +109,8 @@ module.exports = class Room extends LoggedView
     @channel.bind 'message', @on_message
     @publish_modal = view.get_by_dom '#publish_modal'
     @publish_modal.on 'room:published', @on_room_published
+    @live_button = view.get_by_dom '#go_live_button'
+    @live_button.on 'live:changed', @_on_live_changed
 
     @emit 'room:created', data
 
@@ -128,10 +130,20 @@ module.exports = class Room extends LoggedView
     if room_id is @room_id
       @dom.addClass 'room_public'
 
-
-
+  _on_live_changed: (data) =>
+    log "[Room] on live changed", data
+    if data
+      @on_room_live()
+    else
+      @on_room_offline()
+  on_room_offline: ->
+    @dom.removeClass 'room_live'
+    app.player.stop()
+    
   on_room_live: ->
     # TEMP
+
+    @dom.addClass 'room_live'
     if @owner_id isnt user_controller.username
       delay 1, =>
         L.rooms.info @room_id, (data) =>
