@@ -44,6 +44,7 @@ module.exports = class HoverTrigger
 			do @open
 
 		e.stopPropagation()
+		e.preventDefault()
 
 
 
