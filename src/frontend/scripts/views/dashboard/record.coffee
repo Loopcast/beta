@@ -1,79 +1,12 @@
-RoomView = require 'app/views/room/room_view'
+ButtonWithTimer = require 'app/views/dashboard/button_with_timer'
 L       = require '../../api/loopcast/loopcast'
 appcast = require '../../controllers/appcast'
 notify   = require 'app/controllers/notify'
-happens  = require 'happens'
 user     = require 'app/controllers/user'
 
-module.exports = class Record extends RoomView
-  # TODO: fetch information from backend
-  recording : false
-  waiting   : false
-
-  constructor: ( @dom ) ->
-    happens @
-    @text = @dom.find 'a'
-    super @dom
-
-  on_room_created: (@room_id, @owner_id) =>
-    
-    super @room_id, @owner_id
-
-    return unless @is_room_owner
-
-    @text.on 'click', @on_button_clicked
-
-
-
-  on_button_clicked: =>
-    # TODO: make it clever
-    return if @waiting
-
-    if not @recording
-      @start()
-    else
-      @stop()
-
-  on_error: ( error, origin = 'stream:error' ) =>
-    @waiting = false
-
-    return if not error
-    @text.html "ERROR"
-    log "[Record] on_error. origin", error, origin
-    error += " - Restart appcast."
-    notify.info error
-
-  wait: ->
-    log "[Record] wait"
-    @waiting = true
-    @text.html "..."
-
-  set_recording: ( recording ) ->
-
-    log "[Record] set_recording", recording
-    @waiting = false
-    @recording = recording
-    @emit 'record:changed', @recording
-
-    if @recording
-      @text.html 'STOP REC'
-    else
-      @text.html 'RECORDED'
-
-
-  start_recording: ( from_external_event = true ) =>
-
-    if from_external_event
-      appcast.off 'stream:online', @start_recording
-
-    ref = @
-
-    L.rooms.start_recording @room_id, ( error, response ) ->
-      if error
-        ref.on_error error
-        return
-
-      ref.set_recording true
+module.exports = class Record extends ButtonWithTimer
+  active_text: 'STOP REC'
+  inactive_text: 'RECORDED'
 
   start: ->
     log "[Record] start"
@@ -109,7 +42,7 @@ module.exports = class Record extends RoomView
         notify.info "Error while stopping recording"
         return
 
-      ref.set_recording false
+      ref.set_active false
 
       channel = pusher.subscribe "tape.#{ref.owner_id}"
 
@@ -134,6 +67,20 @@ module.exports = class Record extends RoomView
       channel.bind "upload:finished", on_upload_finish
       channel.bind "upload:error"   , on_upload_error
       channel.bind "upload:failed"  , on_upload_failed
+
+  start_recording: ( from_external_event = true ) =>
+
+    if from_external_event
+      appcast.off 'stream:online', @start_recording
+
+    ref = @
+
+    L.rooms.start_recording @room_id, ( error, response ) ->
+      if error
+        ref.on_error error
+        return
+
+      ref.set_active true
 
   destroy: ->
     if @is_room_owner

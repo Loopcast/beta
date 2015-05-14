@@ -110,7 +110,7 @@ module.exports = class Room extends LoggedView
     @publish_modal = view.get_by_dom '#publish_modal'
     @publish_modal.on 'room:published', @on_room_published
     @live_button = view.get_by_dom '#go_live_button'
-    @live_button.on 'live:changed', @_on_live_changed
+    @live_button.on 'changed', @_on_live_changed
 
     @emit 'room:created', data
 
@@ -230,6 +230,7 @@ module.exports = class Room extends LoggedView
     location.pathname is '/rooms/create'
 
   destroy: ->
+    navigation.set_lock_live false
     if @room_created
       pusher.unsubscribe @room_subscribe_id
       @channel.unbind 'listener:added', @on_listener_added

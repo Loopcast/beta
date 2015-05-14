@@ -26,8 +26,8 @@ module.exports = class Dashboard extends RoomView
 
     @live_button   = view.get_by_dom @dom.find( '#go_live_button' )
     @record_button = view.get_by_dom @dom.find( '#record_button' )
-    @live_button.on 'live:changed', @on_live_changed
-    @record_button.on 'record:changed', @on_record_changed
+    @live_button.on 'changed', @on_live_changed
+    @record_button.on 'changed', @on_record_changed
 
     @balloons = 
       appcast: view.get_by_dom( '#appcast_not_running_balloon' )
