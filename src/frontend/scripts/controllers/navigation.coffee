@@ -81,7 +81,7 @@ class Navigation
       if app.body.scrollTop() > 0
         app.body.animate scrollTop: 0
 
-      delay 400, =>     
+      delay 200, =>     
 
         new_content = div.find( @content_selector ).children()
         
