@@ -9,14 +9,20 @@ module.exports = class Explore
   on_views_binded: (scope) =>
     return if not scope.main
 
+    @dom.removeClass 'no_result_explore'
     container_isotope = @dom.find( '.rooms_grid' )[ 0 ]
 
     @isotope.destroy() if @isotope
 
+    log ".-......>", @dom.find( '.room_cell' ).length
+
+    if @dom.find( '.room_cell' ).length <= 0
+      @dom.addClass 'no_result_explore'
+      return
+
+
     if $( 'input[name=current_genre]' ).length > 0
       current_genre = $( 'input[name=current_genre]' ).val()
-
-      log 'current_genre', current_genre
       
     @isotope = new Isotope container_isotope,
       itemSelector: '.item',

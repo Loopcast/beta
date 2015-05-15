@@ -31,7 +31,22 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
 .explore
   position: relative
   padding-top: HEIGHT_SUBHEADER
-  
+  .no_result_explore
+    .no_result
+      display: block
+      
+    .flex_sidebar, .flex_content
+      display: none
+      
+  .no_result
+    text-align: center
+    font-size: 1.2rem
+    color: BLACK
+    flex: 1
+    padding-top: 50px
+    display: none
+    
+
   .loading
     absolute top 0 left 0
     width: 100%
