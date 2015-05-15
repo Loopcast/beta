@@ -61,6 +61,7 @@ class Navigation
     if @first_time
       @first_time = false
       log "[Navigation] FIRST TIME, returning"
+      @prev_url = req.url
       return
 
     if @silent
@@ -70,13 +71,23 @@ class Navigation
 
 
     if @lock_live
-      r = confirm( 'If you leave the room your stream will still be live until you click "Stop broadcast", would you like to exit the room anyway?' )
-      if not r
-        log "[Navigation] go silent", @prev_url
-        @go_silent @prev_url
-        next()
-        return
+      app.emit 'exit_modal:request_open'
 
+      app.on 'exit_modal:answered', (answer) =>
+        log "[Navigation] exit_modal:answered", answer
+
+        app.off 'exit_modal:answered'
+        if not answer
+          log "[Navigation] go silent", @prev_url
+          @go_silent @prev_url
+          next()
+        else
+          @load_url req
+        
+    else
+      @load_url req
+
+  load_url: ( req ) ->
 
     div = $ '<div>'
 

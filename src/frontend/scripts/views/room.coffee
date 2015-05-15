@@ -13,6 +13,7 @@ pusher_room_id  = require 'lib/pusher/get_room_id'
 module.exports = class Room extends LoggedView
   room_created: false
   publish_modal: null
+  exit_modal: null
 
   constructor: ( @dom ) ->
     super @dom
@@ -130,6 +131,7 @@ module.exports = class Room extends LoggedView
     if room_id is @room_id
       @dom.addClass 'room_public'
 
+  
   _on_live_changed: (data) =>
     log "[Room] on live changed", data
     if data
@@ -243,7 +245,7 @@ module.exports = class Room extends LoggedView
       @change_cover_uploader.off 'completed', @on_cover_uploaded
 
     if @publish_modal
-      @publish_modal.on 'room:published', @on_room_published
+      @publish_modal.off 'room:published', @on_room_published
     super()
 
     
