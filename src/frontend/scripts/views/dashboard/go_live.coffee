@@ -38,11 +38,11 @@ module.exports = class GoLive extends ButtonWithTimer
 
     # log "[GoLive] Clicked stop"
 
-    if not appcast.get 'stream:online'
+    # if not appcast.get 'stream:online'
 
-      notify.info '- cant stop stream if not streaming'
+    #   notify.info '- cant stop stream if not streaming'
 
-      return
+    #   return
 
     @wait()
 
