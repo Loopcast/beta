@@ -40,7 +40,7 @@ class Navigation
       if href is '#'
         return false
 
-      if el.data 'nav-load'
+      if el.data 'nav-load' and app.settings.theme is 'desktop'
         ref.content_selector = el.data( 'nav-load' )
         ref.custom_class = 'loading_on_top ' + el.data( 'nav-custom-class' )
 
