@@ -42,6 +42,8 @@ Transform =
     else
       url.replace "upload/", "upload/w_200,h_167,c_fill,g_north/"    
 
+  
+
   chat_thumb: ( url ) -> 
     if not url? or url.indexOf( "upload/" ) < 0
       return "/images/profile-36.jpg"
@@ -65,6 +67,12 @@ Transform =
       return DEFAULT.cover_thumb
     else
       url.replace "upload/", "upload/w_210,h_210,c_fill,g_north/"
+
+  explore_thumb_mobile: ( url ) ->
+    if not url? or url.indexOf( "upload/" ) < 0
+      return DEFAULT.cover_thumb_mobile
+    else
+      url.replace "upload/", "upload/w_370,h_186,c_fill,g_north/"    
 
   player_thumb: ( url ) ->
     if not url? or url.indexOf( "upload/" ) < 0

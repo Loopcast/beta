@@ -5,7 +5,7 @@ block content
 
     block submenu
 
-    .sub_header(data-view="components/fixed_bar")
+    .sub_header.for_desktop(data-view="components/fixed_bar")
       ul.centered
         li.sub_header_rooms
           a(href="/explore" title="Sets", data-nav-load=".explore .explore_content", data-nav-custom-class="tab_1")
@@ -24,8 +24,15 @@ block content
         
       block no_content
       
+      .for_mobile.filter_list(data-view="explore/mobile_filter")
+        p 
+          | Filter
+          span.icon.ss-dropdown
+          span.icon.ss-directup
 
       .flex_sidebar.genres_list
+
+
         - klass = ""
         if current_genre.length <= 0
           - klass = "selected"

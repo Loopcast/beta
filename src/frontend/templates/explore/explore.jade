@@ -32,7 +32,8 @@ block grid
       - klasses += " is_recorded"
     .room_cell.item(class="#{klasses}", data-view="components/audio/player_preview", data-room-id="#{item._id}")
       a(href="#", title="#{item.info.title}", class="thumb_wrapper") 
-        img.room_thumb(src="#{transform.explore_thumb(item.info.cover_url)}")
+        img.room_thumb.for_desktop(src="#{transform.explore_thumb(item.info.cover_url)}")
+        img.room_thumb.for_mobile(src="#{transform.explore_thumb_mobile(item.info.cover_url)}")
         
         span.recorded Recorded
         span.now_live Now Live

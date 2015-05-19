@@ -119,7 +119,6 @@ class Navigation
 
   on_content_ready: =>
     @emit 'after_render'
-    log 
     delay 200, => 
       @content_selector = @DEFAULT_SELECTOR
       app.body.removeClass 'loading_visible'
