@@ -63,8 +63,7 @@ class View
 
 			view_name = $item.data( 'view' )
 
-			if tolog
-				log "[views] binding", view_name
+			# log "[views] binding", view_name
 
 			$item.removeAttr 'data-view'
 

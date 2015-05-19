@@ -14,6 +14,7 @@ class Navigation
   DEFAULT_SELECTOR: '#content .inner_content'
   lock_live: false
   prev_url: ""
+  mobile_style: true
 
   constructor: ->
 
@@ -110,22 +111,56 @@ class Navigation
 
         new_content = div.find( @content_selector ).children()
         
-        # log "[Navigation] loading", @content_selector
-        @content_div = $ @content_selector
+        if app.settings.theme is 'mobile'
+          @mobile_append new_content, @on_content_ready
+        else
+          @normal_append new_content, @on_content_ready
+        
 
-        # Remove old content
-        @content_div.children().remove()
+  on_content_ready: =>
+    @emit 'after_render'
+    log 
+    delay 200, => 
+      @content_selector = @DEFAULT_SELECTOR
+      app.body.removeClass 'loading_visible'
+      
+      delay 300, => 
+        app.body.removeClass @custom_class
+        @custom_class = ""
+    
+  mobile_append: (new_content, callback) ->
+    new_content.addClass 'moving'
+    @content_div = $ @content_selector   
 
-        # populate with the loaded content
-        @content_div.append new_content
-        delay 10, => @emit 'after_render'
-        delay 200, => 
-          @content_selector = @DEFAULT_SELECTOR
-          app.body.removeClass 'loading_visible'
-          
-          delay 300, => 
-            app.body.removeClass @custom_class
-            @custom_class = ""
+    # app.emit 'loading:hide'
+    ref = @
+    # populate with the loaded content
+    @content_div.append new_content
+
+    delay 100, callback
+    delay 400, ->
+
+      new_content.addClass 'moved'
+
+    delay 2000, ->
+
+      $($( '.dynamic_wrapper' )[ 0 ] ).remove()
+      new_content.removeClass 'moving moved'
+      ref.emit 'content:ready'
+
+
+  normal_append: (new_content, callback) ->
+    @content_div = $ @content_selector
+
+    # Remove old content
+    @content_div.children().remove()
+
+    # populate with the loaded content
+    @content_div.append new_content
+
+    @emit 'content:ready'
+
+    callback()
 
 
 

@@ -10,7 +10,7 @@ module.exports = class Header
 		user_controller.on 'user:unlogged', @on_user_unlogged
 		user_controller.on 'user:updated', @on_user_updated
 
-		navigation.on 'after_render', @check_menu
+		navigation.on 'content:ready', @check_menu
 
 	check_menu: =>
 		
