@@ -11,27 +11,72 @@ body
   background-size: cover
   background-position: center center
 
+.mobile_header
+  height: 55px
+  background: BLACK
+  width: 100%
+  top: 0
+  left: 0
+  border-bottom: 2px solid YELLOW
+  color: white
+  position: fixed
+  z-index: 2
+  align-items: center
+  justify-content: center
+  a
+    flex: 1
+    text-align: center
+    span
+      position: relative
+      top: 2px
+      
+.dynamic_wrapper
+  position: relative
+  
 
 @media (max-width: 700px)
+  
   body
+    padding-top: 0!important
+    
+    &.login_page
+      .for_mobile
+        display: none
+    .dynamic_wrapper
+      padding-top: 55px
+      background: #ececec
+      transition: transform .3s ease-out
+      transform: translate3d(0, 0, 0)
+      &.moving
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        
+        transform: translate3d(-100%, 0, 0)
+      &.moved
+        transform: translate3d(0, 0, 0)
+
+    #loading
+      position: fixed
+      z-index: 1
+      opacity: .5
+
     .for_mobile
       display: block
       
     .for_desktop
       display: none
       
+
+      
     .parallax-mirror
       display: none
-
+      
     .mobile_header
-      width: 100%
-      position: fixed
-      height: 50px
-      background: BLACK
-      width: 100%
-      top: 0
-      left: 0
-      border-bottom: 2px solid YELLOW
+      display: flex
+
+   
       
     .black_box
       position: relative
@@ -46,6 +91,9 @@ body
       p
         font-size: 1rem
         line-height: 25px
+        
+      .button
+        width: 100%!important
         
         
       
