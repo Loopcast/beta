@@ -6,6 +6,8 @@ module.exports = class AudioElement
   timer_interval: null
   is_playing: false
   duration: 0
+  last_time: ""
+  snapping: false
   data:
     id: ""
     src: ""
@@ -16,42 +18,54 @@ module.exports = class AudioElement
   constructor: (@dom) ->
     happens @
 
+    # @debug = $ '#debug'
     @dom[0].addEventListener 'loadedmetadata', @on_loaded_metadata
     @dom[0].addEventListener 'playing', @on_started
     @dom[0].addEventListener 'pause', @on_paused
     @dom[0].addEventListener 'ended', @on_ended
+
+
+  _log: (msg) ->
+    return
+    @debug.append "<p>#{msg}</p>"
+
 
   set_data: ( data ) ->
     return if @data.id is data.id
 
     @data = data
 
+    @_log "set_data"
     log "[AudioElement] set_data", @data
     @dom.attr 'src', @data.src
 
   on_loaded_metadata: =>
     if @data.is_recorded
-      log "[on loaded metadata]", @dom[0].duration
+      @_log "on loaded metadata"
+      log "[AudioElement] [on loaded metadata]", @dom[0].duration
       @duration = @dom[0].duration
     else
-      log "[on loaded metadata] it's live!"
+      log "[AudioElement] [on loaded metadata] it's live!"
     @emit 'loaded'
 
   on_paused: =>
     @is_playing = false
-    log "[on paused]"
+    @_log "on paused"
+    log "[AudioElement] [on paused]"
     @emit 'paused'
     clearInterval @timer_interval
 
   on_ended: =>
     @is_playing = false
-    log "[on ended]"
+    @_log "on ended"
+    log "[AudioElement] [on ended]"
     @emit 'ended'
     clearInterval @timer_interval
 
   on_started: =>
     @is_playing = true
-    log "[on started]"
+    @_log "on started"
+    log "[AudioElement] [on started]"
     @emit 'started'
 
     @check_time()
@@ -73,6 +87,7 @@ module.exports = class AudioElement
   snap_to: (perc) ->
     return if not @data.is_recorded
 
+    @snapping = true
     @dom[0].currentTime = @duration * perc
 
 
@@ -98,6 +113,14 @@ module.exports = class AudioElement
 
       data = 
         time: time
+
+    # Trying to fix a Safari Bug
+    if @snapping and @last_time isnt time
+      @snapping = false
+      @on_started()
+
+
+    @last_time = time
 
 
 

@@ -183,6 +183,7 @@ block content
               .session.outline_box(class="#{public_class}", id="session_recorded_#{room._id}", data-room-id="#{room._id}" data-view="[components/user_set,components/audio/player_preview]")
                 .image(style="background-image:url(#{transform.cover_thumb(room.info.cover_url)})")
                   a.icon.ss-play.circle_icon(href="#",title="Play") 
+                  .loading_spin
                   .share_wrapper(data-view="buttons/share", data-permalink="#{room.url}")
                     a.yellow.ss-action(href="#", title="Share")
 
