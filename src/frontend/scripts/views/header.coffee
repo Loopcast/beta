@@ -37,15 +37,12 @@ module.exports = class Header
 			@current_page = page
 
 	check_mobile_menu: ->
+		$( ".mobile_header a" ).removeClass 'selected'
 		obj = $ '[data-menu-mobile]'
 		if obj.length > 0
 			page = obj.data 'menu-mobile'
-			if @current_mobile_page.length > 0
-				$( ".#{@current_mobile_page}_item" ).removeClass 'selected'
 			log "[Header] check_mobile_menu", page
 			$( ".#{page}_item" ).addClass "selected"
-
-			@current_mobile_page = page
 
 
 	check_fixed_menu: ->
