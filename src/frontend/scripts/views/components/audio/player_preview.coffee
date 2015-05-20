@@ -3,7 +3,7 @@ L = require 'api/loopcast/loopcast'
 module.exports = (dom) ->
   
   is_playing = false
-  icon       = dom.find '.ss-play'
+  icon       = dom.find '.ss-play, .loading_spin'
   data       = null
   room_id    = dom.data 'room-id'
   room_info = null
@@ -15,7 +15,7 @@ module.exports = (dom) ->
   title = dom.find( '.session_title' ).text()
 
   if icon.length <= 0
-    icon       = dom.find '.ss-pause'
+    icon       = dom.find '.ss-pause, .loading_spin'
 
     if icon.length <= 0
       log "ERROR -> [PLAYER PREVIEW]. icon.length <= 0"
@@ -28,8 +28,10 @@ module.exports = (dom) ->
 
   on_play = (_room_id) ->
     if _room_id is room_id
+      log "[player_preview] on_play"
       is_playing = true
       dom.addClass 'playing'
+      dom.removeClass 'preloading'
       icon.addClass( 'ss-pause' ).removeClass( 'ss-play' )      
     else
       on_stop()
@@ -42,6 +44,8 @@ module.exports = (dom) ->
 
 
   request_play = ->
+    log "[player_preview] request_play"
+    dom.addClass 'preloading'
 
     if not room_info
       L.rooms.info room_id, (error, response) -> 
