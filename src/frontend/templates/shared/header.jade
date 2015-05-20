@@ -49,10 +49,13 @@ header.header.for_desktop(data-view="header")
   a.icon.ss-search(href="#") &nbsp;
   a.icon.ss-ellipsis(href="#", data-view="components/mobile/dropdown_trigger", data-dropdown=".more_menu") &nbsp;
 
-.for_mobile.more_menu.mobile_dropdown
+.for_mobile.more_menu.mobile_dropdown(data-view="components/mobile/more_menu")
   .for_unlogged_users
-    a(href="#", title="Login") Login
+    a(href="#", title="Login", data-view="components/login_popup_handler") Login
   .for_logged_users
-    a(href="#", title="Login") Logout
+    a.profile_link(href="#" title="") My Profile
+    a(href="#" title="About") About
+    a(href="#" title="Feedback") Feedback
+    a(href="#" title="Logout", data-view="components/logout_link") Logout
 
 .background_mobile_dropdown.for_mobile

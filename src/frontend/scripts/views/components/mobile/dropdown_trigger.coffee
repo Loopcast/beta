@@ -1,8 +1,19 @@
+user_controller = require 'app/controllers/user'
+
 module.exports = class DropdownTrigger
   opened: false
   constructor: ( @dom ) ->
     @dom.on 'click', @toggle
     @dropdown = $ @dom.data( 'dropdown' )
+    @dropdown.on 'click', @close
+    user_controller.on 'user:logged', @on_user_logged
+    user_controller.on 'user:unlogged', @on_user_unlogged
+
+  on_user_logged: =>
+    @close()
+
+  on_user_unlogged: =>
+    @close()
 
   toggle: =>
     if @opened
