@@ -15,7 +15,7 @@ module.exports = class DropdownTrigger
     
     app.body.removeClass 'mobile_dropdown_opened_2'
 
-    delay 1, =>
+    delay 200, =>
       app.body.removeClass 'mobile_dropdown_opened'
       @dom.removeClass 'mobile_opened'
       @dropdown.removeClass 'mobile_opened'
