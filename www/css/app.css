@@ -3562,16 +3562,20 @@ body.is_guest .notifyjs-container .icon.ss-alert {
 
 /* line 97 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/all.styl */
 body .notifyjs-container .notifyjs-loopcast_info-base {
-  background: #fff;
-  border: 1px solid #4592d4;
-  color: #4592d4;
+  background: #4592d4;
+  color: #fff;
+  opacity: 0.9;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+  filter: alpha(opacity=90);
 }
 
 /* line 103 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/all.styl */
 body .notifyjs-container .notifyjs-loopcast_error-base {
-  background: #ffdcdc;
-  border: 1px solid #f23131;
-  color: #f23131;
+  background: #f23131;
+  color: #fff;
+  opacity: 0.9;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+  filter: alpha(opacity=90);
 }
 
 /* line 108 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/all.styl */
