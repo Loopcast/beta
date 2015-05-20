@@ -3,6 +3,7 @@ user_controller = require 'app/controllers/user'
 module.exports = class Header
 
 	current_page: ""
+	current_mobile_page: ""
 	user_logged: false
 
 	constructor: ( @dom ) ->
@@ -14,7 +15,11 @@ module.exports = class Header
 		@check_menu()
 
 	check_menu: =>
-		
+		@check_desktop_menu()
+		@check_mobile_menu()
+		@check_fixed_menu()		
+
+	check_desktop_menu: ->
 		obj = $( '[data-menu]' )
 		log "[Header]", obj.length
 		if obj.length > 0
@@ -31,7 +36,19 @@ module.exports = class Header
 
 			@current_page = page
 
+	check_mobile_menu: ->
+		obj = $ '[data-menu-mobile]'
+		if obj.length > 0
+			page = obj.data 'menu-mobile'
+			if @current_mobile_page.length > 0
+				$( ".#{@current_mobile_page}_item" ).removeClass 'selected'
+			log "[Header] check_mobile_menu", page
+			$( ".#{page}_item" ).addClass "selected"
 
+			@current_mobile_page = page
+
+
+	check_fixed_menu: ->
 		obj = $( '[data-menu-fixed]' )
 		if obj.length > 0
 			if obj.data( 'menu-fixed') is false

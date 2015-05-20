@@ -42,9 +42,17 @@ header.header.for_desktop(data-view="header")
     
 
 .for_mobile.mobile_header
-  a.icon.ss-music.explore_item(href="/explore", title="Explore") &nbsp;
-  a.icon.ss-users.explore_people_item(href="#") &nbsp;
+  a.icon.ss-music.mobile_explore_item(href="/explore", title="Explore") &nbsp;
+  a.icon.ss-users.mobile_people_item(href="/explore/people") &nbsp;
   a(href="/", title="Homepage")
     span.spritesheet.mobile_white_logo
   a.icon.ss-search(href="#") &nbsp;
-  a.icon.ss-ellipsis(href="#") &nbsp;
+  a.icon.ss-ellipsis(href="#", data-view="components/mobile/dropdown_trigger", data-dropdown=".more_menu") &nbsp;
+
+.for_mobile.more_menu.mobile_dropdown
+  .for_unlogged_users
+    a(href="#", title="Login") Login
+  .for_logged_users
+    a(href="#", title="Login") Logout
+
+.background_mobile_dropdown.for_mobile

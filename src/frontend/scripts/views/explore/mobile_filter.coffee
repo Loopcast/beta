@@ -4,6 +4,7 @@ module.exports = class MobileFilter
     @dom.on 'click', @toggle
     @list = $ '.genres_list'
     @content = $ '.rooms_grid'
+    @list.on 'click', 'a', @close
 
   toggle: =>
     if @opened
@@ -11,14 +12,13 @@ module.exports = class MobileFilter
     else
       @open()
 
-  close: ->
+  close: =>
     @opened = false
     
     @dom.removeClass 'mobile_opened'
     @list.removeClass 'mobile_opened'
     @content.removeClass 'loading_visible_2'
 
-    delay 1, => @content.removeClass 'loading_visible_1'
 
   open: ->
     @opened = true
