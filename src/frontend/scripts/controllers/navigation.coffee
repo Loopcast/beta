@@ -141,11 +141,11 @@ class Navigation
 
       new_content.addClass 'moved'
 
-    delay 2000, ->
+      delay 400, ->
 
-      $($( '.dynamic_wrapper' )[ 0 ] ).remove()
-      new_content.removeClass 'moving moved'
-      ref.emit 'content:ready'
+        $($( '.dynamic_wrapper' )[ 0 ] ).remove()
+        new_content.removeClass 'moving moved'
+        ref.emit 'content:ready'
 
 
   normal_append: (new_content, callback) ->
