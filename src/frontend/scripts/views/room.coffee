@@ -97,6 +97,8 @@ module.exports = class Room extends LoggedView
 
   on_room_created: (data) ->
 
+    log "on room created", data
+
     @owner_id = document.getElementById( 'owner_id' ).value
     @room_id  = document.getElementById( 'room_id' ).value
     
@@ -118,6 +120,9 @@ module.exports = class Room extends LoggedView
     if data
       @dom.find( '.chat_header.v_center' ).html data.about
 
+      @update_genres data.info.genres
+
+
     if user_controller.check_guest_owner()
       @manage_edit()
     else
@@ -125,6 +130,15 @@ module.exports = class Room extends LoggedView
 
     if @dom.hasClass 'room_live'
       delay 1000, => @on_room_live()
+
+  update_genres: (genres) ->
+    log "UPDATE GENRES", genres
+    @tags_wrapper = @dom.find '.tags'
+    if genres.length > 0
+      @tags_wrapper.removeClass 'no_tags'
+      for g in genres
+        @tags_wrapper.append '<a class="tag" title="'+g+'" href="/explore?genres='+g+'">'+g+'</a>'
+
 
   on_room_published: (room_id) =>
     log "[Room] on_room_published", room_id, @room_id

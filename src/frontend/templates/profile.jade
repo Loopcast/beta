@@ -200,7 +200,7 @@ block content
                   a.session_author.underline_link.room_url(href="#{room.url}", title="#{name}") #{name}
                   .genres
                     for genre in room.info.genres
-                      a.tag(href="#", title="#{genre}") #{genre}
+                      a.tag(href="/explore?genres=#{genre}", title="#{genre}") #{genre}
                     
                   .small_info
                     a.location(href="/explore?search=#{room.info.location}")
