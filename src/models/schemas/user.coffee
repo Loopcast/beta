@@ -13,6 +13,8 @@ schema = new Schema
     about      : String
     location   : String
 
+  likes       : { type: Number, default: 0 }
+  
   stats:
     followers : type: Number, default: 0
     streams   : type: Number, default: 0

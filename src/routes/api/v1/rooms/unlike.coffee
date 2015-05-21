@@ -1,11 +1,11 @@
-like = lib 'rooms/like'
+unlike = lib 'rooms/unlike'
 
 module.exports =
   method : 'PUT'
-  path   : '/api/v1/rooms/{id}/like'
+  path   : '/api/v1/rooms/{id}/unlike'
 
   config:
-    description: "Like a room in case it wasnt linked before"
+    description: "Unlike a room"
     plugins: "hapi-swagger": responseMessages: [
       { code: 400, message: 'Bad Request' }
       { code: 401, message: 'Needs authentication' } # Boom.unauthorized
@@ -26,7 +26,7 @@ module.exports =
       user    = req.auth.credentials.user
       room_id = req.params.id
 
-      like user._id, room_id, ( error, respose ) ->
+      unlike user._id, room_id, ( error, respose ) ->
 
         if error then return reply error: error
         

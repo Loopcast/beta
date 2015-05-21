@@ -72,9 +72,9 @@ module.exports =
         callback  null, response
 
     dislike: ( room_id, callback ) ->
-      request = $.put api_url + "rooms/#{room_id}/dislike", {} 
+      request = $.put api_url + "rooms/#{room_id}/unlike", {} 
 
-      request.error on_error "rooms/#{room_id}/dislike", callback
+      request.error on_error "rooms/#{room_id}/unlike", callback
 
       request.done ( response ) ->
         callback  null, response
