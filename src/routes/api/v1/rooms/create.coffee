@@ -21,9 +21,9 @@ module.exports =
     validate:
       payload:
         title    : joi.string().required()
-        genres   : joi.string()
-        location : joi.string()
-        about    : joi.string()
+        genres   : joi.any()
+        location : joi.any()
+        about    : joi.any()
         cover    : joi.any()
 
     # response: schema:
