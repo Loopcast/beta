@@ -1,6 +1,7 @@
 appcast = require 'app/controllers/appcast'
 RoomView = require 'app/views/room/room_view'
 user = require 'app/controllers/user'
+L = require 'api/loopcast/loopcast'
 
 module.exports = class Dashboard extends RoomView
   volume : 
@@ -28,6 +29,18 @@ module.exports = class Dashboard extends RoomView
     @record_button = view.get_by_dom @dom.find( '#record_button' )
     @live_button.on 'changed', @on_live_changed
     @record_button.on 'changed', @on_record_changed
+    @share = view.get_by_dom @dom.find( '#share_dashboard' )
+
+    ref = @
+    L.rooms.info room_id, (error, response) -> 
+      log "[Dashboard] getting room info", response
+
+      ref.share.update_with_data
+        link: "/" + response.room.info.user + "/" + response.room.info.slug
+        title: response.room.info.title
+        summary: response.room.info.about
+        image: response.room.info.cover_url
+
 
     @balloons = 
       appcast: view.get_by_dom( '#appcast_not_running_balloon' )

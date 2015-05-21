@@ -31,6 +31,8 @@
             span.yellow_part.right_part 00:00:00
 
           a#dashboard_help(href="#", title="Help", data-view="dashboard/help_button") ?
+          #share_dashboard.share_wrapper( data-view="buttons/share" )
+            a.white.ss-action(href="#", title="Share")
 
           #help_balloon.balloon.appcast_not_running_balloon(data-view="components/help/balloon", data-target="#dashboard_help", data-orientation="right", data-offset="27")
             a.button.small_button_2.dashboard_yellow.dashboard_button(href="#") UPGRADE

@@ -46,9 +46,10 @@ module.exports = class Share
   update_with_data: ( data ) ->
     log "[Share] update_with_data", data
     @data = data
+    @data.link = Url.make_absolute( @data.link )
     @data.image = Url.make_absolute( transform.explore_thumb @data.image )
 
-    @update_link data.link
+    @update_link @data.link
 
   on_share_opened: ( uid ) =>
     if uid isnt @uid
