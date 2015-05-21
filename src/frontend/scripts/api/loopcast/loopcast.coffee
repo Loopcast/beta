@@ -24,36 +24,11 @@ module.exports =
 
       request = $.get api_url + "rooms/#{room_id}/info"
 
-      # request.error on_error "rooms/#{room_id}/info", callback
-
-      request.error on_error "rooms/#{room_id}/info", ->
-        console.log 'error finding room info'
+      request.error on_error "rooms/#{room_id}/info", callback
 
       request.done ( response ) ->
 
-        console.log 'got room info', response
         callback null, response
-        # i think it should just be
-        # callback null, response
-        # and then the receptor, will use "response.user" and "response.room"
-        # to fill the data.
-        # i have left below the best way to fetch the data at the moment.
-        # since the application is constantly changing now we might need
-        # to update this in the future, but it's the best way i found so far
-        # callback
-        #   room_id: response.room._id
-        #   thumb: response.room.info.cover_url
-        #   title: response.room.info.title
-        #   room_url: "/#{response.room.info.user}/#{response.room.info.slug}"
-        #   streaming_url: response.room.info.url
-        #   author: response.user.info.name
-        #   author_id: response.user.info.username
-        #   author_link: "/#{response.user.info.username}"
-        #   liked: false
-        #   status:
-        #     is_live: true
-        #     live:
-        #       started_at: "2015-04-24T17:08:40.000Z"
 
     create: ( data, callback ) ->
       on_status_code =
