@@ -9,6 +9,8 @@ extends layout
 
 block content
 
+  - if( !genres ) genres = []
+
   input#owner_id(type="hidden", value="#{id}")
 
   .profile_theme.request_preloading.centered.no_information_yet(data-menu="profile", data-view="profile")

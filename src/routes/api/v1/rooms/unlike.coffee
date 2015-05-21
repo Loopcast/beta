@@ -26,8 +26,8 @@ module.exports =
       user    = req.auth.credentials.user
       room_id = req.params.id
 
-      unlike user._id, room_id, ( error, respose ) ->
+      unlike user._id, room_id, ( error, response ) ->
 
         if error then return reply error: error
         
-        reply respose
+        reply response

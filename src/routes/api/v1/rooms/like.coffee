@@ -28,6 +28,6 @@ module.exports =
 
       like user._id, room_id, ( error, respose ) ->
 
-        if error then return reply error: error
+        if error then return reply error: error.message
         
         reply respose

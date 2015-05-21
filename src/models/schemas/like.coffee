@@ -37,9 +37,9 @@ schema.pre 'save', ( next, done ) ->
       if error then failed null, null, error
 
       if likes.length
-        console.log " ! User already liked this #{doc.type}"
-
+        
         doc.invalidate 'url', 'cant like it before unlike it'
+
         return done new Error( 'already_liked' )
 
       next()

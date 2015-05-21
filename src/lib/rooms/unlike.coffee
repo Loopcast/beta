@@ -6,10 +6,11 @@ module.exports = ( user_id, room_id, callback ) ->
     user_id  : user_id
     type     : 'room'
     liked_id : room_id
+    end      : $exists: false
 
-  update: $set: end: now().toDate()
+  update = end: now().toDate()
 
-  Like.update( _id: room_id, update )
+  Like.update( doc, update )
     .lean()
     .exec ( error, docs_updated ) ->
 
@@ -18,4 +19,4 @@ module.exports = ( user_id, room_id, callback ) ->
       # +1 on the counter
       increase_like room_id, -1
 
-      callback null, doc.toObject()
+      callback null, ok: docs_updated
