@@ -1,8 +1,14 @@
 block seo
-	title Loopcast | Privacy Policy 
-	meta( name="description" content=" " )
+  title Loopcast | Privacy Policy 
+  meta( name="description" content="" )
 
 extends layout
 
 block content
-  h1 Privacy page
+  .centered.about_page.privacy_page
+    .white_box
+      h1.about_title #{title}
+
+      .about_content !{content}
+
+

@@ -1,8 +1,14 @@
 block seo
-	title Loopcast | Terms of Use
-	meta( name="description" content=" " )
+  title Loopcast | Terms and conditions
+  meta( name="description" content="" )
 
 extends layout
 
 block content
-  h1 Terms page
+  .centered.about_page.terms_page
+    .white_box
+      h1.about_title #{title}
+
+      .about_content !{content}
+
+
