@@ -17,6 +17,7 @@ block grid
     - klasses = "item-all-genres"
 
     - url = "/"+ item.info.user + "/" + item.info.slug
+    - sharing_url = url
     if !item.status.is_live
       - url = "#"
 
@@ -41,7 +42,13 @@ block grid
         span.icon.ss-play.circle_icon
         .loading_spin
 
-        .share_wrapper(data-view="buttons/share", data-permalink="#{url}")
+        .share_wrapper(
+          data-view="buttons/share", 
+          data-title="#{item.info.title}",
+          data-summary="#{item.info.about}",
+          data-permalink="#{sharing_url}",
+          data-image="#{item.info.cover_url}"
+        )
           a.yellow.ss-action(href="#", title="Share")
 
       .room_content

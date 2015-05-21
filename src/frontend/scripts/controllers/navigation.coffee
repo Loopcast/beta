@@ -37,6 +37,7 @@ class Navigation
     $('body').on 'click', 'a', (e) ->
       el = $ @
       href = el.attr 'href' 
+      log "href", href
       if href is '#'
         return false
 
@@ -68,7 +69,10 @@ class Navigation
     if @silent
       log "[Navigation] SILENT, returning"
       @silent = off
-      return  
+      return
+
+    if @prev_url is req.url 
+      return
 
 
     if @lock_live
@@ -87,6 +91,8 @@ class Navigation
         
     else
       @load_url req
+
+    @prev_url = req.url 
 
   load_url: ( req ) ->
 

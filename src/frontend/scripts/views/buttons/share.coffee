@@ -1,3 +1,5 @@
+Url = require 'app/utils/url_parser'
+transform = require 'lib/cloudinary/transform'
 module.exports = class Share
 
   opened    : false
@@ -11,16 +13,16 @@ module.exports = class Share
 
     html = require 'templates/buttons/share'
 
-    data = 
-      link: @dom.data 'permalink'
-      
-    @dom.append html( data )
+    @dom.append html()
 
 
     @handler   = @dom.find '.ss-action'
     @black_box = @dom.find '.share_box' 
     @input     = @dom.find 'input'
     @copy_btn  = @dom.find '.button'
+    @facebook_link = @dom.find '.share_popup_facebook'
+    @twitter_link = @dom.find '.share_popup_twitter'
+    @google_link = @dom.find '.share_popup_google'
 
     @handler.on 'click', @toggle
     @dom.on 'click',  (e) -> e.stopPropagation()
@@ -29,6 +31,24 @@ module.exports = class Share
     app.on 'share:opened', @on_share_opened
     app.window.on 'body:clicked', @close
     app.window.on 'scroll', @close
+
+    @facebook_link.on 'click', @share_on_facebook
+    @twitter_link.on 'click', @share_on_twitter
+    @google_link.on 'click', @share_on_google
+
+    if @dom.data( 'permalink' )?
+      @update_with_data
+        link: Url.make_absolute( @dom.data 'permalink' )
+        title: @dom.data 'title'
+        summary: @dom.data 'summary'
+        image: @dom.data 'image'
+
+  update_with_data: ( data ) ->
+    log "[Share] update_with_data", data
+    @data = data
+    @data.image = Url.make_absolute( transform.explore_thumb @data.image )
+
+    @update_link data.link
 
   on_share_opened: ( uid ) =>
     if uid isnt @uid
@@ -41,6 +61,7 @@ module.exports = class Share
     else
       text = "Press Ctrl + C to copy the link"
     alert text
+    return false
 
 
   toggle : (e) =>
@@ -87,3 +108,24 @@ module.exports = class Share
     app.off 'share:opened', @on_share_opened
     app.window.off 'body:clicked', @close
     app.window.off 'scroll', @close
+
+    @facebook_link.off 'click', @share_on_facebook
+    @twitter_link.off 'click', @share_on_twitter
+    @google_link.off 'click', @share_on_google
+
+  share_on_facebook: =>
+    log "Share on facebook", @data
+    @open_popup 'http://www.facebook.com/sharer.php?s=100&amp;p[title]=' + @data.title + '&amp;p[summary]=' + @data.summary + '&amp;p[url]=' + @data.url + '&amp;p[images][0]=' + @data.image
+
+  share_on_twitter: =>
+    @open_popup 'http://twitter.com/share?text=' + @data.title + '&amp;url=' + @data.url + '&amp;hashtags=gioia'
+
+  share_on_google: =>
+    @open_popup "https://plus.google.com/share?url=#{@data.url}"
+
+  open_popup: ( url ) ->
+    window.open url, 'sharer', 'toolbar=0,status=0,width=548,height=325'
+  
+
+  
+

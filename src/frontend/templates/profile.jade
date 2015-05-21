@@ -184,7 +184,13 @@ block content
                 .image(style="background-image:url(#{transform.cover_thumb(room.info.cover_url)})")
                   a.icon.ss-play.circle_icon(href="#",title="Play") 
                   .loading_spin
-                  .share_wrapper(data-view="buttons/share", data-permalink="#{room.url}")
+                  .share_wrapper(
+                    data-view="buttons/share", 
+                    data-permalink="#{room.url}",
+                    data-title="#{room.info.title}",
+                    data-summary="#{room.info.about}",
+                    data-image="#{room.info.cover_url}"
+                  )
                     a.yellow.ss-action(href="#", title="Share")
 
 

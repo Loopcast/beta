@@ -124,7 +124,13 @@ module.exports = class Player
     @thumb.parent().attr 'href', room_link
     @thumb.parent().attr 'title', data.room.info.title
 
-    @share.update_link room_link
+    @share.update_with_data
+      link: room_link
+      title: data.room.info.title
+      summary: data.room.info.about
+      image: data.room.info.cover_url
+
+    @share.update_link 
 
     if data.room.status.is_live
       @dom.addClass 'is_live'
