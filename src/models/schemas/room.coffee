@@ -14,12 +14,13 @@ schema = new Schema
     cover_url : String
     url       : String
 
+  likes       : { type: Number, default: 0 }
+
   status:
     is_live      : { type: Boolean, default: off } # when user press go live
     is_recording : { type: Boolean, default: off } # when user press start recording
     is_public    : { type: Boolean, default: off } # while user is live or after publishing a set
     # is_streaming : { type: Boolean, default: off } # when appcast is connected to the server ?
-    loves        : { type: Number, default: 0 }
     live:
       listeners    : { type: Number, default: 0 }
       started_at  : Date

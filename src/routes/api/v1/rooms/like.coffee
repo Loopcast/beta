@@ -1,12 +1,11 @@
-slug = require 'slug'
-Room = schema 'room'
+increase_like = lib 'rooms/increase_like'
 
 module.exports =
   method : 'PUT'
   path   : '/api/v1/rooms/{id}/like'
 
   config:
-    description: "Edit a room"
+    description: "Like a room in case it wasnt linked before"
     plugins: "hapi-swagger": responseMessages: [
       { code: 400, message: 'Bad Request' }
       { code: 401, message: 'Needs authentication' } # Boom.unauthorized
@@ -24,24 +23,24 @@ module.exports =
 
         return reply Boom.unauthorized('needs authentication')
 
-      username = req.auth.credentials.user.username
-      room_id  = req.params.id
+      user    = req.auth.credentials.user
+      room_id = req.params.id
 
-      reply ok: true
+      doc =
+        user_id  : user._id
+        type     : 'room'
+        liked_id : room_id
+        start    : now().toDate()
 
-      # update:
-      #   likes:
-      #     users: $push : req.auth.credentials.user.id
-      #     counter: $inc: 1
+      like = new Like doc
 
-      # Room.update( _id: room_id, update )
-      #   .lean()
-      #   .exec ( error, docs_updated ) ->
+      like.save ( error, doc ) ->
 
-      #     if error
+        if error
 
-      #       failed req, reply, error
+          return reply error: error.message
 
-      #       return reply Boom.preconditionFailed( "Database error" )
+        # +1 on the counter
+        increase_like room_id, 1
 
-      #     reply update
+        reply doc.toObject()
