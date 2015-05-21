@@ -196,7 +196,7 @@ module.exports = class Room extends LoggedView
     @save_data title: value, (error, response) =>
       log "title changed", response
       if not error
-        navigation.go_silent "/#{user_controller.username}/#{response[ 'info.slug' ]}"
+        navigation.go_silent "/#{user_controller.data.username}/#{response[ 'info.slug' ]}"
 
 
 
