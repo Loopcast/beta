@@ -42,17 +42,17 @@ module.exports = class PeopleView extends ChatView
       .append @tmpl( data )
 
     delay 1, =>
-      p = el.offset()
+      p = el.position()
       w1 = 55
       h1 = 55
       h = @dom.height()
       w = @dom.width()
 
       left = Math.max(0, p.left - (w/2) + 17 )
-      top = p.top - h - 90
+      top = p.top - h - 50
 
       if top < 0
-        top = p.top - 10
+        top = p.top + 35
 
       @dom.css
         left   : left

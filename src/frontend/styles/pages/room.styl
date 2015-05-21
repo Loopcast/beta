@@ -26,8 +26,11 @@
   .room_ready
     .dashboard_bar
       height: 100px
-      .centered
+      .inner
         display: block
+        
+        
+        
         
   &.no_touch_device
     .editable_text:hover .icon
@@ -76,38 +79,52 @@
   background: #24292d
   text-align: left
   padding: 12px
-  overflow: hidden
+  // overflow: hidden
   
-  .appcast_running_message
-  .appcast_not_running_message
-    width: 345px
-  
-  
+  #share_dashboard
+    position: absolute
+    left: 100%
+    top: 4px
+    margin-left: 25px
+    
   &.appcast_running
     .appcast_not_running_message
       display: none
     
   &.appcast_not_running
     .appcast_not_running_message
-      display: inline-block
+      display: block
       text-align: center
       
     .appcast_running_message
       display: none
+      
   .live_button_wrapper
     position: relative
-    display: inline-block
-    
-  
 
-  .centered
+    
+  .inner
     position: relative
+    max-width: 700px
+    height: 100%
+    width: 100%
+    margin: 0 auto
     // overflow: hidden
     display: none
     
+    .row
+      display: flex
+      margin-bottom: 10px
+      .cell
+        flex: 1
+        padding: 0 5px
+        height: 32px
+        
+  #go_live_button
+  #record_button
+    display: block
+    
   .half
-    float: left
-    width: 50%
     padding: 0 1.5%
     
     &._left
@@ -121,10 +138,14 @@
       .meter_wrapper
         margin-bottom: 3px
       
+      & > *
+        float: right
+      
     &._right
       text-align: left
     & > *
-      margin-bottom: 7px
+      margin-bottom: 12px
+      display: block
       
     br
       margin-bottom: 0
@@ -133,7 +154,7 @@
       margin-bottom: 0
   .left_part
   .right_part
-    width: 150px
+    width: 50%
     
   .select_wrapper
     .button
@@ -202,6 +223,21 @@
     .chat_header
       height: 64px
       padding: 16px SIDE_PADDING
+      
+      #description_room
+        float: left
+        
+      .tags
+        float: right
+        &.no_tags
+          display: none
+        .icon
+          font-size: 15px
+          margin-right: 10px
+          padding-top: 0px
+          position: relative
+          top: 3px
+        
       .editable_text 
         .text
           padding-left: 10px
@@ -407,7 +443,7 @@
   font-weight: bold
   position: absolute
   left: 100%
-  top: 0px
+  top: 42px
   margin-left: 20px
   padding-top: 1px
     

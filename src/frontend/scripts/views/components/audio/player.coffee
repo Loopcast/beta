@@ -1,4 +1,3 @@
-time_to_string = require 'app/utils/time/time_to_string'
 api = require 'api/loopcast/loopcast'
 transform = require 'lib/cloudinary/transform'
 
@@ -13,14 +12,16 @@ module.exports = class Player
     @thumb    = @dom.find '.player_icon img'
     @title    = @dom.find '.player_title'
     @author   = @dom.find '.player_author'
-    @audio    = @dom.find 'audio'
     @time     = @dom.find '.player_time'
     @play_btn = @dom.find '.ss-play'
     @like_btn = @dom.find '.ss-heart'
     @progress = @dom.find '.player_progress span'
+    @progress_parent = @dom.find '.player_progress'
+    @loading = @dom.find '.loading_screen'
 
     @play_btn.on 'click', @on_play_clicked
     @like_btn.on 'click', @on_like_clicked
+    @progress_parent.on 'click', @on_progress_click
 
     view.on 'binded', @on_views_binded
 
@@ -28,6 +29,11 @@ module.exports = class Player
     return if not scope.main
 
     @share = view.get_by_dom @dom.find( '.share_wrapper' )
+    @audio = view.get_by_dom @dom.find( 'audio' )
+    @audio.on 'started', @on_audio_started
+    @audio.on 'paused', @on_audio_stopped
+    @audio.on 'ended', @on_audio_stopped
+    @audio.on 'progress', @on_progress
 
     view.off 'binded', @on_views_binded
     
@@ -65,23 +71,46 @@ module.exports = class Player
 
 
   on_play_clicked: =>
-    if @is_playing
-      @stop()
+    @audio.toggle()
+
+  get_audio_data : (data) ->
+    audio_data = {}
+
+    if data.room.info.file
+      audio_data = 
+        id: data.room._id
+        is_recorded: true
+        start_time: moment()
+        src: data.room.info.file
+
     else
-      @_play()
+      audio_data = 
+        id: data.room._id
+        is_recorded: false
+        start_time: data.room.status.live.started_at
+        src: data.room.info.url
+
+    return audio_data
 
     
-  play: (data) ->
+  play: (data = @data) ->
     log "[Player] play", data
-    if @data?.room._id is data.room._id
-      log "[Player] play. no action because it's already streaming the same url."
-      return
+    @data = data
+    @update_info @data
+    @audio.set_data @get_audio_data( @data )
+    @audio.play()
 
-    @stop( false ) if @is_playing
 
-    # log "[Player] play", data, @is_playing
 
-    room_link = "/#{data.user.info.username}/#{data.room.slug}"
+
+  stop: ->
+    @audio.pause()
+
+
+  update_info: ( data ) ->
+
+    log "[Player] update_info", data
+    room_link = "/#{data.user.info.username}/#{data.room.info.slug}"
     @thumb.attr 'src', transform.player_thumb data.room.info.cover_url
     @title.html data.room.info.title
     @author.html "By " + data.user.info.name
@@ -95,102 +124,62 @@ module.exports = class Player
     @thumb.parent().attr 'href', room_link
     @thumb.parent().attr 'title', data.room.info.title
 
-    @share.update_link room_link
+    @share.update_with_data
+      link: room_link
+      title: data.room.info.title
+      summary: data.room.info.about
+      image: data.room.info.cover_url
+
+    @share.update_link 
 
     if data.room.status.is_live
       @dom.addClass 'is_live'
     else
       @dom.removeClass 'is_live'
 
-    if data.room.info.file
-      @audio.attr 'src', data.room.info.file
-      @start_time = moment()
-      @is_recorded = true
-    else
-      @audio.attr 'src', data.room.info.url
-      @start_time = data.room.status.live.started_at
-      @is_recorded = false
+  on_audio_started: =>    
+    log "[Player] on_audio_started"
 
-    @data = data
-
-    @_play()
-
-
-
-  _play: ->
-    
-    log "[Player] _play"
     @play_btn.addClass( 'ss-pause' ).removeClass( 'ss-play' )
-
-    @audio[0].play()
-    if @is_recorded
-      @audio[0].addEventListener 'loadedmetadata', @on_player_started
-      @audio[0].addEventListener 'ended', @on_player_stopped
-
-    else
-      # TEMP: It should be called when the streaming works
-      @on_player_started()
-
-
-  on_player_started: =>
-    # log "[Player] on_player_started", @data
 
     app.emit 'audio:started', @data.room._id
 
-    if @is_recorded
-      @duration = @audio[0].duration
-
-
-    @is_playing = true
-
-    @timer_interval = setInterval @check_time, 1000
-    
-    @time.html "&nbsp;"
+    @loading.fadeOut()
 
     @open()
 
-  on_player_stopped: =>
-    if not @is_playing
-      log "[Player] on_player_stopped. returend bcause is not playing"
-      return 
-    log "[Player] on_player_stopped"
-    @stop()
-
-  stop: (should_close = false) ->
-    
-    if not @is_playing
-      log "[Player] stop. returend bcause is not playing"
-      return 
-
-    log "[Player] stop"
+  on_audio_stopped: =>
+    log "[Player] on_audio_stopped"
 
     @play_btn.removeClass( 'ss-pause' ).addClass( 'ss-play' )
 
-    @is_playing = false
-    clearInterval @timer_interval
-    @audio[0].pause?()
-    @progress.css 'width', '0%'
-    @time.html "00:00:00"
+    # @progress.css 'width', '0%'
+    # @time.html "00:00:00"
+
     app.emit 'audio:paused', @data.room._id
-    @close() if should_close
+    
 
-    @data = null
+  on_progress: (data) =>
+    @time.html data.time.str
 
-  check_time: =>
-    time = time_to_string @start_time
-    @time.html time.str
+    if data.perc
+      @progress.css 'width', data.perc + '%'
 
-    if @is_recorded
+  on_progress_click: (e) =>
 
-      perc = Math.min( 100, time.seconds / @duration * 100 )
-      @progress.css 'width', perc + '%'
-      log @duration, time.seconds
+    return if not @audio.data.is_recorded
+    x = e.offsetX
+    w = @progress_parent.width()
+    perc = x / w
 
-  close: ( ) ->
+    @loading.fadeIn()
+    @audio.snap_to perc
+
+  close: ->
     app.body.removeClass 'player_visible'
     @dom.removeClass 'visible'
 
-  open: ( data ) =>
+  open: =>
     app.body.addClass 'player_visible'
     @dom.show()
     delay 1, => @dom.addClass 'visible'

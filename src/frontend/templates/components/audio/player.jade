@@ -1,4 +1,8 @@
 #player(data-view="components/audio/player", style="display: none")
+  .loading_screen
+    .inner
+      .loading_spin
+
   .centered
     a.player_icon(href="#", title="")
       img(src="/images/player_placeholder.png")
@@ -16,11 +20,11 @@
     .player_buttons
       a.icon.ss-heart(href="#")
 
-      .share_wrapper(data-view="buttons/share", data-permalink="https://loopcast.com/stefanoortisi/set-1")
+      .share_wrapper( data-view="buttons/share" )
         a.player_share.ss-action(href="#", title="Share")
 
     .player_right
-      p.player_time 00:02:06
+      p.player_time 00:00:00
       p.player_label Now Live
 
-  audio(autoplay="true")
+  audio(autoplay="true", data-view="components/audio/audio")

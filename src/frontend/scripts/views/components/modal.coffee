@@ -8,7 +8,7 @@ module.exports = class Modal
 		@overlay = $ '.md_overlay'
 
 
-	open: ( ) ->
+	open: ( ) =>
 		return if @opened
 		@opened = true
 

@@ -13,7 +13,7 @@ jade = require 'jade'
 
 cloudinary_transform = lib 'cloudinary/transform'
 
-module.exports = ( url, data, callback ) ->
+module.exports = ( url, data = {}, callback ) ->
 
   data.cloudinary = 
     api_key     : s.cloudinary.api_key

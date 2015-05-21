@@ -3,6 +3,8 @@ happens = require 'happens'
 module.exports = class Homepage
 	constructor: (@dom) ->
 
+		log "[Homepage] created"
+
 		happens @
 
 		@dom.addClass 'request_preloading'
@@ -16,7 +18,10 @@ module.exports = class Homepage
 
 		preload images, ( images_loaded ) =>
 
+			log "[Preloaded]", images_loaded
+
 			for el, i in elements
+				log "parallax", i
 				el.parallax
 					imageSrc     : images_loaded[ i ].src
 					bleed        : 10
@@ -33,6 +38,7 @@ module.exports = class Homepage
 
 
 	destroy: ( ) ->
+		log "[Homepage] destroyed"
 		p = $( '.parallax-mirror' )
 		p.addClass( 'hide' )
 		delay 300, -> p.remove()

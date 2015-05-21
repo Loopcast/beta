@@ -4,10 +4,21 @@
     if room && room.info.about
       - str = room.info.about
 
+    - genres = []
+    - genres_class = "no_tags"
+    if room && room.info.genres
+      - genres = room.info.genres
+      - genres_class = ""
+
     .chat_header.v_center
       .inner
         p#description_room(data-view="components/editables/editable_text", data-freestyle="true")
           span.text #{str}
+
+        .tags(class="#{genres_class}")
+          span.icon.ss-tag
+          for genre in genres
+            a.tag(href="/explore?genres=#{genre}", title="#{genre}") #{genre}
 
     .chat_content.no_chat_yet(data-view="chat/messages")
       span(class='no-message') No one has typed a chat yet
@@ -29,7 +40,7 @@
 
       .users
 
-    .share
+    .share.for_guest
       h3 Share this room
       .social
         a.spritesheet.share_twitter(href="#", title="Share on Twitter") Share on Twitter

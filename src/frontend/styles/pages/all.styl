@@ -29,8 +29,7 @@
 #debug
   position: fixed
   width: 100%
-  bottom: 10px
-  height: 30px
+  top: 10px
   color: white
   font-size: 20px
   background: red
@@ -95,15 +94,15 @@ body .notifyjs-container
   // How to theme notifications
     
   .notifyjs-loopcast_info-base
-     background: white
-     border: 1px solid BLUE 
-     color: BLUE
+     background: BLUE 
+     color: white 
+     opacity: 0.9
       
 
   .notifyjs-loopcast_error-base
-    background: #FFDCDC   
-    border: 1px solid RED
-    color: RED
+    background: RED   
+    color: white
+    opacity: 0.9
     
   .notifyjs-loopcast_success-base
     background: white 
@@ -117,6 +116,16 @@ body .notifyjs-container
   color: GRAY_3
   text-align: left
   padding: 0 20px
+  margin-bottom: 20px
+  
+  &.privacy_page, &.terms_page
+    .about_content
+      text-align: left
+    
+      div
+        margin-bottom: 20px
+        h3
+          margin-bottom: 5px
   
   .about_title
     font-size: 1.8em
@@ -191,12 +200,25 @@ PLAYER_HEIGHT = 70px
   transition: transform .15s ease-out
   &.visible
     transform: translateY(0)
+  
+  .loading_screen
+    background: rgba(0,0,0,0.6)
     
+    z-index: 2
+    display: none
+    
+    // .loading_spin
+    //   display: none
+
+
+    
+
   .centered
     display: flex
     align-items: center
     justify-content: left
     position: relative
+    z-index: 1
 
 
   .player_button
@@ -246,6 +268,12 @@ PLAYER_HEIGHT = 70px
       background: YELLOW
       border-top-left-radius: 5px
       border-bottom-left-radius: 5px
+      transition: width .1s linear, background .2s linear
+      
+  &.loading
+    .player_progress
+      span
+        background: darken(YELLOW, 30)
       
   
   .player_buttons

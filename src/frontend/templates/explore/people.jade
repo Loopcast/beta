@@ -5,7 +5,7 @@ block seo
 extends ./_explore
 
 block submenu
-  span(data-submenu="sub_header_people")
+  span(data-submenu="sub_header_people", data-menu-mobile="mobile_people")
 
 block grid
 
@@ -20,7 +20,8 @@ block grid
 
     .room_cell.item(class="#{klasses}")
       a(href="/#{item.info.username}", title="#{item.info.name}", class="thumb_wrapper") 
-        img.room_thumb(src="#{transform.explore_thumb( item.info.avatar )}")
+        img.room_thumb.for_desktop(src="#{transform.explore_thumb(item.info.avatar)}")
+        img.room_thumb.for_mobile(src="#{transform.explore_thumb_mobile(item.info.avatar)}")
 
       .room_content
         .text

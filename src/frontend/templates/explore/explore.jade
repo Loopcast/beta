@@ -6,7 +6,7 @@ block seo
 
 
 block submenu
-  span(data-submenu="sub_header_rooms")
+  span(data-submenu="sub_header_rooms", data-menu-mobile="mobile_explore")
 
 
 
@@ -17,6 +17,7 @@ block grid
     - klasses = "item-all-genres"
 
     - url = "/"+ item.info.user + "/" + item.info.slug
+    - sharing_url = url
     if !item.status.is_live
       - url = "#"
 
@@ -32,14 +33,22 @@ block grid
       - klasses += " is_recorded"
     .room_cell.item(class="#{klasses}", data-view="components/audio/player_preview", data-room-id="#{item._id}")
       a(href="#", title="#{item.info.title}", class="thumb_wrapper") 
-        img.room_thumb(src="#{transform.explore_thumb(item.info.cover_url)}")
+        img.room_thumb.for_desktop(src="#{transform.explore_thumb(item.info.cover_url)}")
+        img.room_thumb.for_mobile(src="#{transform.explore_thumb_mobile(item.info.cover_url)}")
         
         span.recorded Recorded
         span.now_live Now Live
 
         span.icon.ss-play.circle_icon
+        .loading_spin
 
-        .share_wrapper(data-view="buttons/share", data-permalink="#{url}")
+        .share_wrapper(
+          data-view="buttons/share", 
+          data-title="#{item.info.title}",
+          data-summary="#{item.info.about}",
+          data-permalink="#{sharing_url}",
+          data-image="#{item.info.cover_url}"
+        )
           a.yellow.ss-action(href="#", title="Share")
 
       .room_content

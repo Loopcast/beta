@@ -6,6 +6,9 @@ StringUtils = require 'app/utils/string'
 
 module.exports = class Textarea extends ChatView
 
+  already_liked: false
+  liked: false
+
   on_room_created: ( @room_id, @owner_id ) =>
     super @room_id, @owner_id
   
@@ -27,8 +30,19 @@ module.exports = class Textarea extends ChatView
 
   like_cliked: =>
     if user.is_logged()
-      @send_message "Liked this song", {like: true}
-      @heart.addClass 'liked'
+
+      @liked = not @liked
+
+      if not @already_liked
+        
+        @send_message "Liked this song", {like: @liked}
+        @already_liked = true
+
+      if @liked
+        @heart.addClass 'liked'
+      else
+        @heart.removeClass 'liked'
+
     else
       app.settings.room_to_like = true
       app.settings.after_login_url = location.pathname

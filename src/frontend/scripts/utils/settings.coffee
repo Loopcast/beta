@@ -58,7 +58,7 @@ settings =
 	webp: false
 
 settings.theme = "desktop"
-settings.threshold_theme = 900
+settings.threshold_theme = 700
 
 
 # Retina supported [Boolean]

@@ -3,6 +3,7 @@ user_controller = require 'app/controllers/user'
 module.exports = class Header
 
 	current_page: ""
+	current_mobile_page: ""
 	user_logged: false
 
 	constructor: ( @dom ) ->
@@ -10,25 +11,41 @@ module.exports = class Header
 		user_controller.on 'user:unlogged', @on_user_unlogged
 		user_controller.on 'user:updated', @on_user_updated
 
-		navigation.on 'after_render', @check_menu
+		navigation.on 'content:ready', @check_menu
+		@check_menu()
 
 	check_menu: =>
-		
+		@check_desktop_menu()
+		@check_mobile_menu()
+		@check_fixed_menu()		
+
+	check_desktop_menu: ->
 		obj = $( '[data-menu]' )
+		log "[Header]", obj.length
 		if obj.length > 0
 			page = obj.data 'menu'
-			# log "[Header] check_menu", page
+			log "[Header] check_menu", page
 			
 			if @current_page.length > 0
-				@dom.find( ".#{@current_page}_item" ).removeClass "selected"
+				$( ".#{@current_page}_item" ).removeClass "selected"
 				app.body.removeClass "#{@current_page}_page"
 
-			@dom.find( ".#{page}_item" ).addClass "selected"
+			log "[Header]", ".#{page}_item"
+			$( ".#{page}_item" ).addClass "selected"
 			app.body.addClass "#{page}_page"
 
 			@current_page = page
 
+	check_mobile_menu: ->
+		$( ".mobile_header a" ).removeClass 'selected'
+		obj = $ '[data-menu-mobile]'
+		if obj.length > 0
+			page = obj.data 'menu-mobile'
+			log "[Header] check_mobile_menu", page
+			$( ".#{page}_item" ).addClass "selected"
 
+
+	check_fixed_menu: ->
 		obj = $( '[data-menu-fixed]' )
 		if obj.length > 0
 			if obj.data( 'menu-fixed') is false

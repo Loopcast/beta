@@ -97,7 +97,7 @@ block content
                 | Add
 
             .for_guest.text
-              p No data provided
+              p User has not updated their info yet
 
 
           .element_on_read_mode.profile_bio_with_information
@@ -183,7 +183,14 @@ block content
               .session.outline_box(class="#{public_class}", id="session_recorded_#{room._id}", data-room-id="#{room._id}" data-view="[components/user_set,components/audio/player_preview]")
                 .image(style="background-image:url(#{transform.cover_thumb(room.info.cover_url)})")
                   a.icon.ss-play.circle_icon(href="#",title="Play") 
-                  .share_wrapper(data-view="buttons/share", data-permalink="#{room.url}")
+                  .loading_spin
+                  .share_wrapper(
+                    data-view="buttons/share", 
+                    data-permalink="#{room.url}",
+                    data-title="#{room.info.title}",
+                    data-summary="#{room.info.about}",
+                    data-image="#{room.info.cover_url}"
+                  )
                     a.yellow.ss-action(href="#", title="Share")
 
 
@@ -193,7 +200,7 @@ block content
                   a.session_author.underline_link.room_url(href="#{room.url}", title="#{name}") #{name}
                   .genres
                     for genre in room.info.genres
-                      a.tag(href="#", title="#{genre}") #{genre}
+                      a.tag(href="/explore?genres=#{genre}", title="#{genre}") #{genre}
                     
                   .small_info
                     a.location(href="/explore?search=#{room.info.location}")

@@ -1,6 +1,6 @@
 .spritesheet {
   background: url( '../images/spritesheet.png' ) no-repeat;
-  background-size: 228px 217px;
+  background-size: 228px 222px;
 }
 
 .spritesheet.medium_black_logo {
@@ -15,124 +15,130 @@
   background-position: -114px 0;
 }
 
-.spritesheet.profile_spotify {
-  width: 48px;
-  height: 48px;
+.spritesheet.mobile_white_logo {
+  width: 50px;
+  height: 30px;
   background-position: 0 -70px;
-}
-
-.spritesheet.profile_facebook {
-  width: 48px;
-  height: 48px;
-  background-position: -48px -70px;
 }
 
 .spritesheet.profile_generic {
   width: 48px;
   height: 48px;
-  background-position: -96px -70px;
+  background-position: 0 -100px;
+}
+
+.spritesheet.profile_spotify {
+  width: 48px;
+  height: 48px;
+  background-position: -48px -100px;
 }
 
 .spritesheet.profile_soundcloud {
   width: 48px;
   height: 48px;
-  background-position: -144px -70px;
+  background-position: -96px -100px;
+}
+
+.spritesheet.profile_facebook {
+  width: 48px;
+  height: 48px;
+  background-position: -144px -100px;
 }
 
 .spritesheet.share_twitter {
   width: 42px;
   height: 42px;
-  background-position: 0 -118px;
-}
-
-.spritesheet.share_share {
-  width: 42px;
-  height: 42px;
-  background-position: -42px -118px;
+  background-position: 0 -148px;
 }
 
 .spritesheet.share_google {
   width: 42px;
   height: 42px;
-  background-position: -84px -118px;
+  background-position: -42px -148px;
+}
+
+.spritesheet.share_share {
+  width: 42px;
+  height: 42px;
+  background-position: -84px -148px;
 }
 
 .spritesheet.share_friends {
   width: 42px;
   height: 42px;
-  background-position: -126px -118px;
+  background-position: -126px -148px;
 }
 
 .spritesheet.share_fb {
   width: 42px;
   height: 42px;
-  background-position: -168px -118px;
+  background-position: -168px -148px;
 }
 
 .spritesheet.sprite_small_logo {
   width: 41px;
   height: 25px;
-  background-position: 0 -160px;
+  background-position: -50px -70px;
 }
 
 .spritesheet.share_popup_facebook {
   width: 32px;
   height: 32px;
-  background-position: -192px -70px;
+  background-position: -192px -100px;
 }
 
 .spritesheet.share_popup_google {
   width: 32px;
   height: 32px;
-  background-position: 0 -185px;
+  background-position: 0 -190px;
 }
 
 .spritesheet.share_popup_twitter {
   width: 32px;
   height: 32px;
-  background-position: -32px -185px;
+  background-position: -32px -190px;
 }
 
 .spritesheet.google_button_icon {
   width: 20px;
   height: 31px;
-  background-position: -64px -185px;
+  background-position: -64px -190px;
 }
 
 .spritesheet.facebook_button_icon {
   width: 16px;
   height: 31px;
-  background-position: -210px -118px;
+  background-position: -210px -148px;
 }
 
 .spritesheet.headphone {
   width: 22px;
   height: 22px;
-  background-position: -41px -160px;
+  background-position: -91px -70px;
 }
 
 .spritesheet.session_icon {
   width: 18px;
   height: 18px;
-  background-position: -63px -160px;
+  background-position: -113px -70px;
 }
 
 .spritesheet.alert_icon {
   width: 18px;
   height: 18px;
-  background-position: -81px -160px;
+  background-position: -131px -70px;
 }
 
 .spritesheet.rooms_icon {
   width: 18px;
   height: 16px;
-  background-position: -192px -102px;
+  background-position: -149px -70px;
 }
 
 .spritesheet.icon_like_transparent {
   width: 16px;
   height: 16px;
-  background-position: -210px -102px;
+  background-position: -167px -70px;
 }
 
 
@@ -143,7 +149,7 @@
 (min-device-pixel-ratio: 2) {
 .spritesheet {
   background: url( '../images/spritesheet-retina.png' ) no-repeat;
-  background-size: 228px 217px;
+  background-size: 228px 222px;
 }
 
 }

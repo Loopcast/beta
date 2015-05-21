@@ -30,18 +30,17 @@ html
 
 			#content
 				.inner_content
-					block content
+					.dynamic_wrapper
+						block content
 
-			#loading(data-view="loading")
+			#loading.loading_screen(data-view="loading")
 				.inner
 					.loading_spin.large
 
 				
 			include ./components/audio/player
 
-			//- #debug
-			//- 	a(href="http://google.it") Google
-			//- 	a(href="/stefanoortisi") Internal Link
+			#debug
 
 		script( src="https://code.jquery.com/jquery-2.1.1.min.js" )
 		script( src="/js/app.js" )

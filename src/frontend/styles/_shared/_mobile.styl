@@ -1,3 +1,19 @@
+mobile_list_item()
+  display: block
+  margin-bottom: 0
+  border-radius: 0
+  color: #484739
+  background: #eaeaea
+  padding: 10px 18px
+  font-size: 15px
+  border-bottom: 1px solid darken( #d3d3d3, 10 )
+  &.selected
+    background: #d3d3d3
+    color: #484739
+  &:hover
+    background: #d3d3d3
+    color: #484739
+    
 body
   min-width: 320px
   
@@ -11,27 +27,108 @@ body
   background-size: cover
   background-position: center center
 
+.mobile_header
+  height: 55px
+  background: HEADER  
+  width: 100%
+  top: 0
+  left: 0
+  font-size: 19px
+  border-bottom: 2px solid YELLOW
+  color: #818181
+  position: fixed
+  z-index: 4
+  align-items: center
+  justify-content: center
+  a
+    flex: 1
+    text-align: center
+    transition: color .2s linear
+    position: relative
+    top: 3px
+    span
+      position: relative
+      top: -1px
+    &.selected, &.mobile_opened
+      color: YELLOW
+      
+.dynamic_wrapper
+  position: relative
+  
+.mobile_dropdown
+  transform: translate3d(0,-100%,0)
+  transition: transform .3s ease-out
 
+.mobile_dropdown_opened    
+  .background_mobile_dropdown
+    z-index: 2
+    
+.mobile_dropdown_opened_2
+  .background_mobile_dropdown
+    opacity: 1  
+
+
+.background_mobile_dropdown
+  fixed top 0 left 0
+  width: 100%
+  height: 100%
+  background: #eaeaea
+  z-index: 0
+  opacity: 0
+  transition: opacity .2s linear
+  
 @media (max-width: 700px)
+  
   body
+    padding-top: 0!important
+      
+    &
+      .background_mobile_dropdown
+        opacity: 0
+    .mobile_dropdown.mobile_opened
+      transform: translate3d(0,0,0)
+      
+
+
+    
+    &.login_page
+      .for_mobile
+        display: none
+    .dynamic_wrapper
+      padding-top: 55px
+      background: #ececec
+      transition: transform .3s ease-out
+      transform: translate3d(0, 0, 0)
+      &.moving
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        
+        transform: translate3d(-100%, 0, 0)
+      &.moved
+        transform: translate3d(0, 0, 0)
+
+    #loading
+      position: fixed
+      z-index: 1
+      opacity: .5
+
     .for_mobile
       display: block
       
     .for_desktop
       display: none
       
+
+      
     .parallax-mirror
       display: none
-
+      
     .mobile_header
-      width: 100%
-      position: fixed
-      height: 50px
-      background: BLACK
-      width: 100%
-      top: 0
-      left: 0
-      border-bottom: 2px solid YELLOW
+      display: flex
+
+   
       
     .black_box
       position: relative
@@ -46,6 +143,9 @@ body
       p
         font-size: 1rem
         line-height: 25px
+        
+      .button
+        width: 100%!important
         
         
       
@@ -63,5 +163,132 @@ body
         font-weight: inherit
         line-height: inherit
         
+    .explore
+      padding-top: 0
       
+      .explore_content
+        display: block
+        padding: 56px 0 0
+      
+      
+    .explore 
+      .genres_list
+        opacity: 0
+        display: block
+        position: absolute
+        top: 56px
+        left: 0
+        z-index: 2
+        width: 100%
+        transition: transform .3s ease-out, opacity .1s linear 1s
+        transform: translate3d(0,-100%,0)
+        &.mobile_opened
+          transform: translate3d(0,0%,0)
+          opacity: 1
+          transition: transform .3s ease-out, opacity .1s linear
+        a
+          mobile_list_item()
+      
+      .rooms_grid
+        display: block
+        padding: 10px
+        
+        &.loading_visible_1
+          .loading
+            z-index: 1
+            
+        &.loading_visible_2
+          .loading
+            opacity: 1
+        
+        .room_cell
+          width: 100%
+          position: relative!important
+          top: 0!important
+          left: 0!important
+          margin-bottom: 10px
+          
+          & > .thumb_wrapper
+            width: 100%
+            height: auto
+            img.for_desktop
+              display: none
+            img.for_mobile
+              display: block
+      
+    .filter_list
+      background: #eaeaea
+      border-bottom: 1px solid darken( #d3d3d3, 10 )
+      text-align: center
+      z-index: 3
+      position: absolute
+      top: 0px
+      left: 0
+      width: 100%
+      text-transform: uppercase
+      padding: 18px 10px
+      font-size: 14px
+      cursor: pointer
+      span
+        font-size: 8px
+        border: 1px solid BLACK
+        display: inline-block
+        border-radius: 3px
+        padding: 3px 4px 0px
+        margin-left: 10px
+        position: relative
+        top: 0px
+      .ss-directup
+        display: none
+      &.mobile_opened
+        .ss-dropdown
+          display: none
+        .ss-directup
+          display: inline-block
+    #player
+      .player_title
+        font-size: 0.8em
+      .player_button
+        display: flex
+        align-items: center
+        justify-content: center
+        position: absolute
+        left: 0
+        top: 0
+        height: 100%
+        .icon
+          position: relative
+          top: 5px
+          
+      .player_text
+        margin-left: 10px
+        margin-right: 10px
+        
+      .player_progress
+        display: none
+      .player_buttons
+        margin-left: 10px
+      .player_buttons > *
+        margin: 0 10px  
+      .player_buttons  
+      .player_right
+        flex: 1
+        text-align: center
+        
+      .player_right
+        margin: 0
+      .player_time
+        text-align: center
+        
+    .more_menu
+      position: fixed
+      top: 55px
+      left: 0
+      width: 100%
+      z-index: 3
+      & > div
+        z-index: 0
+        position: relative
+      a
+        mobile_list_item()
     

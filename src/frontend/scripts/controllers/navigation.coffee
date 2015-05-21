@@ -12,6 +12,9 @@ class Navigation
   first_time: true
   custom_class: ""
   DEFAULT_SELECTOR: '#content .inner_content'
+  lock_live: false
+  prev_url: ""
+  mobile_style: true
 
   constructor: ->
 
@@ -34,20 +37,23 @@ class Navigation
     $('body').on 'click', 'a', (e) ->
       el = $ @
       href = el.attr 'href' 
+      log "href", href
       if href is '#'
         return false
 
-      if el.data 'nav-load'
+      if el.data 'nav-load' and app.settings.theme is 'desktop'
         ref.content_selector = el.data( 'nav-load' )
         ref.custom_class = 'loading_on_top ' + el.data( 'nav-custom-class' )
 
 
-
+  set_lock_live: ( lock ) ->
+    log "[Navigation] set_lock_live", lock
+    @lock_live = lock
 
   url_changed: ( req, next ) =>
     req.url = req.path.replace "/#", '' 
 
-    log "[Navigation] URL CHANGED", req, @custom_class
+    log "[Navigation] URL CHANGED", req, @custom_class, @lock_live
 
     if not url_parser.is_internal_page req.url
       log "NOT INTERNAL PAGE", req.url
@@ -57,13 +63,38 @@ class Navigation
     if @first_time
       @first_time = false
       log "[Navigation] FIRST TIME, returning"
+      @prev_url = req.url
       return
 
     if @silent
       log "[Navigation] SILENT, returning"
       @silent = off
-      return  
+      return
 
+    if @prev_url is req.url 
+      return
+
+
+    if @lock_live
+      app.emit 'exit_modal:request_open'
+
+      app.on 'exit_modal:answered', (answer) =>
+        log "[Navigation] exit_modal:answered", answer
+
+        app.off 'exit_modal:answered'
+        if not answer
+          log "[Navigation] go silent", @prev_url
+          @go_silent @prev_url
+          next()
+        else
+          @load_url req
+        
+    else
+      @load_url req
+
+    @prev_url = req.url 
+
+  load_url: ( req ) ->
 
     div = $ '<div>'
 
@@ -75,6 +106,7 @@ class Navigation
 
     div.load req.url, =>
 
+      @prev_url = req.url
       @emit 'on_load'
       @emit 'before_destroy'    
 
@@ -85,22 +117,57 @@ class Navigation
 
         new_content = div.find( @content_selector ).children()
         
-        # log "[Navigation] loading", @content_selector
-        @content_div = $ @content_selector
+        if app.settings.theme is 'mobile'
+          @mobile_append new_content, @on_content_ready
+        else
+          @normal_append new_content, @on_content_ready
+        
 
-        # Remove old content
-        @content_div.children().remove()
+  on_content_ready: =>
+    @emit 'after_render'
+    delay 200, => 
+      @content_selector = @DEFAULT_SELECTOR
+      app.body.removeClass 'loading_visible'
+      
+      delay 300, => 
+        app.body.removeClass @custom_class
+        @custom_class = ""
+    
+  mobile_append: (new_content, callback) ->
+    new_content.addClass 'moving'
+    @content_div = $ @content_selector   
 
-        # populate with the loaded content
-        @content_div.append new_content
-        delay 10, => @emit 'after_render'
-        delay 200, => 
-          @content_selector = @DEFAULT_SELECTOR
-          app.body.removeClass 'loading_visible'
-          
-          delay 300, => 
-            app.body.removeClass @custom_class
-            @custom_class = ""
+    # app.emit 'loading:hide'
+    ref = @
+    # populate with the loaded content
+    @content_div.append new_content
+
+    delay 100, callback
+    delay 400, ->
+
+      new_content.addClass 'moved'
+
+      delay 400, ->
+
+        $($( '.dynamic_wrapper' )[ 0 ] ).remove()
+        new_content.removeClass 'moving moved'
+        ref.emit 'content:ready'
+
+
+  normal_append: (new_content, callback) ->
+    @content_div = $ @content_selector
+
+    # Remove old content
+    @content_div.children().remove()
+
+    # populate with the loaded content
+    @content_div.append new_content
+
+    @emit 'content:ready'
+
+    callback()
+
+
 
 
   ##
@@ -119,7 +186,7 @@ class Navigation
     return false
 
   go_silent: ( url, title ) ->
-    # log "[Navigation] go_silent method", url
+    log "[Navigation] go_silent method", url
     # @silent = true
     page.replace url, null, null, false
 

@@ -18,5 +18,10 @@ UrlParser =
       return false
     return true
 
+  make_absolute: ( url ) ->
+    if url.indexOf( 'http' ) isnt 0
+      url = 'http://' + location.host + url
+    return url
+
 
 module.exports = UrlParser

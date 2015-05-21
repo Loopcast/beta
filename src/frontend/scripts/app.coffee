@@ -59,7 +59,6 @@ class App
 		if navigation.main_refresh()
 			@emit 'loading:show'
 
-		log "[View] before_load", navigation.content_selector
 		views.unbind navigation.content_selector
 
 	after_render: =>
@@ -74,7 +73,6 @@ class App
 
 		if $('.request_preloading').length > 0
 			v = view.get_by_dom '.request_preloading'
-			log v
 
 			if v
 				v.on 'ready', => 
@@ -86,8 +84,6 @@ class App
 
 		else
 			@emit 'loading:hide'
-
-		log "[App] on_views_binded", scope
 
 
 	
@@ -118,7 +114,6 @@ if is_login_page()
 	
 	login = require 'app/controllers/login'
 	$ -> login.start()
-	log "login", login
 
 else
 	app = new App
