@@ -52,7 +52,7 @@ module.exports = class PeopleView extends ChatView
       top = p.top - h - 50
 
       if top < 0
-        top = p.top - 10
+        top = p.top + 35
 
       @dom.css
         left   : left
