@@ -3,7 +3,7 @@ L = require 'api/loopcast/loopcast'
 module.exports = (dom) ->
   
   is_playing = false
-  icon       = dom.find '.ss-play, .loading_spin'
+  icon       = dom.find '.image .ss-play, .loading_spin'
   data       = null
   room_id    = dom.data 'room-id'
   room_info = null

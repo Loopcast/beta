@@ -142,7 +142,8 @@ block content
             .content
               h2.session_title 
                 a.room_url(href="/#{live.info.user}/#{live.info.slug}", title="#{live.info.title}") #{live.info.title}
-              a.session_author.underline_link.room_url(href="/#{live.info.user}/#{live.info.slug}", title="#{live.info.user}") #{live.info.user}
+              p.session_author #{live.info.user}
+
               .genres
                 for genre in live.info.genres
                   a.tag(href="/explore?genres=#{genre}", title="#{genre}") #{genre}
@@ -199,7 +200,7 @@ block content
                 .content
                   h2.session_title 
                     a.room_url(href="#{room.url}", title="#{room.info.title}") #{room.info.title}
-                  a.session_author.underline_link.room_url(href="#{room.url}", title="#{name}") #{name}
+                  p.session_author #{name}
                   .genres
                     for genre in room.info.genres
                       a.tag(href="/explore?genres=#{genre}", title="#{genre}") #{genre}
