@@ -62,7 +62,7 @@ settings.threshold_theme = 700
 
 settings.browser_unsupported = settings.browser.id is "Explorer" and settings.browser.version < 10
 
-settings.browser_unsupported = true
+# settings.browser_unsupported = true
 
 
 # Retina supported [Boolean]
