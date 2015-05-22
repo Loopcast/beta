@@ -89,6 +89,8 @@ module.exports = class AudioElement
   snap_to: (perc) ->
     return if not @data.is_recorded
 
+    if not @is_playing
+      @play()
     @snapping = true
     @dom[0].currentTime = @duration * perc
 
