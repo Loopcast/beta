@@ -13,6 +13,4 @@ module.exports = ( user_id, liked_id, type, callback ) ->
 
       if error then return callback error
 
-      console.log 'is liking result ->', arguments
-
       callback null, response.length >= 1
