@@ -30,6 +30,7 @@ module.exports = ( id, callback ) ->
         return callback null, null
 
       profile =
+        _id        : data._id
         id         : data.info.username
 
         # top bar info
@@ -45,7 +46,7 @@ module.exports = ( id, callback ) ->
         avatar    : data.info.avatar
         cover     : data.info.cover
 
-        followers : data.stats.followers
+        likes     : data.likes
         streams   : data.stats.streams
         listeners : data.stats.listeners
 

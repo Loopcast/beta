@@ -1,4 +1,6 @@
 user = require 'app/controllers/user'
+L  = require 'app/api/loopcast/loopcast'
+
 module.exports = class FollowButton
   is_following: false
 
@@ -27,9 +29,30 @@ module.exports = class FollowButton
     @dom.removeClass( 'following' ).html( 'Follow' )
     @is_following = false
 
+    user_id = $( '#owner_id' ).val()
+
+    L.user.unfollow user_id, ( error, result ) ->
+
+      if error
+        console.error 'error following #{user_id}'
+
+      console.info "following #{user_id}!"
+
   follow: ->
     @dom.addClass( 'following' ).html( 'Unfollow' )
     @is_following = true
+
+    user_id = $( '#owner_id' ).val()
+
+    console.log "calling following for #{user_id}"
+
+    L.user.follow user_id, ( error, result ) ->
+
+      if error
+        console.error 'error following #{user_id}'
+
+      console.info "following user_id!"
+    
 
   destroy: ->
     @dom.off 'click', @toggle    

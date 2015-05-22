@@ -192,19 +192,19 @@ module.exports =
 
         callback  null, response
 
-    follow: ( username, callback ) ->
-      request = $.put api_url + "user/#{username}follow", data
+    follow: ( user_id, callback ) ->
+      request = $.put api_url + "user/#{user_id}/follow"
 
-      request.error on_error "user/#{username}follow", callback
+      request.error on_error "user/#{user_id}/follow", callback
 
       request.done ( response ) ->
         log "[Loopcast] request done", response
         callback  null, response
 
-    unfollow: ( username, callback ) ->
-      request = $.put api_url + "user/#{username}unfollow", data
+    unfollow: ( user_id, callback ) ->
+      request = $.put api_url + "user/#{user_id}/unfollow"
 
-      request.error on_error "user/#{username}unfollow", callback
+      request.error on_error "user/#{user_id}/unfollow", callback
 
       request.done ( response ) ->
         log "[Loopcast] request done", response

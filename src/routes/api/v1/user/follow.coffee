@@ -1,9 +1,8 @@
-slug = require 'slug'
-Room = schema 'room'
+like = lib 'user/like'
 
 module.exports =
   method : 'PUT'
-  path   : '/api/v1/user/{username}/follow'
+  path   : '/api/v1/user/{id}/follow'
 
   config:
     description: "Start following a user"
@@ -24,24 +23,11 @@ module.exports =
 
         return reply Boom.unauthorized('needs authentication')
 
-      user     = req.auth.credentials.user
-      username = req.params.username
+      user         = req.auth.credentials.user
+      following_id = req.params.id
 
-      reply ok: true
+      like user._id, following_id, ( error, respose ) ->
 
-      # update:
-      #   likes:
-      #     users: $push : req.auth.credentials.user.id
-      #     counter: $inc: 1
-
-      # Room.update( _id: room_id, update )
-      #   .lean()
-      #   .exec ( error, docs_updated ) ->
-
-      #     if error
-
-      #       failed req, reply, error
-
-      #       return reply Boom.preconditionFailed( "Database error" )
-
-      #     reply update
+        if error then return reply error: error.message
+        
+        reply respose

@@ -11,7 +11,7 @@ block content
 
   - if( !genres ) genres = []
 
-  input#owner_id(type="hidden", value="#{id}")
+  input#owner_id(type="hidden", value="#{_id}")
 
   .profile_theme.request_preloading.centered.no_information_yet(data-menu="profile", data-view="profile")
     .cover
@@ -52,7 +52,7 @@ block content
         .sidebar_right
           .big_number
             .inner
-              span.number #{followers}
+              span.number #{likes}
               span.text Followers
 
           .big_number
