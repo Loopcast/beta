@@ -1,4 +1,4 @@
-User      = schema 'user'
+find_by   = find 'users/by'
 create    = lib 'user/create'
 transform = models 'transforms/facebook_to_user'
 
@@ -23,25 +23,46 @@ module.exports =
       data        = aware {}
       credentials = request.auth.credentials
 
-      User
-        .findOne( 'data.facebook.id': credentials.profile.id )
-        .lean().exec ( error, user ) ->
+      email = credentials.profile.email
 
-          # if found, just update aware
+      if email
+
+        find_by 'data.email': email, ( error, user ) -> 
+
           if user then return data.set 'user', user
 
-          # populates user informaiton with facebook data
-          transform credentials, ( error, user ) ->
+          # find by google id
+          find_by 'data.facebook.id': credentials.profile.id, ( error, user ) ->
 
-            if error then return reply error
+            if user then return data.set 'user', user
 
-            create user, ( error, user ) ->
-              if error 
-                console.log "error creating user ->", error
-                
-                return reply Boom.expectationFailed 'couldnt create user, please contact support'
+            data.set 'not_found', true
 
-              data.set 'user', user
+      else
+
+        # find by google id
+        find_by 'data.google.id': credentials.profile.id, ( error, user ) ->
+
+          if user then return data.set 'user', user
+
+          data.set 'not_found', true
+
+
+      # create user if not found
+      data.on 'not_found', ->
+
+        # populates user informaiton with facebook data
+        transform credentials, ( error, user ) ->
+
+          if error then return reply error
+
+          create user, ( error, user ) ->
+            if error 
+              console.log "error creating user ->", error
+              
+              return reply Boom.expectationFailed 'couldnt create user, please contact support'
+
+            data.set 'user', user
 
       data.on 'user', ( user ) ->
 
