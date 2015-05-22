@@ -8,9 +8,22 @@ module.exports = class FollowButton
     @username_to_follow = @dom.data 'user-id'
     return if not @username_to_follow
 
-    
-    user.check_following [ @username_to_follow ], (data) =>
-      # log "[FollowButton] got response", data
+    me = @
+
+    user_id = $( '#owner_id' ).val()
+
+    L.user.following ( error, result ) ->
+
+      if error
+        console.error 'error checking for followers of #{user_id}'
+
+      # if owner_id is on the list of liked_ids
+      following = ( result.indexOf( user_id ) != -1 )
+
+      if following
+        me.dom.addClass( 'following' ).html( 'Unfollow' )
+        me.is_following = true
+
 
     @dom.on 'click', @toggle
 
@@ -36,23 +49,17 @@ module.exports = class FollowButton
       if error
         console.error 'error following #{user_id}'
 
-      console.info "following #{user_id}!"
-
   follow: ->
     @dom.addClass( 'following' ).html( 'Unfollow' )
     @is_following = true
 
     user_id = $( '#owner_id' ).val()
 
-    console.log "calling following for #{user_id}"
-
     L.user.follow user_id, ( error, result ) ->
 
       if error
         console.error 'error following #{user_id}'
 
-      console.info "following user_id!"
-    
 
   destroy: ->
     @dom.off 'click', @toggle    

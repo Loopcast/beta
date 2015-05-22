@@ -38,12 +38,12 @@ module.exports =
 
       Like
         .find( query )
-        .select( "_id" )
+        .select( "liked_id" )
         .lean()
         .exec ( error, response ) ->
 
           if error then return reply Boom.preconditionFailed error
 
-          ids = _.pluck response, '_id'
+          ids = _.pluck response, 'liked_id'
 
           reply ids
