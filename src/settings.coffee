@@ -102,8 +102,8 @@ else
       pass: 'l00pc4st2015'
 
   s.redis =
-    host     : 'pub-redis-11676.eu-west-1-1.1.ec2.garantiadata.com'
-    port     : 11676
+    host     : 'pub-redis-10651.us-east-1-1.2.ec2.garantiadata.com'
+    port     : 10651
     password : 'loopcast2015'
     kue_db   : 0
 

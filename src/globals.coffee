@@ -38,6 +38,15 @@ global.Room = schema 'room'
 
 global.Like = schema 'like'
 
+r = require 'redis'
+
+# connect to redis
+# TODO: improve this, listen for callback on connection
+client      = r.createClient s.redis.port, s.redis.host
+client.auth s.redis.password
+
+global.redis = client
+
 # path shortcuts
 
 path  = require 'path'

@@ -42,6 +42,15 @@ module.exports =
 
         callback  null, response
 
+    play: ( room_id, callback ) ->
+      request = $.put api_url + "rooms/#{room_id}/play"
+
+      request.error on_error "rooms/#{room_id}/play PUT", callback
+
+      request.done ( response ) ->
+        log "[Loopcast] request done", response
+        callback  null, response
+
     update: ( id, data, callback ) ->
       request = $.put api_url + "rooms/#{id}", data
 
