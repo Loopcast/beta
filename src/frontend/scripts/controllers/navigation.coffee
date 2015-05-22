@@ -106,6 +106,8 @@ class Navigation
 
     div.load req.url, =>
 
+      document.title = div.find( 'title' ).html()
+      
       @prev_url = req.url
       @emit 'on_load'
       @emit 'before_destroy'    

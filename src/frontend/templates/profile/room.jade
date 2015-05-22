@@ -1,4 +1,12 @@
 extends ../layout
+block seo
+  if room
+    title #{room.info.title} | #{user.info.name} | Loopcast
+    meta( name="description" content="Create room description" ) 
+  else
+    title Create room | Loopcast
+    meta( name="description" content="Create room description" ) 
+
 
 block content
   input(type='hidden' id='owner_id' value="#{user.info.username}")
