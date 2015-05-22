@@ -39,9 +39,8 @@ class Navigation
       href = el.attr 'href' 
       log "href", href
       if href is '#'
-        return false
-
-      if el.data 'nav-load' and app.settings.theme is 'desktop'
+        e.preventDefault()
+      else if el.data 'nav-load' and app.settings.theme is 'desktop'
         ref.content_selector = el.data( 'nav-load' )
         ref.custom_class = 'loading_on_top ' + el.data( 'nav-custom-class' )
 
@@ -106,6 +105,8 @@ class Navigation
 
     div.load req.url, =>
 
+      document.title = div.find( 'title' ).html()
+      
       @prev_url = req.url
       @emit 'on_load'
       @emit 'before_destroy'    

@@ -7,6 +7,7 @@ module.exports = class Player
   is_playing: false
   like_lock: false
   is_recorded: false
+  last_time: ""
 
   constructor: ( @dom ) ->
     @thumb    = @dom.find '.player_icon img'
@@ -17,7 +18,7 @@ module.exports = class Player
     @like_btn = @dom.find '.ss-heart'
     @progress = @dom.find '.player_progress span'
     @progress_parent = @dom.find '.player_progress'
-    @loading = @dom.find '.loading_screen'
+    # @loading = @dom.find '.loading_screen'
 
     @play_btn.on 'click', @on_play_clicked
     @like_btn.on 'click', @on_like_clicked
@@ -32,8 +33,9 @@ module.exports = class Player
     @audio = view.get_by_dom @dom.find( 'audio' )
     @audio.on 'started', @on_audio_started
     @audio.on 'paused', @on_audio_stopped
-    @audio.on 'ended', @on_audio_stopped
+    @audio.on 'ended', @on_audio_ended
     @audio.on 'progress', @on_progress
+    @audio.on 'snapped', @on_snapped
 
     view.off 'binded', @on_views_binded
     
@@ -95,6 +97,9 @@ module.exports = class Player
     
   play: (data = @data) ->
     log "[Player] play", data
+
+    api.rooms.play data.room._id, (error, response) ->
+
     @data = data
     @update_info @data
     @audio.set_data @get_audio_data( @data )
@@ -137,6 +142,11 @@ module.exports = class Player
     else
       @dom.removeClass 'is_live'
 
+    if data.liked
+      @like_btn.addClass 'liked'
+    else
+      @like_btn.removeClass 'liked'
+
   on_audio_started: =>    
     log "[Player] on_audio_started"
 
@@ -144,7 +154,8 @@ module.exports = class Player
 
     app.emit 'audio:started', @data.room._id
 
-    @loading.fadeOut()
+    # @loading.fadeOut()
+    @dom.removeClass 'loading'
 
     @open()
 
@@ -157,13 +168,31 @@ module.exports = class Player
     # @time.html "00:00:00"
 
     app.emit 'audio:paused', @data.room._id
+
+  on_audio_ended: =>
+    log "[Player] on_audio_ended"
+
+    @on_audio_stopped()
     
+    # Snap back the progress bar
+    @reset_progress()
+
+  reset_progress: ->
+    @progress.hide()
+    delay 1, =>
+
+      @on_progress
+        perc: 0.0
+        time: str: "00:00:00"
+
+    delay 100, => @progress.show()
+
+  on_snapped: ->
+    @dom.removeClass 'loading'
 
   on_progress: (data) =>
     @time.html data.time.str
-
-    if data.perc
-      @progress.css 'width', data.perc + '%'
+    @progress.css 'width', data.perc + '%'
 
   on_progress_click: (e) =>
 
@@ -172,7 +201,7 @@ module.exports = class Player
     w = @progress_parent.width()
     perc = x / w
 
-    @loading.fadeIn()
+    @dom.addClass 'loading'
     @audio.snap_to perc
 
   close: ->

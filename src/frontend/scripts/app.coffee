@@ -55,6 +55,10 @@ class App
 
 		views.bind 'body'
 
+		log "[App] after_render", @settings.browser_unsupported
+		if @settings.browser_unsupported
+			location.href = "/oldie"
+
 	before_load: =>
 		if navigation.main_refresh()
 			@emit 'loading:show'
@@ -64,6 +68,9 @@ class App
 	after_render: =>
 		views.bind '#content'
 		@user.check_guest_owner()
+
+
+
 
 	on_views_binded: ( scope ) =>
 		if not scope.main

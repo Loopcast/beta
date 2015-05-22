@@ -207,7 +207,7 @@ module.exports =
       request.error on_error "user/#{user_id}/follow", callback
 
       request.done ( response ) ->
-        log "[Loopcast] request done", response
+        # log "[Loopcast] request done", response
         callback  null, response
 
     unfollow: ( user_id, callback ) ->
@@ -216,7 +216,7 @@ module.exports =
       request.error on_error "user/#{user_id}/unfollow", callback
 
       request.done ( response ) ->
-        log "[Loopcast] request done", response
+        # log "[Loopcast] request done", response
         callback  null, response
 
     following: ( callback ) ->
@@ -225,7 +225,7 @@ module.exports =
       request.error on_error "user/following", callback
 
       request.done ( response ) ->
-        log "[Loopcast] request done", response
+        # log "[Loopcast] request done", response
         callback  null, response
 
     is_following: ( ids, callback ) ->

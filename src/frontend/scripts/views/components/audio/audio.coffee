@@ -64,12 +64,14 @@ module.exports = class AudioElement
 
   on_started: =>
     @is_playing = true
+    # @dom[0].volume = 0
     @_log "on started"
     log "[AudioElement] [on started]"
     @emit 'started'
 
     @check_time()
-    @timer_interval = setInterval @check_time, 1000
+    clearInterval( @timer_interval ) if @timer_interval
+    @timer_interval = setInterval @check_time, 500
 
   play: ->
     @dom[0].play()
@@ -87,6 +89,8 @@ module.exports = class AudioElement
   snap_to: (perc) ->
     return if not @data.is_recorded
 
+    if not @is_playing
+      @play()
     @snapping = true
     @dom[0].currentTime = @duration * perc
 
@@ -117,7 +121,7 @@ module.exports = class AudioElement
     # Trying to fix a Safari Bug
     if @snapping and @last_time isnt time
       @snapping = false
-      @on_started()
+      @emit 'snapped'
 
 
     @last_time = time
