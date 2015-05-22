@@ -34,7 +34,7 @@ module.exports =
         return reply Boom.unauthorized('needs authentication')
 
       username = req.auth.credentials.user.username
-      room_id  = req.payload.room_id.toLowerCase()
+      room_id  = req.payload.room_id
 
       query =
         _id: room_id
@@ -87,6 +87,14 @@ module.exports =
 
               duration = stopped_at.diff( started_at, 'seconds' )
               
+              update = 'status.recording.duration': duration
+
+              Room.update _id: room._id, update, ( error, response ) ->
+
+                if error
+                  console.log 'error updating recording duration'
+                  console.log 'error ->', error
+
               # recorded for this length
               console.log "Recorded #{duration} seconds"
 

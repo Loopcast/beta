@@ -27,6 +27,7 @@ schema = new Schema
       stopped_at  : Date
     recording:
       plays       : { type: Number, default: 0 }
+      duration    : Number
       started_at  : Date
       stopped_at  : Date
       url         : String
