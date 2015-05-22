@@ -14,8 +14,6 @@ module.exports = class Explore
 
     @isotope.destroy() if @isotope
 
-    log ".-......>", @dom.find( '.room_cell' ).length
-
     if @dom.find( '.room_cell' ).length <= 0
       @dom.addClass 'no_result_explore'
       return

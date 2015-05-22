@@ -4138,6 +4138,48 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   }
 }
 
+/* line 430 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/all.styl */
+.oldie {
+  background: #fff;
+}
+
+/* line 432 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/all.styl */
+.oldie body {
+  background: #fff;
+  color: #a6a6a6;
+}
+
+/* line 436 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/all.styl */
+.oldie h1 {
+  line-height: 42px;
+  margin-bottom: 20px;
+  font-size: 43px;
+}
+
+/* line 441 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/all.styl */
+.oldie p {
+  font-size: 20px;
+}
+
+/* line 444 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/all.styl */
+.oldie #content {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* line 449 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/all.styl */
+.oldie .links {
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* line 452 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/all.styl */
+.oldie .links a {
+  display: inline-block;
+  margin: 0 10px;
+}
+
 
 /* line 1 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 

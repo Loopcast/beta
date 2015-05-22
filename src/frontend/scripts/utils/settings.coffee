@@ -60,6 +60,10 @@ settings =
 settings.theme = "desktop"
 settings.threshold_theme = 700
 
+settings.browser_unsupported = settings.browser.id is "Explorer" and settings.browser.version < 10
+
+settings.browser_unsupported = true
+
 
 # Retina supported [Boolean]
 settings.browser.retina = settings.browser.device_ratio is 2

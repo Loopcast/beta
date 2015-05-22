@@ -13,6 +13,7 @@ module.exports = class FollowButton
     user_id = $( '#owner_id' ).val()
 
     L.user.following ( error, result ) ->
+      log "[FollowButton] check", result
 
       if error
         console.error 'error checking for followers of #{user_id}'
@@ -33,30 +34,33 @@ module.exports = class FollowButton
 
 
   toggle: =>
+
     if @is_following
       @unfollow()
     else
       @follow()
 
   unfollow: ->
+    log "[FollowButton] unfollow"
     @dom.removeClass( 'following' ).html( 'Follow' )
     @is_following = false
 
     user_id = $( '#owner_id' ).val()
 
     L.user.unfollow user_id, ( error, result ) ->
-
+      log "[FollowButton] unfollow response", result
       if error
         console.error 'error following #{user_id}'
 
   follow: ->
+    log "[FollowButton] follow"
     @dom.addClass( 'following' ).html( 'Unfollow' )
     @is_following = true
 
     user_id = $( '#owner_id' ).val()
 
     L.user.follow user_id, ( error, result ) ->
-
+      log "[FollowButton] follow response", result
       if error
         console.error 'error following #{user_id}'
 
