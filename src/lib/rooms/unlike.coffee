@@ -12,11 +12,12 @@ module.exports = ( user_id, room_id, callback ) ->
 
   Like.update( doc, update )
     .lean()
-    .exec ( error, docs_updated ) ->
+    .exec ( error, docs ) ->
 
       if error then return callback error
 
-      # +1 on the counter
-      increase_like room_id, -1
+      if docs.nModified >= 0
+        # +1 on the counter
+        increase_like room_id, -1
 
-      callback null, ok: docs_updated
+      callback null, ok: docs
