@@ -95,6 +95,9 @@ module.exports = class Player
     
   play: (data = @data) ->
     log "[Player] play", data
+
+    api.rooms.play data.room._id, (error, response) ->
+
     @data = data
     @update_info @data
     @audio.set_data @get_audio_data( @data )
