@@ -28,6 +28,17 @@ module.exports = class Textarea extends ChatView
       app.settings.message_to_send = null
 
 
+    @check_room_liked()    
+
+  check_room_liked: ->
+    if user.is_logged()
+      L.rooms.info @room_id, (error, response) =>
+        if response.liked
+          @heart.addClass 'liked'
+        else
+          @heart.removeClass 'liked'
+
+
   like_cliked: =>
     if user.is_logged()
 
@@ -40,8 +51,11 @@ module.exports = class Textarea extends ChatView
 
       if @liked
         @heart.addClass 'liked'
+        L.rooms.like @room_id, (error, response) =>
       else
         @heart.removeClass 'liked'
+        L.rooms.dislike @room_id, (error, response) =>
+
 
     else
       app.settings.room_to_like = true

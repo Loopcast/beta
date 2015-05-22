@@ -142,6 +142,11 @@ module.exports = class Player
     else
       @dom.removeClass 'is_live'
 
+    if data.liked
+      @like_btn.addClass 'liked'
+    else
+      @like_btn.removeClass 'liked'
+
   on_audio_started: =>    
     log "[Player] on_audio_started"
 

@@ -38,10 +38,11 @@ module.exports = (dom) ->
       on_stop()
 
   on_stop = (_room_id) ->
-    if _room_id is room_id
-      is_playing = false
-      dom.removeClass 'playing'
-      icon.removeClass( 'ss-pause' ).addClass( 'ss-play' )
+    # if _room_id is room_id
+    is_playing = false
+    dom.removeClass 'playing'
+    dom.removeClass 'preloading'
+    icon.removeClass( 'ss-pause' ).addClass( 'ss-play' )
 
 
   request_play = ->
