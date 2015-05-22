@@ -201,14 +201,25 @@ PLAYER_HEIGHT = 70px
   &.visible
     transform: translateY(0)
   
-  .loading_screen
-    background: rgba(0,0,0,0.6)
-    
-    z-index: 2
+  .loading_spin
     display: none
+  &.loading
+    .player_button
+      .icon
+        display: none
+      .loading_spin
+        display: block
+
+
+
+  // .loading_screen
+  //   background: rgba(0,0,0,0.6)
     
-    // .loading_spin
-    //   display: none
+  //   z-index: 2
+  //   display: none
+    
+  // .loading_spin
+  //   display: none
 
 
     
@@ -266,9 +277,11 @@ PLAYER_HEIGHT = 70px
       height: 100%
       width: 0%
       background: YELLOW
-      border-top-left-radius: 5px
-      border-bottom-left-radius: 5px
+      border-radius: 5px
+      // border-bottom-left-radius: 5px
       transition: width .1s linear, background .2s linear
+      &.no_transition
+        transition: none
       
   &.loading
     .player_progress
