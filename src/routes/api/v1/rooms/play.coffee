@@ -22,7 +22,7 @@ module.exports =
       console.log 'increase play for !', room_id
       console.log 'comming from ip:', ip
 
-      redis_key = "#{ip}:played:#{room_id}"
+      redis_key = "#{ip}:played:room:#{room_id}"
 
       increase_play room_id
       
