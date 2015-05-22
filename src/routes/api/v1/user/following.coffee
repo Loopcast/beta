@@ -1,17 +1,11 @@
-###
-
-Updates user's profile information
-
-###
-
-User = schema 'user'
+_ = require 'lodash'
 
 module.exports =
   method : 'POST'
-  path   : '/api/v1/user/is_following'
+  path   : '/api/v1/user/following'
 
   config:
-    description: "Receives a list of ids and return just the ones being followed"
+    description: "Returns a list with all users being followed by logged user"
     plugins: "hapi-swagger": responseMessages: [
       { code: 400, message: 'Bad Request' }
       { code: 401, message: 'Needs authentication' } # Boom.unauthorized
@@ -25,9 +19,9 @@ module.exports =
       strategy: 'session'
       mode    : 'try'
 
-    validate:
-      payload:
-        ids  : joi.array().required()
+    # validate:
+    #   payload:
+    #     ids  : joi.array().required()
 
     handler: ( request, reply )->
 
@@ -35,7 +29,21 @@ module.exports =
 
         return reply Boom.unauthorized 'needs authentication'
 
-      user    = request.auth.credentials.user
-      payload = request.payload
+      user  = request.auth.credentials.user
+      
+      query = 
+        user_id: user._id
+        type   : 'user'
+        end    : $exists: false
 
-      reply payload.ids
+      Like
+        .find( query )
+        .select( "_id" )
+        .lean()
+        .exec ( error, response ) ->
+
+          if error then return reply Boom.preconditionFailed error
+
+          ids = _.pluck response, '_id'
+
+          reply ids

@@ -210,6 +210,15 @@ module.exports =
         log "[Loopcast] request done", response
         callback  null, response
 
+    following: ( callback ) ->
+      request = $.post api_url + "user/following"
+
+      request.error on_error "user/following", callback
+
+      request.done ( response ) ->
+        log "[Loopcast] request done", response
+        callback  null, response
+
     is_following: ( ids, callback ) ->
       on_status_code =
         401: ( response ) -> callback 'unauthorized, need log in!'
