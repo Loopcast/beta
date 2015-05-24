@@ -56,6 +56,7 @@ class UserController
       name: data.name
       username: data.username
       following: {}
+      _id: data._id
 
     # log "[UserController] user:logged", @data, data
 
@@ -97,8 +98,9 @@ class UserController
   check_guest_owner: ->
     owner_id = @owner_id()
 
+    log "user", owner_id
     # log "[User] check owner_id", owner_id
-    if owner_id? and @is_logged() and @data.username is owner_id
+    if owner_id? and @is_logged() and @data._id is owner_id
       app.body.addClass( 'is_owner' ).removeClass( 'is_guest' )
       @is_owner = true
     else
