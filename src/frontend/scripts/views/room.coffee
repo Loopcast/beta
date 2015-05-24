@@ -97,10 +97,10 @@ module.exports = class Room extends LoggedView
 
   on_room_created: (data) ->
 
-    log "on room created", data
 
     @owner_id = document.getElementById( 'owner_id' ).value
     @room_id  = document.getElementById( 'room_id' ).value
+    log "on room created", data, @owner_id
     
     @room_created = true
     @dom.removeClass( 'page_create' ).addClass( 'room_ready' )
