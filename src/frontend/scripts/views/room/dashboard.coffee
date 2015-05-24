@@ -98,6 +98,7 @@ module.exports = class Dashboard extends RoomView
 
 
   destroy: ->
+    @publish_modal = null
     if @is_room_owner
       for item of @balloons
         view.destroy_view @balloons[ item ]
@@ -107,6 +108,9 @@ module.exports = class Dashboard extends RoomView
       if @live_button
         @live_button.off 'click'
         @record_button.off 'click'
+
+        @live_button.off 'changed', @on_live_changed
+        @record_button.off 'changed', @on_record_changed
 
       appcast.off 'connected', @on_appcast_connected
 

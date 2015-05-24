@@ -96,4 +96,8 @@ module.exports = class GoLive extends ButtonWithTimer
       # appcast.on while_streaming
       ref.set_active true
 
+  destroy: ->
+    appcast.off 'stream:error', @on_error
+    super()
+
   

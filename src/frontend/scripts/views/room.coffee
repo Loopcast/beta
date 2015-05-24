@@ -9,6 +9,8 @@ api             = require 'app/api/loopcast/loopcast'
 Cloudinary      = require 'app/controllers/cloudinary'
 transform       = require 'lib/cloudinary/transform'
 pusher_room_id  = require 'lib/pusher/get_room_id'
+RoomModal       = require 'app/views/modals/room_modal'
+
 
 module.exports = class Room extends LoggedView
   room_created: false
@@ -111,6 +113,8 @@ module.exports = class Room extends LoggedView
     @channel.bind 'listener:removed', @on_listener_removed
     @channel.bind 'message', @on_message
     @publish_modal = view.get_by_dom '#publish_modal'
+    @confirm_exit_modal = view.get_by_dom '#confirm_exit_modal'
+    
     @publish_modal.on 'room:published', @on_room_published
     @live_button = view.get_by_dom '#go_live_button'
     @live_button.on 'changed', @_on_live_changed
@@ -247,6 +251,7 @@ module.exports = class Room extends LoggedView
 
   destroy: ->
     navigation.set_lock_live false
+
     if @room_created
       pusher.unsubscribe @room_subscribe_id
       @channel.unbind 'listener:added', @on_listener_added
@@ -260,6 +265,17 @@ module.exports = class Room extends LoggedView
 
     if @publish_modal
       @publish_modal.off 'room:published', @on_room_published
+      view.destroy_view @publish_modal
+      view.destroy_view @confirm_exit_modal
+      @publish_modal = null
+      @confirm_exit_modal = null
+
+    if @live_button
+      @live_button.off 'changed', @_on_live_changed
+      
+
+    view.destroy_view @modal
+    @modal = null
     super()
 
     

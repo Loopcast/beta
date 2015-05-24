@@ -93,12 +93,13 @@ block content
     include ./dashboard.jade
 
     include ../chat/chat.jade    
-      
-    include ./room_modal.jade
+    
+    .modals
+      include ../modals/room_modal.jade
 
-    include ./publish_modal.jade
+      include ../modals/publish_modal.jade
 
-    include ./confirm_exit_modal.jade
+      include ../modals/confirm_exit_modal.jade
 
     script
       //- THIS IS JUST FOR DEBUGGIN. TO BE REMOVED

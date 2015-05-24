@@ -42,6 +42,8 @@ module.exports = class Profile extends LoggedView
 		# Check the information of the owner of the page
 		@check_informations()
 
+		@modal = view.get_by_dom $( '#room_modal' )
+
 		super scope
 
 
@@ -260,6 +262,9 @@ module.exports = class Profile extends LoggedView
 	destroy: ->
 		super()
 
+		if @modal
+			view.destroy_view @modal
+			
 		if user_controller.is_owner
 			@change_cover_uploader.off 'completed', @on_cover_uploaded
 			@change_picture_uploader.off 'completed', @on_avatar_uploaded

@@ -1,5 +1,5 @@
 L      = require 'api/loopcast/loopcast'
-Modal  = require '../components/modal'
+Modal  = require 'app/views/modals/modal'
 notify = require 'app/controllers/notify'
 
 module.exports = class ExitModal extends Modal
