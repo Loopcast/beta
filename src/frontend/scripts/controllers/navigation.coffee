@@ -50,6 +50,7 @@ class Navigation
     @lock_live = lock
 
   url_changed: ( req, next ) =>
+
     req.url = req.path.replace "/#", '' 
 
     log "[Navigation] URL CHANGED", req, @custom_class, @lock_live
@@ -95,6 +96,8 @@ class Navigation
 
   load_url: ( req ) ->
 
+    @emit 'dropdown:request_close'
+    
     div = $ '<div>'
 
     if @custom_class.length > 0

@@ -1,3 +1,4 @@
+navigation = require 'app/controllers/navigation'
 user_controller = require 'app/controllers/user'
 
 module.exports = class DropdownTrigger
@@ -8,7 +9,7 @@ module.exports = class DropdownTrigger
     @dropdown.on 'click', @close
     user_controller.on 'user:logged', @on_user_logged
     user_controller.on 'user:unlogged', @on_user_unlogged
-    app.on 'dropdown:request_close', @close
+    navigation.on 'dropdown:request_close', @close
 
   on_user_logged: =>
     @close()
@@ -40,3 +41,10 @@ module.exports = class DropdownTrigger
     @dropdown.addClass 'mobile_opened'
     app.body.addClass 'mobile_dropdown_opened'
     delay 1, => app.body.addClass 'mobile_dropdown_opened_2'
+
+  destroy: ->
+    @dom.off 'click', @toggle
+    @dropdown.off 'click', @close
+    user_controller.off 'user:logged', @on_user_logged
+    user_controller.off 'user:unlogged', @on_user_unlogged
+    navigation.off 'dropdown:request_close', @close

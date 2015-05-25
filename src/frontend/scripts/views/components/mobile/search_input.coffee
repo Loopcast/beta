@@ -1,4 +1,6 @@
+navigation = require 'app/controllers/navigation'
 Search = require 'app/views/components/search_input'
+
 module.exports = class SearchInput extends Search
   constructor: ( @dom ) ->
     @dom.on 'click', @on_clicked
@@ -10,7 +12,7 @@ module.exports = class SearchInput extends Search
 
   go_search: ( str ) ->
 
-    app.emit 'dropdown:request_close'
+    navigation.emit 'dropdown:request_close'
 
     super str
 
