@@ -8,6 +8,7 @@ module.exports = class DropdownTrigger
     @dropdown.on 'click', @close
     user_controller.on 'user:logged', @on_user_logged
     user_controller.on 'user:unlogged', @on_user_unlogged
+    app.on 'dropdown:request_close', @close
 
   on_user_logged: =>
     @close()
@@ -22,6 +23,7 @@ module.exports = class DropdownTrigger
       @open()
 
   close: =>
+    return if not @opened
     @opened = false
     
     app.body.removeClass 'mobile_dropdown_opened_2'
@@ -32,6 +34,7 @@ module.exports = class DropdownTrigger
       @dropdown.removeClass 'mobile_opened'
 
   open: ->
+    return if @opened
     @opened = true
     @dom.addClass 'mobile_opened'
     @dropdown.addClass 'mobile_opened'

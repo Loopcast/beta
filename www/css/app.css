@@ -3157,7 +3157,7 @@ body {
   }
 
 /* line 290 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
-  body .more_menu {
+  body .mobile_dropdown {
     position: fixed;
     top: 55px;
     left: 0;
@@ -3166,13 +3166,13 @@ body {
   }
 
 /* line 296 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
-  body .more_menu > div {
+  body .mobile_dropdown > div {
     z-index: 0;
     position: relative;
   }
 
 /* line 299 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
-  body .more_menu a {
+  body .mobile_dropdown a {
     display: block;
     margin-bottom: 0;
     -webkit-border-radius: 0;
@@ -3185,13 +3185,13 @@ body {
   }
 
 /* line 10 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
-  body .more_menu a.selected {
+  body .mobile_dropdown a.selected {
     background: #d3d3d3;
     color: #484739;
   }
 
 /* line 13 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
-  body .more_menu a:hover {
+  body .mobile_dropdown a:hover {
     background: #d3d3d3;
     color: #484739;
   }
@@ -3494,6 +3494,24 @@ body {
   .socials_room {
     position: relative;
     left: -5px;
+  }
+
+/* line 459 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+  .mobile_search_wrapper {
+    padding: 10px 80px;
+    border-bottom: 1px solid #cacaca;
+    background: #eaeaea;
+  }
+
+/* line 463 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+  .mobile_search_wrapper input {
+    margin-bottom: 0;
+    border: 1px solid #cacaca;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-decoration: none;
   }
 }
 
