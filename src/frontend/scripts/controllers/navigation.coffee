@@ -40,7 +40,7 @@ class Navigation
       log "href", href
       if href is '#'
         e.preventDefault()
-      else if el.data 'nav-load' and app.settings.theme is 'desktop'
+      else if el.data( 'nav-load' ) and app.settings.theme is 'desktop'
         ref.content_selector = el.data( 'nav-load' )
         ref.custom_class = 'loading_on_top ' + el.data( 'nav-custom-class' )
 
