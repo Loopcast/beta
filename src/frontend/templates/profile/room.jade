@@ -32,10 +32,13 @@ block content
     - public_class = "room_public"  
   .createroom.profile_theme.centered(data-menu="#{data_menu}", data-view="room", class="#{live_class} #{public_class}")
     .cover
-      if room
-        .cover_image(style="background-image:url(#{transform.cover(room.info.cover_url)})")
-      else
-        .cover_image(style="background-image:url(/images/default_room_cover.jpg)")
+    - cover_url = false
+    if room
+      - cover_url = room.info.cover_url
+
+      .cover_image.for_desktop(style="background-image:url(#{transform.cover(cover_url)})")
+      .cover_image.for_mobile(style="background-image:url(#{transform.cover_mobile(cover_url)})")
+      
       .content
         h1.name.black_background(data-view="components/editables/editable_text")
           span.text

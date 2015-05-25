@@ -15,7 +15,8 @@ block content
 
   .profile_theme.request_preloading.centered.no_information_yet(data-menu="profile", data-view="profile")
     .cover
-      .cover_image(style="background-image:url(#{transform.cover(cover)})")
+      .cover_image.for_desktop(style="background-image:url(#{transform.cover(cover)})")
+      .cover_image.for_mobile(style="background-image:url(#{transform.cover_mobile(cover)})")
         
       .content
         h1.name.black_background(data-view="components/editables/editable_text")
@@ -52,18 +53,21 @@ block content
         .sidebar_right
           .big_number
             .inner
+              span.icon.for_mobile.ss-users
               span.number #{likes}
-              span.text Followers
+              span.text.for_desktop Followers
 
           .big_number
             .inner
+              span.icon.for_mobile.ss-rss
               span.number #{streams}
-              span.text Streams 
+              span.text.for_desktop Streams 
 
           .big_number
             .inner
+              span.icon.for_mobile.ss-users
               span.number #{listeners}
-              span.text 
+              span.text.for_desktop 
                 | Listeners 
                 br
                 | 

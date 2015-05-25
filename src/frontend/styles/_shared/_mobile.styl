@@ -90,7 +90,8 @@ body
       
 
 
-    
+    .tag
+      font-size: 0.6rem
     &.login_page
       .for_mobile
         display: none
@@ -291,4 +292,127 @@ body
         position: relative
       a
         mobile_list_item()
+    .outline_box
+      border-radius: 0px
+    .profile_theme 
+      
+      MARGIN_LEFT = 10px
+
+      
+      .cover 
+        height: 184px
+        .name, .type, .genres, .socials_room
+          margin-left: MARGIN_LEFT
+        .upload_element
+          display: none
+        .cloudinary_form
+          display: none
+        .name
+          font-size: 1.1rem
+          padding: 4px 10px 5px
+        .type
+          font-size: 0.8rem
+        .genres
+          display: none!important
+          
+        .profile_image
+          width: 87px
+          left: MARGIN_LEFT
+      .big_number
+        padding: 0 20px
+        background: rgba(41, 44, 47, 0.8)    
+      .big_number span.text
+        display: none
+      .big_number span.number
+        font-size: 1rem
+        
+      .profile_content
+        display: block
+        padding: 10px 0
+
+        .profile_bio 
+          padding-left: MARGIN_LEFT
+          padding-right: MARGIN_LEFT
+          h4
+            margin-bottom: 0
+          .outline_icon
+            display: none!important
+        .profile_left
+          width: 100%
+        .social
+          position: relative
+          left: -10px
+          margin-top: 0
+          height: 40px
+        .spritesheet
+          transform: scale(0.5,0.5)
+          
+        .session
+          border: none
+          border-bottom: 1px solid #dadada
+          border-radius: 0
+          height: auto
+          margin-bottom: 0
+          overflow: hidden
+          
+          .image
+            width: 84px
+            height: 74px
+            border-radius: 3px
+            margin: MARGIN_LEFT
+            .icon
+              opacity: 1
+              transform translateX(-50%) translateY(-50%) scale(0.6,0.6)
+              
+            .share_wrapper
+              display: none
+
+
+          .content
+            padding-top: MARGIN_LEFT
+            padding-right: MARGIN_LEFT
+            padding-bottom: MARGIN_LEFT
+            padding-left: 0
+            
+          h2
+            font-size: 0.9rem
+            margin-bottom: 0
+          .session_author
+            font-size: 0.8rem
+            margin-bottom: 2px
+          .edit_session_wrapper
+            display: none!important
+            
+          .genres
+            margin-bottom: 0
+            
+          .small_info
+            position: relative
+            top: -5px
+            line-height: 16px
+            
+          .public_screen
+            display: none!important
+        
+      .big_number span.icon
+        padding-top: 14px
+      
+      .location
+        color: GRAY_3
+        
+      .recorded_sessions .title 
+        margin-top: 10px
+        background: white
+        border: 1px solid #dadada
+        border-bottom: 2px solid #dadada
+        margin-bottom: 0
+        padding: MARGIN_LEFT
+        *
+          display: none
+        h2
+          display: block
+          color: GRAY_3
+          font-size: 1rem
+      
+
     

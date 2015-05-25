@@ -36,6 +36,12 @@ Transform =
     else
       url.replace "upload/", "upload/w_1140,h_350,c_fill,g_north/"
 
+  cover_mobile: ( url ) -> 
+    if not url? or url.indexOf( "upload/" ) < 0
+      return DEFAULT.cover_mobile
+    else
+      url.replace "upload/", "upload/w_400,h_184,c_fill,g_north/"
+
   cover_thumb: ( url ) ->
     if not url? or url.indexOf( "upload/" ) < 0
       return DEFAULT.cover_thumb
