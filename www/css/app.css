@@ -3477,6 +3477,20 @@ body {
   }
 
 /* line 450 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+
+/* line 451 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+  body .player_preview .circle_icon {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+  }
+
+/* line 453 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+  body .player_preview .share_wrapper {
+    display: none;
+  }
+
+/* line 455 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   .socials_room {
     position: relative;
     left: -5px;
