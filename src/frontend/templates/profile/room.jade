@@ -32,9 +32,9 @@ block content
     - public_class = "room_public"  
   .createroom.profile_theme.centered(data-menu="#{data_menu}", data-view="room", class="#{live_class} #{public_class}")
     .cover
-    - cover_url = false
-    if room
-      - cover_url = room.info.cover_url
+      - cover_url = false
+      if room
+        - cover_url = room.info.cover_url
 
       .cover_image.for_desktop(style="background-image:url(#{transform.cover(cover_url)})")
       .cover_image.for_mobile(style="background-image:url(#{transform.cover_mobile(cover_url)})")
@@ -67,6 +67,7 @@ block content
         .sidebar_right
           .big_number
             .inner
+              span.icon.for_mobile.ss-users
               if room
                 span.number #{room.status.live.listeners}
               else
@@ -75,6 +76,7 @@ block content
 
           .big_number
             .inner
+              span.icon.for_mobile.ss-users
               if room
                 span.number #{room.likes}
               else
@@ -83,6 +85,7 @@ block content
 
           .big_number
             .inner
+              span.icon.for_mobile.ss-users
               span.number 32
               span.text 
                 | Total 

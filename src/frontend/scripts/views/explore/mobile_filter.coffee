@@ -18,6 +18,7 @@ module.exports = class MobileFilter
     @dom.removeClass 'mobile_opened'
     @list.removeClass 'mobile_opened'
     @content.removeClass 'loading_visible_2'
+    @content.removeClass 'loading_visible_1'
 
 
   open: ->

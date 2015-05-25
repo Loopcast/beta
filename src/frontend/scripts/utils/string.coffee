@@ -1,5 +1,7 @@
 module.exports = 
   is_empty : ( str ) ->
+    return true if not str
+  
     s = str.replace(/\s+/g, '')
     return s.length <= 0
 

@@ -247,6 +247,11 @@ body
         .ss-directup
           display: inline-block
     #player
+      transition: height .2s ease-out
+      
+      &.fullscreen
+        height: 100%
+        
       .player_title
         font-size: 0.8em
       .player_button
@@ -415,6 +420,34 @@ body
           display: block
           color: GRAY_3
           font-size: 1rem
+          
+    
+    .chat_sidebar
+      display: none!important
+    
+    .profile_content.chat
+      position: relative
+      flex-direction: column
+      .chat_header
+        display: none
+      .chat_main
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        
+        .chat_content
+          padding: 10px
+      .img_wrapper_2
+        left: 10px
       
+      .chat_footer
+        padding-left: 40px
+        .icon
+          right: 10px
+  .socials_room
+    position: relative
+    left: -5px
 
     
