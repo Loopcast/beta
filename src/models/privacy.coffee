@@ -128,7 +128,7 @@ module.exports = ( callback ) ->
       <h3>Contacting us</h3>
       <p>
       If you have any questions about this Privacy Policy, the practices of this site, or your dealings with this site, please contact us at:                                                      
-      <br> <a style="color:#4592D4;" href="mailto:support@loopcast.fm?Subject=Hello%20again" target="_top">support@loopcast.fm</a>
+      <br> <a style="color:#4592D4;" href="mailto:support@loopcast.fm?Subject=Privacy%20Policy" target="_top">support@loopcast.fm</a>
       <br> <br>
       LOOPCAST Ltd
       <br> 
