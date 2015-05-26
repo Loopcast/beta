@@ -20,6 +20,21 @@ module.exports =
         callback  null, response
 
   rooms :
+
+    is_available: ( title, callback ) ->
+      on_status_code =
+        401: ( response ) -> callback 'unauthorized, need log in!'
+        
+      request = $.post api_url + 'rooms/is_available', data, on_status_code
+
+      data = title: title
+
+      request.error on_error "rooms/is_available", callback
+
+      request.done ( response ) ->
+
+        callback  null, response
+
     info: (room_id, callback ) ->
 
       request = $.get api_url + "rooms/#{room_id}/info"
