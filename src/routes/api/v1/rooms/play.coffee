@@ -24,15 +24,16 @@ module.exports =
 
       redis_key = "#{ip}:played:room:#{room_id}"
 
-      increase_play room_id
-      
+      # only increase play if never played in the last 24 hours
+      # increase_play room_id
+
       redis.get redis_key, ( error, buffer ) ->
 
         if buffer?
           buffer = buffer.toString()
 
         # already played in the last 24 hours, just return ok
-        if buffer then return reply: ok: 1
+        if buffer then return reply: ok: 0
 
         # There is a 1 once 24 hours rate limit for playing a track
         # it's saved on redis
