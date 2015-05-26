@@ -19,8 +19,8 @@ module.exports = ( callback ) ->
     <div>
       <h3>Facebook</h3>
       <p>
-        By registering your Loopcast account through Facebook, Facebook will ask you permission to share certain information from your Facebook account with Loopcast. This includes your first name, last name, gender, general location, a link to your Facebook profile, your time zone, birthday, profile picture, your likes and your list of friends. This information is collected by Facebook and is provided to us under the terms of Facebook’s Data Use Policy: https://www.facebook.com/about/privacy/
-        When logging in with Facebook, Loopcast will be connected automatically to your Facebook account meaning your Loopcast activity (Such as creating or entering DJ-rooms) will be shared with Facebook and will be published on your timeline and your Facebook friend’s newsfeed if you have given Loopcast permission to post publicly on your behalf. 
+        By registering your Loopcast account through Facebook, Facebook will ask you permission to share certain information from your Facebook account with Loopcast. This includes your first name, last name, gender, general location, a link to your Facebook profile, your time zone, birthday, profile picture, your likes and your list of friends. This information is collected by Facebook and is provided to us under the terms of <a style="color:#4592D4;" href="https://www.facebook.com/about/privacy" target="_blank">  Facebook’s Data Use Policy. </a> 
+        When logging in with Facebook, Loopcast will be connected automatically to your Facebook account meaning your Loopcast activity (Such as creating or entering rooms) will be shared with Facebook and will be published on your timeline and your Facebook friend’s newsfeed if you have given Loopcast permission to post publicly on your behalf. 
       </p>
     </div>
 
@@ -106,7 +106,7 @@ module.exports = ( callback ) ->
      <div>
       <h3>Google Adsense</h3>
       <p>
-      Google may serve some of the ads. Google's use of the DART cookie enables it to serve ads to You based on their visit to our Site and other sites on the Internet. DART uses "non personally identifiable information" and does NOT track personal information about you, such as your name, email address, physical address, etc. You may opt out of the use of the DART cookie by visiting the Google ad and content network privacy policy at http://www.google.com/privacy_ads.html
+      Google may serve some of the ads. Google's use of the DART cookie enables it to serve ads to You based on their visit to our Site and other sites on the Internet. DART uses "non personally identifiable information" and does NOT track personal information about you, such as your name, email address, physical address, etc. You may opt out of the use of the DART cookie by visiting the <a style="color:#4592D4;" href="http://www.google.com/privacy_ads.html" target="_blank"> Google ad and content network privacy policy </a>
       </p>
     </div>
 
