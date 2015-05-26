@@ -6,8 +6,6 @@ module.exports = ( room_id, amount, callback ) ->
     .lean()
     .exec ( error, docs_updated ) ->
 
-      console.log "response", arguments
-      
       if error then return callback? error
 
       callback? error, docs_updated
