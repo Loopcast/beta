@@ -1,5 +1,7 @@
 escape = require 'escape-html'
+
 pusher_room_id = lib 'pusher/get_room_id'
+save_message   = lib 'chat/save_message'
 
 module.exports =
   method : 'POST'
@@ -56,6 +58,12 @@ module.exports =
         data.additional_data = request.payload.additional_data
 
       response = pusher.trigger room_subscribe_id, "message", data
+
+      # save message to redis
+      save_message room, data, ( error, response ) ->
+
+        if error then return console.error error
+
 
       reply( response ).header "Cache-Control", "no-cache, must-revalidate"
 

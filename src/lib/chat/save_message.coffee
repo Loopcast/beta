@@ -1,3 +1,7 @@
+# save log of last 100 messages for a given room into redis
+# automatically clean it after 7 days
+LENGTH = 100
+
 module.exports = ( room_id, data, callback ) ->
 
   console.log '---'
@@ -8,16 +12,25 @@ module.exports = ( room_id, data, callback ) ->
   key  = "#{room_id}:messages"
   data = JSON.stringify data
 
-  redis.lpush key, data, ( error, callback ) ->
+  redis.lpush key, data, ( error, length ) ->
+
+    if error then return callback error
 
     console.log '---'
     console.log 'redis lpush callback'
     console.log arguments
 
-  redis.trim key, 0, 99, ( error, callback ) ->
+    if length > LENGTH
 
-    console.log '---'
-    console.log 'redis ltrim callback'
-    console.log arguments
+      redis.ltrim key, 0, LENGTH - 1, ( error, callback ) ->
 
-  callback null, data
+        if error then return callback error
+        
+        console.log '---'
+        console.log 'redis ltrim callback'
+        console.log arguments
+
+    callback null, length
+
+  # expire key in 7 days
+  redis.expire key, 7 * 24 * 60 * 60
