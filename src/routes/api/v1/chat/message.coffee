@@ -46,11 +46,11 @@ module.exports =
       room_subscribe_id    = pusher_room_id owner_id, room
 
       data = 
-        name   : user.name
+        name    : user.name
         username: user_id
-        avatar : user.avatar
-        time   : now().format()
-        message: escape request.payload.message
+        avatar  : user.avatar
+        time    : now().format()
+        message : escape request.payload.message
 
       if request.payload.additional_data?
         data.additional_data = request.payload.additional_data
