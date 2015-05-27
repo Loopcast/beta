@@ -48,6 +48,12 @@ s.google =
   provider_params : 
     redirect_uri: s.server.url + '/login/google'
 
+s.cache =
+  chat:
+    messages:
+      length: 25
+      timeout: 7 * 24 * 60 * 60
+
 s.mailchimp =
   key: "266e1e3b7b198e6d32fb1939fc230110"
   id : "7d55764424"

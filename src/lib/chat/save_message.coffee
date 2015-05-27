@@ -1,6 +1,7 @@
 # save log of last 100 messages for a given room into redis
 # automatically clean it after 7 days
-LENGTH = 100
+LENGTH = s.cache.chat.messages.length
+EXPIRE = s.cache.chat.messages.timeout
 
 module.exports = ( room_id, data, callback ) ->
 
@@ -33,4 +34,4 @@ module.exports = ( room_id, data, callback ) ->
     callback null, length
 
   # expire key in 7 days
-  redis.expire key, 7 * 24 * 60 * 60
+  redis.expire key, EXPIRE

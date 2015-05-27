@@ -1,7 +1,7 @@
 escape = require 'escape-html'
 
 pusher_room_id = lib 'pusher/get_room_id'
-save_message   = lib 'chat/save_message'
+get_messages   = lib 'chat/get_messages'
 
 module.exports =
   method : 'GET'
@@ -22,13 +22,8 @@ module.exports =
 
     handler: ( request, reply ) ->
 
-      room_id    = request.params.room_id
-
-      redis.lrange "#{room_id}:messages", 0, -1, ( error, response ) ->
+      get_messages request.params.room_id, ( error, response ) -> 
 
         if error then return reply Boom.resourceGone "Something went wrong"
-
-        for item, index in response
-          response[ index] = JSON.parse item
 
         reply response
