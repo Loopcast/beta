@@ -64,6 +64,5 @@ module.exports =
 
         if error then return console.error error
 
-
       reply( response ).header "Cache-Control", "no-cache, must-revalidate"
 
