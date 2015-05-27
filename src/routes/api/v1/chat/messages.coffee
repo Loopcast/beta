@@ -28,4 +28,7 @@ module.exports =
 
         if error then return reply Boom.resourceGone "Something went wrong"
 
+        for item, index in response
+          response[ index] = JSON.parse item
+
         reply response
