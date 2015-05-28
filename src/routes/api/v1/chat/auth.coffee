@@ -38,7 +38,7 @@ module.exports =
         user_info:
           name    : user.name
           avatar  : user.avatar
-          username: user.username
+          _id     : user._id
 
       # reply with pusher authentication
       reply pusher.authenticate socket_id, channel_name, data
