@@ -17,9 +17,9 @@ module.exports = ( room_id, data, callback ) ->
 
     if error then return callback error
 
-    console.log '---'
-    console.log 'redis lpush callback'
-    console.log arguments
+    # console.log '---'
+    # console.log 'redis lpush callback'
+    # console.log arguments
 
     if length > LENGTH
 
@@ -27,9 +27,9 @@ module.exports = ( room_id, data, callback ) ->
 
         if error then return callback error
         
-        console.log '---'
-        console.log 'redis ltrim callback'
-        console.log arguments
+        # console.log '---'
+        # console.log 'redis ltrim callback'
+        # console.log arguments
 
     callback null, length
 
