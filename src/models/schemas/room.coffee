@@ -12,7 +12,8 @@ schema = new Schema
     location  : String
     about     : String
     cover_url : String
-    url       : String
+    url       : String # url of the stream
+    file      : String # url of the recorded file
 
   likes       : { type: Number, default: 0 }
 
@@ -26,13 +27,11 @@ schema = new Schema
       duration    : Number
       started_at  : Date
       stopped_at  : Date
-      url         : String
     recording:
       plays       : { type: Number, default: 0 }
       duration    : Number
       started_at  : Date
       stopped_at  : Date
-      url         : String
 
   updated_at: Date
   created_at: Date

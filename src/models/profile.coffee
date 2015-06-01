@@ -56,7 +56,7 @@ module.exports = ( id, callback ) ->
       
       query = '_owner' : data._id
 
-      Room.find( query ).sort( _id: -1 ).lean().exec ( error, rooms ) ->
+      Room.find( query ).lean().exec ( error, rooms ) ->
 
         if error then return callback error
 

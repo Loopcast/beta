@@ -90,7 +90,7 @@ module.exports = class Player
         id: data.room._id
         is_recorded: false
         start_time: data.room.status.live.started_at
-        src: data.room.status.live.url
+        src: data.room.info.url
 
     return audio_data
 

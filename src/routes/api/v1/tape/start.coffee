@@ -62,16 +62,23 @@ module.exports =
             url: "#{s.tape}/api/v1/start"
             form:
               room_id    : room_id 
-              mount_point: room._owner
+              mount_point: String( room._owner )
 
           request.post data, ( error, response, body ) ->
 
-            if error
+            if error or response.statusCode != 200
 
-              console.log "error starting tape"
+              console.log "error contacting server tape"
               console.log error
 
-              return      
+              return reply Boom.resourceGone( "could not connect to tape recorder" )
+
+            if response.error
+
+              console.log "error on the tape server while trying to record"
+              console.log error
+
+              return reply Boom.preconditionFailed( "Database error" )
 
             # JSON from tape server
             body = JSON.parse body
