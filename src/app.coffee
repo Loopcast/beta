@@ -1,6 +1,8 @@
 # defaults to production environment
 if not process.env.NODE_ENV then process.env.NODE_ENV = 'local'
 
+http  = require 'http'
+https = require 'https'
 http.globalAgent.maxSockets = https.globalAgent.maxSockets = 100;
 
 console.log "+ ENV"
