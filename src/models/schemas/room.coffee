@@ -32,6 +32,7 @@ schema = new Schema
       duration    : Number
       started_at  : Date
       stopped_at  : Date
+      s3          : Object
 
   updated_at: Date
   created_at: Date

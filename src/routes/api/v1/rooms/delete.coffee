@@ -1,7 +1,10 @@
 slug = require 'slug'
 Room = schema 'room'
+
 extract_id   = lib 'cloudinary/extract_id'
 delete_image = lib 'cloudinary/delete'
+delete_file  = lib 's3/delete'
+
 
 module.exports =
   method : 'DELETE'
@@ -36,7 +39,7 @@ module.exports =
         'info.user' : username
 
       Room.findOne( query )
-        .select( "_id info.cover_url" )
+        .select( "_id info.cover_url recording.s3" )
         .lean()
         .exec ( error, room ) -> 
 
@@ -55,6 +58,17 @@ module.exports =
               # else
               #   console.log 'succesfully deleted old cover from cloudinary'
               #   console.log result
+
+          if room['recording.s3']?
+
+            delete_file room['recording.s3'].key, ( error, callback ) ->
+
+              if error
+                console.log "error deleting from s3!!"
+                console.log error
+                return
+
+              console.log "success deleting from s3!!!"
 
           Room.remove _id: room_id, ( error ) ->
 
