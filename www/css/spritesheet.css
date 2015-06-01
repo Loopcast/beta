@@ -21,37 +21,37 @@
   background-position: 0 -70px;
 }
 
-.spritesheet.profile_generic {
+.spritesheet.profile_spotify {
   width: 48px;
   height: 48px;
   background-position: 0 -100px;
 }
 
-.spritesheet.profile_spotify {
+.spritesheet.profile_facebook {
   width: 48px;
   height: 48px;
   background-position: -48px -100px;
 }
 
-.spritesheet.profile_soundcloud {
+.spritesheet.profile_generic {
   width: 48px;
   height: 48px;
   background-position: -96px -100px;
 }
 
-.spritesheet.profile_facebook {
+.spritesheet.profile_soundcloud {
   width: 48px;
   height: 48px;
   background-position: -144px -100px;
 }
 
-.spritesheet.share_twitter {
+.spritesheet.share_google {
   width: 42px;
   height: 42px;
   background-position: 0 -148px;
 }
 
-.spritesheet.share_google {
+.spritesheet.share_fb {
   width: 42px;
   height: 42px;
   background-position: -42px -148px;
@@ -63,13 +63,13 @@
   background-position: -84px -148px;
 }
 
-.spritesheet.share_friends {
+.spritesheet.share_twitter {
   width: 42px;
   height: 42px;
   background-position: -126px -148px;
 }
 
-.spritesheet.share_fb {
+.spritesheet.share_friends {
   width: 42px;
   height: 42px;
   background-position: -168px -148px;
@@ -117,28 +117,34 @@
   background-position: -91px -70px;
 }
 
+.spritesheet.mobile_headphones {
+  width: 16px;
+  height: 19px;
+  background-position: -113px -70px;
+}
+
 .spritesheet.session_icon {
   width: 18px;
   height: 18px;
-  background-position: -113px -70px;
+  background-position: -129px -70px;
 }
 
 .spritesheet.alert_icon {
   width: 18px;
   height: 18px;
-  background-position: -131px -70px;
+  background-position: -147px -70px;
 }
 
 .spritesheet.rooms_icon {
   width: 18px;
   height: 16px;
-  background-position: -149px -70px;
+  background-position: -165px -70px;
 }
 
 .spritesheet.icon_like_transparent {
   width: 16px;
   height: 16px;
-  background-position: -167px -70px;
+  background-position: -183px -70px;
 }
 
 
