@@ -12,6 +12,5 @@ module.exports =
         return reply('Authentication failed due to: ' + request.auth.error.message);
       else
         console.log "AUTHENTICATED!!!", request.auth
-        request.auth.session.set request.auth.credentials
-
-      return reply.redirect('/');
+        return reply('we not supporting twitter atm')
+        # request.auth.session.set request.auth.credentials
