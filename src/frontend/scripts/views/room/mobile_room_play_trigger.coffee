@@ -13,28 +13,22 @@ module.exports = class MobileRoomPlayTrigger extends RoomView
       @stop()
     else
       @play()
+  on_room_created: ( @room_id, @owner_id ) =>
+    super @room_id, @owner_id
 
+    L.rooms.info @room_id, (error, response) =>
+
+      if not error
+        @room_info = response
+
+        
   play: ->
     return if @playing
 
     @playing = true
 
-    if @room_info
-      @_play()
-    else
-      L.rooms.info @room_id, (error, response) =>
-
-        if not error
-          @room_info = response
-          @_play()
-          
-        else
-          log "[Room] on_room_live error", error
-
-
-  _play: ->
     app.player.play @room_info
-    
+
   stop: ->
     return if not @playing
     @playing = false

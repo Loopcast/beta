@@ -9,7 +9,15 @@ module.exports = class RoomView
 
   on_views_binded: ( scope ) =>
     return if not scope.main
-    @room = view.get_by_dom( '.profile_theme' )
+  
+    delay 2, =>
+      @room = view.get_by_dom( '.createroom' )
+      if @room
+        @_on_views_binded()
+      else
+        log "PROBLEM ROOM ->", @room
+
+  _on_views_binded: ->
     
     if @room and @room.is_create_page()
       ref = @
