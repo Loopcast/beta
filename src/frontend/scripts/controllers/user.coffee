@@ -158,10 +158,14 @@ class UserController
     window.intercomSettings.name       = @data.name
     window.intercomSettings.email      = @data.email
     window.intercomSettings.created_at = new Date(@data.created_at).getTime()
+    window.intercomSettings.widget     =
+      activator: '#IntercomDefaultWidget'
 
     $.getScript 'js/intercom.js', ->
 
-      console.log 'loaded intercom with settings', window.intercomSettings
+      window.Intercom 'boot', window.intercomSettings
+
+      # console.log 'loaded intercom with settings', window.intercomSettings
 
 
     @check_guest_owner()
