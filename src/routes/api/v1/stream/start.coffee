@@ -67,9 +67,9 @@ module.exports =
           # update for mongodb
           # sets the document URL to be the streaming URL
           update =
-            'info.url'           : "#{s.radio}/#{room._owner}"
-            'status.is_live'     : true
+            'status.is_live'         : true
             'status.live.started_at' : status.live.started_at
+            'status.live.url'      : "#{s.radio}/#{room._owner}"
 
           Room.update( _id: room_id, update )
             .lean()

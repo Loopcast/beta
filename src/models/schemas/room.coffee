@@ -23,8 +23,10 @@ schema = new Schema
     # is_streaming : { type: Boolean, default: off } # when appcast is connected to the server ?
     live:
       listeners    : { type: Number, default: 0 }
+      duration    : Number
       started_at  : Date
       stopped_at  : Date
+      url         : String
     recording:
       plays       : { type: Number, default: 0 }
       duration    : Number
