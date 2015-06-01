@@ -6,25 +6,25 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
 <url>
-  <loc>http://staging.loopcast.fm/</loc>
+  <loc>http://beta.loopcast.fm/</loc>
 </url>
 <url>
-  <loc>http://staging.loopcast.fm/explore</loc>
+  <loc>http://beta.loopcast.fm/explore</loc>
 </url>
 <url>
-  <loc>http://staging.loopcast.fm/about</loc>
+  <loc>http://beta.loopcast.fm/about</loc>
 </url>
 <url>
-  <loc>http://staging.loopcast.fm/privacy</loc>
+  <loc>http://beta.loopcast.fm/privacy</loc>
 </url>
 <url>
-  <loc>http://staging.loopcast.fm/terms</loc>
+  <loc>http://beta.loopcast.fm/terms</loc>
 </url>
 <url>
-  <loc>http://staging.loopcast.fm/explore/people</loc>
+  <loc>http://beta.loopcast.fm/explore/people</loc>
 </url>
 <url>
-  <loc>http://staging.loopcast.fm/rooms/create</loc>
+  <loc>http://beta.loopcast.fm/rooms/create</loc>
 </url>
 </urlset>
 
