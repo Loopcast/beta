@@ -23,6 +23,9 @@ module.exports = ( url, data = {}, callback ) ->
   data.pusher =
     key: s.pusher.key
 
+  data.intercom =
+    id: s.intercom.id
+
   data.transform = cloudinary_transform
 
   root = path.join( __dirname + '/../../frontend/templates' )

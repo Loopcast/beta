@@ -1,6 +1,9 @@
 User = schema 'user'
 
 module.exports = ( user, callback ) ->
+
+  user.created_at = now().toDate()
+
   # ~ on mongodb
   doc = new User user
   doc.save ( error, user ) ->
@@ -19,7 +22,7 @@ module.exports = ( user, callback ) ->
       user_id             : user._id
       email               : user.data.email
       name                : user.info.name
-      created_at          : now().unix()
+      created_at          : now( user.created_at ).unix()
       # unavailable since we got out of the request scope
       # last_seen_user_agent: request.headers[ 'user-agent' ]
       custom_attributes :

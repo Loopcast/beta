@@ -51,12 +51,19 @@ class UserController
 
     # This is what we gonna save to the cookie
     @data = 
-      avatar: data.avatar
-      images: transform.all data.avatar
-      name: data.name
-      username: data.username
+      _id      : data._id
+      avatar   : data.avatar
+      images   : transform.all data.avatar
+      name     : data.name
+      username : data.username
       following: {}
-      _id: data._id
+
+    console.log 'logged in ->', data
+    console.log 'created at ->', data.created_at.getTime()
+    
+    window.intercomSettings.name       = data.name
+    window.intercomSettings.email      = data.email
+    window.intercomSettings.created_at = data.created_at.getTime()
 
     # log "[UserController] user:logged", @data, data
 

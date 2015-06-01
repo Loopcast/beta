@@ -49,10 +49,7 @@ html
 		script( src="/js/app.js" )
 		script( src="//js.pusher.com/2.2/pusher.min.js" )
 		script
-			| var options   = { authEndpoint: '/api/v1/chat/auth' };
+			| var options   = { authEndpoint: '/api/v1/chat/auth' }
 			| options  = {} // while we don't implement presence channels
-			| window.pusher = new Pusher( '#{pusher.key}', options );
-		//- script
-		//- 	| var loopcast = {};
-		//- 	if user
-		//- 		| loopcast.user = !{JSON.stringify(user)};
+			| window.pusher = new Pusher( '#{pusher.key}', options )
+			| window.intercomSettings = { app_id: "#{intercom.id}" }
