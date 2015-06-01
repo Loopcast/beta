@@ -35,7 +35,7 @@ module.exports =
       payload  = req.payload
 
       query =
-        _id: room_id
+        _id         : room_id
         'info.user' : username
 
       Room.findOne( query )
@@ -47,6 +47,7 @@ module.exports =
 
             return reply Boom.resourceGone();
 
+          # delete cover image from cloudinary
           if room.info.cover_url
               
             current_id = extract_id room.info.cover_url
@@ -59,16 +60,15 @@ module.exports =
               #   console.log 'succesfully deleted old cover from cloudinary'
               #   console.log result
 
-          if room['recording.s3']?
+          # delete recorded set from s3
+          if room.recording?.s3
 
-            delete_file room['recording.s3'].key, ( error, callback ) ->
+            delete_file room.recording.s3.key, ( error, callback ) ->
 
               if error
                 console.log "error deleting from s3!!"
                 console.log error
                 return
-
-              console.log "success deleting from s3!!!"
 
           Room.remove _id: room_id, ( error ) ->
 

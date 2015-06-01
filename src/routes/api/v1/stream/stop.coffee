@@ -37,7 +37,7 @@ module.exports =
       room_id  = request.payload.room_id.toLowerCase()
 
       query =
-        _id: room_id
+        _id         : room_id
         'info.user' : username
 
       Room.findOne( query )
