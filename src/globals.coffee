@@ -72,6 +72,17 @@ global.pusher = new Pusher
   key   : s.pusher.key
   secret: s.pusher.secret
 
+
+S3 = require 's3'
+
+global.s3 = S3.createClient
+  maxAsyncS3   : 20
+  s3RetryCount : 5
+  s3RetryDelay : 200
+  s3Options:
+    accessKeyId    : s.s3.key
+    secretAccessKey: s.s3.secret
+
 cloudinary = require 'cloudinary'
 cloudinary.config s.cloudinary
 
