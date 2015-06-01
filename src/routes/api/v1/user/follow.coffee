@@ -27,8 +27,8 @@ module.exports =
       following_id = req.params.id
 
       user = 
-        _id : user._id
-        name: user.name
+        username : user.username
+        name     : user.name
 
       # broadcast message "followed_by" to channel "following_id" passing 
       # user as data

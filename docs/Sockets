@@ -10,7 +10,7 @@ Channels / messages
   - #{user._id}
     - followed_by
       user:
-        _id
+        username
         name
 
   - #{user_id}.#{room}
