@@ -42,11 +42,11 @@ Transform =
     else
       url.replace "upload/", "upload/w_400,h_184,c_fill,g_north/"
 
-  cover_thumb: ( url ) ->
+  cover_thumb: ( url, avatar ) ->
     if not url or not url? or url.indexOf( "upload/" ) < 0
-      return DEFAULT.cover_thumb
-    else
-      url.replace "upload/", "upload/w_200,h_167,c_fill,g_north/"    
+      url = avatar
+      
+    url.replace "upload/", "upload/w_200,h_167,c_fill,g_north/"    
 
   
 
