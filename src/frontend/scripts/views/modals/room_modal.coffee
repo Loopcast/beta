@@ -1,8 +1,10 @@
 Modal = require './modal'
-
+L = require 'app/api/loopcast/loopcast'
+notify = require 'app/controllers/notify'
 
 module.exports = class RoomModal extends Modal
   cover_uploaded: ""
+  timeout_title: null
   constructor: ( @dom ) ->
 
     log "@dom", @dom
@@ -49,6 +51,9 @@ module.exports = class RoomModal extends Modal
 
   _on_title_changed: ( ) =>
     @_check_length @title
+    clearTimeout @timeout_title
+    @timeout_title = setTimeout @_check_room_name, 1000
+
     @emit 'input:changed', { name: 'title', value: @title.val() }
 
   _on_genre_changed: ( data ) =>
@@ -66,6 +71,18 @@ module.exports = class RoomModal extends Modal
       el.removeClass 'required'
     else
       el.addClass 'required'
+
+  _check_room_name: =>
+    L.rooms.is_available @title.val(), (error, result) =>
+      log "[RoomModal] _check_room_name", @title.val(), "available?", result.available
+      if error
+        log error
+        return 
+
+      if not result.available
+        @title.addClass( 'required' ).focus()
+        notify.error 'Room name not available'
+
 
   _submit: ( ) =>
     

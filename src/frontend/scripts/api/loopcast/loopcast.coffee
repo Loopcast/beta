@@ -25,9 +25,9 @@ module.exports =
       on_status_code =
         401: ( response ) -> callback 'unauthorized, need log in!'
         
-      request = $.post api_url + 'rooms/is_available', data, on_status_code
-
       data = title: title
+
+      request = $.post api_url + 'rooms/is_available', data, on_status_code
 
       request.error on_error "rooms/is_available", callback
 

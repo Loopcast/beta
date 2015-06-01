@@ -30,7 +30,7 @@ module.exports =
       return reply Boom.unauthorized('needs authentication')
 
     owner_id = req.auth.credentials._id
-    title    = slug payload.title.toLowerCase()
+    title    = slug req.payload.title.toLowerCase()
 
     query = 
       _owner     : owner_id
