@@ -26,6 +26,14 @@ module.exports =
       user         = req.auth.credentials.user
       following_id = req.params.id
 
+      user = 
+        username : user.username
+        name     : user.name
+
+      # broadcast message "followed_by" to channel "following_id" passing 
+      # user as data
+      pusher.trigger following_id, "followed_by", user
+
       like user._id, following_id, ( error, respose ) ->
 
         if error then return reply error: error.message

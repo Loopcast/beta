@@ -7,6 +7,12 @@ Channels / messages
 
   The web server works on the following channels
 
+  - #{user._id}
+    - followed_by
+      user:
+        username
+        name
+
   - #{user_id}.#{room}
 
     This channel broadcast the following message
