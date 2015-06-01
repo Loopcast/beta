@@ -1,6 +1,7 @@
 transform = require 'lib/cloudinary/transform'
 ChatView = require 'app/views/room/chat_view'
 user = require 'app/controllers/user'
+api = require 'app/api/loopcast/loopcast'
 
 module.exports = class Messages extends ChatView
   first_message: true
@@ -18,6 +19,14 @@ module.exports = class Messages extends ChatView
     @dom.on 'mouseout', '.img_wrapper_2', @on_people_out
 
     @popup = view.get_by_dom '.chat_user_popup'
+
+
+    api.chat.messages @room_id, (error, response) =>
+      log "[Messages] old messages", response
+      return if error
+      response = response.reverse()
+      for m in response
+        @on_message m
     # log "[Messages] on_room_created", @room_id
 
   on_people_over: (e) =>

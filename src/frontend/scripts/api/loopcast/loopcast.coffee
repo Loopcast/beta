@@ -177,6 +177,21 @@ module.exports =
 
         callback  null, response
 
+    messages : (room_id, callback) ->
+
+      on_status_code =
+        400: -> callback 'bad request'
+        401: -> callback 'unauthorized'
+        500: -> callback 'server error'
+
+      request = $.get api_url + 'chat/messages/' + room_id, {}, on_status_code
+
+      request.error on_error "chat/messages", callback
+
+      request.done ( response ) ->
+
+        callback  null, response
+    
     listener: ( data, callback ) ->
       on_status_code =
         400: -> callback 'bad request'
