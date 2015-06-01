@@ -53,7 +53,7 @@ block content
         .profile_image.upload_wrapper
           img(src="#{transform.avatar(user.info.avatar)}")
 
-        a.for_mobile.room_play_handler
+        a.for_mobile.room_play_handler(data-view="room/mobile_room_play_trigger", href="#")
           span.icon.ss-play.circle_icon
 
         .change_cover.upload_wrapper(data-view="components/image_uploader", data-id="profile_cover")
