@@ -26,6 +26,12 @@ module.exports =
       user         = req.auth.credentials.user
       following_id = req.params.id
 
+      user = 
+        _id : user._id
+        name: user.name
+
+      response = pusher.trigger following_id, "followed_by", user
+
       like user._id, following_id, ( error, respose ) ->
 
         if error then return reply error: error.message
