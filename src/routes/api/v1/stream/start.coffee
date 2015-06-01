@@ -41,7 +41,7 @@ module.exports =
         'info.user' : username
 
       Room.findOne( query )
-        .select( "_id" )
+        .select( "_id owner_id" )
         .lean()
         .exec ( error, room ) -> 
 
@@ -64,10 +64,12 @@ module.exports =
           room     = "#{username}.#{room_id}"
           response = pusher.trigger room, "status", status
 
+          console.log "starting streaming at: " + "#{s.radio}/#{room.owner_id}"
+
           # update for mongodb
           # sets the document URL to be the streaming URL
           update =
-            'info.url'           : "#{s.radio}/#{username}"
+            'info.url'           : "#{s.radio}/#{room.owner_id}"
             'status.is_live'     : true
             'status.live.started_at' : status.live.started_at
 
