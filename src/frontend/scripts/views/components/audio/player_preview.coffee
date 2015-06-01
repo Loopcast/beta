@@ -29,7 +29,7 @@ module.exports = (dom) ->
 
   on_play = (_room_id) ->
     if _room_id is room_id
-      log "[player_preview] on_play", room_info.room.info.title
+      log "[player_preview] on_play"
       is_playing = true
       dom.addClass 'playing'
       dom.removeClass 'preloading'

@@ -46,7 +46,7 @@ module.exports = class Textarea extends ChatView
 
       if not @already_liked
         
-        @send_message "Liked this song", {like: @liked}
+        @send_message "Liked this session", {like: @liked}
         @already_liked = true
 
       if @liked

@@ -29,6 +29,13 @@ body
   position: relative
   background-size: cover
   background-position: center center
+  
+.room_play_handler
+  position: absolute
+  top: 50%
+  left: 50%
+  transform translateX(-50%) translateY(-50%)
+  z-index: 2
 
 .mobile_header
   height: 55px
@@ -86,6 +93,10 @@ body
   
   .profile_theme .big_number span.icon
     display: block
+    
+  body .profile_theme .profile_content .session .live .label
+    padding-left: 4px
+    padding-right: 18px
   body
     padding-top: 0!important
     

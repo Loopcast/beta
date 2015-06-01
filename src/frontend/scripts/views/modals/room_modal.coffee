@@ -52,7 +52,8 @@ module.exports = class RoomModal extends Modal
   _on_title_changed: ( ) =>
     @_check_length @title
     clearTimeout @timeout_title
-    @timeout_title = setTimeout @_check_room_name, 1000
+    if @title.val().length > 0
+      @timeout_title = setTimeout @_check_room_name, 1000
 
     @emit 'input:changed', { name: 'title', value: @title.val() }
 

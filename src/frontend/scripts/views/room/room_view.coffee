@@ -10,8 +10,8 @@ module.exports = class RoomView
   on_views_binded: ( scope ) =>
     return if not scope.main
     @room = view.get_by_dom( '.profile_theme' )
-
-    if @room.is_create_page()
+    
+    if @room and @room.is_create_page()
       ref = @
       @room.once 'room:created', (data) ->
         ref.on_room_created data._id, user.owner_id()

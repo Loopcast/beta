@@ -139,7 +139,7 @@ block content
 
         if live
           .session.outline_box(data-view="profile/live_set", data-room-id="#{live._id}", data-room-started-at="#{live.status.live.started_at}")
-            a.image.room_url(href="/#{live.info.user}/#{live.info.slug}", title="Old School House session", style="background-image:url(#{transform.cover_thumb(live.info.cover_url)})")
+            a.image.room_url(href="/#{live.info.user}/#{live.info.slug}", title="Old School House session", style="background-image:url(#{transform.cover_thumb(live.info.cover_url, avatar)})")
             .content
               h2.session_title 
                 a.room_url(href="/#{live.info.user}/#{live.info.slug}", title="#{live.info.title}") #{live.info.title}
@@ -163,8 +163,9 @@ block content
                   //- span.spritesheet.icon_plays
                   span.text #{live.status.live.listeners}
 
-              a.live.room_url(href="/#{live.info.user}/#{live.info.slug}", title="#{live.info.title}")
-                p.label now live
+              a.live(href="#", title="#{live.info.title}")
+                p.label 
+                  span.for_desktop now live
                 p.time &nbsp;
 
         if recorded && recorded.length
