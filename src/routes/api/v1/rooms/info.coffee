@@ -43,7 +43,7 @@ module.exports =
 
         User
           .findById( room._owner )
-          .select( "info.name info.username" )
+          .select( "info.name info.username info.avatar info.occupation likes" )
           .lean().exec ( error, user ) ->
 
             if error then return reply Boom.resourceGone "User not found"
