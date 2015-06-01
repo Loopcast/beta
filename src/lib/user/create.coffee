@@ -27,7 +27,12 @@ module.exports = ( user, callback ) ->
       # last_seen_user_agent: request.headers[ 'user-agent' ]
       custom_attributes :
         username   : user.info.username
-        facebook_id: user.data.facebook.id
+
+    if user.data.facebook.id?
+      data.custom_attributes.facebook_id = user.data.facebook.id
+
+    if user.data.google.id?
+      data.custom_attributes.google_id = user.data.google.id
 
     intercom.createUser data, ( error, data ) ->
 

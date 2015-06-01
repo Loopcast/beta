@@ -51,21 +51,16 @@ class UserController
 
     # This is what we gonna save to the cookie
     @data = 
-      _id      : data._id
-      avatar   : data.avatar
-      images   : transform.all data.avatar
-      name     : data.name
-      username : data.username
-      following: {}
+      _id        : data._id
+      avatar     : data.avatar
+      email      : data.email 
+      created_at : data.created_at 
+      images     : transform.all data.avatar
+      name       : data.name
+      username   : data.username
+      following  : {}
 
-    console.log 'logged in ->', data
-    console.log 'created at ->', data.created_at.getTime()
-    
-    window.intercomSettings.name       = data.name
-    window.intercomSettings.email      = data.email
-    window.intercomSettings.created_at = data.created_at.getTime()
-
-    # log "[UserController] user:logged", @data, data
+    log "[UserController] user:logged", @data, data
 
     @_dispatch_login()
     
@@ -158,6 +153,15 @@ class UserController
     log "#{@data.username} / #{@data.name}"
     log @data
     log "[==========================]"
+
+    # updates intercom information
+    window.intercomSettings.name       = @data.name
+    window.intercomSettings.email      = @data.email
+    window.intercomSettings.created_at = new Date(@data.created_at).getTime()
+
+    $.getScript 'js/intercom.js', ->
+
+      console.log 'loaded intercom with settings', window.intercomSettings
 
 
     @check_guest_owner()
