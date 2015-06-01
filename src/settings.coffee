@@ -77,6 +77,12 @@ if s.is_beta
     password : 'loopcast2015'
     kue_db   : 0
 
+  # TODO: create beta bucket
+  s.s3 =
+    bucket: 'rekorded'
+    key   : "AKIAJEYWTAUA3QWZGTOA"
+    secret: "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"
+
   # ~ app session
 
   s.session =
@@ -113,6 +119,11 @@ else
     password : 'loopcast2015'
     kue_db   : 0
 
+  s.s3 =
+    bucket: 'rekorded'
+    key   : "AKIAJEYWTAUA3QWZGTOA"
+    secret: "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"
+    
   # ~ app session
 
   s.session =
