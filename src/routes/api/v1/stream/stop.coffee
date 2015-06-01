@@ -76,6 +76,14 @@ module.exports =
             stopped_at = now( update['status.live.stopped_at'] )
 
             duration = stopped_at.diff( started_at, 'seconds' )
+
+            update = 'status.live.duration': duration
+
+            Room.update _id: room._id, update, ( error, response ) ->
+
+              if error
+                console.log 'error updating streaming duration'
+                console.log 'error ->', error
             
             # streamed for this length
             console.log "Streamed #{duration} seconds"
