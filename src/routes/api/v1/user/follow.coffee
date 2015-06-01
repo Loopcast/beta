@@ -30,7 +30,9 @@ module.exports =
         _id : user._id
         name: user.name
 
-      response = pusher.trigger following_id, "followed_by", user
+      # broadcast message "followed_by" to channel "following_id" passing 
+      # user as data
+      pusher.trigger following_id, "followed_by", user
 
       like user._id, following_id, ( error, respose ) ->
 
