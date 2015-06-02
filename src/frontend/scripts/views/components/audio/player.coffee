@@ -1,3 +1,4 @@
+time_to_string = require 'app/utils/time/time_to_string'
 api = require 'api/loopcast/loopcast'
 transform = require 'lib/cloudinary/transform'
 notify          = require 'app/controllers/notify'
@@ -22,6 +23,7 @@ module.exports = class Player
     @title    = @dom.find '.player_title'
     @author   = @dom.find '.player_author'
     @time     = @dom.find '.player_time'
+    @time_tot = @dom.find '.player_total_time'
     @play_btn = @dom.find '.ss-play'
     @like_btn = @dom.find '.ss-heart'
     @progress = @dom.find '.player_progress span'
@@ -31,8 +33,14 @@ module.exports = class Player
     @play_btn.on 'click', @on_play_clicked
     @like_btn.on 'click', @on_like_clicked
     @progress_parent.on 'click', @on_progress_click
-
+    @dom.find( '.open_fullscreen' ).on 'click', @open_fullscreen
+    @dom.find( '.close_fullscreen' ).on 'click', @close_fullscreen
     view.on 'binded', @on_views_binded
+
+    app.window.on 'resize', @on_resize
+
+  on_resize: =>
+    @close_fullscreen()
 
   on_views_binded: (scope) =>
     return if not scope.main
@@ -44,11 +52,11 @@ module.exports = class Player
     @audio.on 'ended', @on_audio_ended
     @audio.on 'progress', @on_progress
     @audio.on 'snapped', @on_snapped
-
+    @audio.on 'loaded', @on_loaded
     view.off 'binded', @on_views_binded
     
   on_like_clicked: =>
-    return if @like_lock
+    return false if @like_lock
 
     @like_lock = true
 
@@ -56,6 +64,8 @@ module.exports = class Player
       @unlike()
     else
       @like()
+
+    return false
 
   unlike: ->
     api.rooms.dislike @data.room._id, (error, response) =>
@@ -79,9 +89,15 @@ module.exports = class Player
       @like_btn.addClass 'liked'
 
 
+  on_loaded: ( duration ) =>
+    if duration > 0
+      time = time_to_string( parseInt( duration ) )
+      log "[Player] on_loaded", duration, time
+      @time_tot.html time.str
 
   on_play_clicked: =>
     @audio.toggle()
+    return false
 
   get_audio_data : (data) ->
     audio_data = {}
@@ -156,7 +172,12 @@ module.exports = class Player
   update_info: ( data ) ->
 
     log "[Player] update_info", data
-    room_link = "/#{data.user.info.username}/#{data.room.info.slug}"
+
+    if data.room.status.is_live
+      room_link = "/#{data.user.info.username}/#{data.room.info.slug}"
+    else
+      room_link = "/#{data.user.info.username}"
+
     @thumb.attr 'src', transform.player_thumb data.room.info.cover_url
     @title.html data.room.info.title
     @author.html "By " + data.user.info.name
@@ -165,9 +186,11 @@ module.exports = class Player
     @title.attr 'title', data.room.info.title
 
     @author.attr 'href',  "/" + data.user.info.username
+
+
     @title.attr 'href', room_link
 
-    @thumb.parent().attr 'href', room_link
+    # @thumb.parent().attr 'href', room_link
     @thumb.parent().attr 'title', data.room.info.title
 
     @share.update_with_data
@@ -246,6 +269,8 @@ module.exports = class Player
     log "[Player] loading show"
     @audio.snap_to perc
 
+    return false
+
   close: ->
     app.body.removeClass 'player_visible'
     @dom.removeClass 'visible'
@@ -258,3 +283,8 @@ module.exports = class Player
 
 
 
+  open_fullscreen: =>
+    @dom.addClass 'fullscreen'
+
+  close_fullscreen: =>
+    @dom.removeClass 'fullscreen'

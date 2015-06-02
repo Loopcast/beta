@@ -13,10 +13,20 @@ mobile_list_item()
   &:hover
     background: #d3d3d3
     color: #484739
-    
+
+.fullscreen_elements
+  display: none
 .mobile_headphones
   margin-top: 10px
+  
+.open_fullscreen
+  position: absolute
+  top: 20px
+  right: 25px
     
+body a.close_fullscreen
+  display: none
+  
 body
   min-width: 320px
   
@@ -531,4 +541,107 @@ body
     
   
 
+  body #player.fullscreen
+    height: 100%
+    z-index: 4
     
+    .fullscreen_elements
+      display: block
+      width: 100%
+      text-align: center
+      // .player_time
+      // .player_total_time
+      // .player_progress
+      //   display: inline-block
+        
+    a.close_fullscreen
+      display: block
+      margin-bottom: 10px
+      text-align: right
+      width: 100%
+        
+    .progress_wrapper
+      display: flex
+      .player_progress
+        flex: 1
+        display: block
+        margin: 7px 11px 0
+        
+      .player_total_time
+        font-size: 0.9em
+        font-weight: 600
+        
+      
+    .player_text
+      text-align: center
+      margin-bottom: 20px
+      
+    .player_buttons
+      position: absolute
+      bottom: 17px
+      width: 100%
+      height: 36px
+      margin: 0
+      flex: initial
+      left: 0
+      
+      MARGIN = 90px
+      .share_wrapper
+        position: absolute
+        left: 50%
+        margin: 0
+        margin-left: -(MARGIN)
+        top: 0
+      .ss-heart
+        position: absolute
+        right: 50%
+        top: 0
+        margin: 0
+        margin-right: -(MARGIN)
+        
+      .ss-heart
+      .share_wrapper
+        font-size: 1.5rem
+        
+    .player_title
+      font-size: 1rem
+      font-weight: bold
+      
+    .player_author
+      font-size: .9rem
+      
+    .no_fullscreen
+      display: none!important
+      
+    .centered
+      min-height: 100vh
+      flex-direction: column
+      padding: 10px
+      
+    .player_icon
+      width: 100%
+      height: auto
+      flex: 1
+      margin-bottom: 10px
+      
+    .player_button
+      display: inline-block
+      flex: initial
+      position: relative
+      height: auto
+      margin-top: 20px
+      margin-bottom: 10px
+      font-size: 1.7rem
+      
+      .icon
+        border: 1px solid white
+        border-radius: 50%
+        width: 52px
+        height: 52px
+        text-align: center
+        padding-top: 10px
+        padding-left: 8px
+        
+        &.ss-pause
+          // padding-top: 9px
+          padding-left: 1px

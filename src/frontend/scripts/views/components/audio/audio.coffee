@@ -46,7 +46,7 @@ module.exports = class AudioElement
       @duration = @dom[0].duration
     else
       log "[AudioElement] [on loaded metadata] it's live!"
-    @emit 'loaded'
+    @emit 'loaded', @duration
 
   on_paused: =>
     @is_playing = false

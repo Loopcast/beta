@@ -1,28 +1,52 @@
 #player(data-view="components/audio/player", style="display: none")
 
   .centered
+
+    a.close_fullscreen(href="#", title="Fullscreen player").for_mobile
+      span.icon.ss-contract
+
     a.player_icon(href="#", title="")
       img(src="/images/player_placeholder.png")
 
-    .player_button
+    .player_button.no_fullscreen
       a.icon.ss-play(href="#",title="Play") 
       .loading_spin.medium
 
-    .player_text
+    .player_text.no_fullscreen
       a.player_title(href="#", title="Title") Funky boogie night
       a.player_author(href="#", title="Author") By Thomas Amundsen
 
-    .player_progress
+    .player_progress.no_fullscreen
+      p.player_time.fullscreen_elements 00:00:00
+      p.player_total_time.fullscreen_elements 00:00:00
       span
 
-    .player_buttons
+    .player_buttons.fullscreen_elements
       a.icon.ss-heart(href="#")
 
       .share_wrapper( data-view="buttons/share" )
         a.player_share.ss-action(href="#", title="Share")
 
-    .player_right
+    .player_right.for_desktop
       p.player_time 00:00:00
       p.player_label Now Live
+
+    a.open_fullscreen(href="#", title="Fullscreen player").for_mobile.no_fullscreen
+      span.icon.ss-expand
+
+    .fullscreen_elements
+      .player_text
+        a.player_title(href="#", title="Title") Funky boogie night
+        a.player_author(href="#", title="Author") By Thomas Amundsen
+
+      .progress_wrapper
+        p.player_time 00:00:00
+        .player_progress
+          span
+        p.player_total_time 00:00:00
+        
+      .player_button
+        a.icon.ss-play(href="#",title="Play") 
+        .loading_spin.medium
 
   audio(autoplay="true", data-view="components/audio/audio")
