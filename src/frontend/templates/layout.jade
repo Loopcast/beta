@@ -25,6 +25,9 @@ html
 
 	body.loading.not_logged
 		block body
+			script( src="/js/fb_sdk.js" )
+			script
+				| fb_init( #{fb_app_id} );
 
 			include ./shared/header.jade
 
@@ -43,7 +46,8 @@ html
 			block modals
 			.md_overlay
 
-			#debug
+			//- #debug
+			//- 	a(href="#" onclick="fb_share()") SHARE
 
 		script( src="https://code.jquery.com/jquery-2.1.1.min.js" )
 		script( src="/js/app.js" )

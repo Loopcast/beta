@@ -26,6 +26,8 @@ module.exports = ( url, data = {}, callback ) ->
   data.intercom =
     id: s.intercom.id
 
+  data.fb_app_id = s.facebook.client_sdk_id
+
   data.transform = cloudinary_transform
 
   root = path.join( __dirname + '/../../frontend/templates' )

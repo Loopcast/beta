@@ -34,6 +34,14 @@ s.facebook =
     url: 'https://graph.facebook.com/v2.2/'
   pool : maxSockets: Infinity
 
+
+s.facebook.client_sdk_id = "1551393601809115"
+
+if process.env.NODE_ENV is 'local'
+  s.facebook.client_sdk_id = "1607669199514888"  
+
+
+
 s.soundcloud =
   id           : "afac925318ccc98d6aca4631b0a86a92"
   secret       : "be900f4e96a1d18da740c6536cc756ee"

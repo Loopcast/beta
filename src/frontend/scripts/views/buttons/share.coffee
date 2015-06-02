@@ -116,13 +116,25 @@ module.exports = class Share
 
   share_on_facebook: =>
     log "Share on facebook", @data
-    @open_popup 'http://www.facebook.com/sharer.php?s=100&amp;p[title]=' + @data.title + '&amp;p[summary]=' + @data.summary + '&amp;p[url]=' + @data.url + '&amp;p[images][0]=' + @data.image
+
+
+    FB.ui
+      method: 'feed',
+      link: @data.link,
+      caption: @data.title,
+      description: @data.summary,
+      picture: @data.image
+    , (response) ->
+      log response
+    # str = 'http://www.facebook.com/sharer.php?'+ 'u='+encodeURIComponent(@data.link)+ '&amp;t='+encodeURIComponent(@data.title)
+    # @open_popup 'http://www.facebook.com/sharer.php?s=100&amp;p[title]=' + @data.title + '&amp;p[summary]=' + @data.summary + '&amp;p[url]=' + @data.link + '&amp;p[images][0]=' + @data.image
+    # @open_popup str
 
   share_on_twitter: =>
-    @open_popup 'http://twitter.com/share?text=' + @data.title + '&amp;url=' + @data.url + '&amp;hashtags=gioia'
+    @open_popup 'http://twitter.com/share?text=' + @data.title + '&amp;url=' + @data.link + '&amp;hashtags=loopcast'
 
   share_on_google: =>
-    @open_popup "https://plus.google.com/share?url=#{@data.url}"
+    @open_popup "https://plus.google.com/share?url=#{@data.link}"
 
   open_popup: ( url ) ->
     window.open url, 'sharer', 'toolbar=0,status=0,width=548,height=325'
