@@ -1,3 +1,4 @@
+L        = require 'app/api/loopcast/loopcast'
 RoomView = require 'app/views/room/room_view'
 notify   = require 'app/controllers/notify'
 happens  = require 'happens'
@@ -66,8 +67,13 @@ module.exports = class ButtonWithTimer extends RoomView
     notify.info error
 
   start_timer: ->
-    @start_time = moment()
-    @interval = setInterval @tick, 1000
+    L.rooms.info @room_id, (error, response) =>
+      return if error
+      started_at = response.room.status[ @type ].started_at 
+      log "[ButtonWithTimer] room info", error, response, started_at
+
+      @start_time = moment( started_at )
+      @interval = setInterval @tick, 1000
 
   stop_timer: ->
     clearInterval @interval

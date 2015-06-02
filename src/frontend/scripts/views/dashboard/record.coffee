@@ -7,7 +7,8 @@ user     = require 'app/controllers/user'
 module.exports = class Record extends ButtonWithTimer
   active_text: 'STOP REC'
   inactive_text: 'RECORDED'
-
+  type: "recording"
+  
   start: ->
     log "[Record] start"
 

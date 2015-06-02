@@ -8,6 +8,7 @@ user     = require 'app/controllers/user'
 module.exports = class GoLive extends ButtonWithTimer
   active_text: 'GO OFFLINE'
   inactive_text: 'GO LIVE'
+  type: "live"
 
   on_room_created: (@room_id, @owner_id) =>
       
