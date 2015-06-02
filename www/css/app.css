@@ -3052,11 +3052,6 @@ body {
 /* line 239 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
 
 /* line 240 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
-  body .explore .rooms_grid.loading_visible_2 .loading {
-    opacity: 1;
-    -ms-filter: none;
-    filter: none;
-  }
 
 /* line 243 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .explore .rooms_grid .room_cell {
