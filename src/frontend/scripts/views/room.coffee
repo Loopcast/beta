@@ -133,7 +133,9 @@ module.exports = class Room extends LoggedView
       @show_guest_popup()
 
     if @dom.hasClass 'room_live'
-      delay 1000, => @on_room_live()
+      delay 1000, => 
+        log "----------------- (0)"
+        @on_room_live()
 
   update_genres: (genres) ->
     log "UPDATE GENRES", genres
@@ -153,6 +155,7 @@ module.exports = class Room extends LoggedView
   _on_live_changed: (data) =>
     log "[Room] on live changed", data
     if data
+      log "----------------- (1)"
       @on_room_live()
     else
       @on_room_offline()
@@ -162,17 +165,12 @@ module.exports = class Room extends LoggedView
     navigation.set_lock_live false
     
   on_room_live: ->
-    # TEMP
-
     @dom.addClass 'room_live'
     if not user_controller.check_guest_owner()
-      delay 1, =>
-        L.rooms.info @room_id, (error, response) =>
-
-          if not error
-            app.player.play response
-          else
-            log "[Room] on_room_live error", error
+      log "----------------- on_room_live"
+      app.player.fetch_room @room_id, =>
+        log "[ROOM] live room fetched."
+        # app.player.play @room_id
     else
       navigation.set_lock_live true
     

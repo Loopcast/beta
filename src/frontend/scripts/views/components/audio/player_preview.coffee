@@ -12,9 +12,6 @@ module.exports = (dom) ->
   if not room_id
     return
 
-  # temp
-  title = dom.find( '.session_title' ).text()
-
   if handler.length <= 0
     handler       = dom.find '.image .ss-pause, .loading_spin'
 
@@ -37,32 +34,19 @@ module.exports = (dom) ->
     else
       on_stop()
 
-  on_stop = (_room_id) ->
-    # if _room_id is room_id
+  on_stop = ->
     is_playing = false
     dom.removeClass 'playing'
     dom.removeClass 'preloading'
     icon.removeClass( 'ss-pause' ).addClass( 'ss-play' )
 
-
-  request_play = ->
-    log "[player_preview] request_play"
-    dom.addClass 'preloading'
-
-    if not room_info
-      L.rooms.info room_id, (error, response) -> 
-
-        log 'room info', response
-        room_info = response
-        app.player.play room_info
-    else
-      app.player.play room_info
-
   toggle = ->
     if is_playing
+      dom.removeClass 'preloading'
       app.player.stop()
     else
-      request_play()
+      dom.addClass 'preloading'
+      app.player.play room_id
 
   init = ->
     handler.on 'click', toggle

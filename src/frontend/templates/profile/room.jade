@@ -53,8 +53,10 @@ block content
         .profile_image.upload_wrapper
           img(src="#{transform.avatar(user.info.avatar)}")
 
-        a.for_mobile.room_play_handler(data-view="room/mobile_room_play_trigger", href="#")
-          span.icon.ss-play.circle_icon
+        if room
+          div.room_play_handler(data-room-id="#{room._id}", data-view="components/audio/player_preview")
+            a.icon.ss-play.circle_icon(href="#",title="Play") 
+            .loading_spin
 
         .change_cover.upload_wrapper(data-view="components/image_uploader", data-id="profile_cover")
           a.upload_element.button_with_icon.black_button(href="#")

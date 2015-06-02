@@ -32,10 +32,15 @@ body
   
 .room_play_handler
   position: absolute
+  width: 60px
+  height: 60px
   top: 50%
   left: 50%
   transform translateX(-50%) translateY(-50%)
   z-index: 2
+  &.player_preview 
+    .circle_icon
+      opacity: 1
 
 .mobile_header
   height: 55px
@@ -289,6 +294,7 @@ body
       .player_title
         font-size: 0.8em
       .player_button
+        margin: 0 22px
         display: flex
         align-items: center
         justify-content: center
@@ -307,9 +313,11 @@ body
       .player_progress
         display: none
       .player_buttons
-        margin-left: 10px
+        margin-left: 5px
       .player_buttons > *
-        margin: 0 10px  
+        margin: 0 4px  
+        position: relative
+        top: 2px
       .player_buttons  
       .player_right
         flex: 1

@@ -1,5 +1,6 @@
 api = require 'api/loopcast/loopcast'
 transform = require 'lib/cloudinary/transform'
+notify          = require 'app/controllers/notify'
 
 moment = require 'moment'
 
@@ -8,6 +9,13 @@ module.exports = class Player
   like_lock: false
   is_recorded: false
   last_time: ""
+  data_rooms: {}
+  ### 
+  the map of the ids of the rooms requested (even not loaded).
+  This is used to avoid multiple calls at the same time
+  ###
+  requested_rooms: {} 
+  current_room_id: null
 
   constructor: ( @dom ) ->
     @thumb    = @dom.find '.player_icon img'
@@ -95,18 +103,51 @@ module.exports = class Player
     return audio_data
 
     
-  play: (data = @data) ->
-    log "[Player] play", data
+  play: (room_id) ->
+    log "[Player] play", room_id
+    if not room_id? and @current_room_id
+      room_id = @current_room_id
 
-    api.rooms.play data.room._id, (error, response) ->
+    if not @data_rooms[ room_id ]?
+      
 
-    @data = data
+      @fetch_room room_id, => @_play room_id
+    else
+      @_play room_id
+    
+  fetch_room: ( room_id, callback ) ->
+    if @data_rooms[ room_id ]?
+      callback()
+    else
+
+      return if @requested_rooms[ room_id ]?
+
+      @requested_rooms[ room_id ] = true
+
+      log "[Player] no informations. fetching...", room_id
+      api.rooms.info room_id, (error, response) => 
+
+        log '[Player] room info', response
+        @data_rooms[ room_id ] = response
+        callback()
+
+
+  _play: ( room_id ) ->
+    @current_room_id = room_id
+
+    @open()
+
+    # Call the api for stats
+    api.rooms.play room_id, (error, response) ->
+
+    @data = @data_rooms[ room_id ]
+
+    log "[Player] _play", @data
+
+
     @update_info @data
     @audio.set_data @get_audio_data( @data )
     @audio.play()
-
-
-
 
   stop: ->
     @audio.pause()
@@ -156,8 +197,7 @@ module.exports = class Player
 
     # @loading.fadeOut()
     @dom.removeClass 'loading'
-
-    @open()
+    log "[Player] loading hide"
 
   on_audio_stopped: =>
     log "[Player] on_audio_stopped"
@@ -189,6 +229,7 @@ module.exports = class Player
 
   on_snapped: ->
     @dom.removeClass 'loading'
+    log "[Player] loading hide"
 
   on_progress: (data) =>
     @time.html data.time.str
@@ -202,6 +243,7 @@ module.exports = class Player
     perc = x / w
 
     @dom.addClass 'loading'
+    log "[Player] loading show"
     @audio.snap_to perc
 
   close: ->
@@ -210,7 +252,8 @@ module.exports = class Player
 
   open: =>
     app.body.addClass 'player_visible'
-    @dom.show()
+    @dom.show().addClass( 'loading' )
+    log "[Player] loading show"
     delay 1, => @dom.addClass 'visible'
 
 
