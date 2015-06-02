@@ -55,6 +55,10 @@ body
   z-index: 4
   align-items: center
   justify-content: center
+  transition: transform .1s ease-out
+  
+  &.hide
+    transform: translate3d(0, -55px, 0)
   a
     flex: 1
     text-align: center
@@ -90,7 +94,7 @@ body
     
 .mobile_dropdown_opened_2
   .background_mobile_dropdown
-    opacity: 1  
+    opacity: 0  
 
 
 .background_mobile_dropdown
@@ -125,6 +129,7 @@ body
         opacity: 0
     .mobile_dropdown.mobile_opened
       transform: translate3d(0,0,0)
+      top: 55px
       
 
 
@@ -330,7 +335,7 @@ body
         
     .mobile_dropdown
       position: fixed
-      top: 55px
+      top: 0px
       left: 0
       width: 100%
       z-index: 3

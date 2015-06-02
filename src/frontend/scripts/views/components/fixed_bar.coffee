@@ -2,7 +2,8 @@ module.exports = ( dom ) ->
   h = dom.height()
   fixed = false
 
-  app.window.on 'scroll', ( y ) ->
+  app.window.on 'scroll', ( data ) ->
+    y = data.y
 
     if y >= h and not fixed
       fixed = true

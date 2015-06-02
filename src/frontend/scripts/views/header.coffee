@@ -1,6 +1,6 @@
 navigation      = require 'app/controllers/navigation'
 user_controller = require 'app/controllers/user'
-module.exports = class Header
+module.exports  = class Header
 
 	current_page: ""
 	current_mobile_page: ""
@@ -43,6 +43,18 @@ module.exports = class Header
 			page = obj.data 'menu-mobile'
 			log "[Header] check_mobile_menu", page
 			$( ".#{page}_item" ).addClass "selected"
+
+		ref = @
+
+		mobile_visible = true
+		mobile_header = $ '.mobile_header'
+		app.window.on 'scroll', (data)->
+			if mobile_visible and data.direction is "down" and not $( 'body' ).hasClass( 'mobile_dropdown_opened' )
+				mobile_header.addClass 'hide'
+				mobile_visible = false
+			else if not mobile_visible and data.direction is 'up'
+				mobile_header.removeClass 'hide'
+				mobile_visible = true
 
 
 	check_fixed_menu: ->
