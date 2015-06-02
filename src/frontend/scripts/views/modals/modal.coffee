@@ -40,11 +40,13 @@ module.exports = class Modal
 
     @dom.removeClass 'md_show'    
     delay 400, =>
-      @dom.removeClass 'md_visible'
+
+      @dom?.removeClass 'md_visible'
 
       do @hide_loading
 
-      @emit 'closed'
+      @emit 'closed' if @emit?
+        
 
   show_loading: ( ) ->    
     @dom.addClass 'loading'
