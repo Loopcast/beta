@@ -3655,9 +3655,15 @@ body {
     margin-bottom: 10px;
     text-align: right;
     width: 100%;
+    position: absolute;
+    right: 20px;
+    z-index: 1;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    top: 21px;
   }
 
-/* line 563 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 569 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .progress_wrapper {
     display: -webkit-box;
     display: -moz-box;
@@ -3667,7 +3673,7 @@ body {
     display: flex;
   }
 
-/* line 565 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 571 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .progress_wrapper .player_progress {
     -webkit-box-flex: 1;
     -moz-box-flex: 1;
@@ -3680,19 +3686,19 @@ body {
     margin: 7px 11px 0;
   }
 
-/* line 570 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 576 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .progress_wrapper .player_total_time {
     font-size: 0.9em;
     font-weight: 600;
   }
 
-/* line 575 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 581 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .player_text {
     text-align: center;
     margin-bottom: 20px;
   }
 
-/* line 579 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 585 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .player_buttons {
     position: absolute;
     bottom: 17px;
@@ -3709,7 +3715,7 @@ body {
     left: 0;
   }
 
-/* line 589 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 595 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .player_buttons .share_wrapper {
     position: absolute;
     left: 50%;
@@ -3718,7 +3724,7 @@ body {
     top: 0;
   }
 
-/* line 595 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 601 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .player_buttons .ss-heart {
     position: absolute;
     right: 50%;
@@ -3727,29 +3733,29 @@ body {
     margin-right: -90px;
   }
 
-/* line 602 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 608 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .player_buttons .ss-heart,
   body #player.fullscreen .player_buttons .share_wrapper {
     font-size: 1.5rem;
   }
 
-/* line 606 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 612 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .player_title {
     font-size: 1rem;
     font-weight: bold;
   }
 
-/* line 610 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 616 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .player_author {
     font-size: 0.9rem;
   }
 
-/* line 613 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 619 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .no_fullscreen {
     display: none !important;
   }
 
-/* line 616 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 622 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .centered {
     min-height: 100vh;
     -webkit-box-orient: vertical;
@@ -3761,7 +3767,7 @@ body {
     padding: 10px;
   }
 
-/* line 621 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 627 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .player_icon {
     width: 100%;
     height: auto;
@@ -3775,7 +3781,7 @@ body {
     margin-bottom: 10px;
   }
 
-/* line 627 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 633 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .player_button {
     display: inline-block;
     -webkit-box-flex: 1;
@@ -3792,7 +3798,7 @@ body {
     font-size: 1.7rem;
   }
 
-/* line 636 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 642 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .player_button .icon {
     border: 1px solid #fff;
     -webkit-border-radius: 50%;
@@ -3804,7 +3810,7 @@ body {
     padding-left: 8px;
   }
 
-/* line 645 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 651 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .player_button .icon.ss-pause {
     padding-left: 1px;
   }
