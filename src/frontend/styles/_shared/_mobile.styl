@@ -109,7 +109,9 @@ body
 .profile_theme .big_number span.icon
   display: none
 @media (max-width: 700px)
-  
+  body.player_visible #content
+    padding-bottom: 55px
+    
   .profile_theme .big_number span.icon
     display: block
     
@@ -291,7 +293,11 @@ body
         .ss-directup
           display: inline-block
     #player
+      height: 55px
       transition: height .2s ease-out
+      .player_icon
+        height: 55px
+        width: 55px
       
       &.fullscreen
         height: 100%
@@ -299,7 +305,9 @@ body
       .player_title
         font-size: 0.8em
       .player_button
-        margin: 0 22px
+        font-size: 1.3rem
+        padding: 0 18px
+        margin: 0
         display: flex
         align-items: center
         justify-content: center
@@ -310,6 +318,9 @@ body
         .icon
           position: relative
           top: 5px
+        .loading_spin
+          position: relative
+          left: -5px
           
       .player_text
         margin-left: 10px
