@@ -35,7 +35,7 @@ s.facebook =
   pool : maxSockets: Infinity
 
 
-s.facebook.client_sdk_id = "1551393601809115"
+s.facebook.client_sdk_id = s.facebook.app.id
 
 if process.env.NODE_ENV is 'local'
   s.facebook.client_sdk_id = "1607669199514888"  
