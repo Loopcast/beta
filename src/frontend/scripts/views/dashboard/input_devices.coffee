@@ -9,6 +9,10 @@ module.exports = class InputDevices extends Select
 
     super dom
 
+    appcast.on 'selected_device', ( device ) ->
+
+      $( "select option[value='#{device}']" ).prop( 'selected', true ).change()
+
     appcast.on 'input_devices', ( devices ) ->
 
       # clear options
