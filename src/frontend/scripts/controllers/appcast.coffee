@@ -107,7 +107,7 @@ appcast.start_stream = ( mount_point, device_name ) ->
 
     return
 
-  password    = "loopcast2015"
+  password = "loopcast2015"
 
   payload = 
     device_name : device_name
@@ -116,6 +116,12 @@ appcast.start_stream = ( mount_point, device_name ) ->
 
   appcast.set "stream:starting", true
   appcast.messages.send JSON.stringify [ "start_stream", payload ]
+
+appcast.select_device = ( device_name ) ->
+
+  payload = device_name : device_name
+
+  appcast.messages.send JSON.stringify [ "start_audio_device", payload ]
 
 appcast.stop_stream = ->
 
@@ -130,13 +136,9 @@ appcast.stop_stream = ->
 appcast.callbacks =
   input_devices  : ( args ) ->
 
-    # console.log "+ socket controllr got input devices", args.devices
-
-    # saves list of devices and broadcast change
     appcast.set 'input_devices', args.devices
 
-    # automaticaly testing stream
-    # appcast.start_stream "Soundflower (2ch)"
+    appcast.set 'selected_device', args.selected
 
   stream_started : ( args ) ->
 
@@ -162,15 +164,6 @@ appcast.callbacks =
     # save current stream:online status
     appcast.set 'stream:online'  , false
     appcast.set "stream:stopping", null
-
-###
-# Listening to messages
-###
-appcast.on 'input_device', ->
-
-  if appcast.get 'stream:online'
-    console.error '- input device changed while stream:online'
-    console.error '? what should we do'
 
 # should try to connect only on it's own profile page
 # appcast.connect()

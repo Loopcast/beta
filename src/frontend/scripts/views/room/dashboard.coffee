@@ -54,6 +54,7 @@ module.exports = class Dashboard extends RoomView
     @input_select.on 'changed', (data) ->
       log "[Dashboard] input changed", data
       appcast.set 'input_device', data
+      appcast.select_device data
 
     @appcast_not_running_message.on 'click', @toggle_not_running_balloon
     appcast.on 'connected', @on_appcast_connected
