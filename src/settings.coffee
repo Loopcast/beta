@@ -37,7 +37,7 @@ s.facebook =
 
 s.facebook.client_sdk_id = s.facebook.app.id
 
-if is_dev_machine
+if s.is_dev_machine
   s.facebook.client_sdk_id = "1607669199514888"  
 
 
