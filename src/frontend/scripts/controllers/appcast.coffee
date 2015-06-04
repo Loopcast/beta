@@ -87,6 +87,8 @@ appcast.connect = ->
     reader.onload = ( e ) ->
       buffer = new Float32Array e.target.result
 
+      db = Math.log10( buffer ) * 20
+
       appcast.set 'stream:vu', buffer  
 
     reader.readAsArrayBuffer e.data
