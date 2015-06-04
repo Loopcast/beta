@@ -46,21 +46,27 @@ module.exports =
       # build channel string
       room_subscribe_id    = pusher_room_id owner_id, room_id
 
-      load_profile user.username, ( error, user_data ) ->
-        
-        # console.log "Listener", user_data
+      query = _id: user._id
 
-        data = 
-          method: request.payload.method
-          user : 
-            id: user_data.id
-            name: user_data.name
-            occupation: user_data.occupation
-            avatar: user_data.avatar
-            followers: user_data.followers
-            url: "/" + user_data.id
+      User
+        .findOne( query )
+        .select( "info.name info.username info.occupation info.avatar likes" )
+        .lean()
+        .exec ( error, response ) ->
 
-        response = pusher.trigger room_subscribe_id, "listener:#{data.method}", data
+          if error then return reply Boom.badRequest "user not found"
 
-        reply( response ).header "Cache-Control", "no-cache, must-revalidate"
+          data = 
+            method: request.payload.method
+            user : 
+              id        : response.info.username
+              name      : response.info.name
+              occupation: response.info.occupation
+              avatar    : response.info.avatar
+              followers : response.info.likes
+              url       : "/" + response.info.username
+
+          response = pusher.trigger room_subscribe_id, "listener:#{data.method}", data
+
+          reply( response ).header "Cache-Control", "no-cache, must-revalidate"
 
