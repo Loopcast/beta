@@ -35,6 +35,8 @@ appcast.connect = ->
 
     appcast.messages.send JSON.stringify [ 'get_input_devices' ]
 
+    appcast.messages.send JSON.stringify [ 'version' ]
+
   appcast.messages.onclose = ->
     console.info '- AppCast isnt OPEN, will retry to connect'
 
@@ -95,17 +97,11 @@ appcast.connect = ->
 
 appcast.start_stream = ( mount_point, device_name ) ->
 
-  console.info " START STRAEM!!!"
-
   if appcast.get( "stream:starting" )
-    console.error "waiting stream to start, cant start again"
-
-    return
+    return console.error "waiting stream to start, cant start again"
 
   if appcast.get( "stream:online" )
-    console.error "stream is already online, cant start again"
-
-    return
+    return console.error "stream is already online, cant start again"
 
   password = "loopcast2015"
 
@@ -128,6 +124,9 @@ appcast.stop_stream = ->
   appcast.set "stream:stopping", true
   appcast.messages.send JSON.stringify [ "stop_stream" ]
 
+appcast.get_version = ->
+
+  appcast.messages.send JSON.stringify [ "version" ]
 
 ###
 # callbacks are called by "messages" coming from the WebsocketServer created
@@ -138,7 +137,15 @@ appcast.callbacks =
 
     appcast.set 'input_devices', args.devices
 
-    appcast.set 'selected_device', args.selected
+    appcast.set 'selected_device', args.active
+
+  audio_device_started : ( args ) ->
+
+    if args? and args.error?
+
+      console.error "- audio_device_started error:", args.error
+
+      return
 
   stream_started : ( args ) ->
 
@@ -164,6 +171,10 @@ appcast.callbacks =
     # save current stream:online status
     appcast.set 'stream:online'  , false
     appcast.set "stream:stopping", null
+
+  version_response: ( args ) ->
+
+    console.log "current appcat version ~>", args
 
 # should try to connect only on it's own profile page
 # appcast.connect()
