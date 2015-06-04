@@ -103,7 +103,7 @@ appcast.start_stream = ( mount_point, device_name ) ->
   if appcast.get( "stream:online" )
     return console.error "stream is already online, cant start again"
 
-  password = "loopcast2015"
+  password = "beta-radio-client"
 
   payload = 
     device_name : device_name
