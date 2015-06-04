@@ -5,8 +5,8 @@ EXPIRE = s.cache.chat.messages.timeout
 
 module.exports = ( room_id, data, callback ) ->
 
-  console.log '---'
-  console.log "saving message for #{room_id}"
+  # console.log '---'
+  # console.log "saving message for #{room_id}"
 
   console.log 
 
