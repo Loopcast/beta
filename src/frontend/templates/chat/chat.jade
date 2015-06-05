@@ -40,13 +40,20 @@
 
       .users
 
-    .share.for_guest
-      h3 Share this room
-      .social
-        a.spritesheet.share_twitter(href="#", title="Share on Twitter") Share on Twitter
-        a.spritesheet.share_fb(href="#", title="Share on Facebook") Share on Facebook
-        a.spritesheet.share_friends(href="#", title="Share qwith friends") Share with friends
-        a.spritesheet.share_share(href="#", title="Share") Share
+    if room
+      .share.for_guest
+        h3 Share this room
+        .social(
+          data-view="buttons/share", 
+          data-title="#{room.info.title}",
+          data-summary="#{room.info.about}",
+          data-permalink="/#{room.info.user}/#{room.info.slug}",
+          data-image="#{room.info.cover_url}",
+          data-type="2"
+        )
+          a.spritesheet.share_fb(href="#", title="Share on Facebook") Share on Facebook
+          a.spritesheet.share_twitter(href="#", title="Share on Twitter") Share on Twitter
+          a.spritesheet.share_google(href="#", title="Share with Google") Share with Google
 
   .chat_user_popup(data-view="chat/people_popup")
 
