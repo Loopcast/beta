@@ -26,18 +26,18 @@ module.exports = class RoomModal extends Modal
   on_views_binded: ( scope ) =>
     return if not scope.main
 
-    @room_image_uploader = view.get_by_dom @dom.find( '.room_image' )
+    # @room_image_uploader = view.get_by_dom @dom.find( '.room_image' )
 
-    if not @room_image_uploader
-      log "[rooms/createModal] views not binded yet!!!"
-      return
+    # if not @room_image_uploader
+    #   log "[rooms/createModal] views not binded yet!!!"
+    #   return
 
     # log "[Room Modal] @room_image_uploader", @room_image_uploader
 
     @genre = view.get_by_dom @dom.find( '.genre' )
 
 
-    @room_image_uploader.on 'completed', @_on_cover_changed
+    # @room_image_uploader.on 'completed', @_on_cover_changed
     @title.on 'keyup'                 , @_on_title_changed
     @location.on 'keyup'              , @_on_location_changed
     @description.on 'keyup'           , @_on_description_changed
@@ -129,7 +129,7 @@ module.exports = class RoomModal extends Modal
 
   destroy: -> 
     log "[RoomModal] destroy"
-    @room_image_uploader.off 'completed', @_on_cover_changed
+    # @room_image_uploader.off 'completed', @_on_cover_changed
     @title.off       'keyup'  , @_on_title_changed
     @location.off    'keyup'  , @_on_location_changed
     @description.off 'keyup'  , @_on_description_changed
