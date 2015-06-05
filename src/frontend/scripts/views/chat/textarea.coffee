@@ -82,6 +82,10 @@ module.exports = class Textarea extends ChatView
 
 
   send_message: ( message, additional_data = {} ) ->
+
+    if app.settings.touch_device
+      document.activeElement.blur()
+      
     data = 
       owner_id: @owner_id
       user_id: user.data.username
