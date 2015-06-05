@@ -8,16 +8,12 @@ schema = new Schema
 
   likes      : { type: Number, default: 0 }
 
-  plays      : { type: Number, default: 0 }
+  listeners  : { type: Number, default: 0 }
 
   started_at : Date
   stopped_at : Date
   duration   : Number
 
-  public     : Boolean
   url        : String
 
-  s3         : Object
-
-
-module.exports = mongoose.model 'Set', schema
+module.exports = mongoose.model 'Stream', schema
