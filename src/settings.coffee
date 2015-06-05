@@ -26,19 +26,30 @@ s.cloudinary =
     cover  : 'loopcast_cover_image'
     profile: 'loopcast_profile_image'
 
+
+facebook_apps_id =
+  local: "1607669199514888"
+  stage: "1608982952716846"
+  live: "1551393601809115"
+
 s.facebook =
   app:
-    id           : "1551393601809115"
+    id           : facebook_apps_id.live
     secret       : "7d4307b592fb8aab287582835bdba803"
   graph:
     url: 'https://graph.facebook.com/v2.2/'
   pool : maxSockets: Infinity
 
+switch process.env.NODE_ENV
+  when 'local'
+    s.facebook.client_sdk_id = facebook_apps_id.local
+  when 'beta'
+    s.facebook.client_sdk_id = facebook_apps_id.stage
+  else
+    s.facebook.client_sdk_id = facebook_apps_id.live
 
-s.facebook.client_sdk_id = s.facebook.app.id
 
-if s.is_dev_machine
-  s.facebook.client_sdk_id = "1607669199514888"  
+  
 
 
 

@@ -208,13 +208,33 @@ class UserController
       social = "facebook"
       title = "facebook"
 
-    else if s.indexOf( 'spotify.com' ) > -1
-      social = "spotify"
-      title = "spotify"
+    else if s.indexOf( 'google' ) > -1
+      social = "google"
+      title = "google"
 
-    else if s.indexOf( 'soundcloud.com' ) > -1
-      social = "soundcloud"
-      title = "soundcloud"
+    else if s.indexOf( 'tumblr' ) > -1
+      social = "tumblr"
+      title = "tumblr"
+
+    else if s.indexOf( 'twitter.com' ) > -1
+      social = "twitter"
+      title = "twitter"
+
+    else if s.indexOf( 'vimeo.com' ) > -1
+      social = "vimeo"
+      title = "vimeo"
+
+    else if s.indexOf( 'youtube.com' ) > -1
+      social = "youtube"
+      title = "youtube"
+
+    # else if s.indexOf( 'soundcloud.com' ) > -1
+    #   social = "soundcloud"
+    #   title = "soundcloud"
+
+    # else if s.indexOf( 'soundcloud.com' ) > -1
+    #   social = "soundcloud"
+    #   title = "soundcloud"
 
     else
       social = "generic"

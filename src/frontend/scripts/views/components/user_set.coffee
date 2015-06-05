@@ -43,6 +43,7 @@ module.exports = ( dom ) ->
   _on_views_binded = ->
     settings_handler = view.get_by_dom dom.find( '.settings_button' )
     edit_modal = view.get_by_dom $( '#room_modal' )
+    edit_modal.dom.data( 'modal-close', true )
 
   _download = ->
     log "[Set] download"

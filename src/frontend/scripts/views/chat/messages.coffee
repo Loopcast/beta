@@ -15,8 +15,8 @@ module.exports = class Messages extends ChatView
 
     @chat = $ '.chat_content'
 
-    @dom.on 'mouseover', '.img_wrapper_2', @on_people_over
-    @dom.on 'mouseout', '.img_wrapper_2', @on_people_out
+    # @dom.on 'mouseover', '.img_wrapper_2', @on_people_over
+    # @dom.on 'mouseout', '.img_wrapper_2', @on_people_out
 
     @popup = view.get_by_dom '.chat_user_popup'
 

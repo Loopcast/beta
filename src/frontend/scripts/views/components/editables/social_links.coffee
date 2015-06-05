@@ -49,6 +49,7 @@ module.exports = class SocialLinks
         
 
   build_read_mode_from_data: ->
+    log "build_read_mode_from_data", @data
     html = ""
     for item in @data
       html += @read_template( item )
@@ -64,6 +65,7 @@ module.exports = class SocialLinks
 
   add_new: =>
     @new_link_btn.before @template_input.clone()
+    return false
 
 
   get_template: ( callback ) ->

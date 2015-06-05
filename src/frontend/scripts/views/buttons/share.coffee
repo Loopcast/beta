@@ -11,18 +11,22 @@ module.exports = class Share
   constructor: (@dom) ->
     ref = @
 
-    html = require 'templates/buttons/share'
+    @normal_type = not @dom.data( 'type' )?
 
-    @dom.append html()
+    log "NORMAL TYPE", @normal_type
+    if @normal_type
+      html = require 'templates/buttons/share'
+
+      @dom.append html()
 
 
     @handler   = @dom.find '.ss-action'
     @black_box = @dom.find '.share_box' 
     @input     = @dom.find 'input'
     @copy_btn  = @dom.find '.button'
-    @facebook_link = @dom.find '.share_popup_facebook'
-    @twitter_link = @dom.find '.share_popup_twitter'
-    @google_link = @dom.find '.share_popup_google'
+    @facebook_link = @dom.find '.share_popup_facebook, .share_fb'
+    @twitter_link = @dom.find '.share_popup_twitter, .share_twitter'
+    @google_link = @dom.find '.share_popup_google, .share_google'
 
     @handler.on 'click', @toggle
     @dom.on 'click',  (e) -> e.stopPropagation()
@@ -126,18 +130,27 @@ module.exports = class Share
       picture: @data.image
     , (response) ->
       log response
+
+    return false
     # str = 'http://www.facebook.com/sharer.php?'+ 'u='+encodeURIComponent(@data.link)+ '&amp;t='+encodeURIComponent(@data.title)
     # @open_popup 'http://www.facebook.com/sharer.php?s=100&amp;p[title]=' + @data.title + '&amp;p[summary]=' + @data.summary + '&amp;p[url]=' + @data.link + '&amp;p[images][0]=' + @data.image
     # @open_popup str
 
   share_on_twitter: =>
     @open_popup 'http://twitter.com/share?text=' + @data.title + '&amp;url=' + @data.link + '&amp;hashtags=loopcast'
+    return false
 
   share_on_google: =>
     @open_popup "https://plus.google.com/share?url=#{@data.link}"
+    return false
 
   open_popup: ( url ) ->
-    window.open url, 'sharer', 'toolbar=0,status=0,width=548,height=325'
+    w = 548
+    h = 325
+    left = (screen.width/2)-(w/2)
+    top = (screen.height/2)-(h/2)
+    window.open url, 'sharer', 'toolbar=0,status=0,width='+w+',height='+h+',top='+top+',left='+left
+    return false
   
 
   
