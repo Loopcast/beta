@@ -16,17 +16,17 @@
       input.location(name="location", type="text", placeholder="Where are you?")
       textarea.description.white_textarea(name="description", placeholder="Describe your event")
 
-      .room_image.upload_wrapper(data-view="components/image_uploader", data-id="profile_cover")
+      //- .room_image.upload_wrapper(data-view="components/image_uploader", data-id="profile_cover")
 
-        .upload_element.button.signin.gray_button.no_shadow(title="Upload Cover") 
-          span.progress
-          span.text.create_label Upload Cover
-          span.text.edit_label Change Cover
+      //-   .upload_element.button.signin.gray_button.no_shadow(title="Upload Cover") 
+      //-     span.progress
+      //-     span.text.create_label Upload Cover
+      //-     span.text.edit_label Change Cover
 
-          form.cloudinary_form
-            input.api_key(type="hidden", name="api_key", value="#{cloudinary.api_key}")
-            input.cloud_name(type="hidden", name="cloud_name", value="#{cloudinary.cloud_name}")
-            input.unsigned_id(type="hidden", name="unsigned_id", value="#{cloudinary.unsigned_ids.cover}")
+      //-     form.cloudinary_form
+      //-       input.api_key(type="hidden", name="api_key", value="#{cloudinary.api_key}")
+      //-       input.cloud_name(type="hidden", name="cloud_name", value="#{cloudinary.cloud_name}")
+      //-       input.unsigned_id(type="hidden", name="unsigned_id", value="#{cloudinary.unsigned_ids.cover}")
 
       
       a.button.signin.yellow_button.no_shadow.submit_button.create_label(title="Open Room") Open Room
