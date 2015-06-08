@@ -5,7 +5,7 @@
 
 /* line 13 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 675 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+/* line 188 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
 /* line 10 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
@@ -25,7 +25,7 @@
 
 /* line 90 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 675 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+/* line 188 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
 /* line 11 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
@@ -53,7 +53,7 @@
 
 /* line 5 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
 
-/* line 675 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+/* line 188 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
 /* line 12 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
@@ -4322,7 +4322,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 /* line 280 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/all.styl */
 #player .player_progress {
   background: #3e3e40;
-  height: 6px;
+  height: 4px;
   -o-box-flex: 6;
   box-flex: 6;
   -webkit-flex: 6;

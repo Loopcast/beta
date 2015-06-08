@@ -20675,7 +20675,7 @@ jade.debug.unshift({ lineno: 7, filename: jade.debug[0].filename });
 buf.push("<div class=\"socials\">");
 jade.debug.unshift({ lineno: undefined, filename: jade.debug[0].filename });
 jade.debug.unshift({ lineno: 8, filename: jade.debug[0].filename });
-buf.push("<a href=\"#\" title=\"Share on Facebook\" onClick=\"_gaq.push(['_trackEvent', 'Referral', 'Share', '']);\" class=\"spritesheet share_popup_facebook\">");
+buf.push("<a href=\"#\" title=\"Share on Facebook\" onClick=\"_gaq.push(['_trackEvent', 'Referral', 'Click', '']);\" class=\"spritesheet share_popup_facebook\">");
 jade.debug.unshift({ lineno: undefined, filename: jade.debug[0].filename });
 jade.debug.unshift({ lineno: 8, filename: jade.debug[0].filename });
 buf.push("Share on Facebook");
@@ -20684,7 +20684,7 @@ jade.debug.shift();
 buf.push("</a>");
 jade.debug.shift();
 jade.debug.unshift({ lineno: 9, filename: jade.debug[0].filename });
-buf.push("<a href=\"#\" title=\"Share on Twitter\" onClick=\"_gaq.push(['_trackEvent', 'Referral', 'Share', '']);\" class=\"spritesheet share_popup_twitter\">");
+buf.push("<a href=\"#\" title=\"Share on Twitter\" onClick=\"_gaq.push(['_trackEvent', 'Referral', 'Click', '']);\" class=\"spritesheet share_popup_twitter\">");
 jade.debug.unshift({ lineno: undefined, filename: jade.debug[0].filename });
 jade.debug.unshift({ lineno: 9, filename: jade.debug[0].filename });
 buf.push("Share on Twitter");
@@ -20693,7 +20693,7 @@ jade.debug.shift();
 buf.push("</a>");
 jade.debug.shift();
 jade.debug.unshift({ lineno: 10, filename: jade.debug[0].filename });
-buf.push("<a href=\"#\" title=\"Share on Google Plus\" onClick=\"_gaq.push(['_trackEvent', 'Referral', 'Share', '']);\" class=\"spritesheet share_popup_google\">");
+buf.push("<a href=\"#\" title=\"Share on Google Plus\" onClick=\"_gaq.push(['_trackEvent', 'Referral', 'Click', '']);\" class=\"spritesheet share_popup_google\">");
 jade.debug.unshift({ lineno: undefined, filename: jade.debug[0].filename });
 jade.debug.unshift({ lineno: 10, filename: jade.debug[0].filename });
 buf.push("Share on Google Plus");
@@ -20709,7 +20709,7 @@ buf.push("</div>");
 jade.debug.shift();
 jade.debug.shift();;return buf.join("");
 } catch (err) {
-  jade.rethrow(err, jade.debug[0].filename, jade.debug[0].lineno,".share_box\n  h4 Share\n  .share_row\n    input.link_input(type=\"text\",  value=\"\")\n    a.button.yellow_button.small_button_2(href=\"#\", title=\"Copy\") Copy\n\n  .socials\n    a.spritesheet.share_popup_facebook(href=\"#\", title=\"Share on Facebook\" onClick=\"_gaq.push(['_trackEvent', 'Referral', 'Share', '']);\") Share on Facebook\n    a.spritesheet.share_popup_twitter(href=\"#\", title=\"Share on Twitter\" onClick=\"_gaq.push(['_trackEvent', 'Referral', 'Share', '']);\") Share on Twitter\n    a.spritesheet.share_popup_google(href=\"#\", title=\"Share on Google Plus\" onClick=\"_gaq.push(['_trackEvent', 'Referral', 'Share', '']);\") Share on Google Plus");
+  jade.rethrow(err, jade.debug[0].filename, jade.debug[0].lineno,".share_box\n  h4 Share\n  .share_row\n    input.link_input(type=\"text\",  value=\"\")\n    a.button.yellow_button.small_button_2(href=\"#\", title=\"Copy\") Copy\n\n  .socials\n    a.spritesheet.share_popup_facebook(href=\"#\", title=\"Share on Facebook\" onClick=\"_gaq.push(['_trackEvent', 'Referral', 'Click', '']);\") Share on Facebook\n    a.spritesheet.share_popup_twitter(href=\"#\", title=\"Share on Twitter\" onClick=\"_gaq.push(['_trackEvent', 'Referral', 'Click', '']);\") Share on Twitter\n    a.spritesheet.share_popup_google(href=\"#\", title=\"Share on Google Plus\" onClick=\"_gaq.push(['_trackEvent', 'Referral', 'Click', '']);\") Share on Google Plus");
 }
 }
 }, {});
