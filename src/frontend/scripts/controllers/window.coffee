@@ -34,7 +34,7 @@ $( 'body' ).on 'click', -> win.emit "body:clicked"
 # scroll event
 
 win.obj.on 'scroll', on_scroll = ->
-  y = win.obj.scrollTop();
+  y = Math.max 0, win.obj.scrollTop();
 
   d = if y > win.y then "down" else "up"
   win.y = y

@@ -46,16 +46,24 @@ module.exports  = class Header
 
 		ref = @
 
-		mobile_visible = true
-		mobile_header = $ '.mobile_header'
-		app.window.on 'scroll', (data)->
-			if mobile_visible and data.direction is "down" and not $( 'body' ).hasClass( 'mobile_dropdown_opened' )
-				mobile_header.addClass 'hide'
-				mobile_visible = false
-			else if not mobile_visible and data.direction is 'up'
-				mobile_header.removeClass 'hide'
-				mobile_visible = true
+		@mobile_visible = true
+		@mobile_header = $ '.mobile_header'
+		@mobile_timeout = null
+		app.window.on 'scroll', (data) =>
+			if @mobile_visible and data.direction is "down" and not app.body.hasClass( 'mobile_dropdown_opened' )
+				clearTimeout @mobile_timeout
+				@mobile_timeout = setTimeout @hide_mobile_menu, 100
+			else if data.direction is 'up'
+				clearTimeout @mobile_timeout
+				@mobile_timeout = setTimeout @show_mobile_menu, 10
 
+	hide_mobile_menu: =>
+		@mobile_header.addClass 'hide'
+		@mobile_visible = false
+
+	show_mobile_menu: =>
+		@mobile_header.removeClass 'hide'
+		@mobile_visible = true
 
 	check_fixed_menu: ->
 		obj = $( '[data-menu-fixed]' )
