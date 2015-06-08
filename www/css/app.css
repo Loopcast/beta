@@ -7876,3 +7876,11 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 .no_touch_device #help_balloon .dashboard_yellow:hover {
   background: #d6a600;
 }
+
+/* line 468 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/room.styl */
+
+/* line 470 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/room.styl */
+.room_live .appcast_running_message select,
+.room_recording .appcast_running_message select {
+  display: none;
+}

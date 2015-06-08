@@ -118,6 +118,8 @@ module.exports = class Room extends LoggedView
     @publish_modal.on 'room:published', @on_room_published
     @live_button = view.get_by_dom '#go_live_button'
     @live_button.on 'changed', @_on_live_changed
+    @record_button = view.get_by_dom '#record_button'
+    @record_button.on 'changed', @_on_record_changed
 
     @emit 'room:created', data
 
@@ -155,10 +157,17 @@ module.exports = class Room extends LoggedView
   _on_live_changed: (data) =>
     log "[Room] on live changed", data
     if data
-      log "----------------- (1)"
       @on_room_live()
     else
       @on_room_offline()
+
+  _on_record_changed: (data) =>
+    log "[Room] on live changed", data
+    if data
+      @dom.addClass 'room_recording'
+    else
+      @dom.removeClass 'room_recording'
+
   on_room_offline: ->
     @dom.removeClass 'room_live'
     app.player.stop()
