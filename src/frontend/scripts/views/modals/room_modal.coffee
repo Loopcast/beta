@@ -16,6 +16,7 @@ module.exports = class RoomModal extends Modal
     @title = @dom.find '.roomname'
     
     @location = @dom.find '.location'
+    @location_label = @dom.find '.location_label'
     @description = @dom.find '.description'
     @message = @dom.find '.message'
 
@@ -26,7 +27,7 @@ module.exports = class RoomModal extends Modal
   on_views_binded: ( scope ) =>
     return if not scope.main
 
-    # @room_image_uploader = view.get_by_dom @dom.find( '.room_image' )
+    @room_image_uploader = view.get_by_dom @dom.find( '.room_image' )
 
     # if not @room_image_uploader
     #   log "[rooms/createModal] views not binded yet!!!"
@@ -37,7 +38,7 @@ module.exports = class RoomModal extends Modal
     @genre = view.get_by_dom @dom.find( '.genre' )
 
 
-    # @room_image_uploader.on 'completed', @_on_cover_changed
+    @room_image_uploader.on 'completed', @_on_cover_changed
     @title.on 'keyup'                 , @_on_title_changed
     @location.on 'keyup'              , @_on_location_changed
     @description.on 'keyup'           , @_on_description_changed
@@ -120,6 +121,7 @@ module.exports = class RoomModal extends Modal
     # @location.val data.location
     # @description.val data.about
     @location.hide()
+    @location_label.hide()
     @description.hide()
 
     @open()
