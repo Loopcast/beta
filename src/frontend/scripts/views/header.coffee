@@ -50,7 +50,7 @@ module.exports  = class Header
 		@mobile_header = $ '.mobile_header'
 		@mobile_timeout = null
 		app.window.on 'scroll', (data) =>
-			if @mobile_visible and data.direction is "down" and not app.body.hasClass( 'mobile_dropdown_opened' )
+			if @mobile_visible and data.direction is "down" and not app.body.hasClass( 'mobile_dropdown_opened' ) and data.y > 80
 				clearTimeout @mobile_timeout
 				@mobile_timeout = setTimeout @hide_mobile_menu, 100
 			else if data.direction is 'up'

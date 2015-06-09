@@ -416,6 +416,8 @@ body
       .big_number
         padding: 0 20px
         background: rgba(41, 44, 47, 0.8)    
+        border-bottom: none
+        border-top: none
       .big_number span.text
         display: none
       .big_number span.number
@@ -677,3 +679,19 @@ body
         &.ss-pause
           // padding-top: 9px
           padding-left: 1px
+          
+  body 
+    .profile_content.chat .chat_main .chat_content
+      height: 100%
+    .profile_content.chat
+      min-height: initial
+      flex: 1
+    .createroom
+      display: flex
+      min-height: 100vh
+      flex-direction: column
+      padding-top: 55px
+      
+    &.room_page .dynamic_wrapper
+      padding-top: 0
+      

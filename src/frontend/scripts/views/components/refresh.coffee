@@ -1,2 +1,2 @@
 module.exports = (dom) ->
-  delay 500, -> app.window.obj.resize()
+  delay 1000, -> app.window.obj.resize()
