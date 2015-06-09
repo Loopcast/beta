@@ -91,6 +91,10 @@ module.exports  = class Header
 		@dom.find( '.myprofile_link' ).off( 'click' ).on( 'click', -> 
 			navigation.go( "/" + user_controller.data.username )
 		)  
+
+		@dom.find( '.feedback_link' ).off( 'click' ).on( 'click', (e) -> 
+			e.stopPropagation()
+		)  
 		# navigation.bind wrapper
 
 	on_user_updated: ( data ) =>
