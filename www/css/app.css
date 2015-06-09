@@ -5,7 +5,7 @@
 
 /* line 13 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 188 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+/* line 969 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
 /* line 10 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
@@ -25,7 +25,7 @@
 
 /* line 90 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 188 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+/* line 969 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
 /* line 11 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
@@ -53,7 +53,7 @@
 
 /* line 5 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
 
-/* line 188 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+/* line 969 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
 /* line 12 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
@@ -2049,7 +2049,7 @@ div.tagsinput.link_input {
   width: 23px;
   height: 23px;
   padding-left: 2px;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
 }
 
 /* line 822 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_ui.styl */
@@ -2184,7 +2184,7 @@ div.tagsinput.link_input {
   background: #373b3f;
   padding: 12px 14px 15px;
   border-radius: 4px;
-  box-shadow: 1px 3px 21px -2px #000;
+  box-shadow: 0 0 1px rgba(76,86,103,0.25), 0 2px 18px rgba(31,37,50,0.32);
   top: -80px;
   text-align: left;
   font-size: 0.8rem;
@@ -6903,7 +6903,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 13 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 471 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+/* line 472 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
 /* line 10 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
@@ -6923,7 +6923,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 90 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 471 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+/* line 472 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
 /* line 11 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
@@ -6951,7 +6951,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 5 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
 
-/* line 471 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+/* line 472 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
 /* line 12 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
@@ -7125,8 +7125,8 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 .dashboard_bar #share_dashboard {
   position: absolute;
   left: 100%;
-  top: 4px;
-  margin-left: 25px;
+  top: 1px;
+  margin-left: 23px;
 }
 
 /* line 90 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
@@ -7705,52 +7705,53 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   display: block;
   text-align: center;
   border-radius: 50%;
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
   background: #8b8b8b;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: bold;
   position: absolute;
   left: 100%;
   top: 42px;
   margin-left: 20px;
   padding-top: 1px;
+  padding-left: 2px;
 }
 
-/* line 450 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
-
 /* line 451 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+
+/* line 452 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .no_touch_device .profile_content.chat .chat_sidebar .spritesheet:hover {
   opacity: 0.8;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
   filter: alpha(opacity=80);
 }
 
-/* line 454 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 455 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .no_touch_device .profile_content.chat .message .name:hover {
   color: #4592d4;
 }
 
-/* line 457 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 458 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .no_touch_device #dashboard_help:hover {
   background: #727272;
 }
 
-/* line 460 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 461 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 
-/* line 462 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 463 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .no_touch_device #help_balloon .dashboard_button:hover {
   background: #30363d;
 }
 
-/* line 465 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 466 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .no_touch_device #help_balloon .dashboard_yellow:hover {
   background: #d6a600;
 }
 
-/* line 468 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 469 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 
-/* line 470 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 471 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .room_live .appcast_running_message select,
 .room_recording .appcast_running_message select {
   display: none;
