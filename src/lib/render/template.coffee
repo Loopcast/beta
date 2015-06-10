@@ -38,9 +38,17 @@ module.exports = ( url, data = {}, callback ) ->
 
     if error then return callback error
 
-    template = jade.compile content,
-      filename    : url
-      compileDebug: on
-      pretty      : on
+    try
+      template = jade.compile content,
+        filename    : url
+        compileDebug: on
+        pretty      : on      
+    catch e
+      # comment this try catch if you want to see the original error
+      console.error 'error compiling jade template'
+      console.error e
+
+      return callback e, null
+
 
     callback null, template data
