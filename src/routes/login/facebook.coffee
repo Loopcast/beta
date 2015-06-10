@@ -73,6 +73,11 @@ module.exports =
         user.info.created_at = user.created_at
         user.info.email      = user.data.email
 
+        # true only when the user didnt exist
+        user.info.first_time = data.get( 'not_found' )
+
         request.auth.session.set user: user.info
+
+          
 
         return reply.redirect '/login/successful'
