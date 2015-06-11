@@ -1,10 +1,6 @@
-- if ( typeof(user.first_time) !== 'undefined' ) {
-  script
-    | var first_time = true;
-- }
-
 script
   | window.opener.app.login( !{JSON.stringify(user)} );
   | window.opener._gaq.push(['_trackEvent', 'Customer Login', 'Successful', '']);
-  | if( typeof(first_time) !== 'undefined' ) window.opener._gaq.push(['_trackEvent', 'Customer Registration', 'Successful', '']);
+  if user.first_time
+    | window.opener._gaq.push(['_trackEvent', 'Customer Registration', 'Successful', '']);
   | window.close()
