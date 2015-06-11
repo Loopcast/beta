@@ -57,10 +57,7 @@ module.exports =
           if error then return reply error
 
           create user, ( error, user ) ->
-            if error 
-              console.log "error creating user ->", error
-              
-              return reply Boom.expectationFailed 'couldnt create user, please contact support'
+            if error then return reply error
 
             data.set 'user', user
 
