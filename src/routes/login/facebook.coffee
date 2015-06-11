@@ -75,6 +75,4 @@ module.exports =
 
         request.auth.session.set user: user.info
 
-          
-
         return reply.redirect '/login/successful'
