@@ -86,7 +86,7 @@ schema.pre 'save', ( next, done ) ->
   doc = @
 
   query = 
-    'info.user': @info.user
+    _owner     : @_owner
     'info.slug': @info.slug
 
   Room.find( query, _id: off )
