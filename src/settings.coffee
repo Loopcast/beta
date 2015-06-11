@@ -98,7 +98,7 @@ if s.is_beta
 
   # TODO: create beta bucket
   s.s3 =
-    bucket: 'rekorded'
+    bucket: 'rekorded-beta'
     key   : "AKIAJEYWTAUA3QWZGTOA"
     secret: "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"
 
