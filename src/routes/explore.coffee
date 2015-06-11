@@ -43,8 +43,6 @@ module.exports =
         data.current_genre = ""
 
 
-      console.log "Loading", genres
-
       template url, data, ( error, response ) ->
 
         if not error then return reply response
