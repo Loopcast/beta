@@ -1,8 +1,8 @@
 s =
   # beta is our "production"
   is_beta        : process.env.NODE_ENV is 'beta'
+  is_local       : process.env.NODE_ENV is 'local'
   port           : process.env.PORT || 1993
-  is_dev_machine : require("os").hostname().indexOf( 'local' ) != -1
   debug          : off
   in_production  : process.env.NODE_ENV is 'production'
   https          : off
@@ -41,15 +41,13 @@ s.facebook =
   pool : maxSockets: Infinity
 
 switch process.env.NODE_ENV
-  when 'local'
-    s.facebook.client_sdk_id = facebook_apps_id.local
   when 'beta'
-    s.facebook.client_sdk_id = facebook_apps_id.stage
-  else
     s.facebook.client_sdk_id = facebook_apps_id.live
+  else
+    s.facebook.client_sdk_id = facebook_apps_id.stage
 
-
-  
+if s.is_local
+  s.facebook.client_sdk_id   = facebook_apps_id.local
 
 
 

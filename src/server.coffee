@@ -14,7 +14,7 @@ server.start = ( when_done ) ->
   hapi.start ->
     console.log 'Server running at:', hapi.info.uri
 
-    if s.is_dev_machine then s.base_path = 'http://localhost:1993'
+    if s.is_local then s.base_path = 'http://localhost:1993'
 
     hapi.register {
       register: require('hapi-swagger')

@@ -11,7 +11,7 @@ console.log ""
 
 # require newrelic when running on "beta" or "development" environment
 # local machines ( developers testing ) should not be running newrelic
-if process.env.NODE_ENV is 'development' or process.env.NODE_ENV is 'beta'
+if process.env.NODE_ENV isnt 'local'
   console.log '+ Requesting new relic'
   newrelic = require 'newrelic'
 
