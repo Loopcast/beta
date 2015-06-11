@@ -25,7 +25,15 @@ module.exports =
       url = '/profile/room'
 
       # always inject user data into requests
-      data = request.auth.credentials || {}
+      data = request.auth.credentials
+
+      if not data
+
+        return template url, data, ( error, response ) ->
+
+          if not error then return reply response
+
+          return reply( "Page not found" ).code 404
 
       User
         .findById( data.user._id )
