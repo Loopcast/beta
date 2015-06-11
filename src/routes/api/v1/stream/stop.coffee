@@ -55,6 +55,14 @@ module.exports =
 
             return reply Boom.resourceGone( "room not found or user not owner" )
 
+          # status object to be sent down a socket Channel
+          status =
+            is_live: false
+            live: 
+              stopped_at: now().format()
+
+          pusher.trigger room_id, "status", status
+
           update =
             $set:
               'status.is_live'         : false

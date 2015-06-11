@@ -61,8 +61,7 @@ module.exports =
             live: 
               started_at: now().format()
 
-          room_channel = "#{username}.#{room_id}"
-          response     = pusher.trigger room_channel, "status", status
+          pusher.trigger room_id, "status", status
 
           # update for mongodb
           # sets the document URL to be the streaming URL

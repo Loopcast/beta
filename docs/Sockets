@@ -13,7 +13,7 @@ Channels / messages
         username
         name
 
-  - #{user_id}.#{room}
+  - #{room_id}
 
     This channel broadcast the following message
 
