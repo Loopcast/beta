@@ -875,6 +875,15 @@ input, textarea, div.tagsinput
         absolute bottom 100% left 50%
         border-width: 0 10px 10px 10px
         border-color: transparent transparent SHARE_BOX transparent
+  
+  &.on_right
+    .share_box
+      left: auto
+      right: 0
+      transform: translateX(7px)
+      &:after
+        left: auto
+        right: 0
   &.opened
     opacity: 1!important
     .share_box

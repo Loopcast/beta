@@ -88,11 +88,17 @@ module.exports = class Share
     app.emit 'share:opened', @uid
 
     # Check the position of the handler
+
+
+
     top = @handler.offset().top
     y = app.window.y
     h = @black_box.height()
     diff = top - y
-    log 'position', diff, h+100
+    # log 'position', diff, h+100
+
+
+    
 
     if diff < h + 100
       @dom.addClass 'on_bottom'
@@ -100,6 +106,16 @@ module.exports = class Share
       @dom.removeClass 'on_bottom'
 
     @dom.addClass 'opened'
+
+    delay 1, =>
+
+      o = @black_box.offset()
+      w1  = @black_box.width()
+      # log "[Share]", o.left, w1, o.left+w1, app.window.w
+      if o.left + w1 > app.window.w - 20
+        @dom.addClass 'on_right'
+
+      
 
   update_link: ( link ) ->
     @input.val link
