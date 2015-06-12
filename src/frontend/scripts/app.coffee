@@ -101,7 +101,7 @@ class App
 		if @settings.after_login_url.length > 0
 			url = @settings.after_login_url
 			@settings.after_login_url = ""
-		else if navigation.prev_url.length > 0
+		else if navigation.prev_url.length > 0 and navigation.prev_url isnt "/"
 			log "navigation prev url", navigation.prev_url
 			url = navigation.prev_url
 		else

@@ -1,21 +1,19 @@
-if !user
-  extends ../layout
-else
-  block content
+extends ../layout
+block seo
+  if room
+    title #{room.info.title} | #{user.info.name} | Live on Loopcast
+    meta( name="description" content="Create room description" ) 
+  else
+    title Open Your Room and Start Streaming on Loopcast
+    meta( name="description" content="Stream, record and save your DJ mixes instantly. Create your own room, interact with your audience and see who’s listening in real time." ) 
+
+
+block content
+
+  if !user
     div(data-view="components/redirect_hp")
+  else
 
-
-  extends ../layout
-  block seo
-    if room
-      title #{room.info.title} | #{user.info.name} | Live on Loopcast
-      meta( name="description" content="Create room description" ) 
-    else
-      title Open Your Room and Start Streaming on Loopcast
-      meta( name="description" content="Stream, record and save your DJ mixes instantly. Create your own room, interact with your audience and see who’s listening in real time." ) 
-
-
-  block content
     input(type='hidden' id='owner_id' value="#{user._id}")
     input(type='hidden' id='owner_avatar' value="#{user.info.avatar}")
     input(type='hidden' id='owner_name' value="#{user.info.name}")
