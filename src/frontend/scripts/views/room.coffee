@@ -171,7 +171,7 @@ module.exports = class Room extends LoggedView
   on_room_offline: ->
     @dom.removeClass 'room_live'
     app.player.stop()
-    navigation.set_lock_live false
+    navigation.set_lock_live false, ""
     
   on_room_live: ->
     @dom.addClass 'room_live'
@@ -181,7 +181,7 @@ module.exports = class Room extends LoggedView
         log "[ROOM] live room fetched."
         # app.player.play @room_id
     else
-      navigation.set_lock_live true
+      navigation.set_lock_live true, location.pathname
     
 
 
@@ -257,7 +257,7 @@ module.exports = class Room extends LoggedView
     location.pathname is '/rooms/create'
 
   destroy: ->
-    navigation.set_lock_live false
+    navigation.set_lock_live false, ""
 
     if @room_created
       pusher.unsubscribe @room_subscribe_id

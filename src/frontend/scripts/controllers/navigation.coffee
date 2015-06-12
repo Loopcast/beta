@@ -13,6 +13,7 @@ class Navigation
   custom_class: ""
   DEFAULT_SELECTOR: '#content .inner_content'
   lock_live: false
+  locked_live_url : ""
   prev_url: ""
   mobile_style: true
 
@@ -45,9 +46,10 @@ class Navigation
         ref.custom_class = 'loading_on_top ' + el.data( 'nav-custom-class' )
 
 
-  set_lock_live: ( lock ) ->
+  set_lock_live: ( lock, url ) ->
     log "[Navigation] set_lock_live", lock
     @lock_live = lock
+    @locked_live_url = url
 
   url_changed: ( req, next ) =>
 
@@ -83,8 +85,8 @@ class Navigation
 
         app.off 'exit_modal:answered'
         if not answer
-          log "[Navigation] go silent", @prev_url
-          @go_silent @prev_url
+          log "[Navigation] go silent", @locked_live_url
+          @go_silent @locked_live_url
           next()
         else
           @load_url req
