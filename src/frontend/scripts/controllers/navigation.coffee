@@ -62,6 +62,10 @@ class Navigation
       next()
       return
 
+    if req.url.indexOf( 'download'  ) >= 0
+      next()
+      return
+
     if @first_time
       @first_time = false
       log "[Navigation] FIRST TIME, returning"
