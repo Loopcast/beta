@@ -2644,8 +2644,8 @@ div.tagsinput div {
 /* line 25 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
 .open_fullscreen {
   position: absolute;
-  top: 20px;
-  right: 25px;
+  top: 10px;
+  right: 10px;
 }
 
 /* line 30 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
