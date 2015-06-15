@@ -4,11 +4,11 @@
       .cell
         #appcast_not_running_balloon.balloon.appcast_not_running_balloon(data-view="components/help/balloon", data-target=".appcast_not_running_message")
           h2 Get started in less than 15s 
-          p Download and run appcast before you can select your input device. (No installation required)
+          p Download and run appcast before you can select your input device. (No installation is required)
           ul
             li 
               | 1. 
-              a(href="/download/Appcast.zip", title="Download Appcast") Download Appcast
+              a(href="/download/Appcast.zip", title="Download Appcast", onClick="_gaq.push(['_trackEvent', 'DownloadAppcast', 'Download', '']);") Download Appcast
             li 2. Open Appcast to run it
             li 3. Choose your input device below
 
