@@ -5,7 +5,7 @@
 
 /* line 13 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 255 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+/* line 192 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
 /* line 10 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
@@ -25,7 +25,7 @@
 
 /* line 90 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 255 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+/* line 192 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
 /* line 11 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
@@ -53,7 +53,7 @@
 
 /* line 5 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
 
-/* line 255 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+/* line 192 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
 /* line 12 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
@@ -100,9 +100,9 @@
   color: #ffc80a;
 }
 
-/* line 188 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_bootstrap.styl */
+/* line 191 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_bootstrap.styl */
 
-/* line 53 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 16 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 
 /* line 1 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header {
@@ -120,11 +120,16 @@ header.header {
 }
 
 /* line 12 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+header.header .beta_banner {
+  color: #fff;
+}
+
+/* line 15 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .header_shadow_item {
   transition: box-shadow 0.2s linear;
 }
 
-/* line 15 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 18 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .background {
   position: absolute;
   top: 0;
@@ -135,20 +140,20 @@ header.header .background {
   background: #24292d;
 }
 
-/* line 22 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 25 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .centered {
   position: relative;
   z-index: 1;
 }
 
-/* line 25 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 28 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .centered.second {
   z-index: 0;
 }
 
-/* line 28 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 31 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 
-/* line 29 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 32 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .left > *,
 header.header .right > * {
   float: left;
@@ -157,7 +162,7 @@ header.header .right > * {
   height: 49px;
 }
 
-/* line 36 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 39 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .left > *.settings,
 header.header .right > *.settings {
   padding-top: 13px;
@@ -167,7 +172,7 @@ header.header .right > *.settings {
   position: relative;
 }
 
-/* line 42 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 45 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .left > *.settings .ss-settings,
 header.header .right > *.settings .ss-settings {
   transition: -webkit-transform 0.1s linear;
@@ -184,9 +189,9 @@ header.header .right > *.settings .ss-settings {
   color: #ccc;
 }
 
-/* line 54 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 57 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 
-/* line 55 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 58 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .left > *.settings.hovered .ss-settings,
 header.header .right > *.settings.hovered .ss-settings {
   -webkit-transform: rotate(180deg);
@@ -194,18 +199,18 @@ header.header .right > *.settings.hovered .ss-settings {
   transform: rotate(180deg);
 }
 
-/* line 58 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 61 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .left > *.settings .ss-settings:hover,
 header.header .right > *.settings .ss-settings:hover {
   color: #fff;
 }
 
-/* line 62 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 65 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .menu_item {
   position: relative;
 }
 
-/* line 64 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 67 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .menu_item:after {
   content: "";
   position: absolute;
@@ -217,39 +222,39 @@ header.header .menu_item:after {
   transition: height 0.1s ease-out;
 }
 
-/* line 73 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 76 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .menu_item.selected:after {
   height: 3px;
 }
 
-/* line 75 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 78 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .menu_item.selected.homepage_item:after {
   height: 0;
 }
 
-/* line 78 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 81 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .left {
   float: none;
 }
 
-/* line 80 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 83 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .left > * {
   border-right: 1px solid #1f1f1f;
   border-left: 1px solid #353535;
   padding: 13px 25px;
 }
 
-/* line 86 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 89 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .left > *:first-child {
   border-left: none;
 }
 
-/* line 88 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 91 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .left > *.no_border {
   border-right: none;
 }
 
-/* line 91 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 94 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .right {
   float: none;
   position: absolute;
@@ -257,48 +262,48 @@ header.header .right {
   right: 0;
 }
 
-/* line 96 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 99 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .right > * {
   float: none;
   display: inline-block;
 }
 
-/* line 100 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 103 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .settings_dropdown {
   width: 140px;
 }
 
-/* line 104 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 107 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .search_box {
   position: relative;
   padding-left: 56px;
 }
 
-/* line 107 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 110 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .search_box .icon {
   position: absolute;
   top: 16px;
   left: 25px;
 }
 
-/* line 111 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 114 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .search_box form {
   display: inline-block;
 }
 
-/* line 114 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 117 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .user_logged {
   display: none;
   padding: 0;
 }
 
-/* line 117 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 120 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .user_logged > * {
   display: inline-block;
   vertical-align: middle;
 }
 
-/* line 120 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 123 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .user_logged .thumb_wrapper {
   padding-right: 30px;
   margin-right: 20px;
@@ -306,7 +311,7 @@ header.header .user_logged .thumb_wrapper {
   height: 49px;
 }
 
-/* line 125 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 128 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .user_logged .thumb_wrapper .rounded_top_bar {
   width: 28px;
   height: 28px;
@@ -316,7 +321,7 @@ header.header .user_logged .thumb_wrapper .rounded_top_bar {
   margin-top: 11px;
 }
 
-/* line 132 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 135 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .user_logged .thumb_wrapper span {
   position: absolute;
   top: 42%;
@@ -324,9 +329,9 @@ header.header .user_logged .thumb_wrapper span {
   font-size: 0.6em;
 }
 
-/* line 137 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 140 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 
-/* line 138 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 141 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .user_logged .thumb_wrapper.hovered span {
   top: 36%;
   -webkit-transform: rotate(180deg);
@@ -334,22 +339,22 @@ header.header .user_logged .thumb_wrapper.hovered span {
   transform: rotate(180deg);
 }
 
-/* line 142 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 145 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .user_dropdown {
   right: 0px;
 }
 
-/* line 145 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 148 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .ss-dropdown {
   color: #ccc;
 }
 
-/* line 148 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 151 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .ss-dropdown:hover {
   color: #fff;
 }
 
-/* line 151 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 154 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .ss-mail {
   display: block;
   position: relative;
@@ -358,14 +363,14 @@ header.header .ss-mail {
   color: #ccc;
 }
 
-/* line 158 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 161 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .ss-mail:hover {
   color: #fff;
 }
 
-/* line 161 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 164 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 
-/* line 162 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 165 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 .first_loaded header {
   opacity: 1;
   -ms-filter: none;
@@ -373,43 +378,43 @@ header.header .ss-mail:hover {
           filter: none;
 }
 
-/* line 164 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 167 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 
-/* line 165 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 168 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 
-/* line 166 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 169 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 .logged header .user_logged {
   display: inline-block;
 }
 
-/* line 168 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 171 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 .logged header .login_link {
   display: none;
 }
 
-/* line 171 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 174 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 .unfixed {
   padding-top: 0;
 }
 
-/* line 173 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 176 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 .unfixed header {
   position: relative;
 }
 
-/* line 177 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 180 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 
-/* line 178 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 181 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 .no_touch_device .header_shadow_item.selected {
   box-shadow: inset 0 0 10px rgba(0,0,0,0.4);
 }
 
-/* line 180 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 183 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 .no_touch_device .header_shadow_item:hover {
   box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
 }
 
-/* line 183 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 186 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/_shared/_header_footer.styl */
 footer {
   background: #1f1f1f;
   text-align: center;
