@@ -8,8 +8,6 @@ module.exports = ( room_id, data, callback ) ->
   # console.log '---'
   # console.log "saving message for #{room_id}"
 
-  console.log 
-
   key  = "#{room_id}:messages"
   data = JSON.stringify data
 
