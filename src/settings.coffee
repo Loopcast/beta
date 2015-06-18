@@ -10,14 +10,14 @@ s =
   server:
     url: 'http://beta.loopcast.fm'
 
-###
-#  when running locally s.base_path will be overwritten by "server.coffee"
-#  which will set it to be the address of the running machine
-###
 if s.is_beta
   s.base_path = "http://beta.loopcast.fm"
 else
   s.base_path = "http://staging.loopcast.fm"
+
+if s.is_local
+  s.base_path = "http://localhost:1993"
+
 
 s.cloudinary =
   cloud_name      : 'loopcast', 
@@ -28,28 +28,12 @@ s.cloudinary =
     profile: 'loopcast_profile_image'
 
 
-facebook_apps_id =
-  local: "1607669199514888"
-  stage: "1608982952716846"
-  live: "1551393601809115"
-
 s.facebook =
   app:
     id           : facebook_apps_id.live
     secret       : "7d4307b592fb8aab287582835bdba803"
   graph:
     url: 'https://graph.facebook.com/v2.2/'
-  pool : maxSockets: Infinity
-
-switch process.env.NODE_ENV
-  when 'beta'
-    s.facebook.client_sdk_id = facebook_apps_id.live
-  else
-    s.facebook.client_sdk_id = facebook_apps_id.stage
-
-if s.is_local
-  s.facebook.client_sdk_id   = facebook_apps_id.local
-
 
 
 s.soundcloud =
@@ -72,33 +56,28 @@ s.cache =
       length: 25
       timeout: 7 * 24 * 60 * 60
 
-s.mailchimp =
-  key: "266e1e3b7b198e6d32fb1939fc230110"
-  id : "7d55764424"
 
-  url: "https://us3.api.mailchimp.com/2.0/lists/subscribe.json"
+
+s.mongo = url: process.env.MONGOHQ_URL
+
+r_info  = url.parse process.env.REDISCLOUD_URL
+s.redis = 
+  host     : r_info.hostname
+  port     : r_info.port
+  password : r_info.auth.split(":")[1]
+  kue_db   : 0
 
 # IF PRODUCTION
 if s.is_beta
 
-  # ~ databases
+  s.facebook.client_sdk_id = "1551393601809115"
 
-  s.mongo = url: process.env.MONGOHQ_URL
+  # ~ app session
 
-  r_info  = url.parse process.env.REDISCLOUD_URL
-  s.redis = 
-    host     : r_info.hostname
-    port     : r_info.port
-    password : r_info.auth.split(":")[1]
-    kue_db   : 0
-
-  # TODO: create beta bucket
   s.s3 =
     bucket: 'rekorded-beta'
     key   : "AKIAJEYWTAUA3QWZGTOA"
     secret: "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"
-
-  # ~ app session
 
   s.session =
     secret : "super-duper-secret-that-nobody-would-evah-guess-saxophone"
@@ -117,29 +96,17 @@ if s.is_beta
 
   s.radio = 'http://radio.loopcast.fm:8000'
 
-# IF LOCAL OR DEVELOPMENT
-else
+# IF STAGING OR LOCAL
+if not s.is_beta
 
-  # ~ databases
+  s.facebook.client_sdk_id = "1608982952716846"
 
-  s.mongo =
-    url: "mongodb://l00pc4st:l00pc4st2015@lamppost.7.mongolayer.com:10499,lamppost.2.mongolayer.com:10456/beta?replicaSet=set-54e241573646b81682000bbf"
-    options: 
-      user: 'l00pc4st',
-      pass: 'l00pc4st2015'
-
-  s.redis =
-    host     : 'pub-redis-10651.us-east-1-1.2.ec2.garantiadata.com'
-    port     : 10651
-    password : 'loopcast2015'
-    kue_db   : 0
+  # ~ app session
 
   s.s3 =
     bucket: 'rekorded'
     key   : "AKIAJEYWTAUA3QWZGTOA"
     secret: "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"
-    
-  # ~ app session
 
   s.session =
     secret : "super-duper-secret-that-nobody-would-evah-guess-saxophone"
@@ -157,6 +124,25 @@ else
   s.tape = 'http://tape.loopcast.fm:8000'
 
   s.radio = 'http://radio.loopcast.fm:8000'
+
+# IF LOCAL
+if s.is_local
+
+  s.facebook.client_sdk_id   = "1607669199514888"
+
+  # ~ databases
+
+  s.mongo =
+    url: "mongodb://l00pc4st:l00pc4st2015@lamppost.7.mongolayer.com:10499,lamppost.2.mongolayer.com:10456/beta?replicaSet=set-54e241573646b81682000bbf"
+    options: 
+      user: 'l00pc4st',
+      pass: 'l00pc4st2015'
+
+  s.redis =
+    host     : 'pub-redis-10651.us-east-1-1.2.ec2.garantiadata.com'
+    port     : 10651
+    password : 'loopcast2015'
+    kue_db   : 0
 
 
 module.exports = s
