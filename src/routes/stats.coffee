@@ -15,8 +15,9 @@ module.exports =
     mem = process.memoryUsage()
 
     reply
-      sockets: sockets.length
-      memory:
+      NODE_ENV : process.env.NODE_ENV
+      sockets  : sockets.length
+      memory   :
         rss:       to_mb mem.rss
         heapTotal: to_mb mem.heapTotal
         heapUsed:  to_mb mem.heapUsed
