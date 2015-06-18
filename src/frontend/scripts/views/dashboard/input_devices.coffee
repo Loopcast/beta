@@ -27,17 +27,14 @@ module.exports = class InputDevices extends Select
       # TODO: let the user know if previouly selected isn't available anymore
       dom.find( "select" ).html " "
 
-      if dom.find( "select" ).is(":focus")
-        
-
-        dom.find( "select" ).blur()
-        # TODO: find a way of refreshing the list when it's open
-        
-        # dom.find( "select" ).focus()
-
-      
       for device in devices
         dom.find( "select" ).append "<option value='#{device}'>#{device}</option>"
+
+      if dom.find( "select" ).is(":focus")
+        
+        dom.find( "select" ).blur()
+        # TODO: find a way of refreshing the list when it's open
+        # dom.find( "select" ).focus()
 
     @on 'changed', ( device ) ->
       log "[device] changed", device
