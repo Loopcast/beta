@@ -16,7 +16,7 @@ module.exports =
   handler: ( request, reply ) ->
 
     # check for real file
-    url  = root + '/www/js/' + request.params.file
+    url  = root + '/public/js/' + request.params.file
 
     console.log 
 

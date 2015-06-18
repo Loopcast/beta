@@ -56,7 +56,7 @@ global.pack = require '../package'
 
 global.root = path.join( __dirname + "/.."  )
 
-global.www = ( path ) -> __dirname + "/../www/#{path}"
+global.www = ( path ) -> __dirname + "/../public/#{path}"
 
 # widely used functions
 

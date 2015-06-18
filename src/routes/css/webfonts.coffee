@@ -13,4 +13,4 @@ module.exports =
   path  : '/css/webfonts/{path*}'
   handler: 
     directory:
-      path: root + '/www/css/webfonts/'
+      path: root + '/public/css/webfonts/'

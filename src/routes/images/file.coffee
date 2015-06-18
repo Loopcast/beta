@@ -13,6 +13,6 @@ module.exports =
 
   handler: ( request, reply ) ->
 
-    root = path.join __dirname, '../../../www/images'
+    root = path.join __dirname, '../../../public/images'
 
     reply.file root + '/' + request.params.file

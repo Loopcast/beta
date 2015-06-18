@@ -14,7 +14,7 @@ module.exports =
 
   handler: ( request, reply ) ->
 
-    url  = root + '/www/css/' + request.params.file
+    url  = root + '/public/css/' + request.params.file
 
     # try find on the file system first
     fs.readFile url, encoding: 'utf-8', ( error, content ) ->
