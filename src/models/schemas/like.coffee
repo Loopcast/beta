@@ -26,9 +26,10 @@ schema.pre 'save', ( next, done ) ->
   doc = @
 
   query = 
-    user_id: @user_id
-    type   : @type
-    end    : $exists: false
+    user_id : @user_id
+    liked_id: @liked_id
+    type    : @type
+    end     : $exists: false
 
   Like.find( query, _id: off )
     .select( "_id" )

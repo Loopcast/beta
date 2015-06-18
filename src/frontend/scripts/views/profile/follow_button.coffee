@@ -40,6 +40,9 @@ module.exports = class FollowButton
     else
       @follow()
 
+    # so it doesn't add # to the url
+    return false
+
   unfollow: ->
     log "[FollowButton] unfollow"
     @dom.removeClass( 'following' ).html( 'Follow' )

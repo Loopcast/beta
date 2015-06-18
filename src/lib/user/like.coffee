@@ -4,8 +4,8 @@ module.exports = ( user_id, following_id, callback ) ->
 
   doc =
     user_id  : user_id
-    type     : 'user'
     liked_id : following_id
+    type     : 'user'
     start    : now().toDate()
 
   like = new Like doc
