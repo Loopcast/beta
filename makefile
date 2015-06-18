@@ -36,7 +36,9 @@ spritesheet:
 
 # force deploy from current development version into staging environment
 deploy_staging:
+	# https://git.heroku.com/staging-loopcast-fm.git
 	git push heroku-staging development:master
 
 deploy_beta:
+	# https://git.heroku.com/beta-loopcast-fm.git
 	git push heroku development:master -f
