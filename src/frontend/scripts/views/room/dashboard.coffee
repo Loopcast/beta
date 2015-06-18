@@ -49,12 +49,13 @@ module.exports = class Dashboard extends RoomView
 
     @appcast_not_running_message = @dom.find '.appcast_not_running_message'
     @meter = view.get_by_dom @dom.find( '.meter_wrapper' )
-    
-    @input_select = view.get_by_dom @dom.find( '.input_select' )
-    @input_select.on 'changed', (data) ->
-      log "[Dashboard] input changed", data
-      appcast.set 'input_device', data
-      appcast.select_device data
+
+    # moved this code to input_devices.coffee
+    # @input_select = view.get_by_dom @dom.find( '.input_select' )
+    # @input_select.on 'changed', (data) ->
+    #   log "[Dashboard] input changed", data
+    #   appcast.set 'input_device', data
+    #   appcast.select_device data
 
     @appcast_not_running_message.on 'click', @toggle_not_running_balloon
     appcast.on 'connected', @on_appcast_connected

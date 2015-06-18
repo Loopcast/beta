@@ -25,13 +25,13 @@ module.exports = class GoLive extends ButtonWithTimer
   start: ->
     log "[GoLive] Clicked start"
     
-    if not appcast.get 'input_device'
+    if not appcast.get 'selected_device'
       notify.info 'Select your input source'
       return
 
     @wait()
 
-    appcast.start_stream @owner_id, appcast.get 'input_device'
+    appcast.start_stream @owner_id, appcast.get 'selected_device'
 
     appcast.on 'stream:online', @waiting_stream
 

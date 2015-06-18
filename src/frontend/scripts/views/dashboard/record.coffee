@@ -12,7 +12,7 @@ module.exports = class Record extends ButtonWithTimer
   start: ->
     log "[Record] start"
 
-    if not appcast.get 'input_device'
+    if not appcast.get 'selected_device'
       notify.info 'Select your input source'
       return
 
@@ -25,7 +25,7 @@ module.exports = class Record extends ButtonWithTimer
     else
       # start streaming then start recording
       log "We should start streaming then start recording"
-      appcast.start_stream @owner_id, appcast.get 'input_device'
+      appcast.start_stream @owner_id, appcast.get 'selected_device'
       appcast.on 'stream:online', @start_recording
 
 

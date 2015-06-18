@@ -38,4 +38,5 @@ module.exports = class InputDevices extends Select
 
     @on 'changed', ( device ) ->
       log "[device] changed", device
-      appcast.set 'input_device', dom.find( "select" ).val()
+
+      appcast.select_device dom.find( "select" ).val()

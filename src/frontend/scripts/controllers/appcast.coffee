@@ -40,6 +40,7 @@ appcast.connect = ->
   appcast.messages.onclose = ->
     console.info '- AppCast isnt OPEN, will retry to connect'
 
+    appcast.set 'stream:vu', 0
     appcast.set 'connected', false
 
 
@@ -120,6 +121,8 @@ appcast.start_stream = ( mount_point, device_name ) ->
 
 appcast.select_device = ( device_name ) ->
 
+  appcast.set 'selected_device', device_name
+  
   payload = device_name : device_name
 
   appcast.messages.send JSON.stringify [ "start_audio_device", payload ]
@@ -142,7 +145,11 @@ appcast.callbacks =
 
     appcast.set 'input_devices', args.devices
 
-    appcast.set 'selected_device', args.active
+    if args.active
+      appcast.set 'selected_device', args.active
+    else
+      appcast.set 'selected_device', ''
+
 
   audio_device_started : ( args ) ->
 
