@@ -62,9 +62,8 @@ class Navigation
       next()
       return
 
-    if req.url.indexOf( 'download'  ) >= 0
-      next()
-      return
+    # return if is a download link
+    if req.url.indexOf( '/download'  ) is 0 then return next()
 
     if @first_time
       @first_time = false
