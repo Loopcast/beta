@@ -85,6 +85,8 @@ global.s3 = S3.createClient
     secretAccessKey: s.s3.secret
 
 cloudinary = require 'cloudinary'
+
+# just grab config from settings if it's local
 cloudinary.config s.cloudinary
 
 global.cloudinary = cloudinary
