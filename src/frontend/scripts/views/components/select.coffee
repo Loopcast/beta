@@ -8,7 +8,7 @@ module.exports = class Select
     @dom.addClass 'select_wrapper'
 
     handler = @dom.find '.handler .text'
-    select = @dom.find 'select'
+    select  = @dom.find 'select'
     
     ref = @
 
