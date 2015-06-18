@@ -42,8 +42,9 @@ r = require 'redis'
 
 # connect to redis
 # TODO: improve this, listen for callback on connection
-client      = r.createClient s.redis.port, s.redis.host
+client = r.createClient s.redis.port, s.redis.host
 client.auth s.redis.password
+  
 
 global.redis = client
 

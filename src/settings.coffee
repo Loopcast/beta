@@ -90,6 +90,7 @@ if s.is_beta
   s.redis = 
     host     : r_info.hostname
     port     : r_info.port
+    password : r_info.auth.split(":")[1]
     kue_db   : 0
 
   # TODO: create beta bucket

@@ -42,3 +42,9 @@ deploy_staging:
 deploy_beta:
 	# https://git.heroku.com/beta-loopcast-fm.git
 	git push heroku development:master -f
+
+logs_beta:
+	heroku logs --app beta-loopcast-fm
+
+logs_staging:
+	heroku logs --app staging-loopcast-fm
