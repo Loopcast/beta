@@ -6,7 +6,6 @@ s =
   is_local       : process.env.NODE_ENV is 'local'
   port           : process.env.PORT || 1993
   debug          : off
-  in_production  : process.env.NODE_ENV is 'production'
   https          : off
   server:
     url: 'http://beta.loopcast.fm'
