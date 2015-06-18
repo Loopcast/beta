@@ -1,6 +1,6 @@
 s =
   # beta is our "production"
-  is_beta        : process.env.NODE_ENV is 'beta'
+  is_beta        : process.env.NODE_ENV is 'production'
   is_local       : process.env.NODE_ENV is 'local'
   port           : process.env.PORT || 1993
   debug          : off
