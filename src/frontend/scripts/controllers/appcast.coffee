@@ -92,8 +92,6 @@ appcast.connect = ->
 
       # db = Math.log10( buffer ) * 20
 
-      # console.log 'got buffer ->', buffer
-      
       appcast.set 'stream:vu', buffer  
 
     reader.readAsArrayBuffer e.data
