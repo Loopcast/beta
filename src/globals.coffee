@@ -86,7 +86,6 @@ global.s3 = S3.createClient
 
 cloudinary = require 'cloudinary'
 
-# just grab config from settings if it's local
 cloudinary.config s.cloudinary
 
 global.cloudinary = cloudinary
