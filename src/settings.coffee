@@ -83,7 +83,7 @@ if s.is_beta
   # ~ databases
 
   s.mongo =
-    url: "mongodb://l00pc4st:l00pc4st2015@c456.lamppost.2.mongolayer.com:10456,c499.lamppost.7.mongolayer.com:10499/beta?replicaSet=set-54e241573646b81682000bbf"
+    url: "mongodb://l00pc4st:l00pc4st2015@lamppost.7.mongolayer.com:10499,lamppost.2.mongolayer.com:10456/beta?replicaSet=set-54e241573646b81682000bbf"
     options: 
       user: 'l00pc4st',
       pass: 'l00pc4st2015'
@@ -125,7 +125,7 @@ else
   # ~ databases
 
   s.mongo =
-    url: "mongodb://l00pc4st:l00pc4st2015@c456.lamppost.2.mongolayer.com:10456,c499.lamppost.7.mongolayer.com:10499/beta?replicaSet=set-54e241573646b81682000bbf"
+    url: "mongodb://l00pc4st:l00pc4st2015@lamppost.7.mongolayer.com:10499,lamppost.2.mongolayer.com:10456/beta?replicaSet=set-54e241573646b81682000bbf"
     options: 
       user: 'l00pc4st',
       pass: 'l00pc4st2015'
