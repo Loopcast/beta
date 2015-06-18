@@ -87,9 +87,11 @@ module.exports =
                   if error
                     console.log "error deleting old cover from cloudinary"
                     console.log error
-                  else
-                    console.log 'succesfully deleted old cover from cloudinary'
-                    console.log result
+
+                  # TESTED: WORKS!
+                  # else
+                  #   console.log 'succesfully deleted old cover from cloudinary'
+                  #   console.log result
 
           if payload.genres
             update[ 'info.genres' ] = payload.genres

@@ -164,7 +164,8 @@ module.exports =
               if current_id != new_id
                 remove_from_cloudinary.push current_id
 
-                console.log "new cloudinary image, delete current one!", current_id
+                # TESTED: WORKS!
+                # console.log "new cloudinary image, delete current one!", current_id
 
             data['info.cover'] = request.payload.cover
 
