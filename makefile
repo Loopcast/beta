@@ -35,5 +35,8 @@ spritesheet:
 	$(LIVE_SPRITESHEET) -c src/frontend/sprites/config.json
 
 # force deploy from current development version into staging environment
+deploy_staging:
+	git push heroku-staging development:master
+
 deploy_beta:
-	git push heroku development:master
+	git push heroku development:master -f
