@@ -1,14 +1,14 @@
 server:
   port: 3000
-  root: ./www
+  root: ./public
 
 input:
   - src/frontend/scripts
   - src/frontend/styles
 
 output:
-  js: ./www/js/app.js
-  css: ./www/css/app.css
+  js: ./public/js/app.js
+  css: ./public/css/app.css
 
 alias:
   app: src/frontend/scripts/

@@ -6,14 +6,6 @@
  */
 
 exports.config = {
-  /**
-   * Array of application names.
-   */
-  app_name : ["beta.loopcast.fm:" + process.env.NODE_ENV],
-  /**
-   * Your New Relic license key.
-   */
-  license_key : 'd90c00704c0d1a8d308ef94bb298d2e47fd6130a',
   logging : {
     /**
      * Level at which to log. 'trace' is most useful to New Relic when diagnosing
