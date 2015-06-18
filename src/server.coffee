@@ -55,14 +55,6 @@ server.start = ( when_done ) ->
             isSecure      : s.https
             providerParams: s.google.provider_params
 
-          # disabled as we can't fetch user's email ?
-          hapi.auth.strategy 'twitter', 'bell',
-            provider    : 'twitter',
-            password    : 'cookie_encryption_password',
-            clientId    : s.twitter.id
-            clientSecret: s.twitter.secret
-            isSecure    : s.https
-
           # hapi.auth.strategy 'soundcloud', 'bell',
           #   provider    : 'soundcloud',
           #   password    : 'cookie_encryption_password',
