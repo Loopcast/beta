@@ -33,7 +33,7 @@ appcast.connect = ->
 
     appcast.set 'connected', true
 
-    appcast.messages.send JSON.stringify [ 'get_input_devices' ]
+    appcast.get_devices()
 
     appcast.messages.send JSON.stringify [ 'version' ]
 
@@ -77,6 +77,7 @@ appcast.connect = ->
     appcast.set 'vu:connected', true
 
   appcast.vu.onclose = ->
+    
     console.info '- socket VU connection closed'
 
     appcast.set 'vu:connected', false
@@ -89,11 +90,17 @@ appcast.connect = ->
     reader.onload = ( e ) ->
       buffer = new Float32Array e.target.result
 
-      db = Math.log10( buffer ) * 20
+      # db = Math.log10( buffer ) * 20
 
+      # console.log 'got buffer ->', buffer
+      
       appcast.set 'stream:vu', buffer  
 
     reader.readAsArrayBuffer e.data
+
+appcast.get_devices = ->
+
+  appcast.messages.send JSON.stringify [ 'get_input_devices' ]
 
 appcast.start_stream = ( mount_point, device_name ) ->
 
