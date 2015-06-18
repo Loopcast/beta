@@ -1,3 +1,5 @@
+url = require('url')
+
 s =
   # beta is our "production"
   is_beta        : process.env.NODE_ENV is 'production'
@@ -82,16 +84,12 @@ if s.is_beta
 
   # ~ databases
 
-  s.mongo =
-    url: "mongodb://l00pc4st:l00pc4st2015@lamppost.7.mongolayer.com:10499,lamppost.2.mongolayer.com:10456/beta?replicaSet=set-54e241573646b81682000bbf"
-    options: 
-      user: 'l00pc4st',
-      pass: 'l00pc4st2015'
+  s.mongo = url: process.env.MONGOHQ_URL
 
-  s.redis =
-    host     : 'pub-redis-11676.eu-west-1-1.1.ec2.garantiadata.com'
-    port     : 11676
-    password : 'loopcast2015'
+  r_info  = url.parse process.env.REDISCLOUD_URL
+  s.redis = 
+    host     : r_info.hostname
+    port     : r_info.port
     kue_db   : 0
 
   # TODO: create beta bucket
