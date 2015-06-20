@@ -260,6 +260,15 @@ module.exports =
         # log "[Loopcast] request done", response
         callback  null, response
 
+    appcast_version: ( version, callback ) ->
+      request = $.put api_url + "user/appcast/version/#{version}"
+
+      request.error on_error "user/appcast/version/#{version}", callback
+
+      request.done ( response ) ->
+        # log "[Loopcast] request done", response
+        callback  null, response
+
     unfollow: ( user_id, callback ) ->
       request = $.put api_url + "user/#{user_id}/unfollow"
 
