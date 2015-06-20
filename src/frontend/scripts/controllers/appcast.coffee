@@ -18,6 +18,8 @@ appcast.vu       = {}
 
 
 appcast.set 'connected', false
+# reset VU from the start
+appcast.set 'stream:vu', 0
 # connects to AppCast's WebSocket server and listen for messages
 appcast.connect = ->
   return if not app.settings.use_appcast
@@ -38,7 +40,7 @@ appcast.connect = ->
     appcast.messages.send JSON.stringify [ 'version' ]
 
   appcast.messages.onclose = ->
-    console.info '- AppCast isnt OPEN, will retry to connect'
+    console.info '- AppCast CLOSED, will retry to connect'
 
     appcast.set 'stream:vu', 0
     appcast.set 'connected', false
@@ -82,6 +84,7 @@ appcast.connect = ->
     console.info '- socket VU connection closed'
 
     appcast.set 'vu:connected', false
+    appcast.set 'stream:vu', 0
 
   # route incoming messages to appcast.callbacks hash
   appcast.vu.onmessage = ( e ) ->
@@ -130,6 +133,7 @@ appcast.start_stream = ( mount_point, device_name ) ->
 appcast.select_device = ( device_name ) ->
 
   appcast.set 'selected_device', device_name
+  appcast.set 'stream:vu', 0
   
   payload = device_name : device_name
 
@@ -138,6 +142,7 @@ appcast.select_device = ( device_name ) ->
 appcast.stop_stream = ->
 
   appcast.set "stream:stopping", true
+  appcast.set 'stream:vu', 0
   appcast.messages.send JSON.stringify [ "stop_stream" ]
 
 appcast.get_version = ->
@@ -191,10 +196,13 @@ appcast.callbacks =
     # save current stream:online status
     appcast.set 'stream:online'  , false
     appcast.set "stream:stopping", null
+    appcast.set 'stream:vu'      , 0
 
-  version_response: ( args ) ->
+  version_response: ( data ) ->
 
-    console.log "current appcat version ~>", args
+    
+    console.log "current appcat version ~>", data.version
+
 
 # should try to connect only on it's own profile page
 # appcast.connect()
