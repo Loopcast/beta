@@ -115,7 +115,8 @@ appcast.start_stream = ( mount_point, device_name ) ->
     device_name : device_name
     mount_point : mount_point
     password    : password
-
+    server_port : 8000
+    
   if window.is_beta?
     payload.server = 'radio.loopcast.fm'
   else
