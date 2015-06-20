@@ -46,8 +46,6 @@ module.exports =
 
     data.on 'jobs', ( number ) ->
 
-      console.log "on jobs ->", number
-
       if number isnt 0 then return
 
       reply 
