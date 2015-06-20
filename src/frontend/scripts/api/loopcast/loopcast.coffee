@@ -45,6 +45,17 @@ module.exports =
 
         callback null, response
 
+    stats: (room_id, callback ) ->
+
+      request = $.get api_url + "rooms/#{room_id}/stats"
+
+      request.error on_error "rooms/#{room_id}/stats", callback
+
+      request.done ( response ) ->
+
+        callback null, response
+
+
     create: ( data, callback ) ->
       on_status_code =
         401: ( response ) -> callback 'unauthorized, need log in!'

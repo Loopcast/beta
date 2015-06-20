@@ -16,6 +16,7 @@ schema = new Schema
     file      : String # url of the recorded file
 
   likes       : { type: Number, default: 0 }
+  visits      : { type: Number, default: 0 }
 
   status:
     is_live      : { type: Boolean, default: off } # when user press go live
