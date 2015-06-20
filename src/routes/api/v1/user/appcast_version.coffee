@@ -23,14 +23,14 @@ module.exports =
 
         return reply Boom.unauthorized('needs authentication')
 
-      user_id = req.auth.credentials._id
+      user_id = req.auth.credentials.user._id
       version = req.params.version
 
       query  = _id : user_id
       update = $set: 'data.appcast.version': version
 
       User.update query , update, ( error, result ) ->
-        
+
         if error 
           console.log "error while updating user on mongodb"
           console.log user

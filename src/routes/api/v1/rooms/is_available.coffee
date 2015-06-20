@@ -29,11 +29,11 @@ module.exports =
 
       return reply Boom.unauthorized('needs authentication')
 
-    owner_id = req.auth.credentials._id
-    title    = slug req.payload.title.toLowerCase()
+    user_id = req.auth.credentials.user._id
+    title   = slug req.payload.title.toLowerCase()
 
     query = 
-      _owner     : owner_id
+      _owner     : user_id
       'info.slug': title
 
     Room.find( query, _id: off )
