@@ -70,3 +70,6 @@ html
 			| options  = {} // while we don't implement presence channels
 			| window.pusher = new Pusher( '#{pusher.key}', options )
 			| window.intercomSettings = { app_id: "#{intercom.id}" }
+			if is_beta
+				| 
+				| var is_beta  = true;

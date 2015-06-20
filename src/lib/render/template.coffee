@@ -26,6 +26,9 @@ module.exports = ( url, data = {}, callback ) ->
   data.intercom =
     id: s.intercom.id
 
+  data.is_beta  = s.is_beta
+  data.is_local = s.is_local
+
   data.fb_app_id = s.facebook.client_sdk_id
 
   data.transform = cloudinary_transform

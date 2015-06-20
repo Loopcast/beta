@@ -116,6 +116,13 @@ appcast.start_stream = ( mount_point, device_name ) ->
     mount_point : mount_point
     password    : password
 
+  if window.is_beta?
+    payload.server = 'radio.loopcast.fm'
+  else
+    payload.server = 'staging-radio.loopcast.fm'
+
+  console.log 'stream with payload ->', payload
+
   appcast.set "stream:starting", true
   appcast.messages.send JSON.stringify [ "start_stream", payload ]
 
