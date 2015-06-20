@@ -3,12 +3,9 @@ module.exports = ( ip, room_id, callback ) ->
   redis_key = "#{ip}:visited:room:#{room_id}"
 
   # only increase play if never played in the last 24 hours
-  # increase_play room_id
-
   redis.get redis_key, ( error, buffer ) ->
 
-    if buffer?
-      buffer = buffer.toString()
+    if buffer? then buffer = buffer.toString()
 
     # already played in the last 24 hours, just return ok
     if buffer then return callback null, 0

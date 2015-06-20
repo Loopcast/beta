@@ -23,4 +23,4 @@ module.exports =
 
         if error then return reply error
 
-        return updated: response
+        reply updated: response
