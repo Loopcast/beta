@@ -19,7 +19,7 @@ module.exports = ( ip, room_id, callback ) ->
     redis.setex redis_key, expires, 1
 
     # increase count on mongodb
-    update = $inc: 'status.recording.plays': 1
+    update = $inc: 'visits': 1
 
     Room
       .update( _id: room_id, update )

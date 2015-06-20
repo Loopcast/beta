@@ -19,28 +19,8 @@ module.exports =
 
       room_id = req.params.id
 
-      console.log 'increase play for !', room_id
-      console.log 'comming from ip:', ip
+      increase_play ip, room_id, ( error, response ) ->
 
-      redis_key = "#{ip}:played:room:#{room_id}"
+        if error then return reply error
 
-      # only increase play if never played in the last 24 hours
-      # increase_play room_id
-
-      redis.get redis_key, ( error, buffer ) ->
-
-        if buffer?
-          buffer = buffer.toString()
-
-        # already played in the last 24 hours, just return ok
-        if buffer then return reply: ok: 0
-
-        # There is a 1 once 24 hours rate limit for playing a track
-        # it's saved on redis
-        expires = 60 * 24
-        redis.setex redis_key, expires, 1
-
-        # increase count on mongodb
-        increase_play room_id
-
-        reply ok: 1
+        return updated: response
