@@ -1,10 +1,15 @@
 parse_xml = require('xml2js').parseString
 
-http://radio.loopcast.fm:8000/admin/?mount=/5583d292f191b70300dbaeda&mode=updinfo&song=thomas
-
-module.exports = ( mount_point, song_title, callback ) ->
+module.exports = ( mount_point, metadata, callback ) ->
     
-  url = "#{s.radio.url}/admin/metadata?mount=/#{mount_point}&mode=updinfo&song=#{song_title}"
+  url = "#{s.radio.url}/admin/metadata?mount=/#{mount_point}&mode=updinfo"
+
+  url += "&genres=#{metadata.genres}"
+  url += "&title=#{metadata.title}"
+  url += "&description=#{metadata.description}"
+  url += "&song=#{metadata.url}"
+
+  console.log "url ->", url
 
   options =
     auth:
@@ -22,6 +27,8 @@ module.exports = ( mount_point, song_title, callback ) ->
       console.log "error updating metadata for #{mount_point}"
       console.log body
 
+    console.log "success updating meta data"
+
     # always callback, even if no succesful.
     # this functionality isn't really essential
-    callback null
+    callback? null

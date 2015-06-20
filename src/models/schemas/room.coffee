@@ -8,7 +8,7 @@ schema = new Schema
     user      : type: String, required: on
     title     : type: String, required: on
     slug      : type: String, required: on
-    genres    : Array
+    genres    : { type: Array, default: [] }
     location  : String
     about     : String
     cover_url : String

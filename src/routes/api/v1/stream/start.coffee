@@ -1,7 +1,8 @@
 slug = require 'slug'
 Room = schema 'room'
 
-mongoose = require 'mongoose'
+mongoose        = require 'mongoose'
+update_metadata = lib 'icecast/update_metadata'
 
 module.exports =
   method : 'POST'
@@ -41,7 +42,7 @@ module.exports =
         'info.user' : username
 
       Room.findOne( query )
-        .select( "_id _owner" )
+        .select( "_id _owner info.slug info.title info.genres info.about" )
         .lean()
         .exec ( error, room ) -> 
 
@@ -62,6 +63,18 @@ module.exports =
               started_at: now().format()
 
           pusher.trigger room_id, "status", status
+
+          # updates metadata in order to make it easier to see
+          # on icecast sttus page
+          metadata =
+            title       : room.info.title
+            description : room.info.about
+            url         : "#{s.base_path}/#{username}/#{room.info.slug}"
+            genres      : room.info.genres.join ','
+
+          console.log "metadata ->", metadata
+
+          update_metadata room._owner, metadata
 
           # update for mongodb
           # sets the document URL to be the streaming URL
