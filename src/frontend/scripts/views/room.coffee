@@ -179,7 +179,7 @@ module.exports = class Room extends LoggedView
       log "----------------- on_room_live"
       app.player.fetch_room @room_id, =>
         log "[ROOM] live room fetched."
-        # app.player.play @room_id
+        app.player.play @room_id
     else
       navigation.set_lock_live true, location.pathname
     
