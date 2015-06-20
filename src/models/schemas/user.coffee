@@ -30,6 +30,9 @@ schema = new Schema
       id   : String
       email: String
 
+    appcast: Object
+      version: String
+
 User = mongoose.model 'User', schema
 
 text_indexes = 
