@@ -21,4 +21,5 @@ module.exports =
       "Listener"
       "Radio Station"
       "Podcaster"
+      "Other"
     ]
