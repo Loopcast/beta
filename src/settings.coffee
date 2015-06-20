@@ -119,9 +119,9 @@ if not s.is_beta
     key   : 'e269699ecff3c224a612',
     secret: '5a05943c7bf757cdd315'
 
-  s.tape = 'http://tape.loopcast.fm:8000'
+  s.tape = 'http://staging-tape.loopcast.fm:8000'
 
-  s.radio = 'http://radio.loopcast.fm:8000'
+  s.radio = 'http://staging-radio.loopcast.fm:8000'
 
 # IF LOCAL
 if s.is_local
