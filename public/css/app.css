@@ -269,7 +269,6 @@ header.header .user_logged > * {
 /* line 120 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .user_logged .thumb_wrapper {
   padding-right: 30px;
-  margin-right: 20px;
   position: relative;
   height: 49px;
 }
