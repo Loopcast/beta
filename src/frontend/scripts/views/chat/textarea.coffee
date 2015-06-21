@@ -14,6 +14,13 @@ module.exports = class Textarea extends ChatView
   
   
     @dom.on 'keyup', @on_key_up
+
+    if app.settings.browser.mobile
+      @dom.on 'blur', (e) =>
+        if e.relatedTarget is null
+          @enter_pressed()
+
+
     @heart = @dom.parent().find '.ss-heart'
 
     @heart.on 'click', @like_cliked
@@ -66,9 +73,12 @@ module.exports = class Textarea extends ChatView
     return if e.keyCode isnt 13
     # when pressing enter
     # grabs the message
+    @enter_pressed()
 
+  enter_pressed: ->
     message = StringUtils.trim @dom.val()
 
+    log "[Textarea] enter_pressed", message
     # clear the field
     @dom.val ""
 
