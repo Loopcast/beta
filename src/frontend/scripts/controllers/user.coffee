@@ -39,7 +39,8 @@ class UserController
       # log "[User] checking status from the server", error, response.logged
       
       if error or response.logged is false
-        @logout()
+        @logout ->, true
+        
       else if @is_logged()
         @_dispatch_login()
       else
@@ -72,7 +73,7 @@ class UserController
   ###
   Called from the outside, when the user logs out
   ###
-  logout: ( callback = -> ) ->
+  logout: ( callback = ->, disable_notify = false ) ->
 
     # log "[UserController] logout"
     
@@ -87,7 +88,8 @@ class UserController
 
       @_dispatch_logout()
 
-      notify.info "You've successufully logged out."
+      if not disable_notify
+        notify.info "You've successufully logged out."
 
       callback?()
 
