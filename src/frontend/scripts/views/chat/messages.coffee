@@ -2,6 +2,9 @@ transform = require 'lib/cloudinary/transform'
 ChatView = require 'app/views/room/chat_view'
 user = require 'app/controllers/user'
 api = require 'app/api/loopcast/loopcast'
+require 'app/utils/time/livestamp'
+# moment = require 'moment'
+# require 'vendors/livestamp.js'
 
 module.exports = class Messages extends ChatView
   first_message: true

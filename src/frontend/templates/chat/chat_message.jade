@@ -8,7 +8,8 @@
     .text
       h4.name
         a(href="#{user.url}", title="#{user.name}") #{user.name}
-        span.time - 1 min ago
+        span.dash &nbsp;-&nbsp; 
+        span.time(data-livestamp="#{time}")
 
       p.content !{message}
 

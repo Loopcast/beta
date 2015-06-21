@@ -117,7 +117,7 @@ class View
 		try
 			view = require "app/views/#{view_name}"
 		catch e
-			console.warn 'e ->', e.message
+			console.warn 'e ->', e.message, view_name
 			console.error "app/views/#{view} not found for ", $item
 
 		view = new view $item
