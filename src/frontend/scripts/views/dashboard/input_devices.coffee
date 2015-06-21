@@ -5,6 +5,7 @@ Select = require '../components/select'
 
 module.exports = class InputDevices extends Select
 
+  current_device : ""
   constructor: ( dom ) ->
 
     super dom
@@ -36,7 +37,13 @@ module.exports = class InputDevices extends Select
         # TODO: find a way of refreshing the list when it's open
         # dom.find( "select" ).focus()
 
-    @on 'changed', ( device ) ->
+
+
+    @on 'changed', ( device ) =>
+
+      return if device is @current_device
+      @current_device = device
+      
       log "[device] changed", device
 
       appcast.select_device dom.find( "select" ).val()

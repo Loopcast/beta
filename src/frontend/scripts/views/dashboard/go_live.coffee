@@ -91,7 +91,7 @@ module.exports = class GoLive extends ButtonWithTimer
         # LATER: CHECK IF USER IS OFFLINE AND WAIT FOR CONNECTION?
         return
 
-      appcast.off ref.waiting_stream
+      appcast.off 'stream:online', ref.waiting_stream, 
 
       # TODO: fix this error being thrown
       # appcast.on while_streaming
