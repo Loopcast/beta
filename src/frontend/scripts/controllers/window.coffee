@@ -42,5 +42,19 @@ win.obj.on 'scroll', on_scroll = ->
     y: win.y
     direction: d
 
+
+win.obj.on "blur focus", (e) ->
+  prevType = win.obj.data "prevType"
+
+  if prevType isnt e.type
+    switch e.type
+      when "blur"
+        win.emit 'blur'
+
+      when "focus"  
+        win.emit 'focus'
+
+  win.obj.data "prevType", e.type
+
 # trigger scroll automatically after 100 ms
 delay 100, on_scroll
