@@ -139,6 +139,9 @@ module.exports = class Room extends LoggedView
         log "----------------- (0)"
         @on_room_live()
 
+    L.rooms.visit @room_id, (error, response) ->
+      log "[Room] visit", error, response
+
   update_genres: (genres) ->
     log "UPDATE GENRES", genres
     @tags_wrapper = @dom.find '.tags'
