@@ -111,9 +111,17 @@ module.exports = class Share
 
       o = @black_box.offset()
       w1  = @black_box.width()
-      # log "[Share]", o.left, w1, o.left+w1, app.window.w
+      log "[Share]", o.left, w1, o.left+w1, app.window.w
       if o.left + w1 > app.window.w - 20
         @dom.addClass 'on_right'
+
+      else if o.left < 0
+
+        @dom.addClass 'on_left'
+        @black_box.css 
+          'margin-left' : o.left
+
+        @black_box.data( 'left', o.left - 15 )
 
       
 

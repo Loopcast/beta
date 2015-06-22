@@ -837,6 +837,7 @@ input, textarea, div.tagsinput
       content: ""
       absolute top 100% left 50%
       transform: translateX(-50%)
+      
       width: 0
       height: 0
       border-style: solid
@@ -886,6 +887,14 @@ input, textarea, div.tagsinput
       &:after
         left: auto
         right: 0
+        
+  &.on_left
+    .share_box
+      left: 0
+      transform: translateX(0)
+      &:after
+        left: 70px
+         
   &.opened
     opacity: 1!important
     .share_box
