@@ -8,6 +8,17 @@ module.exports = class Record extends ButtonWithTimer
   active_text: 'STOP REC'
   inactive_text: 'RECORDED'
   type: "recording"
+
+  on_room_created: (@room_id, @owner_id) =>
+      
+    super @room_id, @owner_id
+
+    # log "[GoLive] on_room_created"
+    return unless @is_room_owner
+
+    if $('.room_recording' ).length > 0
+      @set_active true
+    
   
   start: ->
     log "[Record] start"

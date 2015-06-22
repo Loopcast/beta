@@ -32,10 +32,14 @@ block content
     if room && room.status.is_live
       - live_class = "room_live"
 
+    - recording_class = ""
+    if room && room.status.is_recording
+      - recording_class = "room_recording"
+
     - public_class = ""
     if room && room.status.is_public
       - public_class = "room_public"  
-    .createroom.profile_theme.centered(data-menu="#{data_menu}", data-view="room", class="#{live_class} #{public_class}")
+    .createroom.profile_theme.centered(data-menu="#{data_menu}", data-view="room", class="#{live_class} #{recording_class} #{public_class}")
       .cover
         - cover_url = false
         if room
@@ -117,11 +121,11 @@ block content
 
         include ../modals/confirm_exit_modal.jade
 
-      //- script
-      //-   //- THIS IS JUST FOR DEBUGGIN. TO BE REMOVED
-      //-   if room
-      //-     | var room_info = !{JSON.stringify(room)};;
-      //-     | console.log( 'room_info', room_info )
-      //-   if user
-      //-     | var user = !{JSON.stringify(user)};;
-      //-     | console.log( 'user_info', user )
+      script
+        //- THIS IS JUST FOR DEBUGGIN. TO BE REMOVED
+        if room
+          | var room_info = !{JSON.stringify(room)};;
+          | console.log( 'room_info', room_info )
+        if user
+          | var user = !{JSON.stringify(user)};;
+          | console.log( 'user_info', user )
