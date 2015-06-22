@@ -121,8 +121,6 @@ module.exports = class Share
         @black_box.css 
           'margin-left' : o.left
 
-        @black_box.data( 'left', o.left - 15 )
-
       
 
   update_link: ( link ) ->
