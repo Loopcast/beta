@@ -78,29 +78,23 @@ block content
               input.cloud_name(type="hidden", name="cloud_name", value="#{cloudinary.cloud_name}")
               input.unsigned_id(type="hidden", name="unsigned_id", value="#{cloudinary.unsigned_ids.cover}")
 
-          .sidebar_right
-            .big_number
+          .sidebar_right.not_loaded(data-view="room/sidebar_right")
+            .big_number.stat_listeners
               .inner
                 span.icon.spritesheet.for_mobile.mobile_headphones.room 
-                if room
-                  span.number #{room.status.live.listeners}
-                else
-                  span.number 0
+                span.number 0
                 span.text Listeners
 
-            .big_number
+            .big_number.stat_likes
               .inner
                 span.icon.for_mobile.ss-heart 
-                if room
-                  span.number #{room.likes}
-                else
-                  span.number 0
+                span.number 0
                 span.text Favourites
 
-            .big_number
+            .big_number.stat_visits
               .inner
                 span.icon.for_mobile.ss-users
-                span.number 32
+                span.number 0
                 span.text 
                   | Total 
                   br
