@@ -17,6 +17,17 @@ Channels / messages
 
     This channel broadcast the following message
 
+      - liked_by
+
+        Which sends 
+          data = 
+            username : user.username
+            name     : user.name
+        
+      - listeners
+
+        Which sends amount of listeners 
+
       - message
 
         Which sends

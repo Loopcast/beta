@@ -26,6 +26,14 @@ module.exports =
       user    = req.auth.credentials.user
       room_id = req.params.id
 
+      data = 
+        username : user.username
+        name     : user.name
+
+      # broadcast message "followed_by" to channel "following_id" passing 
+      # user as data
+      pusher.trigger room_id, "liked_by", data
+
       like user._id, room_id, ( error, respose ) ->
 
         if error then return reply error: error.message
