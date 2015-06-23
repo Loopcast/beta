@@ -13,7 +13,7 @@ class UserController
   # Object variables
   data : null
   is_owner: false
-
+  following: null
 
   constructor: ->
 
@@ -95,8 +95,8 @@ class UserController
 
       callback?()
 
-  is_me: ( username ) ->
-    return username is @data.username
+  is_me: ( id ) ->
+    return id is @data._id
 
   owner_id: ->
     document.getElementById( 'owner_id' )?.value
@@ -175,6 +175,21 @@ class UserController
     @check_guest_owner()
     app.body.addClass( "logged" ).removeClass( 'not_logged' )
     @emit 'user:logged', @data
+
+
+    api.user.following ( error, result ) =>
+      @following = {}
+
+      for item in result
+        @following[ item ] = true
+
+      @emit 'following:loaded'
+
+
+  is_following: (id) ->
+    return @following[ id ]? and @following[ id ]
+
+      
 
   _dispatch_logout: ->
     log "[====== USER NOT LOGGED =======]"

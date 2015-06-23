@@ -39,10 +39,10 @@ block grid
                 span.icon.ss-location
                 | #{item.info.location}
 
-        a.enter_room(href="#", class="button yellow_button no_shadow small_button small_button_2", title="Follow", data-view="profile/follow_button", data-user-id="#{item.info.username}") Follow
+        a.enter_room(href="#", class="button yellow_button no_shadow small_button small_button_2", title="Follow", data-view="profile/follow_button", data-user-id="#{item._id}") Follow
 
 
   script
     //- THIS IS JUST FOR DEBUGGIN. TO BE REMOVED
-    //- | var data = !{JSON.stringify(locals)};;
-    //- | console.log( 'people data', data.people[0] ); 
+    | var data = !{JSON.stringify(locals)};;
+    | console.log( 'people data', data ); 
