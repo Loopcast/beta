@@ -25,6 +25,9 @@ Channels / messages
             name     : user.name
 
       - visit
+        Which sends just room_id when a new visit arrives
+
+      - play
         Which sends just room_id
 
       - listeners

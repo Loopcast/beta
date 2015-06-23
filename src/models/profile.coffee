@@ -24,7 +24,7 @@ module.exports = ( id, callback ) ->
 
       if not data 
 
-        console.log 'did not find user'
+        console.log 'did not find user ' + id
         console.log 'probably something wrong somwhere, we have to patch this'
 
         return callback null, null
