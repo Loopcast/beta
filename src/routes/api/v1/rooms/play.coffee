@@ -23,4 +23,8 @@ module.exports =
 
         if error then return reply error
 
+        # only if it's a real visit
+        if response
+          pusher.trigger room_id, "play", room_id
+
         reply updated: response
