@@ -9,6 +9,9 @@ module.exports = ( name, callback ) ->
   username = name.replace /\s/g, ''
 
   # slug and force lowercase
-  username = slug username.toLowerCase()
+  username  = slug username.toLowerCase()
+
+  # adds random number to username
+  username += parseInt( Math.random() * 100000000 )
 
   callback null, username
