@@ -3,21 +3,21 @@ module.exports = ( callback ) ->
 
   callback null,
     title: "About Loopcast"
-    description: "Loopcast is an incredibly versatile platform dolor sit amet, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+    description: "Loopcast is built for DJ’s, artists and listeners, enabling them to broadcast and record their mixes and to save instantly to their profiles without the usual hassle."
     columns: [
       {
         icon: "about_turntable.png"
-        title: "Connect with your hardware or software"
-        text: " natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo"
+        title: "Connect Your Hardware or Software"
+        text: "Connect with any third party software or hardware and stream your sets live for friends, fans and followers everywhere, directly in your browser"
       },
       {
         icon: "about_globe.png"
-        title: "Stream your music to the world"
-        text: " natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo"
+        title: "Record, Save and Share Instantly"
+        text: "The fastest and easiest way to record and share your sets. Save your sets to your profile instantly. No uploading time"
       },
       {
         icon: "about_headphones.png"
-        title: "Explore and experience your favourite music, live"
-        text: " natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo"
+        title: "Explore and Experience in Real Time"
+        text: "Find the music you love and interact with whoever is playing it. Browse your favourite genres and discover trending DJs from all over the world"
       }
     ]
