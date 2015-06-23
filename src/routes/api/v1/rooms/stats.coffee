@@ -44,6 +44,10 @@ module.exports =
         data.set 'room', room
         data.set 'jobs', data.get( "jobs" ) - 1
 
+    data.on 'listeners', ( number ) ->
+
+      pusher.trigger req.params.id , "listeners", number
+
     data.on 'jobs', ( number ) ->
 
       if number isnt 0 then return
