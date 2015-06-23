@@ -19,6 +19,8 @@ module.exports =
 
       room_id = req.params.id
 
+      pusher.trigger room_id, "visit", room_id
+
       increase_visit ip, room_id, ( error, response ) ->
 
         if error then return reply error

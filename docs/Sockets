@@ -23,7 +23,10 @@ Channels / messages
           data = 
             username : user.username
             name     : user.name
-        
+
+      - visit
+        Which sends just room_id
+
       - listeners
 
         Which sends amount of listeners 
