@@ -15,7 +15,7 @@ module.exports = ( info, callback ) ->
 
   after_upload = ( picture_info ) ->
 
-    transform info.profile.displayName, ( error, username ) ->
+    transform info.profile.displayName, true, ( error, username ) ->
 
       user = 
         info :

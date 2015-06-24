@@ -180,7 +180,7 @@ module.exports =
 
           if request.payload.name and not request.payload.user_id
 
-            transform request.payload.name, ( error, username ) ->
+            transform request.payload.name, false, ( error, username ) ->
               if error
                 console.log "error fetching user data"
                 console.log user
