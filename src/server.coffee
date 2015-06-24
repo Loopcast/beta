@@ -1,7 +1,4 @@
 Hapi    = require 'hapi'
-sockjs  = require 'sockjs'
-
-sock_server = sockjs.createServer s.sockjs
 
 server      = happens {}
 
