@@ -67,6 +67,7 @@ sockets.shutdown = ( callback ) ->
 
     socket.connected = false 
 
+  console.log 'yaya'
   callback()
 
 
