@@ -29,7 +29,7 @@ block content
 						.buttons
 
 							a.button.yellow_button.no_shadow.left.black_hover(href="/rooms/create" title="Create Live Room", data-view="components/logged_link" onClick="_gaq.push(['_trackEvent', 'Start Streaming', 'Click', '']);") Start Streaming
-							a.button.white_transparent_button.no_shadow.right(href="/explore", title="Explore live music") Explore 
+							a.button.white_transparent_button.no_shadow.right(href="/explore", title="Explore live music" onClick="_gaq.push(['_trackEvent', 'Explore', 'Click', '']);") Explore 
 
 
 			.scroll_down(data-view="components/scroll_handler" data-target=".landing_2")
@@ -102,6 +102,6 @@ block content
 				.content
 					h1 Explore and Experience
 					p Join our community of DJs and electronic music fans. Browse your favourite genres and discover DJs performing live from all over the world, interact with them and other listeners in real time and follow your favourites. 
-					a.button.yellow_button.no_shadow.black_hover(href="/explore", title="Start Listening") Start Listening
+					a.button.yellow_button.no_shadow.black_hover(href="/explore", title="Start Listening" onClick="_gaq.push(['_trackEvent', 'Explore', 'Click', '']);") Start Listening
 
 		
