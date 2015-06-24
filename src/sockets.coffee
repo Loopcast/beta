@@ -1,15 +1,17 @@
 # update to socket.io client
 # https://github.com/automattic/socket.io-redis
 
-sockets = { stats: null }
+sockets = { stats: null, online: false }
 stats   = {}
 
 sockets.stats = stats
 
+
+# use redis as backend in order to keep messages going through
+# multiple socket instances
 sockets.connect = ( listener ) ->
 
-  io    = require('socket.io')(listener)
-  # redis = require('socket.io-redis')
+  io = require('socket.io')(listener)
 
   redis_client = require('redis').createClient
   adapter      = require('socket.io-redis')
@@ -25,6 +27,7 @@ sockets.connect = ( listener ) ->
     subClient: sub
   )
 
+  sockets.online = true
   sockets.boot io
 
 
@@ -34,25 +37,41 @@ sockets.boot = ( server ) ->
 
     console.log "socket connected ->", socket.id
 
-    stats[ socket.id ] = connected: true
+    socket.emit "uid", socket.id
 
-    # sockets.send socket, 'uid', uid: socket.id
+    stats[ socket.id ] = 
+      id       : socket.id
+      connected: true
 
-    # socket.on 'data', ( data ) ->
+    socket.on 'disconnect', ->
 
-    #   console.log "got data from socket ->", data
+      stats[ socket.id ] = connected: false
 
-    # socket.on 'close', ->
+      console.log "socket is gone!", socket.id
 
-    #   stats[ socket.id ] = connected: false
 
-    #   console.log "socket is gone!"
+    # sub / unsub jazz
+    socket.on 'subscribe'  , ( room ) -> socket.join  room
+    socket.on 'unsubscribe', ( room ) -> socket.leave room
 
-# sockets.send = ( socket, channel, data ) ->
+sockets.shutdown = ( callback ) -> 
 
-#   data = data || {}
-#   data.channel = channel
+  if not sockets.online then return callback()
 
-#   socket.write JSON.stringify data
+  for socket in sockets.stats
+
+    console.log 'socket ->', socket
+
+    if socket.connected
+      console.log "socket will disconnected", socket.id
+
+    socket.connected = false 
+
+  callback()
+
+
+sockets.publish = ( channel, data ) ->
+
+  io.sockets.in( channel ).emit( 'message', data );
 
 module.exports = sockets

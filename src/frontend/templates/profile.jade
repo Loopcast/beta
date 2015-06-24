@@ -67,7 +67,10 @@ block content
             .inner
               span.icon.spritesheet.for_mobile.mobile_headphones
               span.number #{listeners}
-              span.text.for_desktop Listeners 
+              span.text.for_desktop
+                | Total
+                br 
+                | Listeners 
 
         .change_cover.upload_wrapper(data-view="components/image_uploader", data-id="profile_cover")
           a.upload_element.button_with_icon.black_button(href="#")
@@ -81,7 +84,7 @@ block content
             input.unsigned_id(type="hidden", name="unsigned_id", value="#{cloudinary.unsigned_ids.cover}")
 
         .for_guest.cover_buttons
-          a(href="#", class="button yellow_button small_button_2 follow_button", data-view="profile/follow_button", data-user-id="#{id}") 
+          a(href="#", class="button grey_button small_button_2 follow_button", data-view="profile/follow_button", data-user-id="#{id}") 
             span.follow Follow
             span.unfollow Unfollow
 

@@ -1,8 +1,24 @@
 # socket-io client!!
-socket = io()
+connection = io()
+
+socket = happens {}
 
 
-socket.onopen = () ->
+# mimics pusher API
+socket.subscribe   = ( channel ) ->
+
+  connection.emit 'subscribe', channel
+
+socket.unsubscribe = ( channel ) ->
+
+  connection.emit 'unsubscribe', channel
+
+
+connection.on 'uid', ( data ) ->
+
+  console.log "got uid ->", data
+
+connection.onopen = () ->
   console.log 'socket open', socket
 
 socket.onmessage = (e) ->
