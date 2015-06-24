@@ -49,6 +49,8 @@ server.start ( error ) ->
 # gracefully shutdown with nodemon
 process.once 'SIGUSR2', ->
 
+  console.log "SIGUSR2 - SIGNAL"
+  
   sockets.shutdown -> process.kill process.pid, 'SIGUSR2'
 
 
