@@ -61,9 +61,12 @@ html
 		noscript
 			iframe(src='//www.googletagmanager.com/ns.html?id=GTM-N4ZZBR', height='0', width='0', style='display:none;visibility:hidden')
 
-		script(type='text/javascript', src='//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-525305dd58558134', async='async')
+		script( type='text/javascript', src='//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-525305dd58558134', async='async')
 		script( src="/js/tag_manager.js" )
 		script( src="/js/google_analytics.js")
+
+		script( src="/socket.io/socket.io.js" )
+
 		script( src="//js.pusher.com/2.2/pusher.min.js" )
 		script
 			| var options   = { authEndpoint: '/api/v1/chat/auth' }

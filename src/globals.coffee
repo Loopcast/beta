@@ -106,4 +106,11 @@ global.failed = ( request, reply, error, data, skip_report ) ->
   console.log error
 
 
+# Application Globals
+
+global.server  = require './server'
+
+global.sockets = require './sockets'
+
+
 module.exports = global

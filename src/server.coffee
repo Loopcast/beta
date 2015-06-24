@@ -1,8 +1,12 @@
-Hapi = require 'hapi'
+Hapi    = require 'hapi'
+sockjs  = require 'sockjs'
 
-server = happens {}
+sock_server = sockjs.createServer s.sockjs
 
-server.hapi = hapi = new Hapi.Server
+server      = happens {}
+
+server.hapi    = hapi = new Hapi.Server
+
   # debug: request: ['error']
 
 server.start = ( when_done ) ->
@@ -10,6 +14,9 @@ server.start = ( when_done ) ->
   hapi.connection 
     port: s.port
     router: stripTrailingSlash: true
+
+  # start!
+  sockets.connect hapi.listener
 
   hapi.start ->
     console.log 'Server running at:', hapi.info.uri

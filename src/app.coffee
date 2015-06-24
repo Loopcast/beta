@@ -1,6 +1,11 @@
 # defaults to production environment
 if not process.env.NODE_ENV then process.env.NODE_ENV = 'local'
 
+g = require './globals'
+
+
+mongoose = require 'mongoose'
+
 http  = require 'http'
 https = require 'https'
 http.globalAgent.maxSockets = https.globalAgent.maxSockets = 100;
@@ -15,12 +20,6 @@ if process.env.NODE_ENV isnt 'local'
   console.log '+ Requesting new relic'
   newrelic = require 'newrelic'
 
-g = require './globals'
-
-# save server as global variable as well
-g.server = require './server'
-
-mongoose = require 'mongoose'
 
 server.start ( error ) ->
 
@@ -44,3 +43,18 @@ server.start ( error ) ->
       for file in files
 
         server.hapi.route require( file )
+
+
+
+# gracefully shutdown with nodemon
+process.once 'SIGUSR2', ->
+
+  sockets.shutdown -> process.kill process.pid, 'SIGUSR2'
+
+
+# gracefully shutdown with SIGTERM
+process.once 'SIGTERM', ->
+
+  console.log "SIGTERM - SIGNAL"
+
+  sockets.shutdown -> process.exit 0

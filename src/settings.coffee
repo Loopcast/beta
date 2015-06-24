@@ -61,6 +61,13 @@ if not s.is_local
     password : r_info.auth.split(":")[1]
     kue_db   : 0
 
+  r_info  = url.parse process.env.REDIS_URL
+  s.heroku_redis = 
+    host     : r_info.hostname
+    port     : r_info.port
+    password : r_info.auth.split(":")[1]
+    kue_db   : 0
+
 # IF PRODUCTION
 if s.is_beta
 
@@ -147,6 +154,12 @@ if s.is_local
     host     : 'pub-redis-17159.eu-west-1-2.1.ec2.garantiadata.com'
     port     : 17159
     password : 'N3eP40AZT7ztktho'
+    kue_db   : 0
+
+  s.heroku_redis =
+    host     : 'ec2-176-34-249-171.eu-west-1.compute.amazonaws.com'
+    port     : 7549
+    password : 'p3e82a3uhokjej3sm8f1967vn2k'
     kue_db   : 0
 
 

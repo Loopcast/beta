@@ -38,6 +38,7 @@ class App
 		@local   = require 'app/controllers/local_connection'
 		@session = require 'app/controllers/storage'
 		@window  = require 'app/controllers/window'
+		@socket  = require 'app/controllers/socket'
 		@user    = require './controllers/user'
 
 		@body    = $ 'body'
