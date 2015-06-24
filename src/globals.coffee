@@ -102,28 +102,8 @@ global.failed = ( request, reply, error, data, skip_report ) ->
     console.error "error is null or not defined"
     return
 
-  data = data || {}
-
-  # send error down the pipe to the user
-  if typeof reply == 'function'
-
-    console.log "replying error ->", error
-    reply error : error
-
-  # no need to do extra work when running test
-  if s.in_tests then return
-  
-  # TODO:
-  # - grab user id in case user is logged?
-  # - grab request payload if request method is POST
-  # - integrate with newrelic insights API ?
-  
-  # return early if specified by the caller
-  if skip_report then return
-
-  # report to newrelic
-  if newrelic?
-    newrelic.noticeError error, data
+  console.log "some error happened and we failed : ("
+  console.log error
 
 
 module.exports = global
