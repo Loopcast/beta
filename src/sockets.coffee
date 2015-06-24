@@ -1,5 +1,5 @@
-# update to socket.io client
-# https://github.com/automattic/socket.io-redis
+# TODO: implement socket authentication
+# https://github.com/hapijs/discuss/issues/48
 
 sockets = { stats: null, online: false }
 stats   = {}
