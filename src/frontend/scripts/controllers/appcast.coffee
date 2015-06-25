@@ -6,6 +6,8 @@ aware    = require 'aware'
 # shortcut for vendor scripts
 v       = require 'app/vendors'
 
+L = require 'app/api/loopcast/loopcast'
+
 # the controller is the model, modern concept of hermaphrodite file
 appcast = aware {}
 
@@ -200,8 +202,17 @@ appcast.callbacks =
 
   version_response: ( data ) ->
 
-    
     console.log "current appcat version ~>", data.version
+
+    L.user.appcast_version data.version, ( error, callback ) ->
+
+      if error
+
+        return console.error error
+
+
+      console.log "updated appcast version succesfly"
+
 
 
 # should try to connect only on it's own profile page

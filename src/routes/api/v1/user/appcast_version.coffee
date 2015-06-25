@@ -38,3 +38,18 @@ module.exports =
           return reply Boom.badData 'error updating appcast version'
 
         reply result
+
+
+      # update information on intercom
+      user_data = 
+        user_id           : user_id
+        custom_attributes :
+          appcast_version: version
+
+      intercom.updateUser user_data, ( error, res ) ->
+
+        if error 
+          console.log "error while updating user on intercom"
+          console.log user
+
+          return
