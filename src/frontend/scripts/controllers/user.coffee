@@ -165,7 +165,7 @@ class UserController
     window.intercomSettings.widget     =
       activator: '#IntercomDefaultWidget'
 
-    $.getScript 'js/intercom.js', ->
+    $.getScript '/js/intercom.js', ->
 
       window.Intercom 'boot', window.intercomSettings
 
