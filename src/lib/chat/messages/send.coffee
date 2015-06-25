@@ -1,6 +1,9 @@
-save = require './save'
+escape = require 'escape-html'
+save   = require './save'
 
 module.exports = ( room_id, data, callback ) ->
+
+  data.message = escape data.message
 
   # response = pusher.trigger room_subscribe_id, "message", data
   sockets.send room_id, data

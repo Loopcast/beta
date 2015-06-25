@@ -1,7 +1,7 @@
 login_popup = require 'app/utils/login_popup'
-L = require '../../api/loopcast/loopcast'
-user = require 'app/controllers/user'
-ChatView = require 'app/views/room/chat_view'
+L           = require 'app/api/loopcast/loopcast'
+user        = require 'app/controllers/user'
+ChatView    = require 'app/views/room/chat_view'
 StringUtils = require 'app/utils/string'
 
 module.exports = class Textarea extends ChatView
@@ -91,17 +91,15 @@ module.exports = class Textarea extends ChatView
       do login_popup
 
 
-  send_message: ( message, additional_data = {} ) ->
+  send_message: ( message, payload = {} ) ->
 
     if app.settings.touch_device
       document.activeElement.blur()
       
     data = 
-      owner_id: @owner_id
-      user_id: user.data.username
-      room_id: @room_id
-      message: message
-      additional_data: additional_data
+      room_id : @room_id
+      message : message
+      payload : payload
 
     # log "[Textarea] send_message", data
 

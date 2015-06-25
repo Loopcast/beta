@@ -1,6 +1,3 @@
-escape = require 'escape-html'
-
-# pusher_room_id = lib 'pusher/get_room_id'
 send   = lib 'chat/messages/send'
 
 module.exports =
@@ -23,15 +20,9 @@ module.exports =
 
     validate:
       payload:
-        owner_id        : joi.string().required()
-        user_id         : joi.string().required()
-        room_id         : joi.string().required()
-        message         : joi.string().optional()
-        additional_data : joi.object().optional()
-
-    # response: schema:
-    #   error : joi.any()
-    #   _id   : joi.any()
+        room_id : joi.string().required()
+        message : joi.string().optional()
+        payload : joi.object().optional()
 
     handler: ( request, reply ) ->
 
@@ -40,8 +31,9 @@ module.exports =
 
       user = request.auth.credentials.user
 
+      console.log 'user.username ->', 
+
       room_id  = request.payload.room_id
-      owner_id = request.payload.owner_id
       user_id  = request.payload.user_id
 
       # build channel string
@@ -50,13 +42,11 @@ module.exports =
       data = 
         type    : 'message'
         name    : user.name
-        username: user_id
+        username: user.username
         avatar  : user.avatar
         time    : now().format()
-        message : escape request.payload.message
-
-      if request.payload.additional_data?
-        data.additional_data = request.payload.additional_data
+        message : request.payload.message
+        payload : request.payload.payload
 
       # send message
       send room_id, data
