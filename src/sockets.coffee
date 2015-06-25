@@ -1,11 +1,17 @@
 # TODO: implement socket authentication
 # https://github.com/hapijs/discuss/issues/48
 
+# reference to socket.io
+io = null
+
 sockets = { stats: null, online: false }
 stats   = {}
 
 sockets.stats = stats
 
+#
+# ~ server basics
+#
 
 # use redis as backend in order to keep messages going through
 # multiple socket instances
@@ -39,9 +45,7 @@ sockets.boot = ( server ) ->
 
     socket.emit "uid", socket.id
 
-    stats[ socket.id ] = 
-      id       : socket.id
-      connected: true
+    stats[ socket.id ] = connected: true
 
     socket.on 'disconnect', ->
 
@@ -56,23 +60,27 @@ sockets.boot = ( server ) ->
 
 sockets.shutdown = ( callback ) -> 
 
-  if not sockets.online then return callback()
+  return callback() if not sockets.online
 
-  for socket in sockets.stats
-
-    console.log 'socket ->', socket
+  for id, socket of sockets.stats
 
     if socket.connected
-      console.log "socket will disconnected", socket.id
+      console.log "socket #{id} has to be disconnected"
 
     socket.connected = false 
 
-  console.log 'yaya'
   callback()
 
 
-sockets.publish = ( channel, data ) ->
+#
+# ~ messaging
+#
 
-  io.sockets.in( channel ).emit( 'message', data );
+sockets.send = ( channel, data ) ->
+
+  console.log "sending ", data
+  console.log "to ", channel
+
+  io.sockets.in( channel ).emit( channel, data );
 
 module.exports = sockets

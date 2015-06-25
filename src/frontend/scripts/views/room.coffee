@@ -1,5 +1,6 @@
 L               = require 'api/loopcast/loopcast'
 navigation      = require 'app/controllers/navigation'
+socket          = require 'app/controllers/socket'
 Strings         = require 'app/utils/string'
 user_controller = require 'app/controllers/user'
 notify          = require 'app/controllers/notify'
@@ -106,6 +107,15 @@ module.exports = class Room extends LoggedView
     
     @room_created = true
     @dom.removeClass( 'page_create' ).addClass( 'room_ready' )
+
+    socket.subscribe( @room_id )
+    socket.on @room_id, ( data ) ->
+
+      console.info "hey"
+      console.log "got data ->"
+      console.log data
+
+
 
     @room_subscribe_id = pusher_room_id @owner_id, @room_id
     @channel = pusher.subscribe @room_subscribe_id

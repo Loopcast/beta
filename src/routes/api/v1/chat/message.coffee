@@ -40,12 +40,12 @@ module.exports =
 
       user = request.auth.credentials.user
 
-      room    = request.payload.room_id
+      room_id  = request.payload.room_id
       owner_id = request.payload.owner_id
-      user_id = request.payload.user_id
+      user_id  = request.payload.user_id
 
       # build channel string
-      room_subscribe_id    = pusher_room_id owner_id, room
+      room_subscribe_id    = pusher_room_id owner_id, room_id
 
       data = 
         name    : user.name
@@ -59,8 +59,10 @@ module.exports =
 
       response = pusher.trigger room_subscribe_id, "message", data
 
+      sockets.send room_id, data
+
       # save message to redis
-      save_message room, data, ( error, response ) ->
+      save_message room_id, data, ( error, response ) ->
 
         if error then return console.error error
 

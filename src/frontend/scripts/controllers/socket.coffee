@@ -7,25 +7,22 @@ socket = happens {}
 # mimics pusher API
 socket.subscribe   = ( channel ) ->
 
+  console.error "subscribing to:", channel
+  
   connection.emit 'subscribe', channel
 
 socket.unsubscribe = ( channel ) ->
 
+  # temporarily remove all listeners, for the sake of simplicity
+  connection.removeAllListeners channel
   connection.emit 'unsubscribe', channel
 
+socket.on = ( channel, funk ) ->
 
-connection.on 'uid', ( data ) ->
+  connection.on channel, funk
 
-  console.log "got uid ->", data
+socket.off = ( channel, funk ) ->
 
-connection.onopen = () ->
-  console.log 'socket open', socket
-
-socket.onmessage = (e) ->
-  console.log 'socket  message', e.data
-
-socket.onclose = ->
-  console.log 'socket close'
-
+  connection.removeListener channel, funk
 
 module.exports = socket
