@@ -278,7 +278,7 @@ module.exports = class Room extends LoggedView
 
     if @room_created
 
-      sockets.unsubscribe @room_id      
+      sockets.unsubscribe @room_id
       
       # pusher.unsubscribe @room_subscribe_id
       # @channel.unbind 'listener:added', @on_listener_added
