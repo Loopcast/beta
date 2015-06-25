@@ -25,6 +25,7 @@ module.exports =
 
         # only if it's a real visit
         if response
-          pusher.trigger room_id, "play", room_id
+          sockets.send room_id, type: "play"
+
 
         reply updated: response

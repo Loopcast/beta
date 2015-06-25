@@ -23,8 +23,8 @@ module.exports =
 
         if error then return reply error
 
-        # only if it's a real visit
+        # only send visited message when a new visit arrives
         if response
-          pusher.trigger room_id, "visit", room_id
+          sockets.send room_id, type: "visit"
 
         reply updated: response

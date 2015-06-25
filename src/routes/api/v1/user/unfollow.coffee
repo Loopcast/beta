@@ -26,6 +26,14 @@ module.exports =
       user         = req.auth.credentials.user
       following_id = req.params.id
 
+      data = 
+        type     : 'unlike'
+        username : user.username
+        name     : user.name
+        avatar   : user.avatar
+
+      sockets.send user._id, data
+
       unlike user._id, following_id, ( error, response ) ->
 
         if error then return reply error: error

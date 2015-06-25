@@ -57,12 +57,13 @@ module.exports =
             return reply Boom.resourceGone( "room not found or user not owner" )
 
           # status object to be sent down a socket Channel
-          status =
+          data =
+            type   : "status"
             is_live: true
             live: 
               started_at: now().format()
 
-          pusher.trigger room_id, "status", status
+          sockets.send room_id, data
 
           # updates metadata in order to make it easier to see
           # on icecast sttus page

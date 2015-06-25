@@ -27,12 +27,12 @@ module.exports =
       following_id = req.params.id
 
       data = 
+        type     : 'like'
         username : user.username
         name     : user.name
+        avatar   : user.avatar
 
-      # broadcast message "followed_by" to channel "following_id" passing 
-      # user as data
-      pusher.trigger following_id, "followed_by", data
+      sockets.send following_id, data
 
       like user._id, following_id, ( error, respose ) ->
 

@@ -10,7 +10,13 @@ Channels / messages
   channel : user._id
   messages:
 
-    - type: "like"
+    - type: "like" # increment 1
+      user:
+        username: String
+        name    : String
+        avatar  : String
+
+    - type: "unlike" " # decrement 1
       user:
         username: String
         name    : String
@@ -29,15 +35,21 @@ Channels / messages
   channel : room_id
   messages:
 
-    - type: "like"
+    - type: "like" # increment 1
       user:
         username: String
         name    : String
         avatar  : String
 
-    - type: "visit" # happens when a new visit arrives, increment counter + 1
+    - type: "unlike" " # decrement 1
+      user:
+        username: String
+        name    : String
+        avatar  : String
 
-    - type: "play"  # happens when a new visit arrives, increment counter + 1
+    - type: "visit" # happens when a new visit arrives, increment counter 1
+
+    - type: "play"  # happens when a new visit arrives, increment counter 1
 
     - type: "listeners"  # update amount of listeners in a room
       listeners: Number

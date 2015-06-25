@@ -78,8 +78,8 @@ sockets.shutdown = ( callback ) ->
 
 sockets.send = ( channel, data ) ->
 
-  console.log "sending ", data
-  console.log "to ", channel
+  # console.log "sending ", data
+  # console.log "to ", channel
 
   io.sockets.in( channel ).emit( channel, data );
 

@@ -1,6 +1,5 @@
 escape = require 'escape-html'
 
-pusher_room_id = lib 'pusher/get_room_id'
 get_messages   = lib 'chat/get_messages'
 
 module.exports =

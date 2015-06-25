@@ -38,6 +38,7 @@ module.exports =
             data.set 'jobs', data.get( "jobs" ) - 1
 
         else
+
           data.set 'listeners', 0
           data.set 'jobs', data.get( "jobs" ) - 1
 
@@ -46,7 +47,11 @@ module.exports =
 
     data.on 'listeners', ( number ) ->
 
-      pusher.trigger req.params.id , "listeners", number
+      message = 
+        type     : "listeners"
+        listeners: number
+
+      sockets.send req.params.id, message
 
     data.on 'jobs', ( number ) ->
 
