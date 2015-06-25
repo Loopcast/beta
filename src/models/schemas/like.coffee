@@ -3,17 +3,20 @@ Schema     = mongoose.Schema
 
 schema = new Schema
   # _id of the user owning the room
-  user_id  : type: Schema.Types.ObjectId, required: on
-  liked_id : type: Schema.Types.ObjectId, required: on
-  type     : type: String               , required: on
-  start    : type: Date                 , required: on
-  end      : type: Date                 , sparse  : true
+  user_id  : { type: Schema.Types.ObjectId, required: on }
+  liked_id : { type: Schema.Types.ObjectId, required: on }
+  type     : { type: String               , required: on }
+  start    : { type: Date                 , required: on }
+  end      : { type: Date                                }
 
 Like = mongoose.model 'Like', schema
 
 # TODO:
 # make a compound index on user_id and type ?
-schema.index { user_id: 1, type: 1 }
+schema.index 
+  user_id : 1
+  type    : 1
+  end     : 1
 
 
 #
