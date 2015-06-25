@@ -7,76 +7,56 @@ Channels / messages
 
   The web server works on the following channels
 
-  - #{user._id}
-    - followed_by
+  channel : user._id
+  messages:
+
+    - type: "like"
+      user:
+        username: String
+        name    : String
+        avatar  : String
+
+    - type: "upload:finished"
       user:
         username
         name
 
-  - #{room_id}
+    - type: "upload:error"
+      user:
+        username
+        name
 
-    This channel broadcast the following message
+  channel : room_id
+  messages:
 
-      - liked_by
+    - type: "like"
+      user:
+        username: String
+        name    : String
+        avatar  : String
 
-        Which sends 
-          data = 
-            username : user.username
-            name     : user.name
+    - type: "visit" # happens when a new visit arrives, increment counter + 1
 
-      - visit
-        Which sends just room_id when a new visit arrives
+    - type: "play"  # happens when a new visit arrives, increment counter + 1
 
-      - play
-        Which sends just room_id
+    - type: "listeners"  # update amount of listeners in a room
+      listeners: Number
 
-      - listeners
+    - type: "message"
+      name    : String
+      username: String
+      avatar  : String
+      time    : Date String
+      message : String
 
-        Which sends amount of listeners 
+    - type: "status" # Happens when a room goes live / offline
+      is_live ( Boolean )
+      is_recording ( Boolean )
+      live
+        started_at ( UTC time )
+        stopped_at ( UTC time )
+      recording
+        started_at ( UTC time )
+        stopped_at ( UTC time )
 
-      - message
-
-        Which sends
-          data = 
-            name   : user.name
-            avatar : user.avatar
-            time   : now().format()
-            message: message
-
-        # Happens when a message is sent in this room
-
-      - status
-
-        Which can send any of this
-          is_live ( Boolean )
-          is_recording ( Boolean )
-          live
-            started_at ( UTC time )
-            stopped_at ( UTC time )
-          recording
-            started_at ( UTC time )
-            stopped_at ( UTC time )
-
-        # Happens when a room goes live / offline
-
-
-  The tape server works on the following channels
-
-  - tape.#{mount_point}
-
-    This channel broadcast the following message
-
-      - upload:finished
-
-        Which sends
-          file
-
-      - upload:error
-
-        Which sends
-          error
-
-      - upload:failed
-
-        Which sends
-          error
+        
