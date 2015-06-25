@@ -9,7 +9,6 @@ happens         = require 'happens'
 api             = require 'app/api/loopcast/loopcast'
 Cloudinary      = require 'app/controllers/cloudinary'
 transform       = require 'lib/cloudinary/transform'
-pusher_room_id  = require 'lib/pusher/get_room_id'
 RoomModal       = require 'app/views/modals/room_modal'
 
 
@@ -109,19 +108,24 @@ module.exports = class Room extends LoggedView
     @dom.removeClass( 'page_create' ).addClass( 'room_ready' )
 
     socket.subscribe( @room_id )
-    socket.on @room_id, ( data ) ->
+
+    socket.on @room_id, ( data ) =>
 
       console.info "hey"
       console.log "got data ->"
       console.log data
 
-
+      return @on_message          data if data.type is "message"
+      return @on_listener_added   data if data.type is "listener:added"
+      return @on_listener_removed data if data.type is "listener:removed"
 
     @room_subscribe_id = pusher_room_id @owner_id, @room_id
-    @channel = pusher.subscribe @room_subscribe_id
-    @channel.bind 'listener:added', @on_listener_added
-    @channel.bind 'listener:removed', @on_listener_removed
-    @channel.bind 'message', @on_message
+
+    # @channel = pusher.subscribe @room_subscribe_id
+    # @channel.bind 'listener:added', @on_listener_added
+    # @channel.bind 'listener:removed', @on_listener_removed
+    # @channel.bind 'message', @on_message
+
     @publish_modal = view.get_by_dom '#publish_modal'
     @confirm_exit_modal = view.get_by_dom '#confirm_exit_modal'
     
@@ -273,10 +277,13 @@ module.exports = class Room extends LoggedView
     navigation.set_lock_live false, ""
 
     if @room_created
-      pusher.unsubscribe @room_subscribe_id
-      @channel.unbind 'listener:added', @on_listener_added
-      @channel.unbind 'listener:removed', @on_listener_removed
-      @channel.unbind 'message', @on_message
+
+      sockets.unsubscribe @room_id      
+      
+      # pusher.unsubscribe @room_subscribe_id
+      # @channel.unbind 'listener:added', @on_listener_added
+      # @channel.unbind 'listener:removed', @on_listener_removed
+      # @channel.unbind 'message', @on_message
 
     if user_controller.check_guest_owner() and @description?
       @description.off 'changed', @on_description_changed

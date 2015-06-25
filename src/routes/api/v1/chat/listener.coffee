@@ -1,5 +1,4 @@
 escape = require 'escape-html'
-pusher_room_id = lib 'pusher/get_room_id'
 
 load_profile = models 'profile'
 
@@ -27,7 +26,6 @@ module.exports =
       payload:
         method   : joi.string().required()
         room_id  : joi.string().required()
-        owner_id : joi.string().optional()
 
     # response: schema:
     #   error : joi.any()
@@ -40,16 +38,10 @@ module.exports =
 
       user = request.auth.credentials.user
 
-      room_id    = request.payload.room_id
-      owner_id = request.payload.owner_id
-
-      # build channel string
-      room_subscribe_id    = pusher_room_id owner_id, room_id
-
-      query = _id: user._id
+      room_id  = request.payload.room_id
 
       User
-        .findOne( query )
+        .findOne( _id: user._id )
         .select( "info.name info.username info.occupation info.avatar likes" )
         .lean()
         .exec ( error, response ) ->
@@ -57,6 +49,7 @@ module.exports =
           if error then return reply Boom.badRequest "user not found"
 
           data = 
+            type  : "listener:#{request.payload.method}"
             method: request.payload.method
             user : 
               id        : response.info.username
@@ -66,7 +59,9 @@ module.exports =
               followers : response.info.likes
               url       : "/" + response.info.username
 
-          response = pusher.trigger room_subscribe_id, "listener:#{data.method}", data
+          sockets.send room_id, data
 
-          reply( response ).header "Cache-Control", "no-cache, must-revalidate"
+          # response = pusher.trigger room_subscribe_id, "listener:#{data.method}", data
+
+          reply( sent: true ).header "Cache-Control", "no-cache, must-revalidate"
 

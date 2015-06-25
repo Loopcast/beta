@@ -1,4 +1,4 @@
-send   = lib 'chat/messages/send'
+send = lib 'chat/messages/send'
 
 module.exports =
   method : 'POST'
@@ -6,13 +6,16 @@ module.exports =
 
   config:
 
-    description: "Sends a message to the chat room"
+    description: """"
+      Sends a message to the chat room
+      TODO: rename to /api/v1/chat/message/send
+    """
     plugins: "hapi-swagger": responseMessages: [
       { code: 400, message: 'Bad Request' }
       { code: 401, message: 'Needs authentication' }
       { code: 500, message: 'Internal Server Error'}
     ]
-    tags   : [ "api", "v1" ]
+    tags   : [ "api", "v1", "todo" ]
 
     auth:
       strategy: 'session'

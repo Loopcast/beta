@@ -47,9 +47,8 @@ module.exports = class People extends ChatView
 
   send_message: ( method ) ->
     data = 
-      method: method
+      method : method
       room_id: @room_id
-      owner_id: @owner_id
 
     # log "[People] send_message", data
 
