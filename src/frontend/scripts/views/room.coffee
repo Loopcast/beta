@@ -16,6 +16,7 @@ module.exports = class Room extends LoggedView
   room_created: false
   publish_modal: null
   exit_modal: null
+  sidebar_right: null
 
   constructor: ( @dom ) ->
     super @dom
@@ -40,6 +41,8 @@ module.exports = class Room extends LoggedView
     @modal = view.get_by_dom '#room_modal'
     @modal.on 'input:changed', @on_input_changed
     @modal.on 'submit', @on_modal_submit
+
+    @sidebar_right = view.get_by_dom '.sidebar_right'
 
     if @is_create_page()
       @modal.open()
@@ -115,6 +118,8 @@ module.exports = class Room extends LoggedView
       console.log "got data ->"
       console.log data
 
+      return @on_like_room        data if data.type is "like"
+      return @on_unlike_room      data if data.type is "unlike"
       return @on_message          data if data.type is "message"
       return @on_listener_added   data if data.type is "listener:added"
       return @on_listener_removed data if data.type is "listener:removed"
@@ -153,7 +158,13 @@ module.exports = class Room extends LoggedView
         @on_room_live()
 
     L.rooms.visit @room_id, (error, response) ->
-      log "[Room] visit", error, response
+      log "[Room] visit response", error, response
+
+  on_like_room: ( data ) =>
+    @sidebar_right.on_like()
+
+  on_unlike_room: ( data ) =>
+    @sidebar_right.on_unlike()
 
   update_genres: (genres) ->
     log "UPDATE GENRES", genres
