@@ -2,6 +2,7 @@ transform = require 'lib/cloudinary/transform'
 happens   = require 'happens'
 navigation = require 'app/controllers/navigation'
 notify = require 'app/controllers/notify'
+socket = require 'app/controllers/socket'
 api = require 'app/api/loopcast/loopcast'
 
 
@@ -145,7 +146,16 @@ class UserController
 
       callback response
 
-  
+  on_user_followed: ( data ) =>
+    log "[User] on_user_followed", data
+    notify.info data.name + ' is following you!'
+
+  on_upload_finished: ( data ) =>
+    log "[User] on_upload_finished", data
+
+  on_upload_error: ( data ) =>
+    log "[User] on_upload_error", data
+
   ###
   Private Methods
   ###
@@ -157,6 +167,24 @@ class UserController
     log "#{@data.username} / #{@data.name}"
     log @data
     log "[==========================]"
+
+
+    # Subscribe to the user channel
+    socket.subscribe @data._id # or room_id
+    socket.on @data._id, ( data ) =>
+      log "[User]getting message from socket:", data
+
+      if data.type is "like"
+        @on_user_followed data
+        return
+
+      if data.type is "upload:finished"
+        @on_upload_finished data
+        return
+
+      if data.type is "upload:error"
+        @on_upload_error data
+        return
 
     # updates intercom information
     window.intercomSettings.name       = @data.name
@@ -194,6 +222,9 @@ class UserController
   _dispatch_logout: ->
     log "[====== USER NOT LOGGED =======]"
     log "[==========================]"
+
+    # unsubscribe will automatically stop listening and remove all the listeners for this channel
+    socket.unsubscribe user_id # or room_id
 
     @check_guest_owner()
     app.body.removeClass( "logged" ).addClass( 'not_logged' )
