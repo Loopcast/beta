@@ -82,7 +82,7 @@ module.exports =
           update =
             'info.url'      : "#{s.radio.url}/#{room._owner}"
             'status.is_live'         : true
-            'status.live.started_at' : status.live.started_at
+            'status.live.started_at' : data.live.started_at
 
           Room.update( _id: room_id, update )
             .lean()
