@@ -42,8 +42,10 @@ module.exports = class Textarea extends ChatView
       L.rooms.info @room_id, (error, response) =>
         if response.liked
           @heart.addClass 'liked'
+          @liked = true 
         else
           @heart.removeClass 'liked'
+          @liked = false
 
 
   like_cliked: =>
@@ -51,14 +53,15 @@ module.exports = class Textarea extends ChatView
 
       @liked = not @liked
 
-      if not @already_liked
-        
-        @send_message "Liked this session", {like: @liked}
-        @already_liked = true
-
       if @liked
+        
+        if not @already_liked
+          @send_message "Liked this session", {like: @liked}
+          @already_liked = true
+
         @heart.addClass 'liked'
         L.rooms.like @room_id, (error, response) =>
+
       else
         @heart.removeClass 'liked'
         L.rooms.dislike @room_id, (error, response) =>
