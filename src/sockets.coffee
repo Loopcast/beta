@@ -25,7 +25,7 @@ sockets.connect = ( listener ) ->
   pub = redis_client s.heroku_redis.port, s.heroku_redis.host,
     auth_pass: s.heroku_redis.password
 
-  sub = redis_client s.heroku_redis.port, s.heroku_redis.host
+  sub = redis_client s.heroku_redis.port, s.heroku_redis.host,
     auth_pass     : s.heroku_redis.password
     detect_buffers: true
 
