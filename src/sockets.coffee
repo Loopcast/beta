@@ -54,11 +54,57 @@ sockets.boot = ( server ) ->
 
       console.log "socket is gone!", socket.id
 
+      # remove socket_id from all rooms it has joined
+      query   = in_chat: socket.id
+      update  = $pull: in_chat: socket.id
+      options = multi: true
+      Room.update query, update, options, ( error ) ->
+
+        if error
+          console.log "error removing socket #{socket.id} from all rooms"
+          console.log error
+
+        console.log "#{socket.id} removed from all rooms!"
+
 
     # sub / unsub jazz
-    socket.on 'subscribe'  , ( room ) -> socket.join  room
+    socket.on 'subscribe'  , ( room ) -> 
+      socket.join  room
+
+    socket.on 'unsubscribe', ( room ) -> 
+      socket.leave room
+
+    # add / remove user from room when subscribing
+    socket.on 'subscribe-room'  , ( room ) -> 
+      socket.join  room
+
+      # add socket_id to room
+      query   = _id: room
+      update  = $push: in_chat: socket.id
+      options = multi: true
+      Room.update query, update, options, ( error ) ->
+
+        if error
+          console.log "error adding socket #{socket.id} to room #{room}"
+          console.log error
+
+        console.log "#{socket.id} added to room #{room}"
+
       
-    socket.on 'unsubscribe', ( room ) -> socket.leave room
+    socket.on 'unsubscribe-room', ( room ) -> 
+      socket.leave room
+
+      # remove socket_id from room
+      query   = _id: room
+      update  = $pull: in_chat: socket.id
+      options = multi: true
+      Room.update query, update, options, ( error ) ->
+
+        if error
+          console.log "error removing socket #{socket.id} to room #{room}"
+          console.log error
+
+        console.log "#{socket.id} removed from room #{room}"
       
 
 sockets.shutdown = ( callback ) -> 
@@ -69,16 +115,19 @@ sockets.shutdown = ( callback ) ->
 
   if not clients.length then return callback()
 
-  console.log "clients to be disconnected ->", clients
 
-  for id, socket of sockets.stats
+  query   = in_chat  : $in    : clients
+  update  = $pullAll : in_chat: clients
+  options = multi    : true
+  
+  Room.update query, update, options, ( error ) ->
+    if error
+      console.log "error removing users from room when server shutdown"
+      console.log error
+    else
+      console.log "success removing socket from rooms!"
 
-    if socket.connected
-      console.log "socket #{id} has to be disconnected"
-
-    socket.connected = false 
-
-  callback()
+    callback()
 
 
 #
