@@ -20,31 +20,28 @@ module.exports =
 
     handler: ( request, reply ) ->
 
+      user     = request.auth.credentials.user
+      room_id  = request.params.room_id
 
-      if not request.auth.isAuthenticated
+      User
+        .findOne( _id: user._id )
+        .select( "info.name info.username info.occupation info.avatar likes" )
+        .lean()
+        .exec ( error, response ) ->
 
-        return reply Boom.unauthorized('needs authentication')
+          if error then return reply Boom.badRequest "user not found"
 
-      user = request.auth.credentials.user
-      id   = request.params.room_id
+          data = 
+            type  : "listener:#{request.payload.method}"
+            method: 'added'
+            user : 
+              id        : response.info.username
+              name      : response.info.name
+              occupation: response.info.occupation
+              avatar    : response.info.avatar
+              followers : response.info.likes
+              url       : "/" + response.info.username
 
-      console.log 'credentials user ->', user
+          sockets.send room_id, data
 
-      if user
-        user =
-          _id     : user._id
-          username: user.username
-          avatar  : user.avatar
-
-      reply user
-
-      # data = {
-
-      # }
-      # redis.hset "room:#{id}:members", user._id,
-
-      # get_messages , ( error, response ) -> 
-
-      #   if error then return reply Boom.resourceGone "Something went wrong"
-
-      #   reply response
+          reply( sent: true ).header "Cache-Control", "no-cache, must-revalidate"
