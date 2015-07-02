@@ -61,7 +61,5 @@ module.exports =
 
           sockets.send room_id, data
 
-          # response = pusher.trigger room_subscribe_id, "listener:#{data.method}", data
-
           reply( sent: true ).header "Cache-Control", "no-cache, must-revalidate"
 
