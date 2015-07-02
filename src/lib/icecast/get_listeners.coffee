@@ -24,4 +24,7 @@ module.exports = ( mount_point, callback ) ->
       if error
         callback Boom.resourceGone( "error getting listeners")
 
-      callback null, Number(result.icestats.source[0].Listeners[0])
+      if not result.icestats?
+        callback null, 0
+      else
+        callback null, Number(result.icestats.source[0].Listeners[0])
