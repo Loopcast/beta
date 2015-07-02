@@ -124,12 +124,6 @@ module.exports = class Room extends LoggedView
       return @on_listener_added   data if data.type is "listener:added"
       return @on_listener_removed data if data.type is "listener:removed"
 
-    # @room_subscribe_id = pusher_room_id @owner_id, @room_id
-    # @channel = pusher.subscribe @room_subscribe_id
-    # @channel.bind 'listener:added', @on_listener_added
-    # @channel.bind 'listener:removed', @on_listener_removed
-    # @channel.bind 'message', @on_message
-
     @publish_modal = view.get_by_dom '#publish_modal'
     @confirm_exit_modal = view.get_by_dom '#confirm_exit_modal'
     
