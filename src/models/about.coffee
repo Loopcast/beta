@@ -3,7 +3,7 @@ module.exports = ( callback ) ->
 
   callback null,
     title: "About Loopcast"
-    description: "Loopcast is built for DJ’s, artists and listeners, enabling them to broadcast and record their mixes and to save instantly to their profiles without the usual hassle."
+    description: "Operating entirely in real time, Loopcast is the latest frontier in music streaming. Our platform allows DJs to create their own rooms, where they can broadcast and record their mixes live for a global audience, interact with their audience and see who’s listening, directly in their browser."
     columns: [
       {
         icon: "about_turntable.png"
