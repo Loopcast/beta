@@ -63,8 +63,8 @@ module.exports = class ButtonWithTimer extends RoomView
     return if not error
     @text.html "ERROR"
     log "[Record] on_error. origin", error, origin
-    error += " - Restart appcast."
-    notify.info error
+
+    notify.info "An error occured, please get in touch using the support icon in the bottom right"
 
   start_timer: ->
     L.rooms.info @room_id, (error, response) =>

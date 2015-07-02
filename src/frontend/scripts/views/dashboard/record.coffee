@@ -51,7 +51,7 @@ module.exports = class Record extends ButtonWithTimer
     L.rooms.stop_recording @room_id, ( error, callback ) ->
 
       if error
-        notify.info "Error while stopping recording"
+        notify.error "Error while stopping recording"
         return
 
       ref.set_active false
