@@ -50,7 +50,7 @@ module.exports =
         payload : request.payload.payload
 
       # send message
-      sockets.send room_id, data
+      send room_id, data
 
       reply( sent: true ).header "Cache-Control", "no-cache, must-revalidate"
 
