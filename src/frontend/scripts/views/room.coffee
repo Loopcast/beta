@@ -180,6 +180,14 @@ module.exports = class Room extends LoggedView
 
         if not user = user_by_socket( socket_id )
 
+          # check if the user is
+          if socket_id is socket.id
+
+            console.error "THIS IS ME!!!"
+            console.error "THIS IS ME!!!"
+            console.error "THIS IS ME!!!"
+            console.error "THIS IS ME!!!"
+          
           user = 
             id        : socket_id
             name      : "Guest"
