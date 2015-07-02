@@ -18,6 +18,8 @@ schema = new Schema
   likes       : { type: Number, default: 0 }
   visits      : { type: Number, default: 0 }
 
+  in_chat     : { type: Array, default: [] }
+
   status:
     is_live      : { type: Boolean, default: off } # when user press go live
     is_recording : { type: Boolean, default: off } # when user press start recording

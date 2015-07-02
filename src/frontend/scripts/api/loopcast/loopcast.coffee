@@ -17,7 +17,7 @@ module.exports =
 
       request.done ( response ) ->
 
-        callback  null, response
+        callback? null, response
 
   rooms :
 
@@ -33,7 +33,7 @@ module.exports =
 
       request.done ( response ) ->
 
-        callback  null, response
+        callback? null, response
 
     info: (room_id, callback ) ->
 
@@ -66,7 +66,7 @@ module.exports =
 
       request.done ( response ) ->
 
-        callback  null, response
+        callback? null, response
 
     play: ( room_id, callback ) ->
       request = $.put api_url + "rooms/#{room_id}/play"
@@ -75,7 +75,7 @@ module.exports =
 
       request.done ( response ) ->
         log "[Loopcast] request done", response
-        callback  null, response
+        callback? null, response
 
     visit: ( room_id, callback ) ->
       request = $.put api_url + "rooms/#{room_id}/visit"
@@ -84,7 +84,7 @@ module.exports =
 
       request.done ( response ) ->
         log "[Loopcast] request done", response
-        callback  null, response
+        callback? null, response
 
     update: ( id, data, callback ) ->
       request = $.put api_url + "rooms/#{id}", data
@@ -93,7 +93,7 @@ module.exports =
 
       request.done ( response ) ->
         log "[Loopcast] request done", response
-        callback  null, response
+        callback? null, response
 
     delete: ( id, callback ) ->
       on_status_code =
@@ -105,7 +105,7 @@ module.exports =
 
       request.done ( response ) ->
         log "[Loopcast] request done", response
-        callback  null, response
+        callback? null, response
 
     like: ( room_id, callback ) ->
       request = $.put api_url + "rooms/#{room_id}/like", {}
@@ -113,7 +113,7 @@ module.exports =
       request.error on_error "rooms/#{room_id}/like", callback
 
       request.done ( response ) ->
-        callback  null, response
+        callback? null, response
 
     dislike: ( room_id, callback ) ->
       request = $.put api_url + "rooms/#{room_id}/unlike", {} 
@@ -121,7 +121,7 @@ module.exports =
       request.error on_error "rooms/#{room_id}/unlike", callback
 
       request.done ( response ) ->
-        callback  null, response
+        callback? null, response
 
     start_stream: ( room_id, callback ) ->
       on_status_code =
@@ -135,7 +135,7 @@ module.exports =
 
       request.done ( response ) ->
 
-        callback  null, response
+        callback? null, response
 
     stop_stream: ( room_id, callback ) ->
       on_status_code =
@@ -150,7 +150,7 @@ module.exports =
 
       request.done ( response ) ->
 
-        callback  null, response
+        callback? null, response
 
     start_recording: ( room_id, callback ) ->
       on_status_code =
@@ -165,7 +165,7 @@ module.exports =
 
       request.done ( response ) ->
 
-        callback  null, response
+        callback? null, response
 
     stop_recording: ( room_id, callback ) ->
       on_status_code =
@@ -179,7 +179,7 @@ module.exports =
 
       request.done ( response ) ->
 
-        callback  null, response
+        callback? null, response
 
   chat:
     message: ( data, callback ) ->
@@ -195,7 +195,7 @@ module.exports =
 
       request.done ( response ) ->
 
-        callback  null, response
+        callback? null, response
 
     messages : (room_id, callback) ->
 
@@ -210,7 +210,7 @@ module.exports =
 
       request.done ( response ) ->
 
-        callback  null, response
+        callback? null, response
     
     listener: ( data, callback ) ->
       on_status_code =
@@ -224,7 +224,7 @@ module.exports =
 
       request.done ( response ) ->
 
-        callback  null, response
+        callback? null, response
 
   user:
     edit: ( data, callback ) ->
@@ -237,7 +237,16 @@ module.exports =
 
       request.done ( response ) ->
 
-        callback  null, response
+        callback? null, response
+
+    socket_id: ( socket_id, callback ) ->
+      request = $.put api_url + "user/socket_id/#{socket_id}"
+
+      request.error on_error "user/socket_id/#{socket_id}", callback
+
+      request.done ( response ) ->
+        # log "[Loopcast] request done", response
+        callback? null, response
 
     status: ( data, callback ) ->
       on_status_code =
@@ -249,7 +258,7 @@ module.exports =
 
       request.done ( response ) ->
 
-        callback  null, response
+        callback? null, response
 
     follow: ( user_id, callback ) ->
       request = $.put api_url + "user/#{user_id}/follow"
@@ -258,7 +267,7 @@ module.exports =
 
       request.done ( response ) ->
         # log "[Loopcast] request done", response
-        callback  null, response
+        callback? null, response
 
     appcast_version: ( version, callback ) ->
       request = $.put api_url + "user/appcast/version/#{version}"
@@ -267,7 +276,7 @@ module.exports =
 
       request.done ( response ) ->
         # log "[Loopcast] request done", response
-        callback  null, response
+        callback? null, response
 
     unfollow: ( user_id, callback ) ->
       request = $.put api_url + "user/#{user_id}/unfollow"
@@ -276,7 +285,7 @@ module.exports =
 
       request.done ( response ) ->
         # log "[Loopcast] request done", response
-        callback  null, response
+        callback? null, response
 
     following: ( callback ) ->
       request = $.post api_url + "user/following"
@@ -285,7 +294,7 @@ module.exports =
 
       request.done ( response ) ->
         # log "[Loopcast] request done", response
-        callback  null, response
+        callback? null, response
 
     is_following: ( ids, callback ) ->
       on_status_code =
@@ -299,4 +308,4 @@ module.exports =
 
       request.done ( response ) ->
 
-        callback  null, response
+        callback? null, response

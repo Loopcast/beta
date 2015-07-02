@@ -20,6 +20,9 @@ schema = new Schema
     streams   : type: Number, default: 0
     listeners : type: Number, default: 0
 
+
+  socket_id    : { type: String, unique: true }
+
   created_at: Date
   updated_at: Date
   
@@ -34,6 +37,9 @@ schema = new Schema
       version: String
 
 User = mongoose.model 'User', schema
+
+schema.index 
+  socket_id : 1
 
 text_indexes = 
   'info.name'       : 'text'

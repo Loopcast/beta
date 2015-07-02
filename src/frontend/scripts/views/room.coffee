@@ -110,7 +110,7 @@ module.exports = class Room extends LoggedView
     @room_created = true
     @dom.removeClass( 'page_create' ).addClass( 'room_ready' )
 
-    socket.subscribe( @room_id )
+    socket.rooms.subscribe( @room_id )
 
     socket.on @room_id, ( data ) =>
 
@@ -288,7 +288,7 @@ module.exports = class Room extends LoggedView
 
     if @room_created
 
-      socket.unsubscribe @room_id
+      socket.rooms.unsubscribe @room_id
       
       # pusher.unsubscribe @room_subscribe_id
       # @channel.unbind 'listener:added', @on_listener_added
