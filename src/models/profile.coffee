@@ -53,8 +53,13 @@ module.exports = ( id, callback ) ->
         # list of rooms
         recorded  : []
         live      : null
-      
-      query = '_owner' : data._id
+
+      # just shows live or recorded rooms
+      query = 
+        $or      : [
+          { '_owner' : data._id, 'info.is_live': true }
+          { '_owner' : data._id, 'info.recording.s3' : $exists: true }
+        ]
 
       Room.find( query ).lean().exec ( error, rooms ) ->
 
