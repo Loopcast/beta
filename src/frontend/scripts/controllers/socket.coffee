@@ -21,8 +21,6 @@ connection.on "uid", ( socket_id ) ->
 # mimics pusher API
 socket.subscribe   = ( channel ) ->
 
-  console.error "subscribing to:", channel
-  
   connection.emit 'subscribe', channel
 
 socket.unsubscribe = ( channel ) ->
@@ -36,8 +34,6 @@ socket.rooms = {}
 # mimics pusher API
 socket.rooms.subscribe   = ( channel ) ->
 
-  console.error "subscribing to:", channel
-  
   connection.emit 'subscribe-room', channel
 
 socket.rooms.unsubscribe = ( channel ) ->
@@ -46,6 +42,9 @@ socket.rooms.unsubscribe = ( channel ) ->
   connection.removeAllListeners channel
   connection.emit 'unsubscribe-room', channel
 
+socket.on = ( channel, funk ) ->
+
+  connection.on channel, funk
 
 socket.off = ( channel, funk ) ->
 

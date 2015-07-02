@@ -212,6 +212,15 @@ module.exports =
 
         callback? null, response
     
+    people: ( room_id, callback ) ->
+      request = $.get api_url + "chat/#{room_id}/people"
+
+      request.error on_error "chat/#{room_id}/people", callback
+
+      request.done ( response ) ->
+
+        callback null, response
+
     listener: ( data, callback ) ->
       on_status_code =
         400: -> callback 'bad request'
