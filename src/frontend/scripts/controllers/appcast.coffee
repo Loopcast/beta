@@ -211,9 +211,6 @@ appcast.callbacks =
         return console.error error
 
 
-      console.log "updated appcast version succesfly"
-
-
 
 # should try to connect only on it's own profile page
 # appcast.connect()
