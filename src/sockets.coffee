@@ -17,7 +17,7 @@ sockets.stats = stats
 # multiple socket instances
 sockets.connect = ( listener ) ->
 
-  io = require('socket.io')(listener)
+  io = sockets.io = require('socket.io')(listener)
 
   redis_client = require('redis').createClient
   adapter      = require('socket.io-redis')
@@ -57,11 +57,19 @@ sockets.boot = ( server ) ->
 
     # sub / unsub jazz
     socket.on 'subscribe'  , ( room ) -> socket.join  room
+      
     socket.on 'unsubscribe', ( room ) -> socket.leave room
+      
 
 sockets.shutdown = ( callback ) -> 
 
   return callback() if not sockets.online
+
+  clients = Object.keys( stats )
+
+  if not clients.length then return callback()
+
+  console.log "clients to be disconnected ->", clients
 
   for id, socket of sockets.stats
 
