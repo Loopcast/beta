@@ -215,7 +215,7 @@ module.exports = class Room extends LoggedView
 
   show_guest_popup: ->
     link = "/rooms/create"
-    message = 'Do you want to set up your own live room like this?'
+    message = 'You are now listening live on Loopcast'
     if user_controller.is_logged()
       notify.guest_room_logged message
     else
