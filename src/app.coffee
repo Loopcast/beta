@@ -28,7 +28,8 @@ server.start ( error ) ->
     if error
       
       console.error error
-      server.stop()
+
+      server.hapi.stop()
 
       return
 
@@ -51,7 +52,12 @@ process.once 'SIGUSR2', ->
 
   console.log "SIGUSR2 - SIGNAL"
   
-  sockets.shutdown -> process.kill process.pid, 'SIGUSR2'
+  # stop the https server
+  server.hapi.stop { timeout: 5 * 1000}, ->
+    # shutdown sockets gracefully
+    sockets.shutdown -> 
+      # kill the process!
+      process.kill process.pid, 'SIGUSR2'
 
 
 # gracefully shutdown with SIGTERM
@@ -59,4 +65,9 @@ process.once 'SIGTERM', ->
 
   console.log "SIGTERM - SIGNAL"
 
-  sockets.shutdown -> process.exit 0
+  # stop the https server
+  server.hapi.stop { timeout: 5 * 1000}, ->
+    # shutdown sockets gracefully
+    sockets.shutdown -> 
+      # kill the process!
+      process.exit 0

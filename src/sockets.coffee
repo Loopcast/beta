@@ -42,7 +42,7 @@ sockets.boot = ( server ) ->
 
   server.on 'connection', ( socket ) ->
 
-    console.log "socket connected ->", socket.id
+    # console.log "socket connected ->", socket.id
 
     socket.emit "uid", socket.id
 
@@ -117,6 +117,9 @@ sockets.boot = ( server ) ->
 sockets.shutdown = ( callback ) -> 
 
   return callback() if not sockets.online
+
+  # assumes no one will try to connect to this socket again
+  sockets.online = false
 
   clients = Object.keys( stats )
 

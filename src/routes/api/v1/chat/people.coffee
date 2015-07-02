@@ -21,8 +21,6 @@ module.exports =
 
         clients = response.in_chat
 
-        console.log "got response ->", response
-
         if not clients 
 
           console.log "no users in this room !"
