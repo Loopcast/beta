@@ -102,7 +102,6 @@ module.exports = class Room extends LoggedView
 
   on_room_created: (data) ->
 
-
     @owner_id = document.getElementById( 'owner_id' ).value
     @room_id  = document.getElementById( 'room_id' ).value
     log "on room created", data, @owner_id
@@ -153,6 +152,49 @@ module.exports = class Room extends LoggedView
 
     L.rooms.visit @room_id, (error, response) ->
       log "[Room] visit response", error, response
+
+
+    L.chat.people @room_id, (error, response) =>
+      console.error "[Chat] on response"
+      console.log response
+
+      user_by_socket = ( socket_id ) ->
+        for user in response.users
+          if user.socket_id is socket_id
+
+            user = 
+              id        : user.info.username
+              name      : user.info.name
+              occupation: user.info.occupation
+              avatar    : user.info.avatar
+              followers : user.info.likes
+              url       : "/" + user.info.username
+
+            return user
+
+        return null
+
+
+      for socket_id in response.sockets
+        
+
+        if not user = user_by_socket( socket_id )
+
+          user = 
+            id        : socket_id
+            name      : "Guest"
+            occupation: "Guest"
+            avatar    : "https://deerfieldsbakery.com/dev/images/items/cookies/Cookies-Decorated-Chocolate-Happy-Face_MD.jpg"
+            followers : 0
+            url       : "/"
+
+        message = 
+          type  : "listener:added", 
+          method: "added"
+          user  : user
+
+
+        @on_listener_added message
 
   on_like_room: ( data ) =>
     @sidebar_right.on_like()
@@ -261,6 +303,8 @@ module.exports = class Room extends LoggedView
   on_listener_added: ( listener ) =>
     # log "[Room] on_listener_added", listener
     @emit 'listener:added', listener
+
+    console.log listener
 
   on_listener_removed: ( listener ) =>
     # log "[Room] on_listener_removed", listener
