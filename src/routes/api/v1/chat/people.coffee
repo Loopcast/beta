@@ -1,6 +1,6 @@
 module.exports =
   method : 'GET'
-  path   : '/api/v1/rooms/{id}/people'
+  path   : '/api/v1/chat/{id}/people'
 
   config:
     description: """
