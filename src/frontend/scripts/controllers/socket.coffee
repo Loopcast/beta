@@ -32,9 +32,9 @@ socket.unsubscribe = ( channel ) ->
 socket.rooms = {}
 
 # mimics pusher API
-socket.rooms.subscribe   = ( channel ) ->
+socket.rooms.subscribe   = ( channel , callback ) ->
 
-  connection.emit 'subscribe-room', channel
+  connection.emit 'subscribe-room', channel, callback
 
 socket.rooms.unsubscribe = ( channel ) ->
 

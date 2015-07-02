@@ -31,8 +31,6 @@ module.exports =
             sockets: clients
             users  : []
 
-        console.log "looking for users with socket_id ->", clients
-
         query = socket_id: $in: clients
 
         User

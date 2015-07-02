@@ -109,13 +109,15 @@ module.exports = class Room extends LoggedView
     @room_created = true
     @dom.removeClass( 'page_create' ).addClass( 'room_ready' )
 
-    socket.rooms.subscribe( @room_id )
+    # if user don't have socket.id needs to wait for subscription
+    if not socket.id
+      socket.rooms.subscribe( @room_id, @get_people )
+    else
+      socket.rooms.subscribe( @room_id )
+      @get_people();
+
 
     socket.on @room_id, ( data ) =>
-
-      console.info "hey"
-      console.log "got data ->"
-      console.log data
 
       return @on_like_room        data if data.type is "like"
       return @on_unlike_room      data if data.type is "unlike"
@@ -154,10 +156,8 @@ module.exports = class Room extends LoggedView
       log "[Room] visit response", error, response
 
 
+  get_people : =>
     L.chat.people @room_id, (error, response) =>
-      console.error "[Chat] on response"
-      console.log response
-
       user_by_socket = ( socket_id ) ->
         for user in response.users
           if user.socket_id is socket_id
@@ -176,25 +176,30 @@ module.exports = class Room extends LoggedView
 
 
       for socket_id in response.sockets
-        
 
         if not user = user_by_socket( socket_id )
 
-          # check if the user is
+          # check if the user is myself
           if socket_id is socket.id
 
-            console.error "THIS IS ME!!!"
-            console.error "THIS IS ME!!!"
-            console.error "THIS IS ME!!!"
-            console.error "THIS IS ME!!!"
-          
-          user = 
-            id        : socket_id
-            name      : "Guest"
-            occupation: "Guest"
-            avatar    : "https://deerfieldsbakery.com/dev/images/items/cookies/Cookies-Decorated-Chocolate-Happy-Face_MD.jpg"
-            followers : 0
-            url       : "/"
+            user = 
+              id        : user_controller.data.username
+              name      : user_controller.data.name
+              occupation: user_controller.data.occupation
+              avatar    : user_controller.data.avatar
+              followers : 0
+              url       : "/" + user_controller.data.username
+
+          else
+
+            # TODO: populate with Guest information
+            user = 
+              id        : socket_id
+              name      : "Guest"
+              occupation: "Guest"
+              avatar    : "https://deerfieldsbakery.com/dev/images/items/cookies/Cookies-Decorated-Chocolate-Happy-Face_MD.jpg"
+              followers : 0
+              url       : "/"
 
         message = 
           type  : "listener:added", 

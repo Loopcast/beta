@@ -52,7 +52,7 @@ sockets.boot = ( server ) ->
 
       stats[ socket.id ] = connected: false
 
-      console.log "socket is gone!", socket.id
+      # console.log "socket is gone!", socket.id
 
       # remove socket_id from all rooms it has joined
       query   = in_chat: socket.id
@@ -64,7 +64,7 @@ sockets.boot = ( server ) ->
           console.log "error removing socket #{socket.id} from all rooms"
           console.log error
 
-        console.log "#{socket.id} removed from all rooms!"
+        # console.log "#{socket.id} removed from all rooms!"
 
 
     # sub / unsub jazz
@@ -75,7 +75,7 @@ sockets.boot = ( server ) ->
       socket.leave room
 
     # add / remove user from room when subscribing
-    socket.on 'subscribe-room'  , ( room ) -> 
+    socket.on 'subscribe-room', ( room, callback ) -> 
       socket.join  room
 
       # add socket_id to room
@@ -88,7 +88,14 @@ sockets.boot = ( server ) ->
           console.log "error adding socket #{socket.id} to room #{room}"
           console.log error
 
-        console.log "#{socket.id} added to room #{room}"
+        # console.log "#{socket.id} added to room #{room}"
+
+        if callback 
+          socket.emit "#{room}-done", 'done!'
+          
+          # console.log "emited done for " + "#{room}-done"
+
+          callback()
 
       
     socket.on 'unsubscribe-room', ( room ) -> 
@@ -104,7 +111,7 @@ sockets.boot = ( server ) ->
           console.log "error removing socket #{socket.id} to room #{room}"
           console.log error
 
-        console.log "#{socket.id} removed from room #{room}"
+        # console.log "#{socket.id} removed from room #{room}"
       
 
 sockets.shutdown = ( callback ) -> 

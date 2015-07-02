@@ -28,8 +28,6 @@ module.exports =
 
       update    = $set: 'socket_id': socket_id
 
-      console.log "Setting socket id: #{socket_id} for user #{user_id}"
-      
       User.update _id: user_id, update, ( error, result ) ->
 
         if error 
