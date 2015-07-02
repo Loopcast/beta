@@ -34,8 +34,6 @@ module.exports =
 
       user = request.auth.credentials.user
 
-      console.log 'user.username ->', 
-
       room_id  = request.payload.room_id
       user_id  = request.payload.user_id
 
