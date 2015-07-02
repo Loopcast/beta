@@ -8,13 +8,13 @@
       
     
       label(for="username") Title*
-      input.roomname(name="name", type="text", placeholder="Enter room name")
+      input.roomname(name="name", type="text", placeholder="Enter the name of your session")
       label(for="genre") Tags
       .tags_wrapper.genre(data-view="components/editables/editable_tags")
         textarea( id="genre_input", rows="1", style="width:310px")
       label.location_label(for="location") Location
       input.location(name="location", type="text", placeholder="Where are you?")
-      textarea.description.white_textarea(name="description", placeholder="Describe your event")
+      textarea.description.white_textarea(name="description", placeholder="Describe your session")
 
       .room_image.upload_wrapper(data-view="components/image_uploader", data-id="profile_cover")
 
