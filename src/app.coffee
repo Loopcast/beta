@@ -50,7 +50,7 @@ server.start ( error ) ->
         sockets.connect server.hapi.listener
 
 
-process.on'uncaughtException', ( exception ) ->
+process.on 'uncaughtException', ( exception ) ->
 
   console.log "production never goes down!"
   console.log exception
