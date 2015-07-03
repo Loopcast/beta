@@ -22,6 +22,9 @@ setup:
 	cd node_modules/polvo/node_modules/ && git clone https://github.com/hems/polvo-stylus
 	cd node_modules/polvo/node_modules/polvo-stylus/ && npm install
 
+debug:
+	coffee --nodejs --debug ./src/app.coffee
+
 # watch frontend using polvo
 client:
 	$(POLVO) -ws
