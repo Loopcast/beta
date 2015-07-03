@@ -55,7 +55,6 @@ module.exports =
 
         callback null, response
 
-
     create: ( data, callback ) ->
       on_status_code =
         401: ( response ) -> callback 'unauthorized, need log in!'
@@ -221,6 +220,16 @@ module.exports =
 
         callback null, response
 
+    enter: ( room_id, callback ) ->
+
+      request = $.get api_url + "chat/#{room_id}/enter"
+
+      request.error on_error "chat/#{room_id}/enter", callback
+
+      request.done ( response ) ->
+
+        callback null, response
+        
     listener: ( data, callback ) ->
       on_status_code =
         400: -> callback 'bad request'
