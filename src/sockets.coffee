@@ -9,6 +9,8 @@ stats   = {}
 
 sockets.stats = stats
 
+socket_left_room = lib 'sockets/room/left'
+
 #
 # ~ server basics
 #
@@ -46,26 +48,37 @@ sockets.boot = ( server ) ->
 
     socket.emit "uid", socket.id
 
-    stats[ socket.id ] = connected: true
+    stats[ socket.id ] = 
+      connected: true
+      rooms    : {}
 
     socket.on 'disconnect', ->
 
-      stats[ socket.id ] = connected: false
+      stats[ socket.id ].connected = false
 
-      # console.log "socket is gone!", socket.id
+      rooms = Object.keys stats[socket.id].rooms
 
-      # remove socket_id from all rooms it has joined
-      query   = in_chat: socket.id
-      update  = $pull: in_chat: socket.id
-      options = multi: true
-      Room.update query, update, options, ( error ) ->
+      # user has joined a room!
+      if rooms.length
 
-        if error
-          console.log "error removing socket #{socket.id} from all rooms"
-          console.log error
+        for room_id in rooms
 
-        # console.log "#{socket.id} removed from all rooms!"
+          socket_left_room( room_id, socket.id )
 
+        # remove socket_id from all rooms it has joined @ mongodb
+        query   =  _id : $in    : rooms
+        update  = $pull: in_chat: socket.id
+        options = multi: true
+
+        Room.update query, update, options, ( error, r ) ->
+
+          if error
+            console.log "error removing socket #{socket.id} from all rooms"
+            console.log error
+
+          else
+            # cleanup stats just to make sure we don't have ghosts
+            delete stats[ socket.id ]
 
     # sub / unsub jazz
     socket.on 'subscribe'  , ( room ) -> 
@@ -77,6 +90,8 @@ sockets.boot = ( server ) ->
     # add / remove user from room when subscribing
     socket.on 'subscribe-room', ( room, callback ) -> 
       socket.join  room
+
+      stats[socket.id].rooms[room] = true
 
       # add socket_id to room
       query   = _id: room
@@ -100,8 +115,11 @@ sockets.boot = ( server ) ->
       
     socket.on 'unsubscribe-room', ( room ) -> 
       socket.leave room
+      stats[socket.id].rooms[room] = false
 
-      # remove socket_id from room
+      socket_left_room( room, socket.id )
+
+      # remove socket_id from the unsubscribed room
       query   = _id: room
       update  = $pull: in_chat: socket.id
       options = multi: true
@@ -134,8 +152,6 @@ sockets.shutdown = ( callback ) ->
     if error
       console.log "error removing users from room when server shutdown"
       console.log error
-    else
-      console.log "success removing socket from rooms!"
 
     callback()
 

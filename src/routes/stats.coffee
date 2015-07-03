@@ -3,9 +3,6 @@
 
 to_mb = ( val ) -> (val / 1024 / 1024).toFixed 2
 
-# no sockets on this implementation
-sockets = []
-
 module.exports =
   method : 'GET'
   path   : '/stats'
@@ -16,7 +13,7 @@ module.exports =
 
     reply
       NODE_ENV : process.env.NODE_ENV
-      sockets  : sockets.length
+      sockets  : sockets.stats
       memory   :
         rss:       to_mb mem.rss
         heapTotal: to_mb mem.heapTotal

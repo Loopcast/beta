@@ -45,6 +45,9 @@ server.start ( error ) ->
 
         server.hapi.route require( file )
 
+      process.nextTick -> 
+        # open socket server after routing all routes
+        sockets.connect server.hapi.listener
 
 
 # gracefully shutdown with nodemon

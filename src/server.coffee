@@ -13,8 +13,6 @@ server.start = ( when_done ) ->
     router: stripTrailingSlash: true
 
   # start!
-  sockets.connect hapi.listener
-
   hapi.start ->
     console.log 'Server running at:', hapi.info.uri
 

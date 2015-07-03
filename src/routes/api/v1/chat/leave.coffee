@@ -20,28 +20,46 @@ module.exports =
 
     handler: ( request, reply ) ->
 
-      user     = request.auth.credentials.user
-      room_id  = request.params.room_id
+      if request.auth.isAuthenticated
+        
+        user     = request.auth.credentials.user
+        room_id  = request.params.room_id
 
-      User
-        .findOne( _id: user._id )
-        .select( "info.name info.username info.occupation info.avatar likes" )
-        .lean()
-        .exec ( error, response ) ->
+        User
+          .findOne( _id: user._id )
+          .select( "info.name info.username info.occupation info.avatar likes" )
+          .lean()
+          .exec ( error, response ) ->
 
-          if error then return reply Boom.badRequest "user not found"
+            if error then return reply Boom.badRequest "user not found"
 
-          data = 
-            type  : "listener:#{request.payload.method}"
-            method: 'removed'
-            user : 
-              id        : response.info.username
-              name      : response.info.name
-              occupation: response.info.occupation
-              avatar    : response.info.avatar
-              followers : response.info.likes
-              url       : "/" + response.info.username
+            data = 
+              type  : "listener:#{request.payload.method}"
+              method: 'removed'
+              user : 
+                id        : response.info.username
+                name      : response.info.name
+                occupation: response.info.occupation
+                avatar    : response.info.avatar
+                followers : response.info.likes
+                url       : "/" + response.info.username
 
-          sockets.send room_id, data
+            sockets.send room_id, data
 
-          reply( sent: true ).header "Cache-Control", "no-cache, must-revalidate"
+            reply( sent: true ).header "Cache-Control", "no-cache, must-revalidate"
+
+      # is a guest!
+      if not request.auth.isAuthenticated
+
+        user     = request.payload.socket_id
+        room_id  = request.params.room_id
+
+        data = 
+          type  : "listener:#{request.payload.method}"
+          method: 'removed'
+          user : 
+            id        : request.payload.socket_id
+
+        sockets.send room_id, data
+
+        reply( sent: true ).header "Cache-Control", "no-cache, must-revalidate"
