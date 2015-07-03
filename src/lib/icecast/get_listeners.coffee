@@ -19,8 +19,10 @@ module.exports = ( mount_point, callback ) ->
 
       return reply Boom.resourceGone( "authentication with radio failed")
 
-    console.log 'got body ->', body
-    
+    console.log '--got body--'
+    console.log body
+    console.log '--end of body--'
+
     parse_xml body, ( error, result ) ->
 
       if error
