@@ -50,6 +50,11 @@ server.start ( error ) ->
         sockets.connect server.hapi.listener
 
 
+process.on'uncaughtException', ( exception ) ->
+
+  console.log "production never goes down!"
+  console.log exception
+
 # gracefully shutdown with nodemon
 process.once 'SIGUSR2', ->
 
