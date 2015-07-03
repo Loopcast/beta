@@ -13,11 +13,11 @@ module.exports = ( mount_point, callback ) ->
   request url, options, ( error, response, body ) ->
 
     if error
-      return reply Boom.resourceGone( "error getting stats")
+      return callback Boom.resourceGone( "error getting stats")
 
     if response.statusCode is 401
 
-      return reply Boom.resourceGone( "authentication with radio failed")
+      return callback Boom.resourceGone( "authentication with radio failed")
 
     console.log '--got body--'
     console.log body
@@ -28,8 +28,13 @@ module.exports = ( mount_point, callback ) ->
       if error
         callback Boom.resourceGone( "error getting listeners")
 
-      if not result.icestats? then return callback null, 0
-      if not result.icestats.source? then return callback null, 0
-      if not result.icestats.source[0].Listeners then return callback null, 0
+      if not result.icestats? 
+        return callback null, 0
+
+      if not result.icestats.source? 
+        return callback null, 0
+
+      if not result.icestats.source[0].Listeners 
+        return callback null, 0
         
       callback null, Number(result.icestats.source[0].Listeners[0])
