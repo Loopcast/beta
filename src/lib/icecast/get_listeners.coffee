@@ -8,7 +8,7 @@ module.exports = ( mount_point, callback ) ->
     auth:
       user           : s.radio.user
       password       : s.radio.password
-      sendImmediately: off
+      # sendImmediately: off
 
   request url, options, ( error, response, body ) ->
 
