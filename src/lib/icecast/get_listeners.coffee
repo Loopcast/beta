@@ -19,12 +19,15 @@ module.exports = ( mount_point, callback ) ->
 
       return reply Boom.resourceGone( "authentication with radio failed")
 
+    console.log 'got body ->', body
+    
     parse_xml body, ( error, result ) ->
 
       if error
         callback Boom.resourceGone( "error getting listeners")
 
-      if not result.icestats?
-        callback null, 0
-      else
-        callback null, Number(result.icestats.source[0].Listeners[0])
+      if not result.icestats? then return callback null, 0
+      if not result.icestats.source? then return callback null, 0
+      if not result.icestats.source[0].Listeners then return callback null, 0
+        
+      callback null, Number(result.icestats.source[0].Listeners[0])
