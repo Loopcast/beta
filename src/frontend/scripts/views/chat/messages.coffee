@@ -42,7 +42,6 @@ module.exports = class Messages extends ChatView
     log "[Messages] on_room_created", @room_id
 
   on_window_exit: =>
-    log "on_window_exit"
     @onfocused = true
     @unread_messages = 0
     @current_title = document.title
@@ -50,7 +49,6 @@ module.exports = class Messages extends ChatView
       @current_title = "Loopcast"
 
   on_window_enter: =>
-    log "on_window_enter"
     @onfocused = false
     document.title = @current_title
 

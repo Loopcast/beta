@@ -17,11 +17,16 @@ module.exports = class Meter extends RoomView
   current_block_index: -1
   blocks: []
   gain: 5
-
+  size_block : 0
+  no_sound: true
 
   constructor: (@dom) ->  
     
     super @dom
+
+    # @debug = $ '#debug'
+
+    @size_block = 1 / @values.length
 
     # Build the meter
     tmpl = require 'templates/components/audio/meter'
@@ -40,25 +45,10 @@ module.exports = class Meter extends RoomView
         'left': $( item ).find( '.left_channel' )
         'right': $( item ).find( '.right_channel' )
 
-    # @playhead = @dom.find '.playhead'
-
-    @min_db = @values[ 0 ].value
-    @max_db = @values[ @values.length - 1 ].value
-    @range_db = @max_db - @min_db
-
-
-    # Debug
-    # left = 0.14
-    # right = 0.09
-
-    # @activate [left, right]
-    # @set_volume [left, right]
-
-    # window.meter = @
-
 
    on_room_created: (@room_id, @owner_id) =>
     
+    # log "[Meter] on_room_created"
     super @room_id, @owner_id
 
     unless @is_room_owner
@@ -74,53 +64,47 @@ module.exports = class Meter extends RoomView
   deactivate: ->
     # log "[Meter] deactivate", @current_block_index
     return if @current_block_index < 0
-    color = @values[ @current_block_index ].color
-    # @playhead
-    #   .addClass( 'inactive' )
-    #   .html( @values[ 0 ].value )
 
-    # @move_playhead '', 'color_' + color, 0
 
   activate: (perc) =>
     return if not perc
     # log "[Meter] activate", perc
-    # @playhead.removeClass( 'inactive' ).addClass( 'color_' + @values[0].color )
     appcast.off 'stream:vu', @activate
 
   set_volume: ( perc ) =>
+    # @debug.html perc[ 0 ] + "<br/>" + perc[ 1 ]
+    @set_channel 'left', perc[0]
+    @set_channel 'right', perc[1]  
 
-    # log "[Meter] set_volume", perc
-    left_data = @set_channel 'left', perc[0]
-    right_data = @set_channel 'right', perc[1]
+    if perc[0] <= 0 and perc[1] <= 0
+      if not @no_sound
+        @no_sound = true
+        @turn_off()
+    else
+      if @no_sound
+        @no_sound = false
+        @turn_on()
 
-    max_data = left_data
-    if right_data.value > left_data.value
-      max_data = right_data
+  turn_off : ->
+    @dom.addClass( 'no_sound' ).removeClass( 'with_sound' )
 
-    # @manage_playhead max_data
-    
+  turn_on : ->
+    @dom.removeClass( 'no_sound' ).addClass( 'with_sound' )
 
-  manage_playhead: ( data ) ->
-    # @playhead.html( data.value )
-
-    # return if @current_block_index is data.index
-    # if @current_block_index >= 0
-    #   old_color = @values[ @current_block_index ].color
-    # else
-    #   old_color = ""
-
-    # new_color  = @values[ data.index ].color
-
-    # @move_playhead 'color_' + new_color, 'color_' + old_color, data.index
-
-    # @current_block_index = data.index
-
-
-  set_channel: ( c, raw ) ->
+  
+  ###
+  c = left|right   channel name
+  fraction = [0,1] volume value 
+  ###
+  set_channel: ( c, fraction ) ->
 
     # Getting value and block index
-    data = @get_info_from_raw_value raw
-  
+    data = 
+      value: fraction
+      index: @get_the_block_index_from_value fraction
+    
+
+    return if data.index < 0
     # activate the lower blocks
     for index in [0..data.index]
       @blocks[ index ][ c ].addClass 'active'
@@ -130,36 +114,17 @@ module.exports = class Meter extends RoomView
       @blocks[ index ][ c ].removeClass 'active'
 
     return data
-
-
-  get_info_from_raw_value: ( raw ) ->
-    # Converting the raw value to the db range [@min_db,@max_db]
-    value = @range_db * raw * @gain + @min_db
-    # Normalize the value
-    value = Math.max( @min_db, Math.min( value, @max_db ) ).toFixed(1)
-    
-    index = @get_the_block_index_from_value value
-
-    return value: value, index: index
-
   
-  move_playhead: ( new_color, old_color, x ) ->
-    # css = "translate3d(#{35*x}px,0,0)"
-    # @playhead
-    #   .removeClass( old_color )
-    #   .addClass( new_color )
-    #   .css
-    #     '-webkit-transform' : css
-    #     '-moz-transform' : css
-    #     '-ms-transform' : css
-    #     'transform' : css    
 
   get_the_block_index_from_value: ( value ) ->
-    for item, i in @values
-      if i is @values.length - 1
-        return i
-      if item.value <= value < @values[i+1].value
-        return i
+
+    if value <= 0
+      return -1
+
+    if value >= 1
+      return @values.length
+    index = Math.floor( value / @size_block ) 
+    return index
 
   destroy: ->
     if @is_room_owner
