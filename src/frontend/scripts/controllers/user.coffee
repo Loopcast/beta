@@ -223,9 +223,6 @@ class UserController
     log "[====== USER NOT LOGGED =======]"
     log "[==========================]"
 
-    # unsubscribe will automatically stop listening and remove all the listeners for this channel
-    socket.unsubscribe user_id # or room_id
-
     @check_guest_owner()
     app.body.removeClass( "logged" ).addClass( 'not_logged' )
     @emit 'user:unlogged'
@@ -319,7 +316,7 @@ class UserController
   fetch_from_session: ->
     @data = app.session.get 'user', null
 
-    # log "[User] fetch_from_session", @data
+    log "[User] fetch_from_session", @data
     if @data and not @data.images?
       @create_images()
 
@@ -329,6 +326,10 @@ class UserController
     @emit 'user:updated', @data
 
   delete_session: ->
+    # unsubscribe will automatically stop listening and remove all the listeners for this channel
+    if @data._id
+      socket.unsubscribe @data._id
+
     @data = null
     app.session.delete 'user'
 # will always export the same instance
