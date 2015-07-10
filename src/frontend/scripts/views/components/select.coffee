@@ -9,11 +9,17 @@ module.exports = class Select
 
     handler = @dom.find '.handler .text'
     select  = @dom.find 'select'
+
+    first_value = handler.html()
     
     ref = @
 
     select.on 'change', ->
       
-      handler.html select.val()
+      str = select.val()
+      if str.length > 0
+        handler.html select.val()
+      else
+        handler.html first_value
 
       ref.emit 'changed', select.val()

@@ -220,6 +220,9 @@ DARK_PERCENTAGE = 5
     top: 3px
     left: 0
     text-align: center
+    .db
+      opacity: 0
+      height: 9px
   .meter_inner
     display: block
     width: 100%
@@ -281,19 +284,21 @@ DARK_PERCENTAGE = 5
       text-align: center
       opacity: 0
     
-    .active
-      .square
-        transition: background .2s linear
+  &.with_sound
+    .block
+      .active
+        .square
+          transition: background .2s linear
+          
+        &.color_green .square
+          background: #75f900
         
-      &.color_green .square
-        background: #75f900
-      
-      &.color_yellow .square
-        background: YELLOW
-      &.color_dark_yellow .square
-        background: darken( YELLOW, 10 )
-      &.color_red .square
-        background: red
+        &.color_yellow .square
+          background: YELLOW
+        &.color_dark_yellow .square
+          background: darken( YELLOW, 10 )
+        &.color_red .square
+          background: red
   
 
 .no_touch_device
