@@ -58,7 +58,7 @@ module.exports = ( id, callback ) ->
       query = 
         $or      : [
           { '_owner' : data._id, 'info.is_live': true }
-          { '_owner' : data._id, 'info.recording.s3' : $exists: true }
+          { '_owner' : data._id, 'status.is_recorded' : true }
         ]
 
       Room.find( query ).lean().exec ( error, rooms ) ->
