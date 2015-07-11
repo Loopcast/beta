@@ -97,6 +97,7 @@ class UserController
       callback?()
 
   is_me: ( id ) ->
+    return false if not @is_logged
     return id is @data._id
 
   owner_id: ->
