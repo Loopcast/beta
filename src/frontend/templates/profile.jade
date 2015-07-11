@@ -226,7 +226,7 @@ block content
                     .edit_session_popup
                       .triangle
                       if room.info.file
-                        a.download_button.button.yellow_button.small_button_4(href="#{room.info.file}", target="_blank", title="Download") Download
+                        a.download_button.button.yellow_button.small_button_4(href="#{room.info.file}", target="_blank", title="Download" download="#{room.info.file}") Download
                       a.edit_button.button.yellow_button.small_button_4(href="#", title="Edit") Edit
                       a.delete_button.button.red_button.small_button_4(href="#", title="Delete") Delete
 
