@@ -25,6 +25,7 @@ class UserController
     UserController.instance = @
     happens @
 
+    window.user = @
     @fetch_from_session()
 
     view.on 'binded', @on_views_binded 
@@ -97,7 +98,7 @@ class UserController
       callback?()
 
   is_me: ( id ) ->
-    return false if not @is_logged
+    return false if not @is_logged()
     return id is @data._id
 
   owner_id: ->
@@ -241,6 +242,7 @@ class UserController
     return false
 
   is_logged: ->
+    return false if @data is null
     return @data
 
 
