@@ -163,7 +163,8 @@ module.exports = class Room extends LoggedView
           if user.socket_id is socket_id
 
             user = 
-              id        : user.info.username
+              id        : user._id
+              username  : user.info.username
               name      : user.info.name
               occupation: user.info.occupation
               avatar    : user.info.avatar
@@ -183,7 +184,8 @@ module.exports = class Room extends LoggedView
           if socket_id is socket.id
 
             user = 
-              id        : user_controller.data.username
+              id        : user_controller.data._id
+              username  : user_controller.data.username
               name      : user_controller.data.name
               occupation: user_controller.data.occupation
               avatar    : user_controller.data.avatar

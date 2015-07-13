@@ -30,12 +30,13 @@ module.exports =
         .exec ( error, response ) ->
 
           if error then return reply Boom.badRequest "user not found"
-
+          
           data = 
             type  : "listener:#{request.payload.method}"
             method: 'added'
             user : 
-              id        : response.info.username
+              id        : user._id
+              username  : response.info.username
               name      : response.info.name
               occupation: response.info.occupation
               avatar    : response.info.avatar

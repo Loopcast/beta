@@ -52,7 +52,8 @@ module.exports =
             type  : "listener:#{request.payload.method}"
             method: request.payload.method
             user : 
-              id        : response.info.username
+              id        : user._id
+              username  : response.info.username
               name      : response.info.name
               occupation: response.info.occupation
               avatar    : response.info.avatar
