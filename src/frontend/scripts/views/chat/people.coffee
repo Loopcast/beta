@@ -60,7 +60,7 @@ module.exports = class People extends ChatView
 
 
   on_listener_added: ( listener ) =>
-
+    log "[People] ####### on_listener_added", listener.user.username
     @_on_listener_added listener
     
 
@@ -80,7 +80,7 @@ module.exports = class People extends ChatView
     @update_counter()
 
   on_listener_removed: ( listener ) =>
-    # log "[People] on_listener_removed", listener
+    log "[People] on_listener_removed", listener
 
     @listeners_wrapper.find( '#listener_' + listener.id ).remove()
 
