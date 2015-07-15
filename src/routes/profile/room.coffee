@@ -10,9 +10,9 @@ module.exports =
 
   config:
 
-    auth:
-      strategy: 'session'
-      mode    : 'try'
+    # auth:
+    #   strategy: 'session'
+    #   mode    : 'try'
 
     handler: ( request, reply )->
 
