@@ -3,8 +3,11 @@ Schema     = mongoose.Schema
 
 schema = new Schema
   # _id of the user owning the room
-  _owner  : type: Schema.Types.ObjectId, required: on
+  user   : type: Schema.Types.ObjectId, ref: 'User', required: on
   info   :
+    # actually this is the username, we must rename to username
+    # and update every time the user updates it's own info
+    # using this for search purposes at the moment
     user      : type: String, required: on
     title     : type: String, required: on
     slug      : type: String, required: on
@@ -90,7 +93,7 @@ schema.pre 'save', ( next, done ) ->
   doc = @
 
   query = 
-    _owner     : @_owner
+    user       : @user
     'info.slug': @info.slug
 
   Room.find( query, _id: off )

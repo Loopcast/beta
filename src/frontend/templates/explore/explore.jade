@@ -16,9 +16,11 @@ block grid
 
     - klasses = "item-all-genres"
 
-    - url = "/"+ item.info.user + "/" + item.info.slug
+    - url         = "/"+ item.user.info.username + "/" + item.info.slug
     - sharing_url = url
-    - author_url = "/"+ item.info.user
+    - author_url  = "/"+ item.user.info.username
+    - cover_url   = item.info.cover_url || item.user.info.avatar
+
     if !item.status.is_live
       - url = "#"
 
@@ -36,8 +38,8 @@ block grid
 
     .room_cell.item(class="#{klasses}", data-view="components/audio/player_preview", data-room-id="#{item._id}")
       a(href="#", title="#{item.info.title}", class="thumb_wrapper") 
-        img.room_thumb.for_desktop(src="#{transform.explore_thumb(item.info.cover_url)}")
-        img.room_thumb.for_mobile(src="#{transform.explore_thumb_mobile(item.info.cover_url)}")
+        img.room_thumb.for_desktop(src="#{transform.explore_thumb(cover_url)}")
+        img.room_thumb.for_mobile(src="#{transform.explore_thumb_mobile(cover_url)}")
         
         span.recorded Recorded
         span.now_live Now Live
@@ -58,7 +60,7 @@ block grid
         .text
           h2.room_title
             a(href="#{url}", title="#{item.info.title}") #{item.info.title}
-          a.room_subtitle.blue(title="#{item.info.user}", href="#{author_url}") #{item.info.user}
+          a.room_subtitle.blue(title="#{item.user.info.name}", href="#{author_url}") #{item.user.info.name}
           .genres.small
             for g in item.info.genres
               a.tag(href="?genres=#{g}", title="#{g}", data-genre-id="#{g}") #{g}
