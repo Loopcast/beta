@@ -37,8 +37,6 @@ module.exports = ( url, data = {}, callback ) ->
 
   url  = root + url + '.jade'
 
-  console.log 'rendering data ->', data
-  
   fs.readFile url, ( error, content ) ->
 
     if error then return callback error

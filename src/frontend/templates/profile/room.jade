@@ -16,19 +16,18 @@ block seo
 
     meta( name="description" content="Stream, record and save your DJ mixes instantly. Go live, interact with your audience and see who’s listening in real time." ) 
 
-    meta( name="og:title"       content="#{room.info.title} | #{room.user.info.name}" )
-    meta( name="og:type"        content="'music.radio_station'" )
-    meta( name="og:image"       content="#{og_image}" )
-    meta( name="og:url"         content="#{s.base_path}/#{room.user.info.username}/#{room.info.slug}" )
-    meta( name="og:site_name"   content="Loopcast.fm" )
-    meta( name="fb:app_id"      content="#{fb_app_id}" )
-    meta( name="og:description" content="#{about}" )
-    meta( name="music:creator"  content="#{s.base_path}/#{room.user.info.username}/" )
+    meta( property="og:title"       content="#{room.info.title} | #{room.user.info.name}" )
+    meta( property="og:type"        content="'music.radio_station'" )
+    meta( property="og:image"       content="#{og_image}" )
+    meta( property="og:url"         content="#{s.base_path}/#{room.user.info.username}/#{room.info.slug}" )
+    meta( property="og:site_name"   content="Loopcast.fm" )
+    meta( property="og:description" content="#{about}" )
+    meta( property="music:creator"  content="#{s.base_path}/#{room.user.info.username}/" )
 
     //- only if the stream is live we have audio tags
     if room.info.url
-      meta( name="og:audio"       content="http://radio.loopcast.fm/5595926f722dc90300e1615d" )
-      meta( name="og:audio:url"   content="http://radio.loopcast.fm/5595926f722dc90300e1615d" )
+      meta( property="og:audio"       content="#{room.info.url}" )
+      meta( property="og:audio:url"   content="#{room.info.url}" )
       //- meta( name="og:audio:type"  content="audio/vnd.facebook.bridge" )
       meta( property="og:audio:type" content="audio/mpeg" )
       //- meta( property="og:audio:type" content="application/mp3" )

@@ -1,5 +1,18 @@
 block seo
-  title #{name} | Live Streaming on Loopcast 
+  title #{name} | Live Sessions on Loopcast 
+
+  meta( property="og:title" content="#{name} | Live Sessions on Loopcast " ) 
+  meta( property="og:type"  content="profile" ) 
+
+  - og_image = "#{s.base_path}/images/thumbnail.png"
+
+  //- if user.info.avatar
+    - og_image = "#{s.base_path}#{user.info.avatar}"
+
+  meta( name="og:image"  content="#{og_image}" )
+  meta( name="url"       content="#{s.base_path}/#{user.info.username}" )
+
+
   if about
     meta( name="description" content="#{about}" ) 
   else

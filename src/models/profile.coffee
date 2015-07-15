@@ -54,6 +54,10 @@ module.exports = ( id, callback ) ->
         recorded  : []
         live      : null
 
+
+        # new format, need to stop modifying data like we do here
+        user: data
+
       # just shows live or recorded rooms
       query = 
         $or      : [
