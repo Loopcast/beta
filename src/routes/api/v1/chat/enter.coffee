@@ -25,7 +25,7 @@ module.exports =
 
       User
         .findOne( _id: user._id )
-        .select( "info.name info.username info.occupation info.avatar likes" )
+        .select( "socket_id info.name info.username info.occupation info.avatar likes" )
         .lean()
         .exec ( error, response ) ->
 
@@ -36,6 +36,7 @@ module.exports =
             method: 'added'
             user : 
               id        : user._id
+              socket_id : response.socket_id
               username  : response.info.username
               name      : response.info.name
               occupation: response.info.occupation
