@@ -42,7 +42,7 @@ module.exports =
         'info.user' : username
 
       Room.findOne( query )
-        .select( "_id _owner info.slug info.title info.genres info.about" )
+        .select( "_id user info.slug info.title info.genres info.about" )
         .lean()
         .exec ( error, room ) -> 
 
@@ -75,12 +75,12 @@ module.exports =
 
           console.log "metadata ->", metadata
 
-          update_metadata room._owner, metadata
+          update_metadata room.user, metadata
 
           # update for mongodb
           # sets the document URL to be the streaming URL
           update =
-            'info.url'      : "#{s.radio.url}/#{room._owner}"
+            'info.url'      : "#{s.radio.url}/#{room.user}"
             'status.is_live'         : true
             'status.live.started_at' : data.live.started_at
 

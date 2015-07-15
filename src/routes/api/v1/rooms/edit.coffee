@@ -41,7 +41,7 @@ module.exports =
 
       query =
         _id   : room_id
-        _owner: user._id
+        user  : user._id
 
       Room.findOne( query )
         .select( "_id info.cover_url" )

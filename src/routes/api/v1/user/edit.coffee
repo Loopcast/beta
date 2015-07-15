@@ -69,7 +69,7 @@ module.exports =
 
           # update room's user name
 
-          conditions = _owner: user._id
+          conditions = user  : user._id
           options    = multi : true
           update     = $set  : 
             'info.user': user_data['info.username']

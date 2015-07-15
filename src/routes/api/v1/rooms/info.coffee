@@ -36,20 +36,20 @@ module.exports =
 
     Room
       .findById( req.params.id )
-      .select( "_owner info status likes" )
+      .select( "user info status likes" )
       .lean().exec ( error, room ) ->
 
         if error then return reply Boom.resourceGone "Room not found"
 
         User
-          .findById( room._owner )
+          .findById( room.user )
           .select( "info.name info.username info.avatar info.occupation likes" )
           .lean().exec ( error, user ) ->
 
             if error then return reply Boom.resourceGone "User not found"
 
             # never reveal user's id
-            delete room._owner
+            delete room.user
 
             data.on 'liked', ( liked ) ->
 
