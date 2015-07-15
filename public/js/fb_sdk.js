@@ -2,9 +2,48 @@ function fb_init( app_id ){
   window.fbAsyncInit = function() {
     FB.init({
       appId      : app_id,
+      music      : true, // install facebook music bridge on the page
       xfbml      : true,
       version    : 'v2.3'
     });
+
+    // PLAY means start playing a new track, the song URL is passed in
+    FB.Event.subscribe('fb.music.PLAY', function(){
+      console.group( "fb.music.PLAY" )
+
+      console.debug( arguments );
+
+      console.groupEnd( "fb.music.PLAY" )
+    });
+    // RESUME means the user hit play on the paused track
+    FB.Event.subscribe('fb.music.RESUME', function(){
+      console.group( "fb.music.RESUME" )
+
+      console.debug( arguments );
+
+      console.groupEnd( "fb.music.RESUME" )
+    });
+    // The user hit pause on the currently playing track
+    FB.Event.subscribe('fb.music.PAUSE', function(){
+      console.group( "fb.music.PAUSE" )
+
+      console.debug( arguments );
+
+      console.groupEnd( "fb.music.PAUSE" )
+    });
+    // Facebook is polling for status, send a status message to Facebook so it can display the current song
+    FB.Event.subscribe('fb.music.STATUS', 
+      function(params) {
+        // FB.Music.send('STATUS', {playing: true, song: url }
+
+          console.group( "fb.music.STATUS" )
+
+          console.debug( arguments );
+
+          console.groupEnd( "fb.music.STATUS" )
+      }
+    );
+
   };  
 } 
 
