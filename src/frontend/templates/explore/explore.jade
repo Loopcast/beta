@@ -30,8 +30,10 @@ block grid
     else
       - klasses += " not_live"
 
-    if item.status.recording.started_at && !item.status.is_live
+    //- only show as "is_recorded" after file has been uploaded to S3
+    if item.status.recording.s3 && !item.status.is_live
       - klasses += " is_recorded"
+
     .room_cell.item(class="#{klasses}", data-view="components/audio/player_preview", data-room-id="#{item._id}")
       a(href="#", title="#{item.info.title}", class="thumb_wrapper") 
         img.room_thumb.for_desktop(src="#{transform.explore_thumb(item.info.cover_url)}")
