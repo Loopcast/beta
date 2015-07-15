@@ -163,7 +163,8 @@ module.exports = class Room extends LoggedView
           if user.socket_id is socket_id
 
             user = 
-              id        : user.info.username
+              id        : user._id
+              username  : user.info.username
               name      : user.info.name
               occupation: user.info.occupation
               avatar    : user.info.avatar
@@ -183,7 +184,8 @@ module.exports = class Room extends LoggedView
           if socket_id is socket.id
 
             user = 
-              id        : user_controller.data.username
+              id        : user_controller.data._id
+              username  : user_controller.data.username
               name      : user_controller.data.name
               occupation: user_controller.data.occupation
               avatar    : user_controller.data.avatar
@@ -209,11 +211,7 @@ module.exports = class Room extends LoggedView
 
         @on_listener_added message
 
-  on_like_room: ( data ) =>
-    @sidebar_right.on_like()
-
-  on_unlike_room: ( data ) =>
-    @sidebar_right.on_unlike()
+  
 
   update_genres: (genres) ->
     log "UPDATE GENRES", genres
@@ -257,6 +255,7 @@ module.exports = class Room extends LoggedView
         log "[ROOM] live room fetched."
         app.player.play @room_id
     else
+      app.player.stop()
       navigation.set_lock_live true, location.pathname
     
 
@@ -314,14 +313,22 @@ module.exports = class Room extends LoggedView
   on_user_unlogged: ( data ) =>
 
   on_listener_added: ( listener ) =>
-    # log "[Room] on_listener_added", listener
+    log "[Room] on_listener_added", listener
     @emit 'listener:added', listener
-
-    console.log listener
+    @sidebar_right.on_listener_added()
 
   on_listener_removed: ( listener ) =>
-    # log "[Room] on_listener_removed", listener
+    log "[Room] on_listener_removed", listener
     @emit 'listener:removed', listener
+    @sidebar_right.on_listener_removed()
+
+  on_like_room: ( data ) =>
+    @sidebar_right.on_like()
+
+  on_unlike_room: ( data ) =>
+    @sidebar_right.on_unlike()
+
+
 
   on_message: ( message ) =>
     # log "[Room] on_message", message

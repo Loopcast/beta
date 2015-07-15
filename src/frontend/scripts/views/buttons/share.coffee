@@ -13,7 +13,6 @@ module.exports = class Share
 
     @normal_type = not @dom.data( 'type' )?
 
-    log "NORMAL TYPE", @normal_type
     if @normal_type
       html = require 'templates/buttons/share'
 
@@ -48,7 +47,6 @@ module.exports = class Share
         image: @dom.data 'image'
 
   update_with_data: ( data ) ->
-    log "[Share] update_with_data", data
     @data = data
     @data.link = Url.make_absolute( @data.link )
     @data.image = Url.make_absolute( transform.explore_thumb @data.image )
@@ -111,7 +109,7 @@ module.exports = class Share
 
       o = @black_box.offset()
       w1  = @black_box.width()
-      log "[Share]", o.left, w1, o.left+w1, app.window.w
+
       if o.left + w1 > app.window.w - 20
         @dom.addClass 'on_right'
 
@@ -141,8 +139,6 @@ module.exports = class Share
     @google_link.off 'click', @share_on_google
 
   share_on_facebook: =>
-    log "Share on facebook", @data
-
 
     FB.ui
       method: 'feed',

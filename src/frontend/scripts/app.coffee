@@ -107,7 +107,17 @@ class App
 			url = navigation.prev_url
 		else
 			url = "/#{user_data.username}"
-			
+		
+
+		log "[Action]", @settings.action
+		if @settings.action? and @settings.action.type is 'follow'
+			# log "[Action]", @settings.action
+
+			@user.follow @settings.action.user_id
+
+			@settings.action = null
+
+
 		navigation.go url
 		@user.login user_data
 

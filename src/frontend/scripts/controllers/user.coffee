@@ -14,7 +14,6 @@ class UserController
   # Object variables
   data : null
   is_owner: false
-  following: null
 
   constructor: ->
 
@@ -63,7 +62,6 @@ class UserController
       images     : transform.all data.avatar
       name       : data.name
       username   : data.username
-      following  : {}
 
     log "[UserController] user:logged", @data, data
 
@@ -148,6 +146,24 @@ class UserController
 
       callback response
 
+  follow: (user_id) ->
+    log "[User] follow", user_id
+    ref = @
+    api.user.follow user_id, ( error, result ) ->
+      log "[FollowButton] follow response", result
+      ref.emit 'user:followed', user_id
+      if error
+        console.error 'error following #{@user_id}'
+
+  unfollow: (user_id) ->
+    log "[User] unfollow", user_id
+    ref = @
+    api.user.unfollow user_id, ( error, result ) ->
+      log "[FollowButton] unfollow response", result
+      ref.emit 'user:unfollowed', user_id
+      if error
+        console.error 'error following #{@user_id}'
+
   on_user_followed: ( data ) =>
     log "[User] on_user_followed", data
     notify.info data.name + ' is following you!'
@@ -208,16 +224,18 @@ class UserController
 
 
     api.user.following ( error, result ) =>
-      @following = {}
+      @data.following = {}
 
       for item in result
-        @following[ item ] = true
+        @data.following[ item ] = true
+
 
       @emit 'following:loaded'
 
 
   is_following: (id) ->
-    return @following[ id ]? and @following[ id ]
+    log "[User] is following", id, @data.following[id]
+    return @data.following[ id ]? and @data.following[ id ]
 
       
 

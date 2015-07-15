@@ -25,17 +25,19 @@ module.exports =
 
       User
         .findOne( _id: user._id )
-        .select( "info.name info.username info.occupation info.avatar likes" )
+        .select( "socket_id info.name info.username info.occupation info.avatar likes" )
         .lean()
         .exec ( error, response ) ->
 
           if error then return reply Boom.badRequest "user not found"
-
+          
           data = 
-            type  : "listener:#{request.payload.method}"
+            type  : "listener:added"
             method: 'added'
             user : 
-              id        : response.info.username
+              id        : user._id
+              socket_id : response.socket_id
+              username  : response.info.username
               name      : response.info.name
               occupation: response.info.occupation
               avatar    : response.info.avatar
