@@ -1,13 +1,7 @@
 extends ../layout
 
-- og_image = "#{s.base_path}/images/thumbnail.png"
-
-if room
-  - og_image = "#{s.base_path}#{room.info.cover_url}"
-
-- about = room.user.info.about        || user.info.about
-
 block seo
+
   if room
     if room.status.is_live
       title #{room.info.title} | #{room.user.info.name} live on Loopcast
@@ -16,12 +10,20 @@ block seo
 
     meta( name="description" content="Stream, record and save your DJ mixes instantly. Go live, interact with your audience and see who’s listening in real time." ) 
 
+    - og_image = room.info.cover_url || "images/thumbnail.png"
+
+    - about = room.user.info.about   || user.info.about
+
     meta( property="og:title"       content="#{room.info.title} | #{room.user.info.name}" )
     meta( property="og:type"        content="'music.radio_station'" )
-    meta( property="og:image"       content="#{og_image}" )
+    meta( property="og:image"       content="#{s.base_path}/#{og_image}" )
     meta( property="og:url"         content="#{s.base_path}/#{room.user.info.username}/#{room.info.slug}" )
     meta( property="og:site_name"   content="Loopcast.fm" )
-    meta( property="og:description" content="#{about}" )
+    if about
+      meta( property="og:description" content="#{about}" )
+    else
+      meta( property="og:description" content="#{room.info.title} @ Loopcast.fm" )
+
     meta( property="music:creator"  content="#{s.base_path}/#{room.user.info.username}/" )
 
     //- only if the stream is live we have audio tags
