@@ -23,6 +23,11 @@ module.exports = ( mount_point, callback ) ->
     console.log body
     console.log '--end of body--'
 
+    # BAD REQUEST!!
+    # Probably the stream is offline!!
+    if response.statusCode is 400
+      return callback Boom.badRequest response.status, 0
+
     parse_xml body, ( error, result ) ->
 
       if error
