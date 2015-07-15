@@ -27,8 +27,8 @@ block seo
 
     //- only if the stream is live we have audio tags
     if room.info.url
-      meta( name="og:audio"       content="#{room.info.url}" )
-      meta( name="og:audio:url"   content="#{room.info.url}" )
+      meta( name="og:audio"       content="#{encodeURIComponent(room.info.url)}" )
+      meta( name="og:audio:url"   content="#{encodeURIComponent(room.info.url)}" )
       //- meta( name="og:audio:type"  content="audio/vnd.facebook.bridge" )
       meta( property="og:audio:type" content="audio/mpeg" )
       //- meta( property="og:audio:type" content="application/mp3" )
