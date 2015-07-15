@@ -43,7 +43,7 @@ module.exports = class PeopleView extends ChatView
   ###
 
   normalize_data : ( data ) ->
-    data.followers ?= 0
+    data.likes ?= 0
 
     o = data.occupation
 
