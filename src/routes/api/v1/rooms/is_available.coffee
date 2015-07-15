@@ -37,7 +37,8 @@ module.exports =
       'info.slug': title
 
     Room.find( query, _id: off )
-      .where( "status.is_live", true )
+      # can't have same slug twice
+      # .where( "status.is_live", true )
       .select( "url" )
       .lean()
       .exec ( error, room ) -> 

@@ -5,9 +5,9 @@ notify   = require 'app/controllers/notify'
 user     = require 'app/controllers/user'
 
 module.exports = class Record extends ButtonWithTimer
-  active_text: 'STOP REC'
+  active_text  : 'STOP REC'
   inactive_text: 'RECORDED'
-  type: "recording"
+  type         : "recording"
 
   on_room_created: (@room_id, @owner_id) =>
       
@@ -48,7 +48,22 @@ module.exports = class Record extends ButtonWithTimer
 
     ref = @
 
+    appcast.stop_recording()
     L.rooms.stop_recording @room_id, ( error, callback ) ->
+
+
+      if not appcast.get( "stream:recording" )
+
+        appcast.stop_stream()
+        L.rooms.stop_stream @room_id, ( error, callback ) ->
+
+          if error
+            ref.on_error error, 'stop_stream'
+
+            # LATER: CHECK IF USER IS OFFLINE AND WAIT FOR CONNECTION?
+            return
+
+          ref.set_active false
 
       if error
         notify.error "Error while stopping recording"
@@ -87,6 +102,7 @@ module.exports = class Record extends ButtonWithTimer
 
     ref = @
 
+    appcast.start_recording()
     L.rooms.start_recording @room_id, ( error, response ) ->
       if error
         ref.on_error error

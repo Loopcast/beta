@@ -88,10 +88,8 @@ schema.pre 'save', ( next ) ->
 
 schema.pre 'save', ( next, done ) ->
 
-  # TODO: if finds another room with same URL
-  # check what is the status.
-  # If it's a room that never went live and it's empty
-  # we can simply delete or return that entry instead
+  # TODO: if finds another room with same URL refuses to save, otherwise
+  # we would have two sessions with the name address
   
   doc = @
 
@@ -100,17 +98,18 @@ schema.pre 'save', ( next, done ) ->
     'info.slug': @info.slug
 
   Room.find( query, _id: off )
-    .where( "status.is_live", true )
+    # can't have same slug twice
+    # .where( "status.is_live", true )
     .select( "url" )
     .lean()
     .exec ( error, room ) -> 
       if error then failed null, null, error
 
       if room.length
-        console.log " ! Found another room live with same id ->", room
+        console.log " ! Found another room with same slug ->", room
 
-        doc.invalidate 'url', 'you cant have two live rooms with same url'
-        return done new Error('cant_have_two_live_rooms_with_same_url')
+        doc.invalidate 'url', 'cant have same slug on different sessions'
+        return done new Error('cant_have_same_slug_twice')
 
       next()
 
