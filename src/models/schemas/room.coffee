@@ -15,6 +15,9 @@ schema = new Schema
     location  : String
     about     : String
     cover_url : String
+
+    # should save server URL and stream URL separetely, so we can update it
+    # easier later?
     url       : String # url of the stream
     file      : String # url of the recorded file
 

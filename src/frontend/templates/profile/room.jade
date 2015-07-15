@@ -1,8 +1,36 @@
 extends ../layout
+
+- og_image = "#{s.base_path}/images/thumbnail.png"
+
+if room
+  - og_image = "#{s.base_path}#{room.info.cover_url}"
+
+- about = room.user.info.about        || user.info.about
+
 block seo
   if room
-    title #{room.info.title} | #{user.info.name} | Live on Loopcast
+    if room.status.is_live
+      title #{room.info.title} | #{room.user.info.name} live on Loopcast
+    else
+      title #{room.info.title} | #{room.user.info.name} on Loopcast
+
     meta( name="description" content="Stream, record and save your DJ mixes instantly. Go live, interact with your audience and see who’s listening in real time." ) 
+
+    meta( name="og:title"       content="#{room.info.title} | #{room.user.info.name}" )
+    meta( name="og:type"        content="'music.radio_station'" )
+    meta( name="og:image"       content="#{og_image}" )
+    meta( name="og:url"         content="#{s.base_path}/#{room.user.info.username}/#{room.info.slug}" )
+    meta( name="og:site_name"   content="Loopcast.fm" )
+    meta( name="fb:app_id"      content="#{fb_app_id}" )
+    meta( name="og:description" content="#{about}" )
+    meta( name="music:creator"  content="#{s.base_path}/#{room.user.info.username}/" )
+
+    //- only if the stream is live we have audio tags
+    if room.info.url
+      meta( name="og:audio"       content="#{room.info.url}" )
+      meta( name="og:audio:type"  content="audio/vnd.facebook.bridge" )
+
+
   else
     title Open Your Room and Start Streaming on Loopcast
     meta( name="description" content="Stream, record and save your DJ mixes instantly. Go live, interact with your audience and see who’s listening in real time." ) 
@@ -10,7 +38,7 @@ block seo
 
 block content
 
-  if !user
+  if !user && !room.user
     div(data-view="components/redirect_hp")
   else
 
