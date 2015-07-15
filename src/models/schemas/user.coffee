@@ -16,7 +16,6 @@ schema = new Schema
   likes       : { type: Number, default: 0 }
   
   stats:
-    followers : type: Number, default: 0
     streams   : type: Number, default: 0
     listeners : type: Number, default: 0
 
