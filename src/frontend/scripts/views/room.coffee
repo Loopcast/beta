@@ -119,7 +119,7 @@ module.exports = class Room extends LoggedView
 
     socket.on @room_id, ( data ) =>
 
-      log "[DEBUG]", data.type, data
+      log "[Room DEBUG]", data.type, data
 
       return @on_like_room        data if data.type is "like"
       return @on_unlike_room      data if data.type is "unlike"
@@ -157,6 +157,14 @@ module.exports = class Room extends LoggedView
     L.rooms.visit @room_id, (error, response) ->
       log "[Room] visit response", error, response
 
+    L.chat.enter @room_id, ( error, response ) ->
+      log "[Room] chat.enter", error, response      
+
+    window.test_room = @
+
+  test_enter: ->
+    L.chat.enter @room_id, ( error, response ) ->
+      log "[Room] chat.enter", error, response      
 
   get_people : =>
     L.chat.people @room_id, (error, response) =>
@@ -177,7 +185,7 @@ module.exports = class Room extends LoggedView
 
         return null
 
-
+      log "[Chat people]", response
       for socket_id in response.sockets
 
         if not user = user_by_socket( socket_id )
@@ -187,6 +195,7 @@ module.exports = class Room extends LoggedView
 
             user = 
               id        : user_controller.data._id
+              socket_id : socket_id
               username  : user_controller.data.username
               name      : user_controller.data.name
               occupation: user_controller.data.occupation
@@ -198,7 +207,7 @@ module.exports = class Room extends LoggedView
 
             # TODO: populate with Guest information
             user = 
-              id        : socket_id
+              socket_id : socket_id
               name      : "Guest"
               occupation: "Guest"
               avatar    : "https://deerfieldsbakery.com/dev/images/items/cookies/Cookies-Decorated-Chocolate-Happy-Face_MD.jpg"
@@ -315,7 +324,7 @@ module.exports = class Room extends LoggedView
   on_user_unlogged: ( data ) =>
 
   on_listener_added: ( listener ) =>
-    log "[Room] on_listener_added", listener
+    log "[Room] ###### on_listener_added", listener
     @emit 'listener:added', listener
     @sidebar_right.on_listener_added()
 

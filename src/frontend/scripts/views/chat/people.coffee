@@ -41,20 +41,14 @@ module.exports = class People extends ChatView
 
     
   check_user: ->
-    if user.is_logged()
-      # Adding the user himself
-      @send_message "added"
+    # if user.is_logged()
+    #   @send_listener_message()
 
-  send_message: ( method ) ->
-    data = 
-      method : method
-      room_id: @room_id
+  send_listener_message:  ->
 
-    # log "[People] send_message", data
-
-    L.chat.listener data, ( error, response ) ->
+    L.chat.enter @room_id, ( error, response ) ->
       if error
-        console.error "sending message: ", error
+        console.error "[API] error. on_listener_added: ", error
         return
 
 
@@ -102,7 +96,7 @@ module.exports = class People extends ChatView
   destroy: ->
     @listeners = []
     @listeners_map = []
-    @send_message "removed"
+    # @send_message "removed"
 
     if @is_room_created
       @dom.off 'mouseover', '.img_wrapper', @on_mouse_over

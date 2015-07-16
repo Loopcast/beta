@@ -231,6 +231,7 @@ module.exports =
         callback null, response
         
     listener: ( data, callback ) ->
+      log "[API] listener", data
       on_status_code =
         400: -> callback 'bad request'
         401: -> callback 'unauthorized'
