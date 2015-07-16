@@ -119,6 +119,8 @@ module.exports = class Room extends LoggedView
 
     socket.on @room_id, ( data ) =>
 
+      log "[DEBUG]", data.type, data
+
       return @on_like_room        data if data.type is "like"
       return @on_unlike_room      data if data.type is "unlike"
       return @on_message          data if data.type is "message"

@@ -60,6 +60,9 @@ module.exports =
               followers : response.info.likes
               url       : "/" + response.info.username
 
+          console.log "####Listener: " + request.payload.method + "####"
+          console.log data
+
           sockets.send room_id, data
 
           reply( sent: true ).header "Cache-Control", "no-cache, must-revalidate"

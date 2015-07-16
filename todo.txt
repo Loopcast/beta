@@ -1,0 +1,2 @@
+- update long description section
+- stop calling loopcast.chat.listener and start using loopcast.chat.enter
