@@ -68,6 +68,7 @@ module.exports =
               'status.is_recording'         : on
 
           request "#{s.tape}/stop/#{room.user}", ( error, response, body ) ->
+
             if error
 
               console.log "error starting tape"
@@ -78,6 +79,14 @@ module.exports =
             # JSON from tape server
             body = JSON.parse body
 
+            if body.error?
+
+              console.error "error stopping tape for room #{room_id}"
+
+              console.error body.error
+
+              return reply body
+            
             Room.findAndModify query, null, update, options, ( error, response ) ->
 
               if error then return failed request, reply, error
