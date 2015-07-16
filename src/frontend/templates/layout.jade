@@ -4,8 +4,9 @@ html
 	head
 		meta( charset='utf-8' )
 		meta( http-equiv='X-UA-Compatible', content='IE=edge' )
-		meta( name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' )
-		meta( property="og:image" content="#{s.base_path}/images/thumbnail.png")
+		meta( name='viewport',    content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' )
+		meta( property="og:site_name" content="Loopcast.fm")
+		meta( property="fb:app_id"    content="#{fb_app_id}" )
 		link( rel="icon", href="/favicon.ico" )
 
 		block seo
@@ -22,6 +23,9 @@ html
 				#loading {display:block;position:absolute;top:0;left:0;background:#ececec;width:100%;height:100%;}
 				header{opacity:0;}
 
+		//- loopcast icon should be the last image when sharing, so user images
+		//- and room background images will have priority
+		meta( property="og:image" content="#{s.base_path}/images/thumbnail.png")
 
 	body.loading.not_logged
 		block body
@@ -75,3 +79,5 @@ html
 			if is_beta
 				| 
 				| var is_beta  = true;
+
+		//- script( type='text/javascript', src='//connect.facebook.net/en_US/vb.js', async='async')

@@ -13,10 +13,10 @@ schema = new Schema
     about      : String
     location   : String
 
+  # is actually the amount of followers the user has
   likes       : { type: Number, default: 0 }
   
   stats:
-    followers : type: Number, default: 0
     streams   : type: Number, default: 0
     listeners : type: Number, default: 0
 

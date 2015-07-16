@@ -33,15 +33,15 @@ module.exports =
 
         return reply Boom.unauthorized('needs authentication')
 
-      username = req.auth.credentials.user.username
-      room_id  = req.payload.room_id
+      user_id = req.auth.credentials.user._id
+      room_id = req.payload.room_id
 
       query =
-        _id: room_id
-        'info.user' : username
+        _id  : room_id
+        user : user_id
 
       Room.findOne( query )
-        .select( "_id _owner" )
+        .select( "_id user" )
         .lean()
         .exec ( error, room ) -> 
 
@@ -67,7 +67,7 @@ module.exports =
               'status.recording.stopped_at' : on
               'status.is_recording'         : on
 
-          request "#{s.tape}/stop/#{room._owner}", ( error, response, body ) ->
+          request "#{s.tape}/stop/#{room.user}", ( error, response, body ) ->
             if error
 
               console.log "error starting tape"

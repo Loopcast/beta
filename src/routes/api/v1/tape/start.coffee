@@ -39,7 +39,7 @@ module.exports =
         'info.user' : username
 
       Room.findOne( query )
-        .select( "_id _owner" )
+        .select( "_id user" )
         .lean()
         .exec ( error, room ) -> 
 
@@ -62,7 +62,7 @@ module.exports =
             url: "#{s.tape}/api/v1/start"
             form:
               room_id    : room_id 
-              mount_point: String( room._owner )
+              mount_point: String( room.user )
 
           request.post data, ( error, response, body ) ->
 

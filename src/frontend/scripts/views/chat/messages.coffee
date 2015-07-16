@@ -83,7 +83,7 @@ module.exports = class Messages extends ChatView
         username: data.username
 
       if not data.occupation
-        @users[data.username].followers = 0
+        # @users[data.username].followers = 0
         @users[data.username].occupation = [ "Occupation" ]
 
 

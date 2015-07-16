@@ -21,7 +21,7 @@ module.exports =
 
     Room
       .findById( req.params.id )
-      .select( "_owner likes visits status.is_live" )
+      .select( "user likes visits status.is_live" )
       .lean().exec ( error, room ) ->
 
         if error then return reply Boom.resourceGone error
@@ -30,11 +30,19 @@ module.exports =
 
         if room.status.is_live
 
-          get_listeners room._owner, ( error, listeners ) ->
+          get_listeners room.user, ( error, listeners ) ->
 
-            if error then return reply error
+            # We won't buble the error to the user in this case, since this
+            # isn't exactly the end of the world
+            if error
+              console.error "error getting listeners, room is probably offline"
+              console.error "room: #{req.params.id}"
+              console.error error.payload
 
-            data.set 'listeners', listeners
+              data.set 'listeners', -1
+            else
+              data.set 'listeners', listeners
+
             data.set 'jobs', data.get( "jobs" ) - 1
 
         else

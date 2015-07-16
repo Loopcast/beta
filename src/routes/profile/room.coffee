@@ -10,9 +10,9 @@ module.exports =
 
   config:
 
-    auth:
-      strategy: 'session'
-      mode    : 'try'
+    # auth:
+    #   strategy: 'session'
+    #   mode    : 'try'
 
     handler: ( request, reply )->
 
@@ -30,7 +30,8 @@ module.exports =
         'info.slug'       : room_id
 
       Room.findOne( query )
-        .select( "_owner info status" )
+        .select( "user info status" )
+        .populate( 'user', 'info.avatar info.username info.name' )
         .sort( _id: -1 )
         .lean()
         .exec ( error, room ) -> 
@@ -46,7 +47,7 @@ module.exports =
           model.set 'room', room
 
           User
-            .findById( room._owner )
+            .findById( room.user )
             .select( "info" )
             .lean().exec  ( error, user ) ->
 

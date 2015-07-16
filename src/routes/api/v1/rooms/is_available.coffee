@@ -33,11 +33,12 @@ module.exports =
     title   = slug req.payload.title.toLowerCase()
 
     query = 
-      _owner     : user_id
+      user       : user_id
       'info.slug': title
 
     Room.find( query, _id: off )
-      .where( "status.is_live", true )
+      # can't have same slug twice
+      # .where( "status.is_live", true )
       .select( "url" )
       .lean()
       .exec ( error, room ) -> 

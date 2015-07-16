@@ -3,8 +3,11 @@ Schema     = mongoose.Schema
 
 schema = new Schema
   # _id of the user owning the room
-  _owner  : type: Schema.Types.ObjectId, required: on
+  user   : type: Schema.Types.ObjectId, ref: 'User', required: on
   info   :
+    # actually this is the username, we must rename to username
+    # and update every time the user updates it's own info
+    # using this for search purposes at the moment
     user      : type: String, required: on
     title     : type: String, required: on
     slug      : type: String, required: on
@@ -12,6 +15,9 @@ schema = new Schema
     location  : String
     about     : String
     cover_url : String
+
+    # should save server URL and stream URL separetely, so we can update it
+    # easier later?
     url       : String # url of the stream
     file      : String # url of the recorded file
 
@@ -82,29 +88,28 @@ schema.pre 'save', ( next ) ->
 
 schema.pre 'save', ( next, done ) ->
 
-  # TODO: if finds another room with same URL
-  # check what is the status.
-  # If it's a room that never went live and it's empty
-  # we can simply delete or return that entry instead
+  # TODO: if finds another room with same URL refuses to save, otherwise
+  # we would have two sessions with the name address
   
   doc = @
 
   query = 
-    _owner     : @_owner
+    user       : @user
     'info.slug': @info.slug
 
   Room.find( query, _id: off )
-    .where( "status.is_live", true )
+    # can't have same slug twice
+    # .where( "status.is_live", true )
     .select( "url" )
     .lean()
     .exec ( error, room ) -> 
       if error then failed null, null, error
 
       if room.length
-        console.log " ! Found another room live with same id ->", room
+        console.log " ! Found another room with same slug ->", room
 
-        doc.invalidate 'url', 'you cant have two live rooms with same url'
-        return done new Error('cant_have_two_live_rooms_with_same_url')
+        doc.invalidate 'url', 'cant have same slug on different sessions'
+        return done new Error('cant_have_same_slug_twice')
 
       next()
 

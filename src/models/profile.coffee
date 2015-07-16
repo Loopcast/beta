@@ -54,11 +54,15 @@ module.exports = ( id, callback ) ->
         recorded  : []
         live      : null
 
+
+        # new format, need to stop modifying data like we do here
+        user: data
+
       # just shows live or recorded rooms
       query = 
         $or      : [
-          { '_owner' : data._id, 'info.is_live': true }
-          { '_owner' : data._id, 'status.is_recorded' : true }
+          { 'user' : data._id, 'status.is_live'     : true }
+          { 'user' : data._id, 'status.is_recorded' : true }
         ]
 
       Room.find( query ).lean().exec ( error, rooms ) ->

@@ -6,9 +6,10 @@ happens  = require 'happens'
 user     = require 'app/controllers/user'
 
 module.exports = class GoLive extends ButtonWithTimer
-  active_text: 'GO OFFLINE'
+
+  active_text  : 'GO OFFLINE'
   inactive_text: 'GO LIVE'
-  type: "live"
+  type         : "live"
 
   on_room_created: (@room_id, @owner_id) =>
       
@@ -51,15 +52,18 @@ module.exports = class GoLive extends ButtonWithTimer
 
     ref = @
 
-    L.rooms.stop_stream @room_id, ( error, callback ) ->
+    if not appcast.get( "stream:recording" )
 
-      if error
-        ref.on_error error, 'stop_stream'
+      appcast.stop_stream()
+      L.rooms.stop_stream @room_id, ( error, callback ) ->
 
-        # LATER: CHECK IF USER IS OFFLINE AND WAIT FOR CONNECTION?
-        return
+        if error
+          ref.on_error error, 'stop_stream'
 
-      ref.set_active false
+          # LATER: CHECK IF USER IS OFFLINE AND WAIT FOR CONNECTION?
+          return
+
+        ref.set_active false
 
 
   # listens for appcast streaming status while streaming

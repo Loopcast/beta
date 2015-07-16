@@ -65,19 +65,14 @@ module.exports =
 
         if user_data['info.username']
 
-          console.log 'user updated username, lets update the room'
+          # if user updates his username, we must update his info in all rooms
+          # because when searching for rooms we also need to consider username
 
-          # update room's user name
-
-          conditions = _owner: user._id
+          conditions = user  : user._id
           options    = multi : true
           update     = $set  : 
             'info.user': user_data['info.username']
 
-          # console.log 'condition ->', conditions
-          # console.log 'udpate ->', update
-          # console.log 'options ->', options
-          
           Room.update conditions, update, options, ( error, updated ) ->
 
             if error
