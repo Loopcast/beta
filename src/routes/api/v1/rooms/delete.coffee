@@ -39,7 +39,7 @@ module.exports =
         'info.user' : username
 
       Room.findOne( query )
-        .select( "_id info.cover_url recording.s3" )
+        .select( "_id info.cover_url recording.status.s3" )
         .lean()
         .exec ( error, room ) -> 
 
@@ -61,9 +61,9 @@ module.exports =
               #   console.log result
 
           # delete recorded set from s3
-          if room.recording?.s3
+          if room.status.recording?.s3
 
-            delete_file room.recording.s3.key, ( error, callback ) ->
+            delete_file room.status.recording.s3.key, ( error, callback ) ->
 
               if error
                 console.log "error deleting from s3!!"
