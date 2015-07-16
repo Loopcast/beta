@@ -61,7 +61,7 @@ module.exports = ( id, callback ) ->
       # just shows live or recorded rooms
       query = 
         $or      : [
-          { 'user' : data._id, 'info.is_live': true }
+          { 'user' : data._id, 'status.is_live'     : true }
           { 'user' : data._id, 'status.is_recorded' : true }
         ]
 
