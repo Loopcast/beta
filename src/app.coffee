@@ -1,6 +1,12 @@
 # defaults to production environment
 if not process.env.NODE_ENV then process.env.NODE_ENV = 'local'
 
+# require newrelic when running on "beta" or "development" environment
+# local machines ( developers testing ) should not be running newrelic
+if process.env.NODE_ENV isnt 'local'
+  console.log '+ Requesting new relic'
+  newrelic = require 'newrelic'
+
 g = require './globals'
 
 
@@ -13,13 +19,6 @@ http.globalAgent.maxSockets = https.globalAgent.maxSockets = 100;
 console.log "+ ENV"
 console.log "-   NODE_ENV = " + process.env.NODE_ENV
 console.log ""
-
-# require newrelic when running on "beta" or "development" environment
-# local machines ( developers testing ) should not be running newrelic
-if process.env.NODE_ENV isnt 'local'
-  console.log '+ Requesting new relic'
-  newrelic = require 'newrelic'
-
 
 server.start ( error ) ->
 
