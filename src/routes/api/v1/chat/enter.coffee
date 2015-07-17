@@ -3,7 +3,7 @@ socket_entered_room = lib 'sockets/room/enter'
 escape = require 'escape-html'
 
 module.exports =
-  method : 'GET'
+  method : 'POST'
   path   : '/api/v1/chat/{room_id}/enter'
 
   config:
