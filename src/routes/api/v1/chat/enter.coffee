@@ -1,5 +1,6 @@
-escape = require 'escape-html'
+socket_entered_room = lib 'sockets/room/enter'
 
+escape = require 'escape-html'
 
 module.exports =
   method : 'GET'
@@ -14,39 +15,38 @@ module.exports =
     ]
     tags   : [ "api", "v1" ]
 
+    validate:
+      payload:
+        user : joi.any()
+
     auth:
       strategy: 'session'
       mode    : 'try'
 
     handler: ( request, reply ) ->
 
-      user     = request.auth.credentials.user
-      room_id  = request.params.room_id
+      if not req.auth.isAuthenticated
 
-      User
-        .findOne( _id: user._id )
-        .select( "socket_id info.name info.username info.occupation info.avatar likes" )
-        .lean()
-        .exec ( error, response ) ->
+        # guests have to send their user information
+        # this can lead to some "add use exploit"
+        socket_entered_room null, req.payload.user
 
-          if error then return reply Boom.badRequest "user not found"
-          
-          console.log "[Api] chat:enter", response.socket_id
-          data = 
-            type  : "listener:added"
-            method: 'added'
-            user : 
-              id        : user._id
-              socket_id : response.socket_id
-              username  : response.info.username
-              name      : response.info.name
-              occupation: response.info.occupation
-              avatar    : response.info.avatar
-              followers : response.info.likes
-              url       : "/" + response.info.username
+        reply( sent: true ).header "Cache-Control", "no-cache, must-revalidate"
 
-          console.log "[Api] chat:enter #2", data
+      # fetch user information from database
+      if req.auth.isAuthenticated
 
-          sockets.send room_id, data
+        user     = request.auth.credentials.user
+        room_id  = request.params.room_id
 
-          reply( sent: true ).header "Cache-Control", "no-cache, must-revalidate"
+        User
+          .findOne( _id: user._id )
+          .select( "socket_id info.name info.username info.occupation info.avatar likes" )
+          .lean()
+          .exec ( error, user ) ->
+
+            if error then return reply Boom.badRequest "user not found"
+
+            socket_entered_room room_id, user
+
+            reply( sent: true ).header "Cache-Control", "no-cache, must-revalidate"
