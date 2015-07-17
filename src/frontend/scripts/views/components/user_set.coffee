@@ -139,7 +139,7 @@ module.exports = ( dom ) ->
         log "[PublishModal] error", error
         notify.error "There was an error. Try later."
       else
-        notify.info "The room now is public!"
+        notify.info "Recording is now public"
         dom.addClass 'public'
 
 
