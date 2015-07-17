@@ -37,10 +37,14 @@ module.exports = class SidebarRight extends RoomView
     # log "[SidebarRight] on_unlike", data
 
   on_listener_added: ( data ) =>
-    @listeners.html ++@stats.listeners
+    c = ++@stats.listeners
+    c = Math.max 0, c
+    @listeners.html c
     # log "[SidebarRight] on_listener_added", @stats.listeners
 
   on_listener_removed: ( data ) =>
-    @listeners.html --@stats.listeners
+    c = --@stats.listeners
+    c = Math.max 0, c
+    @listeners.html c
     # log "[SidebarRight] on_listener_removed", @stats.listeners
 
