@@ -42,6 +42,7 @@ module.exports =
 
       data = 
         type    : 'message'
+        _id     : user._id
         name    : user.name
         username: user.username
         avatar  : user.avatar
