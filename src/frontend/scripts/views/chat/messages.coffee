@@ -98,7 +98,7 @@ module.exports = class Messages extends ChatView
         url: "/" + data.username
         name: data.name
         thumb: transform.chat_thumb( data.avatar )
-        author: @owner_id is data.id
+        author: @owner_id is data._id
         username: data.username
 
     if data.additional_data? and data.additional_data.like
