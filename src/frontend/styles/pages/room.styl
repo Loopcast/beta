@@ -230,26 +230,72 @@
     .chat_header
       height: 64px
       padding: 16px SIDE_PADDING
+      padding-right: 60px
       
       #description_room
         float: left
+        position: relative
+      .read_more
+        display: none
+        absolute bottom 0px left 0
+        width: 100% !important
+        height: 30px
+        padding-top: 10px
+        text-align: center
+        background: url("../images/gradient_description.png")
+        z-index: 1
+        font-size: 10px
+        color: BLACK
+        cursor: pointer
+        .less
+          display: none
+          
+      &.expanded
+        .less
+          display: block
+        .more
+          display: none
+          
+      &.edit_mode
+        .read_more
+          display: none !important
+          
+      .read_more_visible
+        .read_more
+          display: block
+        
+      .ss-tag
+        cursor: pointer
+        float: right
+        font-size: 15px
+        padding-top: 0px
+        position: relative
+        top: 5px
         
       .tags
-        float: right
+        absolute top 20px right 20px
+        .list
+          display: none
+          float: right
+          margin-right: 20px
         &.no_tags
           display: none
-        .icon
-          font-size: 15px
-          margin-right: 10px
-          padding-top: 0px
-          position: relative
-          top: 3px
+          
+          
+      .tags_visible
+        .tags .list
+          display: block
+        
+        .read_more
+          display: none !important
+        #description_room
+          display: none
         
       .editable_text 
-        .text
-          padding-left: 10px
+        // .text
+        //   padding-left: 10px
         .icon
-          top: 10px
+          top: 11px
           right: -20px
         input
           font-size: 12px
@@ -265,9 +311,9 @@
       .inner
         width: 100%
         text-align: left
-        p
-          width: auto
-          display: inline-block
+        // p
+        //   width: auto
+        //   display: inline-block
       
     .chat_content
       flex: 1

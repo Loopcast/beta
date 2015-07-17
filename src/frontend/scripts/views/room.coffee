@@ -227,10 +227,12 @@ module.exports = class Room extends LoggedView
   update_genres: (genres) ->
     log "UPDATE GENRES", genres
     @tags_wrapper = @dom.find '.tags'
+    list = @tags_wrapper.find '.list'
     if genres.length > 0
       @tags_wrapper.removeClass 'no_tags'
+
       for g in genres
-        @tags_wrapper.append '<a class="tag" title="'+g+'" href="/explore?genres='+g+'">'+g+'</a>'
+        list.append '<a class="tag" title="'+g+'" href="/explore?genres='+g+'">'+g+'</a>'
 
 
   on_room_published: (room_id) =>
