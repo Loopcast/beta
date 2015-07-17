@@ -8,7 +8,7 @@ module.exports =
 
   config:
 
-    description: "Adds user to chat list"
+    description: "Broadcast listener:added message to chat list"
     plugins: "hapi-swagger": responseMessages: [
       { code: 400, message: 'Bad Request' }
       { code: 500, message: 'Internal Server Error'}
@@ -23,21 +23,30 @@ module.exports =
       strategy: 'session'
       mode    : 'try'
 
-    handler: ( request, reply ) ->
+    handler: ( req, reply ) ->
 
       if not req.auth.isAuthenticated
 
+
+        user = 
+          _id      : req.payload.user._id
+          socket_id: req.payload.user.socket_id
+          info:
+            username : req.payload.user.info.username
+            name     : req.payload.user.info.name
+            avatar   : "/default/image"
+
         # guests have to send their user information
         # this can lead to some "add use exploit"
-        socket_entered_room null, req.payload.user
+        socket_entered_room null, user
 
         reply( sent: true ).header "Cache-Control", "no-cache, must-revalidate"
 
       # fetch user information from database
       if req.auth.isAuthenticated
 
-        user     = request.auth.credentials.user
-        room_id  = request.params.room_id
+        user     = req.auth.credentials.user
+        room_id  = req.params.room_id
 
         User
           .findOne( _id: user._id )
