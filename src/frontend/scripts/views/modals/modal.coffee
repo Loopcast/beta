@@ -52,7 +52,7 @@ module.exports = class Modal
     @dom.addClass 'loading'
 
   hide_loading: ( ) ->
-    @dom.removeClass 'loading'
+    @dom?.removeClass 'loading'
 
   destroy: ->
     log "[Modal] remove"

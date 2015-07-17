@@ -31,6 +31,7 @@ module.exports =
 
           if error then return reply Boom.badRequest "user not found"
           
+          console.log "[Api] chat:enter", response.socket_id
           data = 
             type  : "listener:added"
             method: 'added'
@@ -43,6 +44,8 @@ module.exports =
               avatar    : response.info.avatar
               followers : response.info.likes
               url       : "/" + response.info.username
+
+          console.log "[Api] chat:enter #2", data
 
           sockets.send room_id, data
 

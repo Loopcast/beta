@@ -159,7 +159,7 @@ block content
             .content
               h2.session_title 
                 a.room_url(href="/#{live.info.user}/#{live.info.slug}", title="#{live.info.title}") #{live.info.title}
-              p.session_author #{live.info.user}
+              p.session_author #{name}
 
               .genres
                 for genre in live.info.genres

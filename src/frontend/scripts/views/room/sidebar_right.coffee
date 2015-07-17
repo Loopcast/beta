@@ -1,7 +1,10 @@
 L        = require 'api/loopcast/loopcast'
 RoomView = require './room_view'
 module.exports = class SidebarRight extends RoomView
-  stats: null
+  stats: 
+    visits: 0
+    likes: 0
+    listeners: 0
   likes: null
   visits: null
   listeners: null
@@ -19,7 +22,9 @@ module.exports = class SidebarRight extends RoomView
       ref.likes.html stats.likes
       ref.listeners.html stats.listeners
 
-      ref.stats = stats
+      ref.stats.visits    = stats.visits
+      ref.stats.likes     = stats.likes
+      ref.stats.listeners = stats.listeners
 
       ref.dom.removeClass 'not_loaded'
 
