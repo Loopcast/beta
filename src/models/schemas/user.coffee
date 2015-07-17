@@ -4,14 +4,14 @@ Schema     = mongoose.Schema
 schema = new Schema
   info :
     username   : type: String, required: true, unique: true
-    name       : String
+    name       : type: Array , default: ""
     avatar     : String
     cover      : String
     genres     : type: Array, default: []
     occupation : type: Array, default: []
     social     : type: Array, default: []
-    about      : String
-    location   : String
+    about      : type: Array, default: ""
+    location   : type: Array, default: ""
 
   # is actually the amount of followers the user has
   likes       : { type: Number, default: 0 }

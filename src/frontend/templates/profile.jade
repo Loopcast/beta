@@ -1,7 +1,7 @@
 block seo
-  title #{name} | Live Sessions on Loopcast 
+  title #{user.info.name} | Live Sessions on Loopcast 
 
-  meta( property="og:title" content="#{name} | Live Sessions on Loopcast " ) 
+  meta( property="og:title" content="#{user.info.name} | Live Sessions on Loopcast " ) 
   meta( property="og:type"  content="profile" ) 
 
   - og_image = "#{s.base_path}/images/thumbnail.png"
@@ -14,9 +14,9 @@ block seo
 
 
   if about
-    meta( name="description" content="#{about}" ) 
+    meta( name="description" content="#{user.info.about}" ) 
   else
-    meta( name="description" content="#{name} is on Loopcast. Follow #{name} and listen to live and recorded DJ mixes" )
+    meta( name="description" content="#{user.info.name} is on Loopcast. Follow #{user.info.name} and listen to live and recorded DJ mixes" )
 
 extends layout
 
@@ -24,7 +24,7 @@ block content
 
   - if( !genres ) genres = []
 
-  input#owner_id(type="hidden", value="#{_id}")
+  input#owner_id(type="hidden", value="#{user._id}")
 
   .profile_theme.request_preloading.centered.no_information_yet(data-menu="profile", data-view="profile")
     .cover
@@ -33,11 +33,11 @@ block content
         
       .content
         h1.name.black_background(data-view="components/editables/editable_text")
-          span.text #{name}
+          span.text #{user.info.name}
         br
 
         if occupation && occupation[0]
-          h3.type.black_background(data-view="components/editables/editable_select", data-text="#{occupation}", data-default-selected="false")
+          h3.type.black_background(data-view="components/editables/editable_select", data-text="#{user.info.occupation}", data-default-selected="false")
             span.text Select Profession
         else
           h3.type.black_background(data-view="components/editables/editable_select", data-text="", data-default-selected="true")
@@ -50,7 +50,7 @@ block content
           span.text.values #{genres.join( ", " )}
 
         .profile_image.upload_wrapper(data-view="components/image_uploader", data-id="profile_picture")
-          img(src="#{transform.avatar(avatar)}")
+          img(src="#{transform.avatar(user.info.avatar)}")
           p.upload_element.edit_image
             span.icon.ss-camera
             span Update profile picture
@@ -67,19 +67,19 @@ block content
           .big_number
             .inner
               span.icon.for_mobile.ss-users
-              span.number #{likes}
+              span.number #{user.likes}
               span.text.for_desktop Followers
 
           .big_number
             .inner
               span.icon.for_mobile.ss-rss
-              span.number #{streams}
+              span.number #{user.stats.streams}
               span.text.for_desktop Streams 
 
           .big_number
             .inner
               span.icon.spritesheet.for_mobile.mobile_headphones
-              span.number #{listeners}
+              span.number #{user.stats.listeners}
               span.text.for_desktop
                 | Total
                 br 
@@ -97,7 +97,7 @@ block content
             input.unsigned_id(type="hidden", name="unsigned_id", value="#{cloudinary.unsigned_ids.cover}")
 
         .for_guest.cover_buttons
-          a(href="#", class="button grey_button small_button_2 follow_button", data-view="profile/follow_button", data-user-id="#{id}") 
+          a(href="#", class="button grey_button small_button_2 follow_button", data-view="profile/follow_button", data-user-id="#{user._id}") 
             span.follow Follow
             span.unfollow Unfollow
 
@@ -124,24 +124,15 @@ block content
               //- span.spritesheet.edit_icon
               span.icon.ss-write
 
-
-            - loc = ""
-            if location
-              - loc = location
-
-            - bio = ""
-            if about
-              - bio = about
-            
-            h4.location #{loc}
-            .bio !{bio}
+            h4.location #{user.info.location}
+            .bio !{user.info.about}
 
             .social.social_read_mode
 
           form.element_on_write_mode.profile_form
-            input.squared_input.location_input(type="text", placeholder="Add your location", name="location", value="#{loc}")
+            input.squared_input.location_input(type="text", placeholder="Add your location", name="location", value="#{user.info.location}")
             textarea.squared_input.bio_input(placeholder="Add a bio to your profile", name="bio")
-            .social_links(data-view="components/editables/social_links", data-links="#{social}")
+            .social_links(data-view="components/editables/social_links", data-links="#{user.info.social}")
             button.button.save_button.no_shadow(data-profile="set-read-mode") Save
 
 
@@ -155,11 +146,11 @@ block content
 
         if live
           .session.outline_box(data-view="profile/live_set", data-room-id="#{live._id}", data-room-started-at="#{live.status.live.started_at}")
-            a.image.room_url(href="/#{live.info.user}/#{live.info.slug}", title="Old School House session", style="background-image:url(#{transform.cover_thumb(live.info.cover_url, avatar)})")
+            a.image.room_url(href="/#{live.info.user}/#{live.info.slug}", title="Old School House session", style="background-image:url(#{transform.cover_thumb(live.info.cover_url, user.info.avatar)})")
             .content
               h2.session_title 
                 a.room_url(href="/#{live.info.user}/#{live.info.slug}", title="#{live.info.title}") #{live.info.title}
-              p.session_author #{name}
+              p.session_author #{user.info.name}
 
               .genres
                 for genre in live.info.genres
@@ -202,7 +193,7 @@ block content
                 - public_class = "to_publish"
               //- - room.info.cover_url = room.info.cover_url || '/images/default_room_cover.jpg'
               .session.outline_box(class="#{public_class}", id="session_recorded_#{room._id}", data-room-id="#{room._id}" data-view="[components/user_set,components/audio/player_preview]")
-                .image(style="background-image:url(#{transform.cover_thumb(room.info.cover_url, avatar)})")
+                .image(style="background-image:url(#{transform.cover_thumb(room.info.cover_url, user.info.avatar)})")
                   a.icon.ss-play.circle_icon(href="#",title="Play") 
                   .loading_spin
                   .share_wrapper(
@@ -218,7 +209,7 @@ block content
                 .content
                   h2.session_title 
                     a.room_url(href="#{room.url}", title="#{room.info.title}") #{room.info.title}
-                  p.session_author #{name}
+                  p.session_author #{user.info.name}
                   .genres
                     for genre in room.info.genres
                       a.tag(href="/explore?genres=#{genre}", title="#{genre}") #{genre}
@@ -256,7 +247,7 @@ block content
 
       
         .no_activity_wrapper
-          h3.no_activity.for_guest #{name} does not have any live or recorded sessions
+          h3.no_activity.for_guest #{user.info.name} does not have any live or recorded sessions
           h3.no_activity.for_owner You don't have any live or recorded sessions
           a.button.bold_button.yellow_button.small_button_2.for_owner(href="/rooms/create") Get Started
 
