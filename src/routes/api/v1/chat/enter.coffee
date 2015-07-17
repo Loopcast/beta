@@ -3,7 +3,7 @@ escape = require 'escape-html'
 
 module.exports =
   method : 'GET'
-  path   : '/api/v1/chat/{id}/enter'
+  path   : '/api/v1/chat/{room_id}/enter'
 
   config:
 
