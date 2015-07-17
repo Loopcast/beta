@@ -81,6 +81,12 @@ block grid
         if item.status.is_live
           a.enter_room(href="#{url}", class="button yellow_button no_shadow small_button small_button_2", title="Enter Room") Enter Room
 
+        if item.status.is_live
+          hidden( class="source_src" value="#{item.info.url}")
+        else
+          if item.status.is_recorded
+            hidden( class="source_src" value="#{item.info.file}")
+
 
   script
     //- THIS IS JUST FOR DEBUGGIN. TO BE REMOVED
