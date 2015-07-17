@@ -222,8 +222,6 @@ module.exports =
 
     enter: ( room_id, callback ) ->
 
-      console.log "ENTER ->", room_id
-
       request = $.get api_url + "chat/#{room_id}/enter"
 
       request.error on_error "chat/#{room_id}/enter", callback
