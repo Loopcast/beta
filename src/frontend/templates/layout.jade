@@ -13,6 +13,10 @@ html
 			title loopcast.fm
 			meta( name="description" content="Loopcast Description" ) 
 
+		//- loopcast icon should be the last image when sharing, so user images
+		//- and room background images will have priority
+		meta( property="og:image" content="#{s.base_path}/images/thumbnail.png")
+
 		block head
 			link( href='//fonts.googleapis.com/css?family=Open+Sans:300,400,700,600', rel='stylesheet', type='text/css' )
 			link( href='/css/spritesheet.css', rel='stylesheet', type='text/css' )
@@ -23,9 +27,6 @@ html
 				#loading {display:block;position:absolute;top:0;left:0;background:#ececec;width:100%;height:100%;}
 				header{opacity:0;}
 
-		//- loopcast icon should be the last image when sharing, so user images
-		//- and room background images will have priority
-		meta( property="og:image" content="#{s.base_path}/images/thumbnail.png")
 
 	body.loading.not_logged
 		block body
