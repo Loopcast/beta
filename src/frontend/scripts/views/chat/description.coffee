@@ -71,7 +71,7 @@ module.exports = class Description extends EditableText
         # log "[Description] check_length", l, @max_length, "INVISIBLE"
 
   destroy: ->
-    @off 'changed', @check_length
+    @off?( 'changed', @check_length )
     @read_more.off 'click', @toggle
     app.window.off 'scroll', @collapse
     super()

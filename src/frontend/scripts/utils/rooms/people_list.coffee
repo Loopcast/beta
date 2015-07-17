@@ -9,10 +9,19 @@ module.exports = class PeopleList
       return false
     
     log "[PeopleList] add", data, data.socket_id, data.name
-    @list[ data.socket_id ] = true
+    @list[ data.socket_id ] = data
     return true
 
-  remove: ( data ) ->
-  
+  remove: ( socket_id ) ->
+    log "[PeopleList] remove", socket_id, @list
+    if @list[ socket_id ]?
+      log "[PeopleList] remove", @list[ socket_id ]
+      obj = @list[ socket_id ]
+      @list[ socket_id ] = null
+
+      return obj
+
+    return false
+      
 
 

@@ -358,9 +358,13 @@ module.exports = class Room extends LoggedView
       @sidebar_right.on_listener_added()
 
   on_listener_removed: ( listener ) =>
-    # log "[Room] on_listener_removed", listener
-    # @emit 'listener:removed', listener
-    # @sidebar_right.on_listener_removed()
+    listener_removed = @people_list.remove listener.user.socket_id
+
+
+    log "[Room] on_listener_removed", listener_removed
+    if listener_removed
+      @emit 'listener:removed', listener_removed
+      @sidebar_right.on_listener_removed()
 
   on_like_room: ( data ) =>
     @sidebar_right.on_like()
