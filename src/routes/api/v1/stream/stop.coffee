@@ -33,12 +33,12 @@ module.exports =
 
         return reply Boom.unauthorized('needs authentication')
 
-      username = request.auth.credentials.user.username
-      room_id  = request.payload.room_id.toLowerCase()
+      user_id = request.auth.credentials.user._id
+      room_id = request.payload.room_id.toLowerCase()
 
       query =
-        _id         : room_id
-        'info.user' : username
+        _id  : room_id
+        user : user_id
 
       Room.findOne( query )
         .select( "_id" )

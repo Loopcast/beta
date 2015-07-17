@@ -1,52 +1,61 @@
+socket_entered_room = lib 'sockets/room/enter'
+
 escape = require 'escape-html'
 
-
 module.exports =
-  method : 'GET'
-  path   : '/api/v1/chat/{id}/enter'
+  method : 'POST'
+  path   : '/api/v1/chat/{room_id}/enter'
 
   config:
 
-    description: "Adds user to chat list"
+    description: "Broadcast listener:added message to chat list"
     plugins: "hapi-swagger": responseMessages: [
       { code: 400, message: 'Bad Request' }
       { code: 500, message: 'Internal Server Error'}
     ]
     tags   : [ "api", "v1" ]
 
+    validate:
+      payload:
+        user : joi.any()
+
     auth:
       strategy: 'session'
       mode    : 'try'
 
-    handler: ( request, reply ) ->
+    handler: ( req, reply ) ->
 
-      user     = request.auth.credentials.user
-      room_id  = request.params.room_id
+      if not req.auth.isAuthenticated
 
-      User
-        .findOne( _id: user._id )
-        .select( "socket_id info.name info.username info.occupation info.avatar likes" )
-        .lean()
-        .exec ( error, response ) ->
 
-          if error then return reply Boom.badRequest "user not found"
-          
-          console.log "[Api] chat:enter", response.socket_id
-          data = 
-            type  : "listener:added"
-            method: 'added'
-            user : 
-              id        : user._id
-              socket_id : response.socket_id
-              username  : response.info.username
-              name      : response.info.name
-              occupation: response.info.occupation
-              avatar    : response.info.avatar
-              followers : response.info.likes
-              url       : "/" + response.info.username
+        user = 
+          _id      : req.payload.user._id
+          socket_id: req.payload.user.socket_id
+          info:
+            username : req.payload.user.info.username
+            name     : req.payload.user.info.name
+            avatar   : s.default.chat_avatar
 
-          console.log "[Api] chat:enter #2", data
+        # guests have to send their user information
+        # this can lead to some "add use exploit"
+        socket_entered_room null, user
 
-          sockets.send room_id, data
+        reply( sent: true ).header "Cache-Control", "no-cache, must-revalidate"
 
-          reply( sent: true ).header "Cache-Control", "no-cache, must-revalidate"
+      # fetch user information from database
+      if req.auth.isAuthenticated
+
+        user     = req.auth.credentials.user
+        room_id  = req.params.room_id
+
+        User
+          .findOne( _id: user._id )
+          .select( "socket_id info.name info.username info.occupation info.avatar likes" )
+          .lean()
+          .exec ( error, user ) ->
+
+            if error then return reply Boom.badRequest "user not found"
+
+            socket_entered_room room_id, user
+
+            reply( sent: true ).header "Cache-Control", "no-cache, must-revalidate"

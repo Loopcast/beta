@@ -4703,14 +4703,14 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 #player .player_progress span:after {
   content: "";
   position: absolute;
-  top: -4px;
+  top: -5px;
   right: 0;
   width: 13px;
   height: 13px;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  border: 1px solid #fdbb30;
-  background: #1f1f1f;
+  border: 2px solid #fdbb30;
+  background: #292c2f;
 }
 
 /* line 310 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/all.styl */

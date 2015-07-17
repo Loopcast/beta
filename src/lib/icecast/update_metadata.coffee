@@ -20,14 +20,15 @@ module.exports = ( mount_point, metadata, callback ) ->
   request url, options, ( error, response, body ) ->
 
     if error
+      console.log 'error'
       console.log "error updating metadata for #{mount_point}"
       console.log error
 
     if response.statusCode isnt 401
+      console.log 'status error code:', response.statusCode
+      
       console.log "error updating metadata for #{mount_point}"
       console.log body
-
-    console.log "success updating meta data"
 
     # always callback, even if no succesful.
     # this functionality isn't really essential

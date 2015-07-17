@@ -20,49 +20,26 @@ module.exports = ( id, callback ) ->
 
   User
     .findOne( 'info.username': id )
-    .lean().exec ( error, data ) ->
+    .select( "_id info likes stats")
+    .lean().exec ( error, user ) ->
 
-      if not data 
+      if not user 
 
         console.log 'did not find user ' + id
         console.log 'probably something wrong somwhere, we have to patch this'
 
         return callback null, null
 
-      profile =
-        _id        : data._id
-        id         : data.info.username
-
-        # top bar info
-        name       : data.info.name
-        occupation : data.info.occupation
-        genres     : data.info.genres
-
-        # left bar info
-        about     : data.info.about
-        location  : data.info.location
-        social    : data.info.social
-
-        avatar    : data.info.avatar
-        cover     : data.info.cover
-
-        likes     : data.likes
-        streams   : data.stats.streams
-        listeners : data.stats.listeners
-
-        # list of rooms
+      data = 
+        user : user
         recorded  : []
         live      : null
-
-
-        # new format, need to stop modifying data like we do here
-        user: data
 
       # just shows live or recorded rooms
       query = 
         $or      : [
-          { 'user' : data._id, 'status.is_live'     : true }
-          { 'user' : data._id, 'status.is_recorded' : true }
+          { 'user' : user._id, 'status.is_live'     : true }
+          { 'user' : user._id, 'status.is_recorded' : true }
         ]
 
       Room.find( query ).lean().exec ( error, rooms ) ->
@@ -72,8 +49,8 @@ module.exports = ( id, callback ) ->
         for room in rooms
 
           if room.status.is_live
-            profile.live = room
+            data.live = room
           else
-            profile.recorded.push room
+            data.recorded.push room
 
-        callback null, profile
+        callback null, data

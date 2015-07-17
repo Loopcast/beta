@@ -178,7 +178,7 @@ module.exports = class Room extends LoggedView
               name      : user.info.name
               occupation: user.info.occupation
               avatar    : user.info.avatar
-              followers : user.info.likes
+              followers : user.likes
               url       : "/" + user.info.username
 
             return user

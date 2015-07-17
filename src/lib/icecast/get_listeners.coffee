@@ -19,10 +19,6 @@ module.exports = ( mount_point, callback ) ->
 
       return callback Boom.resourceGone( "authentication with radio failed")
 
-    console.log '--got body--'
-    console.log body
-    console.log '--end of body--'
-
     # BAD REQUEST!!
     # Probably the stream is offline!!
     if response.statusCode is 400

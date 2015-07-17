@@ -50,7 +50,10 @@ schema = new Schema
 schema.statics.findAndModify = (query, sort, doc, options, callback) ->
   # automatically transform string to ObjectId
   if query._id
-    query._id = mongoose.Types.ObjectId query._id
+    query._id  = mongoose.Types.ObjectId query._id
+
+  if query.user
+    query.user = mongoose.Types.ObjectId query.user
 
   @collection.findAndModify query, sort, doc, options, callback
 
