@@ -54,8 +54,6 @@ s.default =
 # PRODUCTION / STAGING reading from environment variables
 if not s.is_local
 
-  s.mongo = url: process.env.MONGOHQ_URL
-
   r_info  = url.parse process.env.REDISCLOUD_URL
   s.redis = 
     host     : r_info.hostname
@@ -72,6 +70,8 @@ if not s.is_local
 
 # IF PRODUCTION
 if s.is_beta
+
+  s.mongo = url: process.env.MONGOHQ_URL
 
   s.facebook.client_sdk_id = "1551393601809115"
 
@@ -107,6 +107,8 @@ if s.is_beta
 # IF STAGING OR LOCAL
 if not s.is_beta
 
+  s.mongo = url: process.env.MONGOLAB_URI
+  
   s.facebook.client_sdk_id = "1608982952716846"
 
   s.cloudinary.cloud_name = 'hrrdqnsfe'
