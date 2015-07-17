@@ -61,7 +61,7 @@ module.exports =
             live: 
               stopped_at: now().format()
 
-          pusher.trigger room_id, "status", status
+          sockets.send room_id, status
 
           update =
             $set:
