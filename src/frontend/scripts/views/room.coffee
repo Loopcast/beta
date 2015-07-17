@@ -153,6 +153,7 @@ module.exports = class Room extends LoggedView
 
     if user_controller.check_guest_owner()
       @manage_edit()
+      app.on 'room:go_offline', @room_went_offline
     else
       @show_guest_popup()
 
@@ -169,6 +170,13 @@ module.exports = class Room extends LoggedView
       @broadcast_enter()
     else
       user_controller.once 'socket:connected', @broadcast_enter
+
+  room_went_offline: =>
+
+    log '[Dashboard] ROOM WENT OFFLINE'
+    @on_room_offline()
+    @live_button.set_active false
+    notify.error 'Ops, something went wrong while you were streaming ( or recording ) and your show went offline'
 
   broadcast_enter: =>
     data = 
@@ -389,6 +397,7 @@ module.exports = class Room extends LoggedView
       @description.off 'changed', @on_description_changed
       @title.off 'changed', @on_title_changed
       @change_cover_uploader.off 'completed', @on_cover_uploaded
+      app.off 'room:go_offline', @room_went_offline
 
     if @publish_modal
       @publish_modal.off 'room:published', @on_room_published
