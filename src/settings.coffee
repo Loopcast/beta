@@ -47,7 +47,9 @@ s.soundcloud =
   secret       : "be900f4e96a1d18da740c6536cc756ee"
 
 
-
+s.default =
+  chat :
+    avatar: '/default/chat/image/path'
 
 # PRODUCTION / STAGING reading from environment variables
 if not s.is_local

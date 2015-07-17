@@ -34,7 +34,7 @@ module.exports =
           info:
             username : req.payload.user.info.username
             name     : req.payload.user.info.name
-            avatar   : "/default/image"
+            avatar   : s.default.chat_avatar
 
         # guests have to send their user information
         # this can lead to some "add use exploit"
