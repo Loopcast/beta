@@ -75,7 +75,8 @@ module.exports = class People extends ChatView
 
   on_listener_removed: ( listener ) =>
     # log "[People] on_listener_removed", listener
-
+    return
+    
     @listeners_wrapper.find( '#listener_' + listener.id ).remove()
 
     @listeners_map[ listener.id ] = null

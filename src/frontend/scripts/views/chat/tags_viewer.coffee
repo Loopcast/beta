@@ -1,9 +1,7 @@
 module.exports = class TagsViewer
   constructor: (@dom) ->
-    @tags = @dom.find( 'list' )
+    @tags = @dom.find 'list'
     @parent = @dom.parent()
-
-    log "[TagsViewer] tags", @tags
 
     @dom.on 'mouseenter', @open
     @dom.on 'mouseleave', @close
