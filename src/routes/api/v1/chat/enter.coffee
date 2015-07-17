@@ -27,6 +27,8 @@ module.exports =
 
       if not req.auth.isAuthenticated
 
+        console.log "#### ENTER NOT AUTHENTICATED"
+        console.log req.payload
 
         user = 
           _id      : req.payload.user._id
@@ -45,6 +47,9 @@ module.exports =
       # fetch user information from database
       if req.auth.isAuthenticated
 
+        console.log "#### ENTER AUTHENTICATED"
+        console.log req.payload
+        
         user     = req.auth.credentials.user
         room_id  = req.params.room_id
 

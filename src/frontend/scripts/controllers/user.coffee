@@ -341,14 +341,22 @@ class UserController
 
   get_info: ->
 
-    log "[User] get_info", @data
-    data = 
-      _id      : @data._id
-      socket_id: @socket_id
-      info:
-        username : @data.username
-        name     : @data.name
-        avatar   : @data.images.chat_sidebar
+
+    if @data
+      data = 
+        _id      : @data._id
+        socket_id: @socket_id
+        info:
+          username : @data.username
+          name     : @data.name
+          avatar   : @data.images.chat_sidebar
+    else
+      data = 
+        _id      : @socket_id
+        socket_id: @socket_id
+        info:
+          username : "guest"
+          name     : "Guest"
 
     return data
 

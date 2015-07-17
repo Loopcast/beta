@@ -222,7 +222,7 @@ module.exports =
 
     enter: ( data, callback ) ->
 
-      request = $.post api_url + "chat/#{data.room_id}/enter", data
+      request = $.post api_url + "chat/#{data.room_id}/enter", user: data.user
 
       request.error on_error "chat/#{data.room_id}/enter", callback
 

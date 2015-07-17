@@ -62,13 +62,13 @@ module.exports = class People extends ChatView
     listener = listener.user
 
     listener.images = transform.all listener.avatar
-    if @listeners_map[ listener.id ]?
-      # log "[People] listener already added", listener.id
+    if @listeners_map[ listener.socket_id ]?
+      log "[People] listener already added", listener.socket_id
       return
       
-    # log "[People] on_listener_added", listener
+    log "[People] on_listener_added", listener
     @listeners.push listener
-    @listeners_map[ listener.id ] = listener
+    @listeners_map[ listener.socket_id ] = listener
 
     @listeners_wrapper.append @tmpl( listener )
     @update_counter()
@@ -77,12 +77,12 @@ module.exports = class People extends ChatView
     # log "[People] on_listener_removed", listener
     return
     
-    @listeners_wrapper.find( '#listener_' + listener.id ).remove()
+    @listeners_wrapper.find( '#listener_' + listener.socket_id ).remove()
 
-    @listeners_map[ listener.id ] = null
+    @listeners_map[ listener.socket_id ] = null
     i = 0
     for item in @listeners
-      if item.id is listener.id
+      if item.socket_id is listener.socket_id
         break
       i++
 

@@ -10,7 +10,7 @@ api             = require 'app/api/loopcast/loopcast'
 Cloudinary      = require 'app/controllers/cloudinary'
 transform       = require 'lib/cloudinary/transform'
 RoomModal       = require 'app/views/modals/room_modal'
-
+PeopleList      = require 'app/utils/rooms/people_list'
 
 module.exports = class Room extends LoggedView
   room_created: false
@@ -18,10 +18,13 @@ module.exports = class Room extends LoggedView
   exit_modal: null
   sidebar_right: null
 
+
   constructor: ( @dom ) ->
     super @dom
 
     happens @
+
+    @people_list = new PeopleList
 
     @elements = 
       title       : @dom.find '.cover .name'
@@ -124,8 +127,12 @@ module.exports = class Room extends LoggedView
       return @on_like_room        data if data.type is "like"
       return @on_unlike_room      data if data.type is "unlike"
       return @on_message          data if data.type is "message"
-      return @on_listener_added   data if data.type is "listener:added"
       return @on_listener_removed data if data.type is "listener:removed"
+
+      if data.type is "listener:added"
+        log "[DDD]", data, user_controller.is_me( data.user.id )
+        unless user_controller.is_me data.user.id
+          return @on_listener_added   data 
 
     @publish_modal = view.get_by_dom '#publish_modal'
     @confirm_exit_modal = view.get_by_dom '#confirm_exit_modal'
@@ -182,6 +189,7 @@ module.exports = class Room extends LoggedView
 
             user = 
               id        : user._id
+              socket_id : socket_id
               username  : user.info.username
               name      : user.info.name
               occupation: user.info.occupation
@@ -193,7 +201,7 @@ module.exports = class Room extends LoggedView
 
         return null
 
-      # log "[Chat people]", response
+      log "[Chat people]", response
       for socket_id in response.sockets
 
         if not user = user_by_socket( socket_id )
@@ -227,7 +235,7 @@ module.exports = class Room extends LoggedView
           method: "added"
           user  : user
 
-
+        log "[Chat people] on_listener added", message
         @on_listener_added message
 
   
@@ -334,14 +342,17 @@ module.exports = class Room extends LoggedView
   on_user_unlogged: ( data ) =>
 
   on_listener_added: ( listener ) =>
-    # log "[Room] ###### on_listener_added", listener
-    @emit 'listener:added', listener
-    @sidebar_right.on_listener_added()
+    is_new = @people_list.add listener.user
+
+    log "[Room] ###### on_listener_added", listener.user.name, listener.user.socket_id, is_new
+    if is_new
+      @emit 'listener:added', listener
+      @sidebar_right.on_listener_added()
 
   on_listener_removed: ( listener ) =>
     # log "[Room] on_listener_removed", listener
-    @emit 'listener:removed', listener
-    @sidebar_right.on_listener_removed()
+    # @emit 'listener:removed', listener
+    # @sidebar_right.on_listener_removed()
 
   on_like_room: ( data ) =>
     @sidebar_right.on_like()
