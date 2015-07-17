@@ -8,6 +8,11 @@ module.exports = (dom) ->
   data       = null
   room_id    = dom.data 'room-id'
   room_info = null
+  source_src = null
+
+  source = dom.find '.source_src'
+  if source.length > 0
+    source_src = source.attr 'value'
 
   if not room_id
     return
@@ -46,7 +51,7 @@ module.exports = (dom) ->
       app.player.stop()
     else
       dom.addClass 'preloading'
-      app.player.play room_id
+      app.player.play room_id, source_src
 
   init = ->
     handler.on 'click', toggle
