@@ -74,8 +74,7 @@ module.exports = class People extends ChatView
     @update_counter()
 
   on_listener_removed: ( listener ) =>
-    # log "[People] on_listener_removed", listener
-    return
+    log "[People] on_listener_removed", listener
     
     @listeners_wrapper.find( '#listener_' + listener.socket_id ).remove()
 
