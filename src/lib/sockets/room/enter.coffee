@@ -10,7 +10,7 @@ module.exports = ( room_id, user ) ->
       name      : user.info.name
       occupation: user.info.occupation
       avatar    : user.info.avatar
-      followers : user.info.likes
+      followers : user.likes
       url       : "/" + user.info.username
 
   sockets.send room_id, data
