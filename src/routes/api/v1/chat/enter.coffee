@@ -25,10 +25,9 @@ module.exports =
 
     handler: ( req, reply ) ->
 
-      if not req.auth.isAuthenticated
+      room_id  = req.params.room_id
 
-        console.log "#### ENTER NOT AUTHENTICATED"
-        console.log req.payload
+      if not req.auth.isAuthenticated
 
         user = 
           _id      : req.payload.user._id
@@ -40,18 +39,14 @@ module.exports =
 
         # guests have to send their user information
         # this can lead to some "add use exploit"
-        socket_entered_room null, user
+        socket_entered_room room_i, user
 
         reply( sent: true ).header "Cache-Control", "no-cache, must-revalidate"
 
       # fetch user information from database
       if req.auth.isAuthenticated
 
-        console.log "#### ENTER AUTHENTICATED"
-        console.log req.payload
-        
         user     = req.auth.credentials.user
-        room_id  = req.params.room_id
 
         User
           .findOne( _id: user._id )
