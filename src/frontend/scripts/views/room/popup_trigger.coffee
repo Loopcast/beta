@@ -13,7 +13,7 @@ module.exports = class PopupTrigger
       avatar: document.getElementById( 'owner_avatar' ).value
       id: document.getElementById( 'owner_id' ).value
       name: document.getElementById( 'owner_name' ).value
-      followers: document.getElementById( 'owner_followers' ).value
+      likes: document.getElementById( 'owner_followers' ).value
       occupation:[document.getElementById( 'owner_occupation' ).value]
 
     

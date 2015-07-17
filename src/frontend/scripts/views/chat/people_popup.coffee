@@ -34,7 +34,7 @@ module.exports = class PeopleView extends ChatView
 
   ###
   avatar: "https://res.cloudinary.com/loopcast/image/upload/v1431006022/ifollzoplab3eft56sfv.jpg"
-  followers: 0
+  likes: 0
   id: "stefanoortisi"
   images: Object
   name: "Stefano Ortisi"

@@ -194,7 +194,7 @@ module.exports = class Room extends LoggedView
               name      : user.info.name
               occupation: user.info.occupation
               avatar    : user.info.avatar
-              followers : user.likes
+              likes : user.likes
               url       : "/" + user.info.username
 
             return user
@@ -216,7 +216,7 @@ module.exports = class Room extends LoggedView
               name      : user_controller.data.name
               occupation: user_controller.data.occupation
               avatar    : user_controller.data.avatar
-              followers : 0
+              likes : 0
               url       : "/" + user_controller.data.username
 
           else
@@ -227,7 +227,7 @@ module.exports = class Room extends LoggedView
               name      : "Guest"
               occupation: "Guest"
               avatar    : "https://deerfieldsbakery.com/dev/images/items/cookies/Cookies-Decorated-Chocolate-Happy-Face_MD.jpg"
-              followers : 0
+              likes : 0
               url       : "/"
 
         message = 
