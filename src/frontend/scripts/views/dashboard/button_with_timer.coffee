@@ -32,7 +32,7 @@ module.exports = class ButtonWithTimer extends RoomView
 
 
     @timer = @dom.find '.right_part'
-    log "[ButtonWithTimer]", @timer.length
+    # log "[ButtonWithTimer]", @timer.length
 
   on_button_clicked: =>
     # TODO: make it clever
@@ -45,7 +45,7 @@ module.exports = class ButtonWithTimer extends RoomView
 
   set_active: ( active ) ->
 
-    log "[Record] set_active", active
+    # log "[Record] set_active", active
     
     @waiting = false
     @active  = active
@@ -64,7 +64,7 @@ module.exports = class ButtonWithTimer extends RoomView
 
     return if not error
     @text.html "ERROR"
-    log "[Record] on_error. origin", error, origin
+    # log "[Record] on_error. origin", error, origin
 
     notify.error "An error occurred, please get in touch using the support icon in the bottom right"
 
@@ -72,7 +72,7 @@ module.exports = class ButtonWithTimer extends RoomView
     L.rooms.info @room_id, (error, response) =>
       return if error
       started_at = response.room.status[ @type ].started_at 
-      log "[ButtonWithTimer] room info", error, response, started_at
+      # log "[ButtonWithTimer] room info", error, response, started_at
 
       @start_time = moment( started_at )
       @interval = setInterval @tick, 1000

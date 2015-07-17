@@ -10,6 +10,7 @@ connection.on "uid", ( socket_id ) ->
   socket.id = socket_id
 
   User = require './user'
+  User.set_socket_id socket.id
 
   # set user socket_id when authenticating
   if User.is_logged()

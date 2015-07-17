@@ -37,6 +37,13 @@ block grid
       - klasses += " is_recorded"
 
     .room_cell.item(class="#{klasses}", data-view="components/audio/player_preview", data-room-id="#{item._id}")
+      if item.status.is_live
+        hidden( class="source_src" value="#{item.info.url}")
+      else
+        if item.status.is_recorded
+          hidden( class="source_src" value="#{item.info.file}")
+
+            
       a(href="#", title="#{item.info.title}", class="thumb_wrapper") 
         img.room_thumb.for_desktop(src="#{transform.explore_thumb(cover_url)}")
         img.room_thumb.for_mobile(src="#{transform.explore_thumb_mobile(cover_url)}")
@@ -80,12 +87,6 @@ block grid
 
         if item.status.is_live
           a.enter_room(href="#{url}", class="button yellow_button no_shadow small_button small_button_2", title="Enter Room") Enter Room
-
-        if item.status.is_live
-          hidden( class="source_src" value="#{item.info.url}")
-        else
-          if item.status.is_recorded
-            hidden( class="source_src" value="#{item.info.file}")
 
 
   script

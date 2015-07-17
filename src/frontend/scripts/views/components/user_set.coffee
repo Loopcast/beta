@@ -140,7 +140,7 @@ module.exports = ( dom ) ->
         notify.error "There was an error. Try later."
       else
         notify.info "Recording is now public"
-        dom.addClass 'public'
+        dom.addClass( 'public' ).removeClass( 'to_publish' )
 
 
   init()

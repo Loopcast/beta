@@ -6,12 +6,8 @@ module.exports = class RoomModal extends Modal
   cover_uploaded: ""
   timeout_title: null
   constructor: ( @dom ) ->
-
-    log "@dom", @dom
     
     super @dom
-
-    log '---->', @dom[0].id
 
     @title = @dom.find '.roomname'
     
@@ -59,7 +55,7 @@ module.exports = class RoomModal extends Modal
     @emit 'input:changed', { name: 'title', value: @title.val() }
 
   _on_genre_changed: ( data ) =>
-    log "_on_genre_changed", data
+    # log "_on_genre_changed", data
     @emit 'input:changed', { name: 'genre', value: data.join( ', ' ) }
 
   _on_location_changed: ( ) =>
@@ -76,7 +72,7 @@ module.exports = class RoomModal extends Modal
 
   _check_room_name: =>
     L.rooms.is_available @title.val(), (error, result) =>
-      log "[RoomModal] _check_room_name", @title.val(), "available?", result.available
+      # log "[RoomModal] _check_room_name", @title.val(), "available?", result.available
       if error
         log error
         return 
@@ -101,7 +97,7 @@ module.exports = class RoomModal extends Modal
       about    : @description.val()
       cover    : @cover_uploaded
 
-    log "[Create Room]submit", data
+    # log "[Create Room]submit", data
 
     @emit 'submit', data
 
@@ -113,7 +109,7 @@ module.exports = class RoomModal extends Modal
     @message.hide()
 
   open_with_data: ( data ) ->
-    log "[RoomModal] open_with_data", data
+    # log "[RoomModal] open_with_data", data
     
     @dom.addClass 'edit_modal'
     @title.attr( 'placeholder', 'Enter set name' ).val data.title
@@ -130,7 +126,7 @@ module.exports = class RoomModal extends Modal
 
 
   destroy: -> 
-    log "[RoomModal] destroy"
+    # log "[RoomModal] destroy"
     # @room_image_uploader.off 'completed', @_on_cover_changed
     @title.off       'keyup'  , @_on_title_changed
     @location.off    'keyup'  , @_on_location_changed

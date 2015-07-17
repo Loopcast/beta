@@ -27,10 +27,10 @@ module.exports = class InputDevices extends Select
         str = "<option value=''>Select your input device</option>"
         for device in devices
           selected = if ref.current_device is device then "selected" else ""
-          log "[device] - ", device, ref.current_device, selected
+          # log "[device] - ", device, ref.current_device, selected
           str += "<option value='#{device}' #{selected}>#{device}</option>"
 
-        log "[device]", str
+        # log "[device]", str
         dom.find( "select" ).html str
 
         if dom.find( "select" ).is(":focus")
@@ -44,7 +44,7 @@ module.exports = class InputDevices extends Select
 
 
     @on 'changed', ( device ) =>
-      log "[device] changed", device, @current_device
+      # log "[device] changed", device, @current_device
 
       return if device is @current_device
       @current_device = device

@@ -10,7 +10,7 @@ api             = require 'app/api/loopcast/loopcast'
 Cloudinary      = require 'app/controllers/cloudinary'
 transform       = require 'lib/cloudinary/transform'
 RoomModal       = require 'app/views/modals/room_modal'
-
+PeopleList      = require 'app/utils/rooms/people_list'
 
 module.exports = class Room extends LoggedView
   room_created: false
@@ -18,10 +18,13 @@ module.exports = class Room extends LoggedView
   exit_modal: null
   sidebar_right: null
 
+
   constructor: ( @dom ) ->
     super @dom
 
     happens @
+
+    @people_list = new PeopleList
 
     @elements = 
       title       : @dom.find '.cover .name'
@@ -67,7 +70,7 @@ module.exports = class Room extends LoggedView
 
 
   on_modal_submit: ( data ) =>
-    log "[Room] on_modal_submit", data
+    # log "[Room] on_modal_submit", data
 
     @modal.hide_message()
     @modal.show_loading()
@@ -104,7 +107,7 @@ module.exports = class Room extends LoggedView
 
     @owner_id = document.getElementById( 'owner_id' ).value
     @room_id  = document.getElementById( 'room_id' ).value
-    log "on room created", data, @owner_id
+    # log "on room created", data, @owner_id
     
     @room_created = true
     @dom.removeClass( 'page_create' ).addClass( 'room_ready' )
@@ -124,8 +127,12 @@ module.exports = class Room extends LoggedView
       return @on_like_room        data if data.type is "like"
       return @on_unlike_room      data if data.type is "unlike"
       return @on_message          data if data.type is "message"
-      return @on_listener_added   data if data.type is "listener:added"
       return @on_listener_removed data if data.type is "listener:removed"
+
+      if data.type is "listener:added"
+        log "[DDD]", data, user_controller.is_me( data.user.id )
+        unless user_controller.is_me data.user.id
+          return @on_listener_added   data 
 
     @publish_modal = view.get_by_dom '#publish_modal'
     @confirm_exit_modal = view.get_by_dom '#confirm_exit_modal'
@@ -146,25 +153,41 @@ module.exports = class Room extends LoggedView
 
     if user_controller.check_guest_owner()
       @manage_edit()
+      app.on 'room:go_offline', @room_went_offline
     else
       @show_guest_popup()
 
     if @dom.hasClass 'room_live'
       delay 1000, => 
-        log "----------------- (0)"
+        # log "----------------- (0)"
         @on_room_live()
 
     L.rooms.visit @room_id, (error, response) ->
-      log "[Room] visit response", error, response
+      # log "[Room] visit response", error, response
 
-    L.chat.enter @room_id, ( error, response ) ->
+
+    if user_controller.socket_id isnt false
+      @broadcast_enter()
+    else
+      user_controller.once 'socket:connected', @broadcast_enter
+
+  room_went_offline: =>
+
+    log '[Dashboard] ROOM WENT OFFLINE'
+    @on_room_offline()
+    @live_button.set_active false
+    notify.error 'Ops, something went wrong while you were streaming ( or recording ) and your show went offline'
+
+  broadcast_enter: =>
+    data = 
+      room_id : @room_id
+      user: user_controller.get_info()
+
+    log "[Room] broadcast_enter", data
+
+    L.chat.enter data, ( error, response ) ->
       log "[Room] chat.enter", error, response      
 
-    window.test_room = @
-
-  test_enter: ->
-    L.chat.enter @room_id, ( error, response ) ->
-      log "[Room] chat.enter", error, response      
 
   get_people : =>
     L.chat.people @room_id, (error, response) =>
@@ -174,11 +197,12 @@ module.exports = class Room extends LoggedView
 
             user = 
               id        : user._id
+              socket_id : socket_id
               username  : user.info.username
               name      : user.info.name
               occupation: user.info.occupation
               avatar    : user.info.avatar
-              followers : user.likes
+              likes : user.likes
               url       : "/" + user.info.username
 
             return user
@@ -200,7 +224,7 @@ module.exports = class Room extends LoggedView
               name      : user_controller.data.name
               occupation: user_controller.data.occupation
               avatar    : user_controller.data.avatar
-              followers : 0
+              likes : 0
               url       : "/" + user_controller.data.username
 
           else
@@ -211,7 +235,7 @@ module.exports = class Room extends LoggedView
               name      : "Guest"
               occupation: "Guest"
               avatar    : "https://deerfieldsbakery.com/dev/images/items/cookies/Cookies-Decorated-Chocolate-Happy-Face_MD.jpg"
-              followers : 0
+              likes : 0
               url       : "/"
 
         message = 
@@ -219,35 +243,37 @@ module.exports = class Room extends LoggedView
           method: "added"
           user  : user
 
-
+        log "[Chat people] on_listener added", message
         @on_listener_added message
 
   
 
   update_genres: (genres) ->
-    log "UPDATE GENRES", genres
+    # log "UPDATE GENRES", genres
     @tags_wrapper = @dom.find '.tags'
+    list = @tags_wrapper.find '.list'
     if genres.length > 0
       @tags_wrapper.removeClass 'no_tags'
+
       for g in genres
-        @tags_wrapper.append '<a class="tag" title="'+g+'" href="/explore?genres='+g+'">'+g+'</a>'
+        list.append '<a class="tag" title="'+g+'" href="/explore?genres='+g+'">'+g+'</a>'
 
 
   on_room_published: (room_id) =>
-    log "[Room] on_room_published", room_id, @room_id
+    # log "[Room] on_room_published", room_id, @room_id
     if room_id is @room_id
       @dom.addClass 'room_public'
 
   
   _on_live_changed: (data) =>
-    log "[Room] on live changed", data
+    # log "[Room] on live changed", data
     if data
       @on_room_live()
     else
       @on_room_offline()
 
   _on_record_changed: (data) =>
-    log "[Room] on live changed", data
+    # log "[Room] on live changed", data
     if data
       @dom.addClass 'room_recording'
     else
@@ -261,9 +287,9 @@ module.exports = class Room extends LoggedView
   on_room_live: ->
     @dom.addClass 'room_live'
     if not user_controller.check_guest_owner()
-      log "----------------- on_room_live"
+      # log "----------------- on_room_live"
       app.player.fetch_room @room_id, =>
-        log "[ROOM] live room fetched."
+        # log "[ROOM] live room fetched."
         app.player.play @room_id
     else
       app.player.stop()
@@ -291,7 +317,7 @@ module.exports = class Room extends LoggedView
     @change_cover_uploader.on 'completed', @on_cover_uploaded
 
   on_cover_uploaded: (data) =>
-    log "[Cover uploader]", data.result.url
+    # log "[Cover uploader]", data.result.url
 
     cover = transform.cover data.result.url
 
@@ -305,7 +331,7 @@ module.exports = class Room extends LoggedView
 
   on_title_changed: ( value ) =>
     @save_data title: value, (error, response) =>
-      log "title changed", response
+      # log "title changed", response
       if not error
         navigation.go_silent "/#{user_controller.data.username}/#{response[ 'info.slug' ]}"
 
@@ -324,14 +350,17 @@ module.exports = class Room extends LoggedView
   on_user_unlogged: ( data ) =>
 
   on_listener_added: ( listener ) =>
-    log "[Room] ###### on_listener_added", listener
-    @emit 'listener:added', listener
-    @sidebar_right.on_listener_added()
+    is_new = @people_list.add listener.user
+
+    log "[Room] ###### on_listener_added", listener.user.name, listener.user.socket_id, is_new
+    if is_new
+      @emit 'listener:added', listener
+      @sidebar_right.on_listener_added()
 
   on_listener_removed: ( listener ) =>
-    log "[Room] on_listener_removed", listener
-    @emit 'listener:removed', listener
-    @sidebar_right.on_listener_removed()
+    # log "[Room] on_listener_removed", listener
+    # @emit 'listener:removed', listener
+    # @sidebar_right.on_listener_removed()
 
   on_like_room: ( data ) =>
     @sidebar_right.on_like()
@@ -368,6 +397,7 @@ module.exports = class Room extends LoggedView
       @description.off 'changed', @on_description_changed
       @title.off 'changed', @on_title_changed
       @change_cover_uploader.off 'completed', @on_cover_uploaded
+      app.off 'room:go_offline', @room_went_offline
 
     if @publish_modal
       @publish_modal.off 'room:published', @on_room_published

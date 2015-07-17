@@ -10,15 +10,23 @@
       - genres = room.info.genres
       - genres_class = ""
 
-    .chat_header.v_center
+    .chat_header
       .inner
-        p#description_room(data-view="components/editables/editable_text", data-freestyle="true")
+        p#description_room(data-view="[chat/description]", data-freestyle="true")
           span.text #{str}
+        p.read_more 
+          span.more Read More
+          span.less Show Less
 
-        .tags(class="#{genres_class}")
+
+        
+
+        .tags(class="#{genres_class}", data-view="chat/tags_viewer")
           span.icon.ss-tag
-          for genre in genres
-            a.tag(href="/explore?genres=#{genre}", title="#{genre}") #{genre}
+
+          .list
+            for genre in genres
+              a.tag(href="/explore?genres=#{genre}", title="#{genre}") #{genre}
 
     .chat_content.no_chat_yet(data-view="chat/messages")
       span(class='no-message') No one has typed a chat yet

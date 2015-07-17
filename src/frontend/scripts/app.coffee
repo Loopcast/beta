@@ -56,7 +56,6 @@ class App
 
 		views.bind 'body'
 
-		log "[App] after_render", @settings.browser_unsupported
 		if @settings.browser_unsupported
 			location.href = "/oldie"
 
@@ -103,16 +102,12 @@ class App
 			url = @settings.after_login_url
 			@settings.after_login_url = ""
 		else if navigation.prev_url.length > 0 and navigation.prev_url isnt "/"
-			log "navigation prev url", navigation.prev_url
 			url = navigation.prev_url
 		else
 			url = "/#{user_data.username}"
 		
 
-		log "[Action]", @settings.action
 		if @settings.action? and @settings.action.type is 'follow'
-			# log "[Action]", @settings.action
-
 			@user.follow @settings.action.user_id
 
 			@settings.action = null

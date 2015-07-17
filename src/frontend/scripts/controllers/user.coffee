@@ -14,6 +14,8 @@ class UserController
   # Object variables
   data : null
   is_owner: false
+  socket_id: false
+
 
   constructor: ->
 
@@ -48,6 +50,11 @@ class UserController
         @_dispatch_login()
       else
         @_dispatch_logout()
+
+  set_socket_id: ( socket_id ) =>
+    log "[User] on_socket_connected", socket_id
+    @socket_id = socket_id
+    @emit 'socket:connected'
   ###
   Called from the outside, when the user logs in
   ###
@@ -105,7 +112,7 @@ class UserController
   check_guest_owner: ->
     owner_id = @owner_id()
 
-    log "user", owner_id
+    # log "user", owner_id
     # log "[User] check owner_id", owner_id
     if owner_id? and @is_logged() and @data._id is owner_id
       app.body.addClass( 'is_owner' ).removeClass( 'is_guest' )
@@ -189,6 +196,7 @@ class UserController
 
     # Subscribe to the user channel
     socket.subscribe @data._id # or room_id
+
     socket.on @data._id, ( data ) =>
       log "[User]getting message from socket:", data
 
@@ -330,6 +338,27 @@ class UserController
 
     return output.join ','
 
+
+  get_info: ->
+
+
+    if @data
+      data = 
+        _id      : @data._id
+        socket_id: @socket_id
+        info:
+          username : @data.username
+          name     : @data.name
+          avatar   : @data.images.chat_sidebar
+    else
+      data = 
+        _id      : @socket_id
+        socket_id: @socket_id
+        info:
+          username : "guest"
+          name     : "Guest"
+
+    return data
 
   ###
   Session (cookie) Methods 

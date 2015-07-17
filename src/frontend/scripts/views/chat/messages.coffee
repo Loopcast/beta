@@ -39,7 +39,7 @@ module.exports = class Messages extends ChatView
     app.window.on "blur", @on_window_exit
     app.window.on "focus", @on_window_enter
 
-    log "[Messages] on_room_created", @room_id
+    # log "[Messages] on_room_created", @room_id
 
   on_window_exit: =>
     @onfocused = true
@@ -64,14 +64,14 @@ module.exports = class Messages extends ChatView
       user_data = @users[user]
 
       @popup.show user_data, t
-    log "[Messages] on_people_over", user_data
+    # log "[Messages] on_people_over", user_data
 
 
   on_people_out: (e) =>
     @popup.hide()
 
   on_message: (data) =>
-    log "got data!!!", data
+    log "[Messages] on_message", data, @owner_id
 
     if not @users[data.username]?
       @users[data.username] = 
@@ -98,7 +98,7 @@ module.exports = class Messages extends ChatView
         url: "/" + data.username
         name: data.name
         thumb: transform.chat_thumb( data.avatar )
-        author: @owner_id is data.username 
+        author: @owner_id is data.id
         username: data.username
 
     if data.additional_data? and data.additional_data.like

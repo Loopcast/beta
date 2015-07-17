@@ -37,7 +37,13 @@ module.exports = class AudioElement
 
     @_log "set_data"
     log "[AudioElement] set_data", @data
-    @dom.attr 'src', @data.src
+
+    @set_src @data.src
+
+
+  set_src: ( src ) ->
+    if @dom.attr( 'src' ) isnt src
+      @dom.attr 'src', src
 
   on_loaded_metadata: =>
     if @data.is_recorded

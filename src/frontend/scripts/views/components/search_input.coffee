@@ -2,7 +2,6 @@ navigation = require 'app/controllers/navigation'
 
 module.exports = class SearchInput
   constructor: ( @dom ) ->
-    log "[SearchInput] created"
     @dom.on 'keypress', @on_keypress
 
   on_keypress: ( e ) =>

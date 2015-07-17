@@ -49,7 +49,7 @@ s.soundcloud =
 
 s.default =
   chat :
-    avatar: '/default/chat/image/path'
+    avatar: '/images/profile-36.jpg'
 
 # PRODUCTION / STAGING reading from environment variables
 if not s.is_local

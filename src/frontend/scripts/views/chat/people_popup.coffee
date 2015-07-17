@@ -11,7 +11,7 @@ module.exports = class PeopleView extends ChatView
 
 
   constructor: (@dom) ->
-    log "[PeoplePopup] constructor"
+    # log "[PeoplePopup] constructor"
     @tmpl = require 'templates/chat/people_popup'
 
     @dom.on 'mouseenter', @on_mouseover
@@ -34,7 +34,7 @@ module.exports = class PeopleView extends ChatView
 
   ###
   avatar: "https://res.cloudinary.com/loopcast/image/upload/v1431006022/ifollzoplab3eft56sfv.jpg"
-  followers: 0
+  likes: 0
   id: "stefanoortisi"
   images: Object
   name: "Stefano Ortisi"
@@ -60,7 +60,7 @@ module.exports = class PeopleView extends ChatView
 
     data = @normalize_data data
 
-    log "[Popup] show", data
+    # log "[Popup] show", data
 
     @cancel_hide = true
     @visible = true   
@@ -119,7 +119,7 @@ module.exports = class PeopleView extends ChatView
         @dom.hide()
 
   destroy: ->
-    log "[PeoplePopup] destroy"
+    # log "[PeoplePopup] destroy"
     super()
     @dom.off 'mouseover', @on_mouseover
     @dom.off 'mouseout', @on_mouseout

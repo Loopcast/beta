@@ -5,7 +5,7 @@ paused = false
 $livestamps = $([])
 
 init = ->
-  log "[Livestamp] init"
+  # log "[Livestamp] init"
   livestampGlobal.resume()
   return
 

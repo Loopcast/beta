@@ -11,6 +11,8 @@ module.exports = class Dashboard extends RoomView
   live_button: null
   record_button: null
   publish_modal: null
+  appcast_is_running: false
+  timeout: null
 
   on_room_created: (@room_id, @owner_id) =>
     
@@ -30,10 +32,12 @@ module.exports = class Dashboard extends RoomView
     @live_button.on 'changed', @on_live_changed
     @record_button.on 'changed', @on_record_changed
     @share = view.get_by_dom @dom.find( '#share_dashboard' )
+    @room_view = view.get_by_dom '.createroom'
+
 
     ref = @
     L.rooms.info room_id, (error, response) -> 
-      log "[Dashboard] getting room info", response
+      # log "[Dashboard] getting room info", response
 
       ref.share.update_with_data
         link: "/" + response.room.info.user + "/" + response.room.info.slug
@@ -65,12 +69,12 @@ module.exports = class Dashboard extends RoomView
     @balloons.appcast.toggle()
 
   on_live_changed: ( data ) =>
-    log "[Room] on_live_changed", data
+    # log "[Room] on_live_changed", data
 
   on_record_changed: ( data ) =>
-    log "[Room] on_record_changed", data
-    log "-> recording", data
-    log "is offline", $('.room_public').length <= 0
+    # log "[Room] on_record_changed", data
+    # log "-> recording", data
+    # log "is offline", $('.room_public').length <= 0
 
     if not data and $('.room_public').length <= 0
       @publish_modal.open_with_id @room_id
@@ -78,7 +82,14 @@ module.exports = class Dashboard extends RoomView
 
   on_appcast_connected: ( is_connected ) =>
 
-    if is_connected
+    @appcast_is_running = is_connected
+
+    clearTimeout @timeout
+    
+    @timeout = setTimeout @check_appcast_running, 100
+
+  check_appcast_running: =>
+    if @appcast_is_running
       @on_appcast_running()
     else
       @on_appcast_not_running()
@@ -96,11 +107,17 @@ module.exports = class Dashboard extends RoomView
     @meter.deactivate()
     @balloons.appcast.show()
 
-    delay 4000, => @balloons.appcast.hide()
+
+    if $( '.room_live' ).length > 0
+      app.emit 'room:go_offline'
+
+
+    # delay 4000, => @balloons.appcast.hide()
 
 
   destroy: ->
     @publish_modal = null
+    @room_view = null
     if @is_room_owner
       for item of @balloons
         view.destroy_view @balloons[ item ]
