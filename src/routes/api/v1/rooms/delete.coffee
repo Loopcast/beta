@@ -30,16 +30,16 @@ module.exports =
 
         return reply Boom.unauthorized('needs authentication')
 
-      username = req.auth.credentials.user.username
+      user_id  = req.auth.credentials.user._id
       room_id  = req.params.id
       payload  = req.payload
 
       query =
-        _id         : room_id
-        'info.user' : username
+        _id  : room_id
+        user : user_id
 
       Room.findOne( query )
-        .select( "_id info.cover_url recording.status.s3" )
+        .select( "_id info.cover_url status.recording.s3" )
         .lean()
         .exec ( error, room ) -> 
 
