@@ -28,7 +28,7 @@ module.exports = class Messages extends ChatView
 
 
     api.chat.messages @room_id, (error, response) =>
-      # log "[Messages] old messages", response
+      log "[Messages] old messages", response
       return if error
       response = response.reverse()
       for m in response
@@ -71,7 +71,7 @@ module.exports = class Messages extends ChatView
     @popup.hide()
 
   on_message: (data) =>
-    # log "got data!!!", data
+    log "[Messages] on_message", data, @owner_id
 
     if not @users[data.username]?
       @users[data.username] = 
@@ -98,7 +98,7 @@ module.exports = class Messages extends ChatView
         url: "/" + data.username
         name: data.name
         thumb: transform.chat_thumb( data.avatar )
-        author: @owner_id is data.username 
+        author: @owner_id is data.id
         username: data.username
 
     if data.additional_data? and data.additional_data.like
