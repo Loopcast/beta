@@ -46,8 +46,10 @@ module.exports = class ButtonWithTimer extends RoomView
   set_active: ( active ) ->
 
     log "[Record] set_active", active
+    
     @waiting = false
-    @active = active
+    @active  = active
+
     @emit 'changed', @active
 
     if @active

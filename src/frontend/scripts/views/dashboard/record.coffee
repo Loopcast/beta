@@ -49,51 +49,34 @@ module.exports = class Record extends ButtonWithTimer
     ref = @
 
     appcast.stop_recording()
-    L.rooms.stop_recording @room_id, ( error, callback ) ->
+    L.rooms.stop_recording @room_id, ( error, response ) ->
 
+      ref.set_active false
 
-      if not appcast.get( "stream:recording" )
+      if not appcast.get( "stream:streaming" )
 
         appcast.stop_stream()
-        L.rooms.stop_stream @room_id, ( error, callback ) ->
-
-          if error
-            ref.on_error error, 'stop_stream'
-
-            # LATER: CHECK IF USER IS OFFLINE AND WAIT FOR CONNECTION?
-            return
-
-          ref.set_active false
 
       if error
         notify.error "Error while stopping recording"
-        return
-
-      ref.set_active false
 
       channel = pusher.subscribe "tape.#{ref.owner_id}"
 
       unbind_all = ->
         channel.unbind 'upload:finished', on_upload_finish
         channel.unbind 'upload:error', on_upload_error
-        channel.unbind 'upload:failed', on_upload_failed
 
       on_upload_finish = (file) ->
         notify.info "File Uploaded: #{file}"
         unbind_all()
+
       on_upload_error = (error) ->
         log '[Record]on_upload_error', error
         notify.info "Upload Error"
         unbind_all()
 
-      on_upload_failed = (error) ->
-        log '[Record]on_upload_failed', error
-        notify.info "Upload failed"
-        unbind_all()
-
       channel.bind "upload:finished", on_upload_finish
       channel.bind "upload:error"   , on_upload_error
-      channel.bind "upload:failed"  , on_upload_failed
 
   start_recording: ( from_external_event = true ) =>
 

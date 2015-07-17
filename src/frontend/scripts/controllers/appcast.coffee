@@ -130,12 +130,8 @@ appcast.start_stream = ( mount_point, device_name ) ->
   console.log 'stream with payload ->', payload
 
   appcast.set "stream:starting", true
+
   appcast.messages.send JSON.stringify [ "start_stream", payload ]
-
-appcast.stop_stream = ->
-
-  appcast.set 'stream:online'  , false
-  AppCast.set 'stream:starting', false
 
 appcast.start_recording = ->
 
@@ -156,6 +152,8 @@ appcast.select_device = ( device_name ) ->
 
 appcast.stop_stream = ->
 
+  appcast.set "stream:streaming", false
+  appcast.set 'stream:starting', false
   appcast.set "stream:stopping", true
   appcast.set 'stream:vu', 0
   appcast.messages.send JSON.stringify [ "stop_stream" ]

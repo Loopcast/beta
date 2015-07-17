@@ -20,8 +20,10 @@ module.exports = class GoLive extends ButtonWithTimer
 
     appcast.on 'stream:error', @on_error
 
+    # update status based on room live status
     if $('.room_live' ).length > 0
       @set_active true
+      appcast.set "stream:streaming", true
 
   start: ->
     log "[GoLive] Clicked start"
@@ -33,6 +35,10 @@ module.exports = class GoLive extends ButtonWithTimer
     @wait()
 
     appcast.start_stream @owner_id, appcast.get 'selected_device'
+    
+    # need to be called here otherwise recording will stop
+    # streaming when you stop recording
+    appcast.set "stream:streaming", true
 
     appcast.on 'stream:online', @waiting_stream
 
