@@ -96,7 +96,7 @@ module.exports = class Dashboard extends RoomView
     @meter.deactivate()
     @balloons.appcast.show()
 
-    delay 4000, => @balloons.appcast.hide()
+    # delay 4000, => @balloons.appcast.hide()
 
 
   destroy: ->
