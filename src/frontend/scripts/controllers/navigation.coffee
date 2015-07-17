@@ -38,7 +38,7 @@ class Navigation
     $('body').on 'click', 'a', (e) ->
       el = $ @
       href = el.attr 'href' 
-      log "href", href
+      # log "href", href
       if href is '#'
         e.preventDefault()
       else if el.data( 'nav-load' ) and app.settings.theme is 'desktop'
@@ -47,7 +47,7 @@ class Navigation
 
 
   set_lock_live: ( lock, url ) ->
-    log "[Navigation] set_lock_live", lock
+    # log "[Navigation] set_lock_live", lock
     @lock_live = lock
     @locked_live_url = url
 
@@ -55,10 +55,10 @@ class Navigation
 
     req.url = req.path.replace "/#", '' 
 
-    log "[Navigation] URL CHANGED", req, @custom_class, @lock_live
+    # log "[Navigation] URL CHANGED", req, @custom_class, @lock_live
 
     if not url_parser.is_internal_page req.url
-      log "NOT INTERNAL PAGE", req.url
+      # log "NOT INTERNAL PAGE", req.url
       next()
       return
 
@@ -67,12 +67,12 @@ class Navigation
 
     if @first_time
       @first_time = false
-      log "[Navigation] FIRST TIME, returning"
+      # log "[Navigation] FIRST TIME, returning"
       @prev_url = req.url
       return
 
     if @silent
-      log "[Navigation] SILENT, returning"
+      # log "[Navigation] SILENT, returning"
       @silent = off
       return
 
@@ -84,11 +84,11 @@ class Navigation
       app.emit 'exit_modal:request_open'
 
       app.on 'exit_modal:answered', (answer) =>
-        log "[Navigation] exit_modal:answered", answer
+        # log "[Navigation] exit_modal:answered", answer
 
         app.off 'exit_modal:answered'
         if not answer
-          log "[Navigation] go silent", @locked_live_url
+          # log "[Navigation] go silent", @locked_live_url
           @go_silent @locked_live_url
           next()
         else
@@ -195,7 +195,7 @@ class Navigation
     return false
 
   go_silent: ( url, title ) ->
-    log "[Navigation] go_silent method", url
+    # log "[Navigation] go_silent method", url
     # @silent = true
     page.replace url, null, null, false
 

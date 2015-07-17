@@ -12,7 +12,7 @@ module.exports = class Description extends EditableText
     @wrapper = @parent.parent()
     @original_height = @wrapper.outerHeight()
 
-    log "[Description] original_height", @original_height
+    # log "[Description] original_height", @original_height
     @on 'changed', @check_length
     @read_more = @parent.find '.read_more'
 
@@ -32,7 +32,7 @@ module.exports = class Description extends EditableText
 
     @expanded = true
     h = @dom.height() + 40
-    log "[Description] expand", h
+    # log "[Description] expand", h
     @wrapper.addClass('expanded').animate
       'height' : h
 
@@ -62,13 +62,13 @@ module.exports = class Description extends EditableText
   check_length: =>
     delay 1, =>
       l = @t.html().length 
-      log "[Description] check_length", l, @max_length
+      # log "[Description] check_length", l, @max_length
       if l > @max_length
-        log "[Description] check_length", l, @max_length, "VISIBLE"
+        # log "[Description] check_length", l, @max_length, "VISIBLE"
         @parent.addClass 'read_more_visible'
       else
         @parent.removeClass 'read_more_visible'
-        log "[Description] check_length", l, @max_length, "INVISIBLE"
+        # log "[Description] check_length", l, @max_length, "INVISIBLE"
 
   destroy: ->
     @off 'changed', @check_length

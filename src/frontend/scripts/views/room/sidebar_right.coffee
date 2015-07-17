@@ -17,7 +17,7 @@ module.exports = class SidebarRight extends RoomView
     ref = @
 
     L.rooms.stats @room_id, ( e, stats ) -> 
-      log "[SidebarRight]", stats
+      # log "[SidebarRight]", stats
       ref.visits.html stats.visits
       ref.likes.html stats.likes
       ref.listeners.html stats.listeners
@@ -30,17 +30,17 @@ module.exports = class SidebarRight extends RoomView
 
   on_like: (data) =>
     @likes.html ++@stats.likes
-    log "[SidebarRight] on_like", data
+    # log "[SidebarRight] on_like", data
 
   on_unlike: (data) =>
     @likes.html --@stats.likes
-    log "[SidebarRight] on_unlike", data
+    # log "[SidebarRight] on_unlike", data
 
   on_listener_added: ( data ) =>
     @listeners.html ++@stats.listeners
-    log "[SidebarRight] on_listener_added", @stats.listeners
+    # log "[SidebarRight] on_listener_added", @stats.listeners
 
   on_listener_removed: ( data ) =>
     @listeners.html --@stats.listeners
-    log "[SidebarRight] on_listener_removed", @stats.listeners
+    # log "[SidebarRight] on_listener_removed", @stats.listeners
 

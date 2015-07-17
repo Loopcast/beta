@@ -54,7 +54,7 @@ module.exports = class People extends ChatView
 
 
   on_listener_added: ( listener ) =>
-    log "[People] ####### on_listener_added", listener.user.username
+    # log "[People] ####### on_listener_added", listener.user.username
     @_on_listener_added listener
     
 
@@ -63,10 +63,10 @@ module.exports = class People extends ChatView
 
     listener.images = transform.all listener.avatar
     if @listeners_map[ listener.id ]?
-      log "[People] listener already added", listener.id
+      # log "[People] listener already added", listener.id
       return
       
-    log "[People] on_listener_added", listener
+    # log "[People] on_listener_added", listener
     @listeners.push listener
     @listeners_map[ listener.id ] = listener
 
@@ -74,7 +74,7 @@ module.exports = class People extends ChatView
     @update_counter()
 
   on_listener_removed: ( listener ) =>
-    log "[People] on_listener_removed", listener
+    # log "[People] on_listener_removed", listener
 
     @listeners_wrapper.find( '#listener_' + listener.id ).remove()
 

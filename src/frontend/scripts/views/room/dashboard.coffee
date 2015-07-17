@@ -33,7 +33,7 @@ module.exports = class Dashboard extends RoomView
 
     ref = @
     L.rooms.info room_id, (error, response) -> 
-      log "[Dashboard] getting room info", response
+      # log "[Dashboard] getting room info", response
 
       ref.share.update_with_data
         link: "/" + response.room.info.user + "/" + response.room.info.slug
@@ -65,12 +65,12 @@ module.exports = class Dashboard extends RoomView
     @balloons.appcast.toggle()
 
   on_live_changed: ( data ) =>
-    log "[Room] on_live_changed", data
+    # log "[Room] on_live_changed", data
 
   on_record_changed: ( data ) =>
-    log "[Room] on_record_changed", data
-    log "-> recording", data
-    log "is offline", $('.room_public').length <= 0
+    # log "[Room] on_record_changed", data
+    # log "-> recording", data
+    # log "is offline", $('.room_public').length <= 0
 
     if not data and $('.room_public').length <= 0
       @publish_modal.open_with_id @room_id
@@ -84,13 +84,13 @@ module.exports = class Dashboard extends RoomView
       @on_appcast_not_running()
 
   on_appcast_running: =>
-    log "[Dashboard] on_appcast_running"
+    # log "[Dashboard] on_appcast_running"
     @dom.addClass( 'appcast_running' ).removeClass( 'appcast_not_running' )
     @meter.activate()
     @balloons.appcast.hide()
 
   on_appcast_not_running: =>
-    log "[Dashboard] on_appcast_not_running"
+    # log "[Dashboard] on_appcast_not_running"
     @dom.removeClass( 'appcast_running' ).addClass( 'appcast_not_running' )
 
     @meter.deactivate()

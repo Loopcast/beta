@@ -12,7 +12,7 @@ module.exports = class FollowButton
     if id
       @user_id = id
 
-    log "[FollowButton] constructor", @user_id
+    # log "[FollowButton] constructor", @user_id
 
     @dom.on 'click', @toggle
 
@@ -39,7 +39,7 @@ module.exports = class FollowButton
     @check_following()
 
   check_following: ->
-    log "[FollowButton] followed?", user.is_following( @user_id ), @user_id
+    # log "[FollowButton] followed?", user.is_following( @user_id ), @user_id
     if user.is_me( @user_id ) or @is_guest
       @dom.hide()
 
@@ -54,7 +54,7 @@ module.exports = class FollowButton
 
   toggle: =>
 
-    log "[FollowButton] toggle"
+    # log "[FollowButton] toggle"
 
     if user.is_logged()
       @_toggle()
@@ -79,13 +79,13 @@ module.exports = class FollowButton
     return false
 
   set_user_id: ( user_id, is_guest = false ) ->
-    log "[FollowButton] set_user_id", user_id, @user_id
+    # log "[FollowButton] set_user_id", user_id, @user_id
     prev_id = @user_id
     @user_id = user_id
     @is_guest = is_guest
 
     if prev_id isnt @user_id
-      log "[FollowButton] check_following"
+      # log "[FollowButton] check_following"
       @check_following()
 
   on_user_unfollow: (user_id) =>
@@ -105,11 +105,11 @@ module.exports = class FollowButton
 
 
   unfollow: ->
-    log "[FollowButton] unfollow"
+    # log "[FollowButton] unfollow"
     user.unfollow @user_id
 
   follow: ->
-    log "[FollowButton] follow", @user_id
+    # log "[FollowButton] follow", @user_id
     user.follow @user_id
 
 

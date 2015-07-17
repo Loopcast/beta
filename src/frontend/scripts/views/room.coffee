@@ -67,7 +67,7 @@ module.exports = class Room extends LoggedView
 
 
   on_modal_submit: ( data ) =>
-    log "[Room] on_modal_submit", data
+    # log "[Room] on_modal_submit", data
 
     @modal.hide_message()
     @modal.show_loading()
@@ -104,7 +104,7 @@ module.exports = class Room extends LoggedView
 
     @owner_id = document.getElementById( 'owner_id' ).value
     @room_id  = document.getElementById( 'room_id' ).value
-    log "on room created", data, @owner_id
+    # log "on room created", data, @owner_id
     
     @room_created = true
     @dom.removeClass( 'page_create' ).addClass( 'room_ready' )
@@ -151,20 +151,28 @@ module.exports = class Room extends LoggedView
 
     if @dom.hasClass 'room_live'
       delay 1000, => 
-        log "----------------- (0)"
+        # log "----------------- (0)"
         @on_room_live()
 
     L.rooms.visit @room_id, (error, response) ->
-      log "[Room] visit response", error, response
+      # log "[Room] visit response", error, response
 
-    L.chat.enter @room_id, ( error, response ) ->
+
+    if user_controller.socket_id isnt false
+      @broadcast_enter()
+    else
+      user_controller.once 'socket:connected', @broadcast_enter
+
+  broadcast_enter: =>
+    data = 
+      room_id : @room_id
+      user: user_controller.get_info()
+
+    log "[Room] broadcast_enter", data
+
+    L.chat.enter data, ( error, response ) ->
       log "[Room] chat.enter", error, response      
 
-    window.test_room = @
-
-  test_enter: ->
-    L.chat.enter @room_id, ( error, response ) ->
-      log "[Room] chat.enter", error, response      
 
   get_people : =>
     L.chat.people @room_id, (error, response) =>
@@ -185,7 +193,7 @@ module.exports = class Room extends LoggedView
 
         return null
 
-      log "[Chat people]", response
+      # log "[Chat people]", response
       for socket_id in response.sockets
 
         if not user = user_by_socket( socket_id )
@@ -225,7 +233,7 @@ module.exports = class Room extends LoggedView
   
 
   update_genres: (genres) ->
-    log "UPDATE GENRES", genres
+    # log "UPDATE GENRES", genres
     @tags_wrapper = @dom.find '.tags'
     list = @tags_wrapper.find '.list'
     if genres.length > 0
@@ -236,20 +244,20 @@ module.exports = class Room extends LoggedView
 
 
   on_room_published: (room_id) =>
-    log "[Room] on_room_published", room_id, @room_id
+    # log "[Room] on_room_published", room_id, @room_id
     if room_id is @room_id
       @dom.addClass 'room_public'
 
   
   _on_live_changed: (data) =>
-    log "[Room] on live changed", data
+    # log "[Room] on live changed", data
     if data
       @on_room_live()
     else
       @on_room_offline()
 
   _on_record_changed: (data) =>
-    log "[Room] on live changed", data
+    # log "[Room] on live changed", data
     if data
       @dom.addClass 'room_recording'
     else
@@ -263,9 +271,9 @@ module.exports = class Room extends LoggedView
   on_room_live: ->
     @dom.addClass 'room_live'
     if not user_controller.check_guest_owner()
-      log "----------------- on_room_live"
+      # log "----------------- on_room_live"
       app.player.fetch_room @room_id, =>
-        log "[ROOM] live room fetched."
+        # log "[ROOM] live room fetched."
         app.player.play @room_id
     else
       app.player.stop()
@@ -293,7 +301,7 @@ module.exports = class Room extends LoggedView
     @change_cover_uploader.on 'completed', @on_cover_uploaded
 
   on_cover_uploaded: (data) =>
-    log "[Cover uploader]", data.result.url
+    # log "[Cover uploader]", data.result.url
 
     cover = transform.cover data.result.url
 
@@ -307,7 +315,7 @@ module.exports = class Room extends LoggedView
 
   on_title_changed: ( value ) =>
     @save_data title: value, (error, response) =>
-      log "title changed", response
+      # log "title changed", response
       if not error
         navigation.go_silent "/#{user_controller.data.username}/#{response[ 'info.slug' ]}"
 
@@ -326,12 +334,12 @@ module.exports = class Room extends LoggedView
   on_user_unlogged: ( data ) =>
 
   on_listener_added: ( listener ) =>
-    log "[Room] ###### on_listener_added", listener
+    # log "[Room] ###### on_listener_added", listener
     @emit 'listener:added', listener
     @sidebar_right.on_listener_added()
 
   on_listener_removed: ( listener ) =>
-    log "[Room] on_listener_removed", listener
+    # log "[Room] on_listener_removed", listener
     @emit 'listener:removed', listener
     @sidebar_right.on_listener_removed()
 

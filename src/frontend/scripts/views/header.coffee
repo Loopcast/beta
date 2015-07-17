@@ -21,16 +21,16 @@ module.exports  = class Header
 
 	check_desktop_menu: ->
 		obj = $( '[data-menu]' )
-		log "[Header]", obj.length
+		# log "[Header]", obj.length
 		if obj.length > 0
 			page = obj.data 'menu'
-			log "[Header] check_menu", page
+			# log "[Header] check_menu", page
 			
 			if @current_page.length > 0
 				$( ".#{@current_page}_item" ).removeClass "selected"
 				app.body.removeClass "#{@current_page}_page"
 
-			log "[Header]", ".#{page}_item"
+			# log "[Header]", ".#{page}_item"
 			$( ".#{page}_item" ).addClass "selected"
 			app.body.addClass "#{page}_page"
 
@@ -41,7 +41,7 @@ module.exports  = class Header
 		obj = $ '[data-menu-mobile]'
 		if obj.length > 0
 			page = obj.data 'menu-mobile'
-			log "[Header] check_mobile_menu", page
+			# log "[Header] check_mobile_menu", page
 			$( ".#{page}_item" ).addClass "selected"
 
 		ref = @

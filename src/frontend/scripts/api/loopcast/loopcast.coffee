@@ -73,7 +73,7 @@ module.exports =
       request.error on_error "rooms/#{room_id}/play PUT", callback
 
       request.done ( response ) ->
-        log "[Loopcast] request done", response
+        # log "[Loopcast] request done", response
         callback? null, response
 
     visit: ( room_id, callback ) ->
@@ -82,7 +82,7 @@ module.exports =
       request.error on_error "rooms/#{room_id}/visit PUT", callback
 
       request.done ( response ) ->
-        log "[Loopcast] request done", response
+        # log "[Loopcast] request done", response
         callback? null, response
 
     update: ( id, data, callback ) ->
@@ -91,7 +91,7 @@ module.exports =
       request.error on_error "rooms/#{id} PUT", callback
 
       request.done ( response ) ->
-        log "[Loopcast] request done", response
+        # log "[Loopcast] request done", response
         callback? null, response
 
     delete: ( id, callback ) ->
@@ -103,7 +103,7 @@ module.exports =
       request.error on_error "rooms/#{id} DELETE", callback
 
       request.done ( response ) ->
-        log "[Loopcast] request done", response
+        # log "[Loopcast] request done", response
         callback? null, response
 
     like: ( room_id, callback ) ->
@@ -220,11 +220,11 @@ module.exports =
 
         callback null, response
 
-    enter: ( room_id, callback ) ->
+    enter: ( data, callback ) ->
 
-      request = $.post api_url + "chat/#{room_id}/enter"
+      request = $.post api_url + "chat/#{data.room_id}/enter", data
 
-      request.error on_error "chat/#{room_id}/enter", callback
+      request.error on_error "chat/#{data.room_id}/enter", callback
 
       request.done ( response ) ->
 

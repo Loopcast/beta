@@ -28,7 +28,7 @@ module.exports = class Messages extends ChatView
 
 
     api.chat.messages @room_id, (error, response) =>
-      log "[Messages] old messages", response
+      # log "[Messages] old messages", response
       return if error
       response = response.reverse()
       for m in response
@@ -39,7 +39,7 @@ module.exports = class Messages extends ChatView
     app.window.on "blur", @on_window_exit
     app.window.on "focus", @on_window_enter
 
-    log "[Messages] on_room_created", @room_id
+    # log "[Messages] on_room_created", @room_id
 
   on_window_exit: =>
     @onfocused = true
@@ -64,14 +64,14 @@ module.exports = class Messages extends ChatView
       user_data = @users[user]
 
       @popup.show user_data, t
-    log "[Messages] on_people_over", user_data
+    # log "[Messages] on_people_over", user_data
 
 
   on_people_out: (e) =>
     @popup.hide()
 
   on_message: (data) =>
-    log "got data!!!", data
+    # log "got data!!!", data
 
     if not @users[data.username]?
       @users[data.username] = 
