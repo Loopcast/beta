@@ -19,9 +19,8 @@ module.exports =
       .lean()
       .exec ( error, response ) ->
 
-        clients = response.in_chat
 
-        if not clients 
+        if not response
 
           console.log "no users in this room !"
 
@@ -29,7 +28,9 @@ module.exports =
             sockets: clients
             users  : []
 
-        query = socket_id: $in: clients
+        clients = response.in_chat
+
+        query   = socket_id: $in: clients
 
         User
           .find( query )
