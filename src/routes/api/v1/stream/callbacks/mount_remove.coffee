@@ -15,7 +15,7 @@ module.exports =
 
     handler: ( req, reply ) ->
 
-      mount_point = req.params.mount_point
+      mount_point = req.params.mount_point.substr(1)
 
       update = 
         'status.is_live'     : off
