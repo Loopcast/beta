@@ -80,7 +80,7 @@ module.exports =
           # update for mongodb
           # sets the document URL to be the streaming URL
           update =
-            'info.url'      : "#{s.radio.url}/#{room.user}"
+            'info.url'      : "#{s.radio.url}:8000/#{room.user}"
             'status.is_live'         : true
             'status.live.started_at' : data.live.started_at
 

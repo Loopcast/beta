@@ -136,7 +136,7 @@ if not s.is_beta
   s.tape = 'http://staging-tape.loopcast.fm:8000'
 
   s.radio = 
-    url     : 'http://staging-radio.loopcast.fm:8000'
+    url     : 'http://staging-radio.loopcast.fm'
     # url: 'http://staging-radio.loopcast.fm:8000'
     user    : 'admin' 
     password: 'loopcast2015'    

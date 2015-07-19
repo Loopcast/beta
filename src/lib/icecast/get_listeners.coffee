@@ -2,7 +2,7 @@ parse_xml = require('xml2js').parseString
 
 module.exports = ( mount_point, callback ) ->
     
-  url = "#{s.radio.url}/admin/listclients?mount=/#{mount_point}"
+  url = "#{s.radio.url}:8000/admin/listclients?mount=/#{mount_point}"
 
   options =
     auth:
