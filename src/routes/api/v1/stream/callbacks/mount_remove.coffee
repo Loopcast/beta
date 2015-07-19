@@ -22,8 +22,8 @@ module.exports =
         'status.is_recording': off
 
       console.log "updating room -> #{mount_point}"
-      
-      Room.update _id: mount_point, update, ( error, response ) ->
+
+      Room.update user: mount_point, update, ( error, response ) ->
 
         if error
           console.log 'error updating streaming duration'
