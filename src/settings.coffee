@@ -100,7 +100,7 @@ if s.is_beta
   s.tape = 'http://tape.loopcast.fm:8000'
 
   s.radio = 
-    url     : 'http://radio.loopcast.fm:8000'
+    url     : 'http://radio.loopcast.fm'
     user    : 'admin' 
     password: 'loopcast2015'
 
