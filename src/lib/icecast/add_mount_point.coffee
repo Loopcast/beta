@@ -2,8 +2,6 @@ module.exports = ( id, callback ) ->
 
   url = "#{s.radio.url}:8001/add/#{id}"
 
-  console.log "calling -> #{url}"
-  
   request.get url, ( error, response, body ) ->
 
     if error
