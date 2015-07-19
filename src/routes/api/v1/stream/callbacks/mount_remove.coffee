@@ -29,7 +29,9 @@ module.exports =
           { 'user' : mount_point, 'status.is_recorded' : true }
         ]
 
-      Room.update query, update, ( error, response ) ->
+      console.log 'query ->', query
+
+      Room.update query, update, multi: true, ( error, response ) ->
 
         if error
           console.log 'error updating streaming duration'
