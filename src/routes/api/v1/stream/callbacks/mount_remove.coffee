@@ -15,11 +15,22 @@ module.exports =
 
     handler: ( req, reply ) ->
 
-      method_name = req.params.method_name
+      mount_point = req.params.mount_point
 
-      console.log "callback: #{method_name}"
+      update = 
+        'status.is_live': off
+        'status.is_recording': off
 
-      console.log "payload"
-      console.log req.payload
+      Room.update _id: mount_point, update, ( error, response ) ->
+
+        if error
+          console.log 'error updating streaming duration'
+          console.log 'error ->', error
+
+        console.log "Just lost connection from #{mount_point}"
+
+      # debug
+      # console.log "payload"
+      # console.log req.payload
       
       reply( ok: true ).header( "icecast-auth-user", "1" )
