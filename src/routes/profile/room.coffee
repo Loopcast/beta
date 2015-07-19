@@ -1,5 +1,4 @@
 template = lib 'render/template'
-profile  = lib 'render/profile'
 
 Room     = schema 'room'
 User     = schema 'user'

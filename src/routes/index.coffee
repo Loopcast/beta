@@ -1,12 +1,4 @@
-###
-
-Check if a jade template exists for a given address, if fails to find a 
-template will look for a user profile, if fails will return a 404
-
-###
-
 template = lib 'render/template'
-profile  = lib 'render/profile'
 
 module.exports =
   method: 'GET'
@@ -19,12 +11,6 @@ module.exports =
 
     handler: ( request, reply )->
 
-      # if user is logged, redirect to explore page
-      # if request.auth.isAuthenticated 
-
-        # console.log 'auth ->', request.auth
-        # return reply.redirect '/people'
-       
       url = '/index'
 
       # always inject user data into requests
