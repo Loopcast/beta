@@ -23,7 +23,13 @@ module.exports =
 
       console.log "updating room -> #{mount_point}"
 
-      Room.update user: mount_point, update, ( error, response ) ->
+      query = 
+        $or      : [
+          { 'user' : user._id, 'status.is_live'     : true }
+          { 'user' : user._id, 'status.is_recorded' : true }
+        ]
+
+      Room.update query, update, ( error, response ) ->
 
         if error
           console.log 'error updating streaming duration'
