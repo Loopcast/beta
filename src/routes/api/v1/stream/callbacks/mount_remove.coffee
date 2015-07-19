@@ -25,8 +25,8 @@ module.exports =
 
       query = 
         $or      : [
-          { 'user' : user._id, 'status.is_live'     : true }
-          { 'user' : user._id, 'status.is_recorded' : true }
+          { 'user' : mount_point, 'status.is_live'     : true }
+          { 'user' : mount_point, 'status.is_recorded' : true }
         ]
 
       Room.update query, update, ( error, response ) ->
