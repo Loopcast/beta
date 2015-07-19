@@ -18,14 +18,18 @@ module.exports =
       mount_point = req.params.mount_point
 
       update = 
-        'status.is_live': off
+        'status.is_live'     : off
         'status.is_recording': off
 
+      console.log "updating room -> #{mount_point}"
+      
       Room.update _id: mount_point, update, ( error, response ) ->
 
         if error
           console.log 'error updating streaming duration'
           console.log 'error ->', error
+
+        console.log "response ->", response
 
         console.log "Just lost connection from #{mount_point}"
 
