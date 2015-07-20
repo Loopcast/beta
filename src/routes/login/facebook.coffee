@@ -40,8 +40,8 @@ module.exports =
 
       else
 
-        # find by google id
-        find_by 'data.google.id': credentials.profile.id, ( error, user ) ->
+        # find by facebook id
+        find_by 'data.facebook.id': credentials.profile.id, ( error, user ) ->
 
           if user then return data.set 'user', user
 
