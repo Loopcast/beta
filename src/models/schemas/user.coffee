@@ -4,7 +4,7 @@ Schema     = mongoose.Schema
 schema = new Schema
   info :
     username   : type: String, required: true, unique: true
-    name       : type: Array , default: ""
+    name       : type: String , default: ""
     avatar     : String
     cover      : String
     genres     : type: Array, default: []
