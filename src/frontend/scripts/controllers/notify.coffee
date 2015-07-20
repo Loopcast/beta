@@ -26,11 +26,11 @@ $.notify.addStyle 'loopcast_error',
 
 $.notify.addStyle 'guest_room_logged',
   html: 
-    "<div><span class='close-notify'>X</span><span data-notify-text/> <a href='/rooms/create'>Click here</a></div>"
+    "<div><span class='close-notify'>X</span><span data-notify-text/></div>"
 
 $.notify.addStyle 'guest_room_unlogged',
   html: 
-    "<div><span class='close-notify'>X</span><span data-notify-text/> <a href='#' data-view='components/login_popup_handler'>Click here</a></div>"
+    "<div><span class='close-notify'>X</span><span data-notify-text/></div>"
 
 $(document).on 'click', '.close-notify', ->
   $(@).trigger 'notify-hide'
