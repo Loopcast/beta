@@ -1,189 +1,214 @@
 header.header
-	transition: opacity .3s linear	
-	position: fixed
-	backface-visibility: hidden
-	width: 100%
-	top: 0
-	left: 0
-	color: white
-	height: HEADER_HEIGHT
-	z-index: 3
-	user-select: none
-	
-	.header_shadow_item
-		transition: box-shadow .2s linear
-	
-	.background
-		absolute top 0 left 0
-		width: 100%
-		height: 100%
-		z-index: 1
-		background: HEADER  
-		
-	.centered
-		position: relative
-		z-index: 1
-	.centered.second
-		z-index: 0
-		
-	.left, .right
-		& > *
-		
-			float: left
-			padding: 13px 22px
-			vertical-align: top
-			height: HEADER_HEIGHT
-			
-			&.settings
-				padding-top: 13px
-				padding-bottom: 0
-				cursor: pointer
-				height: HEADER_HEIGHT
-				position: relative
-				.ss-settings
-					transition: transform .1s linear
-					display: block
-					transform-origin: 49.5% 51%
-					text-align: center
-					width: 22px
-					height: 22px
-					display: inline-block
-					font-size: 1.2em
-					color: #ccc
-						
-					
-				// &.hovered
-				// 	.ss-settings
-				// 		transform: rotate(180deg)
-						
-				.ss-settings:hover 	
-					color:white
+  transition: opacity .3s linear  
+  position: fixed
+  backface-visibility: hidden
+  width: 100%
+  top: 0
+  left: 0
+  color: white
+  height: HEADER_HEIGHT
+  z-index: 3
+  user-select: none
+  
+  .header_shadow_item
+    transition: box-shadow .2s linear
+  
+  .background
+    absolute top 0 left 0
+    width: 100%
+    height: 100%
+    z-index: 1
+    background: HEADER  
+    
+  .centered
+    position: relative
+    z-index: 1
+  .centered.second
+    z-index: 0
+    
+  .left, .right
+    & > *
+    
+      float: left
+      padding: 13px 22px
+      vertical-align: top
+      height: HEADER_HEIGHT
+      
+      &.settings
+        padding-top: 13px
+        padding-bottom: 0
+        cursor: pointer
+        height: HEADER_HEIGHT
+        position: relative
+        .ss-settings
+          transition: transform .1s linear
+          display: block
+          transform-origin: 49.5% 51%
+          text-align: center
+          width: 22px
+          height: 22px
+          display: inline-block
+          font-size: 1.2em
+          color: #ccc
+            
+          
+        // &.hovered
+        //  .ss-settings
+        //    transform: rotate(180deg)
+            
+        .ss-settings:hover  
+          color:white
 
-						
-	.menu_item
-		position: relative
-		&:after
-			content: ""
-			position: absolute
-			bottom: 0
-			left: 0
-			width: 100%
-			height: 0px
-			background: BLUE
-			transition: height .1s ease-out
-		&.selected:after
-			height: 3px
-		&.selected.homepage_item:after
-			height: 0
-			
-	.left
-		float: none
-		& > *
-			
-			border-right: 1px solid #1f1f1f
-			border-left: 1px solid #353535
-			padding: 13px 25px
-			
-			&:first-child
-				border-left: none
-			&.no_border
-				border-right: none
-		
-	.right
-		float: none
-		position: absolute
-		top: 0
-		right: 0
-		& > *
-			float: none
-			display: inline-block
-		
-	.settings_dropdown
-		width: 140px
-		
-	
-	.search_box
-		position: relative
-		padding-left: 56px
-		.icon
-			position: absolute
-			top: 16px
-			left: 25px
-		form
-			display: inline-block
-			
-	.user_logged
-		display: none
-		padding: 0
-		& > *
-			display: inline-block
-			vertical-align: middle
-		.thumb_wrapper
-			padding-right: 30px
-			// margin-right: 20px
-			position: relative
-			height: HEADER_HEIGHT
-			.rounded_top_bar
-				width: 28px
-				height: 28px
-				border-radius: 2px
-				overflow: hidden
-				position: relative
-				margin-top: 11px
-			span
-				position: absolute
-				top: 42%
-				right: 10px
-				font-size: 0.6em
-			&.hovered
-				span
-					top: 36%
-					transform: rotate(180deg)
-				
-	.user_dropdown
-		right: 0px
-		
-	.ss-dropdown 
-		color:#ccc
-	
-	.ss-dropdown:hover
-		color: white  
-		
-	.ss-mail
-		display: block
-		position: relative
-		top: 3px
-		font-size: 1.2em
-		color: #ccc
-		
-	.ss-mail:hover
-		color:white 
-	
+            
+  .menu_item
+    position: relative
+    &:after
+      content: ""
+      position: absolute
+      bottom: 0
+      left: 0
+      width: 100%
+      height: 0px
+      background: BLUE
+      transition: height .1s ease-out
+    &.selected:after
+      height: 3px
+    &.selected.homepage_item:after
+      height: 0
+      
+  .left
+    float: none
+    & > *
+      
+      border-right: 1px solid #1f1f1f
+      border-left: 1px solid #353535
+      padding: 13px 25px
+      
+      &:first-child
+        border-left: none
+      &.no_border
+        border-right: none
+    
+  .right
+    float: none
+    position: absolute
+    top: 0
+    right: 0
+    & > *
+      float: none
+      display: inline-block
+    
+  .settings_dropdown
+    width: 140px
+    
+  
+  .search_box
+    position: relative
+    padding-left: 56px
+    .icon
+      position: absolute
+      top: 16px
+      left: 25px
+    form
+      display: inline-block
+      
+  .user_logged
+    display: none
+    padding: 0
+    & > *
+      display: inline-block
+      vertical-align: middle
+    .thumb_wrapper
+      padding-right: 30px
+      // margin-right: 20px
+      position: relative
+      height: HEADER_HEIGHT
+      .rounded_top_bar
+        width: 28px
+        height: 28px
+        border-radius: 2px
+        overflow: hidden
+        position: relative
+        margin-top: 11px
+      span
+        position: absolute
+        top: 42%
+        right: 10px
+        font-size: 0.6em
+      &.hovered
+        span
+          top: 36%
+          transform: rotate(180deg)
+        
+  .user_dropdown
+    right: 0px
+    
+  .ss-dropdown 
+    color:#ccc
+  
+  .ss-dropdown:hover
+    color: white  
+    
+  .ss-mail
+    display: block
+    position: relative
+    top: 3px
+    font-size: 1.2em
+    color: #ccc
+    
+  .ss-mail:hover
+    color:white 
+  
 .first_loaded
-	header
-		opacity: 1	
+  header
+    opacity: 1  
 .logged
-	header
-		.user_logged
-			display: inline-block
-		.login_link
-			display: none
+  header
+    .user_logged
+      display: inline-block
+    .login_link
+      display: none
 
 .unfixed
-	padding-top: 0
-	header
-		position: relative
+  padding-top: 0
+  header
+    position: relative
 
 
 .no_touch_device
-	.header_shadow_item.selected
-		box-shadow: inset 0 0 10px rgba(0,0,0,.4)
-	.header_shadow_item:hover
-		box-shadow: inset 0 0 10px rgba(0,0,0,.2)
+  .header_shadow_item.selected
+    box-shadow: inset 0 0 10px rgba(0,0,0,.4)
+  .header_shadow_item:hover
+    box-shadow: inset 0 0 10px rgba(0,0,0,.2)
 
 footer
-	background: BLACK
-	text-align: center
-	color: white
-	z-index: 0
-	position: relative
+  background: BLACK
+  text-align: center
+  color: white
+  z-index: 0
+  position: relative
+  
+body.room_page
+  display: flex
+  min-height: 100vh
+  flex-direction: column
+  padding-top: 0!important
+
+  #content
+    display: flex
+    flex: 1
+
+    .inner_content
+    .dynamic_wrapper
+      flex: 1
+      display: flex
+      
+  .profile_content.chat
+    flex: 1
+    
+  .dynamic_wrapper > div
+    display: flex
+    min-height: 100vh
+    flex-direction: column
+    padding-top: 49px
+    width: 100%
