@@ -22,6 +22,9 @@ html
 			link( href='/css/spritesheet.css', rel='stylesheet', type='text/css' )
 			link( href='/css/webfonts/ss-standard.css', rel='stylesheet', type='text/css' )
 			link( href='/css/app.css', rel='stylesheet', type='text/css' )
+			script(src='js/check_ie.js')
+			script
+				| if( !is_browser_supported() ){ location.href = "/oldie"; }
 
 			style.
 				#loading {display:block;position:absolute;top:0;left:0;background:#ececec;width:100%;height:100%;}
