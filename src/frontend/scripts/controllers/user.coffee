@@ -304,13 +304,13 @@ class UserController
       social = "youtube"
       title = "youtube"
 
-    # else if s.indexOf( 'soundcloud.com' ) > -1
-    #   social = "soundcloud"
-    #   title = "soundcloud"
+    else if s.indexOf( 'spotify.com' ) > -1
+      social = "spotify"
+      title = "spotify"
 
-    # else if s.indexOf( 'soundcloud.com' ) > -1
-    #   social = "soundcloud"
-    #   title = "soundcloud"
+    else if s.indexOf( 'soundcloud.com' ) > -1
+      social = "soundcloud"
+      title = "soundcloud"
 
     else
       social = "generic"

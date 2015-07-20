@@ -129,6 +129,10 @@ module.exports = class Room extends LoggedView
       return @on_message          data if data.type is "message"
       return @on_listener_removed data if data.type is "listener:removed"
 
+      if data.is_live? and data.is_live is false
+        if not user_controller.check_guest_owner()
+          @_on_live_stop()
+
       if data.type is "listener:added"
         log "[DDD]", data, user_controller.is_me( data.user.id )
         unless user_controller.is_me data.user.id
@@ -283,14 +287,18 @@ module.exports = class Room extends LoggedView
     @dom.removeClass 'room_live'
     app.player.stop()
     navigation.set_lock_live false, ""
+
+  _on_live_stop: ->
+    @on_room_offline()
+    notify.guest_room_logged 'Ops, something went wrong. The room is now offline.'
     
   on_room_live: ->
     @dom.addClass 'room_live'
     if not user_controller.check_guest_owner()
-      # log "----------------- on_room_live"
       app.player.fetch_room @room_id, =>
-        # log "[ROOM] live room fetched."
-        app.player.play @room_id
+        if app.settings.theme isnt 'mobile'
+          app.player.play @room_id
+          
     else
       app.player.stop()
       navigation.set_lock_live true, location.pathname
@@ -299,12 +307,13 @@ module.exports = class Room extends LoggedView
 
 
   show_guest_popup: ->
-    link = "/rooms/create"
-    message = 'You are now listening live on Loopcast'
-    if user_controller.is_logged()
-      notify.guest_room_logged message
-    else
-      notify.guest_room_unlogged message
+
+    if app.settings.theme isnt 'mobile'
+      message = 'You are now listening live on Loopcast'
+      if user_controller.is_logged()
+        notify.guest_room_logged message
+      else
+        notify.guest_room_unlogged message
 
   manage_edit: ->
     appcast.connect()

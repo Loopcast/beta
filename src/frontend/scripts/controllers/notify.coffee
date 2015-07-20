@@ -12,7 +12,7 @@ style_html = (class_icon) ->
 
 $.notify.defaults
  #autoHide: false
-  autoHideDelay: 5000
+  autoHideDelay: 10000
   clickToHide: false
   showAnimation: 'fadeIn'
   hideAnimation: 'fadeOut'
@@ -26,11 +26,11 @@ $.notify.addStyle 'loopcast_error',
 
 $.notify.addStyle 'guest_room_logged',
   html: 
-    "<div><span class='close-notify'>X</span><span data-notify-text/> <a href='/rooms/create'>Click here</a></div>"
+    "<div><span class='close-notify'>X</span><span data-notify-text/></div>"
 
 $.notify.addStyle 'guest_room_unlogged',
   html: 
-    "<div><span class='close-notify'>X</span><span data-notify-text/> <a href='#' data-view='components/login_popup_handler'>Click here</a></div>"
+    "<div><span class='close-notify'>X</span><span data-notify-text/></div>"
 
 $(document).on 'click', '.close-notify', ->
   $(@).trigger 'notify-hide'
@@ -47,11 +47,11 @@ module.exports =
 
   guest_room_logged: (msg) ->
     $.notify msg, 
-      style: 'guest_room_logged'
+      style: 'loopcast_success'
 
   guest_room_unlogged: (msg) ->
     $.notify msg, 
-      style: 'guest_room_unlogged'
+      style: 'loopcast_success'
 
     delay 10, -> view.bind( '.notifyjs-corner' )
 

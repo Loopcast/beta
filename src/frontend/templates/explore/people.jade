@@ -32,7 +32,8 @@ block grid
             for g in item.info.genres
               a.tag(href="?genres=#{g}", title="#{g}", data-genre-id="#{g}") #{g}
 
-          if item.info.location
+          - console.log( "---", item.info.location );
+          if item.info.location && item.info.location.length > 1
             p.room_location
               //- span.spritesheet.icon_location
               a(href="/explore?search=#{item.info.location}") 
