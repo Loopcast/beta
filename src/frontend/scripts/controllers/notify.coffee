@@ -12,7 +12,7 @@ style_html = (class_icon) ->
 
 $.notify.defaults
  #autoHide: false
-  autoHideDelay: 5000
+  autoHideDelay: 10000
   clickToHide: false
   showAnimation: 'fadeIn'
   hideAnimation: 'fadeOut'
@@ -47,11 +47,11 @@ module.exports =
 
   guest_room_logged: (msg) ->
     $.notify msg, 
-      style: 'guest_room_logged'
+      style: 'loopcast_success'
 
   guest_room_unlogged: (msg) ->
     $.notify msg, 
-      style: 'guest_room_unlogged'
+      style: 'loopcast_success'
 
     delay 10, -> view.bind( '.notifyjs-corner' )
 
