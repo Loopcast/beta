@@ -30,7 +30,7 @@ module.exports =
 
         if room.status.is_live
 
-          get_listeners room.user, ( error, listeners ) ->
+          get_listeners room._id, ( error, listeners ) ->
 
             # We won't buble the error to the user in this case, since this
             # isn't exactly the end of the world
@@ -47,7 +47,7 @@ module.exports =
 
         else
 
-          data.set 'listeners', 0
+          data.set 'listeners', -1
           data.set 'jobs', data.get( "jobs" ) - 1
 
         data.set 'room', room
