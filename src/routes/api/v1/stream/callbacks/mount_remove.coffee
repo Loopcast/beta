@@ -94,7 +94,8 @@ module.exports =
 
 
           console.log "sending dropped message to frontend, room_id: #{room._id}"
-
+          console.log "upating properties ->", update
+          
           sockets.send room._id, status
 
           Room.update _id: room._id, update, ( error, response ) ->
