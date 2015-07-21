@@ -33,12 +33,24 @@ module.exports =
           { 'user' : mount_point, 'status.is_recording' : true }
         ]
 
+      console.log "Looking for a room with th following query:", query
+      
       Room.findOne( query )
         .select( "_id" )
         .sort( _id: - 1 )
         .lean()
         .exec ( error, room ) -> 
 
+          if error
+            console.log "error finding room for listner_add"
+            console.log error
+
+            return reply reply( ok: true ).header( "icecast-auth-user", "1" )
+
+          if not room
+            console.log "room not found for user #{mount_point}"
+
+            return reply reply( ok: true ).header( "icecast-auth-user", "1" )
 
           console.log "listened add for room_id #{room._id}"
       
