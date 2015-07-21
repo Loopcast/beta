@@ -1,5 +1,6 @@
 appcast  = require 'app/controllers/appcast'
 happens = require 'happens'
+user_controller = require 'app/controllers/user'
 
 Select = require '../components/select'
 
@@ -7,6 +8,7 @@ module.exports = class InputDevices extends Select
 
   current_device : ""
   devices: []
+  first_time: on
   constructor: ( dom ) ->
 
     super dom
@@ -18,9 +20,11 @@ module.exports = class InputDevices extends Select
     #   $( "select option[value='#{device}']" ).prop( 'selected', true ).change()
 
     ref = @
+
+    
     appcast.on 'input_devices', ( devices ) ->
 
-
+      log "[InputDevices] on input devices", devices
       if ref.devices.length isnt devices.length
         # TODO: let the user know if previouly selected isn't available anymore
 
@@ -41,12 +45,23 @@ module.exports = class InputDevices extends Select
 
         ref.devices = devices
 
+      if ref.first_time
+        ref.first_time = off
+
+        d = user_controller.get_preferred_input()
+        log "[InputDevices] get_preferred_input", d
+
+        if d
+          ref._set_value d
+
+
+
 
 
     @on 'changed', ( device ) =>
-      # log "[device] changed", device, @current_device
-
+      log "[device] changed", device, @current_device
       return if device is @current_device
+      app.emit 'appcast:input_device', device
       @current_device = device
       
       if device.length > 0

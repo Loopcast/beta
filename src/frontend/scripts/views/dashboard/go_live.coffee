@@ -107,7 +107,14 @@ module.exports = class GoLive extends ButtonWithTimer
       # appcast.on while_streaming
       ref.set_active true
 
+
+  on_room_status_changed: ( data ) =>
+    # @set_enabled( data.room.status.is_recording or data.room.status.is_live )
+    @set_active data.room.status.is_live
+    log "[ButtonWithTimer LIVE] on_room_status_changed", data
+
   destroy: ->
     appcast.off 'stream:error', @on_error
+    super()
 
   

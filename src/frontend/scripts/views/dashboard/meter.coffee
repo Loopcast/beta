@@ -14,6 +14,7 @@ module.exports = class Meter extends RoomView
     { value: 6,   id: "6",    color: "dark_yellow" },
     { value: 10,  id: "10",   color: "red" }
   ]
+  disabled: true
   current_block_index: -1
   blocks: []
   gain: 5
@@ -45,6 +46,16 @@ module.exports = class Meter extends RoomView
         'left': $( item ).find( '.left_channel' )
         'right': $( item ).find( '.right_channel' )
 
+    
+
+  on_input_device_changed: ( data ) =>
+    @disabled = data.length <= 0
+    if @disabled
+      @no_sound = true
+      @turn_off()
+
+    log "[Meter] on_input_device_changed", data, @disabled
+
 
    on_room_created: (@room_id, @owner_id) =>
     
@@ -58,6 +69,7 @@ module.exports = class Meter extends RoomView
     delay 5000, => clearInterval @interval
 
     appcast.on 'stream:vu', @set_volume
+    app.on 'appcast:input_device', @on_input_device_changed
     # appcast.on 'stream:vu', @activate
 
 
@@ -72,6 +84,7 @@ module.exports = class Meter extends RoomView
     appcast.off 'stream:vu', @activate
 
   set_volume: ( perc ) =>
+    return if @disabled
     # @debug.html perc[ 0 ] + "<br/>" + perc[ 1 ]
     @set_channel 'left', perc[0]
     @set_channel 'right', perc[1]  
@@ -128,4 +141,5 @@ module.exports = class Meter extends RoomView
 
   destroy: ->
     if @is_room_owner
+      app.off 'appcast:input_device', @on_input_device_changed
       appcast.off 'stream:vu', @set_volume

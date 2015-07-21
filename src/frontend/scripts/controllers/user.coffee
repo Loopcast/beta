@@ -36,6 +36,7 @@ class UserController
     return unless scope.main
     view.off 'binded', @on_views_binded
 
+    app.on 'appcast:input_device', @set_preferred_input
 
 
     api.user.status {}, (error, response) =>
@@ -369,6 +370,13 @@ class UserController
     log "[User] fetch_from_session", @data
     if @data and not @data.images?
       @create_images()
+
+  set_preferred_input: (input) ->
+    log "[User] set_preferred_input", input
+    app.session.set 'input', input
+
+  get_preferred_input: ->
+    app.session.get 'input', false
 
   write_to_session:  ->
     # log "[User] writing to session", @data

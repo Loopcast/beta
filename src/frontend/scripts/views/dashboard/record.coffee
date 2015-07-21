@@ -96,3 +96,10 @@ module.exports = class Record extends ButtonWithTimer
   destroy: ->
     if @is_room_owner
       @text.off 'click', @on_button_clicked
+
+    super()
+
+  on_room_status_changed: ( data ) =>
+    # @set_enabled( data.room.status.is_recording or data.room.status.is_live )
+    @set_active data.room.status.is_recording
+    log "[ButtonWithTimer RECORD] on_room_status_changed", data

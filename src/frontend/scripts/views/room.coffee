@@ -175,6 +175,15 @@ module.exports = class Room extends LoggedView
     else
       user_controller.once 'socket:connected', @broadcast_enter
 
+    @check_status()
+
+
+  check_status: =>
+    log "[Room] status:changed checking", @room_id
+    L.rooms.info @room_id, (error, data) =>
+      log "[Room] status:changed", data
+      @emit 'status:changed', data
+
   room_went_offline: =>
 
     log '[Dashboard] ROOM WENT OFFLINE'

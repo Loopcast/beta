@@ -10,11 +10,15 @@ module.exports = class ButtonWithTimer extends RoomView
   active: false
   waiting: false
   interval: null
+  enabled: false
+  room: null
 
   constructor:  ( @dom ) ->
     happens @
     @text = @dom.find 'a'
     super @dom
+
+    @set_enabled @enabled
 
   wait: ->
     # log "[GoLive] wait"
@@ -30,23 +34,45 @@ module.exports = class ButtonWithTimer extends RoomView
 
     @text.on 'click', @on_button_clicked
 
+    app.on 'appcast:input_device', @on_input_device_changed
+    @room = view.get_by_dom '.createroom'
+    @room.on 'status:changed', @on_room_status_changed
 
     @timer = @dom.find '.right_part'
     # log "[ButtonWithTimer]", @timer.length
 
+  on_room_status_changed: ( data ) =>
+    log "[ButtonWithTimer] on_room_status_changed", data
+
+  on_input_device_changed: ( data ) =>
+    log "[ButtonWithTimer] on_input_device_changed", data
+    @set_enabled data.length > 0
+
+
   on_button_clicked: =>
     # TODO: make it clever
     return if @waiting
-
+    return if not @enabled
     if not @active
       @start()
     else
       @stop()
 
+  set_enabled: ( enabled ) ->
+    @enabled = enabled
+
+    if @enabled
+      @dom.removeClass( 'disabled' ).addClass( 'enabled' )
+    else
+      @dom.addClass( 'disabled' ).removeClass( 'enabled' )
+
+
   set_active: ( active ) ->
 
+    return if not @enabled
+
     # log "[Record] set_active", active
-    
+    return if active is @active
     @waiting = false
     @active  = active
 
@@ -84,5 +110,10 @@ module.exports = class ButtonWithTimer extends RoomView
     seconds = now_to_seconds @start_time
     time = time_to_string seconds
     @timer.html time.str
+
+  destroy: ->
+    if @is_room_owner
+      app.off 'appcast:input_device', @on_input_device_changed
+      @room.off 'status:changed', @on_room_status_changed
 
 
