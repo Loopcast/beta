@@ -15,7 +15,7 @@ module.exports =
 
     handler: ( req, reply ) ->
 
-      mount_point = user: req.params.mount_point
+      mount_point = req.params.mount_point
 
       console.log "Just lost connection from #{mount_point}"
 
