@@ -15,11 +15,11 @@ module.exports =
 
     handler: ( req, reply ) ->
 
-      method_name = req.params.method_name
+      # we don't do anything when this callback happens
+      # method_name = req.params.method_name
+      # console.log "callback: #{method_name}"
 
-      console.log "callback: #{method_name}"
-
-      console.log "payload"
-      console.log req.payload
+      # console.log "payload"
+      # console.log req.payload
       
       reply( ok: true ).header( "icecast-auth-user", "1" )
