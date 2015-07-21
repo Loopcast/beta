@@ -16,6 +16,7 @@ else
 if s.is_local
   s.base_path = "http://localhost:1993"
 
+
 s.cache =
   chat:
     messages:
@@ -97,7 +98,9 @@ if s.is_beta
     key   : '23e67be659fc6663206d'
     secret: 'b324ac27d8ec6f3f589a'
 
-  s.tape = 'http://tape.loopcast.fm:8000'
+  s.tape = 
+    url: 'http://tape.loopcast.fm'
+    ips: [ "54.154.147.67", "52.16.136.56" ] # tape servers, so we dont count listeners from here
 
   s.radio = 
     url     : 'http://radio.loopcast.fm'
@@ -133,7 +136,9 @@ if not s.is_beta
     key   : 'e269699ecff3c224a612',
     secret: '5a05943c7bf757cdd315'
 
-  s.tape = 'http://staging-tape.loopcast.fm:8000'
+  s.tape = 
+    url: 'http://staging-tape.loopcast.fm'
+    ips: [ "54.154.147.67", "52.16.136.56" ] # tape servers, so we dont count listeners from here
 
   s.radio = 
     url     : 'http://staging-radio.loopcast.fm'

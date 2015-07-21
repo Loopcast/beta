@@ -67,7 +67,7 @@ module.exports =
               'status.recording.stopped_at' : on
               'status.is_recording'         : on
 
-          request "#{s.tape}/stop/#{room.user}", ( error, response, body ) ->
+          request "#{s.tape.url}:8000/stop/#{room.user}", ( error, response, body ) ->
 
             if error
 

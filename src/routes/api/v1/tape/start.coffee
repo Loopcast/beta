@@ -59,7 +59,7 @@ module.exports =
 
 
           data =
-            url: "#{s.tape}/api/v1/start"
+            url: "#{s.tape.url}:8000/api/v1/start"
             form:
               room_id    : room_id 
               mount_point: String( room.user )
