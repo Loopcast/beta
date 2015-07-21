@@ -21,7 +21,7 @@ module.exports =
       console.log "callback: #{method_name}"
       console.log "ip      : #{req.payload.ip}"
 
-      if s.tape.ips.indexOf( req.payload.ip ) is -1
+      if s.tape.ips.indexOf( req.payload.ip ) isnt -1
 
         console.log "- ignored because comes from tape server"
         
