@@ -10,18 +10,14 @@ module.exports =
 
   config:
 
-    description: "Callback by icecast server when a source disconnects from the stream"
+    description: "Called by icecast server when a source disconnects from the streaming server"
     tags   : [ "api", "v1" ]
 
     handler: ( req, reply ) ->
 
-      mount_point = req.params.mount_point
+      mount_point = user: req.params.mount_point
 
-      update = 
-        'status.is_live'     : off
-        'status.is_recording': off
-
-      console.log "updating room -> #{mount_point}"
+      console.log "Just lost connection from #{mount_point}"
 
       query = 
         $or      : [
@@ -29,20 +25,82 @@ module.exports =
           { 'user' : mount_point, 'status.is_recording' : true }
         ]
 
-      console.log 'query ->', query
+      Room.findOne( query )
+        .select( "_id status" )
+        .lean()
+        .exec ( error, room ) -> 
 
-      Room.update query, update, ( error, response ) ->
+          if error
 
-        if error
-          console.log 'error updating streaming duration'
-          console.log 'error ->', error
+            failed req, reply, error
 
-        console.log "response ->", response
+            return reply Boom.preconditionFailed( "Database error" )
 
-        console.log "Just lost connection from #{mount_point}"
+          if not room 
 
-      # debug
-      # console.log "payload"
-      # console.log req.payload
-      
-      reply( ok: true ).header( "icecast-auth-user", "1" )
+            return reply Boom.resourceGone( "room not found or user not owner" )
+
+          # reply early to icecast if everything went allright!
+          reply( ok: true ).header( "icecast-auth-user", "1" )
+
+
+          # if room isn't live and isn't recording, then the user
+          # succesfully pressed STOP STREAM and STOP RECORDING
+          # before icecast received the disconnect event, so
+          # everything should be fine.
+          if not room.status.is_live and not room.status.is_recording
+
+            return
+
+          # If it still marked as live or recording, then we need
+          # to update stopped_at information, and broadcast a socket
+          # message so the frontend knows something went wrong.
+
+
+          status =
+            is_live: false
+            dropped: true
+            live: 
+              stopped_at: now().format()
+
+          update = {}
+
+          update[ 'status.dropped' ] = true
+
+          if room.status.is_live
+
+            update['status.live.stopped_at'] = now().format()
+
+            started_at = now( room.status.live.started_at )
+            stopped_at = now( update['status.live.stopped_at'] )
+
+            duration = stopped_at.diff( started_at, 'seconds' )
+
+            update['status.live.duration'] = duration
+
+          if room.status.is_recording
+
+            update['status.recording.stopped_at'] = now().format()
+
+            started_at = now( room.status.recording.started_at )
+            stopped_at = now( update['status.recording.stopped_at'] )
+
+            duration = stopped_at.diff( started_at, 'seconds' )
+
+            update['status.recording.duration'] = duration
+
+          update['status.is_live']      = false
+          update['status.is_recording'] = false
+
+
+          console.log "sending dropped message to frontend, room_id: #{room._id}"
+
+          sockets.send room._id, status
+
+          Room.update _id: room._id, update, ( error, response ) ->
+
+            if error
+              console.log 'error updating streaming duration'
+              console.log 'error ->', error
+
+            console.log "succesfully updated room information ->", response

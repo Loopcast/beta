@@ -62,8 +62,9 @@ Channels / messages
       message : String
 
     - type: "status" # Happens when a room goes live / offline
-      is_live ( Boolean )
+      is_live      ( Boolean )
       is_recording ( Boolean )
+      dropped      ( Boolean ) # true if connection drops before user clicks STOP STREAMING and STOP RECORDING
       live
         started_at ( UTC time )
         stopped_at ( UTC time )
