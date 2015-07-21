@@ -15,11 +15,12 @@ module.exports =
 
     handler: ( req, reply ) ->
 
-      method_name = req.params.method_name
+      mount_point = req.params.mount_point
+      method_name = req.payload.method_name
 
       console.log "callback: #{method_name}"
       console.log "ip      : #{req.payload.ip}"
-      
+
       if s.tape.ips.indexOf( req.payload.ip ) is -1
 
         console.log "- ignored because comes from tape server"
