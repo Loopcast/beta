@@ -102,19 +102,20 @@ module.exports = class Player
   get_audio_data : (data) ->
     audio_data = {}
 
-    if data.room.info.file
-      audio_data = 
-        id: data.room._id
-        is_recorded: true
-        start_time: moment()
-        src: data.room.info.file
-
-    else
+    if data.room.info.url
       audio_data = 
         id: data.room._id
         is_recorded: false
         start_time: data.room.status.live.started_at
         src: data.room.info.url
+
+    else
+      audio_data = 
+        id: data.room._id
+        is_recorded: true
+        start_time: moment()
+        src: data.room.info.file
+      
 
     return audio_data
 
