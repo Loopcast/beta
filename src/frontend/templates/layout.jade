@@ -70,6 +70,11 @@ html
 			iframe(src='//www.googletagmanager.com/ns.html?id=GTM-N4ZZBR', height='0', width='0', style='display:none;visibility:hidden')
 
 		script( src="/js/tag_manager.js" )
+		script
+	    //- if user has adBlock or similar google_analytics.js might be blocked
+	    //- and in this case it's better to defined __gaq inline, so we avoid
+	    //- this problem
+			| var _gaq = _gaq || [];
 		script( src="/js/google_analytics.js")
 
 		script( src="/socket.io/socket.io.js" )
