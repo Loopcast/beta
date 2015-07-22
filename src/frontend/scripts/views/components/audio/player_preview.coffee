@@ -11,11 +11,12 @@ module.exports = (dom) ->
   source_src = null
 
   source = dom.find '.source_src'
+
   if source.length > 0
     source_src = source.attr 'value'
 
-  if not room_id
-    return
+  if not room_id then returns
+    
 
   if handler.length <= 0
     handler       = dom.find '.image .ss-pause, .loading_spin'

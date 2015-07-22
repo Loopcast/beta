@@ -121,7 +121,15 @@ module.exports = class Player
 
     
   play: (room_id, src = null) ->
+
     log "[Player] play", room_id
+
+    if src?
+      log "[Player] src is set", src
+      @audio.set_src src
+      @audio.play()
+      return
+      
     if not room_id? and @current_room_id
       room_id = @current_room_id
 
@@ -129,11 +137,6 @@ module.exports = class Player
       @fetch_room room_id, => @_play room_id
     else
       @_play room_id
-
-    if src?
-      log "[Player] src is set", src
-      @audio.set_src src
-      @audio.play()
 
     
   fetch_room: ( room_id, callback ) ->
