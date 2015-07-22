@@ -102,12 +102,12 @@ module.exports = class Player
   get_audio_data : (data) ->
     audio_data = {}
 
-    if data.room.info.url
+    if data.room.status.is_live
       audio_data = 
-        id: data.room._id
+        id         : data.room._id
         is_recorded: false
-        start_time: data.room.status.live.started_at
-        src: data.room.info.url
+        start_time : data.room.status.live.started_at
+        src        : data.room.info.url
 
     else
       audio_data = 
@@ -124,19 +124,24 @@ module.exports = class Player
 
     log "[Player] play", room_id
 
-    if src?
-      log "[Player] src is set", src
-      @audio.set_src src
-      @audio.play()
-      return
-      
     if not room_id? and @current_room_id
       room_id = @current_room_id
 
     if not @data_rooms[ room_id ]?
       @fetch_room room_id, => @_play room_id
+
     else
       @_play room_id
+
+      if src?
+        @audio.set_src src
+
+      @audio.play()
+
+    if src?
+      log "[Player] src is set", src
+      @audio.set_src src
+      @audio.play()
 
     
   fetch_room: ( room_id, callback ) ->
@@ -171,7 +176,6 @@ module.exports = class Player
 
     @update_info @data
     @audio.set_data @get_audio_data( @data )
-    @audio.play()
 
   stop: ->
     @audio.pause()
