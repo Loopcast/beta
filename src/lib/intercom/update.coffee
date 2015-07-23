@@ -45,6 +45,10 @@ module.exports = ( user, callback ) ->
     console.log 'data:'
     console.log data
 
+    console.log 1
+    console.log 2
+    console.log 3
+
     intercom.updateUser data, ( error, res ) ->
 
       if error then return callback error
