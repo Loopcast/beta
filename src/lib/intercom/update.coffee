@@ -9,36 +9,39 @@ module.exports = ( user, callback ) ->
       user_id          : user._id
       custom_attributes: {}
 
-    if user[ 'name' ]
-      data.name = user[ 'name' ]
+    if user[ 'info.name' ]
+      data.name = user[ 'info.name' ]
 
-    if user[ 'occupation' ]
-      data.custom_attributes.occupation = user[ 'occupation' ].join( "," )
+    if user[ 'info.occupation' ]
+      data.custom_attributes.occupation = user[ 'info.occupation' ].join( "," )
 
-    if user[ 'genres' ]
-      data.custom_attributes.genres = user[ 'genres' ].join( "," )
+    if user[ 'info.genres' ]
+      data.custom_attributes.genres = user[ 'info.genres' ].join( "," )
 
 
     # left bar info
-    if user[ 'location' ]
+    if user[ 'info.location' ]
 
-      data.custom_attributes.location = user[ 'location' ]
+      data.custom_attributes.location = user[ 'info.location' ]
 
     # top info on profile page
     if user[ 'info.username' ]
       data.custom_attributes.username = user[ 'info.username' ]
 
-    if user[ 'about' ]
+    if user[ 'info.about' ]
 
-      data.custom_attributes.about = user[ 'about' ]
+      data.custom_attributes.about = user[ 'info.about' ]
 
-    if user[ 'social' ]
+    if user[ 'info.social' ]
 
-      data.custom_attributes.social = user[ 'social' ].join( "," )
+      data.custom_attributes.social = user[ 'info.social' ].join( "," )
 
-    # we won't save avatar as this won't refresh intercom information
-    if user[ 'info.avatar' ]
-      data.custom_attributes.avatar = user.info.avatar
+    console.log 'updating user data @ intercom'
+    console.log 'user:'
+    console.log user
+
+    console.log 'data:'
+    console.log data
 
     intercom.updateUser data, ( error, res ) ->
 
