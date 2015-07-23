@@ -47,7 +47,7 @@ module.exports =
 
       doc = 
         user       : user._id
-        created_at : now().format()
+        created_at : now().toDate()
         info:
           user     : user.username
           title    : payload.title

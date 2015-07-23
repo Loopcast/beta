@@ -216,7 +216,7 @@ class UserController
     # updates intercom information
     window.intercomSettings.name       = @data.name
     window.intercomSettings.email      = @data.email
-    window.intercomSettings.created_at = new Date(@data.created_at).getTime()
+    # window.intercomSettings.created_at = new Date(@data.created_at).getTime()
     window.intercomSettings.widget     =
       activator: '#IntercomDefaultWidget'
 
