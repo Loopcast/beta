@@ -1,15 +1,5 @@
 module.exports = ( user, callback ) ->
 
-  console.log "intercom update!"
-  # fetch user data from intercom
-  # intercom.getUser id: user._id, ( error, response ) ->
-
-  #   console.log "got it"
-
-  #   if error then return callback error
-
-  #   console.log "got it"
-
   data = 
     user_id          : user._id
     custom_attributes: {}
@@ -40,17 +30,6 @@ module.exports = ( user, callback ) ->
   if user[ 'info.social' ]
 
     data.custom_attributes.social = user[ 'info.social' ].join( "," )
-
-  console.log 'updating user data @ intercom'
-  console.log 'user:'
-  console.log user
-
-  console.log 'data:'
-  console.log data
-
-  console.log 1
-  console.log 2
-  console.log 3
 
   intercom.updateUser data, ( error, res ) ->
 
