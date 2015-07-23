@@ -77,7 +77,7 @@ module.exports =
               console.error error
 
 
-        update_intercom user, ( error ) ->
+        update_intercom user_data, ( error ) ->
 
           if error
             console.error "error updating intercom user information"
