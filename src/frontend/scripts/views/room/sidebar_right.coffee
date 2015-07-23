@@ -17,7 +17,9 @@ module.exports = class SidebarRight extends RoomView
     ref = @
 
     L.rooms.stats @room_id, ( e, stats ) -> 
-      # log "[SidebarRight]", stats
+
+    
+      log "[SidebarRight]", stats
       stats.visits = Math.max 0, parseInt( stats.visits )
       stats.likes = Math.max 0, parseInt( stats.likes )
       stats.listeners = Math.max 0, parseInt( stats.listeners )
