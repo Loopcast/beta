@@ -2,12 +2,16 @@ module.exports = ( user, callback ) ->
 
   console.log "intercom update!"
   console.log 'fetching user ->', user_id: user._id
-  
+
   # fetch user data from intercom
   intercom.getUser user_id: user._id, ( error, response ) ->
 
+    console.log "got it"
+
     if error then return callback error
 
+    console.log "got it"
+    
     data = 
       user_id          : user._id
       custom_attributes: {}
