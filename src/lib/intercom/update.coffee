@@ -1,5 +1,7 @@
 module.exports = ( user, callback ) ->
 
+  console.log "intercom update!"
+
   # fetch user data from intercom
   intercom.getUser user_id: user._id, ( error, response ) ->
 
