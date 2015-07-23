@@ -94,7 +94,8 @@ module.exports =
             return reply Boom.badData 'error fetching user information from mongodb'
 
           data = {}
-
+          data.user_id = user._id
+          
           if request.payload.name
             data[ 'info.name'] = request.payload.name
 
