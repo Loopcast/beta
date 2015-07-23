@@ -28,12 +28,6 @@ module.exports = ( user, callback ) ->
       custom_attributes :
         username   : user.info.username
 
-    console.log "CREATING USER with created_at:", data.created_at
-    console.log "CREATING USER with created_at:", data.created_at
-    console.log "CREATING USER with created_at:", data.created_at
-    console.log "CREATING USER with created_at:", data.created_at
-    console.log "CREATING USER with created_at:", data.created_at
-
     if user.data.facebook?.id
       data.custom_attributes.facebook_id = user.data.facebook.id
 
