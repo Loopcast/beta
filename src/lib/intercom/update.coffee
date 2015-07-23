@@ -31,8 +31,6 @@ module.exports = ( user, callback ) ->
 
     data.custom_attributes.social = user[ 'info.social' ].join( "," )
 
-  console.log 'updating intercom ->', data
-  
   intercom.updateUser data, ( error, res ) ->
 
     if error then return callback error

@@ -127,9 +127,6 @@ module.exports =
 
               new_id = extract_id request.payload.avatar
 
-              console.log 'current_id ->', current_id
-              console.log 'new_id ->'  , new_id
-
               if current_id != new_id
                 remove_from_cloudinary.push current_id
 
@@ -144,9 +141,6 @@ module.exports =
 
               new_id = extract_id request.payload.cover
 
-              console.log 'current_id ->', current_id
-              console.log 'new_id ->'  , new_id
-
               if current_id != new_id
                 remove_from_cloudinary.push current_id
 
@@ -160,9 +154,6 @@ module.exports =
               if error
                 console.log "error deleting image from cloudinary"
                 console.log error
-              else
-                console.log 'succesfully deleted from cloudinary'
-                console.log result
 
           if request.payload.name and not request.payload.user_id
 
