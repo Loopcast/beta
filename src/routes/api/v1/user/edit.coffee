@@ -93,7 +93,7 @@ module.exports =
 
             return reply Boom.badData 'error fetching user information from mongodb'
 
-          data = _id : user._id
+          data = user_id : user._id
 
           if request.payload.name
             data[ 'info.name'] = request.payload.name
@@ -116,7 +116,7 @@ module.exports =
             data[ 'info.about'] = request.payload.about
 
           if request.payload.social?
-            data[ 'info.social'] = request.payload.social
+            data[ 'info.social'] = request.payload.social.split(",")
 
           # store ids to be remove from cloudinary
           remove_from_cloudinary = []
