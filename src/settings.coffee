@@ -76,9 +76,9 @@ if s.is_beta
 
   s.facebook.client_sdk_id = "1551393601809115"
 
-  s.cloudinary.cloud_name = 'htfhoylhb'
-  s.cloudinary.api_key    = '391232997283122'
-  s.cloudinary.api_secret = 'NLOD5i_vCGIE2RW_WcAjEU2GsoA'
+  s.cloudinary.cloud_name = 'hfbojwbxj'
+  s.cloudinary.api_key    = '196166514414592'
+  s.cloudinary.api_secret = 'MURLu6ul_c8GkK1YCKSZnZoL4w8'
 
   s.s3 =
     bucket: 'rekorded-beta'
