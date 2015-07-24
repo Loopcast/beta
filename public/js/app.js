@@ -21454,7 +21454,7 @@ jade.debug.unshift({ lineno: 2, filename: jade.debug[0].filename });
 buf.push("<a" + (jade.attrs({ 'href':("" + (url) + ""), 'title':("" + (name) + "") }, {"href":true,"title":true})) + ">");
 jade.debug.unshift({ lineno: undefined, filename: jade.debug[0].filename });
 jade.debug.unshift({ lineno: 3, filename: jade.debug[0].filename });
-buf.push("<img" + (jade.attrs({ 'src':("" + (images.chat_sidebar) + ""), 'data-id':("" + (socket_id) + ""), 'width':("55") }, {"src":true,"data-id":true,"width":true})) + "/>");
+buf.push("<img" + (jade.attrs({ 'src':("" + (images.chat_sidebar) + ""), 'data-id':("" + (socket_id) + ""), 'width':("55"), 'height':("55") }, {"src":true,"data-id":true,"width":true,"height":true})) + "/>");
 jade.debug.shift();
 jade.debug.shift();
 buf.push("</a>");
@@ -21464,7 +21464,7 @@ buf.push("</div>");
 jade.debug.shift();
 jade.debug.shift();;return buf.join("");
 } catch (err) {
-  jade.rethrow(err, jade.debug[0].filename, jade.debug[0].lineno,".img_wrapper(id=\"listener_#{socket_id}\")\n  a(href=\"#{url}\", title=\"#{name}\")\n    img(src=\"#{images.chat_sidebar}\", data-id=\"#{socket_id}\", width=\"55\")");
+  jade.rethrow(err, jade.debug[0].filename, jade.debug[0].lineno,".img_wrapper(id=\"listener_#{socket_id}\")\n  a(href=\"#{url}\", title=\"#{name}\")\n    img(src=\"#{images.chat_sidebar}\", data-id=\"#{socket_id}\", width=\"55\", height=\"55\")");
 }
 }
 }, {});
