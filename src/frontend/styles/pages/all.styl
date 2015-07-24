@@ -88,7 +88,6 @@ body
       background: rgba(0,0,0,0.9)
       border-radius: 50%
       color: white
-      display: block
       width: 22px
       height: 22px
       text-align: center
@@ -462,6 +461,12 @@ PLAYER_HEIGHT = 70px
   text-align: left
   
 .no_touch_device
+  .close-notify
+    display: none
+    
+  .notifyjs-wrapper:hover
+    .close-notify
+      display: block
   .notifyjs-loopcast-base
     .close-notify:hover
       background: #222
