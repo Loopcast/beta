@@ -4785,15 +4785,14 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   -webkit-flex: 6;
   -ms-flex: 6;
   flex: 6;
-  margin: 0 25px;
-  margin-right: 15px;
+  margin: 0 15px;
   position: relative;
   cursor: pointer;
   -webkit-border-radius: 5px;
   border-radius: 5px;
 }
 
-/* line 294 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/all.styl */
+/* line 293 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/all.styl */
 #player .player_progress span {
   position: absolute;
   top: 0;
@@ -4810,7 +4809,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   transition: width 0.1s linear, background 0.2s linear;
 }
 
-/* line 304 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/all.styl */
+/* line 303 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/all.styl */
 #player .player_progress span:after {
   content: "";
   position: absolute;
@@ -4824,7 +4823,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   background: #292c2f;
 }
 
-/* line 314 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/all.styl */
+/* line 313 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/all.styl */
 #player .player_progress span.no_transition {
   -webkit-transition: none;
   -moz-transition: none;
@@ -4833,16 +4832,16 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   transition: none;
 }
 
+/* line 316 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/all.styl */
+
 /* line 317 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/all.styl */
 
 /* line 318 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/all.styl */
-
-/* line 319 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/all.styl */
 #player.loading .player_progress span {
   background: #936401;
 }
 
-/* line 323 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/all.styl */
+/* line 322 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/all.styl */
 #player .player_buttons {
   margin-left: 0px;
   font-size: 1.3em;
@@ -4855,22 +4854,23 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   flex: 1;
 }
 
-/* line 328 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/all.styl */
+/* line 327 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/all.styl */
 #player .player_buttons > * {
   display: inline-block;
 }
 
-/* line 331 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/all.styl */
+/* line 330 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/all.styl */
 #player .player_buttons .ss-heart {
   margin-right: 7px;
 }
 
-/* line 334 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/all.styl */
+/* line 333 : /Users/stefanoortisi/Workspace/Sites/personal/loopcast/beta/src/frontend/styles/pages/all.styl */
 #player .player_time,
 #player .player_total_time {
-  font-size: 0.9em;
+  font-size: 0.8em;
   font-weight: 600;
   margin-bottom: 5px;
+  margin-top: 3px;
   padding-left: 2px;
   text-align: right;
 }
