@@ -25,8 +25,10 @@ module.exports = ( dom ) ->
     log room_url
 
   _on_name_updated = (data) ->
-    log "name updated", data.username, dom.find( '.share_wrapper' ), dom.find( '.share_wrapper' ).data( 'permalink' )
-
+    log "name updated", data, dom.find( '.share_wrapper' ), dom.find( '.share_wrapper' ).data( 'permalink' )
+    str = document.title.split ' | '
+    str[0] = data.name
+    document.title = str.join ' | '
     room_url = transform_url room_url, data.username
 
     dom.find( '.room_url' ).each ->
