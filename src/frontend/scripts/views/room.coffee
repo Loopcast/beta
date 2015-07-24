@@ -17,6 +17,7 @@ module.exports = class Room extends LoggedView
   publish_modal: null
   exit_modal: null
   sidebar_right: null
+  current_status: null
 
 
   constructor: ( @dom ) ->
@@ -134,7 +135,6 @@ module.exports = class Room extends LoggedView
           @_on_live_stop()
 
       if data.type is "listener:added"
-        log "[DDD]", data, user_controller.is_me( data.user.id )
         unless user_controller.is_me data.user.id
           return @on_listener_added   data 
 
@@ -183,6 +183,7 @@ module.exports = class Room extends LoggedView
     L.rooms.info @room_id, (error, data) =>
       log "[Room] status:changed", data
       @emit 'status:changed', data
+      @current_status = data
 
   room_went_offline: =>
 

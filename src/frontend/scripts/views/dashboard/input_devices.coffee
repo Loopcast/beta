@@ -66,3 +66,6 @@ module.exports = class InputDevices extends Select
       
       if device.length > 0
         appcast.select_device dom.find( "select" ).val()
+
+  is_active: ->
+    return @current_device.length > 0
