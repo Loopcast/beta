@@ -27,6 +27,9 @@ module.exports = class GoLive extends ButtonWithTimer
       @set_active true
       appcast.set "stream:streaming", true
 
+  check_room_status: ->
+    @set_active @room.current_status.room.status.is_live
+
   start: ->
     log "[GoLive] Clicked start"
     
