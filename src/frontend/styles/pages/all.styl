@@ -217,6 +217,9 @@ PLAYER_HEIGHT = 70px
   transition: transform .15s ease-out
   &.visible
     transform: translateY(0)
+    
+  .player_text
+    margin-right: 10px
   
   .loading_spin
     display: none
@@ -283,6 +286,7 @@ PLAYER_HEIGHT = 70px
     height: 4px
     flex: 6
     margin: 0 25px
+    margin-right: 15px
     position: relative
     cursor: pointer
     border-radius: 5px
@@ -322,29 +326,40 @@ PLAYER_HEIGHT = 70px
     flex: 1
     
     & > *
-      margin-right: 12px
       display: inline-block
+      
+    .ss-heart
+      margin-right: 7px
   
   .player_time
+  .player_total_time
     font-size: 0.9em
     font-weight: 600
     margin-bottom: 5px
     padding-left: 2px
     text-align: right
     
+  .player_total_time
+    margin-right: 12px
+    padding-left: 0px
+    
   .player_label
     background: RED
     color: white
     text-transform: uppercase
-    font-size: 0.7em
+    font-size: 0.5em
     text-align: center
     font-weight: 600
-    padding: 1px 5px
+    padding: 1px 3px
     display: none
-    
+    position: relative
+    top: -3px
   &.is_live
     .player_label
       display: block
+      
+    .player_total_time
+      display: none
     
   .player_right
     margin-right: 10px
