@@ -14,6 +14,16 @@ module.exports = class Balloon
     @dom.addClass 'orientation_' + @orientation
     view.on 'binded', @on_views_binded
 
+    @dom.find( '.button' ).on 'click', @hide
+    @checkbox = @dom.find( 'input' )
+    @checkbox.on 'change', @on_checkbox_changed
+
+  on_checkbox_changed: =>
+    log "[Balloon] set show help", @checkbox.is(":checked")
+
+    app.session.set 'hide:help', @checkbox.is(":checked")
+
+
   on_views_binded: (scope) =>
     return if not scope.main
     view.off 'binded', @on_views_binded
@@ -46,7 +56,7 @@ module.exports = class Balloon
 
 
 
-  hide: ->
+  hide: =>
     @visible = false
     @dom.removeClass( 'to_show' ).removeClass( 'show' )
     app.window.off 'resize', @on_resize
@@ -61,6 +71,8 @@ module.exports = class Balloon
   destroy: ->
     if @visible
       app.window.off 'resize', @on_resize
+
+    @dom.find( '.button' ).off 'click', @hide
 
     @dom.remove()
 

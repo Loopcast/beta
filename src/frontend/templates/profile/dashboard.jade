@@ -25,6 +25,15 @@
       .cell
         #go_live_balloon.balloon(data-view="components/help/balloon", data-target="#go_live_button")
           p Click go live to start your live stream and share it with friends, fans and followers everywhere.
+
+        #go_live_instructions.balloon(data-view="components/help/balloon", data-target="#go_live_button")
+          p You can now go live or record or do both at the same time! If you only decide to record, others will not be able to hear your live stream and your room will not be displayed on the explore page!
+          .checkbox_wrapper
+            input(type="checkbox", name="never_show_again")
+            label(for="never_show_again") Never show again
+
+          a.button.yellow_button.small_button_4(href="#", title="Got it") Got it
+
         
         .live_button_wrapper
           p#go_live_button.button.dashboard_button.with_timer(data-view="dashboard/go_live")
