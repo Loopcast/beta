@@ -34,12 +34,22 @@ module.exports = class ButtonWithTimer extends RoomView
 
     @text.on 'click', @on_button_clicked
 
+    @input_device = view.get_by_dom '.dashboard_bar .input_select'
     app.on 'appcast:input_device', @on_input_device_changed
+    @set_enabled @input_device.is_active()
+    
     @room = view.get_by_dom '.createroom'
     @room.on 'status:changed', @on_room_status_changed
 
+
+    if @room.current_status?
+      @check_room_status()
+
+
     @timer = @dom.find '.right_part'
     # log "[ButtonWithTimer]", @timer.length
+
+  check_room_status: ->
 
   on_room_status_changed: ( data ) =>
     log "[ButtonWithTimer] on_room_status_changed", data
@@ -69,10 +79,13 @@ module.exports = class ButtonWithTimer extends RoomView
 
   set_active: ( active ) ->
 
+    log "[DDD] set_active", active, @type, "enabled", @enabled, "active", @active
     return if not @enabled
 
     # log "[Record] set_active", active
     return if active is @active
+
+
     @waiting = false
     @active  = active
 

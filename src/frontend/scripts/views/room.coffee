@@ -17,6 +17,7 @@ module.exports = class Room extends LoggedView
   publish_modal: null
   exit_modal: null
   sidebar_right: null
+  current_status: null
 
 
   constructor: ( @dom ) ->
@@ -128,13 +129,14 @@ module.exports = class Room extends LoggedView
       return @on_unlike_room      data if data.type is "unlike"
       return @on_message          data if data.type is "message"
       return @on_listener_removed data if data.type is "listener:removed"
+      return @on_status_changed   data if data.type is "status"
 
       if data.is_live? and data.is_live is false
+        log "[Room DEBUG] live stop. user check guest owner", user_controller.check_guest_owner()
         if not user_controller.check_guest_owner()
           @_on_live_stop()
 
       if data.type is "listener:added"
-        log "[DDD]", data, user_controller.is_me( data.user.id )
         unless user_controller.is_me data.user.id
           return @on_listener_added   data 
 
@@ -177,12 +179,22 @@ module.exports = class Room extends LoggedView
 
     @check_status()
 
+  on_status_changed: ( data ) =>
+    if data.is_live?
+      if data.is_live is true
+        @on_room_live()
+        @show_guest_popup()
+      else
+        @_on_live_stop()
+
+
 
   check_status: =>
     log "[Room] status:changed checking", @room_id
     L.rooms.info @room_id, (error, data) =>
       log "[Room] status:changed", data
       @emit 'status:changed', data
+      @current_status = data
 
   room_went_offline: =>
 
@@ -298,8 +310,9 @@ module.exports = class Room extends LoggedView
     navigation.set_lock_live false, ""
 
   _on_live_stop: ->
+    log "[Room] _on_live_stop"
+    notify.error 'Ops, something went wrong. The room is now offline.'
     @on_room_offline()
-    notify.guest_room_logged 'Ops, something went wrong. The room is now offline.'
     
   on_room_live: ->
     @dom.addClass 'room_live'

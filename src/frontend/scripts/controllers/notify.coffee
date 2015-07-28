@@ -11,7 +11,6 @@ style_html = (class_icon) ->
 
 
 $.notify.defaults
- #autoHide: false
   autoHideDelay: 10000
   clickToHide: false
   showAnimation: 'fadeIn'
