@@ -61,8 +61,6 @@ module.exports =
           status =
             is_live: false
             dropped: true
-            live: 
-              stopped_at: now().format()
 
           update = {}
 
@@ -71,6 +69,8 @@ module.exports =
           if room.status.is_live
 
             update['status.live.stopped_at'] = now().format()
+
+            status.live.stopped_at = update['status.live.stopped_at']
 
             started_at = now( room.status.live.started_at )
             stopped_at = now( update['status.live.stopped_at'] )
@@ -82,6 +82,8 @@ module.exports =
           if room.status.is_recording
 
             update['status.recording.stopped_at'] = now().format()
+
+            status.recording.stopped_at = update['status.recording.stopped_at']
 
             started_at = now( room.status.recording.started_at )
             stopped_at = now( update['status.recording.stopped_at'] )
