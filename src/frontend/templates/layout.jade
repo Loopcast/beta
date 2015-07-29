@@ -70,7 +70,8 @@ html
 		//- and in this case it's better to defined __gaq inline, so we avoid
 		//- this problem
 		script
-			| var _gaq = _gaq || [];
+			| var _gaq = [];
+
 		script( src="/js/google_analytics.js")
 
 		script( src="/socket.io/socket.io.js" )
