@@ -21,7 +21,7 @@ schema = new Schema
     listeners : type: Number, default: 0
 
 
-  socket_id    : { type: String, unique: true }
+  socket_id    : { type: String }
 
   created_at: Date
   updated_at: Date
