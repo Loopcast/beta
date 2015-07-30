@@ -101,7 +101,7 @@ module.exports =
 
           data =
             type  : "room:update"
-            room  : update
+            room  : payload
 
           sockets.send room_id, data
 
