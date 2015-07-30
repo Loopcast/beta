@@ -209,7 +209,8 @@ block content
 
                 .content
                   h2.session_title 
-                    a.room_url(href="#{room.url}", title="#{room.info.title}") #{room.info.title}
+                    //- a.room_url(href="#{room.url}", title="#{room.info.title}") #{room.info.title}
+                    | #{room.info.title}
                   p.session_author #{user.info.name}
                   .genres
                     for genre in room.info.genres
