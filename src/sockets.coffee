@@ -4,6 +4,8 @@
 # reference to socket.io
 io = null
 
+redis_client = null
+
 sockets = { stats: null, online: false }
 stats   = {}
 
@@ -143,7 +145,8 @@ sockets.shutdown = ( callback ) ->
 
   if not clients.length then return callback()
 
-
+  redis_client.end()
+  
   query   = in_chat  : $in    : clients
   update  = $pullAll : in_chat: clients
   options = multi    : true
@@ -152,6 +155,7 @@ sockets.shutdown = ( callback ) ->
     if error
       console.log "error removing users from room when server shutdown"
       console.log error
+
 
     callback()
 

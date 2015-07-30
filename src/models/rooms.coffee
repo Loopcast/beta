@@ -36,7 +36,12 @@ module.exports = ( page = 0, genres, search, callback ) ->
     respond()
 
   # ~ fetch rooms
-  fields  = null
+  fields  = 
+    user  : 1
+    info  : 1
+    status: 1
+    likes : 1
+
   options = 
     sort :
       'status.is_live': -1

@@ -22,7 +22,8 @@ extends layout
 
 block content
 
-  - if( !genres ) genres = []
+  - genres     = user.info.genres
+  - occupation = user.info.genres
 
   input#owner_id(type="hidden", value="#{user._id}")
 

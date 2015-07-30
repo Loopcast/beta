@@ -17,8 +17,11 @@ module.exports = class Record extends ButtonWithTimer
     return unless @is_room_owner
 
     if $('.room_recording' ).length > 0
+      @set_enabled true
       @set_active true
-    
+  
+  check_room_status: ->
+    @set_active @room.current_status.room.status.is_recording
   
   start: ->
     log "[Record] start"

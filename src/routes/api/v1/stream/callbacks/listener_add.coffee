@@ -45,12 +45,12 @@ module.exports =
             console.log "error finding room for listner_add"
             console.log error
 
-            return reply reply( ok: true ).header( "icecast-auth-user", "1" )
+            return reply( ok: true ).header( "icecast-auth-user", "1" )
 
           if not room
             console.log "room not found for user #{mount_point}"
 
-            return reply reply( ok: true ).header( "icecast-auth-user", "1" )
+            return reply( ok: true ).header( "icecast-auth-user", "1" )
 
           console.log "listened add for room_id #{room._id}"
       

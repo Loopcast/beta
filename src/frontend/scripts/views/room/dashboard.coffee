@@ -48,8 +48,8 @@ module.exports = class Dashboard extends RoomView
 
     @balloons = 
       appcast: view.get_by_dom( '#appcast_not_running_balloon' )
-      go_live: view.get_by_dom( '#go_live_balloon' )
       record: view.get_by_dom( '#record_balloon' )
+      live_instructions: view.get_by_dom( '#go_live_instructions' )
 
     @appcast_not_running_message = @dom.find '.appcast_not_running_message'
     @meter = view.get_by_dom @dom.find( '.meter_wrapper' )
@@ -63,7 +63,12 @@ module.exports = class Dashboard extends RoomView
 
     @appcast_not_running_message.on 'click', @toggle_not_running_balloon
     appcast.on 'connected', @on_appcast_connected
+    app.on 'appcast:input_device', @on_device_changed
 
+  on_device_changed: =>
+    log "[Dashboard] on_device_changed", app.session.get( 'hide:help' )
+    if not app.session.get( 'hide:help' )
+      @balloons.live_instructions.show()
 
   toggle_not_running_balloon: =>
     @balloons.appcast.toggle()
@@ -119,6 +124,7 @@ module.exports = class Dashboard extends RoomView
     @publish_modal = null
     @room_view = null
     if @is_room_owner
+
       for item of @balloons
         view.destroy_view @balloons[ item ]
       if @appcast_not_running_message.length > 0 
@@ -132,6 +138,8 @@ module.exports = class Dashboard extends RoomView
         @record_button.off 'changed', @on_record_changed
 
       appcast.off 'connected', @on_appcast_connected
+
+      app.off 'appcast:input_device', @on_device_changed
 
 
 

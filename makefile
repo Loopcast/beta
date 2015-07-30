@@ -55,3 +55,5 @@ logs_staging:
 
 logs_staging_web:
 	heroku logs --app staging-loopcast-fm --ps web
+
+	

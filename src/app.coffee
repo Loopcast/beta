@@ -54,27 +54,22 @@ process.on 'uncaughtException', ( exception ) ->
   console.log "production never goes down!"
   console.log exception
 
-# gracefully shutdown with nodemon
-process.once 'SIGUSR2', ->
+shutdown = ( signal ) ->
+  ->
 
-  console.log "SIGUSR2 - SIGNAL"
+    console.log "-- SIGNAL: #{signal}"
+    
+    # stop the https server
+    server.hapi.stop { timeout: 5 * 1000}, ->
   
-  # stop the https server
-  server.hapi.stop { timeout: 5 * 1000}, ->
-    # shutdown sockets gracefully
-    sockets.shutdown -> 
-      # kill the process!
-      process.kill process.pid, 'SIGUSR2'
+      # shutdown sockets gracefully
+      sockets.shutdown -> 
+        if signal is 'SIGTERM'
+          return process.exit 0
 
+        # kill the process!
+        process.kill process.pid, signal
 
-# gracefully shutdown with SIGTERM
-process.once 'SIGTERM', ->
-
-  console.log "SIGTERM - SIGNAL"
-
-  # stop the https server
-  server.hapi.stop { timeout: 5 * 1000}, ->
-    # shutdown sockets gracefully
-    sockets.shutdown -> 
-      # kill the process!
-      process.exit 0
+# gracefully shutdown with nodemon
+process.once 'SIGUSR2', shutdown( 'SIGUSR2' )
+process.once 'SIGTERM', shutdown( 'SIGTERM' )
