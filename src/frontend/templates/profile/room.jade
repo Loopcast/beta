@@ -155,6 +155,10 @@ block content
 
       script
         //- THIS IS JUST FOR DEBUGGIN. TO BE REMOVED
+        if room && room.status.is_recorded
+          | location.href = '/'
+
+
         if room
           | var room_info = !{JSON.stringify(room)};;
           | console.log( 'room_info', room_info )
