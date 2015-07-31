@@ -17,7 +17,9 @@ module.exports =
 
       mount_point = req.params.mount_point
 
+      console.log "-- CALLBACK MOUNT REMOVE"
       console.log "Just lost connection from #{mount_point}"
+      console.log "---"
 
       query = 
         $or      : [
