@@ -99,6 +99,11 @@ module.exports =
           if payload.is_public
             update[ 'status.is_public' ] = payload.is_public
 
+          data =
+            type  : "room:update"
+            room  : payload
+
+          sockets.send room_id, data
 
           Room.update( _id: room_id, update )
             .lean()
