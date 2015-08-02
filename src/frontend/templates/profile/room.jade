@@ -49,6 +49,7 @@ block seo
 block content
 
   if !user && !room.user
+    - alert( "unexepecte error, no user here")
     div(data-view="components/redirect_hp")
   else
 
@@ -155,8 +156,8 @@ block content
 
       script
         //- THIS IS JUST FOR DEBUGGIN. TO BE REMOVED
-        if room && room.status.is_recorded
-          | location.href = '/'
+        //- if room && room.status.is_recorded
+        //-   | location.href = '/'
 
 
         if room
