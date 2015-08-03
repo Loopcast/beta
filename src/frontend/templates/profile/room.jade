@@ -155,7 +155,7 @@ block content
 
       script
         //- THIS IS JUST FOR DEBUGGIN. TO BE REMOVED
-        if room && room.status.is_recorded
+        if room && room.status.is_recorded && !room.status.is_live
           | location.href = '/'
 
 
