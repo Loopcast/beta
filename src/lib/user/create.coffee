@@ -1,4 +1,4 @@
-User = schema 'user'
+renotify = lib 'renotifier/import'
 
 module.exports = ( user, callback ) ->
 
@@ -27,6 +27,14 @@ module.exports = ( user, callback ) ->
       # last_seen_user_agent: request.headers[ 'user-agent' ]
       custom_attributes :
         username   : user.info.username
+
+
+    # import user to renotifier
+
+    if user.data.facebook?.id
+      renotify user.data.facebook?.id
+
+    # intercom business
 
     if user.data.facebook?.id
       data.custom_attributes.facebook_id = user.data.facebook.id
