@@ -28,7 +28,7 @@ appcast.connect = ->
   if not WebSocket
     return console.info '+ socket controller wont connect'
 
-  messages_socket = 'ws://localhost:51234/loopcast/messages'
+  messages_socket = 'ws://127.0.0.1:51234/loopcast/messages'
 
   appcast.messages = new v.ReconnectingWebsocket messages_socket
 
@@ -73,7 +73,7 @@ appcast.connect = ->
 
 
 
-  vu_socket = 'ws://localhost:51234/loopcast/vu'
+  vu_socket = 'ws://127.0.0.1:51234/loopcast/vu'
   appcast.vu = new v.ReconnectingWebsocket vu_socket
 
   appcast.vu.onopen = ->
