@@ -331,7 +331,10 @@ module.exports = class Room extends LoggedView
   show_guest_popup: ->
 
     if app.settings.theme isnt 'mobile'
-      message = 'You are now listening live on Loopcast'
+      if user_controller.check_guest_owner()
+        message = 'You are now live!'
+      else
+        message = 'You are now listening live on Loopcast'
       if user_controller.is_logged()
         notify.guest_room_logged message
       else
