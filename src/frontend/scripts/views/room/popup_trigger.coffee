@@ -13,12 +13,14 @@ module.exports = class PopupTrigger
       avatar: document.getElementById( 'owner_avatar' ).value
       id: document.getElementById( 'owner_id' ).value
       name: document.getElementById( 'owner_name' ).value
+      username: document.getElementById( 'owner_username' ).value
+      
       likes: document.getElementById( 'owner_followers' ).value
       occupation:[document.getElementById( 'owner_occupation' ).value]
 
     
     @data.images = transform.all @data.avatar
-    @data.url = "/" + @data.id
+    @data.url = "/" + @data.username
 
     @dom.on 'mouseover', @_on_people_over
     @dom.on 'mouseout', @_on_people_out
