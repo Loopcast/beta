@@ -63,7 +63,6 @@ module.exports = class Share
       text = "Press CMD + C to copy the link"
     else
       text = "Press Ctrl + C to copy the link"
-    alert text
     return false
 
 

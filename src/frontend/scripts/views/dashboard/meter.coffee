@@ -140,8 +140,6 @@ module.exports = class Meter extends RoomView
     return index
 
   destroy: ->
-    alert 'destroy!!!'
-
     appcast.disconnect()
 
     if @is_room_owner
