@@ -12,6 +12,10 @@ delete_images = lib 'cloudinary/delete'
 update_intercom = lib 'intercom/update'
 update_rooms    = lib 'rooms/update_username'
 
+find_by   = find 'users/by'
+
+update_session = lib 'user/update_session'
+
 module.exports =
   method : 'POST'
   path   : '/api/v1/user/edit'
@@ -61,8 +65,12 @@ module.exports =
 
             return reply Boom.badData 'error updating user information from mongodb'
 
-          # expose all updated data
-          reply user_data
+          find_by _id: user._id, ( error, user ) ->
+
+            update_session( request, user )
+
+            # expose all updated data
+            reply user_data
 
         if user_data['info.username']
 
