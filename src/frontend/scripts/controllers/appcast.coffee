@@ -25,10 +25,15 @@ appcast.set 'stream:vu', 0
 # connects to AppCast's WebSocket server and listen for messages
 appcast.connect = ->
   return if not app.settings.use_appcast
+
+  if appcast.get 'connected'
+    console.error 'Appcast already connected'
+    return
+
   if not WebSocket
     return console.info '+ socket controller wont connect'
 
-  messages_socket = 'ws://localhost:51234/loopcast/messages'
+  messages_socket = 'ws://127.0.0.1:51234/loopcast/messages'
 
   appcast.messages = new v.ReconnectingWebsocket messages_socket
 
@@ -42,10 +47,11 @@ appcast.connect = ->
     appcast.messages.send JSON.stringify [ 'version' ]
 
   appcast.messages.onclose = ->
-    console.info '- AppCast CLOSED, will retry to connect'
+    console.info '- AppCast CLOSED'
 
-    appcast.set 'stream:vu', 0
-    appcast.set 'connected', false
+    delay 100, ->
+      appcast.set 'stream:vu', [ 0, 0 ]
+      appcast.set 'connected', false
 
 
   # route incoming messages to appcast.callbacks hash
@@ -73,7 +79,7 @@ appcast.connect = ->
 
 
 
-  vu_socket = 'ws://localhost:51234/loopcast/vu'
+  vu_socket = 'ws://127.0.0.1:51234/loopcast/vu'
   appcast.vu = new v.ReconnectingWebsocket vu_socket
 
   appcast.vu.onopen = ->
@@ -98,9 +104,17 @@ appcast.connect = ->
 
       # db = Math.log10( buffer ) * 20
 
+      # dont forward VU if not connected
+      if not appcast.get( 'connected' ) then return
+
       appcast.set 'stream:vu', buffer  
 
     reader.readAsArrayBuffer e.data
+
+appcast.disconnect = ->
+
+  appcast.messages.close()
+  appcast.vu.close()
 
 appcast.get_devices = ->
 

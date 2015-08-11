@@ -274,7 +274,7 @@ module.exports = class Player
 
     return if not @audio.data.is_recorded
     x = e.offsetX
-    w = @progress_parent.width()
+    w = $(e.currentTarget).width()
     perc = x / w
 
     @dom.addClass 'loading'

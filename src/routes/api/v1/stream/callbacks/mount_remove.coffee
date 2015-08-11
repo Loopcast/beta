@@ -17,7 +17,9 @@ module.exports =
 
       mount_point = req.params.mount_point
 
+      console.log "-- CALLBACK MOUNT REMOVE"
       console.log "Just lost connection from #{mount_point}"
+      console.log "---"
 
       query = 
         $or      : [
@@ -70,7 +72,8 @@ module.exports =
 
             update['status.live.stopped_at'] = now().format()
 
-            status.live.stopped_at = update['status.live.stopped_at']
+            status.live = 
+              stopped_at : update['status.live.stopped_at']
 
             started_at = now( room.status.live.started_at )
             stopped_at = now( update['status.live.stopped_at'] )
@@ -83,7 +86,8 @@ module.exports =
 
             update['status.recording.stopped_at'] = now().format()
 
-            status.recording.stopped_at = update['status.recording.stopped_at']
+            status.recording = 
+              stopped_at : update['status.recording.stopped_at']
 
             started_at = now( room.status.recording.started_at )
             stopped_at = now( update['status.recording.stopped_at'] )

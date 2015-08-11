@@ -1,4 +1,7 @@
 find_by   = find 'users/by'
+
+update_session = lib 'user/update_session'
+
 create    = lib 'user/create'
 transform = models 'transforms/google_to_user'
 
@@ -10,7 +13,7 @@ module.exports =
         strategy: 'google'
         mode    : 'try'
 
-    handler: (request, reply) ->
+    handler: ( request, reply) ->
 
       if !request.auth.isAuthenticated
 
@@ -63,16 +66,9 @@ module.exports =
 
       data.on 'user', ( user ) ->
 
-        # NOTE: might not be good idea to save user_id on the session
-        # let's not print this on the source code, so user can never
-        # figure out other user database _id !
-        user.info._id        = user._id
-        user.info.created_at = user.created_at
-        user.info.email      = user.data.email
-
         # true only when the user didnt exist
         user.info.first_time = data.get( 'not_found' )
-
-        request.auth.session.set user: user.info
+  
+        update_session( request, user )
 
         return reply.redirect '/login/successful'

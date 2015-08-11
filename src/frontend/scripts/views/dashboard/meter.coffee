@@ -140,6 +140,10 @@ module.exports = class Meter extends RoomView
     return index
 
   destroy: ->
+    alert 'destroy!!!'
+
+    appcast.disconnect()
+
     if @is_room_owner
       app.off 'appcast:input_device', @on_input_device_changed
       appcast.off 'stream:vu', @set_volume

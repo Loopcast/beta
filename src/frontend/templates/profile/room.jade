@@ -10,14 +10,17 @@ block seo
 
     meta( name="description" content="Stream, record and save your DJ mixes instantly. Go live, interact with your audience and see who’s listening in real time." ) 
 
-    - og_image = room.info.cover_url || "images/thumbnail.png"
-
     - about = room.user.info.about   || user.info.about
 
     meta( property="og:title"       content="#{room.info.title} | #{room.user.info.name}" )
     //- meta( property="og:type"        content="music.radio_station" )
+
     meta( property="og:type"        content="music.song" )
-    meta( property="og:image"       content="#{s.base_path}/#{og_image}" )
+
+    - og_image = room.info.cover_url || user.info.avatar
+    if og_image
+      meta( property="og:image"       content="#{og_image}" )
+
     meta( property="og:url"         content="#{s.base_path}/#{room.user.info.username}/#{room.info.slug}" )
     //- meta( property="og:url"         content="https://rekorded-beta.s3.amazonaws.com/558ad1093e8a580300f6fcc2_2015-06-29_16-00.mp3" )
       
@@ -56,6 +59,7 @@ block content
     input(type='hidden' id='owner_id' value="#{user._id}")
     input(type='hidden' id='owner_avatar' value="#{user.info.avatar}")
     input(type='hidden' id='owner_name' value="#{user.info.name}")
+    input(type='hidden' id='owner_username' value="#{user.info.username}")
     input(type='hidden' id='owner_followers' value="0")
     input(type='hidden' id='owner_occupation' value="#{user.info.occupation[0]}")
 
@@ -154,15 +158,20 @@ block content
 
         include ../modals/confirm_exit_modal.jade
 
-      script
-        //- THIS IS JUST FOR DEBUGGIN. TO BE REMOVED
-        //- if room && room.status.is_recorded
-        //-   | location.href = '/'
+//-       script
+//-         //- THIS IS JUST FOR DEBUGGIN. TO BE REMOVED
+//- <<<<<<< HEAD
+//-         //- if room && room.status.is_recorded
+//-         //-   | location.href = '/'
+//- =======
+//-         if room && room.status.is_recorded && !room.status.is_live
+//-           | location.href = '/'
+//- >>>>>>> 720f2ed8de14b156d680185cb407cd353e30d721
 
 
-        if room
-          | var room_info = !{JSON.stringify(room)};;
-          | console.log( 'room_info', room_info )
-        if user
-          | var user = !{JSON.stringify(user)};;
-          | console.log( 'user_info', user )
+//-         if room
+//-           | var room_info = !{JSON.stringify(room)};;
+//-           | console.log( 'room_info', room_info )
+//-         if user
+//-           | var user = !{JSON.stringify(user)};;
+//-           | console.log( 'user_info', user )
