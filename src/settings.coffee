@@ -55,7 +55,11 @@ s.default =
 s.renotifier =
   api:
     token: "e417420cd8847badbbb30e64605109522b8c060c"
-    url: "https://renotifier.com/api/import"
+    url  : "https://renotifier.com/api/import"
+
+s.mandrill =
+  api:
+    key: "xDyJJ0aZZBP6DKCTG_oesw"
 
 # PRODUCTION / STAGING reading from environment variables
 if not s.is_local

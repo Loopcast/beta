@@ -48,6 +48,9 @@ client.auth s.redis.password
 
 global.redis = client
 
+
+global.mandrill = require('node-mandrill')( s.mandrill.api.key );
+
 # path shortcuts
 
 path  = require 'path'
