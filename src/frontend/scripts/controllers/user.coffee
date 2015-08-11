@@ -78,7 +78,7 @@ class UserController
     @write_to_session()
 
 
-    notify.info "You've successufully logged in."
+    notify.info "You've successfully logged in."
 
   ###
   Called from the outside, when the user logs out
@@ -99,7 +99,7 @@ class UserController
       @_dispatch_logout()
 
       if not disable_notify
-        notify.info "You've successufully logged out."
+        notify.info "You've successfully logged out."
 
       callback?()
 

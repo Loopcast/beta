@@ -21,7 +21,7 @@ header.header.for_desktop(data-view="header")
         title="Log In", 
         data-view="components/login_popup_handler",
         href="#"
-      ) Log In
+      ) Log in / Sign up 
       div.settings.hover_dropdown_trigger(title="Settings" data-view="[components/click_trigger,components/settings]" data-target=".settings_dropdown")
         span.icon.ss-settings
         //- span.spritesheet.header_settings
@@ -52,6 +52,8 @@ header.header.for_desktop(data-view="header")
 .for_mobile.more_menu.mobile_dropdown(data-view="components/mobile/more_menu")
   .for_unlogged_users
     a(href="#", title="Login", data-view="components/login_popup_handler") Login
+    a(href="/about" title="About") About
+    a(href="http://loopcast.uservoice.com" target="_blank" title="Feedback") Feedback
   .for_logged_users
     a.profile_link(href="#" title="") My Profile
     a(href="#" title="About") About
