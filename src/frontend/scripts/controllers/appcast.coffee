@@ -113,8 +113,6 @@ appcast.connect = ->
 
 appcast.disconnect = ->
 
-  alert 'disconnecting'
-
   appcast.messages.close()
   appcast.vu.close()
 
