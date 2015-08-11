@@ -10,14 +10,16 @@ block seo
 
     meta( name="description" content="Stream, record and save your DJ mixes instantly. Go live, interact with your audience and see who’s listening in real time." ) 
 
-    - og_image = room.info.cover_url || "images/thumbnail.png"
-
     - about = room.user.info.about   || user.info.about
 
     meta( property="og:title"       content="#{room.info.title} | #{room.user.info.name}" )
     //- meta( property="og:type"        content="music.radio_station" )
+
+    - og_image = room.info.cover_url || user.info.avatar || ""
     meta( property="og:type"        content="music.song" )
-    meta( property="og:image"       content="#{s.base_path}/#{og_image}" )
+    if og_image
+      meta( property="og:image"       content="#{s.base_path}/#{og_image}" )
+
     meta( property="og:url"         content="#{s.base_path}/#{room.user.info.username}/#{room.info.slug}" )
     //- meta( property="og:url"         content="https://rekorded-beta.s3.amazonaws.com/558ad1093e8a580300f6fcc2_2015-06-29_16-00.mp3" )
       
