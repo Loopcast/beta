@@ -1,0 +1,39 @@
+doctype html
+html.oldie
+  head
+    meta( charset='utf-8' )
+    meta( http-equiv='X-UA-Compatible', content='IE=edge' )
+    meta( name='viewport', content='width=device-width, initial-scale=1.0' )
+    meta( property="og:image" content="#{s.base_path}/images/thumbnail.png")
+    link( rel="icon", href="/favicon.ico" )
+
+    title Update your browser to use Loopcast
+    meta( name="description" content="Loopcast Description" ) 
+
+  
+    link( href='//fonts.googleapis.com/css?family=Open+Sans:300,400,700,600', rel='stylesheet', type='text/css' )
+    link( href='/css/spritesheet.css', rel='stylesheet', type='text/css' )
+    link( href='/css/webfonts/ss-standard.css', rel='stylesheet', type='text/css' )
+    link( href='/css/app.css', rel='stylesheet', type='text/css' )
+
+    style.
+      #loading {display:block;position:absolute;top:0;left:0;background:#ececec;width:100%;height:100%;}
+      header{opacity:0;}
+
+
+  body.loading.not_logged
+
+    #content
+      .inner_content
+        h1 We could not find this page
+        p 
+          | Don't worry though, click 
+          a(href="/explore") EXPLORE
+
+        .links
+          a(href="https://www.mozilla.org/en-US/firefox/new/", title="Download latest Firefox", target="_blank")
+            img(src="/images/browser_firefox.jpg")
+          a(href="https://www.google.com/chrome/browser/desktop/", title="Download latest Chrome", target="_blank")
+            img(src="/images/browser_chrome.jpg")
+          a(href="https://support.apple.com/downloads/", title="Download latest Safari", target="_blank")
+            img(src="/images/browser_safari.jpg")
