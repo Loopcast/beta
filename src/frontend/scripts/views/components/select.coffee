@@ -32,3 +32,7 @@ module.exports = class Select
       @handler.html @first_value
 
     @emit 'changed', @select.val()
+
+  destroy: ->
+    @select.off 'change', @set_value
+    @first_value = null

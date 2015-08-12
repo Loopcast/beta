@@ -36,6 +36,7 @@ module.exports = class ButtonWithTimer extends RoomView
 
     @input_device = view.get_by_dom '.dashboard_bar .input_select'
     app.on 'appcast:input_device', @on_input_device_changed
+    log "[ButtonWithTimer] checking input device active", @input_device.is_active()
     @set_enabled @input_device.is_active()
     
     @room = view.get_by_dom '.createroom'
@@ -71,6 +72,7 @@ module.exports = class ButtonWithTimer extends RoomView
   set_enabled: ( enabled ) ->
     @enabled = enabled
 
+    log "[ButtonWithTimer]", @type, enabled
     if @enabled
       @dom.removeClass( 'disabled' ).addClass( 'enabled' )
     else
@@ -125,8 +127,9 @@ module.exports = class ButtonWithTimer extends RoomView
     @timer.html time.str
 
   destroy: ->
+    log "[ButtonWithTimer] destroy", @is_room_owner
     if @is_room_owner
       app.off 'appcast:input_device', @on_input_device_changed
-      @room.off 'status:changed', @on_room_status_changed
+      @room?.off? 'status:changed', @on_room_status_changed
 
 

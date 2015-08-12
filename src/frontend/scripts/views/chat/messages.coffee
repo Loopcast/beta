@@ -116,3 +116,9 @@ module.exports = class Messages extends ChatView
 
     # scroll to the bottom
     @chat.scrollTop @chat[0].scrollHeight
+
+  destroy: ->
+    if @room_created
+      app.window.off "blur", @on_window_exit
+      app.window.off "focus", @on_window_enter
+    super()

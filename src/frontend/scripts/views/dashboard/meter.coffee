@@ -25,7 +25,7 @@ module.exports = class Meter extends RoomView
     
     super @dom
 
-    # @debug = $ '#debug'
+    @debug = $ '#debug'
 
     @size_block = 1 / @values.length
 
@@ -85,7 +85,7 @@ module.exports = class Meter extends RoomView
 
   set_volume: ( perc ) =>
     return if @disabled
-    # @debug.html perc[ 0 ] + "<br/>" + perc[ 1 ]
+    @debug.html perc[ 0 ] + "<br/>" + perc[ 1 ]
     @set_channel 'left', perc[0]
     @set_channel 'right', perc[1]  
 
@@ -140,8 +140,8 @@ module.exports = class Meter extends RoomView
     return index
 
   destroy: ->
-    appcast.disconnect()
 
     if @is_room_owner
       app.off 'appcast:input_device', @on_input_device_changed
       appcast.off 'stream:vu', @set_volume
+    appcast.disconnect()
