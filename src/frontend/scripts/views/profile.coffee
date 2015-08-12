@@ -262,6 +262,8 @@ module.exports = class Profile extends LoggedView
 	destroy: ->
 		super()
 
+		app.body.removeClass 'write_mode'
+		
 		if @modal
 			view.destroy_view @modal
 			
