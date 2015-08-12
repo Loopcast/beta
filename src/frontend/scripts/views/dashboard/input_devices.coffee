@@ -18,6 +18,7 @@ module.exports = class InputDevices extends Select
     appcast.on 'input_devices', @on_get_input_devices
     @on 'changed', @on_change
     log "[device] current_device", @current_device
+    @first_time = on
 
   on_mouse_enter: -> 
     appcast.get_devices()
