@@ -3,7 +3,7 @@
 # rooms.jade template
 ###
 
-page_limit = 50
+page_limit = 250
 
 module.exports = ( page = 0, genres, search, callback ) ->
 
