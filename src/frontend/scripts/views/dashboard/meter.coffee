@@ -25,7 +25,7 @@ module.exports = class Meter extends RoomView
     
     super @dom
 
-    @debug = $ '#debug'
+    # @debug = $ '#debug'
 
     @size_block = 1 / @values.length
 
@@ -41,6 +41,7 @@ module.exports = class Meter extends RoomView
 
     @dom.find( '.blocks' ).append blocks_html
 
+    @blocks = []
     for item in @dom.find( '.block' )
       @blocks.push 
         'left': $( item ).find( '.left_channel' )
@@ -68,8 +69,16 @@ module.exports = class Meter extends RoomView
 
     delay 5000, => clearInterval @interval
 
+    @blocks = []
+
+    for item in @dom.find( '.block' )
+      @blocks.push 
+        'left': $( item ).find( '.left_channel' )
+        'right': $( item ).find( '.right_channel' )
+
     appcast.on 'stream:vu', @set_volume
     app.on 'appcast:input_device', @on_input_device_changed
+    @turn_on()
     # appcast.on 'stream:vu', @activate
 
 
@@ -85,7 +94,7 @@ module.exports = class Meter extends RoomView
 
   set_volume: ( perc ) =>
     return if @disabled
-    @debug.html perc[ 0 ] + "<br/>" + perc[ 1 ]
+    
     @set_channel 'left', perc[0]
     @set_channel 'right', perc[1]  
 
@@ -99,9 +108,11 @@ module.exports = class Meter extends RoomView
         @turn_on()
 
   turn_off : ->
+    log "[Meter] turn_off"
     @dom.addClass( 'no_sound' ).removeClass( 'with_sound' )
 
   turn_on : ->
+    log "[Meter] turn_on"
     @dom.removeClass( 'no_sound' ).addClass( 'with_sound' )
 
   
@@ -116,8 +127,13 @@ module.exports = class Meter extends RoomView
       value: fraction
       index: @get_the_block_index_from_value fraction
     
+    # if c is 'left'
+    #   @debug.html data.index + " - " + fraction
+
 
     return if data.index < 0
+
+
     # activate the lower blocks
     for index in [0..data.index]
       @blocks[ index ][ c ].addClass 'active'
