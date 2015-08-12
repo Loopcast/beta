@@ -101,7 +101,7 @@ module.exports = class Messages extends ChatView
         author: @owner_id is data._id
         username: data.username
 
-    if data.payload.like
+    if data.payload?.like
       obj.like = true
 
     html = @tmpl obj
