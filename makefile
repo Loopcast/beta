@@ -47,6 +47,12 @@ deploy_beta:
 	# https://git.heroku.com/beta-loopcast-fm.git
 	git push heroku development:master -f
 
+build_commit:
+	make release
+	git add public/js/app.js
+	git add public/css/app.css
+	git commit -m 'latest compiled frontend'
+
 logs_beta:
 	heroku logs --app beta-loopcast-fm
 
