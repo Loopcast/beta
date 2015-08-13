@@ -75,10 +75,11 @@ block grid
             for g in item.info.genres
               a.tag(href="?genres=#{g}", title="#{g}", data-genre-id="#{g}") #{g}
 
-          p.room_location
-            a(href="/explore?search=#{item.info.location}")
-              span.icon.ss-location
-              | #{item.info.location}
+          if item.info.location.length > 0
+            p.room_location
+              a(href="/explore?search=#{item.info.location}")
+                span.icon.ss-location
+                | #{item.info.location}
 
           if !item.status.is_live
             .likes 
