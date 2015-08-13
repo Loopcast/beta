@@ -28,7 +28,7 @@ win.obj.on 'resize', on_resize = ->
 delay 100, on_resize
 
 # global click event
-$( 'body' ).on 'click', -> win.emit "body:clicked"
+$( 'body' ).on 'click', (e) -> win.emit "body:clicked", e
 
 
 # scroll event
