@@ -1,10 +1,11 @@
 ###
 
-Load rooms data then render rooms layout
+succesfully logged users get redirect to this url.
+the url then renders a template using the user
+credentials
 
 ###
 
-load     = models 'people'
 template = lib 'render/template'
 
 module.exports =

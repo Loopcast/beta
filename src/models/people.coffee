@@ -35,8 +35,8 @@ module.exports = ( page = 0, genres, search, callback ) ->
   # ~ fetch users
   fields  = null
   options = 
-    # sort : 
-    #   'is_live': 1
+    sort : 
+      'info.occupation': -1
     #   '_id': -1
     
     limit: page_limit
