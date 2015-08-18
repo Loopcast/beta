@@ -29,7 +29,7 @@ module.exports =
 
         if not error then return reply response
 
-        profile url, data, ( error, response ) ->
+        profile url, request.auth.credentials, ( error, response ) ->
 
           if not error then return reply response
 

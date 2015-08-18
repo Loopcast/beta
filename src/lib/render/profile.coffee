@@ -1,11 +1,14 @@
 load     = models 'profile'
 template = lib 'render/template'
 
-module.exports = ( url, data, callback ) ->
+module.exports = ( username, credentials, callback ) ->
 
-    if url.substr( 0, 1 ) is '/' then url = url.substr 1
+    # remove flash if it's first or last character
+    username = username.replace( /^\/|\/$/g, '' )
 
-    load url, ( error, data ) ->
+    show_private = credentials?.user.username == username
+
+    load username, show_private, ( error, data ) ->
 
       if error then return callback error
 
