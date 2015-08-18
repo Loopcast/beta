@@ -108,6 +108,8 @@ global.failed = ( request, reply, error, data, skip_report ) ->
   console.log "some error happened and we failed : ("
   console.log error
 
+  if reply then reply Boom.error error
+
 
 # Application Globals
 
