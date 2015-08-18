@@ -5,6 +5,7 @@ extract_id   = lib 'cloudinary/extract_id'
 delete_image = lib 'cloudinary/delete'
 delete_file  = lib 's3/delete'
 
+delete_likes = lib 'rooms/delete_likes'
 
 module.exports =
   method : 'DELETE'
@@ -69,6 +70,12 @@ module.exports =
                 console.log "error deleting from s3!!"
                 console.log error
                 return
+
+          delete_likes room_id, ( error ) ->
+
+            if error
+              console.log 'failed to delete likes for room #{id}'
+              console.log error
 
           Room.remove _id: room_id, ( error ) ->
 
