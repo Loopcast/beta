@@ -62,13 +62,15 @@ module.exports =
 
           status =
             is_live: false
-            dropped: true
 
           update = {}
 
-          update[ 'status.dropped' ] = true
 
           if room.status.is_live
+
+            # if room still live, then it was dropped
+            update[ 'status.dropped' ] = true
+
 
             update['status.live.stopped_at'] = now().format()
 
