@@ -105,10 +105,8 @@ global.failed = ( request, reply, error, data, skip_report ) ->
     console.error "error is null or not defined"
     return
 
-  console.log "some error happened and we failed : ("
+  console.log "-failed"
   console.log error
-
-  if reply then reply Boom.error error
 
 
 # Application Globals

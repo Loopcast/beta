@@ -67,21 +67,22 @@ module.exports =
             delete_file room.status.recording.s3.key, ( error, callback ) ->
 
               if error
-                console.log "error deleting from s3!!"
-                console.log error
+                console.error "error deleting from s3!!"
+                console.error error
                 return
 
           delete_likes room_id, ( error ) ->
 
             if error
-              console.log 'failed to delete likes for room #{id}'
-              console.log error
+              console.error '-failed to delete likes for room #{id}'
+              console.error error
 
           Room.remove _id: room_id, ( error ) ->
 
             if error
 
-              failed req, reply, error
+              console.error '-failed to delete room #{id}'
+              console.error error
 
               return reply Boom.preconditionFailed( "Error deleting document" )
 
