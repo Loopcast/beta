@@ -15,12 +15,10 @@ module.exports = ( facebook_id, callback ) ->
 
   request.post data, ( error, response, body ) ->
 
-    console.log "got response!"
-    console.log '-> ', response.statusCode
-
-    if error
+    if error or response.statusCode != 201
 
       console.log "error importing user to renotifier"
+      console.log "statusCode: #{response.statusCode}"
       console.log '---'
       console.log body
       console.log '---'
@@ -33,11 +31,6 @@ module.exports = ( facebook_id, callback ) ->
       console.log body
       console.log '---'
 
-      callback null
-
-    # JSON from tape server
-    # body = JSON.parse body
-
-    # console.log 'response from renotifier ->', body
+      callback? null
 
   null
