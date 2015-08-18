@@ -18,8 +18,7 @@ module.exports =
       mount_point = req.params.mount_point
       method_name = req.payload.method_name
 
-      console.log "ip      : #{req.payload.ip}"
-      console.log "payload : ", req.payload
+      console.log "listener_remove : #{mount_point}, ip: #{req.payload.ip}"
 
       if s.tape.ips.indexOf( req.payload.ip ) isnt -1
 
