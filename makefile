@@ -47,6 +47,13 @@ deploy_beta:
 	# https://git.heroku.com/beta-loopcast-fm.git
 	git push heroku development:master -f
 
+deploy_beta_latest:
+	git stash
+	git pull origin development
+	make build_commit
+	make deploy_beta
+	git stash apply
+
 build_commit:
 	make release
 	git add public/js/app.js
