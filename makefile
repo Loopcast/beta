@@ -50,8 +50,10 @@ deploy_beta:
 deploy_beta_latest:
 	git stash
 	git pull origin development
-	make build_commit
-	make deploy_beta
+	# ignore if build and commit doesnt happen properly
+	# because the stash apply has to happen anyway.
+	@make build_commit
+	@make deploy_beta
 	git stash apply
 
 build_commit:
