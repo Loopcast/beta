@@ -155,18 +155,28 @@ class UserController
       callback response
 
   follow: (user_id) ->
-    log "[User] follow", user_id
+    log "[User] follow", user_id, @data.following
     ref = @
     api.user.follow user_id, ( error, result ) ->
+
+      # Update the following map      
+      if ref.data.following[ user_id ]?
+        ref.data.following[ user_id ] = true
+
       log "[FollowButton] follow response", result
       ref.emit 'user:followed', user_id
       if error
         console.error 'error following #{@user_id}'
 
   unfollow: (user_id) ->
-    log "[User] unfollow", user_id
+    log "[User] unfollow", user_id, @data.following
     ref = @
     api.user.unfollow user_id, ( error, result ) ->
+      
+      # Update the following map      
+      if ref.data.following[ user_id ]?
+        ref.data.following[ user_id ] = false
+
       log "[FollowButton] unfollow response", result
       ref.emit 'user:unfollowed', user_id
       if error
