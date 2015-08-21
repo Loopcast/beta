@@ -55,7 +55,7 @@ class Navigation
 
     req.url = req.path.replace "/#", '' 
 
-    # log "[Navigation] URL CHANGED", req, @custom_class, @lock_live
+    log "[Navigation] URL CHANGED", req, @custom_class, @lock_live, @prev_url
 
     if not url_parser.is_internal_page req.url
       # log "NOT INTERNAL PAGE", req.url
@@ -197,6 +197,7 @@ class Navigation
   go_silent: ( url, title ) ->
     # log "[Navigation] go_silent method", url
     # @silent = true
+    @prev_url = url
     page.replace url, null, null, false
 
   main_refresh: ->
