@@ -23,6 +23,9 @@ module.exports = class SidebarRight extends RoomView
       stats.visits = Math.max 0, parseInt( stats.visits )
       stats.likes = Math.max 0, parseInt( stats.likes )
       stats.listeners = Math.max 0, parseInt( stats.listeners )
+      
+      # Starting from 0, as it will be increased automatically by the on_listener_added method
+      stats.listeners = 0
 
 
       ref.visits.html stats.visits
@@ -45,12 +48,15 @@ module.exports = class SidebarRight extends RoomView
 
   on_listener_added: ( data ) =>
     log "[SidebarRight] on_listener_added", @stats.listeners
-    c = ++@stats.listeners
+    @stats.listeners++
+    c = @stats.listeners
     c = Math.max 0, c
     @listeners.html c
 
   on_listener_removed: ( data ) =>
-    c = --@stats.listeners
+    log "[SidebarRight] on_listener_removed", @stats.listeners
+    @stats.listeners--
+    c = @stats.listeners
     c = Math.max 0, c
     @listeners.html c
     # log "[SidebarRight] on_listener_removed", @stats.listeners
