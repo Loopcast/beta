@@ -10,3 +10,9 @@ module.exports =
 
   line_breaks_to_br: ( str ) ->
     return str.replace(/(?:\r\n|\r|\n)/g, '<br />');
+
+  cut_text: ( str, max ) ->
+    if str.length > max - 3
+      return str.substring( 0, max - 3 ) + "..."
+    else
+      return str

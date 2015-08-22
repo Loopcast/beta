@@ -2,6 +2,7 @@ time_to_string = require 'app/utils/time/time_to_string'
 api = require 'api/loopcast/loopcast'
 transform = require 'lib/cloudinary/transform'
 notify          = require 'app/controllers/notify'
+string_utils = require 'app/utils/string'
 
 moment = require 'moment'
 
@@ -191,7 +192,8 @@ module.exports = class Player
       room_link = "/#{data.user.info.username}"
 
     @thumb.attr 'src', transform.player_thumb data.room.info.cover_url
-    @title.html data.room.info.title
+    title = string_utils.cut_text data.room.info.title, 36
+    @title.html title
     @author.html "By " + data.user.info.name
 
     @author.attr 'title', data.user.info.name
