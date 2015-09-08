@@ -71,10 +71,14 @@ module.exports = class GoLive extends ButtonWithTimer
         if error
           ref.on_error error, 'stop_stream'
 
+          window._gaq.push(['_trackEvent', 'AppCast Stop Streaming', 'Failed', '']);
+
           # LATER: CHECK IF USER IS OFFLINE AND WAIT FOR CONNECTION?
           return
 
         ref.set_active false
+
+        window._gaq.push(['_trackEvent', 'AppCast Stop Streaming', 'Successful', '']);
 
 
   # listens for appcast streaming status while streaming
@@ -103,6 +107,8 @@ module.exports = class GoLive extends ButtonWithTimer
       if error
         ref.on_error error
 
+        window._gaq.push(['_trackEvent', 'AppCast Start Streaming', 'Failed', '']);
+
         # LATER: CHECK IF USER IS OFFLINE AND WAIT FOR CONNECTION?
         return
 
@@ -111,6 +117,9 @@ module.exports = class GoLive extends ButtonWithTimer
       # TODO: fix this error being thrown
       # appcast.on while_streaming
       ref.set_active true
+
+
+      window._gaq.push(['_trackEvent', 'AppCast Start Streaming', 'Successful', '']);
 
 
   on_room_status_changed: ( data ) =>

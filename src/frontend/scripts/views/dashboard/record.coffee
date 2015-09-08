@@ -63,6 +63,12 @@ module.exports = class Record extends ButtonWithTimer
       if error
         notify.error "Error while stopping recording"
 
+        window._gaq.push(['_trackEvent', 'AppCast Stop Recording', 'Failed', '']);
+
+        return
+
+      window._gaq.push(['_trackEvent', 'AppCast Stop Recording', 'Successful', '']);
+      
       channel = pusher.subscribe "tape.#{ref.owner_id}"
 
       unbind_all = ->
@@ -90,11 +96,17 @@ module.exports = class Record extends ButtonWithTimer
 
     appcast.start_recording()
     L.rooms.start_recording @room_id, ( error, response ) ->
+      
       if error
         ref.on_error error
+
+        window._gaq.push(['_trackEvent', 'AppCast Start Recording', 'Failed', '']);
+
         return
 
       ref.set_active true
+
+      window._gaq.push(['_trackEvent', 'AppCast Start Recording', 'Successful', '']);
 
   destroy: ->
     if @is_room_owner
