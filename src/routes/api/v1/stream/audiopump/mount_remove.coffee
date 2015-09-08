@@ -20,7 +20,7 @@ module.exports =
       console.log req.payload
       console.log '- - -'
 
-      reply( ok: true ).header( "icecast-auth-user", "1" )
+      reply()
 
       return
 
