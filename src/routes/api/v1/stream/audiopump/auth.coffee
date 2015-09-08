@@ -6,7 +6,7 @@ update_metadata = lib 'icecast/update_metadata'
 
 module.exports =
   method: [ 'POST' ]
-  path   : '/api/v1/stream/callbacks/audiopump/auth'
+  path   : '/api/v1/stream/audiopump/auth'
 
   config:
 

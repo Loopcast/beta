@@ -1,6 +1,6 @@
 module.exports =
   method: [ 'GET' ]
-  path   : '/api/v1/stream/callbacks/audiopump/listener_remove'
+  path   : '/api/v1/stream/audiopump/listener_remove'
 
   config:
 

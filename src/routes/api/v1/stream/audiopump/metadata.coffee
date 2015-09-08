@@ -1,6 +1,6 @@
 module.exports =
   method: [ 'GET' ]
-  path   : '/api/v1/stream/callbacks/audiopump/metadata'
+  path   : '/api/v1/stream/audiopump/metadata'
 
   config:
 
