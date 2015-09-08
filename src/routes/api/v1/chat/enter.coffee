@@ -39,7 +39,7 @@ module.exports =
 
         # guests have to send their user information
         # this can lead to some "add use exploit"
-        socket_entered_room room_id, user
+        socket_entered_room room_id, user, true
 
         reply( sent: true ).header "Cache-Control", "no-cache, must-revalidate"
 

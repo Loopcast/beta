@@ -1,4 +1,4 @@
-module.exports = ( room_id, user ) ->
+module.exports = ( room_id, user, is_guest ) ->
 
   data = 
     type  : "listener:added"
@@ -12,5 +12,8 @@ module.exports = ( room_id, user ) ->
       avatar    : user.info.avatar
       followers : user.likes
       url       : "/" + user.info.username
+
+  if is_guest
+    delete data.user.url
 
   sockets.send room_id, data
