@@ -33,6 +33,8 @@ module.exports =
       if true
         # everybody is allowed! uhuuuu
 
+        return reply()
+        
         reply """{
     "response": {
         "statusCode": 200
