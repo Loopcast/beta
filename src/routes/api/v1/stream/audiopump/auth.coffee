@@ -32,4 +32,4 @@ module.exports =
       console.log '- - -'
       
 
-      reply( ok: true )
+      reply().header( "icecast-auth-user", "1" )
