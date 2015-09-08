@@ -108,6 +108,8 @@ module.exports =
 
           if request.payload.occupation
             data[ 'info.occupation'] = [].concat( request.payload.occupation )
+            # set some property like 'info.occupation_priority in order to
+            # order it on the explore page '
 
           if request.payload.genres?
             data[ 'info.genres'] = request.payload.genres
