@@ -1,11 +1,5 @@
-slug = require 'slug'
-Room = schema 'room'
-
-mongoose        = require 'mongoose'
-update_metadata = lib 'icecast/update_metadata'
-
 module.exports =
-  method: [ 'PUT' ]
+  method: [ 'GET' ]
   path   : '/api/v1/stream/callbacks/audiopump/listener_remove'
 
   config:
@@ -15,8 +9,19 @@ module.exports =
 
     handler: ( req, reply ) ->
 
-      console.log '- audiopump/listener_remove'
-      console.log req.payload
-      console.log '- - -'
+      path = req.payload.data.path.split( "/" )[1]
+      ip   = req.payload.data.requestHeaders.host
 
-      reply( ok: true ).header( "icecast-auth-user", "1" )
+      console.log '- audiopump/listener_remove'
+
+      console.log 'path: ', path
+      console.log 'ip  : ', ip
+
+      console.log '- - -'
+      console.log 'new header!'
+      console.log '- - -'
+      
+
+      reply()
+
+      return

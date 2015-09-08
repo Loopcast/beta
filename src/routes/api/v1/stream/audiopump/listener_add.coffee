@@ -1,11 +1,5 @@
-slug = require 'slug'
-Room = schema 'room'
-
-mongoose        = require 'mongoose'
-update_metadata = lib 'icecast/update_metadata'
-
 module.exports =
-  method: [ 'PUT' ]
+  method: [ 'GET' ]
   path   : '/api/v1/stream/callbacks/audiopump/listener_add'
 
   config:
@@ -16,25 +10,19 @@ module.exports =
     handler: ( req, reply ) ->
 
       path = req.payload.data.path.split( "/" )[1]
-
-      cred = req.payload.data.requestHeaders.authorization.split( " " )[1]
-      cred = new Buffer( pass, 'base64' ).toString( "ascii" )
-
-      user = cred.substr( 0, cred.indexOf( ":" ) )
-      pass = cred.substr( cred.indexOf( ":" ) + 1 )
+      ip   = req.payload.data.requestHeaders.host
 
       console.log '- audiopump/listener_add'
 
       console.log 'path: ', path
-      console.log 'user: ', user
-      console.log 'pass: ', pass
+      console.log 'ip  : ', ip
 
       console.log '- - -'
       console.log 'new header!'
       console.log '- - -'
       
 
-      reply().header( "icecast-auth-user", "1" )
+      reply()
 
       return
 

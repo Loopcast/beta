@@ -5,7 +5,7 @@ mongoose        = require 'mongoose'
 update_metadata = lib 'icecast/update_metadata'
 
 module.exports =
-  method: [ 'POST', 'GET' ]
+  method: [ 'PUT' ]
   path   : '/api/v1/stream/callbacks/audiopump/mount_add'
 
   config:

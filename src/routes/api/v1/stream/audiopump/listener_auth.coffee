@@ -1,11 +1,5 @@
-slug = require 'slug'
-Room = schema 'room'
-
-mongoose        = require 'mongoose'
-update_metadata = lib 'icecast/update_metadata'
-
 module.exports =
-  method: [ 'PUT' ]
+  method: [ 'GET' ]
   path   : '/api/v1/stream/callbacks/audiopump/listener_auth'
 
   config:
