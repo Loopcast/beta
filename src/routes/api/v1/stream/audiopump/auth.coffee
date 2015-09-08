@@ -34,4 +34,5 @@ module.exports =
       console.log '- - -'
       
 
-      reply().header( "icecast-auth-user", "1" )
+      # everybody is allowed! uhuuuu
+      reply response: statusCode: 200
