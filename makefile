@@ -63,12 +63,9 @@ build_commit:
 	git commit -m 'latest compiled frontend'
 
 logs_beta:
-	heroku logs --app beta-loopcast-fm
+	# heroku logs --app beta-loopcast-fm
+	heroku logs --app beta-loopcast-fm --ps web --tail
 
 logs_staging:
-	heroku logs --app staging-loopcast-fm
-
-logs_staging_web:
+	# heroku logs --app staging-loopcast-fm
 	heroku logs --app staging-loopcast-fm --ps web --tail
-
-	
