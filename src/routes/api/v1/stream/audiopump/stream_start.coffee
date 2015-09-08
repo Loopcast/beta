@@ -6,7 +6,7 @@ update_metadata = lib 'icecast/update_metadata'
 
 module.exports =
   method: [ 'PUT', 'POST', 'GET' ]
-  path   : '/api/v1/stream/audiopump/mount_add'
+  path   : '/api/v1/stream/audiopump/stream_start'
 
   config:
 
@@ -15,7 +15,7 @@ module.exports =
 
     handler: ( req, reply ) ->
 
-      console.log '- audiopump/mount_add'
+      console.log '- audiopump/stream_start'
       console.log req.payload
       console.log '- - -'
 
