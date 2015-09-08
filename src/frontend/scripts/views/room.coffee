@@ -206,7 +206,7 @@ module.exports = class Room extends LoggedView
   broadcast_enter: =>
     data = 
       room_id : @room_id
-      user: user_controller.get_info()
+      user    : user_controller.get_info()
 
     log "[Room] broadcast_enter", data
 

@@ -44,12 +44,12 @@ module.exports = class People extends ChatView
     # if user.is_logged()
     #   @send_listener_message()
 
-  send_listener_message:  ->
+  # send_listener_message:  ->
 
-    L.chat.enter @room_id, ( error, response ) ->
-      if error
-        console.error "[API] error. on_listener_added: ", error
-        return
+  #   L.chat.enter @room_id, ( error, response ) ->
+  #     if error
+  #       console.error "[API] error. on_listener_added: ", error
+  #       return
 
 
 
