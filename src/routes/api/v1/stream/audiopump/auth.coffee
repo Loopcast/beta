@@ -5,7 +5,7 @@ mongoose        = require 'mongoose'
 update_metadata = lib 'icecast/update_metadata'
 
 module.exports =
-  method: [ 'POST' ]
+  method: [ 'POST', 'GET' ]
   path   : '/api/v1/stream/audiopump/auth'
 
   config:
@@ -15,23 +15,23 @@ module.exports =
 
     handler: ( req, reply ) ->
 
-      path = req.payload.data.path.split( "/" )[1]
+      # path = req.payload.data.path.split( "/" )[1]
 
-      cred = req.payload.data.requestHeaders.authorization.split( " " )[1]
-      cred = new Buffer( cred, 'base64' ).toString( "ascii" )
+      # cred = req.payload.data.requestHeaders.authorization.split( " " )[1]
+      # cred = new Buffer( cred, 'base64' ).toString( "ascii" )
 
-      user = cred.substr( 0, cred.indexOf( ":" ) )
-      pass = cred.substr( cred.indexOf( ":" ) + 1 )
+      # user = cred.substr( 0, cred.indexOf( ":" ) )
+      # pass = cred.substr( cred.indexOf( ":" ) + 1 )
 
-      console.log '- audiopump/auth'
+      # console.log '- audiopump/auth'
 
-      console.log 'path: ', path
-      console.log 'user: ', user
-      console.log 'pass: ', pass
+      # console.log 'path: ', path
+      # console.log 'user: ', user
+      # console.log 'pass: ', pass
 
-      console.log '- - -'
-      console.log 'new header!'
-      console.log '- - -'
+      # console.log '- - -'
+      # console.log 'new header!'
+      # console.log '- - -'
       
 
       # authorized
