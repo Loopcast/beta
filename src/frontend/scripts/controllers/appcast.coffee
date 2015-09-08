@@ -128,18 +128,21 @@ appcast.start_stream = ( mount_point, device_name ) ->
   if appcast.get( "stream:online" )
     return console.error "stream is already online, cant start again"
 
-  password = "beta-radio-client"
-
-  payload = 
-    device_name : device_name
-    mount_point : mount_point
-    password    : password
-    server_port : 8000
-    
   if window.is_beta?
-    payload.server = 'radio.loopcast.fm'
+    payload = 
+      device_name : device_name
+      mount_point : mount_point
+      password    : password
+      server_port : 8000
+      server      : 'radio.loopcast.fm'
+    # payload.server = 'inbound-a.cdn.audiopump.co/loopcast/'
   else
-    payload.server = 'staging-radio.loopcast.fm'
+    payload = 
+      device_name : device_name
+      mount_point : "/loopcast-staging/#{mount_point}"
+      password    : "any"
+      server_port : 80
+      server      : 'inbound-a.cdn.audiopump.co'
 
   console.log 'stream with payload ->', payload
 
