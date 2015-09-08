@@ -34,5 +34,16 @@ module.exports =
       console.log '- - -'
       
 
-      # everybody is allowed! uhuuuu
-      reply response: statusCode: 200
+      # authorized
+      if true
+        # everybody is allowed! uhuuuu
+
+        reply response: statusCode: 200
+
+      else
+        reply:
+          response  :
+          statusCode: 401
+          headers   :
+            "WWW-Authenticate": "Basic realm=\"AudioPump Auth Test\""
+        body: "Not authorized!  Try reloading to log in again."
