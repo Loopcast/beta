@@ -69,6 +69,6 @@ logs_staging:
 	heroku logs --app staging-loopcast-fm
 
 logs_staging_web:
-	heroku logs --app staging-loopcast-fm --ps web
+	heroku logs --app staging-loopcast-fm --ps web --tail
 
 	
