@@ -15,12 +15,17 @@ module.exports =
 
     handler: ( req, reply ) ->
 
-      user = req.payload.data.path
-      pass = req.payload.data.requestHeaders.authorization.split( " " )[1]
-      pass = new Buffer( pass, 'base64' ).toString( "ascii" )
+      path = req.payload.data.path
+
+      cred = req.payload.data.requestHeaders.authorization.split( " " )[1]
+      cred = new Buffer( pass, 'base64' ).toString( "ascii" )
+
+      user = cred.substr( 0, cred.indexOf( ":" ) )
+      pass = cred.substr( cred.indexOf( ":" ) + 1 )
 
       console.log '- audiopump/auth'
 
+      console.log 'path: ', path
       console.log 'user: ', user
       console.log 'pass: ', pass
 
