@@ -15,7 +15,7 @@ module.exports =
 
     handler: ( req, reply ) ->
 
-      path = req.payload.data.path
+      path = req.payload.data.path.split( "/" )[1]
 
       cred = req.payload.data.requestHeaders.authorization.split( " " )[1]
       cred = new Buffer( pass, 'base64' ).toString( "ascii" )
