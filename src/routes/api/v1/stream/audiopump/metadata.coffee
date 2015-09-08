@@ -1,5 +1,5 @@
 module.exports =
-  method: [ 'GET' ]
+  method: [ 'PUT', 'POST', 'GET' ]
   path   : '/api/v1/stream/audiopump/metadata'
 
   config:
