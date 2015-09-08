@@ -23,16 +23,11 @@ module.exports =
       # user = cred.substr( 0, cred.indexOf( ":" ) )
       # pass = cred.substr( cred.indexOf( ":" ) + 1 )
 
-      # console.log '- audiopump/auth'
+      console.log '- audiopump/auth'
 
       # console.log 'path: ', path
       # console.log 'user: ', user
       # console.log 'pass: ', pass
-
-      # console.log '- - -'
-      # console.log 'new header!'
-      # console.log '- - -'
-      
 
       # authorized
       if true
