@@ -5,7 +5,7 @@ mongoose        = require 'mongoose'
 update_metadata = lib 'icecast/update_metadata'
 
 module.exports =
-  method: [ 'PUT' ]
+  method: [ 'PUT', 'POST' ]
   path   : '/api/v1/stream/callbacks/audiopump/auth'
 
   config:
