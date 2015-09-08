@@ -41,9 +41,9 @@ module.exports =
         reply response: statusCode: 200
 
       else
-        reply:
+        reply
           response  :
-          statusCode: 401
+            statusCode: 401
           headers   :
             "WWW-Authenticate": "Basic realm=\"AudioPump Auth Test\""
-        body: "Not authorized!  Try reloading to log in again."
+          body: "Not authorized!  Try reloading to log in again."
