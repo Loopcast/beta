@@ -15,8 +15,16 @@ module.exports =
 
     handler: ( req, reply ) ->
 
-      console.log '- audiopump/auth'
-      console.log req.payload
-      console.log '- - -'
+      user = req.payload.data.path
+      pass = req.payload.data.requestHeaders.authorization.split( " " )[1]
+      pass = new Buffer( pass, 'base64' ).toString( "ascii" )
 
-      reply( ok: true ).header( "icecast-auth-user", "1" )
+      console.log '- audiopump/auth'
+
+      console.log 'user: ', user
+      console.log 'pass: ', pass
+
+      console.log '- - -'
+      
+
+      reply( ok: true )
