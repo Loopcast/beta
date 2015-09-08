@@ -36,8 +36,8 @@ module.exports = ( page = 0, genres, search, callback ) ->
   fields  = null
   options = 
     sort : 
-      'is_live': 1
-      '_id': -1
+      'info.occupation': -1
+      # '_id': -1
     limit: page_limit
     skip : page_limit * page
 
