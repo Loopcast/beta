@@ -30,6 +30,8 @@ module.exports =
       console.log 'pass: ', pass
 
       console.log '- - -'
+      console.log 'new header!'
+      console.log '- - -'
       
 
       reply().header( "icecast-auth-user", "1" )
