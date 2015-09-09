@@ -55,6 +55,7 @@ module.exports = class Player
 
     @share = view.get_by_dom @dom.find( '.share_wrapper' )
     @audio = view.get_by_dom @dom.find( 'audio' )
+    @follow_popup = view.get_by_dom @dom.find '.follow_player_popup'
     @audio.on 'started', @on_audio_started
     @audio.on 'paused', @on_audio_stopped
     @audio.on 'ended', @on_audio_ended
@@ -233,6 +234,9 @@ module.exports = class Player
       @like_btn.addClass 'liked'
     else
       @like_btn.removeClass 'liked'
+
+    @follow_popup.hide()
+    delay 3000, => @follow_popup.show data
 
   on_audio_started: =>    
     log "[Player] on_audio_started"

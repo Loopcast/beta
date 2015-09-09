@@ -56,14 +56,14 @@ class View
 
 
 	bind: ( scope = 'body', tolog = false ) ->
-		# console.error "[views] Bindings views: #{scope}"
+		console.error "[views] Bindings views: #{scope}"
 		$( scope ).find( '[data-view]' ).each( ( index, item ) =>
 
 			$item = $ item
 
 			view_name = $item.data( 'view' )
 
-			# log "[views] binding", view_name
+			log "[views] binding", view_name
 
 			$item.removeAttr 'data-view'
 
