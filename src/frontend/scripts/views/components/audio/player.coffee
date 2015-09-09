@@ -185,6 +185,8 @@ module.exports = class Player
     @update_info @data
     @audio.set_data @get_audio_data( @data )
 
+    @reset_progress()
+    
   stop: ->
     @audio.pause()
 
