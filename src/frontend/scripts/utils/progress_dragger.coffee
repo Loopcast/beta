@@ -9,13 +9,18 @@ module.exports = class ProgressDragger
     app.window.obj.on evts.move, @on_mouse_move
     app.window.obj.on evts.up,   @on_mouse_up
 
+  get_x : ( e ) ->
+    if e.pageX
+      return e.pageX
+    return e.originalEvent.touches[0].pageX
+    
+
   on_mouse_down: ( e ) =>
     
-    log "e", e
     @dom = $ e.currentTarget
     @x_dom = @dom.offset().left
     @size = @dom.width()
-    @x_start = e.pageX
+    @x_start = @get_x e
     @dragging = true
 
     @emit 'drag:started'
@@ -24,7 +29,7 @@ module.exports = class ProgressDragger
 
   on_mouse_move: ( e ) =>
     return if not @dragging
-    x = e.pageX
+    x = @get_x e
     total = x - @x_dom
     @perc = Math.min( 100, Math.max( 0,  100 * total / @size ) )
     
