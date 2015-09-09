@@ -6,7 +6,7 @@ module.exports = class Description extends EditableText
   constructor: (@dom) ->
     super @dom  
 
-    @t = @dom.find '.text'
+    @text_el = @dom.find '.text'
 
     @parent = @dom.parent()
     @wrapper = @parent.parent()
@@ -61,7 +61,7 @@ module.exports = class Description extends EditableText
 
   check_length: =>
     delay 1, =>
-      l = @t.html().length 
+      l = @text_el.html().length 
       # log "[Description] check_length", l, @max_length
       if l > @max_length
         # log "[Description] check_length", l, @max_length, "VISIBLE"
