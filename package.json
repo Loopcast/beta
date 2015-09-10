@@ -42,7 +42,7 @@
     "live-spritesheet": "0.0.2",
     "polvo": "^0.6.5",
     "watchjs": "0.0.0",
-    "nodemon": "^1.4.0"
+    "nodemon": "^1.4.1"
   },
   "scripts": {
     "start": "coffee src/app.coffee",
