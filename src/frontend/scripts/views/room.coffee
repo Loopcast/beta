@@ -46,6 +46,11 @@ module.exports = class Room extends LoggedView
     @modal.on 'input:changed', @on_input_changed
     @modal.on 'submit', @on_modal_submit
 
+    @title_input = view.get_by_dom @dom.find( 'h1.name' )
+    @desc_input = view.get_by_dom @dom.find( '#description_room' )
+
+    log "------>", @title_input, @desc_input
+
     @sidebar_right = view.get_by_dom '.sidebar_right'
 
     if @is_create_page()
@@ -59,7 +64,10 @@ module.exports = class Room extends LoggedView
   on_input_changed: ( data ) =>
     switch data.name
       when 'title', 'description'
-        @elements[ data.name ].html data.value
+        if data.name is 'title'
+          @title_input.set_text data.value
+        else
+          @desc_input.set_text data.value
 
         if data.value.length > 0
           @elements[ data.name ].removeClass 'hidden'

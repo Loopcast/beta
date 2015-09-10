@@ -83,6 +83,14 @@ module.exports = class AudioElement
     @dom[0].play()
     @emit 'played'
 
+  get_time_from_perc: ( perc ) ->
+    currentTime = @duration * perc
+
+    time = time_to_string currentTime
+    log "get_time_from_perc", @duration, perc, currentTime, time
+    return time
+
+
   pause: ->
     @dom[0].pause()
 
@@ -95,10 +103,14 @@ module.exports = class AudioElement
   snap_to: (perc) ->
     return if not @data.is_recorded
 
-    if not @is_playing
-      @play()
+    
+
     @snapping = true
     @dom[0].currentTime = @duration * perc
+
+    if not @is_playing
+      @play()
+    log "[Audio] snap_to", perc, @dom[0].currentTime
 
 
   destroy: ->

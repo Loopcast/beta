@@ -3,6 +3,7 @@ api = require 'api/loopcast/loopcast'
 transform = require 'lib/cloudinary/transform'
 notify          = require 'app/controllers/notify'
 string_utils = require 'app/utils/string'
+ProgressDragger = require 'app/utils/progress_dragger'
 
 moment = require 'moment'
 
@@ -12,12 +13,14 @@ module.exports = class Player
   is_recorded: false
   last_time: ""
   data_rooms: {}
+  is_dragging: false
   ### 
   the map of the ids of the rooms requested (even not loaded).
   This is used to avoid multiple calls at the same time
   ###
   requested_rooms: {} 
   current_room_id: null
+
 
   constructor: ( @dom ) ->
     @thumb    = @dom.find '.player_icon img'
@@ -29,7 +32,11 @@ module.exports = class Player
     @like_btn = @dom.find '.ss-heart'
     @progress = @dom.find '.player_progress span'
     @progress_parent = @dom.find '.player_progress'
-    # @loading = @dom.find '.loading_screen'
+
+    @dragger = new ProgressDragger @progress_parent 
+    @dragger.on 'drag', @on_progress_dragger
+    @dragger.on 'drag:started', @on_progress_started
+    @dragger.on 'drag:ended', @on_progress_ended
 
     @play_btn.on 'click', @on_play_clicked
     @like_btn.on 'click', @on_like_clicked
@@ -48,6 +55,7 @@ module.exports = class Player
 
     @share = view.get_by_dom @dom.find( '.share_wrapper' )
     @audio = view.get_by_dom @dom.find( 'audio' )
+    @follow_popup = view.get_by_dom @dom.find '.follow_player_popup'
     @audio.on 'started', @on_audio_started
     @audio.on 'paused', @on_audio_stopped
     @audio.on 'ended', @on_audio_ended
@@ -178,6 +186,8 @@ module.exports = class Player
     @update_info @data
     @audio.set_data @get_audio_data( @data )
 
+    @reset_progress()
+    
   stop: ->
     @audio.pause()
 
@@ -225,6 +235,9 @@ module.exports = class Player
     else
       @like_btn.removeClass 'liked'
 
+    @follow_popup.hide()
+    delay 10000, => @follow_popup.show data
+
   on_audio_started: =>    
     log "[Player] on_audio_started"
 
@@ -269,8 +282,26 @@ module.exports = class Player
     log "[Player] loading hide"
 
   on_progress: (data) =>
+    return if @is_dragging
     @time.html data.time.str
     @progress.css 'width', data.perc + '%'
+
+  on_progress_dragger: ( perc ) =>
+    @progress.css 'width', perc + '%'
+    time = @audio.get_time_from_perc( perc / 100 )
+    @time.html time.str
+
+
+  on_progress_started: =>
+    @progress.addClass 'dragging'
+    @is_dragging = true
+
+  on_progress_ended: (perc) =>
+    @progress.removeClass 'dragging'
+    @dom.addClass 'loading'
+    @audio.snap_to perc/100
+    @is_dragging = false
+
 
   on_progress_click: (e) =>
 
@@ -280,7 +311,6 @@ module.exports = class Player
     perc = x / w
 
     @dom.addClass 'loading'
-    log "[Player] loading show"
     @audio.snap_to perc
 
     return false

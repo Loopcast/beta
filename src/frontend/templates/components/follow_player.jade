@@ -1,0 +1,12 @@
+.top
+  a.image_wrapper(href="#{url}", title="#{name}")
+    img(width="64", height="64", src="#{image}", alt="#{name}")
+  .text
+    a.room_subtitle.blue(href="#{url}", title="#{name}") #{name}
+    p.occupation #{occupation}
+
+.bottom
+  p Enjoying this? Why not follow #{name} to catch their next session?
+  a(href="#", class="button yellow_button small_button_2 follow_button", data-view="profile/follow_button", data-user-id="#{user_id}") 
+    span.follow Follow
+    span.unfollow Unfollow

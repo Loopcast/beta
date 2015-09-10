@@ -12,7 +12,7 @@ module.exports = class FollowButton
     if id
       @user_id = id
 
-    # log "[FollowButton] constructor", @user_id
+    log "[FollowButton] constructor", @user_id
 
     @dom.on 'click', @toggle
 

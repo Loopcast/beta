@@ -53,6 +53,8 @@ module.exports = class PeopleView extends ChatView
       if o.length > 0 and o[0] isnt "undefined"
         data.occupation = o[0]
     
+    if data.url is '/'
+      data.url = "#"
     data
 
 

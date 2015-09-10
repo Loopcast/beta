@@ -244,9 +244,80 @@ PLAYER_HEIGHT = 70px
   // .loading_spin
   //   display: none
 
-
+  .close_follow_player
+    absolute top -4px right -4px
+    background: black
+    color: GRAY_4
+    font-weight: bold
+    text-align: center
+    width: 20px
+    height: 20px
+    border-radius: 50%
+    padding-left: 1px 
     
 
+  .follow_player_popup
+    position: absolute
+    background: #ececec
+    color: GRAY_2
+    width: 350px
+    border-radius: 5px
+    box-shadow: 0px 0px 13px -4px #000
+    bottom: 110%
+    left: 20px
+    padding: 10px 0px
+    font-size: 14px
+    display: none
+    opacity: 0
+    transform: translate3d(0,200px, 0)
+    transition: opacity .2s linear, transform .2s ease-out
+    &.show_1
+      display: block
+      
+    &.show_2
+      opacity: 1
+      transform: translate3d(0,0,0)
+    
+    &:after
+      SIZE = 10px
+      content: ""
+      position: absolute
+      left: 50%
+      transform: translateX(-50%)
+      top: 100%
+      
+      width: 0
+      height: 0
+      border-right: SIZE solid transparent
+      border-top: SIZE solid #ececec
+      border-left: SIZE solid transparent
+    .top
+      overflow: hidden
+      border-bottom: 1px solid OUTLINE_COLOR
+      padding-bottom: 10px
+    
+    .text
+      padding-top: 10px
+    .bottom
+      padding-top: 10px
+    .top, .bottom
+      padding-left: 20px
+      padding-right: 20px
+    .image_wrapper
+      overflow: hidden
+      border-radius: 50%
+      margin-right: 20px
+      float: left
+      img
+        display: block
+        
+    .blue
+      color: #4592d4
+      font-weight: 400
+
+    .button
+      float: right
+      padding: 7px 20px
   .centered
     display: flex
     align-items: center
@@ -303,6 +374,9 @@ PLAYER_HEIGHT = 70px
       border-radius: 5px
       // border-bottom-left-radius: 5px
       transition: width .1s linear, background .2s linear
+      &.dragging
+        transition: none
+        
       &:after
         content: ""
         position: absolute
@@ -313,6 +387,7 @@ PLAYER_HEIGHT = 70px
         border-radius: 50%
         border: 2px solid YELLOW
         background: BLACK_BOX_COLOR
+        transform: translateX(47%)
       &.no_transition
         transition: none
       
@@ -372,9 +447,13 @@ PLAYER_HEIGHT = 70px
   color: RED
 
 .no_touch_device
-  #player .player_progress span:hover
-    &:after
-      background: YELLOW
+  
+  #player 
+    .close_follow_player:hover
+      color: white
+    .player_progress span:hover
+      &:after
+        background: YELLOW
   .player_buttons 
     .ss-heart:hover
       color: #aaa

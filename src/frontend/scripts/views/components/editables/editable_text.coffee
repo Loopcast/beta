@@ -56,6 +56,7 @@ module.exports = class EditableText
 
 	open_edit_mode : (e) =>
 		return if not user.check_guest_owner()
+		return if $('.room_live').length > 0
 		# return unless app.body.hasClass( 'write_mode' )
 
 		e?.stopPropagation()
