@@ -236,7 +236,7 @@ module.exports = class Player
       @like_btn.removeClass 'liked'
 
     @follow_popup.hide()
-    delay 3000, => @follow_popup.show data
+    delay 10000, => @follow_popup.show data
 
   on_audio_started: =>    
     log "[Player] on_audio_started"
