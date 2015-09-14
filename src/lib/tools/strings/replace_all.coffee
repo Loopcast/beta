@@ -1,2 +1,5 @@
 module.exports = (find, replace, str) ->
-  return str.replace(new RegExp(find, 'g'), replace)
+  if typeof str is "string" and str.length > 0
+    return str.replace(new RegExp(find, 'g'), replace)
+  else
+    return str
