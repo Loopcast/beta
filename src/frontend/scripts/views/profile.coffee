@@ -7,6 +7,11 @@ api = require 'app/api/loopcast/loopcast'
 happens = require 'happens'
 StringUtils = require 'app/utils/string'
 navigation = require 'app/controllers/navigation'
+autolink = require 'lib/tools/strings/autolink'
+replace_all = require 'lib/tools/strings/replace_all'
+link_to_text = require 'lib/tools/strings/link_to_text'
+
+# strip_tags = require 'lib/tools/strings/strip_tags'
 
 module.exports = class Profile extends LoggedView
 	elements: null
@@ -201,7 +206,8 @@ module.exports = class Profile extends LoggedView
 
 		# Update the values on the labels
 		@elements.location.html data.location
-		@elements.about.html data.about
+
+		@elements.about.html autolink( data.about )
 
 		# Save data
 		@send_to_server data
@@ -211,21 +217,6 @@ module.exports = class Profile extends LoggedView
 
 		# Check if some of the information is now empty
 		@check_informations()
-
-
-	html_to_textarea : ( str ) ->
-		to_find = "<br />"
-		to_replace = "\n"
-		re = new RegExp to_find, 'g'
-
-		str = str.replace re, to_replace
-
-		to_find = "<br>"
-		to_replace = "\n"
-		re = new RegExp to_find, 'g'
-		str = str.replace re, to_replace
-
-		return str
 
 	check_informations: ->
 		l = @elements.location.html().length
@@ -238,7 +229,7 @@ module.exports = class Profile extends LoggedView
 			@dom.addClass 'no_information_yet'
 		
 		if b > 0
-			str = @html_to_textarea @elements.about.html()
+			str = link_to_text @elements.about.html()
 			@elements.about_input.val str
 
 

@@ -3,6 +3,8 @@ is_login_page = require 'app/utils/is_login_page'
 require './globals'
 require './vendors'
 
+window.strip_tags = require 'lib/tools/strings/strip_tags'
+
 
 if not is_login_page()
 # motion   = require 'app/controllers/motion'

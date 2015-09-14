@@ -26,4 +26,7 @@ vendors =
   # $.put / $.delete method
   JPutDel              : require '../vendors/jquery.put.delete.js'
 
+  # Documentation: https://github.com/bryanwoods/autolink-js
+  AutoLink             : require '../vendors/autolink-min.js'
+
 module.exports = vendors

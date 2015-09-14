@@ -2,7 +2,7 @@
   .chat_main
     - str = ""
     if room && room.info.about
-      - str = room.info.about
+      - str = autolink( room.info.about )
 
     - genres = []
     - genres_class = "no_tags"
@@ -13,7 +13,7 @@
     .chat_header
       .inner
         p#description_room(data-view="[chat/description]", data-freestyle="true")
-          span.text #{str}
+          span.text !{str}
         p.read_more 
           span.more Read More
           span.less Show Less

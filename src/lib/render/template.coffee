@@ -12,6 +12,8 @@ path = require 'path'
 jade = require 'jade'
 
 cloudinary_transform = lib 'cloudinary/transform'
+autolink = lib 'tools/strings/autolink'
+strip_tags = lib 'tools/strings/strip_tags'
 
 module.exports = ( url, data = {}, callback ) ->
 
@@ -32,6 +34,8 @@ module.exports = ( url, data = {}, callback ) ->
   data.fb_app_id = s.facebook.client_sdk_id
 
   data.transform = cloudinary_transform
+  data.autolink = autolink
+  data.strip_tags = strip_tags
 
   root = path.join( __dirname + '/../../frontend/templates' )
 
