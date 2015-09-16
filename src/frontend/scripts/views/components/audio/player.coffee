@@ -20,6 +20,7 @@ module.exports = class Player
   ###
   requested_rooms: {} 
   current_room_id: null
+  timeout_follow_popup: null
 
 
   constructor: ( @dom ) ->
@@ -235,8 +236,13 @@ module.exports = class Player
     else
       @like_btn.removeClass 'liked'
 
+    # Show the follow popup
     @follow_popup.hide()
-    delay 10000, => @follow_popup.show data
+
+    clearTimeout @timeout_follow_popup
+    @timeout_follow_popup = setTimeout =>
+      @follow_popup.show data
+    , 2000
 
   on_audio_started: =>    
     log "[Player] on_audio_started"

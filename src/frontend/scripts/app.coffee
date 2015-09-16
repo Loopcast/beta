@@ -108,7 +108,8 @@ class App
 		else
 			url = "/#{user_data.username}"
 		
-
+		@user.login user_data
+		
 		if @settings.action? and @settings.action.type is 'follow'
 			@user.follow @settings.action.user_id
 
@@ -116,7 +117,7 @@ class App
 
 
 		navigation.go url
-		@user.login user_data
+		
 
 	logout: -> 
 		@user.logout =>
