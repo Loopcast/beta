@@ -36,7 +36,7 @@ module.exports = class ButtonWithTimer extends RoomView
 
     @input_device = view.get_by_dom '.dashboard_bar .input_select'
     app.on 'appcast:input_device', @on_input_device_changed
-    log "[ButtonWithTimer] checking input device active", @input_device.is_active()
+    # log "[ButtonWithTimer] checking input device active", @input_device.is_active()
     @set_enabled @input_device.is_active()
     
     @room = view.get_by_dom '.createroom'
@@ -53,10 +53,10 @@ module.exports = class ButtonWithTimer extends RoomView
   check_room_status: ->
 
   on_room_status_changed: ( data ) =>
-    log "[ButtonWithTimer] on_room_status_changed", data
+    # log "[ButtonWithTimer] on_room_status_changed", data
 
   on_input_device_changed: ( data ) =>
-    log "[ButtonWithTimer] on_input_device_changed", data
+    # log "[ButtonWithTimer] on_input_device_changed", data
     @set_enabled data.length > 0
 
 
@@ -72,7 +72,7 @@ module.exports = class ButtonWithTimer extends RoomView
   set_enabled: ( enabled ) ->
     @enabled = enabled
 
-    log "[ButtonWithTimer]", @type, enabled
+    # log "[ButtonWithTimer]", @type, enabled
     if @enabled
       @dom.removeClass( 'disabled' ).addClass( 'enabled' )
     else
@@ -81,7 +81,7 @@ module.exports = class ButtonWithTimer extends RoomView
 
   set_active: ( active ) ->
 
-    log "[DDD] set_active", active, @type, "enabled", @enabled, "active", @active
+    # log "[DDD] set_active", active, @type, "enabled", @enabled, "active", @active
     return if not @enabled
 
     # log "[Record] set_active", active
@@ -127,7 +127,8 @@ module.exports = class ButtonWithTimer extends RoomView
     @timer.html time.str
 
   destroy: ->
-    log "[ButtonWithTimer] destroy", @is_room_owner
+    super()
+    # log "[ButtonWithTimer] destroy", @is_room_owner
     if @is_room_owner
       app.off 'appcast:input_device', @on_input_device_changed
       @room?.off? 'status:changed', @on_room_status_changed

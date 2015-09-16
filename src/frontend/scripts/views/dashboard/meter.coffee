@@ -55,7 +55,7 @@ module.exports = class Meter extends RoomView
       @no_sound = true
       @turn_off()
 
-    log "[Meter] on_input_device_changed", data, @disabled
+    # log "[Meter] on_input_device_changed", data, @disabled
 
 
    on_room_created: (@room_id, @owner_id) =>
@@ -108,11 +108,11 @@ module.exports = class Meter extends RoomView
         @turn_on()
 
   turn_off : ->
-    log "[Meter] turn_off"
+    # log "[Meter] turn_off"
     @dom.addClass( 'no_sound' ).removeClass( 'with_sound' )
 
   turn_on : ->
-    log "[Meter] turn_on"
+    # log "[Meter] turn_on"
     @dom.removeClass( 'no_sound' ).addClass( 'with_sound' )
 
   
@@ -156,7 +156,8 @@ module.exports = class Meter extends RoomView
     return index
 
   destroy: ->
-
+    super()
+    
     if @is_room_owner
       app.off 'appcast:input_device', @on_input_device_changed
       appcast.off 'stream:vu', @set_volume

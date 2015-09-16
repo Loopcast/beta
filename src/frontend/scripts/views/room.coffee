@@ -136,7 +136,8 @@ module.exports = class Room extends LoggedView
       return @on_like_room        data if data.type is "like"
       return @on_unlike_room      data if data.type is "unlike"
       return @on_message          data if data.type is "message"
-      return @on_listener_removed data if data.type is "listener:removed"
+      return @people_list.add     data if data.type is "listener:added"
+      return @people_list.remove  data if data.type is "listener:removed"
       return @on_status_changed   data if data.type is "status"
 
       if data.is_live? and data.is_live is false
@@ -144,9 +145,9 @@ module.exports = class Room extends LoggedView
         if not user_controller.check_guest_owner()
           @_on_live_stop()
 
-      if data.type is "listener:added"
-        unless user_controller.is_me data.user.id
-          return @on_listener_added   data 
+      
+        # unless user_controller.is_me data.user.id
+        #   return @on_listener_added   data 
 
     @publish_modal = view.get_by_dom '#publish_modal'
     @confirm_exit_modal = view.get_by_dom '#confirm_exit_modal'
@@ -242,7 +243,7 @@ module.exports = class Room extends LoggedView
 
         return null
 
-      log "[Chat people]", response
+      log "[Chat people]", response, response.sockets.length
       for socket_id in response.sockets
 
         if not user = user_by_socket( socket_id )
@@ -277,7 +278,7 @@ module.exports = class Room extends LoggedView
           user  : user
 
         log "[Chat people] on_listener added", message
-        @on_listener_added message
+        @people_list.add message
 
   
 
@@ -391,23 +392,6 @@ module.exports = class Room extends LoggedView
 
   on_user_unlogged: ( data ) =>
 
-  on_listener_added: ( listener ) =>
-    is_new = @people_list.add listener.user
-
-    log "[Room] ###### on_listener_added", listener.user.name, listener.user.socket_id, is_new
-    if is_new
-      @emit 'listener:added', listener
-      @sidebar_right.on_listener_added()
-
-  on_listener_removed: ( listener ) =>
-    listener_removed = @people_list.remove listener.user.socket_id
-
-
-    log "[Room] on_listener_removed", listener_removed
-    if listener_removed
-      @emit 'listener:removed', listener_removed
-      @sidebar_right.on_listener_removed()
-
   on_like_room: ( data ) =>
     @sidebar_right.on_like()
 
@@ -458,7 +442,10 @@ module.exports = class Room extends LoggedView
 
     view.destroy_view @modal
     @modal = null
+    @people_list.destroy()
+    @people_list = null
     super()
+    
 
     
     

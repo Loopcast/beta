@@ -24,7 +24,7 @@ module.exports = class Record extends ButtonWithTimer
     @set_active @room.current_status.room.status.is_recording
   
   start: ->
-    log "[Record] start"
+    # log "[Record] start"
 
     if not appcast.get 'selected_device'
       notify.info 'Select your input source'
@@ -38,14 +38,14 @@ module.exports = class Record extends ButtonWithTimer
 
     else
       # start streaming then start recording
-      log "We should start streaming then start recording"
+      # log "We should start streaming then start recording"
       appcast.start_stream @owner_id, appcast.get 'selected_device'
       appcast.on 'stream:online', @start_recording
 
 
 
   stop: ->
-    log "[Record] stop"
+    # log "[Record] stop"
 
     @wait()
 
@@ -74,7 +74,7 @@ module.exports = class Record extends ButtonWithTimer
         unbind_all()
 
       on_upload_error = (error) ->
-        log '[Record]on_upload_error', error
+        # log '[Record]on_upload_error', error
         notify.info "Upload Error"
         unbind_all()
 

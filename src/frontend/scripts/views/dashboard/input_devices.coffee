@@ -17,14 +17,14 @@ module.exports = class InputDevices extends Select
     @dom.on 'mouseenter', @on_mouse_enter
     appcast.on 'input_devices', @on_get_input_devices
     @on 'changed', @on_change
-    log "[device] current_device", @current_device
+    # log "[device] current_device", @current_device
     @first_time = on
 
   on_mouse_enter: -> 
     appcast.get_devices()
 
   on_get_input_devices: ( devices ) =>
-    log "[device] on input devices", devices, @first_time
+    # log "[device] on input devices", devices, @first_time
     if @devices.length isnt devices.length
       # TODO: let the user know if previouly selected isn't available anymore
 
@@ -44,15 +44,15 @@ module.exports = class InputDevices extends Select
       @first_time = off
 
       d = user_controller.get_preferred_input()
-      log "[device] get_preferred_input", d
+      # log "[device] get_preferred_input", d
 
       if d
         @_set_value d
 
   on_change: ( device ) =>
-    log "[device] changed", device, @current_device
+    # log "[device] changed", device, @current_device
     return if device is @current_device
-    log "[device] emitting event", device
+    # log "[device] emitting event", device
     app.emit 'appcast:input_device', device
     @current_device = device
     
