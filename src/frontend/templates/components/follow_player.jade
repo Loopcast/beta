@@ -7,6 +7,6 @@
 
 .bottom
   p Enjoying this? Why not follow #{name} to catch their next mix?
-  a(href="#", class="button yellow_button small_button_2 follow_button", data-view="profile/follow_button", data-user-id="#{user_id}") 
+  a(href="#", class="button yellow_button small_button_2 follow_button", data-view="profile/follow_button", data-user-id="#{user_id}" onClick="_gaq.push(['_trackEvent', 'Follow Message', 'Click', '']);") 
     span.follow Follow
     span.unfollow Unfollow
