@@ -26,7 +26,7 @@ block seo
       
     meta( property="og:site_name"   content="Loopcast.fm" )
     if about
-      meta( property="og:description" content="#{about}" )
+      meta( property="og:description" content="#{strip_tags(about)}" )
     else
       meta( property="og:description" content="#{room.info.title} @ Loopcast.fm" )
 

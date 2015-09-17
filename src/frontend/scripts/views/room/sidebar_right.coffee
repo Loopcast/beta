@@ -8,8 +8,10 @@ module.exports = class SidebarRight extends RoomView
   likes: null
   visits: null
   listeners: null
+
   on_room_created: ( @room_id, @owner_id ) =>
 
+    super @room_id, @owner_id
     @visits = @dom.find '.stat_visits .number'
     @likes = @dom.find '.stat_likes .number'
     @listeners = @dom.find '.stat_listeners .number'
@@ -47,17 +49,14 @@ module.exports = class SidebarRight extends RoomView
     # log "[SidebarRight] on_unlike", data
 
   on_listener_added: ( data ) =>
-    log "[SidebarRight] on_listener_added", @stats.listeners
-    @stats.listeners++
-    c = @stats.listeners
-    c = Math.max 0, c
-    @listeners.html c
+    log "[SidebarRight] on_listener_added", data.total
+    @update_listeners data.total
 
   on_listener_removed: ( data ) =>
-    log "[SidebarRight] on_listener_removed", @stats.listeners
-    @stats.listeners--
-    c = @stats.listeners
-    c = Math.max 0, c
-    @listeners.html c
-    # log "[SidebarRight] on_listener_removed", @stats.listeners
+    log "[SidebarRight] on_listener_removed", data.total
+    @update_listeners data.total
+
+  update_listeners: ( total ) ->
+    @stats.listeners = total
+    @listeners.html total
 

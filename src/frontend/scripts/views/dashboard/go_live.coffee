@@ -22,7 +22,7 @@ module.exports = class GoLive extends ButtonWithTimer
 
     # update status based on room live status
     if $('.room_live' ).length > 0
-      log "[DDD] live button set active"
+      # log "[DDD] live button set active"
       @set_enabled true
       @set_active true
       appcast.set "stream:streaming", true
@@ -31,7 +31,7 @@ module.exports = class GoLive extends ButtonWithTimer
     @set_active @room.current_status.room.status.is_live
 
   start: ->
-    log "[GoLive] Clicked start"
+    # log "[GoLive] Clicked start"
     
     if not appcast.get 'selected_device'
       notify.info 'Select your input source'
@@ -125,7 +125,7 @@ module.exports = class GoLive extends ButtonWithTimer
   on_room_status_changed: ( data ) =>
     # @set_enabled( data.room.status.is_recording or data.room.status.is_live )
     @set_active data.room.status.is_live
-    log "[ButtonWithTimer LIVE] on_room_status_changed", data
+    # log "[ButtonWithTimer LIVE] on_room_status_changed", data
 
   destroy: ->
     appcast.off 'stream:error', @on_error

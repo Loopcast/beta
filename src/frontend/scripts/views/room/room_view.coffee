@@ -39,6 +39,19 @@ module.exports = class RoomView
 
     view.off 'binded', @on_views_binded
 
+
+  on_listener_added: ( data ) =>
+
+  on_listener_removed: ( data ) =>
+
   on_room_created: ( @room_id, @owner_id ) =>
     @room_created = true
     @is_room_owner = user.check_guest_owner()
+
+    @room.people_list.on 'listener:added', @on_listener_added
+    @room.people_list.on 'listener:removed', @on_listener_removed
+
+  destroy: ->
+    if @room_created
+      @room.people_list?.off 'listener:added', @on_listener_added
+      @room.people_list?.off 'listener:removed', @on_listener_removed

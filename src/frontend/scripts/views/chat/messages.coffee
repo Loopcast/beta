@@ -3,6 +3,7 @@ ChatView = require 'app/views/room/chat_view'
 user = require 'app/controllers/user'
 api = require 'app/api/loopcast/loopcast'
 require 'app/utils/time/livestamp'
+autolink = require 'lib/tools/strings/autolink'
 # moment = require 'moment'
 # require 'vendors/livestamp.js'
 
@@ -71,7 +72,7 @@ module.exports = class Messages extends ChatView
     @popup.hide()
 
   on_message: (data) =>
-    log "[Messages] on_message", data, @owner_id
+    
 
     if not @users[data.username]?
       @users[data.username] = 
@@ -92,7 +93,7 @@ module.exports = class Messages extends ChatView
       @first_message = false
 
     obj =
-      message: data.message
+      message: autolink( data.message )
       time: data.time
       user: 
         url: "/" + data.username
@@ -103,6 +104,8 @@ module.exports = class Messages extends ChatView
 
     if data.payload?.like
       obj.like = true
+
+    log "[Messages] on_message", data, @owner_id, obj
 
     html = @tmpl obj
       

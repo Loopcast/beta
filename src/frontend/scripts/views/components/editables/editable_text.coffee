@@ -1,5 +1,7 @@
 happens = require 'happens'
 user = require 'app/controllers/user'
+autolink = require 'lib/tools/strings/autolink'
+replace_all = require 'lib/tools/strings/replace_all'
 
 module.exports = class EditableText
 
@@ -75,7 +77,7 @@ module.exports = class EditableText
 		val = @input.val()
 		@emit 'changed', val
 
-		@text_el.text val
+		@text_el.html autolink( val )
 		@dom.removeClass 'edit_mode'
 
 		@input.off 'keyup'

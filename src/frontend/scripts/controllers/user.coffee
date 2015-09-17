@@ -155,13 +155,16 @@ class UserController
       callback response
 
   follow: (user_id) ->
+    if not @data?
+      log "[User] trying to follow but user unlogged", user_id, @data
+      return
+
     log "[User] follow", user_id, @data.following
     ref = @
     api.user.follow user_id, ( error, result ) ->
 
       # Update the following map      
-      if ref.data.following[ user_id ]?
-        ref.data.following[ user_id ] = true
+      ref.data.following[ user_id ] = true
 
       log "[FollowButton] follow response", result
       ref.emit 'user:followed', user_id
@@ -174,8 +177,7 @@ class UserController
     api.user.unfollow user_id, ( error, result ) ->
       
       # Update the following map      
-      if ref.data.following[ user_id ]?
-        ref.data.following[ user_id ] = false
+      ref.data.following[ user_id ] = false
 
       log "[FollowButton] unfollow response", result
       ref.emit 'user:unfollowed', user_id
@@ -253,8 +255,9 @@ class UserController
 
 
   is_following: (id) ->
-    log "[User] is following", id, @data.following[id]
-    return @data.following? and @data.following[ id ]? and @data.following[ id ]
+    output = @data? and @data.following? and @data.following[ id ]? and @data.following[ id ]
+    log "[User] is following", id, output
+    return output
 
       
 

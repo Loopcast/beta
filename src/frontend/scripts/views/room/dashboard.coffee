@@ -121,6 +121,9 @@ module.exports = class Dashboard extends RoomView
 
 
   destroy: ->
+
+    super()
+    
     @publish_modal = null
     @room_view = null
     if @is_room_owner

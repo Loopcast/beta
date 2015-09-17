@@ -27,6 +27,7 @@ module.exports = class HelpButton extends RoomView
     @balloon.hide()
 
   destroy: ->
+    super()
     if @is_room_owner
       @dom.off 'mouseover', @show_popup
       @dom.off 'mouseout', @hide_popup

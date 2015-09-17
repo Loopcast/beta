@@ -3,6 +3,8 @@ is_login_page = require 'app/utils/is_login_page'
 require './globals'
 require './vendors'
 
+window.strip_tags = require 'lib/tools/strings/strip_tags'
+
 
 if not is_login_page()
 # motion   = require 'app/controllers/motion'
@@ -106,7 +108,8 @@ class App
 		else
 			url = "/#{user_data.username}"
 		
-
+		@user.login user_data
+		
 		if @settings.action? and @settings.action.type is 'follow'
 			@user.follow @settings.action.user_id
 
@@ -114,7 +117,7 @@ class App
 
 
 		navigation.go url
-		@user.login user_data
+		
 
 	logout: -> 
 		@user.logout =>
