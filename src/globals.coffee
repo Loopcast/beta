@@ -36,6 +36,10 @@ global.User = schema 'user'
 
 global.Room = schema 'room'
 
+global.Tape = schema 'tape'
+
+global.Set  = schema 'set'
+
 global.Like = schema 'like'
 
 r = require 'redis'
