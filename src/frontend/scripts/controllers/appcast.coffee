@@ -135,22 +135,22 @@ appcast.start_stream = ( mount_point, device_name ) ->
       device_name : device_name
       mount_point : mount_point
       password    : password
-      server_port : 8000
+      port        : "8000"
       server      : 'radio.loopcast.fm'
-    # payload.server = 'inbound-a.cdn.audiopump.co/loopcast/'
   else
+    # audiopump connection configuration
     payload = 
       device_name : device_name
       mount_point : "/loopcast-staging/#{mount_point}"
       password    : "any"
-      server_port : 80
+      port        : "80"
       server      : 'inbound-a.cdn.audiopump.co'
 
     payload = 
       device_name : device_name
       mount_point : mount_point
       password    : password
-      server_port : 8000
+      port        : "8000"
       server      : 'staging-radio.loopcast.fm'
 
   console.log 'stream with payload ->', payload
