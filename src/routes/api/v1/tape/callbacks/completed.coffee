@@ -1,3 +1,5 @@
+mongoose   = require( 'mongoose')
+
 module.exports =
   method: [ 'POST' ]
   path   : '/api/v1/tape/callbacks/completed'
