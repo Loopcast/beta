@@ -49,9 +49,27 @@ module.exports =
 
             # pusher.trigger "tape.#{mount_point}", "upload:finished", response.location
 
-            console.log 'updating tape for recording ->', room.recording
-            query = _id: mongoose.Types.ObjectId room.recording
-            Tape.collection.update query, $set: s3: s3, null, ( error, response ) ->
+            # query = _id: mongoose.Types.ObjectId room.recording
+            # Tape.collection.update query, $set: s3: s3, null, ( error, response ) ->
+
+            #     if error
+
+            #       console.log 'error adding s3 information to Tape'
+            #       console.log error
+
+            #     console.log 'tape response ->', arguments
+
+            # query = _id: mongoose.Types.ObjectId room_id
+            # Room.collection.update query, $set: recording: null, null, ( error, response ) ->
+
+            #     if error
+            #       console.log 'error removing tape from room'
+            #       console.log error
+
+            #     console.log 'room response ->', arguments
+
+
+            Tape.update _id: room.recording, $set: s3: s3, ( error, response ) ->
 
                 if error
 
@@ -60,9 +78,7 @@ module.exports =
 
                 console.log 'tape response ->', arguments
 
-            console.log 'updating room ->', room_id
-            query = _id: mongoose.Types.ObjectId room_id
-            Room.collection query, $set: recording: null, null, ( error, response ) ->
+            Room.collection.update _id: room_id, $set: recording: null, ( error, response ) ->
 
                 if error
                   console.log 'error removing tape from room'
