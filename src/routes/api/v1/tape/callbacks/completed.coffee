@@ -50,7 +50,7 @@ module.exports =
         # pusher.trigger "tape.#{mount_point}", "upload:finished", response.location
 
         Tape
-          .update( _id: room.recording, s3: s3 )
+          .update( _id: room.recording, $set: s3: s3 )
           .lean().exec ( error, response ) ->
 
             if error
@@ -58,11 +58,15 @@ module.exports =
               console.log 'error adding s3 information to Tape'
               console.log error
 
+            console.log 'tape response ->', response
+
 
         Room
-          .update( _id: room_id, recording: null )
+          .update( _id: room_id, $set: recording: null )
           .lean().exec ( error, response ) ->
 
             if error
               console.log 'error removing tape from room'
               console.log error
+
+            console.log 'room response ->', response
