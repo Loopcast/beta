@@ -15,9 +15,9 @@ module.exports =
 
     handler: ( req, reply ) ->
 
-      console.log "-- CALLBACK MOUNT ADD"
-      console.log "Connecting @ #{mount_point}"
-      console.log "---"
+      # console.log "-- CALLBACK MOUNT ADD"
+      # console.log "Connecting @ #{mount_point}"
+      # console.log "---"
 
       # we don't do anything when this callback happens
       # method_name = req.params.method_name
