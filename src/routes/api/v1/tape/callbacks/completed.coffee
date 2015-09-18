@@ -49,8 +49,7 @@ module.exports =
 
             # pusher.trigger "tape.#{mount_point}", "upload:finished", response.location
 
-            Tape.collection
-              .update _id: room.recording, $set: s3: s3, ( error, response ) ->
+            mongoose.connection.collections['tapes'].update _id: room.recording, $set: s3: s3, ( error, response ) ->
 
                 if error
 
@@ -61,8 +60,7 @@ module.exports =
 
             update = recording: null
 
-            Room.collection
-              .update _id: room_id, $set: recording: null, ( error, response ) ->
+            mongoose.connection.collections['rooms'].update _id: room_id, $set: recording: null, ( error, response ) ->
 
                 if error
                   console.log 'error removing tape from room'
