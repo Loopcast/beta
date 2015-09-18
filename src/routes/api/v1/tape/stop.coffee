@@ -57,6 +57,7 @@ module.exports =
 
           update =
             $set:
+              recording                     : null
               'status.is_recording'         : off
               'status.recording.stopped_at' : now().format()
 
@@ -108,3 +109,18 @@ module.exports =
               console.log "Recorded #{duration} seconds"
 
               reply response
+
+              rec_update = 
+                stopped_at: update['status.live.stopped_at']
+                duration  : duration
+
+              Tape
+                .update( _id: recording._id, rec_update )
+                .lean()
+                .exec ( error, docs_updated ) ->
+
+                  if error 
+                    console.log "error updating tape document"
+                    console.log error
+                    
+                    return failed request, reply, error

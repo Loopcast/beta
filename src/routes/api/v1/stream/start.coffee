@@ -99,6 +99,7 @@ module.exports =
               
               return failed request, reply, error
 
+            # save link to current recording on the room
             update.stream = doc._id
 
             Room.update( _id: room_id, update )

@@ -56,25 +56,6 @@ module.exports =
             return reply Boom.resourceGone( "room not found or user not owner" )
 
           
-          stream = stopped_at: now().format()
-            
-
-          console.log 'stopping stream ->', room.stream
-
-          Stream
-            .update( _id: room.stream, stream )
-            .lean()
-            .exec ( error, stream ) ->
-
-              if error
-                console.log "error updating stream:", stream
-                console.log error
-
-                return
-
-              console.log 'updated stream ->', stream
-
-
           # status object to be sent down a socket Channel
           status =
             is_live: false
@@ -85,7 +66,7 @@ module.exports =
 
           update =
             $set:
-              # set stream to null
+              # remove the stream to null
               stream                   : null
 
               'status.is_live'         : false
@@ -104,9 +85,19 @@ module.exports =
             if error then return failed request, reply, error
 
             started_at = now( response.value.status.live.started_at )
-            stopped_at = now( update['status.live.stopped_at'] )
+            stopped_at = now( update.$set['status.live.stopped_at'] )
 
             duration = stopped_at.diff( started_at, 'seconds' )
+
+            # prepare data to update stream
+            stream_update = 
+              stopped_at: update.$set['status.live.stopped_at']
+              duration  : duration
+
+            console.log 'stream_update ->'
+            console.log stream_update
+            console.log 'update ->'
+            console.log update
 
             update = 'status.live.duration': duration
 
@@ -120,3 +111,18 @@ module.exports =
             console.log "Streamed #{duration} seconds"
 
             reply response
+
+
+            # updating stream
+            Stream
+              .update( _id: room.stream, stream_update )
+              .lean()
+              .exec ( error, stream ) ->
+
+                if error
+                  console.log "error updating stream:", stream
+                  console.log error
+
+                  return
+
+                console.log 'updated stream ->', stream

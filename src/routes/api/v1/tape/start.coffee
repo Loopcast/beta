@@ -38,8 +38,25 @@ module.exports =
         _id  : room_id
         user : user_id
 
+      # creating new recording document
+      doc = 
+        user: user_id
+        room: room_id
+
+      recording = new Tape doc
+
+      recording.save ( error, doc ) ->
+
+        if error 
+          console.log "error creating tape document"
+          console.log error
+          
+          return failed request, reply, error
+
+        recording = doc
+
       Room.findOne( query )
-        .select( "_id user" )
+        .select( "_id user info.slug" )
         .lean()
         .exec ( error, room ) -> 
 
@@ -54,6 +71,8 @@ module.exports =
             return reply Boom.resourceGone( "room not found or user not owner" )
 
           update =
+            # sets recording._id to the recording parent @ room
+            recording                     : recording._id
             'status.is_recording'         : true
             'status.recording.started_at' : now().format()
 
@@ -82,6 +101,21 @@ module.exports =
 
             # JSON from tape server
             body = JSON.parse body
+
+            rec_update =
+              slug    : room.info.slug
+              filename: body.file
+
+            Tape
+              .update( _id: recording._id, rec_update )
+              .lean()
+              .exec ( error, docs_updated ) ->
+
+                if error 
+                  console.log "error updating tape document"
+                  console.log error
+                  
+                  return failed request, reply, error
 
             update[ 'recording.file' ] = body.file
             

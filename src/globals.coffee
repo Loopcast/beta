@@ -32,15 +32,15 @@ global.request = require 'request'
 
 global.now = ( value ) -> moment.utc(value)
 
-global.User = schema 'user'
+global.User   = schema 'user'
 
-global.Room = schema 'room'
+global.Room   = schema 'room'
 
-global.Tape = schema 'tape'
+global.Tape   = schema 'tape'
 
-global.Set  = schema 'set'
+global.Stream = schema 'stream'
 
-global.Like = schema 'like'
+global.Like   = schema 'like'
 
 r = require 'redis'
 
