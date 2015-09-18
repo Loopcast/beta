@@ -33,13 +33,21 @@ module.exports =
 
         reply ok: 1
 
-    # pusher.trigger "tape.#{mount_point}", "upload:finished", response.location
+
     Room.findOne( _id: room_id )
-      .select( "_id recording" )
+      .select( "_id user recording" )
       .lean()
       .exec ( error, room ) -> 
 
         console.log 'updating tape for recording ->', room.recording
+
+        data = 
+          type     : 'upload:finished'
+          location : s3.location
+
+        sockets.send room.user, data
+
+        # pusher.trigger "tape.#{mount_point}", "upload:finished", response.location
 
         Tape
           .update( _id: room.recording, s3: s3 )
