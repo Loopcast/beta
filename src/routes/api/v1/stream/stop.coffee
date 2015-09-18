@@ -94,11 +94,6 @@ module.exports =
               stopped_at: update.$set['status.live.stopped_at']
               duration  : duration
 
-            console.log 'stream_update ->'
-            console.log stream_update
-            console.log 'update ->'
-            console.log update
-
             update = 'status.live.duration': duration
 
             Room.update _id: room._id, update, ( error, response ) ->
