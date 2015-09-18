@@ -55,9 +55,13 @@ module.exports =
 
             return reply Boom.resourceGone( "room not found or user not owner" )
 
+          # this must be fixed better
+          if room.recording 
+
+            return reply Boom.preconditionFailed( "Still recording or uploading, please stop recording or wait upload complete" )
+
           update =
             $set:
-              recording                     : null
               'status.is_recording'         : off
               'status.recording.stopped_at' : now().format()
 

@@ -40,7 +40,7 @@ module.exports =
       .exec ( error, room ) -> 
 
         console.log 'updating tape for recording ->', room.recording
-        
+
         Tape
           .update( _id: room.recording, s3: s3 )
           .lean().exec ( error, response ) ->
@@ -48,4 +48,13 @@ module.exports =
             if error
 
               console.log 'error adding s3 information to Tape'
+              console.log error
+
+
+        Room
+          .update( _id: room_id, recording: null )
+          .lean().exec ( error, response ) ->
+
+            if error
+              console.log 'error removing tape from room'
               console.log error
