@@ -34,22 +34,16 @@ module.exports =
         reply ok: 1
 
 
-    # console.log "+ completed upload : #{file}"
-    # console.log "+ got S3 response:"
-    # console.log response
+    Room.findOne( _id: room._id )
+      .select( "_id recording" )
+      .lean()
+      .exec ( error, room ) -> 
 
-    # # broadcast message regading end of upload
-    # pusher.trigger "tape.#{mount_point}", "upload:finished", response.location
+        Tape
+          .update( _id: room.recording, s3: s3 )
+          .lean().exec ( error, response ) ->
 
-    # # adds s3 address to database
-    # # set is_recorded to true
-    # query  = _id: ObjectID room_id
+            if error
 
-
-    # db.rooms.update query, $set: update, ( error, response ) ->
-
-    #   if error
-    #     console.log "error saving"
-    #     console.log error
-    #   # else
-    #     # console.log "success saving file to mongodb"
+              console.log 'error adding s3 information to Tape'
+              console.log error
