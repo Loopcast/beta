@@ -33,7 +33,7 @@ module.exports =
 
         reply ok: 1
 
-
+    # pusher.trigger "tape.#{mount_point}", "upload:finished", response.location
     Room.findOne( _id: room._id )
       .select( "_id recording" )
       .lean()

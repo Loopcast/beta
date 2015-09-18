@@ -15,7 +15,7 @@ module.exports =
     update = 'status.is_recording': off
 
     Room
-      .update( _id: room._id, update )
+      .update( _id: room_id, update )
       .lean().exec ( error, response ) ->
 
         if error
@@ -35,7 +35,7 @@ module.exports =
 
     # in case room wasn't stopped before, add the stop
     Room
-      .update( _id: room._id, update )
+      .update( query, update )
       .lean().exec ( error, response ) ->
 
         if error
