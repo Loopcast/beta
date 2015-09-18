@@ -51,7 +51,7 @@ module.exports =
 
             console.log 'updating tape for recording ->', room.recording
             query = _id: mongoose.Types.ObjectId room.recording
-            Tape.collection.update query, $set: s3: s3, ( error, response ) ->
+            Tape.collection.update query, $set: s3: s3, null, ( error, response ) ->
 
                 if error
 
@@ -62,7 +62,7 @@ module.exports =
 
             console.log 'updating room ->', room_id
             query = _id: mongoose.Types.ObjectId room_id
-            Room.collection query, $set: recording: null, ( error, response ) ->
+            Room.collection query, $set: recording: null, null, ( error, response ) ->
 
                 if error
                   console.log 'error removing tape from room'
