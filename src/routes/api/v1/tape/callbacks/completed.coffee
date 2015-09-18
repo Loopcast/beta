@@ -23,7 +23,7 @@ module.exports =
       'status.recording.s3': s3
 
     Room
-      .update( _id: room._id, update )
+      .update( _id: room_id, update )
       .lean().exec ( error, response ) ->
 
         if error
@@ -34,7 +34,7 @@ module.exports =
         reply ok: 1
 
     # pusher.trigger "tape.#{mount_point}", "upload:finished", response.location
-    Room.findOne( _id: room._id )
+    Room.findOne( _id: room_id )
       .select( "_id recording" )
       .lean()
       .exec ( error, room ) -> 
