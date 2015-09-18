@@ -58,8 +58,9 @@ module.exports =
                   console.log 'error adding s3 information to Tape'
                   console.log error
 
-                console.log 'tape response ->', response
+                console.log 'tape response ->', arguments
 
+            update = recording: null
 
             Room
               .update( _id: room_id, $set: recording: null )
@@ -69,4 +70,4 @@ module.exports =
                   console.log 'error removing tape from room'
                   console.log error
 
-                console.log 'room response ->', response
+                console.log 'room response ->', arguments
