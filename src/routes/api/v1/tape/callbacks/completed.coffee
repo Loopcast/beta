@@ -62,7 +62,7 @@ module.exports =
             update = recording: null
 
             Room.collection
-              .update _id: room_id, $set: recording: null ( error, response ) ->
+              .update _id: room_id, $set: recording: null, ( error, response ) ->
 
                 if error
                   console.log 'error removing tape from room'
