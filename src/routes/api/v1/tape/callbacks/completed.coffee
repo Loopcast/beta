@@ -39,6 +39,8 @@ module.exports =
       .lean()
       .exec ( error, room ) -> 
 
+        console.log 'updating tape for recording ->', room.recording
+        
         Tape
           .update( _id: room.recording, s3: s3 )
           .lean().exec ( error, response ) ->
