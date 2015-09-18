@@ -9,8 +9,6 @@ module.exports = ( mount_point, metadata, callback ) ->
   url += "&description=#{metadata.description}"
   url += "&song=#{metadata.url}"
 
-  console.log "url ->", url
-
   options =
     auth:
       user           : s.radio.user
