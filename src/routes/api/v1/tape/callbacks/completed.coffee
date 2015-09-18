@@ -34,39 +34,39 @@ module.exports =
         reply ok: 1
 
 
-    Room.findOne( _id: room_id )
-      .select( "_id user recording" )
-      .lean()
-      .exec ( error, room ) -> 
+        Room.findOne( _id: room_id )
+          .select( "_id user recording" )
+          .lean()
+          .exec ( error, room ) -> 
 
-        console.log 'updating tape for recording ->', room.recording
+            console.log 'updating tape for recording ->', room.recording
 
-        data = 
-          type     : 'upload:finished'
-          location : s3.location
+            data = 
+              type     : 'upload:finished'
+              location : s3.location
 
-        sockets.send room.user, data
+            sockets.send room.user, data
 
-        # pusher.trigger "tape.#{mount_point}", "upload:finished", response.location
+            # pusher.trigger "tape.#{mount_point}", "upload:finished", response.location
 
-        Tape
-          .update( _id: room.recording, $set: s3: s3 )
-          .lean().exec ( error, response ) ->
+            Tape
+              .update( _id: room.recording, $set: s3: s3 )
+              .lean().exec ( error, response ) ->
 
-            if error
+                if error
 
-              console.log 'error adding s3 information to Tape'
-              console.log error
+                  console.log 'error adding s3 information to Tape'
+                  console.log error
 
-            console.log 'tape response ->', response
+                console.log 'tape response ->', response
 
 
-        Room
-          .update( _id: room_id, $set: recording: null )
-          .lean().exec ( error, response ) ->
+            Room
+              .update( _id: room_id, $set: recording: null )
+              .lean().exec ( error, response ) ->
 
-            if error
-              console.log 'error removing tape from room'
-              console.log error
+                if error
+                  console.log 'error removing tape from room'
+                  console.log error
 
-            console.log 'room response ->', response
+                console.log 'room response ->', response
