@@ -12,12 +12,11 @@ schema = new Schema
   # slug used as the recording URL
   slug       : type: String
 
-  title     : type: String, required: on
-  genres    : { type: Array, default: [] }
+  title     : type: String
+  genres    : type: Array
   location  : String
   about     : String
   cover_url : String
-
 
 
   likes      : { type: Number, default: 0 }
@@ -32,9 +31,7 @@ schema = new Schema
 
   started_at : Date
   stopped_at : Date
-
-  # filename being used on S3
-  filename   : String
+  duration   : Number
 
   # s3 information which comes back from the tape recorder
   s3         : Object

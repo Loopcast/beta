@@ -41,7 +41,7 @@ module.exports =
         user : user_id
 
       Room.findOne( query )
-        .select( "_id user" )
+        .select( "_id user info recording" )
         .lean()
         .exec ( error, room ) -> 
 
@@ -93,10 +93,21 @@ module.exports =
               if error then return failed request, reply, error
 
               started_at = now( response.value.status.recording.started_at )
-              stopped_at = now( update['status.recording.stopped_at'] )
+              stopped_at = now( update.$set['status.recording.stopped_at'] )
 
               duration = stopped_at.diff( started_at, 'seconds' )
               
+              rec_update = 
+                stopped_at: update.$set['status.recording.stopped_at']
+                duration  : duration
+
+                slug      : room.info.slug
+                title     : room.info.title
+                genres    : room.info.genres
+                location  : room.info.location
+                about     : room.info.about
+                cover_url : room.info.cover_url
+
               update = 'status.recording.duration': duration
 
               Room.update _id: room._id, update, ( error, response ) ->
@@ -110,12 +121,8 @@ module.exports =
 
               reply response
 
-              rec_update = 
-                stopped_at: update['status.live.stopped_at']
-                duration  : duration
-
               Tape
-                .update( _id: recording._id, rec_update )
+                .update( _id: room.recording, rec_update )
                 .lean()
                 .exec ( error, docs_updated ) ->
 

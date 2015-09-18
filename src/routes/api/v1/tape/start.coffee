@@ -56,7 +56,7 @@ module.exports =
         recording = doc
 
       Room.findOne( query )
-        .select( "_id user info.slug" )
+        .select( "_id user" )
         .lean()
         .exec ( error, room ) -> 
 
@@ -76,6 +76,20 @@ module.exports =
             'status.is_recording'         : true
             'status.recording.started_at' : now().format()
 
+          # set the filename on the tape recording
+          rec_update =
+            started_at: update['status.recording.started_at']
+
+          Tape
+            .update( _id: recording._id, rec_update )
+            .lean()
+            .exec ( error, docs_updated ) ->
+
+              if error 
+                console.log "error updating tape document"
+                console.log error
+                
+                return failed request, reply, error
 
           data =
             url: "#{s.tape.url}:8000/api/v1/start"
@@ -99,25 +113,7 @@ module.exports =
 
               return reply Boom.preconditionFailed( "Database error" )
 
-            # JSON from tape server
-            body = JSON.parse body
-
-            rec_update =
-              slug    : room.info.slug
-              filename: body.file
-
-            Tape
-              .update( _id: recording._id, rec_update )
-              .lean()
-              .exec ( error, docs_updated ) ->
-
-                if error 
-                  console.log "error updating tape document"
-                  console.log error
-                  
-                  return failed request, reply, error
-
-            update[ 'recording.file' ] = body.file
+            # update[ 'status.recording.file' ] = body.file
             
             Room.update( _id: room_id, update )
               .lean()
