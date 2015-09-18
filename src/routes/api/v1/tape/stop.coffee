@@ -68,11 +68,19 @@ module.exports =
               'status.recording.stopped_at' : on
               'status.is_recording'         : on
 
-          request "#{s.tape.url}:8000/stop/#{room.user}", ( error, response, body ) ->
+          console.log 'calling stop passing user as mount_point ->', room.user
+          console.log "calling API -> #{s.tape.url}:8000/api/v1/stop" 
+
+          data =
+            url: "#{s.tape.url}:8000/api/v1/stop"
+            form:
+              mount_point: String( room.user )
+
+          request.post data, ( error, response, body ) ->
 
             if error
 
-              console.log "error starting tape"
+              console.log "error stopping tape"
               console.log error
 
               return      

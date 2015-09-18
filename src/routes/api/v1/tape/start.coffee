@@ -51,7 +51,7 @@ module.exports =
           console.log "error creating tape document"
           console.log error
           
-          return failed request, reply, error
+          return failed req, reply, error
 
         recording = doc
 
@@ -89,7 +89,7 @@ module.exports =
                 console.log "error updating tape document"
                 console.log error
                 
-                return failed request, reply, error
+                return failed req, reply, error
 
           data =
             url: "#{s.tape.url}:8000/api/v1/start"

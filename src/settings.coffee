@@ -119,8 +119,10 @@ if s.is_beta
 # IF STAGING OR LOCAL
 if not s.is_beta
 
-  s.mongo = url: process.env.MONGOLAB_URI
   
+  # heroku staging
+  s.mongo = url: process.env.MONGOLAB_URI
+
   s.facebook.client_sdk_id = "1608982952716846"
 
   s.cloudinary.cloud_name = 'hrrdqnsfe'
@@ -167,6 +169,10 @@ if s.is_local
     options: 
       user: 'l00pc4st',
       pass: 'l00pc4st2015'
+
+  # hems personal compose staging
+  # s.mongo =
+  #   url: "mongodb://loopcast-staging:loopcast-staging@dogen.mongohq.com:10006/mongorestore"
 
   s.redis =
     host     : 'pub-redis-17159.eu-west-1-2.1.ec2.garantiadata.com'
