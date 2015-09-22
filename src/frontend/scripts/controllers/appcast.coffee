@@ -247,10 +247,7 @@ appcast.callbacks =
     # notifies backend about user's current AppCast version
     L.user.appcast_version data.build, ( error, callback ) ->
 
-      if error
-
-        return console.error error
-
+      if error then console.error error
 
 
 # should try to connect only on it's own profile page
