@@ -181,6 +181,16 @@ module.exports =
         callback? null, response
 
   tapes:
+    get: (tape_id, callback ) ->
+
+      request = $.get api_url + "tape/#{tape_id}/info"
+
+      request.error on_error "tape/#{tape_id}/info", callback
+
+      request.done ( response ) ->
+
+        callback null, response
+
     update: ( id, data, callback ) ->
       request = $.put api_url + "tape/#{id}", data
 
