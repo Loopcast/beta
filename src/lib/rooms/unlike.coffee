@@ -1,4 +1,4 @@
-increase_like = lib 'rooms/increase_like'
+increase = lib 'likes/increase'
 
 module.exports = ( user_id, room_id, callback ) ->
 
@@ -18,7 +18,7 @@ module.exports = ( user_id, room_id, callback ) ->
 
       if docs.nModified > 0
         # +1 on the counter
-        increase_like room_id, -1
+        increase Room, room_id, -1
 
       callback null, 
         ok      : true

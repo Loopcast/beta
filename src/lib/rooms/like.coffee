@@ -1,4 +1,4 @@
-increase_like = lib 'rooms/increase_like'
+increase = lib 'likes/increase'
 
 module.exports = ( user_id, room_id, callback ) ->
 
@@ -15,6 +15,6 @@ module.exports = ( user_id, room_id, callback ) ->
     if error then return callback error
 
     # +1 on the counter
-    increase_like room_id, 1
+    increase Room, room_id, 1
 
     callback null, doc.toObject()
