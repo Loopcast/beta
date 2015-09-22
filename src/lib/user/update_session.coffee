@@ -7,6 +7,4 @@ module.exports = ( request, user ) ->
   user.info.created_at = user.created_at
   user.info.email      = user.data.email
 
-  console.log 'updating user info ->', user.info
-  
   request.auth.session.set user: user.info

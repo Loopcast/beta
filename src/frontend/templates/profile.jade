@@ -264,7 +264,9 @@ block content
 
   include ./modals/room_modal.jade
 
-  script
-    //- THIS IS JUST FOR DEBUGGIN. TO BE REMOVED
-    | var profile_info = !{JSON.stringify(locals)};;
-    | console.log( 'profile_info', profile_info ); 
+  //- script
+  //-   //- THIS IS JUST FOR DEBUGGIN. TO BE REMOVED
+  //-   if !s.is_beta 
+  //-     //- not sure if this s.is_beta is working
+  //-     | var profile_info = !{JSON.stringify(locals)};;
+  //-     | console.log( 'profile_info', profile_info ); 

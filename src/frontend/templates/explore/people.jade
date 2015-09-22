@@ -36,7 +36,6 @@ block grid
             for g in item.info.genres
               a.tag(href="?genres=#{g}", title="#{g}", data-genre-id="#{g}") #{g}
 
-          - console.log( "---", item.info.location );
           if item.info.location && item.info.location.length > 1
             p.room_location
               //- span.spritesheet.icon_location
@@ -47,7 +46,9 @@ block grid
         a.enter_room(href="#", class="button yellow_button no_shadow small_button small_button_2", title="Follow", data-view="profile/follow_button", data-user-id="#{item._id}") Follow
 
 
-  script
-    //- THIS IS JUST FOR DEBUGGIN. TO BE REMOVED
-    | var data = !{JSON.stringify(locals)};;
-    | console.log( 'people data', data ); 
+  //- script
+  //-   //- THIS IS JUST FOR DEBUGGIN. TO BE REMOVED
+  //-   if !s.is_beta
+  //-     //- not sure if !s.is_beta is working
+  //-   | var data = !{JSON.stringify(locals)};;
+  //-   | console.log( 'people data', data ); 

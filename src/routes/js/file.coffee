@@ -18,8 +18,6 @@ module.exports =
     # check for real file
     url  = root + '/public/js/' + request.params.file
 
-    console.log 
-
     fs.readFile url, encoding: 'utf-8', ( error, content ) ->
 
       if error then return reply error

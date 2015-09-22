@@ -16,8 +16,6 @@ module.exports = ( user_id, room_id, callback ) ->
 
       if error then return callback error
 
-      console.log 'updating likes ->', docs
-
       if docs.nModified > 0
         # +1 on the counter
         increase_like room_id, -1
