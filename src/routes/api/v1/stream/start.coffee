@@ -34,12 +34,13 @@ module.exports =
 
         return reply Boom.unauthorized( 'needs authentication' )
 
-      username = req.auth.credentials.user.username
+      username = req.auth.credentials.user.username 
+      user_id  = req.auth.credentials.user._id
       room_id  = req.payload.room_id
 
       query =
-        _id: room_id
-        'info.user' : username
+        _id  : room_id
+        user : user_id
 
       Room.findOne( query )
         .select( "_id user info.slug info.title info.genres info.about" )
@@ -73,25 +74,41 @@ module.exports =
             url         : "#{s.base_path}/#{username}/#{room.info.slug}"
             genres      : room.info.genres.join ','
 
-          console.log "metadata ->", metadata
-
           update_metadata room.user, metadata
 
           # update for mongodb
           # sets the document URL to be the streaming URL
           update =
-            'info.url'      : "#{s.radio.url}:8000/#{room.user}"
+            'info.url'               : "#{s.radio.url}:8000/#{room.user}"
             'status.is_live'         : true
             'status.live.started_at' : data.live.started_at
 
-          Room.update( _id: room_id, update )
-            .lean()
-            .exec ( error, docs_updated ) ->
+          # creating new stream document
+          doc = 
+            user: room.user
+            room: room._id
+            started_at : data.live.started_at
 
-              if error
+          stream = new Stream doc
 
-                failed req, reply, error
+          stream.save ( error, doc ) ->
 
-                return reply Boom.preconditionFailed( "Database error" )
+            if error 
+              console.log "error creating stream document"
+              console.log error
+              
+              return failed request, reply, error
 
-              reply update
+            update.stream = doc._id
+
+            Room.update( _id: room_id, update )
+              .lean()
+              .exec ( error, docs_updated ) ->
+
+                if error
+
+                  failed req, reply, error
+
+                  return reply Boom.preconditionFailed( "Database error" )
+
+                reply update

@@ -45,6 +45,10 @@ schema = new Schema
       stopped_at  : Date
       s3          : Object
 
+  # id of the current streaming document
+  stream    : type: Schema.Types.ObjectId, ref: 'Stream'
+  recording : type: Schema.Types.ObjectId, ref: 'Tape'
+
   updated_at: Date
   created_at: Date
 

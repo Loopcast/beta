@@ -41,7 +41,7 @@ module.exports =
         user : user_id
 
       Room.findOne( query )
-        .select( "_id" )
+        .select( "_id stream" )
         .lean()
         .exec ( error, room ) -> 
 
@@ -55,6 +55,26 @@ module.exports =
 
             return reply Boom.resourceGone( "room not found or user not owner" )
 
+          
+          stream = stopped_at: now().format()
+            
+
+          console.log 'stopping stream ->', room.stream
+
+          Stream
+            .update( _id: room.stream, stream )
+            .lean()
+            .exec ( error, stream ) ->
+
+              if error
+                console.log "error updating stream:", stream
+                console.log error
+
+                return
+
+              console.log 'updated stream ->', stream
+
+
           # status object to be sent down a socket Channel
           status =
             is_live: false
@@ -65,6 +85,9 @@ module.exports =
 
           update =
             $set:
+              # set stream to null
+              stream                   : null
+
               'status.is_live'         : false
               # 'status.is_public'       : false
               'status.live.stopped_at' : now().format()

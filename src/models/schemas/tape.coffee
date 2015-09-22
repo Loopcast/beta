@@ -10,14 +10,13 @@ schema = new Schema
 
   plays      : { type: Number, default: 0 }
 
+  # recording sets are private by default
+  public     : { type: Boolean, default: off }
+
   started_at : Date
   stopped_at : Date
-  duration   : Number
-
-  public     : Boolean
-  url        : String
 
   s3         : Object
 
 
-module.exports = mongoose.model 'Set', schema
+module.exports = mongoose.model 'Tape', schema
