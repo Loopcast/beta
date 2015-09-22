@@ -12,6 +12,8 @@ window.log   = require './globals/log'
 
 window.mover = require './globals/mover'
 
+window.slugify = (str) -> str.split( " " ).join( "-" )
+
 # widely used modules
 
 window.happens = require 'happens'

@@ -13,9 +13,6 @@ global.find = ( path ) ->
 global.schema = ( path ) -> 
   require __dirname + "/models/schemas/#{path}"
 
-global.slugify = (str) ->
-  return str.split( " " ).join( "-" )
-
 # everyone uses
 
 moment = require 'moment'
