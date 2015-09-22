@@ -26,6 +26,11 @@ module.exports =
       user         = req.auth.credentials.user
       following_id = req.params.id
 
+      if user._id is following_id
+
+        # user can't follow themselves
+        return reply ok: 1
+
       data = 
         type     : 'like'
         username : user.username
