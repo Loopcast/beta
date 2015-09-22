@@ -7,33 +7,43 @@ module.exports =
   config:
 
     description: "Render a template for a recorded tape"
+    
     plugins: "hapi-swagger": responseMessages: [
       { code: 500, message: 'Internal Server Error'}
     ]
 
-    handler: ( request, reply )->
+    auth:
+      strategy: 'session'
+      mode    : 'try'
 
-      # if not authenticated, must check if the room is live
-      # if not live should return a 404
-      # if !request.auth.isAuthenticated
+    handler: ( req, reply )->
+
+      if req.auth.isAuthenticated
+        visitor = req.auth.credentials.user
 
       model = aware {}
 
-      profile = request.params.profile
-      slug    = request.params.slug
+      profile = req.params.profile
+      slug    = req.params.slug
 
       find( 'users/by/username' ) profile, '_id', ( error, user ) ->
 
         if error
           return reply Boom.badImplementation( error.message, error )
 
-        console.log 'user id ->', user._id
-
-
         query =
           user    : user._id
           slug    : slug
           deleted : false
+
+        # if it's not the owner of the set, then only display if public
+        is_guest = ( !visitor || visitor._id is not user._id )
+
+        console.log 'visitor ->', visitor
+
+
+        if is_guest then query.public = true 
+          
 
         Tape.findOne( query )
 
@@ -42,7 +52,7 @@ module.exports =
           .lean()
           .exec ( error, tape ) -> 
 
-            if error then return failed request, reply, error
+            if error then return failed req, reply, error
 
             # if tape doesn't exist
             if not tape then return reply( "Page not found" ).code 404
