@@ -240,7 +240,7 @@ block content
                     a.icon.settings_button.ss-settings(href="#", title="Setting Session", data-view="components/click_trigger" data-target="#session_recorded_#{room._id} .edit_session_popup")
                     .edit_session_popup
                       .triangle
-                      if room.s3.location
+                      if room.s3
                         a.download_button.button.yellow_button.small_button_4(href="#{room.s3.location}", target="_blank", title="Download" download="#{room.s3.location}") Download
                       a.edit_button.button.yellow_button.small_button_4(href="#", title="Edit") Edit
                       a.delete_button.button.red_button.small_button_4(href="#", title="Delete") Delete
