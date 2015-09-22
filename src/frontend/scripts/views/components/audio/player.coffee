@@ -242,7 +242,7 @@ module.exports = class Player
     clearTimeout @timeout_follow_popup
     @timeout_follow_popup = setTimeout =>
       @follow_popup.show data
-    , 10000
+    , 30000
 
   on_audio_started: =>    
     log "[Player] on_audio_started"
