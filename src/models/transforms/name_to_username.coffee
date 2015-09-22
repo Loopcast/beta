@@ -1,15 +1,13 @@
-slug    = require 'slug'
-
 # TODO: check if username already exists ( and is from another user )
 # if so, then create something like -2/-3 [...]
 
 module.exports = ( name, add_random_number, callback ) ->
 
   # remove white spaces
-  username = name.replace /\s/g, ''
+  # username = name.replace /\s/g, ''
 
   # slug and force lowercase
-  username  = slug username.toLowerCase()
+  username  = slug username
 
   if add_random_number
     # adds random number to username

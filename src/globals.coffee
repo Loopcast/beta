@@ -13,6 +13,9 @@ global.find = ( path ) ->
 global.schema = ( path ) -> 
   require __dirname + "/models/schemas/#{path}"
 
+_slug = require 'slug'
+global.slug = ( word ) -> _slug word.toLowerCase()
+
 # everyone uses
 
 moment = require 'moment'
