@@ -54,6 +54,8 @@ module.exports = class Record extends ButtonWithTimer
     appcast.stop_recording()
     L.rooms.stop_recording @room_id, ( error, response ) ->
 
+      console.log "GOT TAPE ID: #{response.room.recording}"
+
       ref.set_active false
 
       if not appcast.get( "stream:streaming" )

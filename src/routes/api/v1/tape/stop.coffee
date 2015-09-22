@@ -126,7 +126,10 @@ module.exports =
               # recorded for this length
               console.log "Recorded #{duration} seconds"
 
-              reply response
+              # return the ROOM so the client side can show the information
+              # and also show the publish modal with the link to publish
+              # this tape
+              reply room: room
 
               Tape
                 .update( _id: room.recording, rec_update )
