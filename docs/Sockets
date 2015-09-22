@@ -72,4 +72,16 @@ Channels / messages
         started_at ( UTC time )
         stopped_at ( UTC time )
 
-        
+
+  channel : tape_id
+  messages:
+
+    - type: "update"
+      _id : tape_id
+      data: 
+        title     : joi.string()
+        location  : joi.string()
+        about     : joi.string()
+        cover_url : joi.string()
+        genres    : joi.array()
+        public    : joi.boolean()

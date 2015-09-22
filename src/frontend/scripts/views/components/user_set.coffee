@@ -107,7 +107,7 @@ module.exports = ( dom ) ->
 
     log "[User Set] saving", to_save, data
 
-    api.rooms.update room_id, to_save, (error, response) ->
+    api.tapes.update room_id, to_save, (error, response) ->
       edit_modal.close()
 
 

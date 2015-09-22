@@ -1,5 +1,3 @@
-slug = require 'slug'
-Room = schema 'room'
 extract_id   = lib 'cloudinary/extract_id'
 delete_image = lib 'cloudinary/delete'
 
