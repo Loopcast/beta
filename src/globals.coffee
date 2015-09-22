@@ -20,6 +20,8 @@ global.slug = ( word ) -> _slug word.toLowerCase()
 
 moment = require 'moment'
 
+global._ = require 'lodash'
+
 global.joi = require 'joi'
 
 global.Boom = require 'boom'
