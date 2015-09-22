@@ -239,9 +239,9 @@ appcast.callbacks =
 
   version_response: ( data ) ->
 
-    console.log "current appcat version ~>", data.version
+    console.log "current appcat build ~>", data.build
 
-    L.user.appcast_version data.version, ( error, callback ) ->
+    L.user.appcast_version data.build, ( error, callback ) ->
 
       if error
 
