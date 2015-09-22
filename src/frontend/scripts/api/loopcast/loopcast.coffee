@@ -180,6 +180,16 @@ module.exports =
 
         callback? null, response
 
+  tapes:
+    update: ( id, data, callback ) ->
+      request = $.put api_url + "tape/#{id}", data
+
+      request.error on_error "tape/#{id} PUT", callback
+
+      request.done ( response ) ->
+        # log "[Loopcast] request done", response
+        callback? null, response
+
   chat:
     message: ( data, callback ) ->
 

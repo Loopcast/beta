@@ -20,7 +20,10 @@ module.exports = class PublishModal extends Modal
     @show_loading()
     log "[PublishModal] publish #{@id} ...."
 
-    L.rooms.update @id, is_public: true, (error, response) =>
+    # TODO: here we have to get the TAPE ID and not the room ID
+    # at the moment it's using the room_id
+
+    L.tapes.update @id, public: true, (error, response) =>
       @hide_loading()
       @close()
 

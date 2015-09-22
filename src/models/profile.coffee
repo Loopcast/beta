@@ -3,9 +3,6 @@
 ###
 
 
-User = schema 'user'
-Room = schema 'room'
-
 module.exports = ( username, show_private, callback ) ->
 
   if username is 'undefined'
@@ -31,34 +28,60 @@ module.exports = ( username, show_private, callback ) ->
         return callback null, null
 
       data = 
-        user : user
-        recorded  : []
-        live      : null
+        user  : user
+        rooms : []
+        tapes : []
 
       live     = 
         user             : user._id
         'status.is_live' : true
 
-      recorded = 
-        'user'               : user._id
-        'status.is_recorded' : true
-        'status.is_public'   : true
 
-      if show_private 
-        delete recorded[ 'status.is_public' ]
-
-      # just shows live or recorded rooms
-      query = $or : [ live, recorded ]
-
-      Room.find( query ).lean().exec ( error, rooms ) ->
+      # change to parallel query
+      Room.find( live ).lean().exec ( error, rooms ) ->
 
         if error then return callback error
 
-        for room in rooms
+        data.rooms = rooms
 
-          if room.status.is_live
-            data.live = room
-          else
-            data.recorded.push room
+        tapes = 
+          # don't show deleted rooms
+          deleted: false
+          public : false
 
-        callback null, data
+        # if show private, then show all rooms, including
+        # the not public ones
+        if show_private then delete tapes.public
+
+        Tape.find( tapes ).lean().exec ( error, tapes ) ->
+
+          if error then return callback error
+
+          data.tapes = tapes
+
+          callback null, data
+
+      # old code
+      # recorded = 
+      #   'user'               : user._id
+      #   'status.is_recorded' : true
+      #   'status.is_public'   : true
+
+      # if show_private 
+      #   delete recorded[ 'status.is_public' ]
+
+      # # just shows live or recorded rooms
+      # query = $or : [ live, recorded ]
+
+      # Room.find( query ).lean().exec ( error, rooms ) ->
+
+      #   if error then return callback error
+
+      #   for room in rooms
+
+      #     if room.status.is_live
+      #       data.live = room
+      #     else
+      #       data.recorded.push room
+
+      #   callback null, data

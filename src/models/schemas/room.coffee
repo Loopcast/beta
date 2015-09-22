@@ -47,6 +47,8 @@ schema = new Schema
 
   # id of the current streaming document
   stream    : type: Schema.Types.ObjectId, ref: 'Stream'
+
+  # TODO: rename to tape instead of recording
   recording : type: Schema.Types.ObjectId, ref: 'Tape'
 
   updated_at: Date

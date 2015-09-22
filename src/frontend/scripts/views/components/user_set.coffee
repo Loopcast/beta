@@ -135,7 +135,8 @@ module.exports = ( dom ) ->
 
 
   _set_public = ->
-    api.rooms.update room_id, is_public: true, (error, response) =>
+
+    api.tapes.update room_id, public: true, (error, response) =>
 
       if error
         log "[PublishModal] error", error

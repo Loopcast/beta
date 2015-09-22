@@ -141,9 +141,16 @@ block content
 
 
       - klass = "no_sessions"
-      if live || (recorded && recorded.length)
+      if rooms.length || tapes.length
         - klass = ""
+
       .list_sessions(class="#{klass}", data-view="profile/sets")
+
+        
+        //- TODO: Add as many live sessions as existent on rooms array
+        //- for now there will be always only one, but in the future
+        //- an user will be able to have multiple rooms live
+        - if( rooms.length == 1 ) live = rooms[0]
 
         if live
           .session.outline_box(data-view="profile/live_set", data-room-id="#{live._id}", data-room-started-at="#{live.status.live.started_at}")
@@ -176,63 +183,65 @@ block content
                   span.for_desktop now live
                 p.time &nbsp;
 
-        if recorded && recorded.length
+        if tapes.length
           .recorded_sessions
             .title
               h2 Recorded sessions
               .icon.ss-record-wrapper
                 span.ss-record
-              span.session_text #{recorded.length}
+              span.session_text #{tapes.length}
 
               //- - span.icon.ss-alert.for_owner
               //- - span.alert_text.for_owner #{free_storage} free storage remaining
 
-            for room in recorded
-              - room.url = "/" + room.info.user + "/" + room.info.slug 
+            for room in tapes
+              - room.url = "/" + user.info.username + "/" + room.slug
               - public_class = ""
-              if !room.status.is_public && room.status.recording.stopped_at
+
+              if !room.public && room.stopped_at
                 - public_class = "to_publish"
-              //- - room.info.cover_url = room.info.cover_url || '/images/default_room_cover.jpg'
+
+              //- - room.cover_url = room.cover_url || '/images/default_room_cover.jpg'
               .session.outline_box(class="#{public_class}", id="session_recorded_#{room._id}", data-room-id="#{room._id}" data-view="[components/user_set,components/audio/player_preview]")
-                .image(style="background-image:url(#{transform.cover_thumb(room.info.cover_url, user.info.avatar)})")
+                .image(style="background-image:url(#{transform.cover_thumb(room.cover_url, user.info.avatar)})")
                   a.icon.ss-play.circle_icon(href="#",title="Play") 
                   .loading_spin
                   .share_wrapper(
                     data-view="buttons/share", 
                     data-permalink="#{room.url}",
-                    data-title="#{room.info.title}",
-                    data-summary="#{room.info.about}",
-                    data-image="#{room.info.cover_url}"
+                    data-title="#{room.title}",
+                    data-summary="#{room.about}",
+                    data-image="#{room.cover_url}"
                   )
                     a.yellow.ss-action(href="#", title="Share")
 
 
                 .content
                   h2.session_title 
-                    //- a.room_url(href="#{room.url}", title="#{room.info.title}") #{room.info.title}
-                    | #{room.info.title}
+                    //- a.room_url(href="#{room.url}", title="#{room.title}") #{room.title}
+                    | #{room.title}
                   p.session_author #{user.info.name}
                   .genres
-                    for genre in room.info.genres
+                    for genre in room.genres
                       a.tag(href="/explore?genres=#{genre}", title="#{genre}") #{genre}
                     
                   .small_info
-                    a.location(href="/explore?search=#{room.info.location}")
+                    a.location(href="/explore?search=#{room.location}")
                       span.icon.ss-location
-                      span.text #{room.info.location}
+                      span.text #{room.location}
                     .likes 
                       span.icon.ss-heart
                       span.text #{room.likes}
                     .guests 
                       span.icon.ss-play
-                      span.text #{room.status.recording.plays}
+                      span.text #{room.plays}
 
                   .edit_session_wrapper
                     a.icon.settings_button.ss-settings(href="#", title="Setting Session", data-view="components/click_trigger" data-target="#session_recorded_#{room._id} .edit_session_popup")
                     .edit_session_popup
                       .triangle
-                      if room.info.file
-                        a.download_button.button.yellow_button.small_button_4(href="#{room.info.file}", target="_blank", title="Download" download="#{room.info.file}") Download
+                      if room.s3.location
+                        a.download_button.button.yellow_button.small_button_4(href="#{room.s3.location}", target="_blank", title="Download" download="#{room.s3.location}") Download
                       a.edit_button.button.yellow_button.small_button_4(href="#", title="Edit") Edit
                       a.delete_button.button.red_button.small_button_4(href="#", title="Delete") Delete
 

@@ -24,10 +24,10 @@ schema = new Schema
   plays      : { type: Number, default: 0 }
 
   # recording sets are private by default
-  public     : { type: Boolean, default: off }
+  public     : { type: Boolean, default: false }
 
   # true if the user deleted the tape from this profile
-  deleted    : { type: Boolean }
+  deleted    : { type: Boolean, default: false }
 
   started_at : Date
   stopped_at : Date
