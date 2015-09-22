@@ -38,7 +38,7 @@ global.Room = schema 'room'
 
 global.Tape = schema 'tape'
 
-global.Set  = schema 'set'
+# global.Set  = schema 'sets'
 
 global.Like = schema 'like'
 
