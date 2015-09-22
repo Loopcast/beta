@@ -36,24 +36,14 @@ module.exports =
 
     Tape
       .findById( req.params.id )
+      .populate( "user", "info.name info.username info.avatar info.occupation likes" )
       .select( "user info status likes" )
-      .lean().exec ( error, room ) ->
+      .lean().exec ( error, result ) ->
 
-        if error then return reply Boom.resourceGone "Room not found"
+        if error then return reply Boom.resourceGone "Tape not found"
 
-        User
-          .findById( room.user )
-          .select( "info.name info.username info.avatar info.occupation likes" )
-          .lean().exec ( error, user ) ->
+        data.on 'liked', ( liked ) ->
 
-            if error then return reply Boom.resourceGone "User not found"
-
-            # never reveal user's id
-            delete room.user
-
-            data.on 'liked', ( liked ) ->
-
-              reply
-                user : user
-                tape : tape
-                liked: liked
+          reply
+            tape  : result
+            liked : liked
