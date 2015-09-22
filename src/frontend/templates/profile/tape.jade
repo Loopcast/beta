@@ -1,0 +1,5 @@
+extends ../layout
+
+block content
+  pre(style='text-align: left')
+    !{JSON.stringify(locals.tape, undefined, 2)}
