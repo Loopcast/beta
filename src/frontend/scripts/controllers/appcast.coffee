@@ -239,8 +239,12 @@ appcast.callbacks =
 
   version_response: ( data ) ->
 
-    console.log "current appcat build ~>", data.build
+    data.build = Number data.build
 
+    # save for later user in the application
+    appcast.set "build", data.build
+
+    # notifies backend about user's current AppCast version
     L.user.appcast_version data.build, ( error, callback ) ->
 
       if error
