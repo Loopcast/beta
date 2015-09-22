@@ -252,8 +252,8 @@ module.exports = class Player
     app.emit 'audio:started', @data.room._id
 
     # @loading.fadeOut()
-    @dom.removeClass 'loading'
     log "[Player] loading hide"
+    @dom.removeClass 'loading'
 
   on_audio_stopped: =>
     log "[Player] on_audio_stopped"
@@ -284,8 +284,8 @@ module.exports = class Player
     delay 100, => @progress.show()
 
   on_snapped: ->
-    @dom.removeClass 'loading'
     log "[Player] loading hide"
+    @dom.removeClass 'loading'
 
   on_progress: (data) =>
     return if @is_dragging
@@ -304,6 +304,7 @@ module.exports = class Player
 
   on_progress_ended: (perc) =>
     @progress.removeClass 'dragging'
+    log "[Player] on_progress_ended() loading show"
     @dom.addClass 'loading'
     @audio.snap_to perc/100
     @is_dragging = false
@@ -316,6 +317,7 @@ module.exports = class Player
     w = $(e.currentTarget).width()
     perc = x / w
 
+    log "[Player] on_progress_click() loading show"
     @dom.addClass 'loading'
     @audio.snap_to perc
 
@@ -327,8 +329,8 @@ module.exports = class Player
 
   open: =>
     app.body.addClass 'player_visible'
+    log "[Player] open() loading show"
     @dom.show().addClass( 'loading' )
-    log "[Player] loading show"
     delay 1, => @dom.addClass 'visible'
 
 
