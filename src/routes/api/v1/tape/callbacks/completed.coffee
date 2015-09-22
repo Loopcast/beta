@@ -78,7 +78,7 @@ module.exports =
 
                 console.log 'tape response ->', arguments
 
-            Room.update _id: room_id, $set: recording: null, ( error, response ) ->
+            Room.update _id: room_id, $unset: recording: "", ( error, response ) ->
 
                 if error
                   console.log 'error removing tape from room'

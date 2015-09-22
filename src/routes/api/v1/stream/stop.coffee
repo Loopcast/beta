@@ -66,12 +66,11 @@ module.exports =
 
           update =
             $set:
-              # remove the stream to null
-              stream                   : null
-
               'status.is_live'         : false
               # 'status.is_public'       : false
               'status.live.stopped_at' : now().format()
+            $unset: 
+              streaming: ""
 
           options = 
             fields:
