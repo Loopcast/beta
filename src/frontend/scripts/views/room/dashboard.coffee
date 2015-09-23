@@ -77,7 +77,7 @@ module.exports = class Dashboard extends RoomView
   add_facebook_send_button: (url) ->
 
     # el = $( '<div />' ).addClass( 'fb-send' ).attr( 'data-href', url )
-    el = $( '<a />' ).addClass( 'custom-fb-send' ).attr( 'href', '#' )
+    el = $( '<a />' ).addClass( 'custom-fb-send' ).attr( 'href', '#' ).html('send')
     el.on 'click', ->
       FB.ui
         method: 'send',
