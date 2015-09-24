@@ -54,7 +54,8 @@ module.exports = class Record extends ButtonWithTimer
     appcast.stop_recording()
     L.rooms.stop_recording @room_id, ( error, response ) ->
 
-      console.log "GOT TAPE ID: #{response.room.recording}"
+      # console.log "GOT TAPE ID: #{response.room.recording}"
+      log "[Record Button] GOT TAPE ID", response
 
       ref.set_active false
 
