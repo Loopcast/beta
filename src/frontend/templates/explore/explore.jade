@@ -27,8 +27,10 @@ block grid
     if !item.status.is_live
       - url = "#"
 
+    - console.log( "[-------------]", item.info.genres )
     for g in item.info.genres
-      - klasses += " item-" + slugify(g)
+      - console.log( slugify(g) )
+      //- - klasses += " item-" + slugify(g)
 
     if item.status.is_live
       - klasses += " is_live"

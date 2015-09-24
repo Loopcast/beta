@@ -42,6 +42,7 @@ global.Tape   = schema 'tape'
 
 global.Stream = schema 'stream'
 
+
 global.Like   = schema 'like'
 
 r = require 'redis'

@@ -4,9 +4,18 @@ function fb_init( app_id ){
       appId      : app_id,
       // music      : true, // install facebook music bridge on the page
       xfbml      : true,
-      version    : 'v2.3'
+      version    : 'v2.4'
     });
 
+    // fb_parse();
+
+    window.fb_ready = true;
+    if($){
+      console.log( "[Facebook] triggering" );
+      $(window).trigger( 'fb:ready' );
+    } else {
+      console.log( "[Facebook] jQuery non defined" );
+    }
     // // PLAY means start playing a new track, the song URL is passed in
     // FB.Event.subscribe('fb.music.PLAY', function(){
     //   console.group( "fb.music.PLAY" )
@@ -48,8 +57,6 @@ function fb_init( app_id ){
 } 
 
 
-
-
 (function(d, s, id){
    var js, fjs = d.getElementsByTagName(s)[0];
    if (d.getElementById(id)) {return;}
@@ -69,4 +76,9 @@ function fb_share() {
   }, function(response){
     console.log( response );
   });
+}
+
+function fb_parse() {
+  console.log( '[Facebook] fb_parse()' )
+  FB.XFBML.parse()
 }

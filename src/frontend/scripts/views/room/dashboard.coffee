@@ -25,6 +25,7 @@ module.exports = class Dashboard extends RoomView
 
     # log "[Dashboard] on_room_created (it is the owner)"
     @publish_modal = view.get_by_dom '#publish_modal'
+
     
 
     @live_button   = view.get_by_dom @dom.find( '#go_live_button' )
@@ -64,6 +65,26 @@ module.exports = class Dashboard extends RoomView
     @appcast_not_running_message.on 'click', @toggle_not_running_balloon
     appcast.on 'connected', @on_appcast_connected
     app.on 'appcast:input_device', @on_device_changed
+
+
+    # @add_facebook_send_button location.href
+    @add_facebook_send_button 'http://google.com'
+
+
+  ###
+  Add a facebook send button to the dashboard after the element #share_dashboard
+  ###
+  add_facebook_send_button: (url) ->
+    @dom.find( '.custom-fb-send' ).on 'click', ->
+      FB.ui
+        method: 'send',
+        name: 'Send your room link to friends'
+        link: url
+    
+    if window.fb_ready
+      fb_parse()
+    else
+      $(window).on 'fb:ready', fb_parse
 
   on_device_changed: =>
     log "[Dashboard] on_device_changed", app.session.get( 'hide:help' )
