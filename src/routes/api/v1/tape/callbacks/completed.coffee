@@ -78,5 +78,3 @@ module.exports =
                   if error
                     console.log 'error removing tape from room'
                     console.log error
-
-                  console.log 'room response ->', arguments
