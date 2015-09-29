@@ -67,9 +67,6 @@ module.exports =
               'status.recording.stopped_at' : on
               'status.is_recording'         : on
 
-          console.log 'calling stop passing user as mount_point ->', room.user
-          console.log "calling API -> #{s.tape.url}:8000/api/v1/stop" 
-
           data =
             url: "#{s.tape.url}:8000/api/v1/stop"
             form:
@@ -131,13 +128,28 @@ module.exports =
               # this tape
               reply room: room
 
-              Tape
-                .update( _id: room.recording, rec_update )
-                .lean()
-                .exec ( error, docs_updated ) ->
+              update = ->
+                Tape
+                  .update( _id: room.recording, rec_update )
+                  .lean()
+                  .exec ( error, docs_updated ) ->
 
-                  if error 
-                    console.log "error updating tape document"
-                    console.log error
-                    
-                    return failed request, reply, error
+                    if error 
+                      console.log "error updating tape document"
+                      console.log error
+                      
+                      return failed request, reply, error
+
+              # if no cover, just update
+              return update() if not room.info.cover_url
+
+              cloudinary.uploader.upload room.info.cover_url, ( result ) ->
+
+                if not result.secure_url
+                  console.log 'error updating cloning image for tape'
+                  console.log result
+
+                else
+                  rec_update.cover_url = result.secure_url
+
+                update()
