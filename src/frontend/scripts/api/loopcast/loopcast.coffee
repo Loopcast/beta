@@ -200,6 +200,18 @@ module.exports =
         # log "[Loopcast] request done", response
         callback? null, response
 
+    delete: ( id, callback ) ->
+      on_status_code =
+        401: ( response ) -> callback 'unauthorized, need log in!'
+
+      request = $.delete api_url + "tapes/#{id}"
+
+      request.error on_error "tapes/#{id} DELETE", callback
+
+      request.done ( response ) ->
+        # log "[Loopcast] request done", response
+        callback? null, response
+
   chat:
     message: ( data, callback ) ->
 
