@@ -69,19 +69,21 @@ module.exports =
             #     console.log 'room response ->', arguments
 
 
+            console.log 'updating tape with id ->', room.recording
+
             Tape.update _id: room.recording, $set: s3: s3, ( error, response ) ->
 
-                if error
+              if error
 
-                  console.log 'error adding s3 information to Tape'
-                  console.log error
+                console.log 'error adding s3 information to Tape'
+                console.log error
 
-                console.log 'tape response ->', arguments
+              console.log 'tape response ->', arguments
 
-            Room.update _id: room_id, $unset: recording: "", ( error, response ) ->
+              Room.update _id: room_id, $unset: recording: "", ( error, response ) ->
 
-                if error
-                  console.log 'error removing tape from room'
-                  console.log error
+                  if error
+                    console.log 'error removing tape from room'
+                    console.log error
 
-                console.log 'room response ->', arguments
+                  console.log 'room response ->', arguments
