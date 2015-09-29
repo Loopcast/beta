@@ -45,6 +45,8 @@ module.exports =
       else
         payload.genres = []
 
+      payload.genres = _.map payload.genres, ( g ) -> g.toLowerCase()
+
       doc = 
         user       : user._id
         created_at : now().toDate()
