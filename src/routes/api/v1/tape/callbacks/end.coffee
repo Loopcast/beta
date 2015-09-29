@@ -10,14 +10,6 @@ module.exports =
 
   handler: ( req, reply )->
 
-    console.log 'TAPE CALLBACK END'
-    console.log 'TAPE CALLBACK END'
-    console.log 'TAPE CALLBACK END'
-    console.log 'TAPE CALLBACK END'
-    console.log 'TAPE CALLBACK END'
-    console.log 'TAPE CALLBACK END'
-    console.log 'TAPE CALLBACK END'
-    
     room_id = req.payload.room_id
 
     update = 'status.is_recording': off

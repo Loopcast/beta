@@ -16,9 +16,6 @@ module.exports =
     room_id = req.payload.room_id
     s3      = req.payload.s3
 
-    console.log "succesful upload for room_id: #{room_id}"
-    console.log "s3 ->", s3
-
     update = 
       'info.file'          : s3.location
       'status.is_recorded' : on
@@ -69,16 +66,12 @@ module.exports =
             #     console.log 'room response ->', arguments
 
 
-            console.log 'updating tape with id ->', room.recording
-
             Tape.update _id: room.recording, $set: s3: s3, ( error, response ) ->
 
               if error
 
                 console.log 'error adding s3 information to Tape'
                 console.log error
-
-              console.log 'tape response ->', arguments
 
               Room.update _id: room_id, $unset: recording: "", ( error, response ) ->
 
