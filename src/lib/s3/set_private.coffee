@@ -9,10 +9,18 @@ module.exports = ( object_id, callback ) ->
     Key   : object_id
     ACL   : 'private'
     
-  request = s3.putObjectAcl params
+  s3.s3.putObjectAcl params, ( error, data ) ->
 
-  # error deleting from s3
-  request.on 'error', ( error ) -> callback error
+    if error then return callback? error
 
-  # successfuly deleted!
-  request.on 'end', -> callback?()
+    if callback?
+      callback null, data
+
+  # using node-s3-client API, which still doesn't suppor this method
+  # request = s3.putObjectAcl params
+
+  # # error deleting from s3
+  # request.on 'error', ( error ) -> callback error
+
+  # # successfuly deleted!
+  # request.on 'end', -> callback?()

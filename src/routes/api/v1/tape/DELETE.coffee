@@ -67,9 +67,10 @@ module.exports =
           # delete recorded set from s3
           if tape.s3
 
-            set_private room.status.recording.s3.key, ( error, callback ) ->
+            set_private tape.s3.key, ( error, data ) ->
 
               if error
                 console.error "error setting set to private @ s3!!"
                 console.error error
+                
                 return
