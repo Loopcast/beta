@@ -22,6 +22,8 @@
             span.icon.ss-dropdown
           select
             option Select your input source
+
+        a#dashboard_help(href="https://loopcast.desk.com/customer/portal/articles/1460891-how-to-connect-your-audio-device-" target="_blank", title="Help") ?
       .cell
         #go_live_balloon.balloon(data-view="components/help/balloon", data-target="#go_live_button")
           p Click go live to start your live stream and share it with friends, fans and followers everywhere.
@@ -40,10 +42,13 @@
             a.gray_part.left_part(href="#") Go live
             span.yellow_part.right_part 00:00:00
 
-          a#dashboard_help(href="https://loopcast.desk.com/customer/portal/articles/1460891-how-to-connect-your-audio-device-" target="_blank", title="Help") ?
+          
           #share_dashboard.share_wrapper( data-view="buttons/share" )
             a.white.ss-action(href="#", title="Share")
 
+          a.custom-fb-send(href="#")
+            img(src="/images/fb_send.png")
+          
           //- #help_balloon.balloon.appcast_not_running_balloon(data-view="components/help/balloon", data-target="#dashboard_help", data-orientation="right", data-offset="27")
           //-   a.button.small_button_2.dashboard_yellow.dashboard_button(href="#") UPGRADE
           //-   a.button.small_button_2.dashboard_button(href="#") HELP

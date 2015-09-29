@@ -4,7 +4,8 @@
   .cover
     border-bottom: none
     
-
+.fb_edge_comment_widget
+    margin-left: -370px !important
     
 .room_live, .room_recording
   .button.dashboard_button.with_icon .icon
@@ -39,6 +40,9 @@
   &.no_touch_device
     .editable_text:hover .icon
       display: block
+      
+    .custom-fb-send:hover
+      opacity: 0.8
      
 #appcast_not_running_balloon
   width: 380px
@@ -116,6 +120,14 @@
     top: 1px
     margin-left: 23px
     
+  .fb-send
+  .custom-fb-send
+    position: absolute
+    left: 100%
+    top: 46px
+    margin-left: 23px
+    
+  
   &.appcast_running
     .appcast_not_running_message
       display: none
@@ -530,9 +542,9 @@
   font-size: 1.2rem
   font-weight: bold
   position: absolute
-  left: 100%
-  top: 42px
-  margin-left: 20px
+  right: 100%
+  top: 27px
+  margin-right: 20px
   padding-top: 1px
   padding-left:2px 
     

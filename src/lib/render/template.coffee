@@ -36,6 +36,7 @@ module.exports = ( url, data = {}, callback ) ->
   data.transform = cloudinary_transform
   data.autolink = autolink
   data.strip_tags = strip_tags
+  data.slugify = (str) -> str.split( " " ).join( "-" )
 
   root = path.join( __dirname + '/../../frontend/templates' )
 
