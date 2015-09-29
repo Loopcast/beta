@@ -4,13 +4,13 @@ Schema   = mongoose.Schema
 schema = new Schema
 
   # owner of this recording
-  user       : type: Schema.Types.ObjectId, required: on, ref: 'User'
+  user      : type: Schema.Types.ObjectId, required: on, ref: 'User'
 
   # _id of the room where this recording was originated
-  room       : type: Schema.Types.ObjectId, required: on, ref: 'Stream'
+  room      : type: Schema.Types.ObjectId, required: on, ref: 'Stream'
 
   # slug used as the recording URL
-  slug       : type: String
+  slug      : type: String
 
   title     : type: String
   genres    : type: Array
