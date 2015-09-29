@@ -91,7 +91,11 @@ module.exports =
                   #   console.log 'succesfully deleted old cover from cloudinary'
                   #   console.log result
 
-          if payload.genres? then update.genres = payload.genres 
+          if payload.genres? 
+            # force lowercase
+            payload.genres          = _.map payload.genres, ( g ) -> g.toLowerCase()
+            update.genres = payload.genres 
+
           if payload.public? then update.public = payload.public 
             
 

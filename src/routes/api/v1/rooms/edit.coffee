@@ -92,6 +92,8 @@ module.exports =
                   #   console.log result
 
           if payload.genres
+            # force lowercase
+            payload.genres          = _.map payload.genres, ( g ) -> g.toLowerCase()
             update[ 'info.genres' ] = payload.genres
 
           if payload.is_public
