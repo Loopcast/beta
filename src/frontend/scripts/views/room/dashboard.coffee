@@ -67,8 +67,8 @@ module.exports = class Dashboard extends RoomView
     app.on 'appcast:input_device', @on_device_changed
 
 
-    # @add_facebook_send_button location.href
-    @add_facebook_send_button 'http://google.com'
+    @add_facebook_send_button location.href
+    # @add_facebook_send_button 'http://google.com'
 
 
   ###
