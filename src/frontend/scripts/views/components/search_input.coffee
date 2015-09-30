@@ -7,12 +7,24 @@ module.exports = class SearchInput
   on_keypress: ( e ) =>
     if e.keyCode is 13
       str = @dom.val()
+
       if str.length > 0
-        @go_search str
+
+        type = if location.href.indexOf( 'people' ) > 0 then 'people' else 'sets'
+
+
+        @go_search str, type
+
+
       return false
 
-  go_search: ( str ) ->
-    navigation.go '/explore?search=' + str
+  go_search: ( str, type = "sets" ) ->
+
+    switch type
+      when 'sets'
+        navigation.go '/explore?search=' + str
+      when 'people'
+        navigation.go '/explore/people?search=' + str
 
 
   destroy: ->
