@@ -19,8 +19,8 @@ module.exports = class SocialLinks
 
     @dom.on 'click', (e) -> e.stopPropagation()
 
-    @read_template = require 'templates/components/editables/social_link_read_mode'
-    @write_template = require 'templates/components/editables/social_links'
+    @read_template = require 'client_templates/components/editables/social_link_read_mode'
+    @write_template = require 'client_templates/components/editables/social_links'
 
     data = @dom.data 'links'
 
@@ -70,7 +70,7 @@ module.exports = class SocialLinks
 
   get_template: ( callback ) ->
 
-    tmpl = require 'templates/components/editables/social_links'
+    tmpl = require 'client_templates/components/editables/social_links'
     
     callback tmpl()
 

@@ -18,7 +18,7 @@ module.exports = class Messages extends ChatView
   on_room_created: ( @room_id, @owner_id ) =>
     super @room_id, @owner_id
 
-    @tmpl = require 'templates/chat/chat_message'
+    @tmpl = require 'client_templates/chat/chat_message'
 
     @chat = $ '.chat_content'
 

@@ -11,7 +11,7 @@ module.exports = (dom) ->
 
   log "links", links, l
 
-  tmpl = require 'templates/components/editables/social_link_read_mode'
+  tmpl = require 'client_templates/components/editables/social_link_read_mode'
   html = ""
   for item in l
     html += tmpl( item )

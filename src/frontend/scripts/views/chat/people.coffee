@@ -15,7 +15,7 @@ module.exports = class People extends ChatView
     super @room_id, @owner_id
 
     @popup = view.get_by_dom '.chat_user_popup'
-    @tmpl = require 'templates/chat/chat_listener'
+    @tmpl = require 'client_templates/chat/chat_listener'
 
     @counter = @dom.find '.number'
     @listeners_wrapper = @dom.find '.users'

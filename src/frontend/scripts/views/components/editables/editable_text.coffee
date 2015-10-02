@@ -52,7 +52,7 @@ module.exports = class EditableText
 		@input.val text
 	get_template: ( callback ) ->
 
-		tmpl = require 'templates/components/editables/editable_text'
+		tmpl = require 'client_templates/components/editables/editable_text'
 		
 		callback tmpl()
 

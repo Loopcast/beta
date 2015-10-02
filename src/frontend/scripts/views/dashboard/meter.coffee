@@ -30,8 +30,8 @@ module.exports = class Meter extends RoomView
     @size_block = 1 / @values.length
 
     # Build the meter
-    tmpl = require 'templates/components/audio/meter'
-    block_tmpl = require 'templates/components/audio/meter_block'
+    tmpl = require 'client_templates/components/audio/meter'
+    block_tmpl = require 'client_templates/components/audio/meter_block'
     
     blocks_html = ""
     for v in @values 

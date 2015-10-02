@@ -14,7 +14,7 @@ module.exports = class Share
     @normal_type = not @dom.data( 'type' )?
 
     if @normal_type
-      html = require 'templates/buttons/share'
+      html = require 'client_templates/buttons/share'
 
       @dom.append html()
 

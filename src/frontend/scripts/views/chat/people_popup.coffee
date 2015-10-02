@@ -12,7 +12,7 @@ module.exports = class PeoplePopup extends ChatView
 
   constructor: (@dom) ->
     # log "[PeoplePopup] constructor"
-    @tmpl = require 'templates/chat/people_popup'
+    @tmpl = require 'client_templates/chat/people_popup'
 
     @dom.on 'mouseenter', @on_mouseover
     @dom.on 'mouseleave', @on_mouseout
