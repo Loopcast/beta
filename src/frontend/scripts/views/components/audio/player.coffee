@@ -158,7 +158,9 @@ module.exports = class Player
 
     
   fetch_room: ( room_id, callback ) ->
+    log "[Player] fetch_room", room_id, @data_rooms[ room_id ]
     if @data_rooms[ room_id ]?
+      log "[Player] fetch_room. data_rooms available", @data_rooms[ room_id ]
       callback()
     else
 
@@ -168,10 +170,18 @@ module.exports = class Player
 
       log "[Player] no informations. fetching...", room_id
       api.rooms.info room_id, (error, response) => 
+        if response
+          log '[Player] room info', response
+          @data_rooms[ room_id ] = response
+          callback()
+        else
+          @requested_rooms[ room_id ] = null
+          @on_error()
 
-        log '[Player] room info', response
-        @data_rooms[ room_id ] = response
-        callback()
+  on_error: ->
+    notify.error 'There was an error.'
+    app.emit 'audio:paused'
+
 
 
   _play: ( room_id ) ->
