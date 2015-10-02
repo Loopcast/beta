@@ -106,7 +106,7 @@ block content
             img(src="#{transform.avatar(user.info.avatar)}")
 
           if room
-            div.room_play_handler.for_mobile(data-room-id="#{room._id}", data-view="components/audio/player_preview")
+            div.room_play_handler.for_mobile(data-room-id="#{room._id}", data-view="components/audio/player_preview", data-is-live="#{room.status.is_live}")
               a.icon.ss-play.circle_icon(href="#",title="Play") 
               .loading_spin
 

@@ -7,6 +7,7 @@ module.exports = (dom) ->
   icon       = dom.find '.circle_icon'
   data       = null
   room_id    = dom.data 'room-id'
+  is_tape    = not dom.data( 'is-live' )
   room_info = null
   source_src = null
 
@@ -54,7 +55,10 @@ module.exports = (dom) ->
       app.player.stop()
     else
       dom.addClass 'preloading'
-      app.player.play room_id, source_src
+      if is_tape
+        app.player.play room_id, source_src
+      else
+        app.player.play_live room_id, source_src
 
   init = ->
     handler.on 'click', toggle

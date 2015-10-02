@@ -153,7 +153,12 @@ block content
         - if( rooms.length == 1 ) live = rooms[0]
 
         if live
-          .session.outline_box(data-view="profile/live_set", data-room-id="#{live._id}", data-room-started-at="#{live.status.live.started_at}")
+          .session.outline_box(
+            data-view="profile/live_set", 
+            data-room-id="#{live._id}", 
+            data-room-started-at="#{live.status.live.started_at}"
+            data-is-live="true"
+          )
             a.image.room_url(href="/#{live.info.user}/#{live.info.slug}", title="Old School House session", style="background-image:url(#{transform.cover_thumb(live.info.cover_url, user.info.avatar)})")
             .content
               h2.session_title 
@@ -202,7 +207,13 @@ block content
                 - public_class = "to_publish"
 
               //- - room.cover_url = room.cover_url || '/images/default_room_cover.jpg'
-              .session.outline_box(class="#{public_class}", id="session_recorded_#{room._id}", data-room-id="#{room._id}" data-view="[components/user_set,components/audio/player_preview]")
+              .session.outline_box(
+                class="#{public_class}", 
+                id="session_recorded_#{room._id}", 
+                data-room-id="#{room._id}" 
+                data-view="[components/user_set,components/audio/player_preview]", 
+                data-is-live="false"
+              )
                 .image(style="background-image:url(#{transform.cover_thumb(room.cover_url, user.info.avatar)})")
                   a.icon.ss-play.circle_icon(href="#",title="Play") 
                   .loading_spin
