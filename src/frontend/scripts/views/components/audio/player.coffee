@@ -135,7 +135,10 @@ module.exports = class Player
     log "[Player] play", room_id
 
     if not room_id? and @current_room_id
-      room_id = @current_room_id
+      room_id = @current_room_id 
+    else if @current_room_id is room_id and @audio.is_playing
+      log "[Player] returning. already playing this room"
+      return false
 
     if not @data_rooms[ room_id ]?
       @fetch_room room_id, => @_play room_id
@@ -245,7 +248,7 @@ module.exports = class Player
     , 30000
 
   on_audio_started: =>    
-    log "[Player] on_audio_started"
+    log "[Player] on_audio_started", @data
 
     @play_btn.addClass( 'ss-pause' ).removeClass( 'ss-play' )
 
