@@ -121,8 +121,8 @@ module.exports = ( dom ) ->
   _confirm_delete = ->
     
     log "[UserSet] trying to delete ", room_id
-    
-    api.rooms.delete room_id, (error, response) ->
+
+    api.tapes.delete room_id, (error, response) ->
       if error
         log "[UserSet] delete", room_id, error
         notify.error "There was an error. Try later."
