@@ -170,10 +170,11 @@ block content
                   a.tag(href="/explore?genres=#{genre}", title="#{genre}") #{genre}
 
               .small_info
-                a.location(href="/explore?search=#{live.info.location}")
-                  span.icon.ss-location
-                  //- span.spritesheet.icon_location
-                  span.text #{live.info.location}
+                if live.info.location && live.info.location.length > 0
+                  a.location(href="/explore?search=#{live.info.location}")
+                    span.icon.ss-location
+                    //- span.spritesheet.icon_location
+                    span.text #{live.info.location}
                 .likes 
                   span.icon.ss-heart
                   //- span.spritesheet.icon_guests
@@ -237,9 +238,10 @@ block content
                       a.tag(href="/explore?genres=#{genre}", title="#{genre}") #{genre}
                     
                   .small_info
-                    a.location(href="/explore?search=#{room.location}")
-                      span.icon.ss-location
-                      span.text #{room.location}
+                    if room.location && room.location.length > 0
+                      a.location(href="/explore?search=#{room.location}")
+                        span.icon.ss-location
+                        span.text #{room.location}
                     .likes 
                       span.icon.ss-heart
                       span.text #{room.likes}
@@ -275,9 +277,9 @@ block content
 
   include ./modals/room_modal.jade
 
-  //- script
-  //-   //- THIS IS JUST FOR DEBUGGIN. TO BE REMOVED
-  //-   if !s.is_beta 
-  //-     //- not sure if this s.is_beta is working
-  //-     | var profile_info = !{JSON.stringify(locals)};;
-  //-     | console.log( 'profile_info', profile_info ); 
+  script
+    //- THIS IS JUST FOR DEBUGGIN. TO BE REMOVED
+    if !s.is_beta 
+      //- not sure if this s.is_beta is working
+      | var profile_info = !{JSON.stringify(locals)};;
+      | console.log( 'profile_info', profile_info ); 
