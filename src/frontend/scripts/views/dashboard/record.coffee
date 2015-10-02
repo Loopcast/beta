@@ -8,6 +8,7 @@ module.exports = class Record extends ButtonWithTimer
   active_text  : 'STOP REC'
   inactive_text: 'RECORDED'
   type         : "recording"
+  tape_id      : null
 
   on_room_created: (@room_id, @owner_id) =>
       
@@ -55,7 +56,9 @@ module.exports = class Record extends ButtonWithTimer
     L.rooms.stop_recording @room_id, ( error, response ) ->
 
       # console.log "GOT TAPE ID: #{response.room.recording}"
-      log "[Record Button] GOT TAPE ID", response
+      log "[Record Button] GOT TAPE ID", response, response.room.recording
+
+      ref.tape_id = response.room.recording
 
       ref.set_active false
 
