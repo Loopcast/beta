@@ -56,7 +56,9 @@ module.exports =
 
           password = uuid.v4() 
 
-          update = password: password
+          update = 
+            will_stream : true
+            password    : password
           
           Room.update( _id: room_id, update )
             .lean()

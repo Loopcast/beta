@@ -29,7 +29,10 @@ schema = new Schema
 
   # password for starting this stream
   password   : String
-  
+
+  # true if user pressed start_streaming
+  will_stream: Boolean
+
   status:
     is_live      : { type: Boolean, default: off } # when user press go live
     is_recording : { type: Boolean, default: off } # when user press start recording
