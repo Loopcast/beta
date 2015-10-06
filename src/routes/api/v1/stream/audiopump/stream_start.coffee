@@ -18,12 +18,11 @@ module.exports =
       console.log '- audiopump/stream_start'
       
       
-
+      console.log 'path ->', req.payload.data.path
+      
       path = req.payload.data.path
-      path = path.split '/'
+      path = path.split( '/' )[1]
 
-      # grabs username and room
-      path = path[1]
       path = path.split '_'
 
       username  = path[0]
