@@ -62,7 +62,9 @@ block content
     input(type='hidden' id='owner_username' value="#{user.info.username}")
     input(type='hidden' id='owner_followers' value="0")
     input(type='hidden' id='owner_occupation' value="#{user.info.occupation[0]}")
-    input(type='hidden' id='room_slug' value="#{room.info.slug}")
+
+    if room.info
+      input(type='hidden' id='room_slug' value="#{room.info.slug}")
 
     if room
       - data_menu = "room"
