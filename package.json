@@ -26,6 +26,7 @@
     "mongoose": "4.0.1",
     "newrelic": "^1.20.1",
     "node-mandrill": "^1.0.1",
+    "node-uuid": "^1.4.3",
     "page": "^1.6.3",
     "pusher": "^1.0.4",
     "redis": "^0.12.1",

@@ -1,7 +1,4 @@
-slug = require 'slug'
-Room = schema 'room'
-
-mongoose        = require 'mongoose'
+uuid            = require 'node-uuid'
 update_metadata = lib 'icecast/update_metadata'
 
 module.exports =
@@ -84,9 +81,12 @@ module.exports =
             'status.live.started_at' : data.live.started_at
 
           # creating new stream document
+          password = uuid.v4() 
+
           doc = 
-            user: room.user
-            room: room._id
+            user       : room.user
+            room       : room._id
+            password   : password
             started_at : data.live.started_at
 
           stream = new Stream doc
@@ -112,4 +112,4 @@ module.exports =
 
                   return reply Boom.preconditionFailed( "Database error" )
 
-                reply update
+                reply password: password
