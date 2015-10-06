@@ -20,8 +20,14 @@ block seo
 
     - about = room.user.info.about   || user.info.about
 
-    meta( property="og:title"       content="#{room.info.title} | #{room.user.info.name}" )
-    meta( name="twitter:title" content="#{room.info.title} | #{room.user.info.name}")
+    if room.status.is_live
+      meta( property="og:title"       content="#{room.info.title} | #{room.user.info.name} live on Loopcast" )
+      meta( name="twitter:title" content="#{room.info.title} | #{room.user.info.name} live on Loopcast")
+    else
+      meta( property="og:title"       content="#{room.info.title} | #{room.user.info.name}" )
+      meta( name="twitter:title" content="#{room.info.title} | #{room.user.info.name}")
+
+
     //- meta( property="og:type"        content="music.radio_station" )
 
     meta( property="og:type"        content="music.song" )
