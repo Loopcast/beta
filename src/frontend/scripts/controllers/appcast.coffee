@@ -125,7 +125,7 @@ appcast.get_devices = ->
 
   appcast.messages.send JSON.stringify [ 'get_input_devices' ]
 
-appcast.start_stream = ( mount_point, device_name ) ->
+appcast.start_stream = ( username, room_slug, password, device_name ) ->
 
   if appcast.get( "stream:starting" )
     return console.error "waiting stream to start, cant start again"
@@ -146,17 +146,17 @@ appcast.start_stream = ( mount_point, device_name ) ->
     # audiopump connection configuration
     payload = 
       device_name : device_name
-      mount_point : "loopcast-staging/#{mount_point}"
+      mount_point : "loopcast-staging/#{username}_#{room_slug}"
       password    : "any"
       port        : "80"
       server      : 'inbound-a.cdn.audiopump.co'
 
-    payload = 
-      device_name : device_name
-      mount_point : mount_point
-      password    : password
-      port        : "8000"
-      server      : 'staging-radio.loopcast.fm'
+    # payload = 
+    #   device_name : device_name
+    #   mount_point : mount_point
+    #   password    : password
+    #   port        : "8000"
+    #   server      : 'staging-radio.loopcast.fm'
 
   console.log 'stream with payload ->', payload
 
