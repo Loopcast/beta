@@ -32,7 +32,7 @@ module.exports =
         'info.user'  : username
 
       Room.findOne( query )
-        .select( "_id user stream" )
+        .select( "_id user stream will_stream" )
         .lean()
         .exec ( error, room ) -> 
 
@@ -49,6 +49,12 @@ module.exports =
             console.log "failed to find #{room_slug} for #{username}"
 
             return reply Boom.resourceGone( "room not found or user not owner" )
+
+          # if user won't stream, don't create a stream
+          if not room.will_stream
+
+            reply response: statusCode: 200
+            return
 
           room_update =
             'status.is_live'         : true
