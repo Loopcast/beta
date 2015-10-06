@@ -17,8 +17,21 @@ module.exports =
 
 
       console.log '- audiopump/stream_end'
-      console.log req.payload
-      console.log '- - -'
+            
+      path = req.payload.data.path
+      path = path.split( '/' )[2]
+
+      path = path.split '_'
+
+      username  = path[0]
+      room_slug = path[1]
+
+      end_time = req.payload.data.endTime
+
+
+      console.log 'username  ->', username
+      console.log 'room_slug ->', room_slug
+      console.log 'end_time  ->', end_time
 
       reply()
 

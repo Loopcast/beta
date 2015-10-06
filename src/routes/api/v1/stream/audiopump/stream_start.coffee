@@ -16,12 +16,9 @@ module.exports =
     handler: ( req, reply ) ->
 
       console.log '- audiopump/stream_start'
-      
-      
-      console.log 'path ->', req.payload.data.path
-      
+            
       path = req.payload.data.path
-      path = path.split( '/' )[1]
+      path = path.split( '/' )[2]
 
       path = path.split '_'
 
@@ -30,35 +27,70 @@ module.exports =
 
       start_time = req.payload.data.startTime
 
+      query =
+        'info.slug'  : room_slug
+        'info.user'  : username
 
-      # notify UI the stream is live
-      # data =
-      #   type   : "status"
-      #   is_live: true
-      #   live: 
-      #     started_at: now( start_time ).format()
+      Room.findOne( query )
+        .select( "_id user stream" )
+        .lean()
+        .exec ( error, room ) -> 
 
-      # sockets.send room_id, data
-        
+          if error
 
-      console.log 'username   ->', username
-      console.log 'room_slug  ->', room_slug
-      console.log 'start_time ->', start_time
+            failed req, reply, error
 
-      console.log '- - -'
+            return reply Boom.preconditionFailed( "Database error" )
+
+          if not room 
+
+            return reply Boom.resourceGone( "room not found or user not owner" )
+
+          room_update =
+            'status.is_live'         : true
+            'status.live.started_at' : start_time
+
+          stream = 
+            user       : room.user
+            room       : room._id
+            started_at : start_time
+
+          stream = new Stream doc
+
+          stream.save ( error, doc ) ->
+
+            if error 
+              console.log "error creating stream document"
+              console.log error
+              
+              return failed request, reply, error
+
+              # notify UI the stream is live
+              data =
+                type   : "status"
+                is_live: true
+                live: 
+                  started_at: now( start_time ).format()
+
+              sockets.send room._id, data
+
+            # save link to current recording on the room
+            room_update.stream = doc._id
+
+            room_update =
+              'status.is_live'         : true
+              'status.live.started_at' : start_time
+
+            Room.room_update( _id: room._id, room_update )
+              .lean()
+              .exec ( error, docs_updated ) ->
+
+                if error
+
+                  failed req, reply, error
+
+                  return reply Boom.preconditionFailed( "Database error" )
+
+                reply password: password
 
       reply()
-
-
-# { id: '2f191610-564a-11e5-a647-b34bad0cfa2c',
-#   startTime: '2015-09-08T16:53:52.241Z',
-#   remoteAddress: '::ffff:82.47.239.207',
-#   path: '/loopcast-staging/hems-room',
-#   requestHeaders:
-#    { 'content-length': '9007199254740992',
-#      authorization: 'Basic YW55dXNlcjp4eHg=',
-#      'user-agent': 'butt 0.1.14',
-#      'content-type': 'audio/mpeg',
-#      'ice-name': 'no name',
-#      'ice-public': '0',
-#      'ice-audio-info': 'ice-bitrate=320;ice-channels=2;ice-samplerate=44100' } } }

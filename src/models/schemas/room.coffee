@@ -4,6 +4,7 @@ Schema     = mongoose.Schema
 schema = new Schema
   # _id of the user owning the room
   user   : type: Schema.Types.ObjectId, ref: 'User', required: on
+
   info   :
     # actually this is the username, we must rename to username
     # and update every time the user updates it's own info
@@ -26,6 +27,9 @@ schema = new Schema
 
   in_chat     : { type: Array, default: [] }
 
+  # password for starting this stream
+  password   : String
+  
   status:
     is_live      : { type: Boolean, default: off } # when user press go live
     is_recording : { type: Boolean, default: off } # when user press start recording
