@@ -63,13 +63,12 @@ block content
     input(type='hidden' id='owner_followers' value="0")
     input(type='hidden' id='owner_occupation' value="#{user.info.occupation[0]}")
 
-    if room.info
-      input(type='hidden' id='room_slug' value="#{room.info.slug}")
-
     if room
       - data_menu = "room"
       //- used in by live/record buttons
       input(type='hidden' id='room_id' value=room._id)
+      input(type='hidden' id='room_slug' value=room.info.slug)
+
     else
       - data_menu = "create_room"
 
