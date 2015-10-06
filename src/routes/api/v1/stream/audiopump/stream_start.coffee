@@ -16,7 +16,36 @@ module.exports =
     handler: ( req, reply ) ->
 
       console.log '- audiopump/stream_start'
-      console.log req.payload
+      
+      
+
+      path = req.payload.data.path
+      path = path.split '/'
+
+      # grabs username and room
+      path = path[1]
+      path = path.split '_'
+
+      username  = path[0]
+      room_slug = path[1]
+
+      start_time = req.payload.data.startTime
+
+
+      # notify UI the stream is live
+      # data =
+      #   type   : "status"
+      #   is_live: true
+      #   live: 
+      #     started_at: now( start_time ).format()
+
+      # sockets.send room_id, data
+        
+
+      console.log 'username   ->', username
+      console.log 'room_slug  ->', room_slug
+      console.log 'start_time ->', start_time
+
       console.log '- - -'
 
       reply()

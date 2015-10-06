@@ -1,7 +1,14 @@
 parse_xml = require('xml2js').parseString
 
 module.exports = ( mount_point, metadata, callback ) ->
-    
+
+
+  # not updating metadata anymore since we using audiopump
+  callback? null, ok: 1
+
+  # not updating metadata now
+  return
+
   url = "#{s.radio.url}:8000/admin/metadata?mount=/#{mount_point}&mode=updinfo"
 
   url += "&genres=#{metadata.genres}"

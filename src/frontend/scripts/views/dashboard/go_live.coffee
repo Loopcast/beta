@@ -39,7 +39,11 @@ module.exports = class GoLive extends ButtonWithTimer
 
     @wait()
 
-    appcast.start_stream @owner_id, appcast.get 'selected_device'
+    username  = 'hems'
+    room_slug = 'test'
+    password  = 'test'
+
+    appcast.start_stream username, room_slug, password, appcast.get 'selected_device'
     
     # need to be called here otherwise recording will stop
     # streaming when you stop recording

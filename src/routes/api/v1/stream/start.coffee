@@ -54,31 +54,23 @@ module.exports =
 
             return reply Boom.resourceGone( "room not found or user not owner" )
 
-          # status object to be sent down a socket Channel
-          data =
-            type   : "status"
-            is_live: true
-            live: 
-              started_at: now().format()
-
-          sockets.send room_id, data
-
           # updates metadata in order to make it easier to see
           # on icecast sttus page
-          metadata =
-            title       : room.info.title
-            description : room.info.about
-            url         : "#{s.base_path}/#{username}/#{room.info.slug}"
-            genres      : room.info.genres.join ','
+          # metadata =
+          #   title       : room.info.title
+          #   description : room.info.about
+          #   url         : "#{s.base_path}/#{username}/#{room.info.slug}"
+          #   genres      : room.info.genres.join ','
 
-          update_metadata room.user, metadata
+          # update_metadata room.user, metadata
 
           # update for mongodb
           # sets the document URL to be the streaming URL
+
           update =
-            'info.url'               : "#{s.radio.url}:8000/#{room.user}"
-            'status.is_live'         : true
-            'status.live.started_at' : data.live.started_at
+            'info.url'               : "#{s.radio.url}#{username}_#{room.info.slug}"
+            # 'status.is_live'         : true
+            # 'status.live.started_at' : data.live.started_at
 
           # creating new stream document
           password = uuid.v4() 
@@ -87,7 +79,6 @@ module.exports =
             user       : room.user
             room       : room._id
             password   : password
-            started_at : data.live.started_at
 
           stream = new Stream doc
 
