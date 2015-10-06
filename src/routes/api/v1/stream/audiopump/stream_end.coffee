@@ -33,8 +33,6 @@ module.exports =
       console.log 'room_slug ->', room_slug
       console.log 'end_time  ->', end_time
 
-      reply()
-
       query =
         'info.slug'  : room_slug
         'info.user'  : username
