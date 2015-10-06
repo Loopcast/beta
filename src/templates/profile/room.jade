@@ -19,6 +19,7 @@ block seo
     - about = room.user.info.about   || user.info.about
 
     meta( property="og:title"       content="#{room.info.title} | #{room.user.info.name}" )
+    meta( name="twitter:title" content="#{room.info.title} | #{room.user.info.name}")
     //- meta( property="og:type"        content="music.radio_station" )
 
     meta( property="og:type"        content="music.song" )
@@ -26,6 +27,7 @@ block seo
     - og_image = room.info.cover_url || user.info.avatar
     if og_image
       meta( property="og:image"       content="#{og_image}" )
+      meta( name="twitter:image" content="#{og_image}")
 
     meta( property="og:url"         content="#{s.base_path}/#{room.user.info.username}/#{room.info.slug}" )
     //- meta( property="og:url"         content="https://rekorded-beta.s3.amazonaws.com/558ad1093e8a580300f6fcc2_2015-06-29_16-00.mp3" )
@@ -33,8 +35,10 @@ block seo
     meta( property="og:site_name"   content="Loopcast.fm" )
     if about
       meta( property="og:description" content="#{strip_tags(about)}" )
+      meta( name="twitter:description" content="#{strip_tags(about)}")
     else
       meta( property="og:description" content="#{room.info.title} @ Loopcast.fm" )
+      meta( name="twitter:description" content="#{room.info.title} @ Loopcast.fm")
 
     //- meta( property="music:creator"  content="#{s.base_path}/#{room.user.info.username}/" )
 
