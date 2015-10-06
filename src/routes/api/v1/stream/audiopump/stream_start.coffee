@@ -55,7 +55,9 @@ module.exports =
             room       : room._id
             started_at : start_time
 
-          stream = new Stream doc
+          console.log 'creating stream -> ', stream
+          
+          stream = new Stream stream
 
           stream.save ( error, doc ) ->
 
