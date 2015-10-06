@@ -87,7 +87,7 @@ module.exports = class Room extends LoggedView
     m = @modal
 
     ref = @
-    L.rooms.create data, ( error, data ) ->
+    L.rooms.create data, ( error, room ) ->
 
       if error?
 
@@ -101,16 +101,19 @@ module.exports = class Room extends LoggedView
 
         # appends room_id to body in order to be compatible with 
         # server side rendered template
-        hidden = "<input type='hidden' id='room_id' value='#{data._id}'>"
+        hidden = "<input type='hidden' id='room_id' value='#{room._id}'>"
         $( 'body' ).append hidden
 
-        navigation.go_silent "/#{data.info.user}/#{data.info.slug}"
+        hidden = "<input type='hidden' id='room_slug' value='#{room.info.slug}'>"
+        $( 'body' ).append hidden
+
+        navigation.go_silent "/#{room.info.user}/#{room.info.slug}"
 
         m.close()
 
         $( '.create_room_item' ).removeClass 'selected'
 
-        ref.on_room_created( data )
+        ref.on_room_created( room )
 
   on_room_created: (data) ->
 

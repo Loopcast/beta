@@ -133,9 +133,10 @@ appcast.start_stream = ( username, room_slug, password, device_name ) ->
   if appcast.get( "stream:online" )
     return console.error "stream is already online, cant start again"
 
-  password = "beta-radio-client"
-
   if window.is_beta?
+
+    password = "beta-radio-client"
+
     payload = 
       device_name : device_name
       mount_point : mount_point
