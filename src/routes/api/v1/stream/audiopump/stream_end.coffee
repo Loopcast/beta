@@ -35,23 +35,13 @@ module.exports =
 
       reply()
 
-      return
-
-      mount_point = path
-
-      console.log "-- CALLBACK MOUNT REMOVE"
-      console.log "Just lost connection from #{mount_point}"
-      console.log "---"
-
-      query = 
-        $or      : [
-          { 'user' : mount_point, 'status.is_live'      : true }
-          { 'user' : mount_point, 'status.is_recording' : true }
-        ]
+      query =
+        'info.slug'  : room_slug
+        'info.user'  : username
 
       Room.findOne( query )
-        .select( "_id status" )
-        .sort( _id: - 1 )
+        .select( "_id stream" )
+        .populate( "stream" )
         .lean()
         .exec ( error, room ) -> 
 
@@ -65,74 +55,44 @@ module.exports =
 
             return reply Boom.resourceGone( "room not found or user not owner" )
 
-          # reply early to icecast if everything went allright!
-          reply( ok: true ).header( "icecast-auth-user", "1" )
-
-
-          # if room isn't live and isn't recording, then the user
-          # succesfully pressed STOP STREAM and STOP RECORDING
-          # before icecast received the disconnect event, so
-          # everything should be fine.
-          if not room.status.is_live and not room.status.is_recording
-
-            return
-
-          # If it still marked as live or recording, then we need
-          # to update stopped_at information, and broadcast a socket
-          # message so the frontend knows something went wrong.
-
-
+          # status object to be sent down a socket Channel
           status =
             is_live: false
-
-          update = {}
-
-
-          if room.status.is_live
-
-            # if room still live, then it was dropped
-            update[ 'status.dropped' ] = true
-
-
-            update['status.live.stopped_at'] = now().format()
-
-            status.live = 
-              stopped_at : update['status.live.stopped_at']
-
-            started_at = now( room.status.live.started_at )
-            stopped_at = now( update['status.live.stopped_at'] )
-
-            duration = stopped_at.diff( started_at, 'seconds' )
-
-            update['status.live.duration'] = duration
-
-          if room.status.is_recording
-
-            update['status.recording.stopped_at'] = now().format()
-
-            status.recording = 
-              stopped_at : update['status.recording.stopped_at']
-
-            started_at = now( room.status.recording.started_at )
-            stopped_at = now( update['status.recording.stopped_at'] )
-
-            duration = stopped_at.diff( started_at, 'seconds' )
-
-            update['status.recording.duration'] = duration
-
-          update['status.is_live']      = false
-          update['status.is_recording'] = false
-
-
-          console.log "sending dropped message to frontend, room_id: #{room._id}"
-          console.log "upating properties ->", update
+            live: 
+              stopped_at: now( end_time ).format()
 
           sockets.send room._id, status
+
+          update = $unset: streaming: ""      
 
           Room.update _id: room._id, update, ( error, response ) ->
 
             if error
               console.log 'error updating streaming duration'
               console.log 'error ->', error
+          
+          started_at = now( room.streaming.started_at )
+          stopped_at = now( end_time )
 
-            console.log "succesfully updated room information ->", response
+          duration = stopped_at.diff( started_at, 'seconds' )
+
+          # prepare data to update stream
+          stream_update = 
+            stopped_at: end_time
+            duration  : duration
+
+          # updating stream
+          Stream
+            .update( _id: room.stream, stream_update )
+            .lean()
+            .exec ( error, stream ) ->
+
+              if error
+                console.log "error updating stream:", stream
+                console.log error
+
+                return
+
+              console.log 'updated stream ->', stream
+
+              reply response: statusCode: 200

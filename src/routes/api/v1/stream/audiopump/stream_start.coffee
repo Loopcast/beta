@@ -77,10 +77,6 @@ module.exports =
             # save link to current recording on the room
             room_update.stream = doc._id
 
-            room_update =
-              'status.is_live'         : true
-              'status.live.started_at' : start_time
-
             Room.room_update( _id: room._id, room_update )
               .lean()
               .exec ( error, docs_updated ) ->
@@ -91,6 +87,4 @@ module.exports =
 
                   return reply Boom.preconditionFailed( "Database error" )
 
-                reply password: password
-
-      reply()
+                reply response: statusCode: 200
