@@ -2,6 +2,11 @@ extends ../layout
 
 block seo
 
+  //- migrating to new data schema
+  if room.streaming
+    - room.status.is_live = true
+
+
   if room
     if room.status.is_live
       title #{room.info.title} | #{room.user.info.name} live on Loopcast
@@ -67,6 +72,8 @@ block content
       - data_menu = "room"
       //- used in by live/record buttons
       input(type='hidden' id='room_id' value=room._id)
+      input(type='hidden' id='room_slug' value=room.info.slug)
+
     else
       - data_menu = "create_room"
 

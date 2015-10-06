@@ -3,7 +3,7 @@ update_metadata = lib 'icecast/update_metadata'
 
 module.exports =
   method : 'POST'
-  path   : '/api/v1/stream/start'
+  path   : '/api/v1/stream/get_password'
 
   config:
 
@@ -56,10 +56,7 @@ module.exports =
 
           password = uuid.v4() 
 
-          update = 
-            will_stream : true
-            password    : password
-            'info.url'  : "#{s.radio.url}#{username}_#{room.info.slug}"
+          update = password: password
           
           Room.update( _id: room_id, update )
             .lean()

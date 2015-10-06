@@ -16,21 +16,87 @@ module.exports =
     handler: ( req, reply ) ->
 
       console.log '- audiopump/stream_start'
-      console.log req.payload
-      console.log '- - -'
+            
+      path = req.payload.data.path
+      path = path.split( '/' )[2]
 
-      reply()
+      path = path.split '_'
 
+      username  = path[0]
+      room_slug = path[1]
 
-# { id: '2f191610-564a-11e5-a647-b34bad0cfa2c',
-#   startTime: '2015-09-08T16:53:52.241Z',
-#   remoteAddress: '::ffff:82.47.239.207',
-#   path: '/loopcast-staging/hems-room',
-#   requestHeaders:
-#    { 'content-length': '9007199254740992',
-#      authorization: 'Basic YW55dXNlcjp4eHg=',
-#      'user-agent': 'butt 0.1.14',
-#      'content-type': 'audio/mpeg',
-#      'ice-name': 'no name',
-#      'ice-public': '0',
-#      'ice-audio-info': 'ice-bitrate=320;ice-channels=2;ice-samplerate=44100' } } }
+      start_time = req.payload.data.startTime
+
+      query =
+        'info.slug'  : room_slug
+        'info.user'  : username
+
+      Room.findOne( query )
+        .select( "_id user stream will_stream" )
+        .lean()
+        .exec ( error, room ) -> 
+
+          if error
+
+            failed req, reply, error
+
+            console.log "failed to find #{room_slug} for #{username}"
+
+            return reply Boom.preconditionFailed( "Database error" )
+
+          if not room 
+
+            console.log "failed to find #{room_slug} for #{username}"
+
+            return reply Boom.resourceGone( "room not found or user not owner" )
+
+          # if user won't stream, don't create a stream
+          if not room.will_stream
+
+            reply response: statusCode: 200
+            return
+
+          room_update =
+            'status.is_live'         : true
+            'status.live.started_at' : start_time
+
+          stream = 
+            user       : room.user
+            room       : room._id
+            started_at : start_time
+
+          console.log 'creating stream -> ', stream
+
+          stream = new Stream stream
+
+          stream.save ( error, doc ) ->
+
+            if error 
+              console.log "error creating stream document"
+              console.log error
+              
+              return failed request, reply, error
+
+              # notify UI the stream is live
+              data =
+                type   : "status"
+                is_live: true
+                live: 
+                  started_at: now( start_time ).format()
+
+              sockets.send room._id, data
+
+            # save link to current recording on the room
+            room_update.stream = doc._id
+
+            Room.update( _id: room._id, room_update )
+              .lean()
+              .exec ( error, docs_updated ) ->
+
+                if error
+
+                  failed req, reply, error
+
+                  return reply Boom.preconditionFailed( "Database error" )
+
+                reply response: statusCode: 200
