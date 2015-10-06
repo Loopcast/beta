@@ -141,7 +141,7 @@ appcast.start_stream = ( mount_point, device_name ) ->
     # audiopump connection configuration
     payload = 
       device_name : device_name
-      mount_point : "/loopcast-staging/#{mount_point}"
+      mount_point : "loopcast-staging/#{mount_point}"
       password    : "any"
       port        : "80"
       server      : 'inbound-a.cdn.audiopump.co'
