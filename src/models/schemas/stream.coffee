@@ -9,6 +9,9 @@ schema = new Schema
   # _id of the room where this recording was originated
   room       : type: Schema.Types.ObjectId, required: on, ref: 'Stream'
 
+  # password for starting this stream
+  password   : String
+  
   # we probably won't have likes on streaming sessions
   likes      : { type: Number }
 
