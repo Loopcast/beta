@@ -41,9 +41,13 @@ module.exports =
 
             failed req, reply, error
 
+            console.log "failed to find #{room_slug} for #{username}"
+
             return reply Boom.preconditionFailed( "Database error" )
 
           if not room 
+
+            console.log "failed to find #{room_slug} for #{username}"
 
             return reply Boom.resourceGone( "room not found or user not owner" )
 

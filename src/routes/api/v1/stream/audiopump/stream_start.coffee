@@ -40,9 +40,13 @@ module.exports =
 
             failed req, reply, error
 
+            console.log "failed to find #{room_slug} for #{username}"
+
             return reply Boom.preconditionFailed( "Database error" )
 
           if not room 
+
+            console.log "failed to find #{room_slug} for #{username}"
 
             return reply Boom.resourceGone( "room not found or user not owner" )
 
@@ -56,7 +60,7 @@ module.exports =
             started_at : start_time
 
           console.log 'creating stream -> ', stream
-          
+
           stream = new Stream stream
 
           stream.save ( error, doc ) ->
@@ -79,7 +83,7 @@ module.exports =
             # save link to current recording on the room
             room_update.stream = doc._id
 
-            Room.room_update( _id: room._id, room_update )
+            Room.update( _id: room._id, room_update )
               .lean()
               .exec ( error, docs_updated ) ->
 
