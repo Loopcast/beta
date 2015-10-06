@@ -251,7 +251,7 @@ appcast.callbacks =
     appcast.set "build", data.build
 
     # notifies backend about user's current AppCast version
-    L.user.appcast_version data.build, ( error, callback ) ->
+    L.user.appcast_version data, ( error, callback ) ->
 
       if error then console.error error
 

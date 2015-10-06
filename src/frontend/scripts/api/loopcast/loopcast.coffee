@@ -305,13 +305,16 @@ module.exports =
         # log "[Loopcast] request done", response
         callback? null, response
 
-    appcast_version: ( version, callback ) ->
-      request = $.put api_url + "user/appcast/version/#{version}"
+    appcast_version: ( data, callback ) ->
+      on_status_code =
+        401: ( response ) -> callback 'unauthorized, need log in!'
 
-      request.error on_error "user/appcast/version/#{version}", callback
+      request = $.post api_url + 'user/appcast', data, on_status_code
+
+      request.error on_error "user/appcast", callback
 
       request.done ( response ) ->
-        # log "[Loopcast] request done", response
+
         callback? null, response
 
     unfollow: ( user_id, callback ) ->

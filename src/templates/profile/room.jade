@@ -3,11 +3,12 @@ extends ../layout
 block seo
 
   //- migrating to new data schema
-  if room.streaming
-    - room.status.is_live = true
-
 
   if room
+
+    if room.stream
+      - room.status.is_live = true
+    
     if room.status.is_live
       title #{room.info.title} | #{room.user.info.name} live on Loopcast
     else

@@ -1,8 +1,8 @@
 like = lib 'user/like'
 
 module.exports =
-  method : 'PUT'
-  path   : '/api/v1/user/appcast/version/{version}'
+  method : 'POST'
+  path   : '/api/v1/user/appcast'
 
   config:
     description: "Start following a user"
@@ -24,10 +24,11 @@ module.exports =
         return reply Boom.unauthorized('needs authentication')
 
       user_id = req.auth.credentials.user._id
-      version = req.params.version
+      version = req.payload.version
+      build   = req.payload.build
 
       query  = _id : user_id
-      update = $set: 'data.appcast.version': version
+      update = $set: 'data.appcast': req.payload
 
       User.update query , update, ( error, result ) ->
 
@@ -40,11 +41,14 @@ module.exports =
         reply result
 
 
+      console.log 'got data ->', req.payload
+
       # update information on intercom
       user_data = 
         user_id           : user_id
         custom_attributes :
           appcast_version: version
+          appcast_build  : build
 
       intercom.updateUser user_data, ( error, res ) ->
 
