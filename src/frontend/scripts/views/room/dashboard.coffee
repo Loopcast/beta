@@ -98,12 +98,13 @@ module.exports = class Dashboard extends RoomView
     # log "[Room] on_live_changed", data
 
   on_record_changed: ( data ) =>
-    # log "[Room] on_record_changed", data
+    log "[Room] on_record_changed", data
     # log "-> recording", data
     # log "is offline", $('.room_public').length <= 0
 
     if not data and $('.room_public').length <= 0
-      @publish_modal.open_with_id @room_id
+      log "[Dashboard] publish_modal.open_with_id", @record_button.tape_id
+      @publish_modal.open_with_id @record_button.tape_id
 
 
   on_appcast_connected: ( is_connected ) =>

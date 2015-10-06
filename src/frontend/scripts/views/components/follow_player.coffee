@@ -1,4 +1,4 @@
-tmpl = require 'templates/components/follow_player'
+tmpl = require 'client_templates/components/follow_player'
 transform = require 'lib/cloudinary/transform'
 user = require 'app/controllers/user'
 module.exports = class FollowPlayer

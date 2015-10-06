@@ -8,7 +8,7 @@ module.exports = class GUI
   toggle_key: 68
 
   constructor: ->
-    html = require 'templates/debug/gui'
+    html = require 'client_templates/debug/gui'
 
     $( 'body' ).append html()
 

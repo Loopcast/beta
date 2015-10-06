@@ -120,10 +120,12 @@ module.exports = ( dom ) ->
 
   _confirm_delete = ->
     
-    api.rooms.delete room_id, (error, response) ->
+    log "[UserSet] trying to delete ", room_id
+
+    api.tapes.delete room_id, (error, response) ->
       if error
         log "[UserSet] delete", room_id, error
-        # notify.error "There was an error. Try later."
+        notify.error "There was an error. Try later."
         return
 
       dom.slideUp -> 

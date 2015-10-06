@@ -129,16 +129,21 @@ module.exports = class Player
 
     return audio_data
 
-    
-  play: (room_id, src = null) ->
+  play_live: (room_id, src = null) ->
+    @play room_id, src, true
 
-    log "[Player] play", room_id
+  play: (room_id, src = null, is_live = false) ->
+
+    log "[Player] play", room_id, is_live
 
     if not room_id? and @current_room_id
-      room_id = @current_room_id
+      room_id = @current_room_id 
+    else if @current_room_id is room_id and @audio.is_playing
+      log "[Player] returning. already playing this room"
+      return false
 
     if not @data_rooms[ room_id ]?
-      @fetch_room room_id, => @_play room_id
+      @fetch_room room_id, is_live, => @_play room_id
 
     else
       @_play room_id
@@ -154,8 +159,10 @@ module.exports = class Player
       @audio.play()
 
     
-  fetch_room: ( room_id, callback ) ->
+  fetch_room: ( room_id, is_live, callback ) ->
+    log "[Player] fetch_room", room_id, @data_rooms[ room_id ]
     if @data_rooms[ room_id ]?
+      log "[Player] fetch_room. data_rooms available", @data_rooms[ room_id ]
       callback()
     else
 
@@ -164,11 +171,27 @@ module.exports = class Player
       @requested_rooms[ room_id ] = true
 
       log "[Player] no informations. fetching...", room_id
-      api.rooms.info room_id, (error, response) => 
 
-        log '[Player] room info', response
-        @data_rooms[ room_id ] = response
-        callback()
+      on_response = (error, response) => 
+        if response
+          log '[Player] room info', response
+          @data_rooms[ room_id ] = response
+          callback()
+        else
+          @requested_rooms[ room_id ] = null
+          @on_error()
+
+      if is_live
+        log "[Player] fetching LIVE info. api.rooms.info", room_id
+        api.rooms.info room_id, on_response
+      else
+        log "[Player] fetching TAPE info. api.tapes.get", room_id
+        api.tapes.get room_id, on_response
+
+  on_error: ->
+    notify.error 'There was an error.'
+    app.emit 'audio:paused'
+
 
 
   _play: ( room_id ) ->
@@ -245,7 +268,14 @@ module.exports = class Player
     , 30000
 
   on_audio_started: =>    
-    log "[Player] on_audio_started"
+    if not @data?
+      log "[Player] on_audio_started. no data. then stop", @data
+      notify.error 'There was an error.'
+      @stop()
+      return
+
+    log "[Player] on_audio_started", @data
+      
 
     @play_btn.addClass( 'ss-pause' ).removeClass( 'ss-play' )
 

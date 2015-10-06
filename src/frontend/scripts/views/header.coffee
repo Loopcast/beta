@@ -81,7 +81,7 @@ module.exports  = class Header
 		@user_logged = true
 		
 		wrapper = @dom.find( '.user_logged' )
-		tmpl    = require 'templates/shared/header_user_logged'
+		tmpl    = require 'client_templates/shared/header_user_logged'
 		html    = tmpl data
 
 		wrapper.empty().append html

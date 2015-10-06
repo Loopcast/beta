@@ -14,6 +14,7 @@ alias:
   app: src/frontend/scripts/
   api: src/frontend/scripts/api/
   templates: src/frontend/templates/
+  client_templates: src/frontend/templates/_client_side
   vendors: src/frontend/vendors
   lib: src/lib
   src: src

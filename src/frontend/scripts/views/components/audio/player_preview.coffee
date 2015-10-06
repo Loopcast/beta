@@ -7,6 +7,7 @@ module.exports = (dom) ->
   icon       = dom.find '.circle_icon'
   data       = null
   room_id    = dom.data 'room-id'
+  is_tape    = not dom.data( 'is-live' )
   room_info = null
   source_src = null
 
@@ -28,6 +29,8 @@ module.exports = (dom) ->
   ref = @
 
   dom.addClass 'player_preview'
+
+
 
 
   on_play = (_room_id) ->
@@ -52,11 +55,17 @@ module.exports = (dom) ->
       app.player.stop()
     else
       dom.addClass 'preloading'
-      app.player.play room_id, source_src
+      if is_tape
+        app.player.play room_id, source_src
+      else
+        app.player.play_live room_id, source_src
 
   init = ->
     handler.on 'click', toggle
     app.on  'audio:started', on_play
     app.on  'audio:paused', on_stop
+
+    if app.player?.current_room_id is room_id
+      on_play room_id
 
   init()

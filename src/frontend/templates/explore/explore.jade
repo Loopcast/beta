@@ -41,7 +41,7 @@ block grid
     if item.status.recording.s3 && !item.status.is_live
       - klasses += " is_recorded"
 
-    .room_cell.item(class="#{klasses}", data-view="components/audio/player_preview", data-room-id="#{item._id}")
+    .room_cell.item(class="#{klasses}", data-view="components/audio/player_preview", data-room-id="#{item._id}" data-is-live="#{item.status.is_live}")
       if item.status.is_live
         hidden( class="source_src" value="#{item.info.url}")
       else
@@ -98,5 +98,4 @@ block grid
   script
     //- THIS IS JUST FOR DEBUGGIN. TO BE REMOVED
     | var data = !{JSON.stringify(locals)};;
-    | console.log( 'explore data', data ); 
-    | console.log( 'room to check', data.rooms[7] );
+    | console.log( 'explore data', data );  
