@@ -39,17 +39,42 @@ module.exports = class GoLive extends ButtonWithTimer
 
     @wait()
 
-    username  = 'hems'
-    room_slug = 'test'
-    password  = 'test'
+    username  = $( '#owner_username' ).val()
+    room_slug = $( '#room_slug' ).val()
 
-    appcast.start_stream username, room_slug, password, appcast.get 'selected_device'
-    
-    # need to be called here otherwise recording will stop
-    # streaming when you stop recording
-    appcast.set "stream:streaming", true
+    L.rooms.start_stream @room_id, ( error, result ) =>
 
-    appcast.on 'stream:online', @waiting_stream
+      if error
+        @on_error error
+
+        window._gaq.push(['_trackEvent', 'AppCast Start Streaming', 'Failed', '']);
+
+        # LATER: CHECK IF USER IS OFFLINE AND WAIT FOR CONNECTION?
+        return
+
+      console.error 'got result!'
+      console.log 'result ->', result
+      
+      password  = result.password
+
+      appcast.start_stream username, room_slug, password, appcast.get 'selected_device'
+      
+      # need to be called here otherwise recording will stop
+      # streaming when you stop recording
+      appcast.set "stream:streaming", true
+
+      appcast.on 'stream:online', ( status ) =>
+
+        return if not status
+
+        appcast.off 'stream:online', @waiting_stream, 
+
+        # TODO: fix this error being thrown
+        # appcast.on while_streaming
+        @set_active true
+
+
+        window._gaq.push(['_trackEvent', 'AppCast Start Streaming', 'Successful', '']);
 
   stop: ->
 
@@ -95,35 +120,6 @@ module.exports = class GoLive extends ButtonWithTimer
       str = 'streaming went online while streaming'
 
     notify.info str
-
-
-  # listens for appcast streaming status when starting the stream
-  waiting_stream : ( status ) =>
-
-    # log "[GoLive] waiting_stream"
-
-    if not status then return
-
-    ref = @
-    # call the api
-    L.rooms.start_stream @room_id, ( error, result ) ->
-
-      if error
-        ref.on_error error
-
-        window._gaq.push(['_trackEvent', 'AppCast Start Streaming', 'Failed', '']);
-
-        # LATER: CHECK IF USER IS OFFLINE AND WAIT FOR CONNECTION?
-        return
-
-      appcast.off 'stream:online', ref.waiting_stream, 
-
-      # TODO: fix this error being thrown
-      # appcast.on while_streaming
-      ref.set_active true
-
-
-      window._gaq.push(['_trackEvent', 'AppCast Start Streaming', 'Successful', '']);
 
 
   on_room_status_changed: ( data ) =>
