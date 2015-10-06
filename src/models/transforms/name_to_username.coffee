@@ -3,15 +3,12 @@
 
 module.exports = ( name, add_random_number, callback ) ->
 
-  # remove white spaces
-  # username = name.replace /\s/g, ''
-
   # slug and force lowercase
-  username  = slug username
+  username  = slug name
 
   if add_random_number
     # adds random number to username
     # useful when signing up so we don't get two users with same username
-    username += parseInt( Math.random() * 100000000 )
+    username += parseInt( Math.random() * 100 )
 
   callback null, username
