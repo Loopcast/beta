@@ -37,12 +37,6 @@ module.exports =
 
           return reply( "Page not found" ).code 404
 
-      add_mount_point data.user._id, ( error, response ) ->
-
-        if error
-          console.error "error adding mount point"
-          console.error error
-
       User
         .findById( data.user._id )
         .lean().exec  ( error, user ) ->
