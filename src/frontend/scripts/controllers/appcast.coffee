@@ -42,6 +42,11 @@ appcast.connect = ->
 
     appcast.set 'connected', true
 
+    if appcast.get( 'selected_device' )
+      # if there is a device selected
+      # automatically select it again
+      appcast.selected_device appcast.get( 'selected_device' )
+
     appcast.get_devices()
 
     appcast.messages.send JSON.stringify [ 'version' ]
