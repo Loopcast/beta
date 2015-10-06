@@ -17,17 +17,17 @@ module.exports =
 
       # path = req.payload.data.path.split( "/" )[1]
 
-      # cred = req.payload.data.requestHeaders.authorization.split( " " )[1]
-      # cred = new Buffer( cred, 'base64' ).toString( "ascii" )
+      cred = req.payload.data.requestHeaders.authorization.split( " " )[1]
+      cred = new Buffer( cred, 'base64' ).toString( "ascii" )
 
-      # user = cred.substr( 0, cred.indexOf( ":" ) )
-      # pass = cred.substr( cred.indexOf( ":" ) + 1 )
+      user = cred.substr( 0, cred.indexOf( ":" ) )
+      pass = cred.substr( cred.indexOf( ":" ) + 1 )
 
       console.log '- audiopump/auth'
 
-      # console.log 'path: ', path
-      # console.log 'user: ', user
-      # console.log 'pass: ', pass
+      console.log 'path: ', path
+      console.log 'user: ', user
+      console.log 'pass: ', pass
 
       # authorized
       if true
@@ -36,12 +36,5 @@ module.exports =
         reply response: statusCode: 200
 
       else
-        reply """{
-    "response": {
-        "statusCode": 401,
-        "headers": {
-            "WWW-Authenticate": "Basic realm=\"AudioPump Auth Test\""
-        },
-        "body": "Not authorized!  Try reloading to log in again."
-    }
-}"""
+        
+        reply response: statusCode: 403
