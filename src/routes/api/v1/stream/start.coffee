@@ -7,7 +7,7 @@ module.exports =
 
   config:
 
-    description: "Start stream"
+    description: "Returns a new password to connect the stream to this room"
     plugins: "hapi-swagger": responseMessages: [
       { code: 400, message: 'Bad Request' }
       { code: 401, message: 'Needs authentication' }
@@ -54,53 +54,18 @@ module.exports =
 
             return reply Boom.resourceGone( "room not found or user not owner" )
 
-          # updates metadata in order to make it easier to see
-          # on icecast sttus page
-          # metadata =
-          #   title       : room.info.title
-          #   description : room.info.about
-          #   url         : "#{s.base_path}/#{username}/#{room.info.slug}"
-          #   genres      : room.info.genres.join ','
-
-          # update_metadata room.user, metadata
-
-          # update for mongodb
-          # sets the document URL to be the streaming URL
-
-          update =
-            'info.url'               : "#{s.radio.url}#{username}_#{room.info.slug}"
-            # 'status.is_live'         : true
-            # 'status.live.started_at' : data.live.started_at
-
-          # creating new stream document
           password = uuid.v4() 
 
-          doc = 
-            user       : room.user
-            room       : room._id
-            password   : password
+          update = password: password
+          
+          Room.update( _id: room_id, update )
+            .lean()
+            .exec ( error, docs_updated ) ->
 
-          stream = new Stream doc
+              if error
 
-          stream.save ( error, doc ) ->
+                failed req, reply, error
 
-            if error 
-              console.log "error creating stream document"
-              console.log error
-              
-              return failed request, reply, error
+                return reply Boom.preconditionFailed( "Database error" )
 
-            # save link to current recording on the room
-            update.stream = doc._id
-
-            Room.update( _id: room_id, update )
-              .lean()
-              .exec ( error, docs_updated ) ->
-
-                if error
-
-                  failed req, reply, error
-
-                  return reply Boom.preconditionFailed( "Database error" )
-
-                reply password: password
+              reply password: password
