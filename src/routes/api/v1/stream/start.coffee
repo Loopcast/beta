@@ -59,6 +59,7 @@ module.exports =
           update = 
             will_stream : true
             password    : password
+            'info.url'  : "#{s.radio.url}#{username}_#{room.info.slug}"
           
           Room.update( _id: room_id, update )
             .lean()

@@ -36,7 +36,8 @@ module.exports =
 
     Room
       .findById( req.params.id )
-      .select( "user info status likes" )
+      .select( "user info status likes stream recording" )
+      .populate( "stream recording")
       .lean().exec ( error, room ) ->
 
         if error then return reply Boom.resourceGone "Room not found"
