@@ -183,9 +183,9 @@ module.exports =
   tapes:
     get: (tape_id, callback ) ->
 
-      request = $.get api_url + "tape/#{tape_id}/info"
+      request = $.get api_url + "tape/#{tape_id}"
 
-      request.error on_error "tape/#{tape_id}/info", callback
+      request.error on_error "tape/#{tape_id}", callback
 
       request.done ( response ) ->
 
