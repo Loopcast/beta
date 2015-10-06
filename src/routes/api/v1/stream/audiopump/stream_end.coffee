@@ -15,7 +15,6 @@ module.exports =
 
     handler: ( req, reply ) ->
 
-
       console.log '- audiopump/stream_end'
             
       path = req.payload.data.path
@@ -27,11 +26,6 @@ module.exports =
       room_slug = path[1]
 
       end_time = req.payload.data.endTime
-
-
-      console.log 'username  ->', username
-      console.log 'room_slug ->', room_slug
-      console.log 'end_time  ->', end_time
 
       query =
         'info.slug'  : room_slug
