@@ -2,7 +2,7 @@ like = lib 'user/like'
 
 module.exports =
   method : 'POST'
-  path   : '/api/v1/user/appcast'
+  path   : '/api/v1/user/appcast_version'
 
   config:
     description: "Start following a user"

@@ -309,9 +309,9 @@ module.exports =
       on_status_code =
         401: ( response ) -> callback 'unauthorized, need log in!'
 
-      request = $.post api_url + 'user/appcast', data, on_status_code
+      request = $.post api_url + 'user/appcast_version', data, on_status_code
 
-      request.error on_error "user/appcast", callback
+      request.error on_error "user/appcast_version", callback
 
       request.done ( response ) ->
 
