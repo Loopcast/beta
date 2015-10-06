@@ -52,9 +52,6 @@ module.exports = class GoLive extends ButtonWithTimer
         # LATER: CHECK IF USER IS OFFLINE AND WAIT FOR CONNECTION?
         return
 
-      console.error 'got result!'
-      console.log 'result ->', result
-      
       password  = result.password
 
       appcast.start_stream username, room_slug, password, appcast.get 'selected_device'
