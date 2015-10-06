@@ -38,7 +38,7 @@ module.exports = ( url, data = {}, callback ) ->
   data.strip_tags = strip_tags
   data.slugify = (str) -> str.split( " " ).join( "-" )
 
-  root = path.join( __dirname + '/../../frontend/templates' )
+  root = path.join( __dirname + '/../../templates' )
 
   url  = root + url + '.jade'
 
