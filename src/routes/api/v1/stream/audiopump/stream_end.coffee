@@ -67,7 +67,7 @@ module.exports =
               console.log 'error updating streaming duration'
               console.log 'error ->', error
           
-          started_at = now( room.streaming.started_at )
+          started_at = now( room.stream.started_at )
           stopped_at = now( end_time )
 
           duration = stopped_at.diff( started_at, 'seconds' )
