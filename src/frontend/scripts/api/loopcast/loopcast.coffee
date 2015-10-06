@@ -309,6 +309,13 @@ module.exports =
       on_status_code =
         401: ( response ) -> callback 'unauthorized, need log in!'
 
+      console.log data
+      console.log data
+      console.log data
+      console.log data
+      console.log data
+      console.log data
+      
       request = $.post api_url + 'user/appcast_version', data, on_status_code
 
       request.error on_error "user/appcast_version", callback

@@ -5,7 +5,7 @@ module.exports =
   path   : '/api/v1/user/appcast_version'
 
   config:
-    description: "Start following a user"
+    description: "Updates user appcast version on the database"
     plugins: "hapi-swagger": responseMessages: [
       { code: 400, message: 'Bad Request' }
       { code: 401, message: 'Needs authentication' } # Boom.unauthorized
@@ -16,6 +16,11 @@ module.exports =
     auth:
       strategy: 'session'
       mode    : 'try'
+
+    validate:
+      payload:
+        build   : joi.number()
+        version : joi.string()
 
     handler: ( req, reply ) ->
 
@@ -28,7 +33,10 @@ module.exports =
       build   = req.payload.build
 
       query  = _id : user_id
-      update = $set: 'data.appcast': req.payload
+      update = 
+        $set: 
+          'data.appcast.version': version
+          'data.appcast.build'  : build
 
       User.update query , update, ( error, result ) ->
 
@@ -39,9 +47,6 @@ module.exports =
           return reply Boom.badData 'error updating appcast version'
 
         reply result
-
-
-      console.log 'got data ->', req.payload
 
       # update information on intercom
       user_data = 

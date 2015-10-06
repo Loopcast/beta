@@ -1,7 +1,7 @@
 ###
 # Manages local connection to Appcast
 ###
-
+_ = require 'lodash'
 aware    = require 'aware'
 # shortcut for vendor scripts
 v       = require 'app/vendors'
