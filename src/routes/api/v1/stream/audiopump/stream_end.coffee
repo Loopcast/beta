@@ -51,6 +51,13 @@ module.exports =
 
             return reply Boom.resourceGone( "room not found or user not owner" )
 
+          if not room.stream
+
+            console.log '- user not streaming'
+            reply response: statusCode: 200
+
+            return
+
           # status object to be sent down a socket Channel
           status =
             is_live: false
