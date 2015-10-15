@@ -112,7 +112,7 @@ if s.is_beta
     ips: [ "54.154.147.67", "52.16.136.56" ] # tape servers, so we dont count listeners from here
 
   s.radio = 
-    url     : 'http://cdn.audiopump.co/loopcast-staging/'
+    url     : 'http://cdn.audiopump.co/loopcast/'
 
 # IF STAGING OR LOCAL
 if not s.is_beta
@@ -150,7 +150,7 @@ if not s.is_beta
     ips: [ "54.154.147.67", "52.16.136.56" ] # tape servers, so we dont count listeners from here
 
   s.radio = 
-    url     : 'http://cdn.audiopump.co/loopcast/'
+    url     : 'http://cdn.audiopump.co/loopcast-staging/'
 
 # IF LOCAL
 if s.is_local
