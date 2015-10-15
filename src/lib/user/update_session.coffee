@@ -7,4 +7,10 @@ module.exports = ( request, user ) ->
   user.info.created_at = user.created_at
   user.info.email      = user.data.email
 
+  delete user.info.about
+  delete user.info.social
+  delete user.info.location
+  delete user.info.genres
+  delete user.info.occupation
+  
   request.auth.session.set user: user.info

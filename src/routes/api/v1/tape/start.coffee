@@ -31,8 +31,9 @@ module.exports =
 
         return reply Boom.unauthorized('needs authentication')
 
-      user_id = req.auth.credentials.user._id
-      room_id = req.payload.room_id
+      user_id  = req.auth.credentials.user._id
+      username = req.auth.credentials.user.username
+      room_id  = req.payload.room_id
 
       query =
         _id  : room_id
@@ -56,7 +57,7 @@ module.exports =
         recording = doc
 
       Room.findOne( query )
-        .select( "_id user" )
+        .select( "_id user info.slug" )
         .lean()
         .exec ( error, room ) -> 
 
@@ -99,8 +100,12 @@ module.exports =
           data =
             url: "#{s.tape.url}:8000/api/v1/start"
             form:
-              room_id    : room_id 
-              mount_point: String( room.user )
+              hostname : s.radio.hostname
+              port     : s.radio.port
+              path     : "#{s.radio.path}/#{username}_#{room.info.slug}"
+              room_id  : room_id
+
+          console.log 'data ->', data
 
           request.post data, ( error, response, body ) ->
 
@@ -108,6 +113,7 @@ module.exports =
 
               console.log "error contacting server tape"
               console.log error
+              console.log body
 
               return reply Boom.resourceGone( "could not connect to tape recorder" )
 

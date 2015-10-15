@@ -27,9 +27,13 @@ schema = new Schema
   updated_at: Date
   
   data:
-    email: type: String, unique: true
+    email: String
 
     facebook: Object # facebook information
+      id   : String
+      email: String
+
+    google: Object # facebook information
       id   : String
       email: String
 
