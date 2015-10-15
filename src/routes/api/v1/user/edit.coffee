@@ -26,6 +26,7 @@ module.exports =
       { code: 400, message: 'Bad Request' }
       { code: 401, message: 'Needs authentication' } # Boom.unauthorized
       { code: 409, message: 'Error updating user name ' } # Boom.conflict
+      { code: 412, message: 'Error updating user information' } # Boom.preconditionFailed
       { code: 422, message: 'Error fetching user information' } # Boom.badData
       { code: 500, message: 'Internal Server Error'}
     ]
@@ -59,11 +60,12 @@ module.exports =
         update = $set: user_data
 
         User.update query , update, ( error, result ) ->
-          if error 
-            console.log "error while updating user on mongodb"
-            console.log user
 
-            return reply Boom.badData 'error updating user information from mongodb'
+          if error 
+            console.log "/api/v1/user/edit error"
+            console.log error
+
+            return reply Boom.preconditionFailed 'error updating user on mongodb', 'username_taken'
 
           find_by _id: user._id, ( error, user ) ->
 

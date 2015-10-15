@@ -15,12 +15,19 @@ module.exports = ( info, callback ) ->
 
   after_upload = ( picture_info ) ->
 
+    # some users don't have displayName coming from google login
+    if not info.profile.displayName
+      info.profile.displayName = 'user'
+
     transform info.profile.displayName, true, ( error, username ) ->
+
+      if info.profile.displayName is 'user'
+        info.profile.displayName = username
 
       user = 
         info :
           username: username
-          name    : info.profile.displayName
+          name    : info.profile.displayName || username
           avatar  : picture_info.secure_url
 
         data :
