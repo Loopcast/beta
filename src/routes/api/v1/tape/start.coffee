@@ -100,10 +100,12 @@ module.exports =
           data =
             url: "#{s.tape.url}:8000/api/v1/start"
             form:
-              hostname : s.radio.url
-              port     : 80
-              path     : "#{username}_#{room.info.slug}"
+              hostname : s.radio.hostname
+              port     : s.radio.port
+              path     : "#{s.radio.path}/#{username}_#{room.info.slug}"
               room_id  : room_id
+
+          console.log 'data ->', data
 
           request.post data, ( error, response, body ) ->
 
@@ -111,6 +113,7 @@ module.exports =
 
               console.log "error contacting server tape"
               console.log error
+              console.log body
 
               return reply Boom.resourceGone( "could not connect to tape recorder" )
 
