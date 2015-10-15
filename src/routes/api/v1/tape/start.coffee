@@ -100,10 +100,9 @@ module.exports =
           data =
             url: "#{s.tape.url}:8000/api/v1/start"
             form:
-              hostname : s.radio.hostname
-              port     : s.radio.port
-              path     : "#{s.radio.path}/#{username}_#{room.info.slug}"
-              room_id  : room_id
+              path        : "#{s.radio.url}#{username}_#{room.info.slug}"
+              room_id     : room_id
+              mount_point : "#{username}_#{room.info.slug}"
 
           console.log 'data ->', data
 
