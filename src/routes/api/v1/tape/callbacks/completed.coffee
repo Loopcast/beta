@@ -18,7 +18,7 @@ module.exports =
 
     update = 
       'info.file'          : s3.location
-      'status.is_recorded' : on
+      'status.is_recorded' : false
       'status.recording.s3': s3
 
     Room

@@ -33,8 +33,9 @@ module.exports =
 
         return reply Boom.unauthorized('needs authentication')
 
-      user_id = req.auth.credentials.user._id
-      room_id = req.payload.room_id
+      user_id  = req.auth.credentials.user._id
+      username = req.auth.credentials.user.username
+      room_id  = req.payload.room_id
 
       query =
         _id  : room_id
@@ -70,7 +71,7 @@ module.exports =
           data =
             url: "#{s.tape.url}:8000/api/v1/stop"
             form:
-              mount_point: String( room.user )
+              mount_point : "#{username}_#{room.info.slug}"
 
           request.post data, ( error, response, body ) ->
 

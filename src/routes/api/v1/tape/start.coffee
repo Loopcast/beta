@@ -100,11 +100,10 @@ module.exports =
           data =
             url: "#{s.tape.url}:8000/api/v1/start"
             form:
-              path        : "#{s.radio.url}#{username}_#{room.info.slug}"
+              hostname    : "http://cdn.audiopump.co"
+              path        : "http://46.101.25.152/loopcast-staging/#{username}_#{room.info.slug}"
               room_id     : room_id
               mount_point : "#{username}_#{room.info.slug}"
-
-          console.log 'data ->', data
 
           request.post data, ( error, response, body ) ->
 
