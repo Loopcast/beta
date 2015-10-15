@@ -33,8 +33,8 @@ block content
 
 						.buttons
 
-							a.button.yellow_button.no_shadow.left.black_hover(href="/rooms/create" title="Create Live Room", data-view="components/logged_link" onClick="_gaq.push(['_trackEvent', 'Start Streaming', 'Click', '']);") Start Streaming
-							a.button.white_transparent_button.no_shadow.right(href="/explore", title="Explore live music" onClick="_gaq.push(['_trackEvent', 'Explore', 'Click', '']);") Explore 
+							a.button.yellow_button.no_shadow.left.black_hover(href="/rooms/create" title="Create Live Room", data-view="components/logged_link", onClick="mixpanel.track('Start Streaming');_gaq.push(['_trackEvent', 'Start Streaming', 'Click', '']);") Start Streaming
+							a.button.white_transparent_button.no_shadow.right(href="/explore", title="Explore live music", onClick="mixpanel.track('Explore');_gaq.push(['_trackEvent', 'Explore', 'Click', '']);") Explore 
 
 
 			.scroll_down(data-view="components/scroll_handler" data-target=".landing_2")
