@@ -22,14 +22,20 @@ module.exports = ( info, callback ) ->
         info :
           username: username
           name    : info.profile.displayName
-          avatar  : picture_info.secure_url
-
+          # avatar : picture_info.secure_url
         data :
-          email   : info.profile.email
+          # email   : info.profile.email
           facebook: 
             id   : info.profile.id
-            email: info.profile.email
+            # email: info.profile.email
 
+      if picture_info
+        user.info.avatar = picture_info.secure_url
+
+      if info.profile.email
+
+        user.data.email          = info.profile.email
+        user.data.facebook.email = info.profile.email
 
       callback null, user
 
