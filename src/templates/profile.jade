@@ -2,7 +2,9 @@ block seo
   title #{user.info.name} | Live Sessions on Loopcast 
 
   meta( property="og:title" content="#{user.info.name} | Live Sessions on Loopcast " ) 
-  meta( property="og:type"  content="profile" ) 
+  meta( property="og:type"  content="profile" )
+  meta( name="twitter:title" content="#{user.info.name} | Live Sessions on Loopcast")
+      
 
   - og_image = "#{s.base_path}/images/thumbnail.png"
 
@@ -14,9 +16,11 @@ block seo
 
 
   if about
-    meta( name="description" content="#{user.info.about}" ) 
+    meta( name="description" content="#{user.info.about}" )
+    meta( name="twitter:description" content="#{user.info.about}") 
   else
     meta( name="description" content="#{user.info.name} is on Loopcast. Follow #{user.info.name} and listen to live and recorded DJ mixes" )
+    meta( name="twitter:description" content="#{user.info.name} is on Loopcast. Follow #{user.info.name} and listen to live and recorded DJ mixes")
 
 extends layout
 
