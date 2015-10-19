@@ -4,8 +4,8 @@ header.header.for_desktop(data-view="header")
     .left
       a.homepage_item.menu_item(href="/" class="menu_logo" title="Loopcast Logo")
         span.spritesheet(class="sprite_small_logo") Loopcast Logo
-      a.explore_item.menu_item.header_shadow_item(href="/explore" title="Explore" onClick="_gaq.push(['_trackEvent', 'Explore', 'Click', '']);") Explore
-      a.create_room_item.menu_item.header_shadow_item(href="/rooms/create" title="Create Room", data-view="components/logged_link" onClick="_gaq.push(['_trackEvent', 'Start Streaming', 'Click', '']);") Start Streaming
+      a.explore_item.menu_item.header_shadow_item(href="/explore" title="Explore" onClick="mixpanel.track('Explore');_gaq.push(['_trackEvent', 'Explore', 'Click', '']);") Explore
+      a.create_room_item.menu_item.header_shadow_item(href="/rooms/create" title="Create Room", data-view="components/logged_link" onClick="mixpanel.track('Start Streaming');_gaq.push(['_trackEvent', 'Start Streaming', 'Click', '']);") Start Streaming
       .search_box.no_border
 
         span.icon.ss-icon &#x1F50E;
