@@ -344,7 +344,7 @@ module.exports = class Room extends LoggedView
 
     if app.settings.theme isnt 'mobile'
       if user_controller.check_guest_owner()
-        message = 'You are now live! Use the sharing icon below and invite some listeners to your room'
+        message = 'You are now live! Use the sharing icon or Facebook send button below to invite some listeners'
       else
         message = 'You are now listening live on Loopcast'
       if user_controller.is_logged()
