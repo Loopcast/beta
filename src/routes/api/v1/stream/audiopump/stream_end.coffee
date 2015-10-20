@@ -66,19 +66,32 @@ module.exports =
 
           sockets.send room._id, status
 
-          update = $unset: streaming: ""      
+          update = 
+            is_live: false
+            $set   : streaming: null
 
 
           console.log "updating room #{room._id}"
           console.log "with info ->", update
           
-          Room.update _id: room._id, update, ( error, response ) ->
+          query = _id: mongoose.Types.ObjectId room._id
+          Room.collection.update query, update, null, ( error, response ) ->
 
             if error
-              console.log 'error updating streaming duration'
-              console.log 'error ->', error
+              console.log 'error removing tape from room'
+              console.log error
 
             console.log "updated room ->", response
+
+          # Room.update _id: room._id, update, ( error, response ) ->
+
+          #   if error
+          #     console.log 'error updating streaming duration'
+          #     console.log 'error ->', error
+
+          #   console.log "updated room ->", response
+
+            
           
           started_at = now( room.stream.started_at )
           stopped_at = now( end_time )
