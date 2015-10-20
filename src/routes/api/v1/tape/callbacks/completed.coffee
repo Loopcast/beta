@@ -21,9 +21,6 @@ module.exports =
       'status.is_recorded' : false
       'status.recording.s3': s3
 
-    console.log "updating room #{room_id}"
-    console.log "with info ->", update
-    
     Room
       .update( _id: room_id, update )
       .lean().exec ( error, response ) ->
@@ -57,16 +54,12 @@ module.exports =
                   console.log 'error adding s3 information to Tape'
                   console.log error
 
-                console.log 'tape response ->', arguments
-
             query = _id: mongoose.Types.ObjectId room_id
             Room.collection.update query, $set: recording: null, null, ( error, response ) ->
 
                 if error
                   console.log 'error removing tape from room'
                   console.log error
-
-                console.log 'room response ->', arguments
 
 
             # Tape.update _id: room.recording, $set: s3: s3, ( error, response ) ->
