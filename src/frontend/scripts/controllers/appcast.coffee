@@ -245,13 +245,6 @@ appcast.callbacks =
 
   version_response: ( data ) ->
 
-    console.info data
-    console.info data
-    console.info data
-    console.info data
-    console.info data
-    console.info data
-
     data.build = Number data.build
 
     # save for later user in the application
