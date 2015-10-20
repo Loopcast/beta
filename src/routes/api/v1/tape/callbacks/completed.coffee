@@ -21,6 +21,9 @@ module.exports =
       'status.is_recorded' : false
       'status.recording.s3': s3
 
+    console.log "updating room #{room_id}"
+    console.log "with info ->", update
+    
     Room
       .update( _id: room_id, update )
       .lean().exec ( error, response ) ->
@@ -46,35 +49,35 @@ module.exports =
 
             # pusher.trigger "tape.#{mount_point}", "upload:finished", response.location
 
-            # query = _id: mongoose.Types.ObjectId room.recording
-            # Tape.collection.update query, $set: s3: s3, null, ( error, response ) ->
+            query = _id: mongoose.Types.ObjectId room.recording
+            Tape.collection.update query, $set: s3: s3, null, ( error, response ) ->
 
-            #     if error
+                if error
 
-            #       console.log 'error adding s3 information to Tape'
-            #       console.log error
+                  console.log 'error adding s3 information to Tape'
+                  console.log error
 
-            #     console.log 'tape response ->', arguments
+                console.log 'tape response ->', arguments
 
-            # query = _id: mongoose.Types.ObjectId room_id
-            # Room.collection.update query, $set: recording: null, null, ( error, response ) ->
+            query = _id: mongoose.Types.ObjectId room_id
+            Room.collection.update query, $set: recording: null, null, ( error, response ) ->
 
-            #     if error
-            #       console.log 'error removing tape from room'
-            #       console.log error
+                if error
+                  console.log 'error removing tape from room'
+                  console.log error
 
-            #     console.log 'room response ->', arguments
+                console.log 'room response ->', arguments
 
 
-            Tape.update _id: room.recording, $set: s3: s3, ( error, response ) ->
+            # Tape.update _id: room.recording, $set: s3: s3, ( error, response ) ->
 
-              if error
+            #   if error
 
-                console.log 'error adding s3 information to Tape'
-                console.log error
+            #     console.log 'error adding s3 information to Tape'
+            #     console.log error
 
-              Room.update _id: room_id, $unset: recording: "", ( error, response ) ->
+            #   Room.update _id: room_id, $unset: recording: "", ( error, response ) ->
 
-                  if error
-                    console.log 'error removing tape from room'
-                    console.log error
+            #       if error
+            #         console.log 'error removing tape from room'
+            #         console.log error

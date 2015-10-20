@@ -68,11 +68,17 @@ module.exports =
 
           update = $unset: streaming: ""      
 
+
+          console.log "updating room #{room._id}"
+          console.log "with info ->", update
+          
           Room.update _id: room._id, update, ( error, response ) ->
 
             if error
               console.log 'error updating streaming duration'
               console.log 'error ->', error
+
+            console.log "updated room ->", response
           
           started_at = now( room.stream.started_at )
           stopped_at = now( end_time )
