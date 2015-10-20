@@ -67,8 +67,9 @@ module.exports =
           sockets.send room._id, status
 
           update = 
-            is_live: false
-            $set   : streaming: null
+            $set   : 
+              streaming: null
+              is_live  : false
 
 
           console.log "updating room #{room._id}"
