@@ -44,9 +44,9 @@
 
           
           #share_dashboard.share_wrapper( data-view="buttons/share" )
-            a.white.ss-action(href="#", title="Share")
+            a.white.ss-action(href="#", title="Share" onClick="mixpanel.track('Share-room');")
 
-          a.custom-fb-send(href="#")
+          a.custom-fb-send(href="#" onClick="mixpanel.track('Share-room');")
             img(src="/images/fb_send.png")
           
           //- #help_balloon.balloon.appcast_not_running_balloon(data-view="components/help/balloon", data-target="#dashboard_help", data-orientation="right", data-offset="27")
