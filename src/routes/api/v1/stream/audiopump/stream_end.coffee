@@ -68,29 +68,29 @@ module.exports =
 
           update = 
             $set   : 
-              streaming: null
-              is_live  : false
+              streaming         : null
+              'status.is_live'  : false
 
 
           console.log "updating room #{room._id}"
           console.log "with info ->", update
           
-          query = _id: mongoose.Types.ObjectId room._id
-          Room.collection.update query, update, null, ( error, response ) ->
-
-            if error
-              console.log 'error removing tape from room'
-              console.log error
-
-            console.log "updated room ->", response
-
-          # Room.update _id: room._id, update, ( error, response ) ->
+          # query = _id: mongoose.Types.ObjectId room._id
+          # Room.collection.update query, update, null, ( error, response ) ->
 
           #   if error
-          #     console.log 'error updating streaming duration'
-          #     console.log 'error ->', error
+          #     console.log 'error removing tape from room'
+          #     console.log error
 
           #   console.log "updated room ->", response
+
+          Room.update _id: room._id, update, ( error, response ) ->
+
+            if error
+              console.log 'error updating streaming duration'
+              console.log 'error ->', error
+
+            console.log "updated room ->", response
 
             
           
