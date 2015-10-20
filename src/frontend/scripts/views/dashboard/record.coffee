@@ -6,7 +6,7 @@ user     = require 'app/controllers/user'
 
 module.exports = class Record extends ButtonWithTimer
   active_text  : 'STOP REC'
-  inactive_text: 'RECORDED'
+  inactive_text: 'RECORD'
   type         : "recording"
   tape_id      : null
 
@@ -19,7 +19,10 @@ module.exports = class Record extends ButtonWithTimer
 
     if $('.room_recording' ).length > 0
       @set_enabled true
-      @set_active true
+      @set_active  true
+
+      appcast.set( "stream:recording", true )
+      appcast.set( "stream:streaming", true )
   
   check_room_status: ->
     @set_active @room.current_status.room.status.is_recording
@@ -34,10 +37,12 @@ module.exports = class Record extends ButtonWithTimer
     @wait()
 
     if appcast.get 'stream:online'
+
       # if streaming, start recording!
       @start_recording false
 
     else
+
       # start streaming then start recording
       # log "We should start streaming then start recording"
       appcast.start_stream @owner_id, appcast.get 'selected_device'

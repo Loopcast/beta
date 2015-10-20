@@ -26,6 +26,7 @@ module.exports = class GoLive extends ButtonWithTimer
       @set_enabled true
       @set_active true
       appcast.set "stream:streaming", true
+      appcast.set "stream:online", true
 
   check_room_status: ->
     @set_active @room.current_status.room.status.is_live
@@ -54,15 +55,29 @@ module.exports = class GoLive extends ButtonWithTimer
 
       password  = result.password
 
-      appcast.start_stream username, room_slug, password, appcast.get 'selected_device'
-      
-      # need to be called here otherwise recording will stop
-      # streaming when you stop recording
-      appcast.set "stream:streaming", true
+      # if already recording, don't need to start streaming again!
+      if not appcast.get "stream:streaming"
 
-      appcast.on 'stream:online', ( status ) =>
+        appcast.start_stream username, room_slug, password, appcast.get 'selected_device'
+        
+        # need to be called here otherwise recording will stop
+        # streaming when you stop recording
+        appcast.set "stream:streaming", true
 
-        return if not status
+        appcast.on 'stream:online', ( status ) =>
+
+          return if not status
+
+          appcast.off 'stream:online', @waiting_stream, 
+
+          # TODO: fix this error being thrown
+          # appcast.on while_streaming
+          @set_active true
+
+
+          window._gaq.push(['_trackEvent', 'AppCast Start Streaming', 'Successful', '']);
+
+      else
 
         appcast.off 'stream:online', @waiting_stream, 
 
@@ -72,6 +87,7 @@ module.exports = class GoLive extends ButtonWithTimer
 
 
         window._gaq.push(['_trackEvent', 'AppCast Start Streaming', 'Successful', '']);
+
 
   stop: ->
 
@@ -85,26 +101,27 @@ module.exports = class GoLive extends ButtonWithTimer
 
     @wait()
 
-    appcast.stop_stream()
-
-    ref = @
 
     if not appcast.get( "stream:recording" )
 
       appcast.stop_stream()
-      L.rooms.stop_stream @room_id, ( error, callback ) ->
 
-        if error
-          ref.on_error error, 'stop_stream'
+    L.rooms.stop_stream @room_id, ( error, callback ) =>
 
-          window._gaq.push(['_trackEvent', 'AppCast Stop Streaming', 'Failed', '']);
+      if error
+        @on_error error, 'stop_stream'
 
-          # LATER: CHECK IF USER IS OFFLINE AND WAIT FOR CONNECTION?
-          return
+        window._gaq.push(['_trackEvent', 'AppCast Stop Streaming', 'Failed', '']);
 
-        ref.set_active false
+        # LATER: CHECK IF USER IS OFFLINE AND WAIT FOR CONNECTION?
+        return
 
-        window._gaq.push(['_trackEvent', 'AppCast Stop Streaming', 'Successful', '']);
+      @set_active false
+
+      # not public anymore, so can start streaming again
+      appcast.set 'stream:online', false
+
+      window._gaq.push(['_trackEvent', 'AppCast Stop Streaming', 'Successful', '']);
 
 
   # listens for appcast streaming status while streaming
