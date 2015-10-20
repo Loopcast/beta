@@ -1,4 +1,4 @@
-load = models 'rooms'
+load = models 'explore'
 
 module.exports =
   method : 'POST'

@@ -18,10 +18,14 @@ module.exports = ( page = 0, genres, search, callback ) ->
       rooms : data.get 'rooms'
 
   # ~ base query for genres and finding rooms
-  query = $or: [ 
-    { 'status.is_live'  : true }
-    { 'status.is_public': true }
-  ]
+  # query = $or: [ 
+  #   { 'status.is_live'  : true }
+  #   { 'status.is_public': true }
+  # ]
+
+  # only fetch live rooms
+  query = 
+    'status.is_live': true
 
   if search
     query.$text = $search: search
@@ -44,8 +48,7 @@ module.exports = ( page = 0, genres, search, callback ) ->
 
   options = 
     sort :
-      'status.is_live': -1
-      'live.listeners': -1
+      'status.live.started_at': -1
       
     limit: page_limit
     skip : page_limit * page

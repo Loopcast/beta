@@ -4,7 +4,7 @@ Load rooms data then render rooms layout
 
 ###
 
-load     = models 'rooms'
+load     = models 'explore'
 template = lib 'render/template'
 
 module.exports =
