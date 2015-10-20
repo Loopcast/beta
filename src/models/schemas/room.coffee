@@ -34,6 +34,8 @@ schema = new Schema
   will_stream: Boolean
 
   status:
+    # 
+    # WONT BE USED ANYMORE !?
     is_live      : { type: Boolean, default: off } # when user press go live
     is_recording : { type: Boolean, default: off } # when user press start recording
     is_public    : { type: Boolean, default: off } # while user is live or after publishing a set
@@ -42,9 +44,16 @@ schema = new Schema
     # is_streaming : { type: Boolean, default: off } # when appcast is connected to the server ?
     live:
       listeners    : { type: Number, default: 0 }
-      duration    : Number
       started_at  : Date
+
+      # 
+      # WONT BE USED ANYMORE !?
+      duration    : Number
+
+      # 
+      # WONT BE USED ANYMORE !?
       stopped_at  : Date
+
     recording:
       plays       : { type: Number, default: 0 }
       duration    : Number
