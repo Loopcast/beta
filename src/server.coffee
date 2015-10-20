@@ -50,6 +50,9 @@ server.start = ( when_done ) ->
             isSecure    : s.https
 
           hapi.auth.strategy 'google', 'bell',
+            scope: [
+              'profile'
+            ]
             provider      : 'google',
             password      : 'cookie_encryption_password',
             clientId      : s.google.id
