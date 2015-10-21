@@ -46,6 +46,7 @@ module.exports = ( username, show_private, callback ) ->
 
         tapes = 
           # don't show deleted rooms
+          user   : user._id
           deleted: false
           public : false
 
