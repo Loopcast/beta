@@ -1,3 +1,4 @@
+require 'app/utils/time/livestamp'
 module.exports = class TapeView
   constructor: ( @dom ) ->
     log "TAPE VIEW"

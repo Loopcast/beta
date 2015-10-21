@@ -1,15 +1,12 @@
 extends ../layout
 
-block content
-  //- pre(style='text-align: left')
-  //-   !{JSON.stringify(locals, undefined, 2)}
-  
+block content  
 
   - if(tape.cover_url == null)
     - tape.cover_url = '/images/record_set_header.jpg'
 
   div.tape_view.centered(data-view="room/tape_view")
-    .tape_header(style="background-image:url(/images/record_set_header.jpg)")
+    .tape_header(style="background-image:url(#{tape.cover_url})")
       .first_line._overflow
         a(href="#", class="tape_play", title="play record")
           img(src="/images/tapes_play_button.png")
@@ -42,11 +39,11 @@ block content
 
             p.upload_counter
               img(src="/images/tape-cloud.png")
-              span.label 2 Hours ago
+              span.label(data-livestamp="#{tape.stopped_at}")
 
             a.share_icon(href="#")
               img(src="/images/tape-share.png")
-        p.tape_description.padded Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate ulla facilisi.
+        p.tape_description.padded #{tape.about}
 
         div.post_comment_wrapper.chat_line.padded
           a.chat_user_thumb(href="#")
