@@ -1,5 +1,136 @@
 extends ../layout
 
 block content
-  pre(style='text-align: left')
-    !{JSON.stringify(locals.tape, undefined, 2)}
+  //- pre(style='text-align: left')
+  //-   !{JSON.stringify(locals, undefined, 2)}
+  
+
+  - if(tape.cover_url == null)
+    - tape.cover_url = '/images/record_set_header.jpg'
+
+  div.tape_view.centered(data-view="room/tape_view")
+    .tape_header(style="background-image:url(/images/record_set_header.jpg)")
+      .first_line._overflow
+        a(href="#", class="tape_play", title="play record")
+          img(src="/images/tapes_play_button.png")
+
+        .tape_info
+          h1.transp_box.tape_title #{tape.title}
+          .tape_author_wrapper._overflow
+            h3.transp_box.tape_author 
+              a(href="/#{tape.user.info.username}") #{tape.user.info.name}
+            a._white_box(href="#") Follow
+
+    .tape_inner
+      .main_column
+        .first_line.padded
+          .tags
+            for item in tape.genres
+              a.tag_item(href="/explore?genres=#{item}") #{item}
+
+          .buttons
+            a.edit_icon(href="#")
+              img(src="/images/tape-edit.png")
+
+            p.listen_counter
+              img(src="/images/tape-headphones.png")
+              span.label #{tape.plays}
+
+            p.like_counter
+              img(src="/images/tape-like.png")
+              span.label #{tape.likes}
+
+            p.upload_counter
+              img(src="/images/tape-cloud.png")
+              span.label 2 Hours ago
+
+            a.share_icon(href="#")
+              img(src="/images/tape-share.png")
+        p.tape_description.padded Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate ulla facilisi.
+
+        div.post_comment_wrapper.chat_line.padded
+          a.chat_user_thumb(href="#")
+            img(src="/images/tape_test_image.jpg")
+
+          textarea.chat_user_text(placeholder="Type here to add comment...")
+          a.tape_brown_button(href="#") Post Comment
+
+
+        .chat_list_messages
+          .chat_line.padded
+            a.chat_user_thumb(href="#")
+              img(src="/images/tape_test_image.jpg")
+
+            .chat_user_text 
+              h5.chat_name Emma Watson
+              p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.
+
+          .chat_line.padded
+            a.chat_user_thumb(href="#")
+              img(src="/images/tape_test_image.jpg")
+
+            .chat_user_text 
+              h5.chat_name Emma Watson
+              p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.
+
+          .chat_line.padded
+            a.chat_user_thumb(href="#")
+              img(src="/images/tape_test_image.jpg")
+
+            .chat_user_text 
+              h5.chat_name Emma Watson
+              p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.
+
+
+          .chat_line.padded
+            a.chat_user_thumb(href="#")
+              img(src="/images/tape_test_image.jpg")
+
+            .chat_user_text 
+              h5.chat_name Emma Watson
+              p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.
+
+
+          .chat_line.padded
+            a.chat_user_thumb(href="#")
+              img(src="/images/tape_test_image.jpg")
+
+            .chat_user_text 
+              h5.chat_name Emma Watson
+              p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.
+
+         
+
+      .side_column
+        h4 
+          | Favourited by 
+          span.number 8
+
+        .list_users
+          a.chat_user_thumb(href="#")
+            img(src="/images/tape_test_image.jpg")
+
+          a.chat_user_thumb(href="#")
+            img(src="/images/tape_test_image.jpg")
+
+          a.chat_user_thumb(href="#")
+            img(src="/images/tape_test_image.jpg")
+
+          a.chat_user_thumb(href="#")
+            img(src="/images/tape_test_image.jpg")
+
+          a.chat_user_thumb(href="#")
+            img(src="/images/tape_test_image.jpg")
+
+          a.chat_user_thumb(href="#")
+            img(src="/images/tape_test_image.jpg")
+
+          a.chat_user_thumb(href="#")
+            img(src="/images/tape_test_image.jpg")
+
+          a.chat_user_thumb(href="#")
+            img(src="/images/tape_test_image.jpg")
+
+  script
+    | var info = !{JSON.stringify(locals)};;
+    | console.log( 'info', info ); 
