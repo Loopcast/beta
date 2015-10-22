@@ -12,11 +12,13 @@ block content
           img(src="/images/tapes_play_button.png")
 
         .tape_info
-          h1.transp_box.tape_title #{tape.title}
+          h1.black_background.tape_title #{tape.title}
           .tape_author_wrapper._overflow
-            h3.transp_box.tape_author 
+            h3.black_background.tape_author 
               a(href="/#{tape.user.info.username}") #{tape.user.info.name}
-            a._white_box(href="#") Follow
+            a(href="#", class="button grey_button small_button_2 follow_button")
+              span.follow Follow
+              span.unfollow Unfollow
 
     .tape_inner
       .main_column
@@ -59,7 +61,7 @@ block content
               img(src="/images/tape_test_image.jpg")
 
             .chat_user_text 
-              h5.chat_name Emma Watson
+              h4.chat_name Emma Watson
               p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.
 
           .chat_line.padded
@@ -67,7 +69,7 @@ block content
               img(src="/images/tape_test_image.jpg")
 
             .chat_user_text 
-              h5.chat_name Emma Watson
+              h4.chat_name Emma Watson
               p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.
 
           .chat_line.padded
@@ -75,16 +77,7 @@ block content
               img(src="/images/tape_test_image.jpg")
 
             .chat_user_text 
-              h5.chat_name Emma Watson
-              p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.
-
-
-          .chat_line.padded
-            a.chat_user_thumb(href="#")
-              img(src="/images/tape_test_image.jpg")
-
-            .chat_user_text 
-              h5.chat_name Emma Watson
+              h4.chat_name Emma Watson
               p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.
 
 
@@ -93,14 +86,23 @@ block content
               img(src="/images/tape_test_image.jpg")
 
             .chat_user_text 
-              h5.chat_name Emma Watson
+              h4.chat_name Emma Watson
+              p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.
+
+
+          .chat_line.padded
+            a.chat_user_thumb(href="#")
+              img(src="/images/tape_test_image.jpg")
+
+            .chat_user_text 
+              h4.chat_name Emma Watson
               p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.
 
          
 
       .side_column
-        h4 
-          | Favourited by 
+        h3 
+          | FAVOURITED BY  
           span.number 8
 
         .list_users
