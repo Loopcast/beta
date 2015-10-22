@@ -323,7 +323,7 @@ module.exports = class Room extends LoggedView
 
   _on_live_stop: ->
     log "[Room] _on_live_stop"
-    notify.info 'The stream has ended'
+    notify.info 'The user has ended the stream'
     @on_room_offline()
     
   on_room_live: ->
