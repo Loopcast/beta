@@ -29,4 +29,7 @@ vendors =
   # Documentation: https://github.com/bryanwoods/autolink-js
   AutoLink             : require '../vendors/autolink-min.js'
 
+  # Documentation : http://www.waveformjs.org/
+  Waveform             : require '../vendors/waveform.js'
+
 module.exports = vendors

@@ -17,7 +17,10 @@ block content
     - tape.cover_url = '/images/record_set_header.jpg'
 
   div.tape_view.centered(data-view="room/tape_view")
-    .tape_header(style="background-image:url(#{tape.cover_url})")
+    //- .cover_image.for_desktop(style="background-image:url(#{transform.cover(cover_url)})")
+    //- .cover_image.for_mobile(style="background-image:url(#{transform.cover_mobile(cover_url)})")
+    .tape_header
+      .cover_image(style="background-image:url(#{tape.cover_url})")
       .first_line._overflow
         a(href="#", class="tape_play icon ss-play", title="play record") &nbsp;
 
@@ -26,6 +29,7 @@ block content
           .tape_author_wrapper._overflow
             h3.black_background.tape_author 
               a(href="/#{tape.user.info.username}") #{tape.user.info.name}
+            br.for_mobile
             a(href="#", class="button grey_button small_button_2 follow_button")
               span.follow Follow
               span.unfollow Unfollow
@@ -33,7 +37,7 @@ block content
     .tape_inner
       .main_column
         .first_line.padded
-          .tags
+          .tags.for_desktop
             for item in tape.genres
               a.tag(href="/explore?genres=#{item}") #{item}
 
@@ -55,6 +59,10 @@ block content
 
             a.share_icon(href="#")
               img(src="/images/tape-share.png")
+
+          .tags.for_mobile
+            for item in tape.genres
+              a.tag(href="/explore?genres=#{item}") #{item}
         p.tape_description.padded #{tape.about} Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.
 
         div.post_comment_wrapper.chat_line.padded

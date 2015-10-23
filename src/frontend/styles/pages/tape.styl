@@ -86,11 +86,16 @@ body.tape_view
 .tape_view
   text-align: left
   .tape_header
+    position: relative
     background-size: cover
     background-position: center center
     height: 400px
     width: 100%
     padding: PADDING_SIDE
+    
+    .first_line
+      position: relative
+      z-index: 1
     
   .tape_title
     font-size: 2.7em
