@@ -19,8 +19,7 @@ block content
   div.tape_view.centered(data-view="room/tape_view")
     .tape_header(style="background-image:url(#{tape.cover_url})")
       .first_line._overflow
-        a(href="#", class="tape_play", title="play record")
-          img(src="/images/tapes_play_button.png")
+        a(href="#", class="tape_play icon ss-play", title="play record") &nbsp;
 
         .tape_info
           h1.black_background.tape_title #{tape.title}
@@ -36,7 +35,7 @@ block content
         .first_line.padded
           .tags
             for item in tape.genres
-              a.tag_item(href="/explore?genres=#{item}") #{item}
+              a.tag(href="/explore?genres=#{item}") #{item}
 
           .buttons
             a.edit_icon(href="#")
@@ -63,7 +62,7 @@ block content
             img(src="/images/tape_test_image.jpg")
 
           textarea.chat_user_text(placeholder="Type here to add comment...")
-          a.tape_brown_button(href="#") Post Comment
+          a.tape_brown_button.gray_button_2.button.small_button_4(href="#") Post Comment
 
 
         .chat_list_messages
@@ -112,11 +111,12 @@ block content
          
 
       .side_column
-        h3 
-          | FAVOURITED BY  
-          span.number 8
+        
 
         .list_users
+          h3 
+            | FAVOURITED BY  
+            span.number 8
           a.chat_user_thumb(href="#")
             img(src="/images/tape_test_image.jpg")
 

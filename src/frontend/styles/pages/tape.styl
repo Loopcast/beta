@@ -1,3 +1,5 @@
+@import '../_shared/_bootstrap.styl'
+
 G_1 = #d6d2d2
 G_2 = #ededed
 G_3 = #8a8789
@@ -5,8 +7,8 @@ B_1 = #251a14
 BLU_1 = #8ea6b1
 
 PADDING_SIDE = 40px
-h1,h2,h3,h4,h5,h6
-  font-size: inherit
+// h1,h2,h3,h4,h5,h6
+//   font-size: inherit
   
 body.tape_view
   display: flex
@@ -20,6 +22,9 @@ body.tape_view
     display: flex
     flex: 1
     
+  .tape_info
+    .follow_button
+      margin-top: 2px
   .tape_view
     display: flex
     flex-direction: column
@@ -49,13 +54,13 @@ body.tape_view
   padding: 20px 30px
   transition: background .2s linear
   
-.tag_item
-  padding: 4px 10px
-  background: BLU_1
-  color: white
-  text-align: center
-  display: inline-block
-  font-size: 12px
+.tag
+  // padding: 4px 10px
+  // background: BLU_1
+  // color: white
+  // text-align: center
+  // display: inline-block
+  // font-size: 12px
   margin-right: 2px
   margin-bottom: 2px
 
@@ -66,6 +71,14 @@ body.tape_view
   display: block
   width: 160px
   transition: opacity .2s linear
+  color: white
+  border: 1px solid white
+  border-radius: 50%
+  padding-top: 19px
+  padding-left: 28px
+  width: 95px
+  height: 95px
+  font-size: 50px
   img
     display: block
     width: 100%
@@ -182,25 +195,26 @@ body.tape_view
       height: 100px
     
 .side_column
-  h3
-    font-size: 1.4em
-    font-weight: 600
-    
+  .number    
+    color: BLUE
   .list_users
-    margin-top: 20px
+    h3
+      margin-left: 6px
+      margin-bottom: 20px
+    margin: 0 auto
+    width: 310px
     a
       display: inline-block
-      margin-right: 12px
+      margin-right: 6px
+      margin-left: 6px
       margin-bottom: 5px
 .no_touch_device
-  .tape_brown_button:hover
-    background: B_1
     
   .tape_view .main_column .first_line .buttons > a:hover
     opacity: 0.8
     
-  .tag_item:hover
-    background: #65767D
+  // .tag_item:hover
+  //   background: #65767D
     
   ._white_box:hover
     background: rgba(255,255,255,.6)
