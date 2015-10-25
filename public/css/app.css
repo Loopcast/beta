@@ -8944,7 +8944,7 @@ body.tape_view .tape_view {
 
 /* line 109 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/tape.styl */
 .tape_view .side_column {
-  padding: 17px 40px;
+  padding: 17px 24px;
 }
 
 /* line 112 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/tape.styl */
@@ -8969,9 +8969,9 @@ body.tape_view .tape_view {
   -webkit-box-flex: 1;
   -o-box-flex: 1;
   box-flex: 1;
-  -webkit-flex: 0 0 400px;
-  -ms-flex: 0 0 400px;
-  flex: 0 0 400px;
+  -webkit-flex: 0 0 360px;
+  -ms-flex: 0 0 360px;
+  flex: 0 0 360px;
 }
 
 /* line 125 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/tape.styl */

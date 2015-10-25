@@ -17,10 +17,11 @@ block content
     - tape.cover_url = '/images/record_set_header.jpg'
 
   div.tape_view.centered(data-view="room/tape_view")
-    //- .cover_image.for_desktop(style="background-image:url(#{transform.cover(cover_url)})")
-    //- .cover_image.for_mobile(style="background-image:url(#{transform.cover_mobile(cover_url)})")
+    
     .tape_header
-      .cover_image(style="background-image:url(#{tape.cover_url})")
+      .cover_image.for_desktop(style="background-image:url(#{transform.cover(cover_url)})")
+      .cover_image.for_mobile(style="background-image:url(#{transform.cover_mobile(cover_url)})")
+      //- .cover_image(style="background-image:url(#{tape.cover_url})")
       .first_line._overflow
         a(href="#", class="tape_play icon ss-play", title="play record") &nbsp;
 
