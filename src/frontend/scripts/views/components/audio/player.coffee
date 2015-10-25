@@ -160,10 +160,12 @@ module.exports = class Player
 
     
   fetch_room: ( room_id, is_live, callback ) ->
+
+    kallback = callback
     log "[Player] fetch_room", room_id, @data_rooms[ room_id ]
     if @data_rooms[ room_id ]?
       log "[Player] fetch_room. data_rooms available", @data_rooms[ room_id ]
-      callback()
+      kallback?()
     else
 
       return if @requested_rooms[ room_id ]?
@@ -176,7 +178,7 @@ module.exports = class Player
         if response
           log '[Player] room info', response
           @data_rooms[ room_id ] = response
-          callback()
+          kallback?()
         else
           @requested_rooms[ room_id ] = null
           @on_error()
