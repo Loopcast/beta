@@ -133,9 +133,19 @@ block content
             if user.info.location.trim().length <= 0
               - klass = "empty"
             h4.location(class="#{klass}") #{user.info.location}
-            .bio !{autolink(user.info.about)}
+            .bio_wrapper(data-view="components/collapsable_box")
+              .bio !{autolink(user.info.about)}
+
+              .collapsable_controls 
+                a.show_more(href="#") 
+                  span.icon.ss-down
+                  | Show more
+                a.show_less(href="#")
+                  span.icon.ss-up
+                  | Show less
 
             .social.social_read_mode
+
 
           form.element_on_write_mode.profile_form
             input.squared_input.location_input(type="text", placeholder="Add your location", name="location", value="#{user.info.location}")

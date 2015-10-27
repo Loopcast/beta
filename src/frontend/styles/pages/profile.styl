@@ -60,7 +60,45 @@
       padding-right: 30px
       width: 120px
 
+  .collapsable_box
+    transition: height .3s ease-out
+    position: relative
+    overflow: hidden
+    .show_less
+      display: none
+    &.expanded  
       
+      .show_more
+        display: none
+      .show_less
+        display: block
+        
+  .collapsable_controls
+    background: url(/images/collapsable_gradient.png) repeat-x
+    display: none
+    position: absolute
+    height: 60px
+    padding-top: 30px
+    bottom: 0
+    left: 0
+    width: 100%
+    font-size: 0.8rem
+    // padding-left: 20px
+    font-weight: bold
+    .icon
+      font-size: 0.6rem
+      padding-right: 5px
+      position: relative
+      top: 1px
+    
+      
+
+    
+  .collapsable
+    height: 300px
+    overflow: hidden
+    .collapsable_controls
+      display: block
 
 
   &.no_information_yet
