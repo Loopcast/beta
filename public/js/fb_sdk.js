@@ -53,9 +53,8 @@ function fb_init( app_id ){
     //   }
     // );
 
-  };  
-} 
-
+  };
+}
 
 (function(d, s, id){
    var js, fjs = d.getElementsByTagName(s)[0];
@@ -79,6 +78,6 @@ function fb_share() {
 }
 
 function fb_parse() {
-  console.log( '[Facebook] fb_parse()' )
-  FB.XFBML.parse()
+  console.log( '[Facebook] fb_parse()' );
+  FB.XFBML.parse();
 }

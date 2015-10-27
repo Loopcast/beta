@@ -1,6 +1,6 @@
 node_modules
 .DS_Store
-
+_assets
 npm-debug.log
 newrelic_agent.log
 

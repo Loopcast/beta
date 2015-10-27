@@ -126,6 +126,97 @@ body
   
 
 @media (max-width: 700px)
+  BLACK_TAPE_MOBILE = #292826
+  TAPE_PADDING = 20px
+  
+  body.tape_view.no_touch_device
+  body.tape_view.touch_device
+    display: block
+    min-height: 100%
+    .tape_view .tape_header .first_line
+      position: static
+    .main_column
+      .first_line
+        margin-bottom: 0
+        padding-bottom: 20px
+        display: block
+        .buttons
+          text-align: center
+          width: 100%
+          & > *
+            margin-left: 5px
+            margin-right: 5px
+        .tags
+          flex: auto
+          text-align: center
+          margin-top: 10px
+
+      .first_line, .tape_description
+        background: BLACK_TAPE_MOBILE
+        color: white
+        
+      .tape_description
+        padding-bottom: 50px
+      
+    #content
+    .inner_content
+    .dynamic_wrapper
+    .tape_view
+    .tape_inner
+      display: block
+      flex: auto
+    .tape_header
+      position: relative
+      padding: TAPE_PADDING
+      height: 330px
+      ._overflow
+        overflow: visible
+        & > *
+          float: none
+          
+      
+    .padded
+      padding-left: TAPE_PADDING
+      padding-right: TAPE_PADDING
+    .tape_view
+      background: black
+      color: white
+    .tape_view .chat_line.padded
+      padding-left: 80px
+    .tape_view .post_comment_wrapper
+      background: #434240
+      textarea
+        padding-left: 0
+        height: 100px
+    .tape_view .chat_line .chat_user_thumb
+      left: TAPE_PADDING
+    .chat_name
+      color: YELLOW
+    .chat_list_messages
+      background: #292826
+      
+    .side_column
+      display: none
+          
+      
+    .first_line
+      .tape_play
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translateX(-50%) translateY(-50%)
+        border-width: 3px
+        
+    div.tape_info
+      .follow_button
+        display: inline-block
+        margin-top: 6px
+        
+    .tape_view 
+      .main_column
+        flex: auto
+        display: block
+
   .fb_edge_comment_widget
     margin-left: 0 !important
   

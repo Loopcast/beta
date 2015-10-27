@@ -1,5 +1,157 @@
+block seo
+  title #{tape.user.info.username} - #{tape.title} Recorded on Loopcast 
+  meta( name="description" content="Stream, record and save your DJ mixes instantly. Go live, interact with your audience and see who’s listening in real time." )
+  
+  meta( property="og:url" content="#{s.base_path}" )
+  meta( property="og:title" content="#{tape.user.info.username} - #{tape.title} Recorded on Loopcast " )
+  meta( property="og:description" content="Stream, record and save your DJ mixes instantly. Go live, interact with your audience and see who’s listening in real time." )
+  
+  meta( name="twitter:title" content="#{tape.user.info.username} - #{tape.title} Recorded on Loopcast")
+  meta( name="twitter:description" content="Stream, record and save your DJ mixes instantly. Go live, interact with your audience and see who’s listening in real time.") 
+
 extends ../layout
 
-block content
-  pre(style='text-align: left')
-    !{JSON.stringify(locals.tape, undefined, 2)}
+block content  
+
+  div.tape_view.centered(data-view="room/tape_view")
+    
+    .tape_header
+      .cover_image.for_desktop(style="background-image:url(#{transform.cover(tape.cover_url)})")
+      .cover_image.for_mobile(style="background-image:url(#{transform.cover_mobile(tape.cover_url)})")
+      .first_line._overflow
+        a(href="#", class="tape_play icon ss-play", title="play record") &nbsp;
+
+        .tape_info
+          h1.black_background.tape_title #{tape.title}
+          .tape_author_wrapper._overflow
+            h3.black_background.tape_author(data-view="room/popup_trigger", data-user-id="#{tape.user._id}")
+              a(href="/#{tape.user.info.username}") #{tape.user.info.name}
+            br.for_mobile
+            a(href="#", class="button grey_button small_button_2 follow_button", data-view="profile/follow_button", data-user-id="#{tape.user._id}" onClick="_gaq.push(['_trackEvent', 'Follow Message', 'Click', '']);") 
+              span.follow Follow
+              span.unfollow Unfollow
+
+    .tape_inner
+      .main_column
+        .first_line.padded
+          .tags.for_desktop
+            for item in tape.genres
+              a.tag(href="/explore?genres=#{item}") #{item}
+
+          .buttons
+            a.edit_icon(href="#")
+              img(src="/images/tape-edit.png")
+
+            p.listen_counter
+              img(src="/images/tape-headphones.png")
+              span.label #{tape.plays}
+
+            p.like_counter
+              img(src="/images/tape-like.png")
+              span.label #{tape.likes}
+
+            p.upload_counter
+              img(src="/images/tape-cloud.png")
+              span.label(data-livestamp="#{tape.stopped_at}")
+
+            a.share_icon(href="#")
+              img(src="/images/tape-share.png")
+
+          .tags.for_mobile
+            for item in tape.genres
+              a.tag(href="/explore?genres=#{item}") #{item}
+        p.tape_description.padded #{tape.about} Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.
+
+        div.post_comment_wrapper.chat_line.padded
+          a.chat_user_thumb(href="#")
+            img(src="/images/tape_test_image.jpg")
+
+          textarea.chat_user_text(placeholder="Type here to add comment...")
+          a.tape_brown_button.gray_button_2.button.small_button_4(href="#") Post Comment
+
+
+        .chat_list_messages
+          .chat_line.padded
+            a.chat_user_thumb(href="#")
+              img(src="/images/tape_test_image.jpg")
+
+            .chat_user_text 
+              h4.chat_name Emma Watson
+              p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.
+
+          .chat_line.padded
+            a.chat_user_thumb(href="#")
+              img(src="/images/tape_test_image.jpg")
+
+            .chat_user_text 
+              h4.chat_name Emma Watson
+              p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.
+
+          .chat_line.padded
+            a.chat_user_thumb(href="#")
+              img(src="/images/tape_test_image.jpg")
+
+            .chat_user_text 
+              h4.chat_name Emma Watson
+              p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.
+
+
+          .chat_line.padded
+            a.chat_user_thumb(href="#")
+              img(src="/images/tape_test_image.jpg")
+
+            .chat_user_text 
+              h4.chat_name Emma Watson
+              p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.
+
+
+          .chat_line.padded
+            a.chat_user_thumb(href="#")
+              img(src="/images/tape_test_image.jpg")
+
+            .chat_user_text 
+              h4.chat_name Emma Watson
+              p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.
+
+         
+
+      .side_column
+        
+
+        .list_users
+          h3 
+            | FAVOURITED BY  
+            span.number 8
+          a.chat_user_thumb(href="#")
+            img(src="/images/tape_test_image.jpg")
+
+          a.chat_user_thumb(href="#")
+            img(src="/images/tape_test_image.jpg")
+
+          a.chat_user_thumb(href="#")
+            img(src="/images/tape_test_image.jpg")
+
+          a.chat_user_thumb(href="#")
+            img(src="/images/tape_test_image.jpg")
+
+          a.chat_user_thumb(href="#")
+            img(src="/images/tape_test_image.jpg")
+
+          a.chat_user_thumb(href="#")
+            img(src="/images/tape_test_image.jpg")
+
+          a.chat_user_thumb(href="#")
+            img(src="/images/tape_test_image.jpg")
+
+          a.chat_user_thumb(href="#")
+            img(src="/images/tape_test_image.jpg")
+
+
+    .chat_user_popup(data-view="chat/people_popup")
+      ._outer
+        .outer_inner
+        a.follow_button(class="button yellow_button small_button_4 popup_follow_button", href="#",  data-view="profile/follow_button", data-user-id="#{tape.user._id}") Follow
+
+  script
+    | var info = !{JSON.stringify(locals)};;
+    | console.log( 'info', info ); 

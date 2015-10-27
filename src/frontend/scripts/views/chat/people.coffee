@@ -44,10 +44,10 @@ module.exports = class People extends ChatView
 
     listener.images = transform.all listener.avatar
     if @listeners_map[ listener.socket_id ]?
-      log "[People] listener already added", listener.socket_id
+      # log "[People] listener already added", listener.socket_id
       return
       
-    log "[People] on_listener_added", listener
+    # log "[People] on_listener_added", listener
     @listeners_map[ listener.socket_id ] = listener
 
     @listeners_wrapper.append @tmpl( listener )
@@ -55,7 +55,7 @@ module.exports = class People extends ChatView
 
   on_listener_removed: ( data ) =>
     listener = data.item
-    log "[People] on_listener_removed", listener
+    # log "[People] on_listener_removed", listener
     
     @listeners_wrapper.find( '#listener_' + listener.socket_id ).remove()
 

@@ -24,6 +24,7 @@ module.exports = class Dashboard extends RoomView
       return
 
     # log "[Dashboard] on_room_created (it is the owner)"
+    
     @publish_modal = view.get_by_dom '#publish_modal'
 
     
@@ -68,7 +69,22 @@ module.exports = class Dashboard extends RoomView
 
 
     @add_facebook_send_button location.href
+    @manage_download_button()
     # @add_facebook_send_button 'http://google.com'
+
+
+  ###
+  Set the right download link of Appcast depending on OS
+  ###
+  manage_download_button: ->
+    download = $ '#download_appcast'
+
+    if app.settings.browser.OS is 'Mac'
+      download.attr 'href', ( download.data( 'mac' ) )
+    else
+      download.attr 'href', ( download.data( 'win' ) )
+
+
 
 
   ###
