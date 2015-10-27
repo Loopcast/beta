@@ -83,8 +83,17 @@ module.exports = ( dom ) ->
     genres = data.genres.split ','
     genres_dom = dom.find( '.genres' )
     str = ''
+
+
+    # Show only the first 5 tags
+    max = 5
+    counter = 0
     for genre in genres
-      str += "<a class='tag' href='#' title='#{genre}'>#{genre}</a>"
+      klass = if counter++ >= max then "hide" else ""
+      str += "<a class='tag #{klass}' href='#' title='#{genre}'>#{genre}</a>"
+
+    if genres.length > max
+      str += '...'
 
     genres_dom.html str
 
@@ -108,6 +117,7 @@ module.exports = ( dom ) ->
     log "[User Set] saving", to_save, data
 
     api.tapes.update room_id, to_save, (error, response) ->
+      log "[User set] save response", error, response
       edit_modal.close()
 
 
