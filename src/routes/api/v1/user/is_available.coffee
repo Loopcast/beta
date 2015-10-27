@@ -15,7 +15,7 @@ module.exports =
 
   handler: ( req, reply ) ->
 
-    username = req.params.username
+    username = slug req.params.username
 
     query = 'info.username': username
 
@@ -29,4 +29,6 @@ module.exports =
 
         if room.length then return reply available: false
 
-        return reply available: true
+        return reply 
+          username : username
+          available: true
