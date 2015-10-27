@@ -3,5 +3,5 @@ module.exports = ->
 	popup  
 		url     : '/login'
 		title   : 'Log In ~ Loopcast'
-		w       : 500
+		w       : 900
 		h       : 540
