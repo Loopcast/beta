@@ -202,8 +202,12 @@ module.exports = class Player
 
     @open()
 
+    # Choose the righth api to call
+    type = if @data_rooms[ room_id ].is_live then 'rooms' else 'tapes'
+
+    log "[Player] playing", type, room_id
     # Call the api for stats
-    api.rooms.play room_id, (error, response) ->
+    api[ type ].play room_id, (error, response) ->
 
     @data = @data_rooms[ room_id ]
 
@@ -222,19 +226,21 @@ module.exports = class Player
   update_info: ( data ) ->
 
     log "[Player] update_info", data
+    obj = if data.is_live then data.room else data.tape
 
-    if data.room.status.is_live
-      room_link = "/#{data.user.info.username}/#{data.room.info.slug}"
+
+    if data.is_live
+      room_link = "/#{data.user.info.username}/#{obj.info.slug}"
     else
       room_link = "/#{data.user.info.username}"
 
-    @thumb.attr 'src', transform.player_thumb data.room.info.cover_url
-    title = string_utils.cut_text data.room.info.title, 36
+    @thumb.attr 'src', transform.player_thumb obj.info.cover_url
+    title = string_utils.cut_text obj.info.title, 36
     @title.html title
     @author.html "By " + data.user.info.name
 
     @author.attr 'title', data.user.info.name
-    @title.attr 'title', data.room.info.title
+    @title.attr 'title', obj.info.title
 
     @author.attr 'href',  "/" + data.user.info.username
 
@@ -242,17 +248,17 @@ module.exports = class Player
     @title.attr 'href', room_link
 
     # @thumb.parent().attr 'href', room_link
-    @thumb.parent().attr 'title', data.room.info.title
+    @thumb.parent().attr 'title', obj.info.title
 
     @share.update_with_data
       link: room_link
-      title: data.room.info.title
-      summary: data.room.info.about
-      image: data.room.info.cover_url
+      title: obj.info.title
+      summary: obj.info.about
+      image: obj.info.cover_url
 
     @share.update_link 
 
-    if data.room.status.is_live
+    if obj.status.is_live
       @dom.addClass 'is_live'
     else
       @dom.removeClass 'is_live'

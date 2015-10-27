@@ -2,7 +2,7 @@ set_private = lib 's3/set_private'
 
 module.exports =
   method : 'DELETE'
-  path   : '/api/v1/tapes/{id}'
+  path   : '/api/v1/tape/{id}'
 
   config:
     description: "Mark a tape as deleted, but don't delete cover or file at S3"

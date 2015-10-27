@@ -204,9 +204,18 @@ module.exports =
       on_status_code =
         401: ( response ) -> callback 'unauthorized, need log in!'
 
-      request = $.delete api_url + "tapes/#{id}"
+      request = $.delete api_url + "tape/#{id}"
 
-      request.error on_error "tapes/#{id} DELETE", callback
+      request.error on_error "tape/#{id} DELETE", callback
+
+      request.done ( response ) ->
+        # log "[Loopcast] request done", response
+        callback? null, response
+
+    play: ( tape_id, callback ) ->
+      request = $.put api_url + "tape/#{tape_id}/play"
+
+      request.error on_error "tape/#{tape_id}/play PUT", callback
 
       request.done ( response ) ->
         # log "[Loopcast] request done", response
@@ -263,6 +272,17 @@ module.exports =
         callback null, response
         
   user:
+
+    info: ( user_id, callback ) ->
+
+      request = $.get api_url + "user/#{user_id}/info"
+
+      request.error on_error "user/#{user_id}/info", callback
+
+      request.done ( response ) ->
+
+        callback null, response
+
     edit: ( data, callback ) ->
       on_status_code =
         401: ( response ) -> callback 'unauthorized, need log in!'
