@@ -221,6 +221,22 @@ module.exports =
         # log "[Loopcast] request done", response
         callback? null, response
 
+    like: ( tape_id, callback ) ->
+      request = $.put api_url + "tape/#{tape_id}/like", {}
+
+      request.error on_error "tape/#{tape_id}/like", callback
+
+      request.done ( response ) ->
+        callback? null, response
+
+    dislike: ( tape_id, callback ) ->
+      request = $.put api_url + "tape/#{tape_id}/unlike", {} 
+
+      request.error on_error "tape/#{tape_id}/unlike", callback
+
+      request.done ( response ) ->
+        callback? null, response
+
   chat:
     message: ( data, callback ) ->
 

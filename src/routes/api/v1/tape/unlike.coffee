@@ -2,13 +2,11 @@ unlike = lib 'likes/remove'
 
 module.exports =
   method : 'PUT'
-  path   : '/api/v1/rooms/{id}/unlike'
+  path   : '/api/v1/tape/{id}/unlike'
 
   config:
-    description: "Unlike a room"
+    description: "Unlike a tape in case it wasnt linked before"
     plugins: "hapi-swagger": responseMessages: [
-      { code: 400, message: 'Bad Request' }
-      { code: 401, message: 'Needs authentication' } # Boom.unauthorized
       { code: 500, message: 'Internal Server Error'}
     ]
     tags   : [ "api", "v1" ]
@@ -21,20 +19,20 @@ module.exports =
 
       if not req.auth.isAuthenticated
 
-        return reply Boom.unauthorized('needs authentication')
+        return reply Boom.unauthorized( 'needs authentication' )
 
       user    = req.auth.credentials.user
-      room_id = req.params.id
+      tape_id = req.params.id
 
       # data = 
-      #   type     : 'unlike'
+      #   type     : 'like'
       #   username : user.username
       #   name     : user.name
       #   avatar   : user.avatar
 
-      # sockets.send room_id, data
+      # sockets.send tape_id, data
 
-      like user._id, Room, room_id, ( error, respose ) ->
+      unlike user._id, Tape, tape_id, ( error, respose ) ->
 
         if error
           return reply Boom.badImplementation( error.message, error )
