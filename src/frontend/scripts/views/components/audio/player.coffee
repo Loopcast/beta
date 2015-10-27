@@ -178,6 +178,7 @@ module.exports = class Player
         if response
           log '[Player] room info', response
           @data_rooms[ room_id ] = response
+          @data_rooms[ room_id ].is_live = is_live
           kallback?()
         else
           @requested_rooms[ room_id ] = null
