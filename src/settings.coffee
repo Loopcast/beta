@@ -61,6 +61,13 @@ s.mandrill =
   api:
     key: "xDyJJ0aZZBP6DKCTG_oesw"
 
+s.acrcloud =
+  api:
+    id    : 'loopcast-beta'
+    url   : 'https://api.acrcloud.com'
+    access: '8027feac0bbb2831c31d212852eb9d29'
+    secret: 'naSzieaFZ7sC7s5P8YOk7xKEJCmeopZrY0hX5Giy'
+
 # PRODUCTION / STAGING reading from environment variables
 if not s.is_local
 
