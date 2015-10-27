@@ -112,6 +112,7 @@ module.exports = class Player
   get_audio_data : (data) ->
     audio_data = {}
 
+    log "[Get audio data]", data
     if data.room.status.is_live
       audio_data = 
         id         : data.room._id
@@ -176,6 +177,33 @@ module.exports = class Player
 
       on_response = (error, response) => 
         if response
+
+          if not is_live
+            response = 
+              data:
+                user      : 
+                  _id: "562651875b18738b152ad6a8"
+                  info:
+                    avatar: "https://res.cloudinary.com/hrrdqnsfe/image/upload/v1445351815/213f5b71bb8599b37b16aaeb3a49f175.jpg"
+                    name: "Stefano Ortisi"
+                    occupation: []
+                    username: "stefano-ortisi3"
+                room      : "562c941ab0856873b96007a1"
+                slug      : "the-slug-of-the-recording"
+                title     : "The title of the tape"
+                genres    : [ "jazz" ]
+                location  : "Barcelona"
+                about     : "This is the about of the tape"
+                cover_url : null
+                likes      : 3
+                plays      : 10
+                public     : true
+                deleted    : false
+                started_at : "2015-10-10"
+                stopped_at : "2015-10-10"
+                duration   : 103
+                s3         : {}
+
           log '[Player] room info', response
           @data_rooms[ room_id ] = response
           @data_rooms[ room_id ].is_live = is_live
@@ -223,47 +251,71 @@ module.exports = class Player
     @audio.pause()
 
 
+  normalize_info: ( data ) ->
+
+    if data.is_live
+      obj = 
+        slug     : data.room.info.slug
+        cover_url: data.room.info.cover_url
+        title    : data.room.info.title
+        about    : data.room.info.about
+        user     : data.room.user
+        liked    : data.liked 
+        is_live  : true
+
+    else
+      obj = 
+        slug     : data.tape.slug
+        cover_url: data.tape.cover_url
+        title    : data.tape.title
+        about    : data.tape.about
+        user     : data.tape.user
+        liked    : data.liked 
+        is_live  : false
+
+    return obj
+
   update_info: ( data ) ->
 
     log "[Player] update_info", data
-    obj = if data.is_live then data.room else data.tape
+    obj = @normalize_info data
 
 
     if data.is_live
-      room_link = "/#{data.user.info.username}/#{obj.info.slug}"
+      room_link = "/#{obj.user.info.username}/#{obj.slug}"
     else
-      room_link = "/#{data.user.info.username}"
+      room_link = "/#{obj.user.info.username}"
 
-    @thumb.attr 'src', transform.player_thumb obj.info.cover_url
-    title = string_utils.cut_text obj.info.title, 36
+    @thumb.attr 'src', transform.player_thumb obj.cover_url
+    title = string_utils.cut_text obj.title, 36
     @title.html title
-    @author.html "By " + data.user.info.name
+    @author.html "By " + obj.user.info.name
 
-    @author.attr 'title', data.user.info.name
-    @title.attr 'title', obj.info.title
+    @author.attr 'title', obj.user.info.name
+    @title.attr 'title', obj.title
 
-    @author.attr 'href',  "/" + data.user.info.username
+    @author.attr 'href',  "/" + obj.user.info.username
 
 
     @title.attr 'href', room_link
 
     # @thumb.parent().attr 'href', room_link
-    @thumb.parent().attr 'title', obj.info.title
+    @thumb.parent().attr 'title', obj.title
 
     @share.update_with_data
       link: room_link
-      title: obj.info.title
-      summary: obj.info.about
-      image: obj.info.cover_url
+      title: obj.title
+      summary: obj.about
+      image: obj.cover_url
 
-    @share.update_link 
+    # @share.update_link
 
-    if obj.status.is_live
+    if obj.is_live
       @dom.addClass 'is_live'
     else
       @dom.removeClass 'is_live'
 
-    if data.liked
+    if obj.liked
       @like_btn.addClass 'liked'
     else
       @like_btn.removeClass 'liked'
