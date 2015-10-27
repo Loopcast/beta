@@ -8,7 +8,7 @@
           ul
             li 
               | 1. 
-              a(href="/download/Appcast.zip", title="Download Appcast", onClick="mixpanel.track('Download Appcast');Intercom('trackEvent', 'download-appcast');_gaq.push(['_trackEvent', 'Download Appcast', 'Download', '']);") Download Appcast
+              a(id="download_appcast", href="#", data-mac="/download/Appcast.mac.zip", data-win="/download/Appcast.win.zip" title="Download Appcast", onClick="mixpanel.track('Download Appcast');Intercom('trackEvent', 'download-appcast');_gaq.push(['_trackEvent', 'Download Appcast', 'Download', '']);") Download Appcast
             li 2. Open Appcast (An icon will appear in your system tray)
             li 3. Select your input device below
 
