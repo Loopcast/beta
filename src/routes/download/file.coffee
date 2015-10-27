@@ -17,11 +17,11 @@ module.exports =
 
     file = request.params.file
 
-    if file.indexOf( ".zip" ).indexOf != -1
+    # if file.indexOf( ".zip" ).indexOf != -1
 
-      # set header as application/zip when a zipfile is downloaded
-      reply.file( root + '/' + file ).type( "application/x-zip-compressed" )
+    #   # set header as application/zip when a zipfile is downloaded
+    #   reply.file( root + '/' + file ).type( "application/x-zip-compressed" )
 
-    else
+    # else
 
-      reply.file( root + '/' + file )
+    reply.file root + '/' + file
