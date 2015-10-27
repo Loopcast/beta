@@ -6945,8 +6945,8 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 /* line 313 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .profile_bio .outline_icon {
   position: absolute;
-  top: 5px;
-  right: 10px;
+  top: 7px;
+  right: 7px;
   padding-top: 9px;
   display: none;
 }
