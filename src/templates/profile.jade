@@ -129,7 +129,10 @@ block content
               //- span.spritesheet.edit_icon
               span.icon.ss-write
 
-            h4.location #{user.info.location}
+            - klass = "empty"
+            if user.info.location.trim().length <= 0
+              - klass = "empty"
+            h4.location(class="#{klass}") #{user.info.location}
             .bio !{autolink(user.info.about)}
 
             .social.social_read_mode
