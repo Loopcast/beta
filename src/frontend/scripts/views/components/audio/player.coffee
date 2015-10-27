@@ -4,8 +4,7 @@ transform = require 'lib/cloudinary/transform'
 notify          = require 'app/controllers/notify'
 string_utils = require 'app/utils/string'
 ProgressDragger = require 'app/utils/progress_dragger'
-
-moment = require 'moment'
+normalize_info = require 'app/utils/rooms/normalize_info'
 
 module.exports = class Player
   is_playing: false
@@ -78,7 +77,8 @@ module.exports = class Player
     return false
 
   unlike: ->
-    api.rooms.dislike @data.room._id, (error, response) =>
+    type = if @data.data.is_live then 'rooms' else 'tapes'
+    api[type].dislike @data.data._id, (error, response) =>
       log "[Player] dislike", error, response
       @like_lock = false
       
@@ -89,7 +89,8 @@ module.exports = class Player
       @like_btn.removeClass 'liked'
 
   like: ->
-    api.rooms.like @data.room._id, (error, response) =>
+    type = if @data.data.is_live then 'rooms' else 'tapes'
+    api[type].like @data.data._id, (error, response) =>
       log "[Player] like", error, response
       @like_lock = false
 
@@ -112,20 +113,16 @@ module.exports = class Player
   get_audio_data : (data) ->
     audio_data = {}
 
-    if data.room.status.is_live
-      audio_data = 
-        id         : data.room._id
-        is_recorded: false
-        start_time : data.room.status.live.started_at
-        src        : data.room.info.url
-
-    else
-      audio_data = 
-        id: data.room._id
-        is_recorded: true
-        start_time: moment()
-        src: data.room.info.file
+    
+    obj = data.data
+    
+    audio_data = 
+      id         : obj._id
+      is_recorded: obj.is_live
+      start_time : obj.started_at
+      src        : obj.url
       
+    log "[Get audio data]", data, audio_data
 
     return audio_data
 
@@ -176,8 +173,9 @@ module.exports = class Player
 
       on_response = (error, response) => 
         if response
-          log '[Player] room info', response
-          @data_rooms[ room_id ] = response
+
+          @data_rooms[ room_id ] = normalize_info response, is_live
+          log '[Player] room info', response, @data_rooms[ room_id ]
           kallback?()
         else
           @requested_rooms[ room_id ] = null
@@ -201,8 +199,12 @@ module.exports = class Player
 
     @open()
 
+    # Choose the righth api to call
+    type = if @data_rooms[ room_id ].is_live then 'rooms' else 'tapes'
+
+    log "[Player] playing", type, room_id
     # Call the api for stats
-    api.rooms.play room_id, (error, response) ->
+    api[ type ].play room_id, (error, response) ->
 
     @data = @data_rooms[ room_id ]
 
@@ -218,45 +220,48 @@ module.exports = class Player
     @audio.pause()
 
 
+  
+
   update_info: ( data ) ->
 
-    log "[Player] update_info", data
+    obj = data.data
+    log "[Update info]", obj
 
-    if data.room.status.is_live
-      room_link = "/#{data.user.info.username}/#{data.room.info.slug}"
+    if data.is_live
+      room_link = "/#{obj.user.info.username}/#{obj.slug}"
     else
-      room_link = "/#{data.user.info.username}"
+      room_link = "/#{obj.user.info.username}"
 
-    @thumb.attr 'src', transform.player_thumb data.room.info.cover_url
-    title = string_utils.cut_text data.room.info.title, 36
+    @thumb.attr 'src', transform.player_thumb obj.cover_url
+    title = string_utils.cut_text obj.title, 36
     @title.html title
-    @author.html "By " + data.user.info.name
+    @author.html "By " + obj.user.info.name
 
-    @author.attr 'title', data.user.info.name
-    @title.attr 'title', data.room.info.title
+    @author.attr 'title', obj.user.info.name
+    @title.attr 'title', obj.title
 
-    @author.attr 'href',  "/" + data.user.info.username
+    @author.attr 'href',  "/" + obj.user.info.username
 
 
     @title.attr 'href', room_link
 
     # @thumb.parent().attr 'href', room_link
-    @thumb.parent().attr 'title', data.room.info.title
+    @thumb.parent().attr 'title', obj.title
 
     @share.update_with_data
       link: room_link
-      title: data.room.info.title
-      summary: data.room.info.about
-      image: data.room.info.cover_url
+      title: obj.title
+      summary: obj.about
+      image: obj.cover_url
 
-    @share.update_link 
+    # @share.update_link
 
-    if data.room.status.is_live
+    if obj.is_live
       @dom.addClass 'is_live'
     else
       @dom.removeClass 'is_live'
 
-    if data.liked
+    if obj.liked
       @like_btn.addClass 'liked'
     else
       @like_btn.removeClass 'liked'
@@ -266,7 +271,7 @@ module.exports = class Player
 
     clearTimeout @timeout_follow_popup
     @timeout_follow_popup = setTimeout =>
-      @follow_popup.show data
+      @follow_popup.show obj
     , 30000
 
   on_audio_started: =>    
@@ -281,7 +286,7 @@ module.exports = class Player
 
     @play_btn.addClass( 'ss-pause' ).removeClass( 'ss-play' )
 
-    app.emit 'audio:started', @data.room._id
+    app.emit 'audio:started', @data.data._id
 
     # @loading.fadeOut()
     log "[Player] loading hide"
@@ -295,7 +300,7 @@ module.exports = class Player
     # @progress.css 'width', '0%'
     # @time.html "00:00:00"
 
-    app.emit 'audio:paused', @data.room._id
+    app.emit 'audio:paused', @data.data._id
 
   on_audio_ended: =>
     log "[Player] on_audio_ended"

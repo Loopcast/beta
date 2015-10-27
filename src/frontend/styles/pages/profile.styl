@@ -59,11 +59,17 @@
       padding-left: 30px
       padding-right: 30px
       width: 120px
-
+  .profile_bio
+    opacity: 0
+    transition: opacity .2s linear
+    &.ready
+      opacity: 1
+      
   .collapsable_box
     transition: height .3s ease-out
     position: relative
     overflow: hidden
+    
     .show_less
       display: none
     &.expanded  
