@@ -22,6 +22,8 @@ module.exports =
       # set header as application/zip when a zipfile is downloaded
       reply.file( root + '/' + file ).type( "application/zip" )
 
+      console.log "TRIED CHANGING HEADER!"
+      
     else
 
       reply.file( root + '/' + file )
