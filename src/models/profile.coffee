@@ -48,7 +48,7 @@ module.exports = ( username, show_private, callback ) ->
           # don't show deleted rooms
           user   : user._id
           deleted: false
-          public : false
+          public : true
 
         # if show private, then show all rooms, including
         # the not public ones

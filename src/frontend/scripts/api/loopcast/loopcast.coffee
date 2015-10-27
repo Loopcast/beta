@@ -320,6 +320,30 @@ module.exports =
 
         callback? null, response
 
+    edit_username: ( username, callback ) ->
+
+      data = username: username
+
+      on_status_code =
+        401: ( response ) -> callback 'unauthorized, need log in!'
+
+      request = $.post api_url + 'user/edit/username', data, on_status_code
+
+      request.error on_error "user/edit/username", callback
+
+      request.done ( response ) ->
+
+        callback? null, response
+
+    is_available: ( username, callback ) ->
+      request = $.get api_url + "user/#{username}/is_available"
+
+      request.error on_error "user/#{username}/is_available", callback
+
+      request.done ( response ) ->
+
+        callback null, response
+
     socket_id: ( socket_id, callback ) ->
       request = $.put api_url + "user/socket_id/#{socket_id}"
 
