@@ -1,7 +1,6 @@
 module.exports = (dom) ->
   max = 187
   original_h = 0
-  dom.addClass 'collapsable_box'
 
   init = ->
     app.on 'info_box:updated', update
@@ -10,6 +9,8 @@ module.exports = (dom) ->
     dom.find( '.show_less' ).on 'click', collapse
 
     delay 1000, update
+    delay 1300, ->
+      dom.parents('.profile_bio').addClass 'ready'
 
   update = ->
 
