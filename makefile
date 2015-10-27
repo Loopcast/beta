@@ -42,12 +42,7 @@ spritesheet:
 deploy_staging:
 	# https://git.heroku.com/staging-loopcast-fm.git
 	# git push origin development:staging -f
-	git push heroku-staging development:master
-
-deploy_staging_auto:
-	# this should push to our github, which will auto deploy to heroku
-	# origin should be: git@github.com:Loopcast/beta.git
-	git push origin development:staging -f
+	git push heroku-staging staging:master -f
 
 deploy_beta:
 	# https://git.heroku.com/beta-loopcast-fm.git
