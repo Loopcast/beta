@@ -225,7 +225,7 @@ block content
               //- - span.alert_text.for_owner #{free_storage} free storage remaining
 
             for room in tapes
-              - room.url = "/" + user.info.username + "/" + room.slug
+              - room.url = "/" + user.info.username + "/r/" + room.slug
               - public_class = ""
 
               if !room.public && room.stopped_at

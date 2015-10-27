@@ -37,7 +37,7 @@ module.exports =
     Tape
       .findById( req.params.id )
       .populate( "user", "info.name info.username info.avatar info.occupation likes" )
-      .select( "user info status likes" )
+      .select( "user slug title genres location about cover_url likes plays s3 started_at stopped_at" )
       .lean().exec ( error, result ) ->
 
         if error then return reply Boom.resourceGone "Tape not found"
