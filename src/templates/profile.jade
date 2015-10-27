@@ -129,7 +129,10 @@ block content
               //- span.spritesheet.edit_icon
               span.icon.ss-write
 
-            h4.location #{user.info.location}
+            - klass = "empty"
+            if user.info.location.trim().length <= 0
+              - klass = "empty"
+            h4.location(class="#{klass}") #{user.info.location}
             .bio !{autolink(user.info.about)}
 
             .social.social_read_mode
@@ -170,8 +173,15 @@ block content
               p.session_author #{user.info.name}
 
               .genres
+                - counter = 0
                 for genre in live.info.genres
-                  a.tag(href="/explore?genres=#{genre}", title="#{genre}") #{genre}
+                  - klass = ""
+                  if counter++ >= 5
+                    - klass = "hide"
+                  a.tag(href="/explore?genres=#{genre}", title="#{genre}", class="#{klass}") #{genre}
+
+                if live.info.genres.length > 5
+                  span ...
 
               .small_info
                 if live.info.location && live.info.location.length > 0
@@ -238,8 +248,16 @@ block content
                     | #{room.title}
                   p.session_author #{user.info.name}
                   .genres
+                    
+                    - counter = 0
                     for genre in room.genres
-                      a.tag(href="/explore?genres=#{genre}", title="#{genre}") #{genre}
+                      - klass = ""
+                      if counter++ >= 5
+                        - klass = "hide"
+                      a.tag(href="/explore?genres=#{genre}", title="#{genre}", class="#{klass}") #{genre}
+
+                    if room.genres.length > 5
+                      span ...
                     
                   .small_info
                     if room.location && room.location.length > 0

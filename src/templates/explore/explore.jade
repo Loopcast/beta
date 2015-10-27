@@ -76,8 +76,15 @@ block grid
             a(href="#{url}", title="#{item.info.title}") #{item.info.title}
           a.room_subtitle.blue(title="#{item.user.info.name}", href="#{author_url}") #{item.user.info.name}
           .genres.small
-            for g in item.info.genres
-              a.tag(href="?genres=#{g}", title="#{g}", data-genre-id="#{g}") #{g}
+            - counter = 0
+            for genre in item.info.genres
+              - klass = ""
+              if counter++ >= 5
+                - klass = "hide"
+              a.tag(href="?genres=#{genre}", title="#{genre}", data-genre-id="#{genre}", class="#{klass}") #{genre}
+
+            if item.info.genres.length > 5
+              span ...
 
           if item.info.location.length > 0
             p.room_location

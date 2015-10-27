@@ -200,12 +200,19 @@ module.exports = class Profile extends LoggedView
 		@elements.links.close_read_mode()
 
 		data = 
-			location : @elements.location_input.val()
-			about    : StringUtils.line_breaks_to_br @elements.about_input.val()
+			location : @elements.location_input.val().trim()
+			about    : StringUtils.line_breaks_to_br @elements.about_input.val().trim()
 			social   : @elements.links.get_current_value()
 
 		# Update the values on the labels
 		@elements.location.html data.location
+
+		if data.location.length <= 0
+			@elements.location.addClass 'empty'
+		else
+			@elements.location.removeClass 'empty'
+
+		log "[SAVE DATE]", data.location, data.location.length
 
 		@elements.about.html autolink( data.about )
 
