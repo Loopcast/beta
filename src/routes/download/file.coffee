@@ -15,4 +15,13 @@ module.exports =
 
     root = path.join __dirname, '../../../public/download'
 
-    reply.file root + '/' + request.params.file
+    file = request.params.file
+
+    # if file.indexOf( ".zip" ).indexOf != -1
+
+    #   # set header as application/zip when a zipfile is downloaded
+    #   reply.file( root + '/' + file ).type( "application/x-zip-compressed" )
+
+    # else
+
+    reply.file root + '/' + file

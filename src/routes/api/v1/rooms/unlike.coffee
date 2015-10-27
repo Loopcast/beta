@@ -1,4 +1,4 @@
-unlike = lib 'rooms/unlike'
+unlike = lib 'likes/remove'
 
 module.exports =
   method : 'PUT'
@@ -26,16 +26,17 @@ module.exports =
       user    = req.auth.credentials.user
       room_id = req.params.id
 
-      data = 
-        type     : 'unlike'
-        username : user.username
-        name     : user.name
-        avatar   : user.avatar
+      # data = 
+      #   type     : 'unlike'
+      #   username : user.username
+      #   name     : user.name
+      #   avatar   : user.avatar
 
-      sockets.send room_id, data
+      # sockets.send room_id, data
 
-      unlike user._id, room_id, ( error, response ) ->
+      like user._id, Room, room_id, ( error, respose ) ->
 
-        if error then return reply error: error
+        if error
+          return reply Boom.badImplementation( error.message, error )
         
-        reply response
+        reply respose
