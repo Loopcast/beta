@@ -1,5 +1,5 @@
 module.exports = (dom) ->
-  max = 300
+  max = 187
   original_h = 0
   dom.addClass 'collapsable_box'
 
