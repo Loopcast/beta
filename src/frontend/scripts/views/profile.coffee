@@ -216,6 +216,8 @@ module.exports = class Profile extends LoggedView
 
 		@elements.about.html autolink( data.about )
 
+		app.emit 'info_box:updated'
+
 		# Save data
 		@send_to_server data
 
