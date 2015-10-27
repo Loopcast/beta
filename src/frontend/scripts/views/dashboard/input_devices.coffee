@@ -54,6 +54,7 @@ module.exports = class InputDevices extends Select
     return if device is @current_device
     # log "[device] emitting event", device
     app.emit 'appcast:input_device', device
+    
     @current_device = device
     
     if device.length > 0
