@@ -21,6 +21,7 @@ module.exports =
       payload:
         build   : joi.number()
         version : joi.string()
+        os      : joi.string()
 
     handler: ( req, reply ) ->
 
@@ -37,6 +38,7 @@ module.exports =
         $set: 
           'data.appcast.version': version
           'data.appcast.build'  : build
+          'data.appcast.os'     : os
 
       User.update query , update, ( error, result ) ->
 

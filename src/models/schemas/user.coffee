@@ -39,6 +39,8 @@ schema = new Schema
 
     appcast: Object
       version: String
+      build  : String
+      os     : String
 
 User = mongoose.model 'User', schema
 
