@@ -20,10 +20,8 @@ module.exports =
     if file.indexOf( ".zip" ).indexOf != -1
 
       # set header as application/zip when a zipfile is downloaded
-      reply.file( root + '/' + file ).type( "application/zip" )
+      reply.file( root + '/' + file ).type( "application/x-zip-compressed" )
 
-      console.log "TRIED CHANGING HEADER!"
-      
     else
 
       reply.file( root + '/' + file )
