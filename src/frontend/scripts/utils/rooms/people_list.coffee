@@ -7,7 +7,7 @@ module.exports = class PeopleList
   constructor: ->
     @list = {}
     @ids = {}
-    log "[PeopleList] constructor", @list, @ids
+    # log "[PeopleList] constructor", @list, @ids
     happens @
     window.people_list = @
 
@@ -17,19 +17,19 @@ module.exports = class PeopleList
     user = data.user
 
     if @ids[ user.id ]?
-      log "[PeopleList] ######## ADD (already present)", user, user.socket_id, user.name, @list, @ids
-      log "[PeopleList] #####################"
+      # log "[PeopleList] ######## ADD (already present)", user, user.socket_id, user.name, @list, @ids
+      # log "[PeopleList] #####################"
 
       return false
     
     @total++
 
-    log "[PeopleList] ######## ADD (new)", user, user.socket_id, user.name, @list
+    # log "[PeopleList] ######## ADD (new)", user, user.socket_id, user.name, @list
     @list[ user.socket_id ] = user
     @ids[ user.id ] = user.socket_id
 
-    log "[PeopleList] checking the item (after)", @list[ user.socket_id ], "total", @total
-    log "[PeopleList] #####################"
+    # log "[PeopleList] checking the item (after)", @list[ user.socket_id ], "total", @total
+    # log "[PeopleList] #####################"
 
     @emit 'listener:added', 
       item: user
@@ -39,18 +39,18 @@ module.exports = class PeopleList
 
   remove: ( data ) ->
     socket_id = data.user.socket_id
-    log "[PeopleList] ########## THE REMOVE", data, socket_id, @list
+    # log "[PeopleList] ########## THE REMOVE", data, socket_id, @list
 
     if @list[ socket_id ]?
       @total--
-      log "[PeopleList] ############ REMOVE", socket_id, @list[ socket_id ], "total", @total
+      # log "[PeopleList] ############ REMOVE", socket_id, @list[ socket_id ], "total", @total
       obj = @list[ socket_id ]
       @list[ socket_id ] = null
       delete @list[ socket_id ]
       @remove_id_by_socket_id socket_id
 
 
-      log "[PeopleList] #####################"
+      # log "[PeopleList] #####################"
 
       @emit 'listener:removed', 
         item: obj
@@ -58,8 +58,8 @@ module.exports = class PeopleList
 
       return true
 
-    log "[PeopleList] ############ REMOVE (not found)", socket_id, @list[ socket_id ]
-    log "[PeopleList] #####################"
+    # log "[PeopleList] ############ REMOVE (not found)", socket_id, @list[ socket_id ]
+    # log "[PeopleList] #####################"
 
     return false
 

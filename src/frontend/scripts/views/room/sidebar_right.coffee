@@ -21,7 +21,7 @@ module.exports = class SidebarRight extends RoomView
     L.rooms.stats @room_id, ( e, stats ) -> 
 
     
-      log "[SidebarRight]", stats
+      # log "[SidebarRight]", stats
       stats.visits = Math.max 0, parseInt( stats.visits )
       stats.likes = Math.max 0, parseInt( stats.likes )
       stats.listeners = Math.max 0, parseInt( stats.listeners )
@@ -49,11 +49,11 @@ module.exports = class SidebarRight extends RoomView
     # log "[SidebarRight] on_unlike", data
 
   on_listener_added: ( data ) =>
-    log "[SidebarRight] on_listener_added", data.total
+    # log "[SidebarRight] on_listener_added", data.total
     @update_listeners data.total
 
   on_listener_removed: ( data ) =>
-    log "[SidebarRight] on_listener_removed", data.total
+    # log "[SidebarRight] on_listener_removed", data.total
     @update_listeners data.total
 
   update_listeners: ( total ) ->

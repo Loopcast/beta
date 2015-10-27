@@ -246,7 +246,7 @@ module.exports = class Room extends LoggedView
 
         return null
 
-      log "[Chat people]", response, response.sockets.length
+      # log "[Chat people]", response, response.sockets.length
       for socket_id in response.sockets
 
         if not user = user_by_socket( socket_id )
@@ -280,7 +280,7 @@ module.exports = class Room extends LoggedView
           method: "added"
           user  : user
 
-        log "[Chat people] on_listener added", message
+        # log "[Chat people] on_listener added", message
         @people_list.add message
 
   
@@ -327,10 +327,13 @@ module.exports = class Room extends LoggedView
     @on_room_offline()
     
   on_room_live: ->
+    log "[Room] on_room_live"
     @dom.addClass 'room_live'
     if not user_controller.check_guest_owner()
-      app.player.fetch_room @room_id, =>
+      app.player.fetch_room @room_id, true, =>
+        log "[Room] fetch room callback", app.settings.theme
         if app.settings.theme isnt 'mobile'
+          log "[Room] inside!"
           app.player.play @room_id
           
     else
