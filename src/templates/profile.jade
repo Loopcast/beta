@@ -129,7 +129,7 @@ block content
               //- span.spritesheet.edit_icon
               span.icon.ss-write
 
-            - klass = "empty"
+            - klass = ""
             if user.info.location && user.info.location.trim().length <= 0
               - klass = "empty"
             h4.location(class="#{klass}") #{user.info.location}
