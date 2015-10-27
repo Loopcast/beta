@@ -104,6 +104,75 @@ block grid
           a.enter_room(href="#{url}", class="button yellow_button no_shadow small_button small_button_2", title="Enter Room") Enter Room
 
 
+  for item in tapes
+
+    - klasses = "item-all-genres"
+
+    - url         = "/"+ item.user.info.username + "/r/" + item.slug
+    - sharing_url = url
+    - author_url  = "/"+ item.user.info.username
+    - cover_url   = item.cover_url || item.user.info.avatar
+
+    for g in item.genres
+      - console.log( slugify(g) )
+      //- - klasses += " item-" + slugify(g)
+
+    - klasses += " not_live"
+
+    - klasses += " is_recorded"
+
+    .room_cell.item(class="#{klasses}", data-view="components/audio/player_preview", data-room-id="#{item._id}" data-is-live="")
+      hidden( class="source_src" value="#{item.s3.location}")
+
+            
+      a(href="#", title="#{item.title}", class="thumb_wrapper") 
+        img.room_thumb.for_desktop(src="#{transform.explore_thumb(cover_url)}")
+        img.room_thumb.for_mobile(src="#{transform.explore_thumb_mobile(cover_url)}")
+        
+        span.recorded Recorded
+        span.now_live Now Live
+
+        span.icon.ss-play.circle_icon
+        .loading_spin
+
+        .share_wrapper(
+          data-view="buttons/share", 
+          data-title="#{item.title}",
+          data-summary="#{item.about}",
+          data-permalink="#{sharing_url}",
+          data-image="#{item.cover_url}"
+        )
+          a.yellow.ss-action(href="#", title="Share")
+
+      .room_content
+        .text
+          h2.room_title
+            a(href="#{url}", title="#{item.title}") #{item.title}
+          a.room_subtitle.blue(title="#{item.user.info.name}", href="#{author_url}") #{item.user.info.name}
+          .genres.small
+            - counter = 0
+            for genre in item.genres
+              - klass = ""
+              if counter++ >= 5
+                - klass = "hide"
+              a.tag(href="?genres=#{genre}", title="#{genre}", data-genre-id="#{genre}", class="#{klass}") #{genre}
+
+            if item.genres.length > 5
+              span ...
+
+          if item.location.length > 0
+            p.room_location
+              a(href="/explore?search=#{item.location}")
+                span.icon.ss-location
+                | #{item.location}
+
+          .likes 
+            span.icon.ss-heart
+            span.text #{item.likes}
+          .plays
+            span.icon.ss-play
+            span.text #{item.plays}
+
   script
     //- THIS IS JUST FOR DEBUGGIN. TO BE REMOVED
     | var data = !{JSON.stringify(locals)};;
