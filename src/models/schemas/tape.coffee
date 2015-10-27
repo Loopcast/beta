@@ -38,3 +38,18 @@ schema = new Schema
 
 
 module.exports = mongoose.model 'Tape', schema
+
+
+text_indexes = 
+  'slug'    : 'text'
+  'title'   : 'text'
+  'genres'  : 'text'
+  'location': 'text'
+  'about'   : 'text'
+
+mongoose.connection.collections['tapes'].ensureIndex text_indexes, ( error ) ->
+
+  if error
+    console.error "error indexing fields for text search"
+    console.error error
+    return 

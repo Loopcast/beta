@@ -43,8 +43,6 @@ module.exports =
         data.current_genre = ""
 
 
-      console.log 'got data ->', data
-
       template url, data, ( error, response ) ->
 
 

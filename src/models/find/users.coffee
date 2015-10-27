@@ -1,5 +1,3 @@
-User = schema 'user'
-
 module.exports = ( query, fields, options, callback ) ->
 
   User.find( query, fields, options ).lean().exec ( error, users ) ->
