@@ -118,7 +118,7 @@ module.exports = class Player
     
     audio_data = 
       id         : obj._id
-      is_recorded: obj.is_live
+      is_recorded: !obj.is_live
       start_time : obj.started_at
       src        : obj.url
       
@@ -150,10 +150,10 @@ module.exports = class Player
 
       @audio.play()
 
-    if src?
-      log "[Player] src is set", src
-      @audio.set_src src
-      @audio.play()
+    # if src?
+    #   log "[Player] src is set", src
+    #   @audio.set_src src
+    #   @audio.play()
 
     
   fetch_room: ( room_id, is_live, callback ) ->
