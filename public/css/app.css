@@ -7750,7 +7750,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 13 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 573 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+/* line 579 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
 /* line 10 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
@@ -7770,7 +7770,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 90 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 573 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+/* line 579 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
 /* line 11 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
@@ -7798,7 +7798,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 5 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
 
-/* line 573 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+/* line 579 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
 /* line 12 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
@@ -8746,37 +8746,54 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 /* line 552 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 
 /* line 553 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+.firefox .profile_content.chat .chat_main .chat_content {
+  -webkit-box-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
+}
+
+/* line 555 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+.firefox .profile_content.chat .chat_footer {
+  padding-bottom: 5px;
+}
+
+/* line 558 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+
+/* line 559 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .no_touch_device .profile_content.chat .chat_sidebar .spritesheet:hover {
   opacity: 0.8;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
   filter: alpha(opacity=80);
 }
 
-/* line 556 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 562 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .no_touch_device .profile_content.chat .message .name:hover {
   color: #4592d4;
 }
 
-/* line 559 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 565 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .no_touch_device #dashboard_help:hover {
   background: #727272;
 }
 
-/* line 562 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 568 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 
-/* line 564 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 570 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .no_touch_device #help_balloon .dashboard_button:hover {
   background: #30363d;
 }
 
-/* line 567 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 573 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .no_touch_device #help_balloon .dashboard_yellow:hover {
   background: #f8a902;
 }
 
-/* line 570 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 576 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 
-/* line 572 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 578 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .room_live .appcast_running_message select,
 .room_recording .appcast_running_message select {
   display: none;
