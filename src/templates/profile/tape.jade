@@ -16,7 +16,6 @@ block content
   - sharing_url = url
 
   div.tape_view.centered(data-view="room/tape_view", data-tape-id="#{tape._id}")
-    
     .tape_header
       .cover_image.for_desktop(style="background-image:url(#{transform.cover(tape.cover_url)})")
       .cover_image.for_mobile(style="background-image:url(#{transform.cover_mobile(tape.cover_url)})")
@@ -53,7 +52,7 @@ block content
               //-img(src="/images/tape-headphones.png")
               span.label #{tape.plays}
 
-            p.like_counter
+            p.like_counter(data-view="room/tape/like_button", data-tape-id="#{tape._id}")
               span.icon.ss-heart
               //-img(src="/images/tape-like.png")
               span.label #{tape.likes}
@@ -84,8 +83,8 @@ block content
         p.tape_description.padded #{tape.about} Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.
 
         div.post_comment_wrapper.chat_line.padded(data-view="room/tape/textarea", data-tape-id="#{tape._id}")
-          a.chat_user_thumb(href="#")
-            img(src="/images/tape_test_image.jpg")
+          a.chat_user_thumb(href="#", data-view="room/tape/my_profile_image")
+            img(src="/images/profile-36.jpg", width="50")
 
           textarea.chat_user_text(placeholder="Type here to add comment...")
           a.tape_brown_button.gray_button_2.button.small_button_4.post_comment(href="#") Post Comment

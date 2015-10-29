@@ -33,6 +33,8 @@ module.exports = class TapeView
 
       if data.type is 'message'
         @emit 'message', data
+      else if data.type is 'like'
+        @emit 'like', data
 
   something: (data) =>
     log "[TapeView] something", data

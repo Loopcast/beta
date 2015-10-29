@@ -243,7 +243,6 @@ class UserController
     app.body.addClass( "logged" ).removeClass( 'not_logged' )
     @emit 'user:logged', @data
 
-
     api.user.following ( error, result ) =>
       @data.following = {}
 

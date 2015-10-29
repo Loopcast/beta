@@ -1,3 +1,5 @@
+send_message = require 'app/utils/rooms/tape/send_message'
+login_popup = require 'app/utils/login_popup'
 StringUtils = require 'app/utils/string'
 L           = require 'app/api/loopcast/loopcast'
 user        = require 'app/controllers/user'
@@ -21,28 +23,14 @@ module.exports = class Textarea
 
 
     if user.is_logged()
-      @send_message message
+      send_message @tape_id, message
     else
-      app.settings.message_to_send = message
+      app.settings.action = 
+        type: "message"
+        data: 
+          room_id: @tape_id
+          message: message
+          payload: {}
+
       app.settings.after_login_url = location.pathname
       do login_popup
-
-  send_message: ( message, payload = {} ) ->
-    log "[Textarea] send_message", message
-
-    if app.settings.touch_device
-      document.activeElement.blur()
-      
-    data = 
-      room_id : @tape_id
-      message : message
-      payload : payload
-
-    # log "[Textarea] send_message", data
-
-    L.chat.message data, ( error, response ) ->
-      log "[Textarea] send_message repsonse", error, response
-      if error
-
-        console.error "sending message: ", error
-        return

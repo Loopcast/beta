@@ -72,5 +72,5 @@ module.exports = class Messages
     delay 10, -> h.addClass 'show'
 
   destroy: ->
-    @tape_view.off 'message', @on_message
+    @tape_view?.off 'message', @on_message
     @tape_view = null

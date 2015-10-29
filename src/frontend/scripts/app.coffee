@@ -13,6 +13,7 @@ if not is_login_page()
 	navigation      = require './controllers/navigation'
 	appcast         = require './controllers/appcast'
 	cloudinary      = require './controllers/cloudinary'
+	L 							= require 'app/api/loopcast/loopcast'
 
 
 
@@ -116,6 +117,9 @@ class App
     			@user.follow @settings.action.user_id
     		when 'like'
     			app.player.like()
+    		when 'message'
+    			log "[Message to send]", @settings.action
+    			L.chat.message @settings.action.data, ( error, response ) ->
 
 			@settings.action = null
 
