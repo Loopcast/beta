@@ -8697,7 +8697,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 13 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 266 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+/* line 811 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
 /* line 10 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
@@ -8717,7 +8717,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 90 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 266 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+/* line 811 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
 /* line 11 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
@@ -8745,7 +8745,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 5 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
 
-/* line 266 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+/* line 811 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
 /* line 12 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
@@ -9155,29 +9155,30 @@ body.tape_view .tape_view {
   background: transparent;
   margin: 0;
   outline: none;
+  transition: height 0.1s ease-out;
   height: 54px;
 }
 
-/* line 240 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
-
 /* line 241 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+
+/* line 242 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .side_column .number {
   color: #4592d4;
 }
 
-/* line 243 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 244 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .side_column .list_users {
   margin: 0 auto;
   width: 310px;
 }
 
-/* line 244 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 245 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .side_column .list_users h3 {
   margin-left: 6px;
   margin-bottom: 20px;
 }
 
-/* line 249 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 250 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .side_column .list_users a {
   display: inline-block;
   margin-right: 6px;
@@ -9185,21 +9186,21 @@ body.tape_view .tape_view {
   margin-bottom: 5px;
 }
 
-/* line 254 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 255 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 
-/* line 256 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 257 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .no_touch_device .tape_view .main_column .first_line .buttons > a:hover {
   opacity: 0.8;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
   filter: alpha(opacity=80);
 }
 
-/* line 262 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 263 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .no_touch_device ._white_box:hover {
   background: rgba(255,255,255,0.6);
 }
 
-/* line 265 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 266 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .no_touch_device .tape_play:hover {
   opacity: 0.8;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
