@@ -15,7 +15,7 @@ block content
   - url         = "/"+ tape.user.info.username + "/r/" + tape.slug
   - sharing_url = url
 
-  div.tape_view.centered(data-view="room/tape_view")
+  div.tape_view.centered(data-view="room/tape_view", data-tape-id="#{tape._id}")
     
     .tape_header
       .cover_image.for_desktop(style="background-image:url(#{transform.cover(tape.cover_url)})")
@@ -83,57 +83,15 @@ block content
               a.tag(href="/explore?genres=#{item}") #{item}
         p.tape_description.padded #{tape.about} Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.
 
-        div.post_comment_wrapper.chat_line.padded
+        div.post_comment_wrapper.chat_line.padded(data-view="room/tape/textarea", data-tape-id="#{tape._id}")
           a.chat_user_thumb(href="#")
             img(src="/images/tape_test_image.jpg")
 
           textarea.chat_user_text(placeholder="Type here to add comment...")
-          a.tape_brown_button.gray_button_2.button.small_button_4(href="#") Post Comment
+          a.tape_brown_button.gray_button_2.button.small_button_4.post_comment(href="#") Post Comment
 
 
-        .chat_list_messages
-          .chat_line.padded
-            a.chat_user_thumb(href="#")
-              img(src="/images/tape_test_image.jpg")
-
-            .chat_user_text 
-              h4.chat_name Emma Watson
-              p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.
-
-          .chat_line.padded
-            a.chat_user_thumb(href="#")
-              img(src="/images/tape_test_image.jpg")
-
-            .chat_user_text 
-              h4.chat_name Emma Watson
-              p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.
-
-          .chat_line.padded
-            a.chat_user_thumb(href="#")
-              img(src="/images/tape_test_image.jpg")
-
-            .chat_user_text 
-              h4.chat_name Emma Watson
-              p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.
-
-
-          .chat_line.padded
-            a.chat_user_thumb(href="#")
-              img(src="/images/tape_test_image.jpg")
-
-            .chat_user_text 
-              h4.chat_name Emma Watson
-              p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.
-
-
-          .chat_line.padded
-            a.chat_user_thumb(href="#")
-              img(src="/images/tape_test_image.jpg")
-
-            .chat_user_text 
-              h4.chat_name Emma Watson
-              p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.
-
+        .chat_list_messages(data-view="room/tape/messages", data-tape-id="#{tape._id}")
          
 
       .side_column
