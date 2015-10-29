@@ -96,6 +96,24 @@ body.tape_view
     .first_line
       position: relative
       z-index: 1
+      
+    .waveform_wrapper
+      absolute bottom 50px left 0
+      padding: 0 40px
+      width: 100%
+      z-index: 1
+      .inner
+        background-size: cover
+        background-image: url("/images/waveform_dark.png")
+        height: 90px
+        position: relative
+        .progress
+          absolute top 0 left 0
+          height: 90px
+          background-size: cover
+          background-image: url("/images/waveform_light.png")
+          width: 20%
+      
     
   .tape_title
     font-size: 2.7em
