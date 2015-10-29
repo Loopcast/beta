@@ -39,23 +39,28 @@ block content
               a.tag(href="/explore?genres=#{item}") #{item}
 
           .buttons
-            a.edit_icon(href="#")
-              img(src="/images/tape-edit.png")
 
             p.listen_counter
-              img(src="/images/tape-headphones.png")
+              span.icon.ss-play
+              //-img(src="/images/tape-headphones.png")
               span.label #{tape.plays}
 
             p.like_counter
-              img(src="/images/tape-like.png")
+              span.icon.ss-heart
+              //-img(src="/images/tape-like.png")
               span.label #{tape.likes}
 
             p.upload_counter
-              img(src="/images/tape-cloud.png")
+              span.icon.ss-upload
+              //-img(src="/images/tape-cloud.png")
               span.label(data-livestamp="#{tape.stopped_at}")
 
+            a.edit_icon.for_owner(href="#")
+              span.icon.ss-write
+                
             a.share_icon(href="#")
-              img(src="/images/tape-share.png")
+              span.icon.ss-action
+              //-img(src="/images/tape-share.png")
 
           .tags.for_mobile
             for item in tape.genres
