@@ -5,6 +5,7 @@ notify          = require 'app/controllers/notify'
 string_utils = require 'app/utils/string'
 ProgressDragger = require 'app/utils/progress_dragger'
 normalize_info = require 'app/utils/rooms/normalize_info'
+login_popup = require 'app/utils/login_popup'
 
 module.exports = class Player
   is_playing: false
@@ -65,6 +66,17 @@ module.exports = class Player
     view.off 'binded', @on_views_binded
     
   on_like_clicked: =>
+
+    if not user.is_logged()
+      app.settings.after_login_url = location.pathname
+      app.settings.action = 
+        type: "like"
+        room_id: @data.data._id
+        is_live: @data.data.is_live
+
+      return login_popup()
+
+
     return false if @like_lock
 
     @like_lock = true

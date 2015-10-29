@@ -110,8 +110,12 @@ class App
 		
 		@user.login user_data
 		
-		if @settings.action? and @settings.action.type is 'follow'
-			@user.follow @settings.action.user_id
+		if @settings.action? 
+			switch @settings.action.type
+  			when 'follow'
+    			@user.follow @settings.action.user_id
+    		when 'like'
+    			app.player.like()
 
 			@settings.action = null
 
