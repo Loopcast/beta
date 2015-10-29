@@ -12,6 +12,8 @@ block seo
 extends ../layout
 
 block content  
+  - url         = "/"+ tape.user.info.username + "/r/" + tape.slug
+  - sharing_url = url
 
   div.tape_view.centered(data-view="room/tape_view")
     
@@ -64,7 +66,15 @@ block content
             a.edit_icon.for_owner(href="#")
               span.icon.ss-write
 
-            a.share_icon(href="#")
+
+            a.share_icon.share_wrapper(
+              data-view="buttons/share", 
+              data-title="#{tape.title}",
+              data-summary="#{tape.about}",
+              data-permalink="#{sharing_url}",
+              data-image="#{tape.cover_url}"
+              href="#"
+            )
               span.icon.ss-action
               //-img(src="/images/tape-share.png")
 
