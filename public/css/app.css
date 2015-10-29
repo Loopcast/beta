@@ -9254,10 +9254,10 @@ body.tape_view .tape_view {
 }
 
 /* line 219 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/tape.styl */
-.tape_view .chat_line .meta {
+.tape_view .chat_line .chat_name span {
   margin-bottom: 8px;
   font-size: 0.7rem;
-  color: #605b5b;
+  color: #929292;
 }
 
 /* line 224 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/tape.styl */

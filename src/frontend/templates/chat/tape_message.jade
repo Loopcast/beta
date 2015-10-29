@@ -4,8 +4,8 @@
 
   .chat_user_text 
     h4.chat_name 
-      a(href="#{user.url}") #{user.name}
-    p.meta
+      a(href="#{user.url}") #{user.name} 
+      span.dash - 
       span.time(data-livestamp="#{time}")
 
     p #{message}
