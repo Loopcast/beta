@@ -29,10 +29,10 @@ block grid
     if !item.status.is_live
       - url = "#"
 
-    - console.log( "[-------------]", item.info.genres )
-    for g in item.info.genres
-      - console.log( slugify(g) )
-      //- - klasses += " item-" + slugify(g)
+    //- - console.log( "[-------------]", item.info.genres )
+    //- for g in item.info.genres
+    //-   - console.log( slugify(g) )
+    //- - klasses += " item-" + slugify(g)
 
     if item.status.is_live
       - klasses += " is_live"
@@ -113,9 +113,9 @@ block grid
     - author_url  = "/"+ item.user.info.username
     - cover_url   = item.cover_url || item.user.info.avatar
 
-    for g in item.genres
-      - console.log( slugify(g) )
-      //- - klasses += " item-" + slugify(g)
+    //- for g in item.genres
+    //-   - console.log( slugify(g) )
+      
 
     - klasses += " not_live"
 
