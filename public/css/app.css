@@ -9080,7 +9080,7 @@ body.tape_view .tape_view {
   height: 90px;
   background-size: cover;
   background-image: url("/images/waveform_light.png");
-  width: 20%;
+  width: 0%;
 }
 
 /* line 123 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/tape.styl */
