@@ -1,4 +1,5 @@
 require 'app/utils/time/livestamp'
+get_coords  = require 'app/utils/io/get_coords' 
 transform   = require 'lib/cloudinary/transform'
 user        = require 'app/controllers/user'
 api         = require 'app/api/loopcast/loopcast'
@@ -30,6 +31,21 @@ module.exports = class Messages
 
     @tape_view = view.get_by_dom 'div.tape_view'
     @tape_view.on 'message', @on_message
+    @popup ?= view.get_by_dom '.chat_user_popup'
+
+    @dom.on 'mouseover', '.chat_user_thumb', @_on_people_over
+    @dom.on 'mouseout', '.chat_user_thumb', @_on_people_out
+
+  _on_people_over: (e) =>
+    id = $(e.currentTarget).data 'user-id'
+
+    log "[On People over]", id
+
+    coords = get_coords e
+    @popup.show id, coords
+
+  _on_people_out: =>
+    @popup.hide()
 
   on_message: (data) =>
     
@@ -56,11 +72,12 @@ module.exports = class Messages
         thumb: transform.avatar( data.avatar )
         author: @owner_id is data._id
         username: data.username
+        id: data._id
 
     if data.payload?.like
       obj.like = true
 
-    log "[Messages] on_message", data, @owner_id, obj
+    # log "[Messages] on_message", data, @owner_id, obj
 
     html = @tmpl obj
       

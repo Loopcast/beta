@@ -77,6 +77,9 @@ block content
               span.icon.ss-action
               //-img(src="/images/tape-share.png")
 
+            a.custom-fb-send(href="#" onClick="mixpanel.track('Share-room');", data-text="Send your room link to friends", data-view="components/sharing/facebook_send")
+              img(src="/images/fb_send.png")
+
           .tags.for_mobile
             for item in tape.genres
               a.tag(href="/explore?genres=#{item}") #{item}

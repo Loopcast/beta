@@ -300,6 +300,9 @@ module.exports =
 
     info: ( user_id, callback ) ->
 
+      if not user_id?
+        log "[Loopcast API] user_id not valid", user_id
+        return
       request = $.get api_url + "user/#{user_id}/info"
 
       request.error on_error "user/#{user_id}/info", callback

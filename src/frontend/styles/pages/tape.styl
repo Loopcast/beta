@@ -157,8 +157,7 @@ body.tape_view
         width: 450px
         font-size: 12px
         text-align: right
-        img
-          width: 30px
+        
         & > *
           display: inline-block
           vertical-align: top
@@ -253,6 +252,20 @@ body.tape_view
       margin-right: 6px
       margin-left: 6px
       margin-bottom: 5px
+      
+@media (max-width: 1100px)
+  .tape_view .main_column .first_line 
+    display: block
+    text-align: left
+    .tags, .buttons
+      flex: auto
+      width: 100%
+      text-align: left
+      margin-bottom: 10px
+    .buttons > *
+      margin-left: 0
+      margin-right: 22px
+
 .no_touch_device
     
   .tape_view .main_column .first_line .buttons > a:hover

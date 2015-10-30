@@ -68,7 +68,7 @@ module.exports = class Dashboard extends RoomView
     app.on 'appcast:input_device', @on_device_changed
 
 
-    @add_facebook_send_button location.href
+    # @add_facebook_send_button location.href
     @manage_download_button()
     # @add_facebook_send_button 'http://google.com'
 
@@ -90,17 +90,17 @@ module.exports = class Dashboard extends RoomView
   ###
   Add a facebook send button to the dashboard after the element #share_dashboard
   ###
-  add_facebook_send_button: (url) ->
-    @dom.find( '.custom-fb-send' ).on 'click', ->
-      FB.ui
-        method: 'send',
-        name: 'Send your room link to friends'
-        link: url
+  # add_facebook_send_button: (url) ->
+  #   @dom.find( '.custom-fb-send' ).on 'click', ->
+  #     FB.ui
+  #       method: 'send',
+  #       name: 'Send your room link to friends'
+  #       link: url
     
-    if window.fb_ready
-      fb_parse()
-    else
-      $(window).on 'fb:ready', fb_parse
+  #   if window.fb_ready
+  #     fb_parse()
+  #   else
+  #     $(window).on 'fb:ready', fb_parse
 
   on_device_changed: =>
     log "[Dashboard] on_device_changed", app.session.get( 'hide:help' )
