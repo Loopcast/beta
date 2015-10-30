@@ -6,10 +6,11 @@ user        = require 'app/controllers/user'
 LoggedView  = require 'app/views/logged_view'
 
 module.exports = class LikeButton extends LoggedView
-  tape_id   : null
-  liked     : false
-  num_likes : 0 
-  logged    : false
+  tape_id       : null
+  liked         : false
+  num_likes     : 0 
+  already_liked : false
+  logged        : false
 
   constructor: ( @dom ) ->
     super()
@@ -18,8 +19,6 @@ module.exports = class LikeButton extends LoggedView
     @icon          = @dom.find '.icon' 
 
     @icon.on 'click', @toggle_like
-    log "[LikeButton]", @tape_id
-    
     
 
   on_views_binded: ( scope ) =>
@@ -38,9 +37,10 @@ module.exports = class LikeButton extends LoggedView
     @liked  = true
     @dom.addClass 'liked'
     
-
-    send_message @tape_id, "Liked this session", like: @liked
-    L.rooms.like @tape_id, (error, response) =>
+    if not @already_liked
+      @already_liked = true
+      send_message @tape_id, "Liked this session", like: @liked
+      L.rooms.like @tape_id, (error, response) =>
 
 
   unlike: ->
@@ -81,6 +81,7 @@ module.exports = class LikeButton extends LoggedView
       log "[LikeButton] getting tape info", response
       if not error and response.liked
         @liked  = true
+        @already_liked = true
         @dom.addClass 'liked'
 
     

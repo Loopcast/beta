@@ -5,6 +5,7 @@ notify = require 'app/controllers/notify'
 module.exports = class RoomModal extends Modal
   cover_uploaded: ""
   timeout_title: null
+  current_data: null
   constructor: ( @dom ) ->
     
     super @dom
@@ -90,6 +91,7 @@ module.exports = class RoomModal extends Modal
       @title.addClass( 'required' ).focus()
       return 
 
+    log "[Check here] ----->", @genre.get_tags()
     data = 
       title    : @title.val()
       genres   : @genre.get_tags( true )
@@ -97,10 +99,21 @@ module.exports = class RoomModal extends Modal
       about    : @description.val()
       cover    : @cover_uploaded
 
+    if @is_tape()
+      data.public = @current_data.public
+      data.cover_url = data.cover
+      if data.cover_url.length <= 0
+        data.cover_url = @current_data.cover_url
+
+      delete data.cover
+
+
     # log "[Create Room]submit", data
 
     @emit 'submit', data
 
+  is_tape: ->
+    return @current_data? and not @current_data.is_live    
 
   show_message: ( msg ) ->
     @message.html( msg ).show()
@@ -109,21 +122,26 @@ module.exports = class RoomModal extends Modal
     @message.hide()
 
   open_with_data: ( data ) ->
-    # log "[RoomModal] open_with_data", data
-    
+    log "[RoomModal] open_with_data", data, data.genres, data.genres.length
+    @current_data = data
+
     @dom.addClass 'edit_modal'
     @title.attr( 'placeholder', 'Enter set name' ).val data.title
     @genre.add_tags data.genres
-    # @location.val data.location
-    # @description.val data.about
-    @location.hide()
-    @location_label.hide()
-    @description.hide()
+    @location.val data.location
+    @description.val data.about
+    # @location.hide()
+    # @location_label.hide()
+    # @description.hide()
 
     @open()
 
     return false
 
+  close: =>
+    super()
+
+    @genre.reset_tags()
 
   destroy: -> 
     # log "[RoomModal] destroy"

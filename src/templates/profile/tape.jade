@@ -15,6 +15,8 @@ block content
   - url         = "/"+ tape.user.info.username + "/r/" + tape.slug
   - sharing_url = url
 
+  input(type='hidden' id='owner_id' value="#{tape.user._id}")
+
   div.tape_view.centered(data-view="room/tape_view", data-tape-id="#{tape._id}")
     .tape_header
       .cover_image.for_desktop(style="background-image:url(#{transform.cover(tape.cover_url)})")
@@ -62,7 +64,7 @@ block content
               //-img(src="/images/tape-cloud.png")
               span.label(data-livestamp="#{tape.stopped_at}")
 
-            a.edit_icon.for_owner(href="#")
+            a.edit_icon.for_owner(href="#", data-view="room/tape/edit_modal_opener", data-id="#{tape._id}")
               span.icon.ss-write
 
 
@@ -83,7 +85,7 @@ block content
           .tags.for_mobile
             for item in tape.genres
               a.tag(href="/explore?genres=#{item}") #{item}
-        p.tape_description.padded #{tape.about} Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.
+        p.tape_description.padded #{tape.about}
 
         div.post_comment_wrapper.chat_line.padded(data-view="room/tape/textarea", data-tape-id="#{tape._id}")
           a.chat_user_thumb(href="#", data-view="room/tape/my_profile_image")
@@ -132,6 +134,8 @@ block content
       ._outer
         .outer_inner
         a.follow_button(class="button yellow_button small_button_4 popup_follow_button", href="#",  data-view="profile/follow_button", data-user-id="#{tape.user._id}") Follow
+
+  include ./../modals/room_modal.jade
 
   script
     | var info = !{JSON.stringify(locals)};;

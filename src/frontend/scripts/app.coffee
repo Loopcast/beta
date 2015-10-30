@@ -43,6 +43,7 @@ class App
 		@window  = require 'app/controllers/window'
 		@socket  = require 'app/controllers/socket'
 		@user    = require './controllers/user'
+		@rooms    = require './controllers/rooms'
 
 		@body    = $ 'body'
 		
