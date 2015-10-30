@@ -52,4 +52,4 @@ module.exports = class EditModalOpener
   destroy: ->
     if @edit_modal?
       @dom.off 'click', @open_edit_modal
-      @edit_modal.off 'submit', @on_edit_modal_submit
+      @edit_modal.off? 'submit', @on_edit_modal_submit
