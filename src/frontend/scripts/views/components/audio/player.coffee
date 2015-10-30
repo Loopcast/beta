@@ -242,7 +242,7 @@ module.exports = class Player
     if data.is_live
       room_link = "/#{obj.user.info.username}/#{obj.slug}"
     else
-      room_link = "/#{obj.user.info.username}"
+      room_link = "/#{obj.user.info.username}/r/#{obj.slug}"
 
     @thumb.attr 'src', transform.player_thumb obj.cover_url
     title = string_utils.cut_text obj.title, 36
@@ -257,7 +257,7 @@ module.exports = class Player
 
     @title.attr 'href', room_link
 
-    # @thumb.parent().attr 'href', room_link
+    @thumb.parent().attr 'href', room_link
     @thumb.parent().attr 'title', obj.title
 
     @share.update_with_data
