@@ -237,7 +237,7 @@ block content
                 class="#{public_class}", 
                 id="session_recorded_#{room._id}", 
                 data-room-id="#{room._id}" 
-                data-view="[components/user_set,components/audio/player_preview]", 
+                data-view="[components/user_set,components/audio/player_preview,room/tape/user_set]", 
                 data-is-live="false"
               )
                 .image(style="background-image:url(#{transform.cover_thumb(room.cover_url, user.info.avatar)})")
@@ -288,7 +288,7 @@ block content
                       .triangle
                       if room.s3
                         a.download_button.button.yellow_button.small_button_4(href="#{room.s3.location}", target="_blank", title="Download" download="#{room.s3.location}") Download
-                      a.edit_button.button.yellow_button.small_button_4(href="#", title="Edit") Edit
+                      a.edit_button.button.yellow_button.small_button_4(href="#", title="Edit", data-view="room/tape/edit_modal_opener", data-id="#{room._id}") Edit
                       a.delete_button.button.red_button.small_button_4(href="#", title="Delete") Delete
 
                   .public_screen

@@ -47,9 +47,7 @@ class RoomsController
         api.rooms.info id, on_load
       else
         api.tapes.get id, on_load
-  test: ->
-    @info '5630a2b6dbf95a164151f81f', false, (response) ->
-      log response.data.tape.genres, response.data.tape.genres.length
+  
 
   on_room_update: ( data ) =>
     if data.type is 'update'
@@ -59,6 +57,8 @@ class RoomsController
         @infos[ data._id ].data.tape.genres = data.data.genres
         @infos[ data._id ].data.tape.location = data.data.location
         @infos[ data._id ].data.tape.title = data.data.title
+
+      @emit 'update', data
 
     log "[Rooms Controller] on_room_update", data, data.data.genres, data.data.genres.length
 

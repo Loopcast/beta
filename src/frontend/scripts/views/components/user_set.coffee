@@ -11,7 +11,6 @@ module.exports = ( dom ) ->
   room_url         = dom.find( '.session_title a' ).attr 'href'
   init = ->
     dom.find( '.download_button' ).on 'click', _download
-    dom.find( '.edit_button' ).on 'click', _edit
     dom.find( '.delete_button' ).on 'click', _to_delete
 
     dom.find( '.confirm_delete' ).on 'click', _confirm_delete
@@ -21,8 +20,8 @@ module.exports = ( dom ) ->
 
     user_controller.on 'name:updated', _on_name_updated
     view.once 'binded', _on_views_binded
-
-    log room_url
+  
+    
 
   _on_name_updated = (data) ->
     log "name updated", data, dom.find( '.share_wrapper' ), dom.find( '.share_wrapper' ).data( 'permalink' )
@@ -44,8 +43,6 @@ module.exports = ( dom ) ->
 
   _on_views_binded = ->
     settings_handler = view.get_by_dom dom.find( '.settings_button' )
-    edit_modal = view.get_by_dom $( '#room_modal' )
-    edit_modal.dom.data( 'modal-close', true )
 
   _download = ->
     log "[Set] download"
@@ -54,72 +51,6 @@ module.exports = ( dom ) ->
     log "[Set] _get_into_the_room", room_url
 
     navigation.go room_url
-
-  _edit = ->
-    settings_handler.close()
-
-    edit_data = 
-      title: dom.find( '.session_title' ).text().trim()
-      genres: []
-
-    g = dom.find '.genres a'
-    for item in g
-      edit_data.genres.push $(item).text().trim()
-
-
-    edit_modal.open_with_data edit_data
-    edit_modal.once 'submit', _on_edit_submit
-
-  _on_edit_submit = (data) ->
-
-    # log "[User Set] edit submitted", data
-    data.cover_url = data.cover
-
-
-    # Update UI
-    dom.find( '.session_title a' ).html data.title
-    dom.find( '.location .text' ).html data.location
-
-    genres = data.genres.split ','
-    genres_dom = dom.find( '.genres' )
-    str = ''
-
-
-    # Show only the first 5 tags
-    max = 5
-    counter = 0
-    for genre in genres
-      klass = if counter++ >= max then "hide" else ""
-      str += "<a class='tag #{klass}' href='#' title='#{genre}'>#{genre}</a>"
-
-    if genres.length > max
-      str += '...'
-
-    genres_dom.html str
-
-
-    edit_modal.hide_message()
-    edit_modal.show_loading()
-
-    edit_modal.close()
-
-    to_save = {}
-
-    if data.title.length > 0
-      to_save.title = data.title.trim()
-
-    if data.genres.length > 0
-      to_save.genres = data.genres.split ','
-
-    if edit_modal.cover_uploaded.length > 0
-      to_save.cover_url = data.cover
-
-    log "[User Set] saving", to_save, data
-
-    api.tapes.update room_id, to_save, (error, response) ->
-      log "[User set] save response", error, response
-      edit_modal.close()
-
 
   _to_delete = ->
     dom.addClass 'to_delete'

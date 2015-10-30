@@ -35,7 +35,6 @@ module.exports = class TapeView extends LoggedView
     @elements.genres.html tags_list( tags: data.data.genres )
     @elements.cover.desktop.css 'background-image', 'url('+transform.cover( data.data.cover_url ) + ')'
     @elements.cover.mobile.css 'background-image', 'url('+transform.cover_mobile( data.data.cover_url ) + ')'
-    # @elements.title = data.title
 
   on_views_binded: ( scope ) =>
     return if not scope.main

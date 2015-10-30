@@ -47,54 +47,7 @@ module.exports = class EditModalOpener
 
     @edit_modal.close()
 
-    return 
-    # log "[User Set] edit submitted", data
-    data.cover_url = data.cover
-
-
-    # Update UI
-    dom.find( '.session_title a' ).html data.title
-    dom.find( '.location .text' ).html data.location
-
-    genres = data.genres.split ','
-    genres_dom = dom.find( '.genres' )
-    str = ''
-
-
-    # Show only the first 5 tags
-    max = 5
-    counter = 0
-    for genre in genres
-      klass = if counter++ >= max then "hide" else ""
-      str += "<a class='tag #{klass}' href='#' title='#{genre}'>#{genre}</a>"
-
-    if genres.length > max
-      str += '...'
-
-    genres_dom.html str
-
-
-    edit_modal.hide_message()
-    edit_modal.show_loading()
-
-    edit_modal.close()
-
-    to_save = {}
-
-    if data.title.length > 0
-      to_save.title = data.title.trim()
-
-    if data.genres.length > 0
-      to_save.genres = data.genres.split ','
-
-    if edit_modal.cover_uploaded.length > 0
-      to_save.cover_url = data.cover
-
-    log "[User Set] saving", to_save, data
-
-    api.tapes.update room_id, to_save, (error, response) ->
-      log "[User set] save response", error, response
-      edit_modal.close()
+    
 
   destroy: ->
     if @edit_modal?
