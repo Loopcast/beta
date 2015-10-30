@@ -8995,7 +8995,7 @@ body.tape_view .tape_view {
 
 /* line 57 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/tape.styl */
 .tag {
-  margin-right: 2px;
+  margin-right: 5px;
   margin-bottom: 2px;
 }
 
@@ -9168,7 +9168,7 @@ body.tape_view .tape_view {
 
 /* line 167 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/tape.styl */
 .tape_view .main_column .first_line .buttons > *.share_icon {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   position: relative;
   top: -2px;
 }
@@ -9244,7 +9244,7 @@ body.tape_view .tape_view {
 /* line 214 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/tape.styl */
 .tape_view .chat_line .chat_name {
   font-weight: normal;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
 }
