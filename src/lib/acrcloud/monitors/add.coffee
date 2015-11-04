@@ -7,9 +7,13 @@ module.exports = ( url, stream_name, callback ) ->
   url         = "http://87.117.193.10:8000/;mp3"
   stream_name = "house-station-radio_house-station-radio"
 
+  url         = "http://radio.loopcast.fm:8000/55b1168a215431030003730a"
+  stream_name = "hems_jazz-and-work-with-mark"
+
   url                   = "https://api.acrcloud.com"
-  account_access_key    = "8027feac0bbb2831c31d212852eb9d29"
-  account_access_secret = "naSzieaFZ7sC7s5P8YOk7xKEJCmeopZrY0hX5Giy"
+  
+  account_access_key    = "8e52c2ba81bb2b26"
+  account_access_secret = "0fab328b7561ce5a976a6a9d6ee32385"
 
   uri               = "/v1/monitors"
   http_method       = "POST"
@@ -52,6 +56,8 @@ module.exports = ( url, stream_name, callback ) ->
   req = request.post options, ( error, response, body ) ->
 
     if error
+      console.log "ERROR!"
+      console.log error
       console.error error
 
       return
