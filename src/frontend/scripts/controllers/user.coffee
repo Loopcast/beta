@@ -16,6 +16,8 @@ class UserController
   is_owner: false
   socket_id: false
 
+  # Stores all the users' infos already fetched
+  infos: {}
 
   constructor: ->
 
@@ -243,7 +245,6 @@ class UserController
     app.body.addClass( "logged" ).removeClass( 'not_logged' )
     @emit 'user:logged', @data
 
-
     api.user.following ( error, result ) =>
       @data.following = {}
 
@@ -373,6 +374,15 @@ class UserController
           name     : "Guest"
 
     return data
+
+
+  info_by_id: ( id, callback ) ->
+    if @infos[id]?
+      callback @infos[id]
+    else
+      api.user.info id, (error, response) =>
+        @infos[id] = response[0]
+        callback @infos[id]
 
   ###
   Session (cookie) Methods 

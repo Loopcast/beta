@@ -3,8 +3,8 @@ L = require 'api/loopcast/loopcast'
 module.exports = (dom) ->
   
   is_playing = false
-  handler    = dom.find '.circle_icon, .loading_spin'
-  icon       = dom.find '.circle_icon'
+  handler    = dom.find '.circle_icon, .loading_spin, .tape_play'
+  icon       = dom.find '.circle_icon, .tape_play'
   data       = null
   room_id    = dom.data 'room-id'
   is_tape    = not dom.data( 'is-live' )
@@ -20,7 +20,7 @@ module.exports = (dom) ->
     
 
   if handler.length <= 0
-    handler       = dom.find '.image .ss-pause, .loading_spin'
+    handler       = dom.find '.image .ss-pause, .loading_spin, .ss-play'
 
     if handler.length <= 0
       log "ERROR -> [PLAYER PREVIEW]. handler.length <= 0"

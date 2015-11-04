@@ -61,7 +61,7 @@ body.tape_view
   // text-align: center
   // display: inline-block
   // font-size: 12px
-  margin-right: 2px
+  margin-right: 5px
   margin-bottom: 2px
 
 .tape_author
@@ -79,6 +79,10 @@ body.tape_view
   width: 95px
   height: 95px
   font-size: 50px
+  &.ss-pause
+    font-size: 44px
+    padding-left: 25px
+    padding-top: 21px
   img
     display: block
     width: 100%
@@ -92,10 +96,30 @@ body.tape_view
     height: 350px
     width: 100%
     padding: PADDING_SIDE
+  
     
     .first_line
       position: relative
       z-index: 1
+      
+    .waveform_wrapper
+      absolute bottom 50px left 0
+      padding: 0 40px
+      width: 100%
+      z-index: 1
+      cursor: pointer 
+      .inner
+        background-size: cover
+        background-image: url("/images/waveform_dark.png")
+        height: 90px
+        position: relative
+        .progress
+          absolute top 0 left 0
+          height: 90px
+          background-size: cover
+          background-image: url("/images/waveform_light.png")
+          width: 0%
+      
     
   .tape_title
     font-size: 2.7em
@@ -133,18 +157,30 @@ body.tape_view
         width: 450px
         font-size: 12px
         text-align: right
-        img
-          width: 30px
+        
         & > *
           display: inline-block
           vertical-align: top
           margin-left: 22px
+          font-size: 1rem
+          
+          &.share_icon
+            font-size: 1.3rem
+            position: relative
+            top: -2px
           
         .label
           vertical-align: top
-          margin-left: 5px
+          margin-left: 10px
           position: relative
-          top: 3px
+          font-size: 0.8rem
+          
+.like_counter
+  .icon
+    cursor: pointer
+  &.liked
+    .icon
+      color: RED
           
 .tape_brown_button
   color: white
@@ -177,10 +213,13 @@ body.tape_view
     
   .chat_name
     font-weight: normal
-    font-size: 1.4em
-    margin-bottom: 8px
+    font-size: 0.9rem
     font-weight: 600
     cursor: pointer 
+    span
+      margin-bottom: 8px
+      font-size: 0.7rem
+      color: GRAY_4
     
   .chat_name:hover  
     color: #4592d4 
@@ -196,8 +235,8 @@ body.tape_view
     transition: height .1s ease-out
     height: 54px
     
-    &:focus
-      height: 100px
+    // &:focus
+    //   height: 100px
     
 .side_column
   .number    
@@ -213,6 +252,26 @@ body.tape_view
       margin-right: 6px
       margin-left: 6px
       margin-bottom: 5px
+      
+@media (max-width: 1100px)
+  .tape_view .main_column .first_line 
+    display: block
+    text-align: left
+    .tags, .buttons
+      flex: auto
+      width: 100%
+      text-align: left
+      margin-bottom: 10px
+    .buttons > *
+      margin-left: 0
+      margin-right: 22px
+.tape_view .main_column .first_line .buttons .edit_icon
+  display: none
+  
+.is_owner.tape_view .main_column .first_line .buttons .edit_icon
+  display: inline-block
+  
+
 .no_touch_device
     
   .tape_view .main_column .first_line .buttons > a:hover

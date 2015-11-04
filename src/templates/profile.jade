@@ -1,3 +1,6 @@
+- genres     = user.info.genres
+- occupation = user.info.genres
+
 block seo
   title #{user.info.name} | Live Sessions on Loopcast 
 
@@ -15,7 +18,7 @@ block seo
   meta( name="url"       content="#{s.base_path}/#{user.info.username}" )
 
 
-  if about
+  if user.info.about.length > 0
     meta( name="description" content="#{user.info.about}" )
     meta( name="twitter:description" content="#{user.info.about}") 
   else
@@ -26,8 +29,6 @@ extends layout
 
 block content
 
-  - genres     = user.info.genres
-  - occupation = user.info.genres
 
   input#owner_id(type="hidden", value="#{user._id}")
 
@@ -52,7 +53,7 @@ block content
         br
         .genres.black_background(data-view="components/editables/editable_profile_tags")
           span.text.empty Add your genres
-          span.text.values #{genres.join( ", " )}
+          span.text.values #{user.info.genres.join( ", " )}
 
         .profile_image.upload_wrapper(data-view="components/image_uploader", data-id="profile_picture")
           img(src="#{transform.avatar(user.info.avatar)}")
@@ -236,7 +237,7 @@ block content
                 class="#{public_class}", 
                 id="session_recorded_#{room._id}", 
                 data-room-id="#{room._id}" 
-                data-view="[components/user_set,components/audio/player_preview]", 
+                data-view="[components/user_set,components/audio/player_preview,room/tape/user_set]", 
                 data-is-live="false"
               )
                 .image(style="background-image:url(#{transform.cover_thumb(room.cover_url, user.info.avatar)})")
@@ -254,8 +255,8 @@ block content
 
                 .content
                   h2.session_title 
-                    //- a.room_url(href="#{room.url}", title="#{room.title}") #{room.title}
-                    | #{room.title}
+                    a.room_url(href="#{room.url}", title="#{room.title}") #{room.title}
+                    
                   p.session_author #{user.info.name}
                   .genres
                     
@@ -287,7 +288,7 @@ block content
                       .triangle
                       if room.s3
                         a.download_button.button.yellow_button.small_button_4(href="#{room.s3.location}", target="_blank", title="Download" download="#{room.s3.location}") Download
-                      a.edit_button.button.yellow_button.small_button_4(href="#", title="Edit") Edit
+                      a.edit_button.button.yellow_button.small_button_4(href="#", title="Edit", data-view="room/tape/edit_modal_opener", data-id="#{room._id}") Edit
                       a.delete_button.button.red_button.small_button_4(href="#", title="Delete") Delete
 
                   .public_screen

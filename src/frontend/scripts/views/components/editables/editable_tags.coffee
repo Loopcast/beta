@@ -7,6 +7,7 @@ L = require '../../../api/loopcast/loopcast'
 module.exports = class EditableTags
   current_data: []
   ready: false
+  tags: {}
 
   constructor: ( @dom ) ->
 
@@ -42,12 +43,14 @@ module.exports = class EditableTags
     
 
   on_add_tag: ( tag ) =>
-    log "[EditableTags] on_add_tag", tag
+    @tags[ tag ] = true
+    # log "[EditableTags] on_add_tag", tag
     @emit 'change', @get_tags()
 
 
   on_remove_tag: ( tag ) =>
-    log "[EditableTags] on_remove_tag", tag
+    @tags[ tag ] = false
+    # log "[EditableTags] on_remove_tag", tag
     @emit 'change', @get_tags()
 
   get_tags: ( as_string = false ) -> 
@@ -56,7 +59,22 @@ module.exports = class EditableTags
     else
       @dom.val().split(',')
 
-  add_tags: (tags)->
+  set_tags: (tags) ->
+    # log "[EditableTags] set_tags", tags
+    for tag of @tags
+      # log "[EditableTags] tag removed", tag
+
+      @dom.removeTag tag
+
+    @add_tags tags
+
+  reset_tags: ->
+    # log "[EditableTags] reset!", @tags
+    for tag of @tags
+      # log "[EditableTags] tag removed", tag
+
+      @dom.removeTag tag    
+  add_tags: (tags) ->
     for t in tags
       @dom.addTag t + "", { focus:true, unique:true }
 

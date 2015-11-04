@@ -1,0 +1,11 @@
+.chat_line.padded
+  a.chat_user_thumb(href="#{user.url}", data-user-id="#{user.id}")
+    img(src="#{user.thumb}")
+
+  .chat_user_text 
+    h4.chat_name 
+      a(href="#{user.url}") #{user.name} 
+      span.dash - 
+      span.time(data-livestamp="#{time}")
+
+    p #{message}

@@ -5,6 +5,7 @@ notify          = require 'app/controllers/notify'
 string_utils = require 'app/utils/string'
 ProgressDragger = require 'app/utils/progress_dragger'
 normalize_info = require 'app/utils/rooms/normalize_info'
+login_popup = require 'app/utils/login_popup'
 
 module.exports = class Player
   is_playing: false
@@ -65,6 +66,17 @@ module.exports = class Player
     view.off 'binded', @on_views_binded
     
   on_like_clicked: =>
+
+    if not user.is_logged()
+      app.settings.after_login_url = location.pathname
+      app.settings.action = 
+        type: "like"
+        room_id: @data.data._id
+        is_live: @data.data.is_live
+
+      return login_popup()
+
+
     return false if @like_lock
 
     @like_lock = true
@@ -118,7 +130,7 @@ module.exports = class Player
     
     audio_data = 
       id         : obj._id
-      is_recorded: obj.is_live
+      is_recorded: !obj.is_live
       start_time : obj.started_at
       src        : obj.url
       
@@ -150,10 +162,10 @@ module.exports = class Player
 
       @audio.play()
 
-    if src?
-      log "[Player] src is set", src
-      @audio.set_src src
-      @audio.play()
+    # if src?
+    #   log "[Player] src is set", src
+    #   @audio.set_src src
+    #   @audio.play()
 
     
   fetch_room: ( room_id, is_live, callback ) ->
@@ -230,7 +242,7 @@ module.exports = class Player
     if data.is_live
       room_link = "/#{obj.user.info.username}/#{obj.slug}"
     else
-      room_link = "/#{obj.user.info.username}"
+      room_link = "/#{obj.user.info.username}/r/#{obj.slug}"
 
     @thumb.attr 'src', transform.player_thumb obj.cover_url
     title = string_utils.cut_text obj.title, 36
@@ -245,7 +257,7 @@ module.exports = class Player
 
     @title.attr 'href', room_link
 
-    # @thumb.parent().attr 'href', room_link
+    @thumb.parent().attr 'href', room_link
     @thumb.parent().attr 'title', obj.title
 
     @share.update_with_data

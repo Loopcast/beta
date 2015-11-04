@@ -1,12 +1,15 @@
-L = require '../../api/loopcast/loopcast'
-transform = require 'lib/cloudinary/transform'
-ChatView = require 'app/views/room/chat_view'
+L             = require '../../api/loopcast/loopcast'
+transform     = require 'lib/cloudinary/transform'
+ChatView      = require 'app/views/room/chat_view'
+user          = require 'app/controllers/user'
+check_input   = require 'lib/tools/strings/check_input'
 
 module.exports = class PeoplePopup extends ChatView
   tmpl: null
   cancel_hide: false
   visible: false
   follow_button: null
+  current_id: null
 
 
 
@@ -18,7 +21,6 @@ module.exports = class PeoplePopup extends ChatView
     @dom.on 'mouseleave', @on_mouseout
 
     view.on 'binded', @on_views_binded
-
 
     super @dom
 
@@ -32,74 +34,48 @@ module.exports = class PeoplePopup extends ChatView
     @cancel_hide = false
     @hide()
 
-  ###
-  avatar: "https://res.cloudinary.com/loopcast/image/upload/v1431006022/ifollzoplab3eft56sfv.jpg"
-  likes: 0
-  id: "stefanoortisi"
-  images: Object
-  name: "Stefano Ortisi"
-  occupation: Array[1]
-  url: "/stefanoortisi"
-  ###
+  show: (id, coords) -> 
+    return if @current_id is id
 
-  normalize_data : ( data ) ->
-    data.likes ?= 0
+    @current_id = id
 
-    o = data.occupation
-
-    data.occupation = ""
-
-    if o instanceof Array
-      if o.length > 0 and o[0] isnt "undefined"
-        data.occupation = o[0]
+    user.info_by_id id, (response) =>
+      data = 
+        avatar: response.info.avatar
+        id: response._id
+        name: response.info.name
+        username: response.info.username
+        likes: response.likes
+        occupation: check_input( response.info.occupation )
+        images: transform.all( response.info.avatar )
+        url : '/' + response.info.username
     
-    if data.url is '/'
-      data.url = "#"
-    data
 
-
-  show: (data, el) -> 
-
-    data = @normalize_data data
-
-    # log "[Popup] show", data
-
-    @cancel_hide = true
-    @visible = true   
-    @dom
-      .show()
-      .css('opacity', 0)
-      .find( '.outer_inner' )
-      .html @tmpl( data )
-
-    delay 1, =>
-      p = el.position()
-      w1 = 55
-      h1 = 55
-      h = @dom.height()
-      w = @dom.width()
-
-      left = Math.max(0, p.left - (w/2) + 17 )
-      top = p.top - h - 50
-
-      if top < 0
-        top = p.top + 35
-
-      @dom.css
-        left   : left
-        top    : top
+      css = 
+        left   : Math.max 0, coords.x - 120
+        top    : Math.max 0, coords.y - 50
         opacity: 1
 
+      
+      log "[Popup] show", data, css.left, css.top
 
-    if not @follow_button
-      view.bind 'body'
-    else
-      is_guest = data.name is "Guest"
-      @follow_button.set_user_id data.id, is_guest
+      @cancel_hide = true
+      @visible     = true   
+
+      @dom
+        .css( css )
+        .show()
+        .find( '.outer_inner' )
+        .html( @tmpl( data ) )
+
+      if not @follow_button
+        view.bind 'body'
+      else
+        is_guest = data.name is "Guest"
+        @follow_button.set_user_id data.id, is_guest
 
 
-
-    delay 300, => @cancel_hide = false
+      delay 300, => @cancel_hide = false
 
   on_views_binded: ( data ) =>
     @follow_button = view.get_by_dom '.popup_follow_button'
@@ -119,6 +95,8 @@ module.exports = class PeoplePopup extends ChatView
     delay 200, => 
       if not @visible
         @dom.hide()
+
+        @current_id = null
 
   destroy: ->
     # log "[PeoplePopup] destroy"
