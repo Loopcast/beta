@@ -39,9 +39,6 @@ module.exports =
         # if it's not the owner of the set, then only display if public
         is_guest = ( !visitor || visitor._id is not user._id )
 
-        console.log 'visitor ->', visitor
-
-
         if is_guest then query.public = true 
           
 

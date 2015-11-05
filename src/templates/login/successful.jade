@@ -1,16 +1,15 @@
-include confirm_username.jade
-
-//- script
-//-   | window.opener.app.login( !{JSON.stringify(user)} );
-//-   | window.opener._gaq.push(['_trackEvent', 'Customer Login', 'Successful', '']);
+script
+  | window.opener.app.login( !{JSON.stringify(user)} );
+  | window.opener._gaq.push(['_trackEvent', 'Customer Login', 'Successful', '']);
 
 
-//- if user.first_time
-//-   script
-//-     | window.opener._gaq.push(['_trackEvent', 'Customer Registration', 'Successful', '']);
+if user.first_time
+  script
+    | window.opener._gaq.push(['_trackEvent', 'Customer Registration', 'Successful', '']);
+    | window.close()
 
-//-   include confirm_username.jade
+  include confirm_username.jade
 
-//- else
-//-   script
-//-     | window.close()
+else
+  script
+    | window.close()
