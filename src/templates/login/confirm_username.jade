@@ -1,2 +1,41 @@
-h1 
-  | hello first time!
+doctype html
+html
+  head
+    meta( charset='utf-8' )
+    meta( http-equiv='X-UA-Compatible', content='IE=edge' )
+    link( rel="icon", href="/favicon.ico" )
+
+    title loopcast.fm | confirm username
+
+  
+    link( href='//fonts.googleapis.com/css?family=Open+Sans:300,400,700,600', rel='stylesheet', type='text/css' )
+    link( href='../css/spritesheet.css', rel='stylesheet', type='text/css' )
+    link( href='../css/webfonts/ss-standard.css', rel='stylesheet', type='text/css' )
+    link( href='../css/app.css', rel='stylesheet', type='text/css' )
+
+    style.
+      #content {
+        color: red
+      }
+
+
+  body
+
+    #content
+      h1 
+        | hello first time!
+
+      h2
+        | username: #{user.username}
+      pre
+        | username: #{user.username}
+
+        | avatar  : #{user.avatar}
+
+        //- //- just the first name
+        //- | name  : #{user.name.split(" ")[0]}
+
+        !{JSON.stringify(user)}
+
+    script( src="https://code.jquery.com/jquery-2.1.1.min.js" )
+    script( src="/js/app.js" )
