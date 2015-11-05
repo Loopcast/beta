@@ -3,6 +3,9 @@
   "version": "0.9.0",
   "description": "",
   "main": "src/app.coffee",
+  "engines": {
+    "node": "0.11.13"
+  },
   "dependencies": {
     "aware": "^0.3.0",
     "bell": "^2.1.0",
