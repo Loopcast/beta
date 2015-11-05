@@ -1,6 +1,13 @@
 script
   | window.opener.app.login( !{JSON.stringify(user)} );
   | window.opener._gaq.push(['_trackEvent', 'Customer Login', 'Successful', '']);
+
   if user.first_time
     | window.opener._gaq.push(['_trackEvent', 'Customer Registration', 'Successful', '']);
-  | window.close()
+
+
+if !user.first_time
+  script
+    | window.close()
+else
+  include confirm_username.jade
