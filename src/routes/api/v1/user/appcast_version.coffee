@@ -32,6 +32,7 @@ module.exports =
       user_id = req.auth.credentials.user._id
       version = req.payload.version
       build   = req.payload.build
+      os      = req.payload.os
 
       query  = _id : user_id
       update = 
