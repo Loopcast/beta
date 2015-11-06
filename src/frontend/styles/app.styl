@@ -73,6 +73,15 @@ li
 .clear
 	clear: both
 	
+// Bootstrap's clearfix
+.clearfix
+	&:before
+	&:after
+		content: " "
+		display: table
+	&:after
+		clear: both
+	
 .hidden
 	visibility: hidden
 	opacity: 0
