@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/app.coffee",
   "engines": {
-    "node": "0.11.13"
+    "node": "0.11.12"
   },
   "dependencies": {
     "aware": "^0.3.0",
