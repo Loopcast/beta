@@ -13,29 +13,24 @@ html
     link( href='../css/webfonts/ss-standard.css', rel='stylesheet', type='text/css' )
     link( href='../css/app.css', rel='stylesheet', type='text/css' )
 
-    style.
-      #content {
-        color: red
-      }
-
 
   body
 
-    #content
-      h1 
-        | hello first time!
+    #confirm-username
+      img( src=user.avatar title=user.name class="avatar")
+      p.thanks 
+       |#[span.bold Thanks #{user.name}!]
+       |#[br]Just the final touch now...
 
-      h2
-        | username: #{user.username}
-      pre
-        | username: #{user.username}
+      .input-group.clearfix
+        span.input.group-addon.left
+          | http://loopcast.fm/
+        input(type="text" class="right" value=user.username)
 
-        | avatar  : #{user.avatar}
+      button.button.yellow_button.no_shadow.black_hover
+        | Complete
 
-        //- //- just the first name
-        //- | name  : #{user.name.split(" ")[0]}
 
-        !{JSON.stringify(user)}
 
     script( src="https://code.jquery.com/jquery-2.1.1.min.js" )
     script( src="/js/app.js" )
