@@ -43,7 +43,6 @@ module.exports =
           
 
         Tape.findOne( query )
-
           .populate( 'user', 'info.avatar info.username info.name' )
           .sort( _id: -1 )
           .lean()
@@ -54,8 +53,22 @@ module.exports =
             # if tape doesn't exist
             if not tape then return reply( "Page not found" ).code 404
 
-            template '/profile/tape', tape: tape, ( error, response ) ->
+            query =
+              liked_id : tape._id
+              end      : $exists: false
 
-              if not error then return reply response
+            Like.find( query )
+              .populate( 'user_id', 'info.avatar info.username info.name' )
+              .sort( _id: -1 )
+              .lean()
+              .exec ( error, favourited_by ) ->
 
-              reply( "Page not found" ).code 404
+                data =
+                  tape         : tape
+                  favourited_by: favourited_by
+
+                template '/profile/tape', data, ( error, response ) ->
+
+                  if not error then return reply response
+
+                  reply( "Page not found" ).code 404

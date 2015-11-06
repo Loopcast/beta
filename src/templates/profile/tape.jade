@@ -105,29 +105,10 @@ block content
           h3 
             | FAVOURITED BY  
             span.number 8
-          a.chat_user_thumb(href="#")
-            img(src="/images/tape_test_image.jpg")
 
-          a.chat_user_thumb(href="#")
-            img(src="/images/tape_test_image.jpg")
-
-          a.chat_user_thumb(href="#")
-            img(src="/images/tape_test_image.jpg")
-
-          a.chat_user_thumb(href="#")
-            img(src="/images/tape_test_image.jpg")
-
-          a.chat_user_thumb(href="#")
-            img(src="/images/tape_test_image.jpg")
-
-          a.chat_user_thumb(href="#")
-            img(src="/images/tape_test_image.jpg")
-
-          a.chat_user_thumb(href="#")
-            img(src="/images/tape_test_image.jpg")
-
-          a.chat_user_thumb(href="#")
-            img(src="/images/tape_test_image.jpg")
+          for like in favourited_by
+            a.chat_user_thumb(href="/#{like.user_id.info.username}")
+              img(src="#{like.user_id.info.avatar}")
 
 
     .chat_user_popup(data-view="chat/people_popup")
