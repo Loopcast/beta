@@ -45,7 +45,7 @@ block content
         .first_line.padded
           .tags.for_desktop
             for item in tape.genres
-              a.tag(href="/explore?genres=#{item}") #{item}
+              a.tag.tag_round(href="/explore?genres=#{item}") #{item}
 
           .buttons
 
