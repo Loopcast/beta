@@ -5,7 +5,7 @@
 
 /* line 13 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 814 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+/* line 1016 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
 /* line 10 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
@@ -25,7 +25,7 @@
 
 /* line 90 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 814 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+/* line 1016 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
 /* line 11 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
@@ -53,7 +53,7 @@
 
 /* line 5 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
 
-/* line 814 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+/* line 1016 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
 /* line 12 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
@@ -1393,7 +1393,7 @@ body.room_page .dynamic_wrapper > div {
 }
 
 /* line 327 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/_shared/_ui.styl */
-.no_touch_device .button.gray_button_2 {
+.no_touch_device .button.gray_button_2:hover {
   background-color: #979899;
 }
 

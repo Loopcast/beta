@@ -41,6 +41,7 @@ module.exports = class LikeButton extends LoggedView
       @already_liked = true
       send_message @tape_id, "Liked this session", like: @liked
       L.rooms.like @tape_id, (error, response) =>
+        log "[LikeButton] like response", error, response
 
 
   unlike: ->
@@ -52,6 +53,7 @@ module.exports = class LikeButton extends LoggedView
     @counter.html @num_likes
 
     L.rooms.dislike @tape_id, (error, response) =>
+      log "[LikeButton] like response", error, response
 
   toggle_like: (e) =>
 
