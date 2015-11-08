@@ -12,6 +12,7 @@ module.exports = class TapeProgress
     @progress_parent.on 'click', @on_progress_click
     app.on  'audio:started', @on_play
     app.on  'audio:paused', @on_stop
+    app.on 'audio:ended', @on_end
 
   on_progress_click: (e) =>
 
@@ -36,6 +37,9 @@ module.exports = class TapeProgress
   on_stop: =>
     app.player.audio.off 'progress', @on_progress
 
+  on_end: =>
+    @progress.css 'width', 0
+
   on_progress: ( data ) =>
     @progress.css 'width', data.perc + "%"
 
@@ -43,3 +47,4 @@ module.exports = class TapeProgress
   destroy: ->
     app.off 'audio:started', @on_play
     app.off 'audio:paused', @on_stop
+    app.off 'audio:ended', @on_end

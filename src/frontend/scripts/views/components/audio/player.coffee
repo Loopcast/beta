@@ -316,7 +316,8 @@ module.exports = class Player
 
   on_audio_ended: =>
     log "[Player] on_audio_ended"
-
+    
+    app.emit 'audio:ended', @data.data._id    
     @on_audio_stopped()
     
     # Snap back the progress bar
