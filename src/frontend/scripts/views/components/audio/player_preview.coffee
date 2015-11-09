@@ -13,8 +13,12 @@ module.exports = (dom) ->
 
   source = dom.find '.source_src'
 
-  if source.length > 0
+  if dom.data( 'audio-url' )?
+    source_src = dom.data( 'audio-url' )
+  else if source.length > 0
     source_src = source.attr 'value'
+
+  log "[PlayerPreview] init", source_src
 
   if not room_id then returns
     
@@ -55,6 +59,7 @@ module.exports = (dom) ->
       app.player.stop()
     else
       dom.addClass 'preloading'
+
       if is_tape
         app.player.play room_id, source_src
       else

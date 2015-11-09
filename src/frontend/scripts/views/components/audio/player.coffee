@@ -157,10 +157,10 @@ module.exports = class Player
     else
       @_play room_id
 
-      if src?
-        @audio.set_src src
+    if src?
+      @audio.set_src src
 
-      @audio.play()
+    @audio.play()
 
     # if src?
     #   log "[Player] src is set", src
