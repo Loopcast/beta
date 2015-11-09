@@ -1,6 +1,10 @@
 .chat_line.padded
-  a.chat_user_thumb(href="#{user.url}", data-user-id="#{user.id}")
-    img(src="#{user.thumb}")
+  if like
+    a.chat_user_thumb.like(href="#{user.url}", data-user-id="#{user.id}")
+      span.icon.ss-heart
+  else
+    a.chat_user_thumb(href="#{user.url}", data-user-id="#{user.id}")
+      img(src="#{user.thumb}")
 
   .chat_user_text 
     h4.chat_name 
