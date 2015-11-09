@@ -107,7 +107,7 @@ block content
             span.number 8
 
           for like in favourited_by
-            a.chat_user_thumb(href="/#{like.user_id.info.username}")
+            a.chat_user_thumb(href="/#{like.user_id.info.username}", data-view="room/popup_trigger", data-user-id="#{like.user_id._id}")
               img(src="#{like.user_id.info.avatar}")
 
 
