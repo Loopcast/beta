@@ -40,7 +40,7 @@ module.exports = class LikeButton extends LoggedView
     if not @already_liked
       @already_liked = true
       send_message @tape_id, "Liked this session", like: @liked
-      L.rooms.like @tape_id, (error, response) =>
+      L.tapes.like @tape_id, (error, response) =>
         log "[LikeButton] like response", error, response
 
 
@@ -52,7 +52,7 @@ module.exports = class LikeButton extends LoggedView
     @num_likes = Math.max(0, @num_likes - 1)
     @counter.html @num_likes
 
-    L.rooms.dislike @tape_id, (error, response) =>
+    L.tapes.dislike @tape_id, (error, response) =>
       log "[LikeButton] like response", error, response
 
   toggle_like: (e) =>
