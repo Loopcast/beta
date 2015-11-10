@@ -85,7 +85,15 @@ block content
           .tags.for_mobile
             for item in tape.genres
               a.tag(href="/explore?genres=#{item}") #{item}
-        p.tape_description.padded #{tape.about}
+
+
+        .tape_description.padded.collapsable_wrapper(data-view="chat/collapsable_content")
+          .inner
+            p#description_room.editable_description.collapsable_content
+              span.text #{tape.about}
+            p.read_more 
+              span.more Read More
+              span.less Show Less
 
         div.post_comment_wrapper.chat_line.padded(data-view="room/tape/textarea", data-tape-id="#{tape._id}")
           a.chat_user_thumb(href="#", data-view="room/tape/my_profile_image")

@@ -16,7 +16,7 @@ module.exports = class TapeView extends LoggedView
 
     @elements.title       = @dom.find '.tape_title'
     @elements.author      = @dom.find '.tape_author'
-    @elements.about       = @dom.find '.tape_description'
+    @elements.about       = @dom.find '.tape_description .text'
     @elements.genres      = @dom.find '.tags'
     @elements.cover       = 
       desktop : @dom.find '.cover_image.for_desktop'
@@ -35,6 +35,8 @@ module.exports = class TapeView extends LoggedView
     @elements.genres.html tags_list( tags: data.data.genres )
     @elements.cover.desktop.css 'background-image', 'url('+transform.cover( data.data.cover_url ) + ')'
     @elements.cover.mobile.css 'background-image', 'url('+transform.cover_mobile( data.data.cover_url ) + ')'
+
+    app.emit 'set:updated'
 
   on_views_binded: ( scope ) =>
     return if not scope.main
