@@ -168,51 +168,54 @@ block content
         //- TODO: Add as many live sessions as existent on rooms array
         //- for now there will be always only one, but in the future
         //- an user will be able to have multiple rooms live
-        - if( rooms.length == 1 ) live = rooms[0]
+        //- - if( rooms.length == 1 ) live = rooms[0]
 
-        if live
-          .session.outline_box(
-            data-view="profile/live_set", 
-            data-room-id="#{live._id}", 
-            data-room-started-at="#{live.status.live.started_at}"
-            data-is-live="true"
-          )
-            a.image.room_url(href="/#{live.info.user}/#{live.info.slug}", title="Old School House session", style="background-image:url(#{transform.cover_thumb(live.info.cover_url, user.info.avatar)})")
-            .content
-              h2.session_title 
-                a.room_url(href="/#{live.info.user}/#{live.info.slug}", title="#{live.info.title}") #{live.info.title}
-              p.session_author #{user.info.name}
+        if rooms.length > 0
+          for live in rooms
 
-              .genres
-                - counter = 0
-                for genre in live.info.genres
-                  - klass = ""
-                  if counter++ >= 5
-                    - klass = "hide"
-                  a.tag(href="/explore?genres=#{genre}", title="#{genre}", class="#{klass}") #{genre}
+        
+            .session.outline_box(
+              data-view="profile/live_set", 
+              data-room-id="#{live._id}", 
+              data-room-started-at="#{live.status.live.started_at}"
+              data-is-live="true"
+            )
+              a.image.room_url(href="/#{live.info.user}/#{live.info.slug}", title="Old School House session", style="background-image:url(#{transform.cover_thumb(live.info.cover_url, user.info.avatar)})")
+              .content
+                h2.session_title 
+                  a.room_url(href="/#{live.info.user}/#{live.info.slug}", title="#{live.info.title}") #{live.info.title}
+                p.session_author #{user.info.name}
 
-                if live.info.genres.length > 5
-                  span ...
+                .genres
+                  - counter = 0
+                  for genre in live.info.genres
+                    - klass = ""
+                    if counter++ >= 5
+                      - klass = "hide"
+                    a.tag(href="/explore?genres=#{genre}", title="#{genre}", class="#{klass}") #{genre}
 
-              .small_info
-                if live.info.location && live.info.location.length > 0
-                  a.location(href="/explore?search=#{live.info.location}")
-                    span.icon.ss-location
-                    //- span.spritesheet.icon_location
-                    span.text #{live.info.location}
-                .likes 
-                  span.icon.ss-heart
-                  //- span.spritesheet.icon_guests
-                  span.text #{live.likes}
-                .guests 
-                  span.icon.ss-users
-                  //- span.spritesheet.icon_plays
-                  span.text #{live.status.live.listeners}
+                  if live.info.genres.length > 5
+                    span ...
 
-              a.live(href="#", title="#{live.info.title}")
-                p.label 
-                  span.for_desktop now live
-                p.time &nbsp;
+                .small_info
+                  if live.info.location && live.info.location.length > 0
+                    a.location(href="/explore?search=#{live.info.location}")
+                      span.icon.ss-location
+                      //- span.spritesheet.icon_location
+                      span.text #{live.info.location}
+                  .likes 
+                    span.icon.ss-heart
+                    //- span.spritesheet.icon_guests
+                    span.text #{live.likes}
+                  .guests 
+                    span.icon.ss-users
+                    //- span.spritesheet.icon_plays
+                    span.text #{live.status.live.listeners}
+                if live.status.is_live
+                  a.live(href="#", title="#{live.info.title}")
+                    p.label 
+                      span.for_desktop now live
+                    p.time &nbsp;
 
         if tapes.length
           .recorded_sessions
@@ -315,4 +318,4 @@ block content
     if !s.is_beta 
       //- not sure if this s.is_beta is working
       | var profile_info = !{JSON.stringify(locals)};;
-      | console.log( 'tapes', profile_info.tapes ); 
+      | console.log( 'locals', profile_info ); 

@@ -34,6 +34,8 @@ body.tape_view
     // font-family: Helvetica
   .chat_list_messages
     padding-bottom: 20px
+    height: 400px
+    overflow-y: scroll
 ._overflow
   overflow: hidden
   & > *
@@ -64,6 +66,21 @@ body.tape_view
   // font-size: 12px
   margin-right: 5px
   margin-bottom: 2px
+
+.no_favourites
+  absolute top 20% left 0
+  padding: 0 24px
+  width: 100%
+  
+  color: GRAY_4
+  text-align: center
+  font-size: 16px
+  line-height: 21px
+  .label
+    display: none
+  .icon
+    font-size: 80px
+    line-height: 140px
 
 .tape_author
   margin-right: 10px
@@ -136,6 +153,16 @@ body.tape_view
   
   .side_column
     padding: 17px 24px
+    position: relative
+    .with_favourites
+      display: none
+      
+    &.favourited
+      .with_favourites
+        display: block
+        
+      .no_favourites
+        display: none
     
   .padded
     padding-left: PADDING_SIDE
