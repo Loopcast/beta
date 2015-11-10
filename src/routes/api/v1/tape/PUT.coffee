@@ -19,15 +19,15 @@ module.exports =
       strategy: 'session'
       mode    : 'try'
 
-    validate:
-      payload:
+    # validate:
+    #   payload:
 
-        title     : joi.string()
-        location  : joi.string()
-        about     : joi.string()
-        cover_url : joi.string()
-        genres    : joi.array()
-        public    : joi.boolean()
+    #     title     : joi.string()
+    #     location  : joi.string()
+    #     about     : joi.string()
+    #     cover_url : joi.string()
+    #     genres    : joi.array()
+    #     public    : joi.boolean()
 
     handler: ( req, reply ) ->
 
@@ -60,17 +60,17 @@ module.exports =
 
           update = {}
           
-          if payload.title?
+          if payload.title?.length
             update.title = payload.title
             update.title = slug payload.title.toLowerCase()
 
-          if payload.location?
+          if payload.location?.length
             update.location = payload.location
 
-          if payload.about
+          if payload.about?.length
             update.about = payload.about
 
-          if payload.cover_url?
+          if payload.cover_url?.length
             update.cover_url = payload.cover_url
 
             new_id     = extract_id payload.cover_url
