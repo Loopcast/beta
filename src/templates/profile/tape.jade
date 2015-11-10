@@ -102,13 +102,19 @@ block content
         
 
         .list_users
-          h3 
-            | FAVOURITED BY  
-            span.number 8
 
-          for like in favourited_by
-            a.chat_user_thumb(href="/#{like.user_id.info.username}")
-              img(src="#{like.user_id.info.avatar}")
+          if favourited_by.length != 0
+            h3 
+              | FAVOURITED BY  
+              span.number favourited_by.length
+
+            for like in favourited_by
+              a.chat_user_thumb(href="/#{like.user_id.info.username}")
+                img(src="#{like.user_id.info.avatar}")
+
+          if favourited_by.length == 0
+            h3 
+              | NO FAVOURITED
 
 
     .chat_user_popup(data-view="chat/people_popup")
