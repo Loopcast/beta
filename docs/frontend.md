@@ -1,0 +1,11 @@
+OWNERSHIP
+- user owner of the page
+- guest
+
+LOGIN
+- unlogged user
+- logged user
+
+
+- cambiare impostazione folder /shared nel backend
+- save the avatar without any resize
