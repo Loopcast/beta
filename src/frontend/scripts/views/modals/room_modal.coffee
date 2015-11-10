@@ -34,17 +34,31 @@ module.exports = class RoomModal extends Modal
 
     @genre = view.get_by_dom @dom.find( '.genre' )
 
-
+    @room_image_uploader.on 'started'  , @_on_cover_upload_started
     @room_image_uploader.on 'completed', @_on_cover_changed
     @title.on 'keyup'                 , @_on_title_changed
     @location.on 'keyup'              , @_on_location_changed
     @description.on 'keyup'           , @_on_description_changed
     @genre.on 'change'                , @_on_genre_changed
     @submit.on 'click'                , @_submit
-    
+  
+  lock: ->
+    log "[RoomModal] lock"
+    @dom.addClass 'lock'
+    @locked = true
+
+  unlock: ->
+    log "[RoomModal] unlock"
+    @dom.removeClass 'lock'
+    @locked = false
+
+  _on_cover_upload_started: =>
+    log "[Room modal] _on_cover_upload_started"
+    @lock()
 
   _on_cover_changed: (data) =>
     @cover_uploaded = data.result.secure_url
+    @unlock()
     @emit 'input:changed', { name: 'cover', value: data.result }
 
   _on_title_changed: ( ) =>
@@ -85,6 +99,8 @@ module.exports = class RoomModal extends Modal
 
   _submit: ( ) =>
     
+    if @locked
+      return
 
     # quick validation sketch
     if not @title.val()
@@ -151,7 +167,7 @@ module.exports = class RoomModal extends Modal
     @description.off 'keyup'  , @_on_description_changed
     @genre.off       'change' , @_on_genre_changed
     @submit.off      'click'  , @_submit
-
+    @room_image_uploader.off 'started'  , @_on_cover_upload_started
     @genre = null
 
     super()
