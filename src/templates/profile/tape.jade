@@ -106,7 +106,7 @@ block content
           if favourited_by.length != 0
             h3 
               | FAVOURITED BY  
-              span.number favourited_by.length
+              span.number #{favourited_by.length}
 
             for like in favourited_by
               a.chat_user_thumb(href="/#{like.user_id.info.username}")
