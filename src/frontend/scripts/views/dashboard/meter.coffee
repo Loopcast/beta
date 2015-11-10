@@ -5,6 +5,7 @@ user = require 'app/controllers/user'
 waveform      = null
 data          = []
 MAX_WIDTH     = 338
+VOL_FLOOR     = 0.03
 frame_counter = 0
 
 module.exports = class Meter extends RoomView
@@ -34,6 +35,9 @@ module.exports = class Meter extends RoomView
     @dom.height 31
 
     data = []
+
+    for i in [0...MAX_WIDTH]
+      data.push VOL_FLOOR
 
     waveform = window.waveform = new Waveform
       container: @dom[0]
@@ -129,7 +133,8 @@ module.exports = class Meter extends RoomView
     frame_counter = frame_counter % 3
     return if frame_counter % 3
 
-    data.push perc[0]
+    data.push Math.max( perc[0], VOL_FLOOR )
+
     data = data.slice(-MAX_WIDTH);
 
     waveform.update data: data
