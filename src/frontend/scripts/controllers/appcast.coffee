@@ -205,8 +205,8 @@ appcast.callbacks =
 
     if args.active
       appcast.set 'selected_device', args.active
-    else
-      appcast.set 'selected_device', ''
+    # else
+    #   appcast.set 'selected_device', ''
 
 
   audio_device_started : ( args ) ->

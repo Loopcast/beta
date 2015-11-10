@@ -49,13 +49,7 @@ module.exports = class InputDevices extends Select
       if d
         @_set_value d
 
-        console.log "CHANGED ->", d
-        console.log "CHANGED ->", d
-        console.log "CHANGED ->", d
-        console.log "CHANGED ->", d
-        console.log "CHANGED ->", d
-
-        appcast.set 'selected_d', d
+        appcast.select_device( d )
 
 
   on_change: ( device ) =>
