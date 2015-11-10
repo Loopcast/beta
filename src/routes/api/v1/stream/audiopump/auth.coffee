@@ -25,6 +25,7 @@ module.exports =
 
       console.log '- audiopump/auth'
 
+      console.log 'fullpath:', req.payload.data.path
       console.log 'path: ', path
       console.log 'user: ', user
       console.log 'pass: ', pass

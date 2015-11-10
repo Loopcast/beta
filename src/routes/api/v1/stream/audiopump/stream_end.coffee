@@ -58,8 +58,9 @@ module.exports =
 
             return
 
-          # status object to be sent down a socket Channel
-          status =
+          # notify UI the stream is live
+          data =
+            type   : "status"
             is_live: false
             live: 
               stopped_at: now( end_time ).format()
