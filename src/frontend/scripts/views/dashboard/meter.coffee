@@ -58,6 +58,8 @@ module.exports = class Meter extends RoomView
 
     waveform.innerColor = gradient;
 
+    waveform.update data: data
+
     return
 
     # @debug = $ '#debug'
