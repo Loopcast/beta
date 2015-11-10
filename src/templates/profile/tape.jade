@@ -105,13 +105,11 @@ block content
 
         .chat_list_messages(data-view="room/tape/messages", data-tape-id="#{tape._id}")
          
-
-      .side_column
+      - klass =  favourited_by.length > 0 ? "favourited" : ""
+      .side_column(data-view="room/tape/sidebar", class="#{klass}")
         
-
         .list_users
-
-          if favourited_by.length != 0
+          .with_favourites
             h3 
               | FAVOURITED BY  
               span.number #{favourited_by.length}
@@ -119,10 +117,12 @@ block content
             for like in favourited_by
               a.chat_user_thumb(href="/#{like.user_id.info.username}")
                 img(src="#{like.user_id.info.avatar}")
-
-          if favourited_by.length == 0
-            h3 
-              | NOT FAVOURITED
+  
+          .no_favourites
+            p Click the heart and be the first to favourite this mix
+            p.like_counter(data-view="room/tape/like_button", data-tape-id="#{tape._id}")
+              span.icon.ss-heart
+              span.label #{tape.likes}
 
     .chat_user_popup(data-view="chat/people_popup")
       ._outer

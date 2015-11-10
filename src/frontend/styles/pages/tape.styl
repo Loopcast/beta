@@ -65,6 +65,17 @@ body.tape_view
   margin-right: 5px
   margin-bottom: 2px
 
+.no_favourites
+  color: GRAY_4
+  text-align: center
+  font-size: 16px
+  line-height: 21px
+  .label
+    display: none
+  .icon
+    font-size: 80px
+    line-height: 140px
+
 .tape_author
   margin-right: 10px
 .tape_play
@@ -136,6 +147,15 @@ body.tape_view
   
   .side_column
     padding: 17px 24px
+    .with_favourites
+      display: none
+      
+    &.favourited
+      .with_favourites
+        display: block
+        
+      .no_favourites
+        display: none
     
   .padded
     padding-left: PADDING_SIDE
