@@ -62,7 +62,7 @@ module.exports =
           
           if payload.title?.length
             update.title = payload.title
-            update.title = slug payload.title.toLowerCase()
+            update.slug  = slug payload.title.toLowerCase()
 
           if payload.location?.length
             update.location = payload.location
