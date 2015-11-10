@@ -2,8 +2,10 @@ appcast = require 'app/controllers/appcast'
 RoomView = require 'app/views/room/room_view'
 user = require 'app/controllers/user'
 
-waveform = null
-data     = []
+waveform      = null
+data          = []
+MAX_WIDTH     = 338
+frame_counter = 0
 
 module.exports = class Meter extends RoomView
   values : [
@@ -28,7 +30,7 @@ module.exports = class Meter extends RoomView
     
     super @dom
 
-    @dom.width  338
+    @dom.width  MAX_WIDTH
     @dom.height 31
 
     data = []
@@ -36,7 +38,7 @@ module.exports = class Meter extends RoomView
     waveform = window.waveform = new Waveform
       container: @dom[0]
       data     : [1, 0.2, 0.5]
-      width    : 338
+      width    : MAX_WIDTH
       height   : 31
       innerColor : "#dedede"
       outerColor : "#46505A"
@@ -123,7 +125,12 @@ module.exports = class Meter extends RoomView
 
   set_volume: ( perc ) =>
 
-    data.push perc[0]    
+    frame_counter++
+    frame_counter = frame_counter % 3
+    return if frame_counter % 3
+
+    data.push perc[0]
+    data = data.slice(-MAX_WIDTH);
 
     waveform.update data: data
 
