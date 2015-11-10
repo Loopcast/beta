@@ -100,6 +100,7 @@ module.exports =
             update[ 'status.is_public' ] = payload.is_public
 
           data =
+            _id   : room_id
             type  : "room:update"
             room  : payload
 
