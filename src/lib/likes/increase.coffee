@@ -1,7 +1,9 @@
 module.exports = ( Model, _id, amount, callback ) ->
 
+  update = $inc: 'likes': amount
+
   Model
-    .update( _id: _id, $inc: 'likes': amount )
+    .update( _id: _id, update )
     .lean().exec ( error, docs_updated ) ->
 
       if error
