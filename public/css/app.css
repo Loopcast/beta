@@ -1,5 +1,5 @@
 
-/* line 170 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
+/* line 179 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
 
 /* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
@@ -95,14 +95,19 @@
 
 /* line 3 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_bootstrap.styl */
 
-/* line 42 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_bootstrap.styl */
+/* line 41 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_bootstrap.styl */
+.bold {
+  font-weight: 600;
+}
+
+/* line 45 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_bootstrap.styl */
 .yellow {
   color: #fdbb30;
 }
 
-/* line 53 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_bootstrap.styl */
+/* line 56 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_bootstrap.styl */
 
-/* line 53 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_header_footer.styl */
+/* line 56 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_header_footer.styl */
 
 /* line 1 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_header_footer.styl */
 header.header {
@@ -1367,7 +1372,7 @@ body.room_page .dynamic_wrapper > div {
 }
 
 /* line 327 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_ui.styl */
-.no_touch_device .button.gray_button_2 {
+.no_touch_device .button.gray_button_2:hover {
   background-color: #979899;
 }
 
@@ -2799,43 +2804,48 @@ body {
 @media (max-width: 700px) {
 
 /* line 132 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+  .tape_view .main_column .first_line .buttons .custom-fb-send {
+    display: none;
+  }
+
+/* line 135 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device,
   body.tape_view.touch_device {
     display: block;
     min-height: 100%;
   }
 
-/* line 136 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 139 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device .tape_view .tape_header .first_line,
   body.tape_view.touch_device .tape_view .tape_header .first_line {
     position: static;
   }
 
-/* line 138 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 141 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
 
-/* line 139 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 142 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device .main_column .first_line,
   body.tape_view.touch_device .main_column .first_line {
     margin-bottom: 0;
-    padding-bottom: 20px;
+    padding-bottom: 5px;
     display: block;
   }
 
-/* line 143 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 146 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device .main_column .first_line .buttons,
   body.tape_view.touch_device .main_column .first_line .buttons {
     text-align: center;
     width: 100%;
   }
 
-/* line 146 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 149 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device .main_column .first_line .buttons > *,
   body.tape_view.touch_device .main_column .first_line .buttons > * {
     margin-left: 5px;
     margin-right: 5px;
   }
 
-/* line 149 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 152 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device .main_column .first_line .tags,
   body.tape_view.touch_device .main_column .first_line .tags {
     -o-box-flex: 1;
@@ -2847,7 +2857,7 @@ body {
     margin-top: 10px;
   }
 
-/* line 154 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 157 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device .main_column .first_line,
   body.tape_view.touch_device .main_column .first_line,
   body.tape_view.no_touch_device .main_column .tape_description,
@@ -2856,13 +2866,13 @@ body {
     color: #424242;
   }
 
-/* line 158 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 161 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device .main_column .tape_description,
   body.tape_view.touch_device .main_column .tape_description {
-    padding-bottom: 50px;
+    padding-bottom: 10px;
   }
 
-/* line 161 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 164 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device #content,
   body.tape_view.touch_device #content,
   body.tape_view.no_touch_device .inner_content,
@@ -2881,7 +2891,7 @@ body {
     flex: auto;
   }
 
-/* line 168 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 171 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device .tape_header,
   body.tape_view.touch_device .tape_header {
     position: relative;
@@ -2889,78 +2899,78 @@ body {
     height: 330px;
   }
 
-/* line 172 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 175 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device .tape_header ._overflow,
   body.tape_view.touch_device .tape_header ._overflow {
     overflow: visible;
   }
 
-/* line 174 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 177 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device .tape_header ._overflow > *,
   body.tape_view.touch_device .tape_header ._overflow > * {
     float: none;
   }
 
-/* line 178 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 181 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device .padded,
   body.tape_view.touch_device .padded {
     padding-left: 20px;
     padding-right: 20px;
   }
 
-/* line 181 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 184 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device .tape_view,
   body.tape_view.touch_device .tape_view {
     background: #808080;
     color: #424242;
   }
 
-/* line 184 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 187 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device .tape_view .chat_line.padded,
   body.tape_view.touch_device .tape_view .chat_line.padded {
     padding-left: 80px;
   }
 
-/* line 186 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 189 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device .tape_view .post_comment_wrapper,
   body.tape_view.touch_device .tape_view .post_comment_wrapper {
     background: #ededed;
   }
 
-/* line 188 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 191 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device .tape_view .post_comment_wrapper textarea,
   body.tape_view.touch_device .tape_view .post_comment_wrapper textarea {
     padding-left: 0;
     height: 100px;
   }
 
-/* line 191 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 194 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device .tape_view .chat_line .chat_user_thumb,
   body.tape_view.touch_device .tape_view .chat_line .chat_user_thumb {
     left: 20px;
   }
 
-/* line 193 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 196 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device .chat_name,
   body.tape_view.touch_device .chat_name {
     color: #424242;
   }
 
-/* line 195 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 198 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device .chat_list_messages,
   body.tape_view.touch_device .chat_list_messages {
     background: #fff;
   }
 
-/* line 198 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 201 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device .side_column,
   body.tape_view.touch_device .side_column {
     display: none;
   }
 
-/* line 202 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 205 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
 
-/* line 203 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 206 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device .first_line .tape_play,
   body.tape_view.touch_device .first_line .tape_play {
     position: absolute;
@@ -2972,18 +2982,18 @@ body {
     border-width: 3px;
   }
 
-/* line 210 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 213 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
 
-/* line 211 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 214 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device div.tape_info .follow_button,
   body.tape_view.touch_device div.tape_info .follow_button {
     display: inline-block;
     margin-top: 6px;
   }
 
-/* line 215 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 218 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
 
-/* line 216 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 219 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device .tape_view .main_column,
   body.tape_view.touch_device .tape_view .main_column {
     -o-box-flex: 1;
@@ -2994,76 +3004,76 @@ body {
     display: block;
   }
 
-/* line 220 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 223 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   .fb_edge_comment_widget {
     margin-left: 0 !important;
   }
 
-/* line 223 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 226 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body #player .follow_player_popup {
     width: 90%;
     left: 5%;
   }
 
-/* line 226 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 229 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   .player_buttons {
     display: none;
   }
 
-/* line 229 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 232 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
 
-/* line 230 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 233 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .no_sessions .no_activity_wrapper,
   body .no_sessions .recorded_sessions {
     display: none;
   }
 
-/* line 234 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 237 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body.player_visible #content {
     padding-bottom: 55px;
   }
 
-/* line 237 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 240 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   .profile_theme .big_number span.icon {
     display: block;
   }
 
-/* line 240 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 243 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .profile_content .session .live .label {
     padding-left: 4px;
     padding-right: 18px;
   }
 
-/* line 243 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 246 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body {
     padding-top: 0 !important;
   }
 
-/* line 246 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 249 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .cover .content {
     padding-right: 68px;
   }
 
-/* line 249 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 252 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body.is_owner .room_ready .dashboard_bar .inner {
     display: none;
   }
 
-/* line 251 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 254 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body.is_owner .room_ready .dashboard_bar {
     height: 8px;
   }
 
-/* line 254 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 257 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
 
-/* line 255 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 258 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .background_mobile_dropdown {
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0);
   }
 
-/* line 257 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 260 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .mobile_dropdown.mobile_opened {
     -webkit-transform: translate3d(0, 0, 0);
     -ms-transform: translate3d(0, 0, 0);
@@ -3071,19 +3081,19 @@ body {
     top: 55px;
   }
 
-/* line 263 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 266 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .tag {
     font-size: 0.5rem;
   }
 
-/* line 265 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 268 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
 
-/* line 266 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 269 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body.login_page .for_mobile {
     display: none;
   }
 
-/* line 268 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 271 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .dynamic_wrapper {
     padding-top: 55px;
     background: #ececec;
@@ -3094,7 +3104,7 @@ body {
     transform: translate3d(0, 0, 0);
   }
 
-/* line 273 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 276 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .dynamic_wrapper.moving {
     position: absolute;
     top: 0;
@@ -3105,14 +3115,14 @@ body {
     transform: translate3d(-100%, 0, 0);
   }
 
-/* line 280 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 283 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .dynamic_wrapper.moved {
     -webkit-transform: translate3d(0, 0, 0);
     -ms-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
 
-/* line 283 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 286 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body #loading {
     position: fixed;
     z-index: 1;
@@ -3121,22 +3131,22 @@ body {
     filter: alpha(opacity=50);
   }
 
-/* line 288 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 291 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .for_mobile {
     display: block;
   }
 
-/* line 291 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 294 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .for_desktop {
     display: none;
   }
 
-/* line 296 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 299 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .parallax-mirror {
     display: none;
   }
 
-/* line 299 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 302 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .mobile_header {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -3144,7 +3154,7 @@ body {
     display: flex;
   }
 
-/* line 304 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 307 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .black_box {
     position: relative;
     margin: 0px auto;
@@ -3153,61 +3163,61 @@ body {
     max-width: 300px;
   }
 
-/* line 310 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 313 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .black_box h1 {
     line-height: 23px;
     font-size: 1.5rem;
     margin-bottom: 20px;
   }
 
-/* line 314 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 317 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .black_box p {
     font-size: 1rem;
     line-height: 25px;
   }
 
-/* line 318 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 321 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .black_box .button {
     width: 100% !important;
   }
 
-/* line 323 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 326 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .buttons .right {
     float: none;
   }
 
-/* line 326 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 329 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .secondary_screen .black_box {
     right: auto;
     top: auto;
   }
 
-/* line 329 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 332 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .secondary_screen .black_box h1 {
     line-height: 23px;
   }
 
-/* line 332 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 335 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .secondary_screen .black_box p {
     padding: 0;
     font-weight: inherit;
     line-height: inherit;
   }
 
-/* line 337 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 340 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .explore {
     padding-top: 0;
   }
 
-/* line 340 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 343 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .explore .explore_content {
     display: block;
     padding: 56px 0 0;
   }
 
-/* line 345 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 348 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
 
-/* line 346 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 349 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .explore .genres_list {
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
@@ -3225,7 +3235,7 @@ body {
     transform: translate3d(0, -100%, 0);
   }
 
-/* line 356 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 359 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .explore .genres_list.mobile_opened {
     -webkit-transform: translate3d(0, 0%, 0);
     -ms-transform: translate3d(0, 0%, 0);
@@ -3238,7 +3248,7 @@ body {
     transition: transform 0.3s ease-out, opacity 0.1s linear;
   }
 
-/* line 360 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 363 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .explore .genres_list a {
     display: block;
     margin-bottom: 0;
@@ -3262,24 +3272,24 @@ body {
     color: #484739;
   }
 
-/* line 363 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 366 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .explore .rooms_grid {
     display: block;
     padding: 10px;
   }
 
-/* line 367 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 370 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
 
-/* line 368 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 371 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .explore .rooms_grid.loading_visible_1 .loading {
     z-index: 1;
   }
 
-/* line 371 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
-
-/* line 372 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 374 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
 
 /* line 375 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+
+/* line 378 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .explore .rooms_grid .room_cell {
     width: 100%;
     max-width: 480px;
@@ -3290,23 +3300,23 @@ body {
     border-bottom: 1px solid #ddd7d7;
   }
 
-/* line 384 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 387 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .explore .rooms_grid .room_cell > .thumb_wrapper {
     width: 100%;
     height: auto;
   }
 
-/* line 387 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 390 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .explore .rooms_grid .room_cell > .thumb_wrapper img.for_desktop {
     display: none;
   }
 
-/* line 389 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 392 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .explore .rooms_grid .room_cell > .thumb_wrapper img.for_mobile {
     display: block;
   }
 
-/* line 392 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 395 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .filter_list {
     background: #eaeaea;
     border-bottom: 1px solid #d4d4d4;
@@ -3322,7 +3332,7 @@ body {
     cursor: pointer;
   }
 
-/* line 405 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 408 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .filter_list span {
     font-size: 8px;
     border: 1px solid #d4d4d4;
@@ -3334,46 +3344,46 @@ body {
     top: 0px;
   }
 
-/* line 414 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 417 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .filter_list .ss-directup {
     display: none;
   }
 
-/* line 416 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 419 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
 
-/* line 417 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 420 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .filter_list.mobile_opened .ss-dropdown {
     display: none;
   }
 
-/* line 419 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 422 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .filter_list.mobile_opened .ss-directup {
     display: inline-block;
   }
 
-/* line 421 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 424 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body #player {
     height: 55px;
     transition: height 0.2s ease-out;
   }
 
-/* line 424 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 427 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body #player .player_icon {
     height: 55px;
     width: 55px;
   }
 
-/* line 428 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 431 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen {
     height: 100%;
   }
 
-/* line 431 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 434 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body #player .player_title {
     font-size: 0.8em;
   }
 
-/* line 433 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 436 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body #player .player_button {
     font-size: 1.3rem;
     padding: 0 18px;
@@ -3396,42 +3406,42 @@ body {
     height: 100%;
   }
 
-/* line 444 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 447 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body #player .player_button .icon {
     position: relative;
     top: 5px;
   }
 
-/* line 447 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 450 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body #player .player_button .loading_spin {
     position: relative;
     left: -5px;
   }
 
-/* line 451 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 454 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body #player .player_text {
     margin-left: 10px;
     margin-right: 10px;
   }
 
-/* line 455 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 458 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body #player .player_progress {
     display: none;
   }
 
-/* line 457 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 460 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body #player .player_buttons {
     margin-left: 5px;
   }
 
-/* line 459 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 462 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body #player .player_buttons > * {
     margin: 0 4px;
     position: relative;
     top: 2px;
   }
 
-/* line 463 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 466 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body #player .player_buttons,
   body #player .player_right {
     -o-box-flex: 1;
@@ -3442,18 +3452,18 @@ body {
     text-align: center;
   }
 
-/* line 468 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 471 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body #player .player_right {
     margin: 0;
   }
 
-/* line 470 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 473 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body #player .player_time {
     text-align: center;
     padding-right: 10px;
   }
 
-/* line 474 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 477 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .mobile_dropdown {
     position: fixed;
     top: 0px;
@@ -3462,13 +3472,13 @@ body {
     z-index: 3;
   }
 
-/* line 480 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 483 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .mobile_dropdown > div {
     z-index: 0;
     position: relative;
   }
 
-/* line 483 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 486 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .mobile_dropdown a {
     display: block;
     margin-bottom: 0;
@@ -3492,27 +3502,27 @@ body {
     color: #484739;
   }
 
-/* line 485 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 488 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .outline_box {
     border-radius: 0px;
     border-left: 0;
     border-right: 0;
   }
 
-/* line 489 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 492 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
 
-/* line 493 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 496 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .cover_buttons {
     bottom: 10px;
     right: 67px;
   }
 
-/* line 496 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 499 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .cover {
     height: 184px;
   }
 
-/* line 498 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 501 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .cover .name,
   body .profile_theme .cover .type,
   body .profile_theme .cover .genres,
@@ -3520,45 +3530,45 @@ body {
     margin-left: 10px;
   }
 
-/* line 500 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 503 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .cover .upload_element {
     display: none;
   }
 
-/* line 502 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 505 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .cover .cloudinary_form {
     display: none;
   }
 
-/* line 504 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 507 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .cover .name {
     font-size: 1.1rem;
     padding: 4px 10px 5px;
   }
 
-/* line 507 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 510 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .cover .type {
     font-size: 0.8rem;
   }
 
-/* line 509 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 512 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .cover .socials_room {
     display: none !important;
   }
 
-/* line 511 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 514 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .cover .genres {
     font-size: 0.8rem;
     line-height: 1rem;
   }
 
-/* line 516 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 519 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .cover .profile_image {
     width: 87px;
     left: 10px;
   }
 
-/* line 519 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 522 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .big_number {
     padding: 0 20px;
     background: rgba(41,44,47,0.8);
@@ -3566,45 +3576,45 @@ body {
     border-top: none;
   }
 
-/* line 524 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 527 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .big_number span.text {
     display: none;
   }
 
-/* line 526 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 529 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .big_number span.number {
     font-size: 1rem;
   }
 
-/* line 529 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 532 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .profile_content {
     display: block;
     padding: 10px 0;
   }
 
-/* line 533 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 536 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .profile_content .profile_bio {
     padding-left: 10px;
     padding-right: 10px;
     border-bottom: 1px solid #ddd7d7;
   }
 
-/* line 537 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 540 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .profile_content .profile_bio h4 {
     margin-bottom: 0;
   }
 
-/* line 539 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 542 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .profile_content .profile_bio .outline_icon {
     display: none !important;
   }
 
-/* line 541 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 544 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .profile_content .profile_left {
     width: 100%;
   }
 
-/* line 543 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 546 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .profile_content .social {
     position: relative;
     left: 0px;
@@ -3612,19 +3622,19 @@ body {
     height: 40px;
   }
 
-/* line 548 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 551 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .profile_content .social a {
     margin-right: 10px;
   }
 
-/* line 550 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 553 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .profile_content .spritesheet {
     -webkit-transform: scale(0.5, 0.5);
     -ms-transform: scale(0.5, 0.5);
     transform: scale(0.5, 0.5);
   }
 
-/* line 553 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 556 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .profile_content .session {
     border: none;
     border-bottom: 1px solid #dadada;
@@ -3634,7 +3644,7 @@ body {
     overflow: hidden;
   }
 
-/* line 561 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 564 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .profile_content .session .image {
     width: 84px;
     height: 74px;
@@ -3642,7 +3652,7 @@ body {
     margin: 10px;
   }
 
-/* line 566 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 569 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .profile_content .session .image .icon {
     opacity: 1;
     -ms-filter: none;
@@ -3653,12 +3663,12 @@ body {
     transform: translateX(-50%) translateY(-50%) scale(0.6, 0.6);
   }
 
-/* line 570 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 573 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .profile_content .session .image .share_wrapper {
     display: none;
   }
 
-/* line 574 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 577 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .profile_content .session .content {
     padding-top: 10px;
     padding-right: 10px;
@@ -3666,62 +3676,62 @@ body {
     padding-left: 0;
   }
 
-/* line 580 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 583 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .profile_content .session h2 {
     font-size: 0.9rem;
     margin-bottom: 0;
   }
 
-/* line 583 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 586 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .profile_content .session .session_author {
     font-size: 0.8rem;
     margin-bottom: 2px;
   }
 
-/* line 586 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 589 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .profile_content .session .edit_session_wrapper {
     display: none !important;
   }
 
-/* line 589 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 592 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .profile_content .session .genres {
     margin-bottom: 0;
   }
 
-/* line 591 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 594 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .profile_content .session .genres a {
     display: none;
   }
 
-/* line 593 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 596 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .profile_content .session .genres a:nth-child(1),
   body .profile_theme .profile_content .session .genres a:nth-child(2) {
     display: inline-block;
   }
 
-/* line 597 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 600 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .profile_content .session .small_info {
     position: relative;
     top: -3px;
     line-height: 16px;
   }
 
-/* line 602 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 605 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .profile_content .session .public_screen {
     display: none !important;
   }
 
-/* line 605 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 608 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .big_number span.icon {
     padding-top: 14px;
   }
 
-/* line 608 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 611 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .location {
     color: #474343;
   }
 
-/* line 611 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 614 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .recorded_sessions .title {
     margin-top: 10px;
     background: #fff;
@@ -3731,24 +3741,24 @@ body {
     padding: 10px;
   }
 
-/* line 619 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 622 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .recorded_sessions .title * {
     display: none;
   }
 
-/* line 621 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 624 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .recorded_sessions .title h2 {
     display: block;
     color: #474343;
     font-size: 1rem;
   }
 
-/* line 627 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 630 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .chat_sidebar {
     display: none !important;
   }
 
-/* line 630 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 633 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_content.chat {
     position: relative;
     -o-box-orient: vertical;
@@ -3757,12 +3767,12 @@ body {
     flex-direction: column;
   }
 
-/* line 633 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 636 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_content.chat .chat_header {
     display: none;
   }
 
-/* line 635 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 638 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_content.chat .chat_main {
     position: absolute;
     top: 0;
@@ -3771,38 +3781,38 @@ body {
     height: 100%;
   }
 
-/* line 642 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 645 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_content.chat .chat_main .chat_content {
     padding: 10px;
     -webkit-overflow-scrolling: touch;
     overflow-scrolling: touch;
   }
 
-/* line 646 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 649 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_content.chat .img_wrapper_2 {
     left: 10px;
     width: 36px;
   }
 
-/* line 649 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 652 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_content.chat .img_wrapper_2 img {
     width: 100%;
   }
 
-/* line 652 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 655 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_content.chat .chat_footer {
     padding-left: 40px;
   }
 
-/* line 655 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 658 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_content.chat .chat_footer .icon {
     right: 17px;
     top: 22px;
   }
 
-/* line 658 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 661 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
 
-/* line 659 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 662 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .player_preview .circle_icon {
     opacity: 1;
     -ms-filter: none;
@@ -3810,25 +3820,25 @@ body {
             filter: none;
   }
 
-/* line 661 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 664 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .player_preview .share_wrapper {
     display: none;
   }
 
-/* line 663 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 666 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   .socials_room {
     position: relative;
     left: 0px;
   }
 
-/* line 667 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 670 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   .mobile_search_wrapper {
     padding: 10px 80px;
     border-bottom: 1px solid #cacaca;
     background: #eaeaea;
   }
 
-/* line 671 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 674 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   .mobile_search_wrapper input {
     margin-bottom: 0;
     border: 1px solid #cacaca;
@@ -3838,13 +3848,13 @@ body {
     text-decoration: none;
   }
 
-/* line 681 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 684 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen {
     height: 100%;
     z-index: 4;
   }
 
-/* line 685 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 688 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .fullscreen_elements {
     display: block;
     width: 100%;
@@ -3852,7 +3862,7 @@ body {
     padding-bottom: 60px;
   }
 
-/* line 695 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 698 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen a.close_fullscreen {
     display: block;
     margin-bottom: 10px;
@@ -3866,7 +3876,7 @@ body {
     top: 21px;
   }
 
-/* line 707 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 710 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .progress_wrapper {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -3874,7 +3884,7 @@ body {
     display: flex;
   }
 
-/* line 709 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 712 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .progress_wrapper .player_progress {
     -o-box-flex: 1;
     box-flex: 1;
@@ -3885,19 +3895,19 @@ body {
     margin: 7px 11px 0;
   }
 
-/* line 714 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 717 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .progress_wrapper .player_total_time {
     font-size: 0.9em;
     font-weight: 600;
   }
 
-/* line 719 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 722 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .player_text {
     text-align: center;
     margin-bottom: 10px;
   }
 
-/* line 723 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 726 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .player_buttons {
     display: block;
     position: absolute;
@@ -3913,7 +3923,7 @@ body {
     left: 0;
   }
 
-/* line 734 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 737 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .player_buttons .share_wrapper {
     position: absolute;
     left: 50%;
@@ -3922,7 +3932,7 @@ body {
     top: 0;
   }
 
-/* line 740 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 743 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .player_buttons .ss-heart {
     position: absolute;
     right: 50%;
@@ -3931,29 +3941,29 @@ body {
     margin-right: -90px;
   }
 
-/* line 747 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 750 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .player_buttons .ss-heart,
   body #player.fullscreen .player_buttons .share_wrapper {
     font-size: 1.5rem;
   }
 
-/* line 751 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 754 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .player_title {
     font-size: 1rem;
     font-weight: bold;
   }
 
-/* line 755 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 758 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .player_author {
     font-size: 0.9rem;
   }
 
-/* line 758 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 761 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .no_fullscreen {
     display: none !important;
   }
 
-/* line 761 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 764 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .centered {
     min-height: 100vh;
     -o-box-orient: vertical;
@@ -3963,7 +3973,7 @@ body {
     padding: 10px;
   }
 
-/* line 766 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 769 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .player_icon {
     width: 100%;
     height: auto;
@@ -3975,7 +3985,7 @@ body {
     margin-bottom: 3px;
   }
 
-/* line 772 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 775 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .player_button {
     display: inline-block;
     -o-box-flex: 1;
@@ -3991,7 +4001,7 @@ body {
     height: 56px;
   }
 
-/* line 782 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 785 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .player_button .icon {
     border: 1px solid #fff;
     border-radius: 50%;
@@ -4002,24 +4012,24 @@ body {
     padding-left: 8px;
   }
 
-/* line 791 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 794 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .player_button .icon.ss-pause {
     padding-left: 1px;
   }
 
-/* line 795 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 798 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .loading_spin {
     top: 10px;
   }
 
-/* line 798 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 801 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
 
-/* line 799 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 802 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_content.chat .chat_main .chat_content {
     height: 100%;
   }
 
-/* line 801 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 804 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .profile_content.chat {
     min-height: initial;
     -o-box-flex: 1;
@@ -4029,7 +4039,7 @@ body {
     flex: 1;
   }
 
-/* line 804 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 807 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body .createroom {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -4043,7 +4053,7 @@ body {
     padding-top: 55px;
   }
 
-/* line 810 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
+/* line 813 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_mobile.styl */
   body.room_page .dynamic_wrapper {
     padding-top: 0;
   }
@@ -4124,7 +4134,21 @@ li {
   clear: both;
 }
 
-/* line 76 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
+/* line 77 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
+
+/* line 78 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+/* line 82 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
+.clearfix:after {
+  clear: both;
+}
+
+/* line 85 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
 .hidden {
   visibility: hidden;
   opacity: 0;
@@ -4132,7 +4156,7 @@ li {
   filter: alpha(opacity=0);
 }
 
-/* line 80 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
+/* line 89 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
 .visible {
   visibility: visible;
   opacity: 1;
@@ -4141,17 +4165,17 @@ li {
           filter: none;
 }
 
-/* line 84 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
+/* line 93 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
 .fullscreen {
   position: relative;
 }
 
-/* line 87 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
+/* line 96 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
 .scroll_handler {
   cursor: pointer;
 }
 
-/* line 90 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
+/* line 99 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
 .cover {
   background-size: cover;
   background-position: 50% 50%;
@@ -4163,7 +4187,7 @@ li {
   z-index: 0;
 }
 
-/* line 98 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
+/* line 107 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
 .center_el {
   position: absolute;
   top: 50%;
@@ -4173,17 +4197,17 @@ li {
   transform: translateX(-50%) translateY(-50%);
 }
 
-/* line 102 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
+/* line 111 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
 .left {
   float: left;
 }
 
-/* line 104 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
+/* line 113 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
 .right {
   float: right;
 }
 
-/* line 107 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
+/* line 116 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
 .flex {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4191,12 +4215,12 @@ li {
   display: flex;
 }
 
-/* line 110 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
+/* line 119 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
 .flex .flex_sidebar {
   position: relative;
 }
 
-/* line 113 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
+/* line 122 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
 .flex .flex_content {
   -o-box-flex: 1;
   box-flex: 1;
@@ -4205,13 +4229,13 @@ li {
   flex: 1;
 }
 
-/* line 117 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
+/* line 126 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
 html {
   position: relative;
   min-height: 100%;
 }
 
-/* line 131 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
+/* line 140 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
 body {
   background: #ececec;
   color: #1f1f1f;
@@ -4221,21 +4245,21 @@ body {
   padding-top: 49px;
 }
 
-/* line 140 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
+/* line 149 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
 #content {
   text-align: center;
   position: relative;
   z-index: 1;
 }
 
-/* line 145 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
+/* line 154 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
 
-/* line 146 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
+/* line 155 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
 .player_visible #content {
   padding-bottom: 70px;
 }
 
-/* line 150 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
+/* line 159 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
 .loading_screen {
   background: #ececec;
   position: absolute;
@@ -4246,7 +4270,7 @@ body {
   z-index: 2;
 }
 
-/* line 159 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
+/* line 168 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
 .loading_screen .inner {
   text-align: center;
   display: -webkit-flex;
@@ -4268,9 +4292,172 @@ body {
   height: 100%;
 }
 
-/* line 169 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
+/* line 178 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/app.styl */
 .loading_screen .inner .loading_spin {
   display: inline-block;
+}
+
+
+/* line 286 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/other/confirm_username.styl */
+
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
+
+/* line 13 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
+
+/* line 43 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+
+/* line 10 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/border.styl */
+
+/* line 28 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/border.styl */
+
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/clearfix.styl */
+
+/* line 4 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/clearfix.styl */
+
+/* line 247 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/color-image.styl */
+
+/* line 196 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/color-image.styl */
+
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
+
+/* line 90 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
+
+/* line 43 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+
+/* line 11 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
+
+/* line 7 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
+
+/* line 247 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/iconic.styl */
+
+/* line 25 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/iconic.styl */
+
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/image.styl */
+
+/* line 20 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/image.styl */
+
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/overflow.styl */
+
+/* line 66 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/overflow.styl */
+
+/* line 247 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/positions.styl */
+
+/* line 78 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/positions.styl */
+
+/* line 247 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
+
+/* line 5 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
+
+/* line 43 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+
+/* line 12 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/aliases.styl */
+
+/* line 9 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/aliases.styl */
+
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/ellipsis.styl */
+
+/* line 8 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/ellipsis.styl */
+
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/hide-text.styl */
+
+/* line 9 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/hide-text.styl */
+
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/replace-text.styl */
+
+/* line 2 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/replace-text.styl */
+
+/* line 247 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/shadow-stroke.styl */
+
+/* line 577 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/shadow-stroke.styl */
+
+/* line 247 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/vendor.styl */
+
+/* line 11 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/vendor.styl */
+
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
+
+/* line 28 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/config.styl */
+
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/size.styl */
+
+/* line 260 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/size.styl */
+
+/* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/rupture/rupture/index.styl */
+
+/* line 1 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/other/confirm_username.styl */
+#confirm-username {
+  width: 330px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* line 6 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/other/confirm_username.styl */
+.avatar {
+  width: 144px;
+  margin: 46px 0;
+  border-radius: 72px;
+}
+
+/* line 11 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/other/confirm_username.styl */
+.input-group {
+  margin-top: 32px;
+}
+
+/* line 14 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/other/confirm_username.styl */
+.input-group span,
+.input-group input {
+  width: 164px;
+  height: 40px;
+  border: 1px solid #bebdbd;
+  border-radius: 3px;
+}
+
+/* line 20 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/other/confirm_username.styl */
+.input-group span {
+  margin-right: 2px;
+  padding: 10px 15px;
+  font-size: 0.9rem;
+}
+
+/* line 25 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/other/confirm_username.styl */
+.input-group input {
+  margin-bottom: 0;
+  background-color: #fff;
+}
+
+/* line 29 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/other/confirm_username.styl */
+.error-box {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  min-height: 44px;
+  padding: 10px 0;
+  transition: opacity 0.3s;
+}
+
+/* line 35 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/other/confirm_username.styl */
+.error-box.error {
+  opacity: 1;
+  -ms-filter: none;
+  -webkit-filter: none;
+          filter: none;
+}
+
+/* line 38 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/other/confirm_username.styl */
+.error-box p {
+  font-size: 0.9rem;
+  color: #ff696c;
+}
+
+/* line 42 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/other/confirm_username.styl */
+.yellow_button {
+  margin: 0 auto;
 }
 
 
@@ -4366,11 +4553,16 @@ body {
 
 /* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/rupture/rupture/index.styl */
 
-/* line 53 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/rupture/rupture/index.styl */
+/* line 56 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/rupture/rupture/index.styl */
 
 /* line 3 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_bootstrap.styl */
 
-/* line 42 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_bootstrap.styl */
+/* line 41 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_bootstrap.styl */
+.bold {
+  font-weight: 600;
+}
+
+/* line 45 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_bootstrap.styl */
 .yellow {
   color: #fdbb30;
 }
@@ -5374,11 +5566,16 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/rupture/rupture/index.styl */
 
-/* line 53 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/rupture/rupture/index.styl */
+/* line 56 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/rupture/rupture/index.styl */
 
 /* line 3 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_bootstrap.styl */
 
-/* line 42 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_bootstrap.styl */
+/* line 41 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_bootstrap.styl */
+.bold {
+  font-weight: 600;
+}
+
+/* line 45 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_bootstrap.styl */
 .yellow {
   color: #fdbb30;
 }
@@ -6033,11 +6230,16 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/rupture/rupture/index.styl */
 
-/* line 53 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/rupture/rupture/index.styl */
+/* line 56 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/rupture/rupture/index.styl */
 
 /* line 3 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_bootstrap.styl */
 
-/* line 42 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_bootstrap.styl */
+/* line 41 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_bootstrap.styl */
+.bold {
+  font-weight: 600;
+}
+
+/* line 45 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_bootstrap.styl */
 .yellow {
   color: #fdbb30;
 }
@@ -6274,11 +6476,16 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/rupture/rupture/index.styl */
 
-/* line 53 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/rupture/rupture/index.styl */
+/* line 56 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/rupture/rupture/index.styl */
 
 /* line 3 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_bootstrap.styl */
 
-/* line 42 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_bootstrap.styl */
+/* line 41 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_bootstrap.styl */
+.bold {
+  font-weight: 600;
+}
+
+/* line 45 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_bootstrap.styl */
 .yellow {
   color: #fdbb30;
 }
@@ -6363,7 +6570,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 13 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 741 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+/* line 745 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
 /* line 10 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
@@ -6383,7 +6590,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 90 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 741 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+/* line 745 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
 /* line 11 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
@@ -6411,7 +6618,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 5 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
 
-/* line 741 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+/* line 745 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
 /* line 12 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
@@ -6449,11 +6656,16 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/rupture/rupture/index.styl */
 
-/* line 53 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/rupture/rupture/index.styl */
+/* line 56 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/rupture/rupture/index.styl */
 
 /* line 3 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_bootstrap.styl */
 
-/* line 42 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_bootstrap.styl */
+/* line 41 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_bootstrap.styl */
+.bold {
+  font-weight: 600;
+}
+
+/* line 45 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_bootstrap.styl */
 .yellow {
   color: #fdbb30;
 }
@@ -7020,15 +7232,18 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 .profile_theme .profile_content .list_sessions .no_activity {
   color: #474343;
   font-weight: 600;
+  text-align: left;
 }
 
-/* line 350 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 351 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .list_sessions .button.bold_button {
   width: 300px;
   margin-top: 20px;
+  margin-left: 0;
+  margin-right: 0;
 }
 
-/* line 354 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 358 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session {
   height: 100px;
   width: 100%;
@@ -7041,7 +7256,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   overflow: visible;
 }
 
-/* line 362 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 366 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .image {
   width: 200px;
   background-size: cover;
@@ -7051,7 +7266,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   border-bottom-left-radius: 5px;
 }
 
-/* line 369 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 373 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .image .icon {
   position: absolute;
   left: 50%;
@@ -7061,7 +7276,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   transform: translateX(-50%) translateY(-50%);
 }
 
-/* line 373 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 377 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .content {
   -o-box-flex: 1;
   box-flex: 1;
@@ -7072,7 +7287,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   position: relative;
 }
 
-/* line 378 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 382 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .public_screen {
   position: absolute;
   top: 0;
@@ -7095,7 +7310,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   justify-content: center;
 }
 
-/* line 388 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 392 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .public_screen .bg {
   position: absolute;
   top: 0;
@@ -7105,27 +7320,27 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   z-index: 0;
 }
 
-/* line 393 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 397 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .public_screen a {
   font-weight: bold;
   position: relative;
   z-index: 1;
 }
 
-/* line 403 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 407 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 
-/* line 404 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 408 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session.public .public_screen {
   display: none;
 }
 
-/* line 407 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 411 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session h2 {
   padding-right: 20px;
   margin-bottom: 8px;
 }
 
-/* line 411 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 415 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .session_author {
   color: #4592d4;
   font-size: 0.86em;
@@ -7133,24 +7348,24 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   display: block;
 }
 
-/* line 420 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 424 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .genres {
   margin-bottom: 4px;
 }
 
-/* line 423 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 427 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .small_info {
   color: #929292;
 }
 
-/* line 425 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 429 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .small_info > * {
   display: inline-block;
   margin-right: 10px;
   font-size: 0.8em;
 }
 
-/* line 429 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 433 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .small_info > * span.spritesheet,
 .profile_theme .profile_content .session .small_info > * span.icon {
   display: inline-block;
@@ -7159,13 +7374,13 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   top: 2px;
 }
 
-/* line 435 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 439 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .small_info > * span.ss-play {
   font-size: 0.8em;
   top: 1px;
 }
 
-/* line 438 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 442 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .live {
   position: absolute;
   bottom: 10px;
@@ -7177,13 +7392,13 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   font-size: 0.7em;
 }
 
-/* line 447 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 451 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .live .time,
 .profile_theme .profile_content .session .live .label {
   display: inline-block;
 }
 
-/* line 450 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 454 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .live .time {
   color: #f23131;
   margin-left: 10px;
@@ -7191,7 +7406,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   font-size: 1.4em;
 }
 
-/* line 456 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 460 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .live .label {
   background: #f23131;
   border-bottom-right-radius: 4px;
@@ -7203,7 +7418,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   text-align: left;
 }
 
-/* line 467 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 471 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .live .label:after {
   content: "";
   background: #fff;
@@ -7218,25 +7433,25 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   left: 7px;
 }
 
-/* line 482 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 486 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 
-/* line 483 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 487 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .profile_theme .recorded_sessions .title {
   margin-bottom: 20px;
 }
 
-/* line 485 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 489 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .profile_theme .recorded_sessions .title * {
   display: inline-block;
   vertical-align: top;
 }
 
-/* line 488 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 492 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .profile_theme .recorded_sessions .title h2 {
   margin-right: 30px;
 }
 
-/* line 491 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 495 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .profile_theme .recorded_sessions .title .ss-record-wrapper,
 .profile_theme .recorded_sessions .title .ss-alert {
   position: relative;
@@ -7244,32 +7459,32 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   margin-right: 5px;
 }
 
-/* line 496 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 500 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .profile_theme .recorded_sessions .title .ss-alert {
   color: #f23131;
 }
 
-/* line 499 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 503 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .profile_theme .recorded_sessions .title .session_icon {
   position: relative;
   top: 3px;
   margin-right: 5px;
 }
 
-/* line 504 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 508 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .profile_theme .recorded_sessions .title .session_text {
   margin-right: 15px;
   padding-top: 1px;
 }
 
-/* line 508 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 512 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .profile_theme .recorded_sessions .title .alert_icon {
   position: relative;
   top: 3px;
   margin-right: 5px;
 }
 
-/* line 513 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 517 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .profile_theme .recorded_sessions .title .alert_text {
   font-size: 0.7em;
   color: #f23131;
@@ -7277,76 +7492,76 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   padding-top: 4px;
 }
 
-/* line 519 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 523 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 
-/* line 520 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 524 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .profile_theme.user_logged .cover_button {
   display: block;
 }
 
-/* line 523 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 527 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .profile_theme.user_logged .profile_content .profile_bio .outline_icon {
   display: block;
 }
 
-/* line 526 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 530 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .profile_theme.user_logged .edit_session_wrapper {
   display: block;
 }
 
-/* line 529 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 533 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .profile_theme.user_logged .element_on_write_mode {
   display: none;
 }
 
-/* line 532 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 536 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 
-/* line 533 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 537 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 
-/* line 534 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 538 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .write_mode .profile_theme.user_logged .element_on_write_mode {
   display: block;
 }
 
-/* line 537 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 541 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .write_mode .profile_theme.user_logged .element_on_read_mode {
   display: none;
 }
 
-/* line 540 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 544 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .add_new_link {
   margin-bottom: 20px;
 }
 
-/* line 543 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 547 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .profile_form {
   padding-top: 10px;
 }
 
-/* line 545 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 549 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .profile_form textarea {
   height: 200px;
 }
 
-/* line 550 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 554 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .profile_form .save_button {
   padding-left: 40px;
   padding-right: 40px;
   margin: 0 auto 20px;
 }
 
-/* line 555 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 559 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .genres {
   overflow: hidden;
 }
 
-/* line 557 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 561 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .genres .tag {
   float: left;
   margin-bottom: 5px;
 }
 
-/* line 562 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 566 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .edit_session_wrapper {
   position: absolute;
   top: 10px;
@@ -7355,7 +7570,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   z-index: 2;
 }
 
-/* line 568 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 572 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .edit_session_wrapper .settings_button {
   opacity: 0.6;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
@@ -7368,7 +7583,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   transform-origin: 50% 40%;
 }
 
-/* line 573 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 577 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .edit_session_wrapper .settings_button.hovered {
   opacity: 1;
   -ms-filter: none;
@@ -7376,7 +7591,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
           filter: none;
 }
 
-/* line 578 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 582 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .edit_session_wrapper .edit_session_popup {
   position: absolute;
   top: -10px;
@@ -7399,7 +7614,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   transform-origin: 110% 14.66%;
 }
 
-/* line 593 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 597 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .edit_session_wrapper .edit_session_popup .triangle {
   content: "";
   position: absolute;
@@ -7412,12 +7627,12 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   border-left: 10px solid #373b3f;
 }
 
-/* line 604 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 608 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .edit_session_wrapper .edit_session_popup .button {
   margin-bottom: 15px;
 }
 
-/* line 606 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 610 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .edit_session_wrapper .edit_session_popup.hovered {
   display: block;
   -webkit-transform: scale(1, 1);
@@ -7431,12 +7646,12 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
           filter: none;
 }
 
-/* line 612 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 616 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .not_public .edit_session_wrapper .settings_button {
   color: #fff;
 }
 
-/* line 614 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 618 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .session {
   position: relative;
   transition: -webkit-transform 0.2s ease-out;
@@ -7446,39 +7661,39 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   transform-origin: 50% 0;
 }
 
-/* line 618 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 622 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 
-/* line 619 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 623 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .session.to_delete .delete_screen {
   display: block;
 }
 
-/* line 622 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 626 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .session.deleted {
   -webkit-transform: scale(1, 0.001);
   -ms-transform: scale(1, 0.001);
   transform: scale(1, 0.001);
 }
 
-/* line 625 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 629 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .no_activity_wrapper {
   padding-right: 20px;
   display: none;
 }
 
-/* line 629 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 633 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .no_sessions .no_activity_wrapper {
   display: block;
 }
 
-/* line 632 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 636 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 
-/* line 633 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 637 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .no_recorded_sessions .recorded_sessions {
   display: none;
 }
 
-/* line 636 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 640 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .delete_screen {
   position: absolute;
   top: 0;
@@ -7492,7 +7707,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   display: none;
 }
 
-/* line 645 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 649 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .delete_screen .button {
   display: inline-block;
   margin: 10px;
@@ -7500,51 +7715,51 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   padding-right: 40px;
 }
 
-/* line 650 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 654 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .delete_screen .content {
   width: 355px;
   margin: 0 auto;
 }
 
-/* line 653 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 657 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .delete_screen h2 {
   color: #1f1f1f;
   font-size: 1.2em;
   font-weight: 600;
 }
 
-/* line 658 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 662 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 
-/* line 659 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 663 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .is_owner .profile_bio .location.empty {
   margin-bottom: 28px;
 }
 
-/* line 663 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 667 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .element_on_read_mode {
   display: block;
 }
 
-/* line 666 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 670 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .element_on_write_mode {
   display: none;
 }
 
-/* line 670 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 674 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 
-/* line 671 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 675 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .write_mode .element_on_read_mode {
   display: none;
 }
 
-/* line 674 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 678 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .write_mode .element_on_write_mode {
   display: block;
 }
 
-/* line 679 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 683 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 
-/* line 680 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 684 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .is_guest .cover_button,
 .is_guest .profile_bio .outline_icon,
 .is_guest .icon.ss-alert,
@@ -7553,57 +7768,57 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   display: none !important;
 }
 
-/* line 689 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 693 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 
-/* line 690 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 694 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 
-/* line 691 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 695 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .room_live.profile_theme .room_status .offair {
   display: none;
 }
 
-/* line 693 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 697 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .room_live.profile_theme .room_status .live {
   display: block;
-}
-
-/* line 698 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
-
-/* line 699 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
-.no_touch_device .tag:hover {
-  background: #8ea6b1;
 }
 
 /* line 702 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 
 /* line 703 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+.no_touch_device .tag:hover {
+  background: #8ea6b1;
+}
+
+/* line 706 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+
+/* line 707 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .no_touch_device .profile_theme .header_settings_hover:hover {
   opacity: 0.8;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
   filter: alpha(opacity=80);
 }
 
-/* line 706 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 710 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .no_touch_device .profile_theme .sidebar_right:hover {
   background: rgba(0,0,0,0.7);
   color: #e8e8e8;
 }
 
-/* line 710 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 714 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .no_touch_device .profile_theme .cover_button:hover {
   background: #fff;
 }
 
-/* line 713 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 717 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 
-/* line 716 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 720 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .no_touch_device .profile_theme .profile_content .session:hover .small_info {
   color: #605b5b;
 }
 
-/* line 720 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 724 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 
-/* line 721 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 725 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .no_touch_device .edit_session_wrapper .settings_button:hover {
   opacity: 1;
   -ms-filter: none;
@@ -7611,13 +7826,13 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
           filter: none;
 }
 
-/* line 724 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 728 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 
-/* line 725 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 729 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 
-/* line 726 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 730 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 
-/* line 727 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 731 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .no_touch_device.is_owner .profile_theme .profile_content .session.to_publish .public_screen {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7625,28 +7840,28 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   display: flex;
 }
 
-/* line 729 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 733 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 
-/* line 730 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 734 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .no_touch_device.is_owner .profile_theme .profile_content .session .public_screen {
   display: none;
 }
 
-/* line 733 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 737 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 
-/* line 734 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 738 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .no_touch_device.is_owner .cover:hover .change_cover {
   display: block;
 }
 
-/* line 737 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 741 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .no_touch_device.is_owner .cover:hover .profile_image .edit_image {
   -webkit-transform: translateY(0);
   -ms-transform: translateY(0);
   transform: translateY(0);
 }
 
-/* line 740 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
+/* line 744 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/profile.styl */
 .no_touch_device.is_owner .cover:hover .editable_text .icon {
   display: block;
 }
@@ -7744,11 +7959,16 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/rupture/rupture/index.styl */
 
-/* line 53 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/rupture/rupture/index.styl */
+/* line 56 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/rupture/rupture/index.styl */
 
 /* line 3 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_bootstrap.styl */
 
-/* line 42 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_bootstrap.styl */
+/* line 41 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_bootstrap.styl */
+.bold {
+  font-weight: 600;
+}
+
+/* line 45 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_bootstrap.styl */
 .yellow {
   color: #fdbb30;
 }
@@ -8697,7 +8917,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 13 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 287 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+/* line 298 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
 /* line 10 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
@@ -8717,7 +8937,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 90 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 287 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+/* line 298 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
 /* line 11 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
@@ -8745,7 +8965,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 5 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
 
-/* line 287 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+/* line 298 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
 /* line 12 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
@@ -8783,11 +9003,16 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 1 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/rupture/rupture/index.styl */
 
-/* line 53 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/rupture/rupture/index.styl */
+/* line 56 : /Volumes/backpack/git/loopcast/killer/node_modules/polvo/node_modules/polvo-stylus/node_modules/rupture/rupture/index.styl */
 
 /* line 3 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_bootstrap.styl */
 
-/* line 42 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_bootstrap.styl */
+/* line 41 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_bootstrap.styl */
+.bold {
+  font-weight: 600;
+}
+
+/* line 45 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/_shared/_bootstrap.styl */
 .yellow {
   color: #fdbb30;
 }
@@ -8844,30 +9069,35 @@ body.tape_view .tape_view {
   color: #424242;
 }
 
-/* line 36 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 35 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+body.tape_view .chat_list_messages {
+  padding-bottom: 20px;
+}
+
+/* line 37 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 ._overflow {
   overflow: hidden;
 }
 
-/* line 38 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 39 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 ._overflow > * {
   float: left;
 }
 
-/* line 40 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 41 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .transp_box,
 ._white_box {
   padding: 20px;
   font-weight: normal;
 }
 
-/* line 45 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 46 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .transp_box {
   color: #fff;
   background: rgba(0,0,0,0.6);
 }
 
-/* line 50 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 51 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 ._white_box {
   background: #fff;
   color: #251a14;
@@ -8876,18 +9106,18 @@ body.tape_view .tape_view {
   transition: background 0.2s linear;
 }
 
-/* line 57 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 58 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .tag {
   margin-right: 5px;
   margin-bottom: 2px;
 }
 
-/* line 67 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 68 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .tape_author {
   margin-right: 10px;
 }
 
-/* line 69 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 70 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .tape_play {
   margin-right: 40px;
   display: block;
@@ -8903,25 +9133,25 @@ body.tape_view .tape_view {
   font-size: 50px;
 }
 
-/* line 82 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 83 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .tape_play.ss-pause {
   font-size: 44px;
   padding-left: 25px;
   padding-top: 21px;
 }
 
-/* line 86 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 87 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .tape_play img {
   display: block;
   width: 100%;
 }
 
-/* line 90 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 91 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .tape_view {
   text-align: left;
 }
 
-/* line 92 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 93 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .tape_view .tape_header {
   position: relative;
   background-size: cover;
@@ -8931,13 +9161,13 @@ body.tape_view .tape_view {
   padding: 40px;
 }
 
-/* line 101 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 102 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .tape_view .tape_header .first_line {
   position: relative;
   z-index: 1;
 }
 
-/* line 105 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 106 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .tape_view .tape_header .waveform_wrapper {
   position: absolute;
   bottom: 50px;
@@ -8948,7 +9178,7 @@ body.tape_view .tape_view {
   cursor: pointer;
 }
 
-/* line 111 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 112 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .tape_view .tape_header .waveform_wrapper .inner {
   background-size: cover;
   background-image: url("/images/waveform_dark.png");
@@ -8956,7 +9186,7 @@ body.tape_view .tape_view {
   position: relative;
 }
 
-/* line 116 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 117 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .tape_view .tape_header .waveform_wrapper .inner .progress {
   position: absolute;
   top: 0;
@@ -8967,29 +9197,36 @@ body.tape_view .tape_view {
   width: 0%;
 }
 
-/* line 124 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 125 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .tape_view .tape_title {
   font-size: 2.7em;
   margin-bottom: 4px;
 }
 
-/* line 127 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 128 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .tape_view .tape_author_wrapper {
   font-size: 1.3em;
 }
 
-/* line 133 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 131 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+.tape_view .tag_round {
+  border-radius: 12px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+/* line 137 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .tape_view .side_column {
   padding: 17px 24px;
 }
 
-/* line 136 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 140 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .tape_view .padded {
   padding-left: 40px;
   padding-right: 40px;
 }
 
-/* line 142 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 146 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .tape_view .main_column {
   border-right: 1px solid #d6d2d2;
   -o-box-flex: 1;
@@ -8999,7 +9236,7 @@ body.tape_view .tape_view {
   flex: 1;
 }
 
-/* line 145 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 149 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .tape_view .side_column {
   -o-box-flex: 1;
   box-flex: 1;
@@ -9008,9 +9245,9 @@ body.tape_view .tape_view {
   flex: 0 0 360px;
 }
 
-/* line 149 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 153 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 
-/* line 150 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 154 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .tape_view .main_column .first_line {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -9020,7 +9257,7 @@ body.tape_view .tape_view {
   margin-bottom: 20px;
 }
 
-/* line 154 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 158 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .tape_view .main_column .first_line .tags {
   -o-box-flex: 1;
   box-flex: 1;
@@ -9029,14 +9266,14 @@ body.tape_view .tape_view {
   flex: 1;
 }
 
-/* line 156 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 160 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .tape_view .main_column .first_line .buttons {
   width: 450px;
   font-size: 12px;
   text-align: right;
 }
 
-/* line 161 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 165 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .tape_view .main_column .first_line .buttons > * {
   display: inline-block;
   vertical-align: top;
@@ -9044,14 +9281,14 @@ body.tape_view .tape_view {
   font-size: 1rem;
 }
 
-/* line 167 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 171 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .tape_view .main_column .first_line .buttons > *.share_icon {
   font-size: 1.3rem;
   position: relative;
   top: -2px;
 }
 
-/* line 172 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 176 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .tape_view .main_column .first_line .buttons .label {
   vertical-align: top;
   margin-left: 10px;
@@ -9059,21 +9296,21 @@ body.tape_view .tape_view {
   font-size: 0.8rem;
 }
 
-/* line 178 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 182 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 
-/* line 179 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 183 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .like_counter .icon {
   cursor: pointer;
 }
 
-/* line 181 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 185 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 
-/* line 182 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 186 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .like_counter.liked .icon {
   color: #f23131;
 }
 
-/* line 185 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 189 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .tape_brown_button {
   color: #fff;
   text-align: center;
@@ -9084,7 +9321,7 @@ body.tape_view .tape_view {
   padding: 4px 10px;
 }
 
-/* line 193 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 197 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .chat_user_thumb {
   width: 50px;
   height: 50px;
@@ -9092,13 +9329,22 @@ body.tape_view .tape_view {
   overflow: hidden;
 }
 
-/* line 198 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 202 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+.chat_user_thumb.like {
+  overflow: visible;
+  font-size: 27px;
+  color: #f23131;
+  text-align: center;
+  padding-top: 7px;
+}
+
+/* line 209 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .chat_user_thumb img {
   display: block;
   width: 100%;
 }
 
-/* line 202 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 213 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .tape_view .chat_line {
   position: relative;
   padding-left: 100px;
@@ -9107,19 +9353,19 @@ body.tape_view .tape_view {
   padding-bottom: 20px;
 }
 
-/* line 208 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 219 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .tape_view .chat_line .chat_user_thumb {
   position: absolute;
   top: 10px;
   left: 40px;
 }
 
-/* line 211 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 222 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .tape_view .chat_line .chat_user_text {
   position: relative;
 }
 
-/* line 214 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 225 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .tape_view .chat_line .chat_name {
   font-weight: normal;
   font-size: 0.9rem;
@@ -9127,26 +9373,26 @@ body.tape_view .tape_view {
   cursor: pointer;
 }
 
-/* line 219 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 230 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .tape_view .chat_line .chat_name span {
   margin-bottom: 8px;
   font-size: 0.7rem;
   color: #929292;
 }
 
-/* line 224 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 235 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .tape_view .chat_line .chat_name:hover {
   color: #4592d4;
 }
 
-/* line 227 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 238 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .tape_view .post_comment_wrapper {
   background: #ededed;
   padding-right: 160px;
   padding-bottom: 10px;
 }
 
-/* line 231 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 242 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .tape_view .post_comment_wrapper textarea {
   background: transparent;
   margin: 0;
@@ -9155,26 +9401,26 @@ body.tape_view .tape_view {
   height: 54px;
 }
 
-/* line 241 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 252 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 
-/* line 242 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 253 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .side_column .number {
   color: #4592d4;
 }
 
-/* line 244 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 255 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .side_column .list_users {
   margin: 0 auto;
   width: 310px;
 }
 
-/* line 245 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 256 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .side_column .list_users h3 {
   margin-left: 6px;
   margin-bottom: 20px;
 }
 
-/* line 250 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 261 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .side_column .list_users a {
   display: inline-block;
   margin-right: 6px;
@@ -9182,16 +9428,16 @@ body.tape_view .tape_view {
   margin-bottom: 5px;
 }
 
-/* line 256 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 267 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 @media (max-width: 1100px) {
 
-/* line 257 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 268 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
   .tape_view .main_column .first_line {
     display: block;
     text-align: left;
   }
 
-/* line 260 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 271 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
   .tape_view .main_column .first_line .tags,
   .tape_view .main_column .first_line .buttons {
     -o-box-flex: 1;
@@ -9204,38 +9450,38 @@ body.tape_view .tape_view {
     margin-bottom: 10px;
   }
 
-/* line 265 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 276 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
   .tape_view .main_column .first_line .buttons > * {
     margin-left: 0;
     margin-right: 22px;
   }
 }
 
-/* line 268 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 279 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .tape_view .main_column .first_line .buttons .edit_icon {
   display: none;
 }
 
-/* line 271 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 282 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .is_owner.tape_view .main_column .first_line .buttons .edit_icon {
   display: inline-block;
 }
 
-/* line 275 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 286 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 
-/* line 277 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 288 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .no_touch_device .tape_view .main_column .first_line .buttons > a:hover {
   opacity: 0.8;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
   filter: alpha(opacity=80);
 }
 
-/* line 283 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 294 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .no_touch_device ._white_box:hover {
   background: rgba(255,255,255,0.6);
 }
 
-/* line 286 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
+/* line 297 : /Volumes/backpack/git/loopcast/killer/src/frontend/styles/pages/tape.styl */
 .no_touch_device .tape_play:hover {
   opacity: 0.8;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";

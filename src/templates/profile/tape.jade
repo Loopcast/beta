@@ -21,7 +21,7 @@ block content
     .tape_header
       .cover_image.for_desktop(style="background-image:url(#{transform.cover(tape.cover_url)})")
       .cover_image.for_mobile(style="background-image:url(#{transform.cover_mobile(tape.cover_url)})")
-      .first_line._overflow(data-view="components/audio/player_preview", data-room-id="#{tape._id}" data-is-live="")
+      .first_line._overflow(data-view="components/audio/player_preview", data-room-id="#{tape._id}", data-is-live="", data-audio-url="#{tape.s3.location}")
         hidden( class="source_src" value="#{tape.s3.location}")
         a(href="#", class="tape_play icon ss-play", title="play record") &nbsp;
 
@@ -45,7 +45,7 @@ block content
         .first_line.padded
           .tags.for_desktop
             for item in tape.genres
-              a.tag(href="/explore?genres=#{item}") #{item}
+              a.tag.tag_round(href="/explore?genres=#{item}") #{item}
 
           .buttons
 
@@ -79,7 +79,7 @@ block content
               span.icon.ss-action
               //-img(src="/images/tape-share.png")
 
-            a.custom-fb-send(href="#" onClick="mixpanel.track('Share-room');", data-text="Send your room link to friends", data-view="components/sharing/facebook_send")
+            a.custom-fb-send.for_desktop(href="#" onClick="mixpanel.track('Share-room');", data-text="Send your room link to friends", data-view="components/sharing/facebook_send")
               img(src="/images/fb_send.png")
 
           .tags.for_mobile
@@ -114,8 +114,7 @@ block content
 
           if favourited_by.length == 0
             h3 
-              | NO FAVOURITED
-
+              | NOT FAVOURITED
 
     .chat_user_popup(data-view="chat/people_popup")
       ._outer

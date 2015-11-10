@@ -157,10 +157,10 @@ module.exports = class Player
     else
       @_play room_id
 
-      if src?
-        @audio.set_src src
+    if src?
+      @audio.set_src src
 
-      @audio.play()
+    @audio.play()
 
     # if src?
     #   log "[Player] src is set", src
@@ -316,7 +316,8 @@ module.exports = class Player
 
   on_audio_ended: =>
     log "[Player] on_audio_ended"
-
+    
+    app.emit 'audio:ended', @data.data._id    
     @on_audio_stopped()
     
     # Snap back the progress bar

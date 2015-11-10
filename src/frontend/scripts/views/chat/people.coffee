@@ -2,6 +2,7 @@ L = require '../../api/loopcast/loopcast'
 transform = require 'lib/cloudinary/transform'
 ChatView = require 'app/views/room/chat_view'
 user = require 'app/controllers/user'
+get_coords  = require 'app/utils/io/get_coords' 
 
 module.exports = class People extends ChatView
   listeners_map: []
@@ -29,7 +30,8 @@ module.exports = class People extends ChatView
     el = $ e.target
     listener_id = el.data 'id'
     if @listeners_map[ listener_id ]?
-      @popup.show @listeners_map[ listener_id ], $(e.target)
+      coords = get_coords e
+      @popup.show @listeners_map[ listener_id ].id, coords
 
   on_mouse_out: ( e ) =>
     @popup.hide()

@@ -62,15 +62,16 @@ module.exports = class Dashboard extends RoomView
     #   log "[Dashboard] input changed", data
     #   appcast.set 'input_device', data
     #   appcast.select_device data
-
+    @on_appcast_connected()
     @appcast_not_running_message.on 'click', @toggle_not_running_balloon
     appcast.on 'connected', @on_appcast_connected
     app.on 'appcast:input_device', @on_device_changed
 
-
-    # @add_facebook_send_button location.href
     @manage_download_button()
-    # @add_facebook_send_button 'http://google.com'
+
+
+    
+    
 
 
   ###
@@ -123,8 +124,9 @@ module.exports = class Dashboard extends RoomView
       @publish_modal.open_with_id @record_button.tape_id
 
 
-  on_appcast_connected: ( is_connected ) =>
+  on_appcast_connected: ( is_connected = false ) =>
 
+    log "[Dashboard] on_appcast_connected", is_connected
     @appcast_is_running = is_connected
 
     clearTimeout @timeout

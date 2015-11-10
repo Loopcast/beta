@@ -13,29 +13,48 @@ html
     link( href='../css/webfonts/ss-standard.css', rel='stylesheet', type='text/css' )
     link( href='../css/app.css', rel='stylesheet', type='text/css' )
 
-    style.
-      #content {
-        color: red
-      }
-
 
   body
 
-    #content
-      h1 
-        | hello first time!
+    #confirm-username
+      img( src=user.avatar title=user.name class="avatar")
+      p.thanks 
+       |#[span.bold Thanks #{user.name}!]
+       |#[br]Just the final touch now...
 
-      h2
-        | username: #{user.username}
-      pre
-        | username: #{user.username}
+      .input-group.clearfix
+        span.input.group-addon.left
+          | http://loopcast.fm/
+        input(type="text" class="username right" value=user.username)
 
-        | avatar  : #{user.avatar}
+      .error-box
+        p Sorry, username taken. Please try another one.
 
-        //- //- just the first name
-        //- | name  : #{user.name.split(" ")[0]}
+      button#complete.button.yellow_button.no_shadow.black_hover
+        | Complete
 
-        !{JSON.stringify(user)}
+
 
     script( src="https://code.jquery.com/jquery-2.1.1.min.js" )
     script( src="/js/app.js" )
+
+    script.
+      $(function(){
+
+        $('#complete').click(function(){
+          var username = $('.username').val();
+          console.log(username);
+          api.loopcast.user.is_available(username, function(a, response){
+
+            if (response.available) {
+              console.log('yeap, avialable, change it here');
+            } else {
+              // taken, show error
+              $('.error-box').addClass('error');
+
+            }
+            
+          })
+        });
+
+      });
