@@ -48,8 +48,6 @@ module.exports = ( username, show_private, callback ) ->
 
           if error then return callback error
 
-          console.log "got rooms ->", rooms
-
           data.rooms = rooms
 
           tapes = 
