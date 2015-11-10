@@ -114,9 +114,10 @@ block content
               | FAVOURITED BY  
               span.number #{favourited_by.length}
 
-            for like in favourited_by
-              a.chat_user_thumb(href="/#{like.user_id.info.username}")
-                img(src="#{like.user_id.info.avatar}")
+            .list_likes
+              for like in favourited_by
+                a.chat_user_thumb(href="/#{like.user_id.info.username}", data-username="#{like.user_id.info.username}")
+                  img(src="#{like.user_id.info.avatar}")
   
           .no_favourites
             p Click the heart and be the first to favourite this mix

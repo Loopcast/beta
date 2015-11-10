@@ -4,11 +4,13 @@ happens       = require 'happens'
 LoggedView    = require 'app/views/logged_view'
 tags_list     = require 'templates/components/tags_list'
 transform     = require 'lib/cloudinary/transform'
+L             = require 'app/api/loopcast/loopcast'
 
 module.exports = class TapeView extends LoggedView
 
   tape_id: null
   elements: {}
+  counter_likes: 0
   constructor: ( @dom ) ->
     happens @
 
@@ -26,6 +28,10 @@ module.exports = class TapeView extends LoggedView
 
     app.body.addClass 'tape_view'
     view.on 'binded', @on_views_binded
+
+    L.tapes.get @tape_id, (error, response) =>
+      @counter_likes = response.tape.likes
+      log "[TapeView] getting tape info", @counter_likes
   
   on_update: ( data ) =>
     log "[TapeView] on_update", data
@@ -53,7 +59,13 @@ module.exports = class TapeView extends LoggedView
     if data.type is 'message'
       @emit 'message', data
     else if data.type is 'like'
+      @counter_likes++
+      data.counter_likes = @counter_likes
       @emit 'like', data
+    else if data.type is 'unlike'
+      @counter_likes--
+      data.counter_likes = @counter_likes
+      @emit 'unlike', data
     else if data.type is 'update'
       @emit 'update', data
       @on_update data

@@ -26,34 +26,40 @@ module.exports = class LikeButton extends LoggedView
 
     @tape_view = view.get_by_dom 'div.tape_view'
     @tape_view.on 'like', @on_like
+    @tape_view.on 'unlike', @on_unlike
 
   on_like: ( data ) =>
     log "[LikeButton] on_like", data
-    @counter.html ++@num_likes
+    @counter.html data.counter_likes
+
+  on_unlike: ( data ) =>
+    @counter.html data.counter_likes
 
   like: ->
     return if @liked
 
     @liked  = true
-    @dom.addClass 'liked'
-    
-    if not @already_liked
-      @already_liked = true
-      send_message @tape_id, "Liked this session", like: @liked
-      L.tapes.like @tape_id, (error, response) =>
-        log "[LikeButton] like response", error, response
+    @dom.addClass 'liked'  
+  
+    send_message @tape_id, "Liked this session", like: @liked
+    L.tapes.like @tape_id, (error, response) =>
+      log "[LikeButton] like response", error, response
 
 
   unlike: ->
     return if not @liked
 
-    @liked  = false
-    @dom.removeClass 'liked'
+    @_unlike()
     @num_likes = Math.max(0, @num_likes - 1)
     @counter.html @num_likes
 
     L.tapes.dislike @tape_id, (error, response) =>
       log "[LikeButton] like response", error, response
+
+  _unlike: ->
+    @liked  = false
+    @dom.removeClass 'liked'
+
 
   toggle_like: (e) =>
 
@@ -95,3 +101,8 @@ module.exports = class LikeButton extends LoggedView
 
     @liked  = false
     @dom.removeClass 'liked'
+
+  destroy: ->
+    super()
+    @tape_view?.off 'like', @on_like
+    @tape_view?.off 'unlike', @on_unlike
