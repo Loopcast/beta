@@ -49,8 +49,6 @@ module.exports = class Room extends LoggedView
     @title_input = view.get_by_dom @dom.find( 'h1.name' )
     @desc_input = view.get_by_dom @dom.find( '#description_room' )
 
-    log "------>", @title_input, @desc_input
-
     @sidebar_right = view.get_by_dom '.sidebar_right'
 
     if @is_create_page()
@@ -143,10 +141,8 @@ module.exports = class Room extends LoggedView
       return @people_list.remove  data if data.type is "listener:removed"
       return @on_status_changed   data if data.type is "status"
 
-      if data.is_live? and data.is_live is false
-        log "[Room DEBUG] live stop. user check guest owner", user_controller.check_guest_owner()
-        if not user_controller.check_guest_owner()
-          @_on_live_stop()
+      # temp
+      return @on_live_changed     data if (not data.type?) and data.is_live?
 
       
         # unless user_controller.is_me data.user.id
@@ -191,6 +187,14 @@ module.exports = class Room extends LoggedView
 
     @check_status()
 
+  on_live_changed: ( data ) =>
+    log "[Room live] on_live_changed", data
+
+    if data.is_live? and data.is_live is false
+      log "[Room DEBUG] live stop. user check guest owner", user_controller.check_guest_owner()
+      if not user_controller.check_guest_owner()
+        @_on_live_stop()
+
   on_status_changed: ( data ) =>
     if data.is_live?
       if data.is_live is true
@@ -228,6 +232,7 @@ module.exports = class Room extends LoggedView
 
   get_people : =>
     L.chat.people @room_id, (error, response) =>
+      log "[People response]", error, response
       user_by_socket = ( socket_id ) ->
         for user in response.users
           if user.socket_id is socket_id
