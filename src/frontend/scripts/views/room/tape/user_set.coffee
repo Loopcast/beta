@@ -28,7 +28,7 @@ module.exports = class UserSet
     @elements.title.html data.data.title
     @elements.genres.html tags_list( tags: data.data.genres )
     @elements.location.html data.data.location
-    @elements.cover.css 'background-image', 'url('+transform.cover( data.data.cover_url ) + ')'
+    @elements.cover.css 'background-image', 'url('+transform.cover_thumb( data.data.cover_url ) + ')'
 
   # destroy: ->
   #   app.rooms.off 'update', @on_room_udpate
