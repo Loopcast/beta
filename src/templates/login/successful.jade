@@ -6,7 +6,8 @@ script
 if user.first_time
   script
     | window.opener._gaq.push(['_trackEvent', 'Customer Registration', 'Successful', '']);
-    | window.close()
+    //- don't close the window!!!
+    //- | window.close()
 
   include confirm_username.jade
 
