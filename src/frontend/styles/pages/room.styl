@@ -103,6 +103,40 @@
     .big_number
       .inner
         opacity: 0
+        
+.collapsable_wrapper
+  height: 64px
+  padding: 16px SIDE_PADDING
+  position: relative
+  overflow: hidden
+  .read_more
+    display: none
+    absolute bottom 0px left 0
+    width: 100% !important
+    height: 30px
+    padding-top: 10px
+    text-align: center
+    background: url("../images/gradient_description.png")
+    z-index: 1
+    font-size: 10px
+    color: BLACK
+    cursor: pointer
+    .less
+      display: none
+      
+  &.expanded
+    .less
+      display: block
+    .more
+      display: none
+      
+  &.edit_mode
+    .read_more
+      display: none !important
+      
+  &.read_more_visible
+    .read_more
+      display: block
 
 .dashboard_bar
   color: white
@@ -263,41 +297,11 @@
         width: 100%
       
     .chat_header
-      height: 64px
-      padding: 16px SIDE_PADDING
       padding-right: 60px
       
       #description_room
         float: left
         position: relative
-      .read_more
-        display: none
-        absolute bottom 0px left 0
-        width: 100% !important
-        height: 30px
-        padding-top: 10px
-        text-align: center
-        background: url("../images/gradient_description.png")
-        z-index: 1
-        font-size: 10px
-        color: BLACK
-        cursor: pointer
-        .less
-          display: none
-          
-      &.expanded
-        .less
-          display: block
-        .more
-          display: none
-          
-      &.edit_mode
-        .read_more
-          display: none !important
-          
-      .read_more_visible
-        .read_more
-          display: block
         
       .ss-tag
         cursor: pointer

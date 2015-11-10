@@ -10,9 +10,9 @@
       - genres = room.info.genres
       - genres_class = ""
 
-    .chat_header
+    .chat_header.collapsable_wrapper(data-view="chat/collapsable_content")
       .inner
-        p#description_room(data-view="[chat/description]", data-freestyle="true")
+        p#description_room.editable_description.collapsable_content(data-view="[chat/description]", data-freestyle="true")
           span.text !{str}
         p.read_more 
           span.more Read More

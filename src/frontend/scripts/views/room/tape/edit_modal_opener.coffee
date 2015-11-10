@@ -26,6 +26,7 @@ module.exports = class EditModalOpener
     app.rooms.info @id, false, (data) =>
       log "[EditModalOpener] info", data, data.data.tape.genres, data.data.tape.genres.length
 
+      data.data.tape.cover_url ?= "/images/default_room_cover.jpg"
       @edit_modal.open_with_data 
         is_live: false
         title: data.data.tape.title

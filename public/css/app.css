@@ -7967,7 +7967,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 13 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 579 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+/* line 583 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
 /* line 10 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
@@ -7987,7 +7987,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 90 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 579 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+/* line 583 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
 /* line 11 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
@@ -8015,7 +8015,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 5 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
 
-/* line 579 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+/* line 583 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
 /* line 12 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
@@ -8249,6 +8249,62 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 }
 
 /* line 107 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+.collapsable_wrapper {
+  height: 64px;
+  padding: 16px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* line 112 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+.collapsable_wrapper .read_more {
+  display: none;
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100% !important;
+  height: 30px;
+  padding-top: 10px;
+  text-align: center;
+  background: url("../images/gradient_description.png");
+  z-index: 1;
+  font-size: 10px;
+  color: #1f1f1f;
+  cursor: pointer;
+}
+
+/* line 124 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+.collapsable_wrapper .read_more .less {
+  display: none;
+}
+
+/* line 127 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+
+/* line 128 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+.collapsable_wrapper.expanded .less {
+  display: block;
+}
+
+/* line 130 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+.collapsable_wrapper.expanded .more {
+  display: none;
+}
+
+/* line 133 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+
+/* line 134 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+.collapsable_wrapper.edit_mode .read_more {
+  display: none !important;
+}
+
+/* line 137 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+
+/* line 138 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+.collapsable_wrapper.read_more_visible .read_more {
+  display: block;
+}
+
+/* line 141 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .dashboard_bar {
   color: #fff;
   height: 2px;
@@ -8259,7 +8315,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   padding: 0px;
 }
 
-/* line 117 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 151 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .dashboard_bar #share_dashboard {
   position: absolute;
   left: 100%;
@@ -8267,7 +8323,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   margin-left: 23px;
 }
 
-/* line 123 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 157 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .dashboard_bar .fb-send,
 .dashboard_bar .custom-fb-send {
   position: absolute;
@@ -8276,32 +8332,32 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   margin-left: 23px;
 }
 
-/* line 131 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 165 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 
-/* line 132 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 166 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .dashboard_bar.appcast_running .appcast_not_running_message {
   display: none;
 }
 
-/* line 135 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 169 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 
-/* line 136 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 170 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .dashboard_bar.appcast_not_running .appcast_not_running_message {
   display: block;
   text-align: center;
 }
 
-/* line 140 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 174 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .dashboard_bar.appcast_not_running .appcast_running_message {
   display: none;
 }
 
-/* line 143 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 177 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .dashboard_bar .live_button_wrapper {
   position: relative;
 }
 
-/* line 147 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 181 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .dashboard_bar .inner {
   position: relative;
   max-width: 700px;
@@ -8311,7 +8367,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   display: none;
 }
 
-/* line 156 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 190 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .dashboard_bar .inner .row {
   display: -webkit-box;
   display: -webkit-flex;
@@ -8321,7 +8377,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   margin-bottom: 10px;
 }
 
-/* line 159 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 193 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .dashboard_bar .inner .row .cell {
   -webkit-box-flex: 1;
   -o-box-flex: 1;
@@ -8333,77 +8389,77 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   height: 32px;
 }
 
-/* line 164 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 198 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .dashboard_bar #go_live_button,
 .dashboard_bar #record_button {
   display: block;
 }
 
-/* line 168 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 202 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .dashboard_bar .half {
   padding: 0 1.5%;
 }
 
-/* line 171 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 205 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .dashboard_bar .half._left {
   text-align: right;
 }
 
-/* line 174 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 208 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .dashboard_bar .half._left .appcast_not_running_message {
   margin-bottom: 4px;
 }
 
-/* line 176 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 210 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .dashboard_bar .half._left .appcast_running_message {
   margin-bottom: 10px;
 }
 
-/* line 179 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 213 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .dashboard_bar .half._left .meter_wrapper {
   margin-bottom: 3px;
 }
 
-/* line 182 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 216 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .dashboard_bar .half._left > * {
   float: right;
 }
 
-/* line 185 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 219 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .dashboard_bar .half._right {
   text-align: left;
 }
 
-/* line 187 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 221 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .dashboard_bar .half > * {
   margin-bottom: 12px;
   display: block;
 }
 
-/* line 191 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 225 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .dashboard_bar .half br {
   margin-bottom: 0;
 }
 
-/* line 194 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 228 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .dashboard_bar .half .meter_wrapper {
   margin-bottom: 0;
 }
 
-/* line 196 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 230 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .dashboard_bar .left_part,
 .dashboard_bar .right_part {
   width: 50%;
 }
 
-/* line 200 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 234 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 
-/* line 201 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 235 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .dashboard_bar .select_wrapper .button {
   overflow: visible;
 }
 
-/* line 206 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 240 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat {
   min-height: 440px;
   display: -webkit-box;
@@ -8422,7 +8478,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   line-height: 1.2em;
 }
 
-/* line 215 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 249 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_sidebar {
   width: 300px;
   border-left: 1px solid #d5d5d5;
@@ -8440,7 +8496,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   flex-direction: column;
 }
 
-/* line 223 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 257 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_sidebar .inner {
   -webkit-box-flex: 1;
   -o-box-flex: 1;
@@ -8450,31 +8506,31 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   flex: 1;
 }
 
-/* line 225 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 259 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_sidebar h3 {
   text-transform: uppercase;
   color: #000;
   font-weight: 600;
 }
 
-/* line 229 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 263 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_sidebar h3 span {
   color: #4592d4;
 }
 
-/* line 232 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 266 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_sidebar h3,
 .profile_content.chat .chat_sidebar .social {
   padding-left: 5px;
 }
 
-/* line 236 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 270 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_sidebar .users {
   text-align: left;
   margin-top: 20px;
 }
 
-/* line 240 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 274 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_sidebar .img_wrapper {
   display: inline-block;
   overflow: hidden;
@@ -8482,19 +8538,19 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   margin: 4px;
 }
 
-/* line 245 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 279 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_sidebar .img_wrapper img {
   display: block;
 }
 
-/* line 248 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 282 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_sidebar .spritesheet {
   display: inline-block;
   margin-right: 8px;
   text-indent: -9999px;
 }
 
-/* line 253 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 287 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main {
   border-left: 1px solid #d5d5d5;
   -webkit-box-flex: 1;
@@ -8515,81 +8571,31 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   display: flex;
 }
 
-/* line 258 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 292 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header,
 .profile_content.chat .chat_main .chat_footer {
   position: relative;
   overflow: hidden;
 }
 
-/* line 262 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 296 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header p,
 .profile_content.chat .chat_main .chat_footer p {
   width: 100%;
 }
 
-/* line 265 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 299 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header {
-  height: 64px;
-  padding: 16px 20px;
   padding-right: 60px;
 }
 
-/* line 270 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 302 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header #description_room {
   float: left;
   position: relative;
 }
 
-/* line 273 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
-.profile_content.chat .chat_main .chat_header .read_more {
-  display: none;
-  position: absolute;
-  bottom: 0px;
-  left: 0;
-  width: 100% !important;
-  height: 30px;
-  padding-top: 10px;
-  text-align: center;
-  background: url("../images/gradient_description.png");
-  z-index: 1;
-  font-size: 10px;
-  color: #1f1f1f;
-  cursor: pointer;
-}
-
-/* line 285 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
-.profile_content.chat .chat_main .chat_header .read_more .less {
-  display: none;
-}
-
-/* line 288 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
-
-/* line 289 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
-.profile_content.chat .chat_main .chat_header.expanded .less {
-  display: block;
-}
-
-/* line 291 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
-.profile_content.chat .chat_main .chat_header.expanded .more {
-  display: none;
-}
-
-/* line 294 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
-
-/* line 295 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
-.profile_content.chat .chat_main .chat_header.edit_mode .read_more {
-  display: none !important;
-}
-
-/* line 298 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
-
-/* line 299 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
-.profile_content.chat .chat_main .chat_header .read_more_visible .read_more {
-  display: block;
-}
-
-/* line 302 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 306 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header .ss-tag {
   cursor: pointer;
   float: right;
@@ -8599,51 +8605,51 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   top: 5px;
 }
 
-/* line 310 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 314 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header .tags {
   position: absolute;
   top: 20px;
   right: 20px;
 }
 
-/* line 312 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 316 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header .tags .list {
   display: none;
   float: right;
   margin-right: 20px;
 }
 
-/* line 316 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 320 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header .tags.no_tags {
   display: none;
 }
 
-/* line 320 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 324 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 
-/* line 321 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 325 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header .tags_visible .tags .list {
   display: block;
 }
 
-/* line 324 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 328 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header .tags_visible .read_more {
   display: none !important;
 }
 
-/* line 326 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 330 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header .tags_visible #description_room {
   display: none;
 }
 
-/* line 329 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 333 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 
-/* line 332 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 336 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header .editable_text .icon {
   top: 11px;
   right: -20px;
 }
 
-/* line 335 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 339 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header .editable_text input {
   font-size: 12px;
   width: 100%;
@@ -8651,23 +8657,23 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   left: -5px;
 }
 
-/* line 341 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 345 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header .editable_text.edit_mode {
   display: block;
 }
 
-/* line 343 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 347 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header .editable_text.edit_mode .icon {
   display: none;
 }
 
-/* line 346 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 350 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header .inner {
   width: 100%;
   text-align: left;
 }
 
-/* line 353 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 357 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_content {
   -webkit-box-flex: 1;
   -o-box-flex: 1;
@@ -8682,7 +8688,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   overflow-y: scroll;
 }
 
-/* line 363 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 367 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_content.no_chat_yet {
   padding: 0;
   display: -webkit-box;
@@ -8702,12 +8708,12 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   justify-content: center;
 }
 
-/* line 368 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 372 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_content.no_chat_yet .no-message {
   display: block;
 }
 
-/* line 371 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 375 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .no-message {
   display: none;
   font-size: 2em;
@@ -8717,29 +8723,29 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   padding: 0 30px;
 }
 
-/* line 380 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 384 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .message {
   position: relative;
   margin-bottom: 30px;
   overflow: hidden;
 }
 
-/* line 385 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 389 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .message .content a {
   color: #4592d4;
   text-decoration: underline;
 }
 
-/* line 389 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 393 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 
-/* line 390 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 394 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .message.show .inner {
   -webkit-transform: translate3d(0, 0px, 0);
   -ms-transform: translate3d(0, 0px, 0);
   transform: translate3d(0, 0px, 0);
 }
 
-/* line 392 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 396 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .message .inner {
   padding-left: 58px;
   padding-right: 58px;
@@ -8750,14 +8756,14 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   transition: transform 0.2s ease-out;
 }
 
-/* line 399 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 403 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .message .headphone {
   position: absolute;
   top: 0;
   right: 20px;
 }
 
-/* line 402 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 406 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .message .name {
   color: #465059;
   font-weight: 600;
@@ -8766,17 +8772,17 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   margin-bottom: 4px;
 }
 
-/* line 407 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 411 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .message .name span {
   color: #b8bdc1;
 }
 
-/* line 410 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 414 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .message .name span.dash {
   margin-left: 4px;
 }
 
-/* line 413 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 417 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .message .img_wrapper_2 {
   position: absolute;
   top: 0;
@@ -8786,7 +8792,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   text-align: center;
 }
 
-/* line 420 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 424 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .message .img_wrapper_2 .icon {
   color: #f23131;
   font-size: 27px;
@@ -8794,19 +8800,19 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   line-height: 40px;
 }
 
-/* line 432 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 436 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_footer {
   padding: 6px 60px 0;
 }
 
-/* line 435 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 439 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_footer .for_unlogged_users p {
   padding-top: 20px;
   padding-bottom: 20px;
   text-align: center;
 }
 
-/* line 442 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 446 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_footer .icon {
   position: absolute;
   top: 27px;
@@ -8816,12 +8822,12 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   display: block;
 }
 
-/* line 449 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 453 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_footer .icon.liked {
   color: #f23131;
 }
 
-/* line 452 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 456 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_footer textarea {
   position: relative;
   top: -7px;
@@ -8831,27 +8837,27 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   margin-bottom: 0;
 }
 
-/* line 461 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 465 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_footer textarea::-webkit-input-placeholder {
   color: #7b7878;
 }
 
-/* line 463 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 467 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_footer textarea:-moz-placeholder {
   color: #7b7878;
 }
 
-/* line 465 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 469 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_footer textarea::-moz-placeholder {
   color: #7b7878;
 }
 
-/* line 467 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 471 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_footer textarea:-ms-input-placeholder {
   color: #7b7878;
 }
 
-/* line 472 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 476 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .img_wrapper_2 {
   display: inline-block;
   border-radius: 4px;
@@ -8861,29 +8867,29 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   top: 10px;
 }
 
-/* line 477 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 481 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .profile_content.chat .img_wrapper_2 img {
   display: block;
 }
 
-/* line 480 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 484 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .for_unlogged_users {
   display: none;
 }
 
-/* line 483 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 487 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 
-/* line 484 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 488 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .not_logged .for_logged_users {
   display: none;
 }
 
-/* line 486 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 490 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .not_logged .for_unlogged_users {
   display: block;
 }
 
-/* line 489 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 493 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .chat_user_popup {
   z-index: 1;
   position: absolute;
@@ -8901,7 +8907,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   color: #929292;
 }
 
-/* line 502 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 506 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .chat_user_popup ._outer {
   background: #fff;
   position: relative;
@@ -8910,13 +8916,13 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   box-shadow: 0 0 1px rgba(76,86,103,0.25), 0 2px 18px rgba(31,37,50,0.32);
 }
 
-/* line 509 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 513 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .chat_user_popup p {
   font-size: 11px;
   font-weight: 600;
 }
 
-/* line 513 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 517 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .chat_user_popup .img_wrapper {
   display: block;
   width: 84px;
@@ -8926,19 +8932,19 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   margin: 0 auto 10px;
 }
 
-/* line 521 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 525 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .chat_user_popup .name {
   color: #1f1f1f;
   margin-bottom: 5px;
   font-weight: 600;
 }
 
-/* line 526 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 530 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .chat_user_popup .name:hover {
   color: #000;
 }
 
-/* line 529 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 533 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .chat_user_popup .button {
   width: 120px;
   padding-top: 3px;
@@ -8946,7 +8952,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   margin: 10px auto 0;
 }
 
-/* line 535 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 539 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 #dashboard_help {
   color: #fdbb30;
   display: block;
@@ -8965,9 +8971,9 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   padding-left: 2px;
 }
 
-/* line 552 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 556 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 
-/* line 553 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 557 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .firefox .profile_content.chat .chat_main .chat_content {
   -webkit-box-flex: 1;
   -o-box-flex: 1;
@@ -8977,45 +8983,45 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   flex: auto;
 }
 
-/* line 555 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 559 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .firefox .profile_content.chat .chat_footer {
   padding-bottom: 5px;
 }
 
-/* line 558 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 562 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 
-/* line 559 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 563 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .no_touch_device .profile_content.chat .chat_sidebar .spritesheet:hover {
   opacity: 0.8;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
   filter: alpha(opacity=80);
 }
 
-/* line 562 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 566 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .no_touch_device .profile_content.chat .message .name:hover {
   color: #4592d4;
 }
 
-/* line 565 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 569 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .no_touch_device #dashboard_help:hover {
   background: #727272;
 }
 
-/* line 568 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 572 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 
-/* line 570 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 574 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .no_touch_device #help_balloon .dashboard_button:hover {
   background: #30363d;
 }
 
-/* line 573 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 577 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .no_touch_device #help_balloon .dashboard_yellow:hover {
   background: #f8a902;
 }
 
-/* line 576 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 580 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 
-/* line 578 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
+/* line 582 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/room.styl */
 .room_live .appcast_running_message select,
 .room_recording .appcast_running_message select {
   display: none;
@@ -9376,7 +9382,7 @@ body.tape_view .chat_list_messages {
   display: box;
   display: flex;
   padding-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 }
 
 /* line 158 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/tape.styl */
