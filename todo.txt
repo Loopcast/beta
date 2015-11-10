@@ -1,2 +1,1 @@
-- update long description section
-- stop calling loopcast.chat.listener and start using loopcast.chat.enter
+- the update response from room socket need to return the _id! so i can manage the code inside the controllers/rooms class

@@ -50,7 +50,7 @@ class RoomsController
   
 
   on_room_update: ( data ) =>
-    if data.type is 'update'
+    if data.type in ['update', 'room:update']
       if @infos[ data._id ]? and @infos[ data._id ].type isnt 'room'
         @infos[ data._id ].data.tape.about = data.data.about
         @infos[ data._id ].data.tape.cover_url = data.data.cover_url
@@ -60,6 +60,6 @@ class RoomsController
 
       @emit 'update', data
 
-    log "[Rooms Controller] on_room_update", data, data.data.genres, data.data.genres.length
+    log "[Rooms Controller] on_room_update", data
 
 module.exports = new RoomsController

@@ -66,6 +66,7 @@ module.exports = class EditModalOpener
   normalize_data_for_update: ( data ) ->
 
     data.genres = data.genres.split ','
+
     if @type is 'tape'
       output = data
     else
@@ -77,7 +78,8 @@ module.exports = class EditModalOpener
         genres    : data.genres
         is_public : true
 
-
+      if output.cover_url.length <= 0
+        output.cover_url = "/images/default_room_cover.jpg" 
 
     return output
 
