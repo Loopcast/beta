@@ -3,6 +3,19 @@
 The frontend code is made of coffescript, stylus and jade compiled using the node module polvo.
 Everything boots from src/frontend/scripts/app.coffee
 
+### Frontend Compile System
+
+simply run from the terminal:
+
+```bash
+
+make client
+
+```
+
+This will call polvo in watch mode.
+
+
 ### Frontend View Binding System
 
 The key feature of the view binding system is this:
@@ -24,3 +37,12 @@ the view controller will generate an instance of the js class located in src/fro
 
 Every view class should have a destroy method which will be called from the view controller whenever the view needs to be destroyed. This is useful for garbage collection purposes.
 
+
+### Api Interface
+
+you can interact with the backend api in any point of your coffeescript files by requiring the following singleton controller:
+
+```coffeescript
+  api  = require 'api/loopcast/loopcast'
+  api.rooms.update( '', ... )
+```
