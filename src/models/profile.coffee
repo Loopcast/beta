@@ -32,35 +32,46 @@ module.exports = ( username, show_private, callback ) ->
         rooms : []
         tapes : []
 
-      live     = 
+      rooms = 
         user             : user._id
         'status.is_live' : true
 
+      # if user is owner of the profile, see all rooms
+      if show_private
+        delete rooms['status.is_live']
 
       # change to parallel query
-      Room.find( live ).lean().exec ( error, rooms ) ->
-
-        if error then return callback error
-
-        data.rooms = rooms
-
-        tapes = 
-          # don't show deleted rooms
-          user   : user._id
-          deleted: false
-          public : true
-
-        # if show private, then show all rooms, including
-        # the not public ones
-        if show_private then delete tapes.public
-
-        Tape.find( tapes ).lean().exec ( error, tapes ) ->
+      Room
+        .find( rooms )
+        .sort( _id: - 1 )
+        .lean().exec ( error, rooms ) ->
 
           if error then return callback error
 
-          data.tapes = tapes
+          console.log "got rooms ->", rooms
 
-          callback null, data
+          data.rooms = rooms
+
+          tapes = 
+            # don't show deleted rooms
+            user   : user._id
+            deleted: false
+            public : true
+
+          # if show private, then show all rooms, including
+          # the not public ones
+          if show_private then delete tapes.public
+
+          Tape
+            .find( tapes )
+            .sort( _id: - 1 )
+            .lean().exec ( error, tapes ) ->
+
+              if error then return callback error
+
+              data.tapes = tapes
+
+              callback null, data
 
       # old code
       # recorded = 
