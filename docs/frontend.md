@@ -10,9 +10,14 @@ the controller https://github.com/Loopcast/beta/blob/staging/src/frontend/script
 
 So, for instance, if in the current page there is the following html:
 
+```html
+
+
   <div class="content">
     <div class="other" data-view="room/tape/edit_model_opener"></div>
   </div>
+
+```
 
 the view controller will generate an instance of the js class located in src/frontend/scripts/views/room/tape/edit_model_opener
 (hems knows a bit about this view binding system, you can also ask him for any quick doubts)
