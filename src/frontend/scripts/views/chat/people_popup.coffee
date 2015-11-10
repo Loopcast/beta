@@ -2,7 +2,7 @@ L             = require '../../api/loopcast/loopcast'
 transform     = require 'lib/cloudinary/transform'
 ChatView      = require 'app/views/room/chat_view'
 user          = require 'app/controllers/user'
-check_input   = require 'lib/tools/strings/check_input'
+# check_input   = require 'lib/tools/strings/check_input'
 
 module.exports = class PeoplePopup extends ChatView
   tmpl: null
@@ -46,7 +46,7 @@ module.exports = class PeoplePopup extends ChatView
         name: response.info.name
         username: response.info.username
         likes: response.likes
-        occupation: check_input( response.info.occupation )
+        occupation: response.info.occupation
         images: transform.all( response.info.avatar )
         url : '/' + response.info.username
     
