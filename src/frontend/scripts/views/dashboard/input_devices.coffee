@@ -49,12 +49,20 @@ module.exports = class InputDevices extends Select
       if d
         @_set_value d
 
+        console.log "CHANGED ->", d
+        console.log "CHANGED ->", d
+        console.log "CHANGED ->", d
+        console.log "CHANGED ->", d
+        console.log "CHANGED ->", d
+
+        appcast.set 'selected_d', d
+
+
   on_change: ( device ) =>
     # log "[device] changed", device, @current_device
     return if device is @current_device
     # log "[device] emitting event", device
-    app.emit 'appcast:input_device', device
-    
+    app.emit 'appcast:input_device', device    
     @current_device = device
     
     if device.length > 0
