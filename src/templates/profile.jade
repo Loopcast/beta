@@ -175,10 +175,10 @@ block content
 
         
             .session.outline_box(
-              data-view="profile/live_set", 
-              data-room-id="#{live._id}", 
               data-room-started-at="#{live.status.live.started_at}"
-              data-is-live="true"
+              id="room_#{live._id}", 
+              data-room-id="#{live._id}" 
+              data-view="[components/user_set,room/tape/user_set]", 
             )
               a.image.room_url(href="/#{live.info.user}/#{live.info.slug}", title="Old School House session", style="background-image:url(#{transform.cover_thumb(live.info.cover_url, user.info.avatar)})")
               .content
@@ -211,11 +211,20 @@ block content
                     span.icon.ss-users
                     //- span.spritesheet.icon_plays
                     span.text #{live.status.live.listeners}
+                    
                 if live.status.is_live
                   a.live(href="#", title="#{live.info.title}")
                     p.label 
                       span.for_desktop now live
                     p.time &nbsp;
+
+                .edit_session_wrapper
+                  a.icon.settings_button.ss-settings(href="#", title="Setting Session", data-view="components/click_trigger" data-target="#room_#{live._id} .edit_session_popup")
+                  .edit_session_popup
+                    .triangle
+                    a.edit_button.button.yellow_button.small_button_4(href="#", title="Edit", data-view="room/tape/edit_modal_opener", data-id="#{live._id}", data-type="room") Edit
+                    a.delete_button.button.red_button.small_button_4(href="#", title="Delete") Delete
+
 
         if tapes.length
           .recorded_sessions

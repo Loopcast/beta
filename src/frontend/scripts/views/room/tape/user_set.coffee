@@ -5,6 +5,7 @@ module.exports = class UserSet
   constructor: (@dom) ->
     
     @id = @dom.data 'room-id'
+    log "[UserSet] id", @id
     view.on 'binded', @on_views_binded
 
     @elements = 
@@ -22,8 +23,9 @@ module.exports = class UserSet
     app.rooms.on 'update', @on_update
 
   on_update: ( data ) =>
+    log "[UserSet] on_room_udpate", data, data._id, @id
     return if data._id isnt @id
-    log "[User Set] on_room_udpate", data
+    log "[UserSet] on_room_udpate", data
 
     @elements.title.html data.data.title
     @elements.genres.html tags_list( tags: data.data.genres )
