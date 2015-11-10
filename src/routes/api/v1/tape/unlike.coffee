@@ -24,13 +24,13 @@ module.exports =
       user    = req.auth.credentials.user
       tape_id = req.params.id
 
-      # data = 
-      #   type     : 'like'
-      #   username : user.username
-      #   name     : user.name
-      #   avatar   : user.avatar
+      data = 
+        type     : 'unlike'
+        username : user.username
+        name     : user.name
+        avatar   : user.avatar
 
-      # sockets.send tape_id, data
+      sockets.send tape_id, data
 
       unlike user._id, Tape, tape_id, ( error, respose ) ->
 
