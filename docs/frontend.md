@@ -6,7 +6,7 @@ Everything boots from src/frontend/scripts/app.coffee
 ### Frontend View Binding System
 
 The key feature of the view binding system is this:
-the controller /src/frontend/scripts/controllers/views.coffee will automatically instantiate a new instance of a js view class for each html element with the data-view attribute.
+the controller https://github.com/Loopcast/beta/blob/staging/src/frontend/scripts/controllers/views.coffee will automatically instantiate a new instance of a js view class for each html element with the data-view attribute.
 
 So, for instance, if in the current page there is the following html:
 
