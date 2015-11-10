@@ -2,6 +2,9 @@ appcast = require 'app/controllers/appcast'
 RoomView = require 'app/views/room/room_view'
 user = require 'app/controllers/user'
 
+waveform = null
+data     = []
+
 module.exports = class Meter extends RoomView
   values : [
     { value: -20, id: "m_20", color: "green" },
@@ -24,6 +27,32 @@ module.exports = class Meter extends RoomView
   constructor: (@dom) ->  
     
     super @dom
+
+    @dom.width  338
+    @dom.height 31
+
+    data = []
+
+    waveform = window.waveform = new Waveform
+      container: @dom[0]
+      data     : [1, 0.2, 0.5]
+      width    : 338
+      height   : 31
+      innerColor : "#dedede"
+      outerColor : "#46505A"
+      interpolate: false
+
+    ctx = waveform.context;
+
+    gradient = ctx.createLinearGradient(0, 0, 0, waveform.height);
+    gradient.addColorStop( 0.2,  "#fff" );
+    gradient.addColorStop( 0.49, "#999" );
+    gradient.addColorStop( 0.51, "#999" );
+    gradient.addColorStop( 0.8,  "#fff" );
+
+    waveform.innerColor = gradient;
+
+    return
 
     # @debug = $ '#debug'
 
@@ -93,6 +122,13 @@ module.exports = class Meter extends RoomView
     appcast.off 'stream:vu', @activate
 
   set_volume: ( perc ) =>
+
+    data.push perc[0]    
+
+    waveform.update data: data
+
+    return
+
     return if @disabled
     
     @set_channel 'left', perc[0]
