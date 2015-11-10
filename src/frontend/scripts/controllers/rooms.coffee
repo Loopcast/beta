@@ -28,7 +28,7 @@ class RoomsController
   returns the info of the room/tape with id = id by calling the callback provided
   it stores the info so the second time is requested, it won't call the api
   ###
-  info: ( id, is_live, callback ) ->
+  info: ( id, type, callback ) ->
     ref = @
 
     if @infos[id]?
@@ -37,13 +37,13 @@ class RoomsController
       socket.rooms.subscribe id
       socket.on id, @on_room_update
       on_load = (error, response) ->
-        log "[RoomsController] on_load response", id, is_live, response
+        log "[RoomsController] on_load response", id, type, response
 
-        ref.infos[id] = { is_live: is_live, data : response }
+        ref.infos[id] = { type: type, data : response }
 
         callback ref.infos[id]
 
-      if is_live
+      if type is 'room'
         api.rooms.info id, on_load
       else
         api.tapes.get id, on_load
@@ -51,7 +51,7 @@ class RoomsController
 
   on_room_update: ( data ) =>
     if data.type is 'update'
-      if @infos[ data._id ]? and not @infos[ data._id ].is_live
+      if @infos[ data._id ]? and @infos[ data._id ].type isnt 'room'
         @infos[ data._id ].data.tape.about = data.data.about
         @infos[ data._id ].data.tape.cover_url = data.data.cover_url
         @infos[ data._id ].data.tape.genres = data.data.genres
