@@ -1,5 +1,5 @@
 - genres     = user.info.genres
-- occupation = user.info.genres
+- occupation = user.info.occupation
 
 block seo
   title #{user.info.name} | Live Sessions on Loopcast 
@@ -42,8 +42,8 @@ block content
           span.text #{user.info.name}
         br
 
-        if occupation && occupation[0]
-          h3.type.black_background(data-view="components/editables/editable_select", data-text="#{user.info.occupation}", data-default-selected="false")
+        if user.info.occupation[0]
+          h3.type.black_background(data-view="components/editables/editable_select", data-text="#{user.info.occupation[0]}", data-default-selected="false")
             span.text Select occupation
         else
           h3.type.black_background(data-view="components/editables/editable_select", data-text="", data-default-selected="true")

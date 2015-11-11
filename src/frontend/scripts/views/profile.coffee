@@ -116,22 +116,29 @@ module.exports = class Profile extends LoggedView
 	on_name_changed: ( new_name ) =>
 		return if new_name is user_controller.data.name
 
-		notify.info "You changed your name"
+		
 		log "[Profile] on_name_changed", new_name
 		if new_name.length > 0
 
 			ref = @
-			@send_to_server name: new_name, (response) ->
-				# log "on_name_changed response", response
-
-				navigation.go_silent "/" + response[ 'info.username' ]
-				user_controller.name_updated 
-					username: response[ 'info.username' ]
-					name: response[ 'info.name' ]
+			@send_to_server name: new_name, @on_name_changed_success, @on_name_changed_error
 
 		else
 			# Set the name back
 			@elements.name.set_text user_controller.data.name
+
+	on_name_changed_success: ( response ) ->
+		log "on_name_changed response", response
+
+		notify.info "You changed your name"
+		navigation.go_silent "/" + response[ 'info.username' ]
+		user_controller.name_updated 
+			username: response[ 'info.username' ]
+			name: response[ 'info.name' ]
+
+	on_name_changed_error: =>
+		notify.error "Username already taken"
+		@elements.name.set_text user_controller.data.name
 
 	on_genre_changed: ( data ) =>
 		log "[Genre] changed", data
@@ -242,21 +249,20 @@ module.exports = class Profile extends LoggedView
 			@elements.about_input.val str
 
 
-
-
-	send_to_server: ( data, callback = -> )->
+	send_to_server: ( data, callback, on_error )->
 		log "[Profile] saving", data
 
 		api.user.edit data, ( error, response ) =>
 
 			if error
 				log "---> Error Profile edit user", error.statusText
+				on_error?()
 				return
 
 			log "[Profile] fields updated", response
 			user_controller.write_to_session()
 
-			callback response
+			callback?( response )
 
 
 	destroy: ->
