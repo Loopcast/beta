@@ -41,7 +41,7 @@ module.exports = class Player
 
     @play_btn.on 'click', @on_play_clicked
     @like_btn.on 'click', @on_like_clicked
-    @progress_parent.on 'click', @on_progress_click
+    @progress_parent.find('.hitarea').on 'click', @on_progress_click
     @dom.find( '.open_fullscreen' ).on 'click', @open_fullscreen
     @dom.find( '.close_fullscreen' ).on 'click', @close_fullscreen
     view.on 'binded', @on_views_binded
@@ -143,7 +143,7 @@ module.exports = class Player
 
   play: (room_id, src = null, is_live = false) ->
 
-    log "[Player] play", room_id, is_live
+    log "[Player] play", room_id, src, is_live
 
     if not room_id? and @current_room_id
       room_id = @current_room_id 
@@ -158,7 +158,14 @@ module.exports = class Player
       @_play room_id
 
     if src?
-      @audio.set_src src
+
+      audio_data = 
+        id         : room_id
+        is_recorded: !is_live
+        start_time : null
+        src        : src
+
+      @audio.set_data src
 
     @audio.play()
 
@@ -184,6 +191,7 @@ module.exports = class Player
       log "[Player] no informations. fetching...", room_id
 
       on_response = (error, response) => 
+        log "[Player] on_response", error, response
         if response
 
           @data_rooms[ room_id ] = normalize_info response, is_live

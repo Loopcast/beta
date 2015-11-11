@@ -57,5 +57,4 @@ module.exports = class CollapsableContent
       @read_more.off 'click', @toggle
       app.window.off 'scroll', @collapse
       app.off 'set:updated', @check_length
-    super()
 
