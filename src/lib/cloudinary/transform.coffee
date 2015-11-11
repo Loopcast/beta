@@ -42,7 +42,7 @@ Transform =
     else
       url.replace "upload/", "upload/w_400,h_184,c_fill/"
 
-  cover_thumb: ( url, avatar ) ->
+  cover_thumb: ( url, avatar = DEFAULT.avatar ) ->
     if not url or not url? or url.indexOf( "upload/" ) < 0
       url = avatar
       

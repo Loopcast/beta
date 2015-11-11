@@ -177,7 +177,8 @@ block content
             .session.outline_box(
               data-room-started-at="#{live.status.live.started_at}"
               id="room_#{live._id}", 
-              data-room-id="#{live._id}" 
+              data-room-id="#{live._id}",
+              data-type="room",
               data-view="[components/user_set,room/tape/user_set]", 
             )
               a.image.room_url(href="/#{live.info.user}/#{live.info.slug}", title="Old School House session", style="background-image:url(#{transform.cover_thumb(live.info.cover_url, user.info.avatar)})")
@@ -224,6 +225,12 @@ block content
                     .triangle
                     a.edit_button.button.yellow_button.small_button_4(href="#", title="Edit", data-view="room/tape/edit_modal_opener", data-id="#{live._id}", data-type="room") Edit
                     a.delete_button.button.red_button.small_button_4(href="#", title="Delete") Delete
+
+              .delete_screen
+                .content
+                  h2 Are you sure you want to delete this recording?
+                  a.button.red_button.small_button_4.confirm_delete(href="#", title="Delete") Delete
+                  a.button.white_button.small_button_4.cancel_delete(href="#", title="Cancel") Cancel
 
 
         if tapes.length

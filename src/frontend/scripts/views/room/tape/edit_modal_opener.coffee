@@ -30,7 +30,7 @@ module.exports = class EditModalOpener
 
 
     app.rooms.info @id, @type, (response) =>
-
+      log "[EditModalOpener] gettingo info from room", @id, response
       data = @normalize_data response
       log "[EditModalOpener] info", response, data
 

@@ -31,35 +31,32 @@ class RoomsController
   info: ( id, type, callback ) ->
     ref = @
 
-    if @infos[id]?
-      callback @infos[ id ]
-    else
+    if not @infos[id]?
       socket.rooms.subscribe id
       socket.on id, @on_room_update
-      on_load = (error, response) ->
-        log "[RoomsController] on_load response", id, type, response
+    
+      
+    on_load = (error, response) ->
+      log "[RoomsController] on_load response", id, type, response
 
-        ref.infos[id] = { type: type, data : response }
+      ref.infos[id] = { type: type, data : response }
 
-        callback ref.infos[id]
+      callback ref.infos[id]
 
-      if type is 'room'
-        api.rooms.info id, on_load
-      else
-        api.tapes.get id, on_load
+    if type is 'room'
+      api.rooms.info id, on_load
+    else
+      api.tapes.get id, on_load
   
 
   on_room_update: ( data ) =>
-    if data.type in ['update', 'room:update']
-      if @infos[ data._id ]? and @infos[ data._id ].type isnt 'room'
-        @infos[ data._id ].data.tape.about = data.data.about
-        @infos[ data._id ].data.tape.cover_url = data.data.cover_url
-        @infos[ data._id ].data.tape.genres = data.data.genres
-        @infos[ data._id ].data.tape.location = data.data.location
-        @infos[ data._id ].data.tape.title = data.data.title
+    log "[Rooms Controller] on_room_update", data, data._id
+    if not @infos[ data._id ]?
+      log "[Rooms Controller] id not found. returning."
+      return 
 
-      @emit 'update', data
+    @emit 'update', data
 
-    log "[Rooms Controller] on_room_update", data
+
 
 module.exports = new RoomsController

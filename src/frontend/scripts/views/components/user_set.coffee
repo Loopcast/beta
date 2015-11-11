@@ -7,6 +7,7 @@ transform_url = require 'app/utils/rooms/update_room_link_by_username'
 module.exports = ( dom ) ->
   settings_handler = null
   edit_modal       = null
+  type             = if dom.data( 'type' )? then 'rooms' else 'tapes'
   room_id          = dom.data 'room-id'
   room_url         = dom.find( '.session_title a' ).attr 'href'
   init = ->
@@ -63,7 +64,8 @@ module.exports = ( dom ) ->
     
     log "[UserSet] trying to delete ", room_id
 
-    api.tapes.delete room_id, (error, response) ->
+
+    api[type].delete room_id, (error, response) ->
       if error
         log "[UserSet] delete", room_id, error
         notify.error "There was an error. Try later."

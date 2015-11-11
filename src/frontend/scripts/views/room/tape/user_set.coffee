@@ -25,12 +25,16 @@ module.exports = class UserSet
   on_update: ( data ) =>
     log "[UserSet] on_room_udpate", data, data._id, @id
     return if data._id isnt @id
+
+    if not data.data?
+      data.data = data.room
     log "[UserSet] on_room_udpate", data
 
     @elements.title.html data.data.title
     @elements.genres.html tags_list( tags: data.data.genres )
     @elements.location.html data.data.location
-    @elements.cover.css 'background-image', 'url('+transform.cover_thumb( data.data.cover_url ) + ')'
+    if data.data.cover_url.indexOf( '/upload' ) >= 0
+      @elements.cover.css 'background-image', 'url('+transform.cover_thumb( data.data.cover_url ) + ')'
 
   # destroy: ->
   #   app.rooms.off 'update', @on_room_udpate
