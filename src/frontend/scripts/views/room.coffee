@@ -168,8 +168,6 @@ module.exports = class Room extends LoggedView
     if user_controller.check_guest_owner()
       @manage_edit()
       app.on 'room:go_offline', @room_went_offline
-    else
-      @show_guest_popup()
 
     if @dom.hasClass 'room_live'
       delay 1000, => 
@@ -335,11 +333,14 @@ module.exports = class Room extends LoggedView
     log "[Room] on_room_live"
     @dom.addClass 'room_live'
     if not user_controller.check_guest_owner()
+
       app.player.fetch_room @room_id, true, =>
         log "[Room] fetch room callback", app.settings.theme
         if app.settings.theme isnt 'mobile'
           log "[Room] inside!"
           app.player.play @room_id
+
+        @show_guest_popup()
           
     else
       app.player.stop()
