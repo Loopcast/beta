@@ -1,4 +1,5 @@
 is_login_page = require 'app/utils/is_login_page'
+is_confirm_username = require 'app/utils/is_confirm_username'
 
 require './globals'
 require './vendors'
@@ -140,8 +141,15 @@ class App
 	
 if is_login_page()
 	
-	login = require 'app/controllers/login'
-	$ -> login.start()
+	if is_confirm_username()
+
+		ConfirmUsername = require 'app/controllers/confirm_username'
+		$ -> confirm = new ConfirmUsername
+
+	else
+
+		login = require 'app/controllers/login'
+		$ -> login.start()
 
 else
 	app = new App

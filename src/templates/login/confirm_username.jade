@@ -37,24 +37,3 @@ html
 
     script( src="https://code.jquery.com/jquery-2.1.1.min.js" )
     script( src="/js/app.js" )
-
-    script.
-      $(function(){
-
-        $('#complete').click(function(){
-          var username = $('.username').val();
-          console.log(username);
-          api.loopcast.user.is_available(username, function(a, response){
-
-            if (response.available) {
-              console.log('yeap, avialable, change it here');
-            } else {
-              // taken, show error
-              $('.error-box').addClass('error');
-
-            }
-            
-          })
-        });
-
-      });
