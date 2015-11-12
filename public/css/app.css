@@ -7899,7 +7899,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 13 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 583 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+/* line 584 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
 /* line 10 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
@@ -7919,7 +7919,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 90 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 583 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+/* line 584 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
 /* line 11 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
@@ -7947,7 +7947,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 5 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
 
-/* line 583 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+/* line 584 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
 /* line 12 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
@@ -8201,42 +8201,43 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   background: url("../images/gradient_description.png");
   z-index: 1;
   font-size: 12px;
+  font-weight: 600;
   color: #4592d4;
   cursor: pointer;
 }
 
-/* line 124 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 125 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .collapsable_wrapper .read_more .less {
   display: none;
 }
 
-/* line 127 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
-
 /* line 128 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+
+/* line 129 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .collapsable_wrapper.expanded .less {
   display: block;
 }
 
-/* line 130 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 131 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .collapsable_wrapper.expanded .more {
   display: none;
 }
 
-/* line 133 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
-
 /* line 134 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+
+/* line 135 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .collapsable_wrapper.edit_mode .read_more {
   display: none !important;
 }
 
-/* line 137 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
-
 /* line 138 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+
+/* line 139 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .collapsable_wrapper.read_more_visible .read_more {
   display: block;
 }
 
-/* line 141 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 142 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .dashboard_bar {
   color: #fff;
   height: 2px;
@@ -8247,7 +8248,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   padding: 0px;
 }
 
-/* line 151 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 152 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .dashboard_bar #share_dashboard {
   position: absolute;
   left: 100%;
@@ -8255,7 +8256,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   margin-left: 23px;
 }
 
-/* line 157 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 158 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .dashboard_bar .fb-send,
 .dashboard_bar .custom-fb-send {
   position: absolute;
@@ -8264,32 +8265,32 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   margin-left: 23px;
 }
 
-/* line 165 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
-
 /* line 166 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+
+/* line 167 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .dashboard_bar.appcast_running .appcast_not_running_message {
   display: none;
 }
 
-/* line 169 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
-
 /* line 170 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+
+/* line 171 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .dashboard_bar.appcast_not_running .appcast_not_running_message {
   display: block;
   text-align: center;
 }
 
-/* line 174 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 175 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .dashboard_bar.appcast_not_running .appcast_running_message {
   display: none;
 }
 
-/* line 177 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 178 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .dashboard_bar .live_button_wrapper {
   position: relative;
 }
 
-/* line 181 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 182 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .dashboard_bar .inner {
   position: relative;
   max-width: 700px;
@@ -8299,7 +8300,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   display: none;
 }
 
-/* line 190 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 191 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .dashboard_bar .inner .row {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8308,7 +8309,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   margin-bottom: 10px;
 }
 
-/* line 193 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 194 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .dashboard_bar .inner .row .cell {
   -o-box-flex: 1;
   box-flex: 1;
@@ -8319,77 +8320,77 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   height: 32px;
 }
 
-/* line 198 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 199 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .dashboard_bar #go_live_button,
 .dashboard_bar #record_button {
   display: block;
 }
 
-/* line 202 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 203 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .dashboard_bar .half {
   padding: 0 1.5%;
 }
 
-/* line 205 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 206 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .dashboard_bar .half._left {
   text-align: right;
 }
 
-/* line 208 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 209 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .dashboard_bar .half._left .appcast_not_running_message {
   margin-bottom: 4px;
 }
 
-/* line 210 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 211 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .dashboard_bar .half._left .appcast_running_message {
   margin-bottom: 10px;
 }
 
-/* line 213 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 214 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .dashboard_bar .half._left .meter_wrapper {
   margin-bottom: 3px;
 }
 
-/* line 216 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 217 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .dashboard_bar .half._left > * {
   float: right;
 }
 
-/* line 219 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 220 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .dashboard_bar .half._right {
   text-align: left;
 }
 
-/* line 221 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 222 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .dashboard_bar .half > * {
   margin-bottom: 12px;
   display: block;
 }
 
-/* line 225 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 226 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .dashboard_bar .half br {
   margin-bottom: 0;
 }
 
-/* line 228 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 229 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .dashboard_bar .half .meter_wrapper {
   margin-bottom: 0;
 }
 
-/* line 230 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 231 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .dashboard_bar .left_part,
 .dashboard_bar .right_part {
   width: 50%;
 }
 
-/* line 234 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
-
 /* line 235 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+
+/* line 236 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .dashboard_bar .select_wrapper .button {
   overflow: visible;
 }
 
-/* line 240 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 241 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat {
   min-height: 440px;
   display: -webkit-flex;
@@ -8406,7 +8407,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   line-height: 1.2em;
 }
 
-/* line 249 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 250 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_sidebar {
   width: 300px;
   border-left: 1px solid #d5d5d5;
@@ -8422,7 +8423,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   flex-direction: column;
 }
 
-/* line 257 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 258 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_sidebar .inner {
   -o-box-flex: 1;
   box-flex: 1;
@@ -8431,31 +8432,31 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   flex: 1;
 }
 
-/* line 259 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 260 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_sidebar h3 {
   text-transform: uppercase;
   color: #000;
   font-weight: 600;
 }
 
-/* line 263 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 264 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_sidebar h3 span {
   color: #4592d4;
 }
 
-/* line 266 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 267 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_sidebar h3,
 .profile_content.chat .chat_sidebar .social {
   padding-left: 5px;
 }
 
-/* line 270 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 271 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_sidebar .users {
   text-align: left;
   margin-top: 20px;
 }
 
-/* line 274 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 275 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_sidebar .img_wrapper {
   display: inline-block;
   overflow: hidden;
@@ -8463,19 +8464,19 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   margin: 4px;
 }
 
-/* line 279 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 280 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_sidebar .img_wrapper img {
   display: block;
 }
 
-/* line 282 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 283 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_sidebar .spritesheet {
   display: inline-block;
   margin-right: 8px;
   text-indent: -9999px;
 }
 
-/* line 287 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 288 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main {
   border-left: 1px solid #d5d5d5;
   -o-box-flex: 1;
@@ -8493,31 +8494,31 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   display: flex;
 }
 
-/* line 292 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 293 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header,
 .profile_content.chat .chat_main .chat_footer {
   position: relative;
   overflow: hidden;
 }
 
-/* line 296 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 297 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header p,
 .profile_content.chat .chat_main .chat_footer p {
   width: 100%;
 }
 
-/* line 299 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 300 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header {
   padding-right: 60px;
 }
 
-/* line 302 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 303 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header #description_room {
   float: left;
   position: relative;
 }
 
-/* line 306 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 307 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header .ss-tag {
   cursor: pointer;
   float: right;
@@ -8527,51 +8528,51 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   top: 5px;
 }
 
-/* line 314 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 315 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header .tags {
   position: absolute;
   top: 20px;
   right: 20px;
 }
 
-/* line 316 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 317 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header .tags .list {
   display: none;
   float: right;
   margin-right: 20px;
 }
 
-/* line 320 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 321 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header .tags.no_tags {
   display: none;
 }
 
-/* line 324 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
-
 /* line 325 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+
+/* line 326 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header .tags_visible .tags .list {
   display: block;
 }
 
-/* line 328 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 329 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header .tags_visible .read_more {
   display: none !important;
 }
 
-/* line 330 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 331 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header .tags_visible #description_room {
   display: none;
 }
 
-/* line 333 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 334 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 
-/* line 336 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 337 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header .editable_text .icon {
   top: 11px;
   right: -20px;
 }
 
-/* line 339 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 340 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header .editable_text input {
   font-size: 12px;
   width: 100%;
@@ -8579,23 +8580,23 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   left: -5px;
 }
 
-/* line 345 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 346 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header .editable_text.edit_mode {
   display: block;
 }
 
-/* line 347 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 348 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header .editable_text.edit_mode .icon {
   display: none;
 }
 
-/* line 350 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 351 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header .inner {
   width: 100%;
   text-align: left;
 }
 
-/* line 357 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 358 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_content {
   -o-box-flex: 1;
   box-flex: 1;
@@ -8609,7 +8610,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   overflow-y: scroll;
 }
 
-/* line 367 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 368 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_content.no_chat_yet {
   padding: 0;
   display: -webkit-flex;
@@ -8626,12 +8627,12 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   justify-content: center;
 }
 
-/* line 372 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 373 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_content.no_chat_yet .no-message {
   display: block;
 }
 
-/* line 375 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 376 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .no-message {
   display: none;
   font-size: 2em;
@@ -8641,29 +8642,29 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   padding: 0 30px;
 }
 
-/* line 384 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 385 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .message {
   position: relative;
   margin-bottom: 30px;
   overflow: hidden;
 }
 
-/* line 389 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 390 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .message .content a {
   color: #4592d4;
   text-decoration: underline;
 }
 
-/* line 393 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
-
 /* line 394 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+
+/* line 395 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .message.show .inner {
   -webkit-transform: translate3d(0, 0px, 0);
   -ms-transform: translate3d(0, 0px, 0);
   transform: translate3d(0, 0px, 0);
 }
 
-/* line 396 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 397 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .message .inner {
   padding-left: 58px;
   padding-right: 58px;
@@ -8674,14 +8675,14 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   transition: transform 0.2s ease-out;
 }
 
-/* line 403 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 404 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .message .headphone {
   position: absolute;
   top: 0;
   right: 20px;
 }
 
-/* line 406 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 407 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .message .name {
   color: #465059;
   font-weight: 600;
@@ -8689,17 +8690,17 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   margin-bottom: 4px;
 }
 
-/* line 411 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 412 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .message .name span {
   color: #b8bdc1;
 }
 
-/* line 414 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 415 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .message .name span.dash {
   margin-left: 4px;
 }
 
-/* line 417 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 418 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .message .img_wrapper_2 {
   position: absolute;
   top: 0;
@@ -8709,7 +8710,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   text-align: center;
 }
 
-/* line 424 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 425 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .message .img_wrapper_2 .icon {
   color: #f23131;
   font-size: 27px;
@@ -8717,19 +8718,19 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   line-height: 40px;
 }
 
-/* line 436 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 437 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_footer {
   padding: 6px 60px 0;
 }
 
-/* line 439 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 440 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_footer .for_unlogged_users p {
   padding-top: 20px;
   padding-bottom: 20px;
   text-align: center;
 }
 
-/* line 446 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 447 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_footer .icon {
   position: absolute;
   top: 27px;
@@ -8739,12 +8740,12 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   display: block;
 }
 
-/* line 453 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 454 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_footer .icon.liked {
   color: #f23131;
 }
 
-/* line 456 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 457 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_footer textarea {
   position: relative;
   top: -7px;
@@ -8754,27 +8755,27 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   margin-bottom: 0;
 }
 
-/* line 465 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 466 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_footer textarea::-webkit-input-placeholder {
   color: #7b7878;
 }
 
-/* line 467 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 468 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_footer textarea:-moz-placeholder {
   color: #7b7878;
 }
 
-/* line 469 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 470 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_footer textarea::-moz-placeholder {
   color: #7b7878;
 }
 
-/* line 471 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 472 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_footer textarea:-ms-input-placeholder {
   color: #7b7878;
 }
 
-/* line 476 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 477 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .img_wrapper_2 {
   display: inline-block;
   border-radius: 4px;
@@ -8784,29 +8785,29 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   top: 10px;
 }
 
-/* line 481 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 482 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .img_wrapper_2 img {
   display: block;
 }
 
-/* line 484 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 485 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .for_unlogged_users {
   display: none;
 }
 
-/* line 487 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
-
 /* line 488 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+
+/* line 489 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .not_logged .for_logged_users {
   display: none;
 }
 
-/* line 490 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 491 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .not_logged .for_unlogged_users {
   display: block;
 }
 
-/* line 493 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 494 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .chat_user_popup {
   z-index: 1;
   position: absolute;
@@ -8823,7 +8824,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   color: #929292;
 }
 
-/* line 506 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 507 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .chat_user_popup ._outer {
   background: #fff;
   position: relative;
@@ -8832,13 +8833,13 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   box-shadow: 0 0 1px rgba(76,86,103,0.25), 0 2px 18px rgba(31,37,50,0.32);
 }
 
-/* line 513 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 514 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .chat_user_popup p {
   font-size: 11px;
   font-weight: 600;
 }
 
-/* line 517 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 518 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .chat_user_popup .img_wrapper {
   display: block;
   width: 84px;
@@ -8848,19 +8849,19 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   margin: 0 auto 10px;
 }
 
-/* line 525 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 526 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .chat_user_popup .name {
   color: #1f1f1f;
   margin-bottom: 5px;
   font-weight: 600;
 }
 
-/* line 530 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 531 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .chat_user_popup .name:hover {
   color: #000;
 }
 
-/* line 533 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 534 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .chat_user_popup .button {
   width: 120px;
   padding-top: 3px;
@@ -8868,7 +8869,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   margin: 10px auto 0;
 }
 
-/* line 539 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 540 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 #dashboard_help {
   color: #fdbb30;
   display: block;
@@ -8887,9 +8888,9 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   padding-left: 2px;
 }
 
-/* line 556 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
-
 /* line 557 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+
+/* line 558 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .firefox .profile_content.chat .chat_main .chat_content {
   -o-box-flex: 1;
   box-flex: 1;
@@ -8898,45 +8899,45 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   flex: auto;
 }
 
-/* line 559 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 560 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .firefox .profile_content.chat .chat_footer {
   padding-bottom: 5px;
 }
 
-/* line 562 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
-
 /* line 563 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+
+/* line 564 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .no_touch_device .profile_content.chat .chat_sidebar .spritesheet:hover {
   opacity: 0.8;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
   filter: alpha(opacity=80);
 }
 
-/* line 566 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 567 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .no_touch_device .profile_content.chat .message .name:hover {
   color: #4592d4;
 }
 
-/* line 569 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 570 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .no_touch_device #dashboard_help:hover {
   background: #727272;
 }
 
-/* line 572 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 573 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 
-/* line 574 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 575 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .no_touch_device #help_balloon .dashboard_button:hover {
   background: #30363d;
 }
 
-/* line 577 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 578 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .no_touch_device #help_balloon .dashboard_yellow:hover {
   background: #f8a902;
 }
 
-/* line 580 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 581 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 
-/* line 582 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
+/* line 583 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/room.styl */
 .room_live .appcast_running_message select,
 .room_recording .appcast_running_message select {
   display: none;
