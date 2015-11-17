@@ -42,6 +42,8 @@ s.facebook =
     secret       : "7d4307b592fb8aab287582835bdba803"
   graph:
     url: 'https://graph.facebook.com/v2.2/'
+  provider_params : 
+    options: 'popup'
 
 s.soundcloud =
   id           : "afac925318ccc98d6aca4631b0a86a92"
