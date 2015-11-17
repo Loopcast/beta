@@ -16,7 +16,8 @@ module.exports =
     handler: ( req, reply ) ->
 
       console.log '- audiopump/stream_start'
-            
+      console.log "new version"
+
       path = req.payload.data.path
       path = path.split( '/' )[2]
 
@@ -52,6 +53,8 @@ module.exports =
 
           # if user won't stream, don't create a stream
           if not room.will_stream
+
+            console.log "returning because room wont stream"
 
             reply response: statusCode: 200
             return
