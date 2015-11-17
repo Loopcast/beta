@@ -80,17 +80,17 @@ module.exports =
               
               return failed request, reply, error
 
-              # notify UI the stream is live
-              data =
-                type   : "status"
-                is_live: true
-                live: 
-                  started_at: now( start_time ).format()
+            # notify UI the stream is live
+            data =
+              type   : "status"
+              is_live: true
+              live: 
+                started_at: now( start_time ).format()
 
-              console.log "sockets broadcasting at channel: #{room._id}"
-              console.log "data ->", data
-              
-              sockets.send room._id, data
+            console.log "sockets broadcasting at channel: #{room._id}"
+            console.log "data ->", data
+            
+            sockets.send room._id, data
 
             # save link to current recording on the room
             room_update.stream = doc._id
