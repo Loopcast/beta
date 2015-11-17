@@ -69,4 +69,4 @@ module.exports = class ConfirmUsername
               return
 
             window.user.username = username
-            # window.complete_login()
+            window.complete_login()
