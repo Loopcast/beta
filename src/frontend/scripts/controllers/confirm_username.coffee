@@ -22,7 +22,15 @@ module.exports = class ConfirmUsername
   checkUsername: () =>
     username = @input.val()
 
-    api.user.is_available username, (a, response) =>
+    # don't try in case it's empty
+    if username.length is 0
+
+      # remove error in case i't empty
+      $('.error-box').removeClass('error')
+
+      return
+
+    api.user.is_available username, (error, response) =>
       
       if not response.available
         # username taken, show error
@@ -40,7 +48,27 @@ module.exports = class ConfirmUsername
   submit: (username) =>
     if @submitting
 
-      api.user.is_available username, (a, response) ->
+      api.user.is_available username, (error, response) ->
         
+        if error
+          console.error "username not available"
+
+          # needs UI feedback
+
+          return
+
         if response.available
-          api.user.edit_username username, window.close
+
+          api.user.edit_username username, (error, response) ->
+
+            if error
+              console.error "error updating username"
+
+              # needs UI feedback
+
+              return
+
+            window.user.username = username
+            window.complete_login()
+            # close the window if everything is fine
+            # window.close()

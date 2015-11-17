@@ -34,12 +34,16 @@ module.exports =
 
       update = 'info.username': slug request.payload.username
 
-      User.update _id: user_id, update, ( error, result ) ->
+      User.update _id: user._id, update, ( error, result ) ->
 
         if error 
           console.log "error updating username for user #{user._id}"
           console.log user
 
           return reply Boom.badData "error updating username for user #{user._id}"
+
+        user['username'] = update['info.username']
+
+        request.auth.session.set user: user
 
         reply ok: 1

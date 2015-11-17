@@ -1,9 +1,20 @@
 script
-  | window.opener.app.login( !{JSON.stringify(user)} );
   | window.opener._gaq.push(['_trackEvent', 'Customer Login', 'Successful', '']);
+  | 
+  //- save template variable into source code
+  //- so we can change it later from the confirm_username page
+  | window.user = !{ JSON.stringify( user ) };
+  | 
+
+  //- called once the login is succesful and the user doesn't need
+  //- to update the username
+  | window.complete_login = function() { 
+  |   window.opener.app.login( window.user );
+  |   window.close();
+  | }
 
 
-if user.first_time
+if user.first_time 
   script
     | window.opener._gaq.push(['_trackEvent', 'Customer Registration', 'Successful', '']);
     //- don't close the window!!!
@@ -13,4 +24,4 @@ if user.first_time
 
 else
   script
-    | window.close()
+    | window.complete_login()

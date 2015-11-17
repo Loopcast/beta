@@ -18,9 +18,11 @@ html
 
     #confirm-username
       img( src=user.avatar title=user.name class="avatar")
-      p.thanks 
-       |#[span.bold Thanks #{user.name}!]
-       |#[br]Just the final touch now...
+      p.thanks
+        span.bold
+          | Thanks #{user.name}
+        br
+        | Just the final touch now...
 
       .input-group.clearfix
         span.input.group-addon.left
