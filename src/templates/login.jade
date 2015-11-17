@@ -50,10 +50,10 @@ html
                 | Record, save and share instantly
               
               .buttons
-                a.button.social.facebook.shadow(href="/login/facebook" onClick="_gaq.push(['_trackEvent', 'Customer Login', 'Click', 'Facebook']);" title="Sign in with Facebook") 
+                a.button.social.facebook.shadow(href="/login/facebook" onClick="window.opener._gaq.push(['_trackEvent', 'Customer Login', 'Click', 'Facebook']);" title="Sign in with Facebook") 
                   span.spritesheet.facebook_button_icon
                   span Sign in with Facebook
-                a.button.social.google.shadow(href="/login/google" onClick="_gaq.push(['_trackEvent', 'Customer Login', 'Click', 'Google']);" title="Sign in with Google") 
+                a.button.social.google.shadow(href="/login/google" onClick="window.opener._gaq.push(['_trackEvent', 'Customer Login', 'Click', 'Google']);" title="Sign in with Google") 
                   span.spritesheet.google_button_icon
                   span Sign in with Google
 
