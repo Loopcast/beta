@@ -118,5 +118,3 @@ module.exports =
                   console.log error
 
                   return
-
-                console.log 'updated stream ->', stream

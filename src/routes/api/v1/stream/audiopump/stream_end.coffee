@@ -104,6 +104,4 @@ module.exports =
 
                 return
 
-              console.log 'updated stream ->', stream
-
               reply response: statusCode: 200
