@@ -16,8 +16,7 @@ module.exports = ( user_id, Model, liked_id, callback ) ->
 
     if error then return callback error
 
-    if doc.nModified > 0
-      # +1 on the counter
-      increase Model, liked_id, 1
+    # +1 on the counter
+    increase Model, liked_id, 1
 
     callback null, doc.toObject()
