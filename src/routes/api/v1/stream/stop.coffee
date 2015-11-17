@@ -58,6 +58,7 @@ module.exports =
           
           # status object to be sent down a socket Channel
           status =
+            type   : "status"
             is_live: false
             live: 
               stopped_at: now().format()
