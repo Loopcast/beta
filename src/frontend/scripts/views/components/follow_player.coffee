@@ -5,6 +5,7 @@ module.exports = class FollowPlayer
 
   constructor: ( @dom ) ->
     @dom.find( '.close_follow_player' ).on 'click', @hide
+    @dom.on 'click', '.follow_button', @hide
 
   show: ( data ) ->
     if user.is_me data.user._id
@@ -18,6 +19,8 @@ module.exports = class FollowPlayer
     log "[FollowPlayer] show", data
     
     @dom.addClass 'show_1'
+
+
 
     delay 10, =>
       @dom.addClass 'show_2'

@@ -1,9 +1,11 @@
 time_to_string = require 'app/utils/time/time_to_string'
 now_to_seconds = require 'app/utils/time/now_to_seconds'
 happens = require 'happens'
+notify          = require 'app/controllers/notify'
 
 module.exports = class AudioElement
   timer_interval: null
+  loading_interval: null 
   is_playing: false
   duration: 0
   last_time: ""
@@ -41,9 +43,9 @@ module.exports = class AudioElement
     @set_src @data.src
 
 
-  set_src: ( src ) ->
-    if @dom.attr( 'src' ) isnt src
-      @dom.attr 'src', src
+  set_src: ( @src ) ->
+    if @dom.attr( 'src' ) isnt @src
+      @dom.attr 'src', @src
 
   on_loaded_metadata: =>
     if @data.is_recorded
@@ -82,6 +84,22 @@ module.exports = class AudioElement
   play: ->
     @dom[0].play()
     @emit 'played'
+    clearTimeout @loading_interval
+    @loading_interval = setTimeout @check_playing, 3000
+
+  check_playing: =>
+    if !@is_playing
+      @problems_with_playing()
+    else
+      log "[Audio] no problems"
+
+  problems_with_playing: ->
+    log "[Audio] problems_with_playing"
+    notify.info 'Loading the set is taking a while. Please wait or try again'
+    @set_src @src
+    @play()
+
+
 
   get_time_from_perc: ( perc ) ->
     currentTime = @duration * perc
@@ -93,6 +111,7 @@ module.exports = class AudioElement
 
   pause: ->
     @dom[0].pause()
+    clearTimeout @loading_interval
 
   toggle: ->
     if @is_playing
