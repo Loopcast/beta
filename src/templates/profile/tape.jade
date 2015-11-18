@@ -14,6 +14,7 @@ extends ../layout
 block content  
   - url         = "/"+ tape.user.info.username + "/r/" + tape.slug
   - sharing_url = url
+  - tape.short_title = tape.title.length > 20 ? tape.title.substring(0,18) + '...' : tape.title;
 
   input(type='hidden' id='owner_id' value="#{tape.user._id}")
 
@@ -23,10 +24,12 @@ block content
       .cover_image.for_mobile(style="background-image:url(#{transform.cover_mobile(tape.cover_url)})")
       .first_line._overflow(data-view="components/audio/player_preview", data-room-id="#{tape._id}", data-is-live="", data-audio-url="#{tape.s3.location}")
         hidden( class="source_src" value="#{tape.s3.location}")
-        a(href="#", class="tape_play icon ss-play", title="play record") &nbsp;
+        
 
         .tape_info
-          h1.black_background.tape_title #{tape.title}
+          h1.black_background.tape_title 
+            span.for_mobile #{tape.short_title}
+            span.for_desktop #{tape.title}
           .tape_author_wrapper._overflow
             h3.black_background.tape_author(data-view="room/popup_trigger", data-user-id="#{tape.user._id}")
               a(href="/#{tape.user.info.username}") #{tape.user.info.name}
@@ -34,6 +37,8 @@ block content
             a(href="#", class="button grey_button small_button_2 follow_button", data-view="profile/follow_button", data-user-id="#{tape.user._id}" onClick="_gaq.push(['_trackEvent', 'Follow Message', 'Click', '']);") 
               span.follow Follow
               span.unfollow Unfollow
+
+        a(href="#", class="tape_play icon ss-play", title="play record") &nbsp;
 
       .waveform_wrapper.for_desktop(data-view="components/audio/tape_progress", data-tape-id="#{tape._id}", data-source="#{tape.s3.location}")
         .inner
