@@ -113,7 +113,7 @@ block content
       - klass =  favourited_by.length > 0 ? "favourited" : ""
       .side_column(data-view="room/tape/sidebar", class="#{klass}")
         
-        .list_users
+        .list_users(data-view="room/tape/list_favourites")
           .with_favourites
             h3 
               | FAVOURITED BY  
@@ -121,7 +121,7 @@ block content
 
             .list_likes
               for like in favourited_by
-                a.chat_user_thumb(href="/#{like.user_id.info.username}", data-username="#{like.user_id.info.username}")
+                a.chat_user_thumb(href="/#{like.user_id.info.username}", data-username="#{like.user_id.info.username}", data-user-id="#{like.user_id._id}")
                   img(src="#{like.user_id.info.avatar}")
   
           .no_favourites
