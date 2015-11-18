@@ -51,7 +51,7 @@ block grid
           hidden( class="source_src" value="#{item.info.file}")
 
             
-      a(href="#", title="#{item.info.title}", class="thumb_wrapper") 
+      a(href="#{url}", title="#{item.info.title}", class="thumb_wrapper") 
         img.room_thumb.for_desktop(src="#{transform.explore_thumb(cover_url)}")
         img.room_thumb.for_mobile(src="#{transform.explore_thumb_mobile(cover_url)}")
         
@@ -125,7 +125,7 @@ block grid
       hidden( class="source_src" value="#{item.s3.location}")
 
             
-      a(href="#", title="#{item.title}", class="thumb_wrapper") 
+      a(href="#{url}", title="#{item.title}", class="thumb_wrapper") 
         img.room_thumb.for_desktop(src="#{transform.explore_thumb(cover_url)}")
         img.room_thumb.for_mobile(src="#{transform.explore_thumb_mobile(cover_url)}")
         
