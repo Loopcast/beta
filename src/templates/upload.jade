@@ -9,6 +9,13 @@ extends layout
 
 block content
 
-  h1
+  .upload-page(data-view="upload-page")
+    h1 Upload your mix to Loopcast for free.
+    p.description Get your mixes shared with our vast community of DJs, Podcasters, Record Labels, Promoters and more!
+    .drag-and-drop
+      .icon.ss-uploadcloud
+      h2 Click to select file
+      p Or drag and drop into the marked area
 
-    | Hello, Upload your file Here!
+    p.record Don't already have a mix to upload? You can record a new one on Loopcast
+    a(href="").button.yellow_button.no_shadow.black_hover Record Now
