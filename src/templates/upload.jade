@@ -1,9 +1,11 @@
 block seo
-  title Upload - Loopcast 
+  title Upload Your DJ Mix or Podcast for Free - Loopcast 
   meta( name="description" content="Stream, record and share your DJ mixes instantly. Go live, interact with your audience and see who’s listening in real time." )
   meta( property="og:url" content="#{s.base_path}/about" )
-  meta( property="og:title" content="About - Loopcast" )
-  meta( property="og:description" content="Stream, record and save your DJ mixes instantly. Go live, interact with your audience and see who’s listening in real time." )  
+  meta( property="og:title" content="Upload Your DJ Mix or Podcast for Free - Loopcast" )
+  meta( property="og:description" content="Stream, record and save your DJ mixes instantly. Go live, interact with your audience and see who’s listening in real time." )
+  meta( name="twitter:title" content="Upload Your DJ Mix or Podcast for Free - Loopcast")
+  meta( name="twitter:description" content="Stream, record and share your DJ mixes instantly. Go live, interact with your audience and see who’s listening in real time.")    
 
 extends layout
 
@@ -18,4 +20,4 @@ block content
       p Or drag and drop into the marked area
 
     p.record Don't already have a mix to upload? You can record a new one on Loopcast
-    a(href="").button.yellow_button.no_shadow.black_hover Record Now
+    a(href="/rooms/create").button.yellow_button.no_shadow Record Now
