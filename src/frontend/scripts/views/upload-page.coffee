@@ -42,7 +42,9 @@ module.exports = class UploadPage
       tagsValid = @validate( @tags )
 
       if titleValid and tagsValid
-        console.log 'submiting form'
+        @dom.find('.page2').hide()
+        @dom.find('.page3').show()
+
 
 
   prepareValidation: () ->
@@ -56,7 +58,7 @@ module.exports = class UploadPage
       @validate( @tags )
 
 
-  # Validate form kok
+  # Validate form
   validate: (elem) ->
     if elem.val() is ''
       elem.addClass('invalid')
