@@ -9585,7 +9585,11 @@ body.tape_view .chat_list_messages {
 
 /* line 13 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
+<<<<<<< 9681415d32a8ee7b8932a435322b16eb3c47f937
 /* line 2 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+=======
+/* line 131 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+>>>>>>> Upload template page 2, simple validation.
 
 /* line 10 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
@@ -9605,7 +9609,11 @@ body.tape_view .chat_list_messages {
 
 /* line 90 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
+<<<<<<< 9681415d32a8ee7b8932a435322b16eb3c47f937
 /* line 2 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+=======
+/* line 131 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+>>>>>>> Upload template page 2, simple validation.
 
 /* line 11 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
@@ -9633,7 +9641,11 @@ body.tape_view .chat_list_messages {
 
 /* line 5 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
 
+<<<<<<< 9681415d32a8ee7b8932a435322b16eb3c47f937
 /* line 2 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+=======
+/* line 131 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+>>>>>>> Upload template page 2, simple validation.
 
 /* line 12 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
@@ -9677,20 +9689,38 @@ body.tape_view .chat_list_messages {
   color: #7d7d7d;
 }
 
+<<<<<<< 9681415d32a8ee7b8932a435322b16eb3c47f937
 /* line 5 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+=======
+/* line 2 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+.upload-page .page2,
+.upload-page .page3 {
+  display: none;
+}
+
+/* line 10 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+>>>>>>> Upload template page 2, simple validation.
 .upload-page h1 {
   font-size: 1.2em;
   line-height: 1.6em;
   margin-bottom: 8px;
 }
 
+<<<<<<< 9681415d32a8ee7b8932a435322b16eb3c47f937
 /* line 10 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+=======
+/* line 15 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+>>>>>>> Upload template page 2, simple validation.
 .upload-page .description {
   width: 590px;
   margin: 0 auto;
 }
 
+<<<<<<< 9681415d32a8ee7b8932a435322b16eb3c47f937
 /* line 14 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+=======
+/* line 19 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+>>>>>>> Upload template page 2, simple validation.
 .upload-page .drag-and-drop {
   width: 780px;
   height: 250px;
@@ -9699,32 +9729,180 @@ body.tape_view .chat_list_messages {
   cursor: pointer;
 }
 
+<<<<<<< 9681415d32a8ee7b8932a435322b16eb3c47f937
 /* line 21 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+=======
+/* line 26 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+.upload-page .drag-and-drop:hover,
+.upload-page .drag-and-drop.dragenter {
+  border-color: #7d7d7d;
+}
+
+/* line 29 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+.upload-page .drag-and-drop:hover .icon,
+.upload-page .drag-and-drop.dragenter .icon {
+  color: #7d7d7d;
+}
+
+/* line 33 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+>>>>>>> Upload template page 2, simple validation.
 .upload-page .drag-and-drop .icon {
   margin-top: 8px;
   font-size: 4em;
 }
 
+<<<<<<< 9681415d32a8ee7b8932a435322b16eb3c47f937
 /* line 25 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+=======
+/* line 37 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+>>>>>>> Upload template page 2, simple validation.
 .upload-page .drag-and-drop h2 {
   font-size: 1.4em;
   font-weight: normal;
   margin-bottom: 5px;
 }
 
+<<<<<<< 9681415d32a8ee7b8932a435322b16eb3c47f937
 /* line 30 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+=======
+/* line 42 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+>>>>>>> Upload template page 2, simple validation.
 .upload-page .drag-and-drop p {
   font-size: 1.2em;
 }
 
+<<<<<<< 9681415d32a8ee7b8932a435322b16eb3c47f937
 /* line 33 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+=======
+/* line 45 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+>>>>>>> Upload template page 2, simple validation.
 .upload-page p.record {
   color: #7d7d7d;
   font-size: 0.9em;
 }
 
+<<<<<<< 9681415d32a8ee7b8932a435322b16eb3c47f937
 /* line 37 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+=======
+/* line 49 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+>>>>>>> Upload template page 2, simple validation.
 .upload-page .button {
   width: 200px;
   margin: 10px auto;
 }
+<<<<<<< 9681415d32a8ee7b8932a435322b16eb3c47f937
+=======
+
+/* line 53 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+.upload-page #preview-template {
+  display: none;
+}
+
+/* line 57 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+.upload-page .page2 {
+  width: 784px;
+  margin: 0 auto;
+}
+
+/* line 61 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+
+/* line 62 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+.upload-page .page2 .progress .percent {
+  font-size: 0.9em;
+  color: #07a6be;
+  margin-bottom: 1px;
+}
+
+/* line 67 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+.upload-page .page2 .progress .bar {
+  width: 50%;
+  height: 14px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  background: #fdbb30;
+}
+
+/* line 74 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+.upload-page .page2 form {
+  position: relative;
+  padding: 17px;
+  border-radius: 3px;
+  background: #fff;
+}
+
+/* line 80 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+.upload-page .page2 .mix-cover {
+  width: 290px;
+  height: 290px;
+  float: left;
+  background: #ccc;
+}
+
+/* line 86 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+.upload-page .page2 .form {
+  width: 444px;
+  float: right;
+  text-align: left;
+}
+
+/* line 91 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+.upload-page .page2 .form input {
+  border: 1px solid #dedede;
+  background: #dedede;
+  margin-bottom: 10px;
+}
+
+/* line 96 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+.upload-page .page2 .form input placeholder {
+  color: #a8a6a6;
+}
+
+/* line 99 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+.upload-page .page2 .form input.invalid {
+  border-color: #f00;
+}
+
+/* line 102 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+.upload-page .page2 label {
+  color: #2e2e2e;
+  text-transform: uppercase;
+  font-size: 0.8em;
+}
+
+/* line 107 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+.upload-page .page2 textarea {
+  height: 84px;
+  border: 1px solid #cfc4c4;
+  margin-bottom: 68px;
+  background-color: #fff;
+}
+
+/* line 113 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+.upload-page .page2 .share-fb {
+  position: absolute;
+  left: 130px;
+  bottom: 37px;
+  width: 160px;
+  text-align: left;
+}
+
+/* line 120 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+.upload-page .page2 .share-fb input {
+  margin: 6px 5px 0 0;
+  width: 20px;
+  float: left;
+}
+
+/* line 124 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+.upload-page .page2 .share-fb label {
+  margin-top: 6px;
+  font-size: 0.8em;
+  text-transform: none;
+  color: #a8a6a6;
+}
+
+/* line 130 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+.upload-page .page2 .button {
+  clear: both;
+}
+>>>>>>> Upload template page 2, simple validation.

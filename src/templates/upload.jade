@@ -19,5 +19,40 @@ block content
       h2 Click to select file
       p Or drag and drop into the marked area
 
-    p.record Don't already have a mix to upload? You can record a new one on Loopcast
-    a(href="/rooms/create").button.yellow_button.no_shadow Record Now
+      p.record Don't already have a mix to upload? You can record a new one on Loopcast
+      a(href="/rooms/create").button.yellow_button.no_shadow Record Now
+
+
+      .preview-container
+
+      #preview-template
+        p bla bla bla
+
+    .page2
+      .progress
+        p.percent 50%
+        .bar
+
+      form(type="submit" name="mix-details")#description.clearfix
+        .mix-cover
+        .form
+          label(for="title") Title *
+          input(type="text" name="title" placeholder="Enter name of your session")
+
+          label(for="tags") Tags *
+          input(type="text" name="tags" placeholder="Start typing to add tags")
+
+          label(for="location") Location
+          input(type="text" name="location" placeholder="Where are you?")
+
+          textarea(name="description" placeholder="Enter description")
+
+        .share-fb
+          label(for="share") Share on facebook
+          input(type="checkbox" checked)
+
+        button(type="submit").button.yellow_button Publish
+
+
+
+    .page3
