@@ -1,5 +1,5 @@
 .upload-page
-  .page2, .page1
+  .page1, .page2
     display none
 
   // Page 1, drag and drop upload
@@ -73,12 +73,31 @@
       background #fff
     
     .mix-cover
+      position relative
       width 290px
       height 290px
       float left
       background #ccc
+      .button
+        position absolute
+        left 50%
+        bottom 10px
+        transform translateX(-50%)
+        font-size 0.8em
+        color #b6b6b6
+        background-color rgba(0,0,0,0.77)
+        &:before
+          position relative
+          top -3px
+          font-size 1.8em
+          margin-right 7px
+        span
+          position relative
+          top -9px
+        
       
     .form
+      margin-top -6px
       width 444px
       float right
       text-align left
