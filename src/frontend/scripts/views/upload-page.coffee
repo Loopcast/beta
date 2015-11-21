@@ -3,8 +3,9 @@ Dropzone = require 'dropzone'
 module.exports = class UploadPage
   constructor: ( @dom ) ->
 
-    console.log 'uplaod page inited'
-    @dropZone = @dom.find('.drag-and-drop')
+    @form = @dom.find('#description')
+
+
 
     # Init upload drop zone
     uploadMixDropzone = new Dropzone '.drag-and-drop',
@@ -32,11 +33,13 @@ module.exports = class UploadPage
     uploadMixDropzone.on 'removedfile', () =>
       console.log 'removedFile'
 
+
     # Prepare validation
     @prepareValidation()
 
+
     # Submit form
-    @dom.find('#description').on 'submit', (e) =>
+    @form.on 'submit', (e) =>
       e.preventDefault();
       titleValid = @validate( @title )
       tagsValid = @validate( @tags )
@@ -44,6 +47,14 @@ module.exports = class UploadPage
       if titleValid and tagsValid
         @dom.find('.page2').hide()
         @dom.find('.page3').show()
+
+
+    # Return to upload page btn
+    @dom.find('#return-to-upload').click (e) =>
+      @form[0].reset()
+      @dom.find('.page1').show()
+      @dom.find('.page2').hide()
+      @dom.find('.page3').hide()
 
 
 
@@ -56,6 +67,7 @@ module.exports = class UploadPage
 
     @tags.on 'keyup', () =>
       @validate( @tags )
+
 
 
   # Validate form
