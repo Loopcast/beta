@@ -1,9 +1,9 @@
+Dropzone = require 'dropzone'
+
 module.exports = class UploadPage
   constructor: ( @dom ) ->
 
-<<<<<<< 9681415d32a8ee7b8932a435322b16eb3c47f937
     console.log 'uplaod page inited'
-=======
     @dropZone = @dom.find('.drag-and-drop')
 
     # Init upload drop zone
@@ -67,5 +67,4 @@ module.exports = class UploadPage
     else
       elem.removeClass('invalid')
       return true
-    
->>>>>>> Upload template page 2, simple validation.
+
