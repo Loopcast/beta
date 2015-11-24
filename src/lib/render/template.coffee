@@ -36,6 +36,11 @@ module.exports = ( url, data = {}, callback ) ->
   data.transform = cloudinary_transform
   data.autolink = autolink
   data.strip_tags = strip_tags
+
+  data.s3 =
+    bucket: s.s3.bucket
+    key   : s.s3.key
+
   data.slugify = (str) -> str.split( " " ).join( "-" )
 
   root = path.join( __dirname + '/../../templates' )
