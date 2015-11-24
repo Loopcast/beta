@@ -34,7 +34,8 @@ module.exports =
 
 
         Room.findOne( _id: room_id )
-          .select( "_id user recording" )
+          .select( "_id user._id user.info.username recording" )
+          .populate( "user" )
           .lean()
           .exec ( error, room ) -> 
 
@@ -42,7 +43,9 @@ module.exports =
               type     : 'upload:finished'
               location : s3.location
 
-            sockets.send room.user, data
+            sockets.send room.user._id, data
+
+            console.log 'user ->', room.user
 
             # pusher.trigger "tape.#{mount_point}", "upload:finished", response.location
 
