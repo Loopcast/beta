@@ -7,7 +7,8 @@ schema = new Schema
   user      : type: Schema.Types.ObjectId, required: on, ref: 'User'
 
   # _id of the room where this recording was originated
-  room      : type: Schema.Types.ObjectId, required: on, ref: 'Stream'
+  # if no room is defined, it's an uploaded
+  room      : type: Schema.Types.ObjectId, ref: 'Stream'
 
   # slug used as the recording URL
   slug      : type: String
