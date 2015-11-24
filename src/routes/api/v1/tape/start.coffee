@@ -106,7 +106,7 @@ module.exports =
               mount_point : "#{username}_#{room.info.slug}"
 
           if s.is_beta
-            data.form.path        : "http://46.101.25.152/loopcast/#{username}_#{room.info.slug}"
+            data.form.path = "http://46.101.25.152/loopcast/#{username}_#{room.info.slug}"
 
           request.post data, ( error, response, body ) ->
 
