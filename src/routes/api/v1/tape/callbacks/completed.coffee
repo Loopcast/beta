@@ -21,6 +21,11 @@ module.exports =
       'status.is_recorded' : false
       'status.recording.s3': s3
 
+    console.log '---'
+    console.log 'tape callback completed'
+    console.log "room_id: #{room_id}"
+    console.log '---'
+
     Room
       .update( _id: room_id, update )
       .lean().exec ( error, response ) ->

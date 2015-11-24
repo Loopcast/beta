@@ -14,6 +14,11 @@ module.exports =
 
     update = 'status.is_recording': off
 
+    console.log '---'
+    console.log 'tape callback end'
+    console.log "room_id: #{room_id}"
+    console.log '---'
+
     Room
       .update( _id: room_id, update )
       .lean().exec ( error, response ) ->
