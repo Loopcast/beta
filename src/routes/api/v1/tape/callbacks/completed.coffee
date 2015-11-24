@@ -39,13 +39,15 @@ module.exports =
 
 
         Room.findOne( _id: room_id )
-          .select( "_id user._id user.info.username recording" )
-          .populate( "user" )
+          .select( "_id user recording" )
+          .populate( "user", "_id info.username" )
+          .populate( "recording", "_id slug" )
           .lean()
           .exec ( error, room ) -> 
 
             console.log 'room ->', room
             console.log 'user ->', room.user
+            console.log 'recording ->', room.recording
 
             data = 
               type     : 'upload:finished'
