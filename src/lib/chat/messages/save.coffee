@@ -15,19 +15,16 @@ module.exports = ( room_id, data, callback ) ->
 
     if error then return callback error
 
-    # console.log '---'
-    # console.log 'redis lpush callback'
-    # console.log arguments
+    # save all chat messages, don't clip anymore
+    # if length > LENGTH
 
-    if length > LENGTH
+    #   redis.ltrim key, 0, LENGTH - 1, ( error, callback ) ->
 
-      redis.ltrim key, 0, LENGTH - 1, ( error, callback ) ->
-
-        if error then return callback error
+    #     if error then return callback error
         
-        # console.log '---'
-        # console.log 'redis ltrim callback'
-        # console.log arguments
+    #     # console.log '---'
+    #     # console.log 'redis ltrim callback'
+    #     # console.log arguments
 
     callback null, length
 
