@@ -17,11 +17,8 @@ if s.is_local
   s.base_path = "http://localhost:1993"
 
 
-s.cache =
-  chat:
-    messages:
-      length: 25
-      timeout: 7 * 24 * 60 * 60
+# empty for now
+s.cache = { }
 
 
 s.cloudinary =

@@ -237,6 +237,36 @@ module.exports =
       request.done ( response ) ->
         callback? null, response
 
+    comment: ( data, callback ) ->
+
+      on_status_code =
+        400: -> callback 'bad request'
+        401: -> callback 'unauthorized'
+        500: -> callback 'server error'
+
+      request = $.post api_url + 'tape/comment', data, on_status_code
+
+      request.error on_error "tape/comment", callback
+
+      request.done ( response ) ->
+
+        callback? null, response
+
+    comments : ( tape_id, callback ) ->
+
+      on_status_code =
+        400: -> callback 'bad request'
+        401: -> callback 'unauthorized'
+        500: -> callback 'server error'
+
+      request = $.get api_url + 'tape/comments/' + tape_id, {}, on_status_code
+
+      request.error on_error "tape/comments", callback
+
+      request.done ( response ) ->
+
+        callback? null, response
+
   chat:
     message: ( data, callback ) ->
 

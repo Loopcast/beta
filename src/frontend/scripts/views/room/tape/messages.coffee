@@ -14,7 +14,7 @@ module.exports = class Messages
 
     @tmpl = require 'client_templates/chat/tape_message'
 
-    api.chat.messages @tape_id, (error, response) =>
+    api.tapes.comments @tape_id, (error, response) =>
       log "[Messages] old messages", response
       return if error
       response = response.reverse()

@@ -5,13 +5,13 @@ module.exports = ( tape_id, message, payload = {} ) ->
     document.activeElement.blur()
     
   data = 
-    room_id : tape_id
+    tape_id : tape_id
     message : message
     payload : payload
 
   # log "[Textarea] send_message", data
 
-  L.chat.message data, ( error, response ) ->
+  L.tapes.comment data, ( error, response ) ->
 
     if error
 
