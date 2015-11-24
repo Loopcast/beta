@@ -105,6 +105,9 @@ module.exports = class Record extends ButtonWithTimer
 
     ref = @
 
+    # username  = $( '#owner_username' ).val()
+    # room_slug = $( '#room_slug' ).val()
+      
     appcast.start_recording()
     L.rooms.start_recording @room_id, ( error, response ) ->
       

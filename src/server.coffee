@@ -43,11 +43,12 @@ server.start = ( when_done ) ->
             appendNext : true
 
           hapi.auth.strategy 'facebook', 'bell',
-            provider    : 'facebook',
-            password    : 'cookie_encryption_password',
-            clientId    : s.facebook.app.id
-            clientSecret: s.facebook.app.secret
-            isSecure    : s.https
+            provider       : 'facebook',
+            password       : 'cookie_encryption_password',
+            clientId       : s.facebook.app.id
+            clientSecret   : s.facebook.app.secret
+            isSecure       : s.https
+            providerParams : s.facebook.provider_params
 
           hapi.auth.strategy 'google', 'bell',
             scope: [

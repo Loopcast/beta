@@ -16,7 +16,8 @@ module.exports =
     handler: ( req, reply ) ->
 
       console.log '- audiopump/stream_start'
-            
+      console.log "new version"
+
       path = req.payload.data.path
       path = path.split( '/' )[2]
 
@@ -53,6 +54,8 @@ module.exports =
           # if user won't stream, don't create a stream
           if not room.will_stream
 
+            console.log "returning because room wont stream"
+
             reply response: statusCode: 200
             return
 
@@ -77,14 +80,17 @@ module.exports =
               
               return failed request, reply, error
 
-              # notify UI the stream is live
-              data =
-                type   : "status"
-                is_live: true
-                live: 
-                  started_at: now( start_time ).format()
+            # notify UI the stream is live
+            data =
+              type   : "status"
+              is_live: true
+              live: 
+                started_at: now( start_time ).format()
 
-              sockets.send room._id, data
+            console.log "sockets broadcasting at channel: #{room._id}"
+            console.log "data ->", data
+            
+            sockets.send room._id, data
 
             # save link to current recording on the room
             room_update.stream = doc._id

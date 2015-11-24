@@ -65,7 +65,10 @@ module.exports =
             live: 
               stopped_at: now( end_time ).format()
 
-          sockets.send room._id, status
+          console.log "sending socket message to -> #{room._id}"
+          console.log "data is ->", data
+
+          sockets.send room._id, data
 
           update = 
             $set   : 
