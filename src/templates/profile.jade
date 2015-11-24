@@ -302,7 +302,7 @@ block content
                       span.text #{room.plays}
                     .upload_time  
                       span.icon.ss-upload
-                      span.text 32min 
+                      span.text #{Math.floor(room.duration/60)} mins 
 
                   .edit_session_wrapper
                     a.icon.settings_button.ss-settings(href="#", title="Setting Session", data-view="components/click_trigger" data-target="#session_recorded_#{room._id} .edit_session_popup")
