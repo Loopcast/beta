@@ -45,7 +45,8 @@ module.exports = class AudioElement
 
   set_src: ( @src ) ->
     if @dom.attr( 'src' ) isnt @src
-      @dom.attr 'src', @src
+      @dom.attr 'src', ''
+      delay 1, => @dom.attr 'src', @src
 
   on_loaded_metadata: =>
     if @data.is_recorded
