@@ -9691,8 +9691,8 @@ body.tape_view .chat_list_messages {
 }
 
 /* line 2 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/upload.styl */
-.upload-page .page1,
-.upload-page .page2 {
+.upload-page .page2,
+.upload-page .page3 {
   display: none;
 }
 
