@@ -50,15 +50,12 @@ module.exports =
             console.log 'recording ->', room.recording
 
             data = 
-              type     : 'upload:finished'
-              location : s3.location
+              type : 'upload:finished'
+              room : room
 
             sockets.send room.user._id, data
 
-
-            # pusher.trigger "tape.#{mount_point}", "upload:finished", response.location
-
-            query = _id: mongoose.Types.ObjectId room.recording
+            query = _id: mongoose.Types.ObjectId room.recording._id
             Tape.collection.update query, $set: s3: s3, null, ( error, response ) ->
 
                 if error
@@ -74,7 +71,7 @@ module.exports =
                   console.log error
 
 
-            # Tape.update _id: room.recording, $set: s3: s3, ( error, response ) ->
+            # Tape.update _id: room.recording._id, $set: s3: s3, ( error, response ) ->
 
             #   if error
 
