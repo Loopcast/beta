@@ -19,7 +19,7 @@ module.exports = class ConfirmUsername
     @input.on 'keyup', _.debounce( @checkUsername, 300 )
 
 
-  checkUsername: () =>
+  checkUsername: (event) =>
     username = @input.val()
 
     # don't try in case it's empty
@@ -31,6 +31,10 @@ module.exports = class ConfirmUsername
       return
 
     api.user.is_available username, (error, response) =>
+
+      # Submit on enter
+      if event.keyCode is 13
+        @submitting = true
       
       if not response.available
         # username taken, show error
