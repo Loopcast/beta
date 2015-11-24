@@ -44,13 +44,15 @@ module.exports =
           .lean()
           .exec ( error, room ) -> 
 
+            console.log 'room ->', room
+            console.log 'user ->', room.user
+
             data = 
               type     : 'upload:finished'
               location : s3.location
 
             sockets.send room.user._id, data
 
-            console.log 'user ->', room.user
 
             # pusher.trigger "tape.#{mount_point}", "upload:finished", response.location
 
