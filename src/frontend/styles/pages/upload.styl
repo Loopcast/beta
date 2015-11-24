@@ -1,0 +1,195 @@
+.upload-page
+  .page1, .page2
+    display none
+
+  // Page 1, drag and drop upload
+  padding-top 100px
+  color #7d7d7d
+  
+  h1
+    font-size 1.2em
+    line-height 1.6em
+    margin-bottom 8px
+    
+  .description
+    width 590px
+    margin 0 auto
+    
+  .drag-and-drop
+    width 780px
+    height 250px
+    margin 40px auto 52px
+    border 2px dashed #b3b3b3
+    cursor pointer 
+    
+    .icon
+      margin-top 8px
+      font-size 4em
+    
+    h2
+      font-size 1.4em
+      font-weight normal
+      margin-bottom 5px
+      
+    p
+      font-size 1.2em
+      
+  p.record
+    color #7d7d7d
+    font-size 0.9em
+    
+  .button
+    width 200px
+    margin 10px auto
+    
+  #preview-template
+    display none
+  
+  .preview-container
+    display none
+    
+  // Page 2, upload description form
+  .page2
+    width 784px
+    margin 0 auto
+    
+    .progress
+      .percent
+        font-size 0.9em
+        color #07A6BE
+        margin-bottom 1px
+        
+      .bar
+        width 50%
+        height 14px
+        margin-bottom 10px
+        border-radius 4px
+        background #fdbb30
+    
+    form
+      position relative
+      padding 17px
+      border-radius 3px
+      background #fff
+    
+    .mix-cover
+      position relative
+      width 290px
+      height 290px
+      float left
+      background #ccc
+      .button
+        position absolute
+        left 50%
+        bottom 10px
+        transform translateX(-50%)
+        font-size 0.8em
+        color #b6b6b6
+        background-color rgba(0,0,0,0.77)
+        &:before
+          position relative
+          top -3px
+          font-size 1.8em
+          margin-right 7px
+        span
+          position relative
+          top -9px
+        
+      
+    .form
+      margin-top -6px
+      width 444px
+      float right
+      text-align left
+      
+      input
+        border: 1px solid #DEDEDE
+        background #DEDEDE
+        margin-bottom 10px
+        
+        placeholder
+          color #A8A6A6
+          
+        &.invalid
+          border-color red
+      
+    label
+      color #2e2e2e
+      text-transform uppercase
+      font-size 0.8em
+      
+    textarea
+      height 84px
+      border 1px solid #cfc4c4
+      margin-bottom 68px
+      background-color #fff
+      
+    .share-fb
+      position absolute
+      left 130px
+      bottom 37px
+      width 160px
+      text-align left
+      
+      input
+        margin 6px 5px 0 0
+        width 20px
+        float left
+      label
+        margin-top 6px
+        font-size 0.8em
+        text-transform none
+        color #A8A6A6
+        
+    .button
+      clear both
+      
+  // Upload complete page
+  .page3
+    width 784px
+    height 450px
+    margin 0 auto
+    text-align center
+    color #7D7D7D
+    background-color #fff
+    
+    .icon
+      margin 14px auto 0
+      width 58px
+      height 58px
+      background url('../images/complete.png')
+      background-size 58px 58px
+    
+    h2
+      margin-top 5px
+      font-size 1.2em
+      line-height 1.6em
+      
+    p
+      margin-top 32px
+      
+    .social
+      margin 26px auto 36px
+      
+      li, a
+        display inline-block
+        width 64px
+        height 64px
+        
+      li
+        margin-left 10px
+        &:first-child
+          margin-left 0
+      
+      a
+        text-indent -9999px
+      
+      .twitter
+        background-image url('../images/64-twitter.png')
+      .googleplus
+        background-image url('../images/64-googleplus.png')
+      .fb
+        background-image url('../images/64-facebook.png')
+        
+    .white_button
+      width 340px

@@ -131,6 +131,9 @@ body
   
   .tape_view .main_column .first_line .buttons .custom-fb-send
     display: none
+    
+  body .tape_view .tape_header .first_line
+    padding-left: 0
 
   body.tape_view.no_touch_device
   body.tape_view.touch_device
@@ -204,11 +207,13 @@ body
       
     .first_line
       .tape_play
-        position: absolute
-        top: 50%
-        left: 50%
-        transform: translateX(-50%) translateY(-50%)
+        position: relative
         border-width: 3px
+        display: block
+        margin: 40px auto
+        padding-left: 25px
+        &.ss-pause
+          padding-left: 23px
         
     div.tape_info
       .follow_button

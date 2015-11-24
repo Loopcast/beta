@@ -15,13 +15,19 @@ header.header.for_desktop(data-view="header")
 
     .right
       //- a(href="#" title="Sign Up") Sign Up
+      a.upload(
+        title="Upload"
+        href="/upload"
+      ) Upload
+
       .user_logged
 
       a.login_link(
         title="Log In", 
         data-view="components/login_popup_handler",
         href="#"
-      ) Log in / Sign up 
+      ) Log in / Sign up
+
       div.settings.hover_dropdown_trigger(title="Settings" data-view="[components/click_trigger,components/settings]" data-target=".settings_dropdown")
         span.icon.ss-settings
         //- span.spritesheet.header_settings

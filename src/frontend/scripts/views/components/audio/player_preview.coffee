@@ -53,7 +53,10 @@ module.exports = (dom) ->
     dom.removeClass 'preloading'
     icon.removeClass( 'ss-pause' ).addClass( 'ss-play' )
 
-  toggle = ->
+  toggle = (e) ->
+    e.stopPropagation()
+    e.preventDefault()
+    
     if is_playing
       dom.removeClass 'preloading'
       app.player.stop()

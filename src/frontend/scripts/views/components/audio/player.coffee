@@ -291,7 +291,9 @@ module.exports = class Player
 
     clearTimeout @timeout_follow_popup
     @timeout_follow_popup = setTimeout =>
-      @follow_popup.show obj
+      log "[Player] checking popup", @audio.is_playing
+      if @audio.is_playing
+        @follow_popup.show obj
     , 30000
 
   on_audio_started: =>    

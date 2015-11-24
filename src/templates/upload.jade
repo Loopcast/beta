@@ -1,14 +1,78 @@
 block seo
-  title Upload - Loopcast 
+  title Upload Your DJ Mix or Podcast for Free - Loopcast 
   meta( name="description" content="Stream, record and share your DJ mixes instantly. Go live, interact with your audience and see who’s listening in real time." )
   meta( property="og:url" content="#{s.base_path}/about" )
-  meta( property="og:title" content="About - Loopcast" )
-  meta( property="og:description" content="Stream, record and save your DJ mixes instantly. Go live, interact with your audience and see who’s listening in real time." )  
+  meta( property="og:title" content="Upload Your DJ Mix or Podcast for Free - Loopcast" )
+  meta( property="og:description" content="Stream, record and save your DJ mixes instantly. Go live, interact with your audience and see who’s listening in real time." )
+  meta( name="twitter:title" content="Upload Your DJ Mix or Podcast for Free - Loopcast")
+  meta( name="twitter:description" content="Stream, record and share your DJ mixes instantly. Go live, interact with your audience and see who’s listening in real time.")    
 
 extends layout
 
 block content
 
-  h1
+  .upload-page(data-view="upload-page")
+    .page1
+      h1 Upload your mix to Loopcast for free.
+      p.description Get your mixes shared with our vast community of DJs, Podcasters, Record Labels, Promoters and more!
+      .drag-and-drop
+        .icon.ss-uploadcloud
+        h2 Click to select file
+        p Or drag and drop into the marked area
 
-    | Hello, Upload your file Here!
+      p.record Don't already have a mix to upload? You can record a new one on Loopcast
+      a(href="/rooms/create").button.yellow_button.no_shadow Record Now
+
+
+        .preview-container
+        #preview-template
+          p Nothing here
+
+    .page2
+      .progress
+        p.percent 50%
+        .bar
+
+      form(type="submit" name="mix-details")#description.clearfix
+        .mix-cover
+          a.button.upload-cover.ss-uploadcloud(
+            title="Upload cover"
+            href=""
+          ) 
+            span Add Cover
+
+        .form
+          label(for="title") Title *
+          input(type="text" name="title" placeholder="Enter name of your session")
+
+          label(for="tags") Tags *
+          input(type="text" name="tags" placeholder="Start typing to add tags")
+
+          label(for="location") Location
+          input(type="text" name="location" placeholder="Where are you?")
+
+          textarea(name="description" placeholder="Enter description")
+
+        .share-fb
+          label(for="share") Share on facebook
+          input(type="checkbox" checked)
+
+        button(type="submit").button.yellow_button Publish
+
+
+
+    .page3
+      .icon
+      h2 Upload Complete
+      p Why not share your upload?
+
+      ul.social
+        li
+          a.twitter Twitter
+        li
+          a.googleplus Google+
+        li
+          a.fb Facebook
+
+      button#return-to-upload.button.white_button Go to Upload Page
+

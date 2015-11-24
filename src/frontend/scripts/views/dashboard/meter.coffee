@@ -9,17 +9,6 @@ VOL_FLOOR     = 0.03
 frame_counter = 0
 
 module.exports = class Meter extends RoomView
-  values : [
-    { value: -20, id: "m_20", color: "green" },
-    { value: -15, id: "m_15", color: "green" },
-    { value: -10, id: "m_10", color: "green" },
-    { value: -6,  id: "m_6",  color: "green" },
-    { value: -3,  id: "m_3",  color: "green" },
-    { value: 0,   id: "0",    color: "yellow" },
-    { value: 3,   id: "3",    color: "yellow" },
-    { value: 6,   id: "6",    color: "dark_yellow" },
-    { value: 10,  id: "10",   color: "red" }
-  ]
   disabled: true
   current_block_index: -1
   blocks: []
@@ -60,40 +49,6 @@ module.exports = class Meter extends RoomView
 
     waveform.update data: data
 
-    return
-
-    # @debug = $ '#debug'
-
-    @size_block = 1 / @values.length
-
-    # Build the meter
-    tmpl = require 'client_templates/components/audio/meter'
-    block_tmpl = require 'client_templates/components/audio/meter_block'
-    
-    blocks_html = ""
-    for v in @values 
-      blocks_html += block_tmpl v
-
-    @dom.append tmpl()
-
-    @dom.find( '.blocks' ).append blocks_html
-
-    @blocks = []
-    for item in @dom.find( '.block' )
-      @blocks.push 
-        'left': $( item ).find( '.left_channel' )
-        'right': $( item ).find( '.right_channel' )
-
-    
-
-  on_input_device_changed: ( data ) =>
-    @disabled = data.length <= 0
-    if @disabled
-      @no_sound = true
-      @turn_off()
-
-    # log "[Meter] on_input_device_changed", data, @disabled
-
 
    on_room_created: (@room_id, @owner_id) =>
     
@@ -106,16 +61,9 @@ module.exports = class Meter extends RoomView
 
     delay 5000, => clearInterval @interval
 
-    @blocks = []
-
-    for item in @dom.find( '.block' )
-      @blocks.push 
-        'left': $( item ).find( '.left_channel' )
-        'right': $( item ).find( '.right_channel' )
-
+    
     appcast.on 'stream:vu', @set_volume
-    app.on 'appcast:input_device', @on_input_device_changed
-    @turn_on()
+    
     # appcast.on 'stream:vu', @activate
 
 
@@ -141,74 +89,10 @@ module.exports = class Meter extends RoomView
 
     waveform.update data: data
 
-    return
-
-    return if @disabled
-    
-    @set_channel 'left', perc[0]
-    @set_channel 'right', perc[1]  
-
-    if perc[0] <= 0 and perc[1] <= 0
-      if not @no_sound
-        @no_sound = true
-        @turn_off()
-    else
-      if @no_sound
-        @no_sound = false
-        @turn_on()
-
-  turn_off : ->
-    # log "[Meter] turn_off"
-    @dom.addClass( 'no_sound' ).removeClass( 'with_sound' )
-
-  turn_on : ->
-    # log "[Meter] turn_on"
-    @dom.removeClass( 'no_sound' ).addClass( 'with_sound' )
-
-  
-  ###
-  c = left|right   channel name
-  fraction = [0,1] volume value 
-  ###
-  set_channel: ( c, fraction ) ->
-
-    # Getting value and block index
-    data = 
-      value: fraction
-      index: @get_the_block_index_from_value fraction
-    
-    # if c is 'left'
-    #   @debug.html data.index + " - " + fraction
-
-
-    return if data.index < 0
-
-
-    # activate the lower blocks
-    for index in [0..data.index]
-      @blocks[ index ][ c ].addClass 'active'
-
-    # deactivate the upper blocks
-    for index in [data.index+1...@blocks.length]
-      @blocks[ index ][ c ].removeClass 'active'
-
-    return data
-  
-
-  get_the_block_index_from_value: ( value ) ->
-
-    if value <= 0
-      return -1
-
-    if value >= 1
-      return @values.length
-    index = Math.floor( value / @size_block ) 
-    return index
 
   destroy: ->
     super()
     
     if @is_room_owner
-      app.off 'appcast:input_device', @on_input_device_changed
       appcast.off 'stream:vu', @set_volume
     appcast.disconnect()
