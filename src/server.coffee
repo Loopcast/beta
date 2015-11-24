@@ -49,7 +49,7 @@ server.start = ( when_done ) ->
             clientSecret   : s.facebook.app.secret
             isSecure       : s.https
             providerParams : s.facebook.provider_params
-
+            
           hapi.auth.strategy 'google', 'bell',
             scope: [
               'profile'

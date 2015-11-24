@@ -43,7 +43,7 @@ s.facebook =
   graph:
     url: 'https://graph.facebook.com/v2.2/'
   provider_params : 
-    options: 'popup'
+    display: 'popup'
 
 s.soundcloud =
   id           : "afac925318ccc98d6aca4631b0a86a92"
