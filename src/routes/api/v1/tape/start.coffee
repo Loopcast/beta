@@ -105,6 +105,9 @@ module.exports =
               room_id     : room_id
               mount_point : "#{username}_#{room.info.slug}"
 
+          if s.is_beta
+            data.form.path        : "http://46.101.25.152/loopcast/#{username}_#{room.info.slug}"
+
           request.post data, ( error, response, body ) ->
 
             if error or response.statusCode != 200
