@@ -131,7 +131,7 @@ block content
               span.icon.ss-write
 
             - klass = ""
-            if user.info.location && user.info.location.trim().length <= 0
+            - if( user.info.location && user.info.location.trim().length <= 0 )
               - klass = "empty"
             h4.location(class="#{klass}") #{user.info.location}
             .bio_wrapper.collapsable_box(data-view="components/collapsable_box")

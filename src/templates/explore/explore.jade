@@ -121,6 +121,9 @@ block grid
 
     - klasses += " is_recorded"
 
+    //- if not uploaded yet, just skip it
+    - if( !item.s3 ) continue
+
     .room_cell.item(class="#{klasses}", data-view="components/audio/player_preview", data-room-id="#{item._id}" data-is-live="", data-audio-url="#{item.s3.location}")
       hidden( class="source_src" value="#{item.s3.location}")
 
