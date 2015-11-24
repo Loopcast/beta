@@ -136,10 +136,13 @@ appcast.start_stream = ( username, room_slug, password, device_name ) ->
   # audiopump connection configuration
   payload = 
     device_name : device_name
-    mount_point : "loopcast-staging/#{username}_#{room_slug}"
+    mount_point : "loopcast/#{username}_#{room_slug}"
     password    : password
     port        : "80"
     server      : 'inbound-a.cdn.audiopump.co'
+
+  if not s.is_beta
+    payload.mount_point = "loopcast/#{username}_#{room_slug}"
 
   console.log 'stream with payload ->', payload
 
