@@ -118,7 +118,7 @@ if s.is_beta
 
   s.tape = 
     url: 'http://tape.loopcast.fm'
-    ips: [ "54.154.147.67", "52.16.136.56" ] # tape servers, so we dont count listeners from here
+    ips: [ "54.154.147.67", "46.101.25.152" ] # tape servers, so we dont count listeners from here
 
   s.radio = 
     url     : 'http://cdn.audiopump.co/loopcast/'
@@ -156,7 +156,7 @@ if not s.is_beta
 
   s.tape = 
     url: 'http://staging-tape.loopcast.fm'
-    ips: [ "54.154.147.67", "52.16.136.56" ] # tape servers, so we dont count listeners from here
+    ips: [ "54.154.147.67", "46.101.25.152" ] # tape servers, so we dont count listeners from here
 
   s.radio = 
     url      : 'http://cdn.audiopump.co/loopcast-staging/'
