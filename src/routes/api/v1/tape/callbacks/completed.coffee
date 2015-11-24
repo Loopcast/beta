@@ -45,13 +45,10 @@ module.exports =
           .lean()
           .exec ( error, room ) -> 
 
-            console.log 'room ->', room
-            console.log 'user ->', room.user
-            console.log 'recording ->', room.recording
-
             data = 
               type : 'upload:finished'
-              room : room
+              user : room.user
+              tape : room.recording
 
             sockets.send room.user._id, data
 
