@@ -1,3 +1,4 @@
+require 'app/utils/time/livestamp'
 Cloudinary = require 'app/controllers/cloudinary'
 transform  = require 'lib/cloudinary/transform'
 notify     = require 'app/controllers/notify'

@@ -283,10 +283,11 @@ block content
                     
                     - counter = 0
                     for genre in room.genres
-                      - klass = ""
-                      if counter++ >= 5
-                        - klass = "hide"
-                      a.tag(href="/explore?genres=#{genre}", title="#{genre}", class="#{klass}") #{genre}
+                      if genre.length > 0
+                        - klass = ""
+                        if counter++ >= 5
+                          - klass = "hide"
+                        a.tag(href="/explore?genres=#{genre}", title="#{genre}", class="#{klass}") #{genre}
 
                     if room.genres.length > 5
                       span ...
@@ -304,7 +305,7 @@ block content
                       span.text #{room.plays}
                     .upload_time  
                       span.icon.ss-upload
-                      span.text #{Math.floor(room.duration/60)} mins 
+                      span.text(data-livestamp="#{room.stopped_at}")
 
                   .edit_session_wrapper
                     a.icon.settings_button.ss-settings(href="#", title="Setting Session", data-view="components/click_trigger" data-target="#session_recorded_#{room._id} .edit_session_popup")
