@@ -103,6 +103,8 @@ module.exports = class LikeButton extends LoggedView
     @dom.removeClass 'liked'
 
   destroy: ->
-    super()
+    
     @tape_view?.off 'like', @on_like
     @tape_view?.off 'unlike', @on_unlike
+
+    super()

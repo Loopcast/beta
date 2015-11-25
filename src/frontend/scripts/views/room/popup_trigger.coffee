@@ -16,10 +16,12 @@ module.exports = class PopupTrigger
     @dom.on 'mouseout', @_on_people_out
 
   _on_people_over: (e) =>
+    return if app.settings.browser.mobile
     coords = get_coords e
     @popup.show @id, coords
 
   _on_people_out: =>
+    return if app.settings.browser.mobile
     @popup.hide()
 
 
