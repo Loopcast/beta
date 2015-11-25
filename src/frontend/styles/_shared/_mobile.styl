@@ -129,6 +129,8 @@ body
   BLACK_TAPE_MOBILE = #292826
   TAPE_PADDING = 20px
   
+  body .tape_view .tape_title
+    font-size: 1.8rem
   .tape_view .main_column .first_line .buttons .custom-fb-send
     display: none
     
@@ -173,7 +175,7 @@ body
       flex: auto
     .tape_header
       position: relative
-      padding: TAPE_PADDING
+      padding: 10px TAPE_PADDING
       height: 330px
       ._overflow
         overflow: visible
@@ -207,10 +209,13 @@ body
       
     .first_line
       .tape_play
-        position: relative
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translateX(-50%) translateY(-50%)
         border-width: 3px
         display: block
-        margin: 40px auto
+        margin: 0px auto
         padding-left: 25px
         &.ss-pause
           padding-left: 23px

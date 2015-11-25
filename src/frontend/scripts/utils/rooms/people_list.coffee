@@ -16,7 +16,7 @@ module.exports = class PeopleList
     
     user = data.user
 
-    if @ids[ user.id ]?
+    if @ids[ user.id ]? or not user.socket_id?
       # log "[PeopleList] ######## ADD (already present)", user, user.socket_id, user.name, @list, @ids
       # log "[PeopleList] #####################"
 
