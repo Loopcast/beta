@@ -141,8 +141,9 @@ module.exports = class Player
   play_live: (room_id, src = null) ->
     @play room_id, src, true
 
-  play: (room_id, src = null, is_live = false) ->
+  play: (_room_id, src = null, is_live = false) ->
 
+    room_id = _room_id
     log "[Player] play", room_id, src, is_live
 
     if not room_id? and @current_room_id
@@ -150,6 +151,10 @@ module.exports = class Player
     else if @current_room_id is room_id and @audio.is_playing
       log "[Player] returning. already playing this room"
       return false
+
+    if not @audio.is_playing and _room_id is @current_room_id
+      return @on_play_clicked()
+
 
     if not @data_rooms[ room_id ]?
       @fetch_room room_id, is_live, => @_play room_id

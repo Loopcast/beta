@@ -87,6 +87,7 @@ module.exports = class AudioElement
     @timer_interval = setInterval @check_time, 500
 
   play: ->
+    log "[AudioElement] play"
     @dom[0].play()
     @emit 'played'
     clearTimeout @loading_interval
