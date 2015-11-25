@@ -34,7 +34,7 @@ module.exports = class PeoplePopup extends ChatView
     @cancel_hide = false
     @hide()
 
-  show: (id, coords) -> 
+  show: (id, coords, position) -> 
     return if @current_id is id
 
     @current_id = id
@@ -51,31 +51,46 @@ module.exports = class PeoplePopup extends ChatView
         url : '/' + response.info.username
     
 
-      css = 
-        left   : Math.max 0, coords.x - 120
-        top    : Math.max 0, coords.y - 50
-        opacity: 1
+      
 
       
-      log "[Popup] show", data, css.left, css.top
+      log "[Popup] show", data, user.is_me( data.id ), position
 
       @cancel_hide = true
       @visible     = true   
 
       @dom
-        .css( css )
         .show()
         .find( '.outer_inner' )
         .html( @tmpl( data ) )
 
-      if not @follow_button
-        view.bind 'body'
-      else
-        is_guest = data.name is "Guest"
-        @follow_button.set_user_id data.id, is_guest
+      delay 1, =>
+        w = 235
+        if user.is_me data.id
+          h = 210
+        else
+          h = 240
+
+        css = 
+          left   : Math.max 0, coords.x + (coords.w/2) - w/2
+          top    : Math.max 0, coords.y - h
+          opacity: 1
+
+        if position is 'down'
+          css.top = coords.y + coords.h
 
 
-      delay 300, => @cancel_hide = false
+        @dom.css( css )
+        log '------->', css.left, css.top, coords.x, coords.y, w, h, @dom.height()
+
+        if not @follow_button
+          view.bind 'body'
+        else
+          is_guest = data.name is "Guest"
+          @follow_button.set_user_id data.id, is_guest
+
+
+        delay 300, => @cancel_hide = false
 
   on_views_binded: ( data ) =>
     @follow_button = view.get_by_dom '.popup_follow_button'

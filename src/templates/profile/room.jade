@@ -118,7 +118,7 @@ block content
               if room
                 | #{room.info.title}
           br
-          h3.genres.black_background(data-view="room/popup_trigger", data-user-id="#{user._id}")
+          h3.genres.black_background(data-view="room/popup_trigger", data-user-id="#{user._id}", data-position="down")
             a(href="/#{user.info.username}", title="#{user.info.name}") #{user.info.name}
 
           .socials_room(data-view="components/room_social_links", data-links="#{user.info.social}")

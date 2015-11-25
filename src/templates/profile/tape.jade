@@ -31,7 +31,7 @@ block content
             span.for_mobile #{tape.short_title}
             span.for_desktop #{tape.title}
           .tape_author_wrapper._overflow
-            h3.black_background.tape_author(data-view="room/popup_trigger", data-user-id="#{tape.user._id}")
+            h3.black_background.tape_author(data-view="room/popup_trigger", data-user-id="#{tape.user._id}", data-position="down")
               a(href="/#{tape.user.info.username}") #{tape.user.info.name}
             br.for_mobile
             a(href="#", class="button grey_button small_button_2 follow_button", data-view="profile/follow_button", data-user-id="#{tape.user._id}" onClick="_gaq.push(['_trackEvent', 'Follow Message', 'Click', '']);") 

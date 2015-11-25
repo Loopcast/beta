@@ -4,6 +4,7 @@ module.exports = class PopupTrigger
   constructor: (@dom) ->
     view.on 'binded', @_on_views_binded
     @id = @dom.data 'user-id'
+    @position = @dom.data 'position'
 
 
   _on_views_binded : (scope) =>
@@ -18,7 +19,7 @@ module.exports = class PopupTrigger
   _on_people_over: (e) =>
     return if app.settings.browser.mobile
     coords = get_coords e
-    @popup.show @id, coords
+    @popup.show @id, coords, @position
 
   _on_people_out: =>
     return if app.settings.browser.mobile
