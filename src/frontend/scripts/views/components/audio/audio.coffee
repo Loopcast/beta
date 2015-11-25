@@ -6,6 +6,7 @@ notify          = require 'app/controllers/notify'
 module.exports = class AudioElement
   timer_interval: null
   loading_interval: null 
+  info_loading_showed: false
   is_playing: false
   duration: 0
   last_time: ""
@@ -43,7 +44,10 @@ module.exports = class AudioElement
     @set_src @data.src
 
 
-  set_src: ( @src ) ->
+  set_src: ( src ) ->
+    if src isnt @src 
+      @info_loading_showed = false
+    @src = src
     if @dom.attr( 'src' ) isnt @src
       @dom.attr 'src', ''
       delay 1, => @dom.attr 'src', @src
@@ -96,7 +100,9 @@ module.exports = class AudioElement
 
   problems_with_playing: ->
     log "[Audio] problems_with_playing"
-    notify.info 'Loading the set is taking a while. Please wait or try again'
+    if not @info_loading_showed
+      notify.info 'Loading the set is taking a while. Please wait or try again'
+      @info_loading_showed = true
     @set_src @src
     @play()
 
