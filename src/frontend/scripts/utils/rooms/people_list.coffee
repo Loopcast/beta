@@ -24,7 +24,7 @@ module.exports = class PeopleList
     
     @total++
 
-    # log "[PeopleList] ######## ADD (new)", user, user.socket_id, user.name, @list
+    log "[PeopleList] ######## ADD (new)", user, user.socket_id, user.name, @list
     @list[ user.socket_id ] = user
     @ids[ user.id ] = user.socket_id
 

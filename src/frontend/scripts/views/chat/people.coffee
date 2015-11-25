@@ -49,7 +49,7 @@ module.exports = class People extends ChatView
       # log "[People] listener already added", listener.socket_id
       return
       
-    # log "[People] on_listener_added", listener
+    log "[People] on_listener_added", listener
     @listeners_map[ listener.socket_id ] = listener
 
     @listeners_wrapper.append @tmpl( listener )

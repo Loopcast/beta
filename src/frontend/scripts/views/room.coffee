@@ -276,7 +276,7 @@ module.exports = class Room extends LoggedView
               occupation: "Guest"
               avatar    : "https://deerfieldsbakery.com/dev/images/items/cookies/Cookies-Decorated-Chocolate-Happy-Face_MD.jpg"
               likes : 0
-              url       : "/"
+              url       : "#"
 
         message = 
           type  : "listener:added", 
