@@ -360,6 +360,7 @@ module.exports = class Player
   on_progress_dragger: ( perc ) =>
     @progress.css 'width', perc + '%'
     time = @audio.get_time_from_perc( perc / 100 )
+    # log "[xxx] dragging", perc, time
     @time.html time.str
 
 
@@ -372,12 +373,16 @@ module.exports = class Player
     log "[Player] on_progress_ended() loading show"
     @dom.addClass 'loading'
     @audio.snap_to perc/100
-    @is_dragging = false
+
+    # log "[xxx] dragging", perc
+    delay 10, =>
+      @is_dragging = false
 
 
   on_progress_click: (e) =>
 
     return if not @audio.data.is_recorded
+    return if @is_dragging
     x = e.offsetX
     w = $(e.currentTarget).width()
     perc = x / w
