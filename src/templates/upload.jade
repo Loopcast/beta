@@ -34,15 +34,21 @@ block content
         p.percent 50%
         .bar
 
-      form(type="submit" name="mix-details")#description.clearfix
-        .mix-cover
-          a.button.upload-cover.ss-uploadcloud(
+      .wrapper.clearfix
+        .mix-cover(data-view="components/image_uploader", data-id="mix-cover")
+          form(class="cloudinary_form")
+              input.api_key(type="hidden", name="api_key", value="#{cloudinary.api_key}")
+              input.cloud_name(type="hidden", name="cloud_name", value="#{cloudinary.cloud_name}")
+              input.unsigned_id(type="hidden", name="unsigned_id", value="#{cloudinary.unsigned_ids.cover}")
+          
+          a.button.upload-cover.ss-camera(
             title="Upload cover"
             href=""
           ) 
-            span Add Cover
-
-        .form
+            span.icon Add Cover
+            span.progress
+      
+        form(type="submit" name="mix-details")#description.clearfix        
           label(for="title") Title *
           input(type="text" name="title" placeholder="Enter name of your session")
 
@@ -54,11 +60,11 @@ block content
 
           textarea(name="description" placeholder="Enter description")
 
-        .share-fb
-          label(for="share") Share on facebook
-          input(type="checkbox" checked)
+          .share-fb
+            label(for="share-on-fb") Share on facebook
+            input(type="checkbox" name="share-on-fb" id="share-on-fb" checked)
 
-        button(type="submit").button.yellow_button Publish
+          button(type="submit").button.yellow_button Publish
 
 
 

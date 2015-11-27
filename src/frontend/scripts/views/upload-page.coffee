@@ -1,9 +1,14 @@
+LoggedView      = require 'app/views/logged_view'
 Dropzone        = require 'dropzone'
 Cloudinary      = require 'app/controllers/cloudinary'
+transform       = require 'lib/cloudinary/transform'
 
 
 module.exports = class UploadPage
   constructor: ( @dom ) ->
+
+    view.on 'binded', @on_views_binded
+
 
     # Init properties
     @form = @dom.find('#description')
@@ -34,7 +39,7 @@ module.exports = class UploadPage
       @dom.find('.page2').hide()
       @dom.find('.page3').hide()
 
-
+  
 
   initDropzone: () ->
     uploadMixDropzone = new Dropzone '.drag-and-drop',
@@ -85,3 +90,28 @@ module.exports = class UploadPage
       elem.removeClass('invalid')
       return true
 
+
+  # Handle mix cover upload
+  onCoverUploaded: (data) =>
+    log "[Cover uploader]", data.result.url
+
+    cover = transform.upload_mix_cover data.result.url
+
+    @dom.find( '.mix-cover' ).css
+      'background-image': "url(#{cover})"
+
+    @saveData cover_url: data.result.url
+
+
+  on_views_binded: ( scope ) =>
+    return if not scope.main
+
+    # Init cover uploader
+    view.off 'binded', @on_views_binded
+    @coverUploader = view.get_by_dom @dom.find( '.mix-cover' )
+    @coverUploader.on 'completed', @onCoverUploaded
+
+
+  # Save data to backend
+  saveData: () ->
+    # Save data here

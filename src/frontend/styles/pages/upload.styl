@@ -1,7 +1,7 @@
 @import '../_shared/_bootstrap.styl'
 
 .upload-page
-  .page2, .page3
+  .page1, .page3
     display none
 
   // Page 1, drag and drop upload
@@ -74,7 +74,7 @@
         border-radius 4px
         background #fdbb30
     
-    form
+    .wrapper
       position relative
       padding 17px
       border-radius 3px
@@ -86,11 +86,15 @@
       height 290px
       float left
       background #ccc
-      .button
+      
+      .button, .cloudinary_fileupload
         position absolute
         left 50%
         bottom 10px
         transform translateX(-50%)
+
+      .button
+        z-index 0
         font-size 0.8em
         color #b6b6b6
         background-color rgba(0,0,0,0.77)
@@ -99,12 +103,31 @@
           top -3px
           font-size 1.8em
           margin-right 7px
-        span
+        .icon
           position relative
           top -9px
+        .progress
+          position absolute
+          top 0
+          left 0
+          height 2px
+          background-color YELLOW
+          &.hide
+            visibility hidden
+          
+          
+      .cloudinary_fileupload
+        z-index 1
+        opacity 0
+        height 100%
+        margin 0
+        padding 0
+
+        &:hover
+          cursor pointer
         
       
-    .form
+    #description
       margin-top -6px
       width 444px
       float right
