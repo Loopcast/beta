@@ -37,6 +37,23 @@ the view controller will generate an instance of the js class located in src/fro
 
 Every view class should have a destroy method which will be called from the view controller whenever the view needs to be destroyed. This is useful for garbage collection purposes.
 
+If you want to get a reference of a view instance from your code, you need to subscribe to the view binded event:
+
+```coffeescript
+
+  constructor: (@dom) ->
+    view.on 'binded', @on_views_binded
+
+  on_views_binded: ( scope ) =>
+    return if not scope.main
+
+    view.off 'binded', @on_views_binded
+
+    # Now you can get the references of your views
+    my_reference = view.get_by_dom '.my_class'
+
+
+```
 
 ### Api Interface
 

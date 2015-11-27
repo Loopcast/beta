@@ -41,9 +41,11 @@ module.exports = class Balloon
       data.left = p.left - @width
 
     data.left += @dom_offset
+    log "[Balloon] resize", "top", data.top, "left", data.left, "orientation", @orientation, "t top", p.top, "t left", p.left, "width", @width, "dom offset", @dom_offset
     @dom.css data
 
   show: ->
+    log "[Balloon] show!"
     @visible = true
     app.window.on 'resize', @on_resize
     @dom.addClass 'to_show'

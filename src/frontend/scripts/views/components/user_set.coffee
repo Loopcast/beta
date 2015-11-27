@@ -74,8 +74,11 @@ module.exports = ( dom ) ->
       dom.slideUp -> 
         dom.remove()
         delay 1, -> app.emit 'room:deleted', room_id
-        
-      notify.info "The recording has been deleted."
+      
+      if type is 'rooms'
+        notify.info "The room has been deleted."
+      else
+        notify.info "The recording has been deleted."
 
 
 

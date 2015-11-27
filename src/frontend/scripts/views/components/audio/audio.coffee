@@ -113,7 +113,7 @@ module.exports = class AudioElement
     currentTime = @duration * perc
 
     time = time_to_string currentTime
-    log "get_time_from_perc", @duration, perc, currentTime, time
+    # log "get_time_from_perc", @duration, perc, currentTime, time
     return time
 
 
