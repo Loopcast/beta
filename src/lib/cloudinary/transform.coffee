@@ -88,7 +88,7 @@ Transform =
 
   upload_mix_cover: ( url ) ->
     if not url or not url? or url.indexOf( "upload/" ) < 0
-      return DEFAULT.cover_thumb_player
+      return DEFAULT.cover_uploaded_mix
     else
       url.replace "upload/", "upload/w_290,h_290,c_fill/"
   

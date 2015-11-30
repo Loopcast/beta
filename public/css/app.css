@@ -9729,7 +9729,7 @@ body.tape_view .chat_list_messages {
 }
 
 /* line 4 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
-.upload-page .page1,
+.upload-page .page2,
 .upload-page .page3 {
   display: none;
 }
@@ -9844,7 +9844,7 @@ body.tape_view .chat_list_messages {
   width: 290px;
   height: 290px;
   float: left;
-  background: #ccc;
+  background: url("../images/default_uploaded_mix_cover.jpg") no-repeat center center;
 }
 
 /* line 90 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */

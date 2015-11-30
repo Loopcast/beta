@@ -51,11 +51,9 @@ module.exports = class UploadPage
 
     # Init events
     uploadMixDropzone.on 'dragenter', () ->
-      console.log 'dragenter'
       $( @element ).addClass('dragenter')
 
     uploadMixDropzone.on 'dragleave', () ->
-      console.log 'dragleave'
       $( @element ).removeClass('dragenter')
 
     uploadMixDropzone.on 'addedfile', () =>
@@ -64,8 +62,8 @@ module.exports = class UploadPage
       @dom.find('.page1').hide()
       @dom.find('.page2').show()
 
-    uploadMixDropzone.on 'removedfile', () =>
-      console.log 'removedFile'
+    # uploadMixDropzone.on 'removedfile', () =>
+    #   console.log 'removedFile'
 
 
   prepareValidation: () ->
