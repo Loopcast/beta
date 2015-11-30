@@ -52,8 +52,9 @@ block content
           label(for="title") Title *
           input(type="text" name="title" placeholder="Enter name of your session")
 
-          label(for="tags") Tags *
-          input(type="text" name="tags" placeholder="Start typing to add tags")
+          label(for="genre_input") Tags *
+          .tags_wrapper.genre(data-view="components/editables/editable_tags")
+            textarea( id="genre_input", rows="1", style="width:310px")
 
           label(for="location") Location
           input(type="text" name="location" placeholder="Where are you?")
