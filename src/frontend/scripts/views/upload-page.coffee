@@ -39,6 +39,9 @@ module.exports = class UploadPage
       @dom.find('.page2').hide()
       @dom.find('.page3').hide()
 
+
+    # Prepare social share
+    @prepareSocialShare()
   
 
   initDropzone: () ->
@@ -113,3 +116,51 @@ module.exports = class UploadPage
   # Save data to backend
   saveData: () ->
     # Save data here
+
+
+  # Prepare social share
+  prepareSocialShare: () ->
+
+    # Temporary share data
+    @data = 
+      title: 'Temporary title'
+      link: 'Temporary link'
+      summary: 'Temporary summary'
+
+
+    @dom.find('.social .twitter').click @share_on_twitter
+    @dom.find('.social .fb').click @share_on_facebook
+    @dom.find('.social .googleplus').click @share_on_google
+    
+  share_on_facebook: =>
+
+    FB.ui
+      method: 'feed',
+      link: @data.link,
+      caption: @data.title,
+      description: @data.summary,
+      picture: @data.image
+    , (response) ->
+      log response
+
+    return false
+    # str = 'http://www.facebook.com/sharer.php?'+ 'u='+encodeURIComponent(@data.link)+ '&amp;t='+encodeURIComponent(@data.title)
+    # @open_popup 'http://www.facebook.com/sharer.php?s=100&amp;p[title]=' + @data.title + '&amp;p[summary]=' + @data.summary + '&amp;p[url]=' + @data.link + '&amp;p[images][0]=' + @data.image
+    # @open_popup str
+
+  share_on_twitter: =>
+    @open_popup 'http://twitter.com/share?text=' + @data.title + '&amp;url=' + @data.link + '&amp;hashtags=loopcast'
+    return false
+
+  share_on_google: =>
+    @open_popup "https://plus.google.com/share?url=#{@data.link}"
+    return false
+
+  open_popup: ( url ) ->
+    w = 548
+    h = 325
+    left = (screen.width/2)-(w/2)
+    top = (screen.height/2)-(h/2)
+    window.open url, 'sharer', 'toolbar=0,status=0,width='+w+',height='+h+',top='+top+',left='+left
+    return false
+
