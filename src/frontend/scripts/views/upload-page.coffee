@@ -22,7 +22,7 @@ module.exports = class UploadPage
 
 
     # Submit form
-    @form.on 'submit', (e) =>
+    @dom.find('.publish').on 'click', (e) =>
       e.preventDefault();
       titleValid = @validate( @title )
       tagsValid = @validate( @tags )
