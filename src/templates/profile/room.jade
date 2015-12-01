@@ -38,8 +38,9 @@ block seo
     meta( property="og:type"        content="music.radio_station" )
 
     - og_image = room.info.cover_url || user.info.avatar
+    - og_image = transform.og_image( og_image )
+
     if og_image
-      - og_image = transform.og_image( og_image )
       
       meta( property="og:image"       content="#{og_image}" )
       meta( name="twitter:image" content="#{og_image}")
