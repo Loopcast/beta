@@ -44,7 +44,7 @@ module.exports =
         user  : user._id
 
       Room.findOne( query )
-        .select( "_id info.cover_url user" )
+        .select( "_id info.cover_url user info.slug" )
         .populate( "user", "info.username" )
         .lean()
         .exec ( error, room ) -> 
@@ -119,7 +119,7 @@ module.exports =
 
                 return reply Boom.preconditionFailed( "Database error" )
 
-              room.slug = update[ 'info.slug' ] || room.slug
+              room.slug = update[ 'info.slug' ] || room.info.slug
 
               url = "#{s.base_path}/#{room.user.info.username}/#{room.slug}"
 
