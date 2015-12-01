@@ -37,6 +37,8 @@ Transform =
       url.replace "upload/", "upload/w_1140,h_350,c_fill/"
 
   og_image: ( url ) -> 
+    # if not URL or not cloudinary URL
+    # return empty
     if not url or not url? or url.indexOf( "upload/" ) < 0
       return ""
     else
