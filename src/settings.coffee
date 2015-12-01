@@ -38,7 +38,8 @@ s.facebook =
     id           : "1551393601809115"
     secret       : "7d4307b592fb8aab287582835bdba803"
   graph:
-    url: 'https://graph.facebook.com/v2.2/'
+    url  : 'https://graph.facebook.com/v2.2/'
+    plain: "https://graph.facebook.com"
   provider_params : 
     display: 'popup'
 
