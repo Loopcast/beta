@@ -102,7 +102,7 @@ module.exports = class AudioElement
   problems_with_playing: ->
     log "[Audio] problems_with_playing"
     if not @info_loading_showed
-      notify.info 'Loading the set is taking a while. Please wait or try again'
+      # notify.info 'Loading the set is taking a while. Please wait or try again'
       @info_loading_showed = true
     
     # force reset as previous code doesn't seem to work
