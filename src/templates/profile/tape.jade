@@ -13,8 +13,6 @@ block seo
     meta( property="og:image"  content="#{og_image}" )
     meta( name="twitter:image" content="#{og_image}")
 
-  meta( property="og:url"         content="#{s.base_path}/#{room.user.info.username}/#{room.info.slug}" )
-
   - description = "Stream, record and save your DJ mixes instantly. Go live, interact with your audience and see who’s listening in real time."
 
   meta( name="description" content=description ) 
@@ -27,6 +25,8 @@ block seo
   else
     meta( property="og:description" content=description )
     meta( name="twitter:description" content=description)
+
+  meta( property="og:type"        content="music.song" )
 
 extends ../layout
 
