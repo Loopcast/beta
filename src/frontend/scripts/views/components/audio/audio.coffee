@@ -105,7 +105,7 @@ module.exports = class AudioElement
       notify.info 'Loading the set is taking a while. Please wait or try again'
       @info_loading_showed = true
     @set_src @src
-    @play()
+    delay 100, => @play()
 
 
 
