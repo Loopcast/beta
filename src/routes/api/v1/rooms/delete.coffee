@@ -62,14 +62,14 @@ module.exports =
               #   console.log result
 
           # delete recorded set from s3
-          if room.status.recording?.s3
+          # if room.status.recording?.s3
 
-            delete_file room.status.recording.s3.key, ( error, callback ) ->
+          #   delete_file room.status.recording.s3.key, ( error, callback ) ->
 
-              if error
-                console.error "error deleting from s3!!"
-                console.error error
-                return
+          #     if error
+          #       console.error "error deleting from s3!!"
+          #       console.error error
+          #       return
 
           delete_likes room_id, ( error ) ->
 
