@@ -13,7 +13,7 @@ module.exports = class ConfirmUsername
     $btn.click (e) =>
       e.preventDefault()
       @submitting = true
-      @checkUsername()
+      @checkUsername(e)
 
     # Check username while typing
     @input.on 'keyup', _.debounce( @checkUsername, 300 )
@@ -25,7 +25,7 @@ module.exports = class ConfirmUsername
     # don't try in case it's empty
     if username.length is 0
 
-      # remove error in case i't empty
+      # remove error in case it's empty
       $('.error-box').removeClass('error')
 
       return
