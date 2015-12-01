@@ -109,10 +109,6 @@ module.exports =
 
           sockets.send tape_id, data
 
-          url = "#{s.base_path}/#{tape.user.info.username}/r/#{tape.slug}"
-
-          fb_scrape( url )
-
           Tape.update( _id: tape_id, update )
             .lean()
             .exec ( error, docs_updated ) ->
@@ -123,4 +119,10 @@ module.exports =
 
                 return reply Boom.preconditionFailed( "Database error" )
 
+              tape.slug = update[ 'info.slug' ] || room.slug
+              
+              url = "#{s.base_path}/#{tape.user.info.username}/r/#{tape.slug}"
+
+              fb_scrape( url )
+          
               reply update
