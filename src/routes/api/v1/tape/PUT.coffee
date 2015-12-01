@@ -119,7 +119,7 @@ module.exports =
 
                 return reply Boom.preconditionFailed( "Database error" )
 
-              tape.slug = update[ 'info.slug' ] || room.slug
+              tape.slug = update[ 'info.slug' ] || tape.slug
               
               url = "#{s.base_path}/#{tape.user.info.username}/r/#{tape.slug}"
 
