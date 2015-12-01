@@ -16,6 +16,8 @@ find_by   = find 'users/by'
 
 update_session = lib 'user/update_session'
 
+fb_scrape = lib 'facebook/scrape'
+
 module.exports =
   method : 'POST'
   path   : '/api/v1/user/edit'
@@ -54,7 +56,7 @@ module.exports =
       user = request.auth.credentials.user
 
       # save user data to intercom
-      save = ( user_data ) ->
+      save = ( user_data, old_user ) ->
 
         query  = _id : user._id
         update = $set: user_data
@@ -70,6 +72,12 @@ module.exports =
           find_by _id: user._id, ( error, user ) ->
 
             update_session( request, user )
+
+            username = user_data['info.username'] || old_user.info.username
+
+            url = "#{s.base_path}/#{username}"
+
+            fb_scrape( url )
 
             # expose all updated data
             reply user_data
@@ -179,9 +187,9 @@ module.exports =
               data['info.username'] = username
               
               # save to intercom
-              save( data )
+              save( data, user )
 
           else
 
             # save to intercom
-            save( data )
+            save( data, user )
