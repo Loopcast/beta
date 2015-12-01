@@ -18,7 +18,14 @@ block seo
 
     meta( name="description" content=description ) 
 
-    - about = room.user.info.about   || user.info.about
+    - about = room.info.about || user.info.about
+
+    if about && about != ''
+      meta( property="og:description" content="#{strip_tags(about)}" )
+      meta( name="twitter:description" content="#{strip_tags(about)}")
+    else
+      meta( property="og:description" content=description )
+      meta( name="twitter:description" content=description)
 
     if room.status.is_live
       meta( property="og:title"       content="#{room.info.title} | #{room.user.info.name} live on Loopcast" )
@@ -42,13 +49,6 @@ block seo
       
     meta( property="og:site_name"   content="Loopcast.fm" )
     
-    if about && about != ''
-      meta( property="og:description" content="#{strip_tags(about)}" )
-      meta( name="twitter:description" content="#{strip_tags(about)}")
-    else
-      meta( property="og:description" content=description )
-      meta( name="twitter:description" content=description)
-
     //- meta( property="music:creator"  content="#{s.base_path}/#{room.user.info.username}/" )
 
     //- only if the stream is live we have audio tags

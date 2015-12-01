@@ -2,12 +2,31 @@ block seo
   title #{tape.user.info.username} - #{tape.title} Recorded on Loopcast 
   meta( name="description" content="Stream, record and save your DJ mixes instantly. Go live, interact with your audience and see who’s listening in real time." )
   
-  //- meta( property="og:url" content="#{s.base_path}" )
   meta( property="og:title" content="#{tape.user.info.username} - #{tape.title} Recorded on Loopcast " )
   meta( property="og:description" content="Stream, record and save your DJ mixes instantly. Go live, interact with your audience and see who’s listening in real time." )
   
   meta( name="twitter:title" content="#{tape.user.info.username} - #{tape.title} Recorded on Loopcast")
   meta( name="twitter:description" content="Stream, record and save your DJ mixes instantly. Go live, interact with your audience and see who’s listening in real time.") 
+
+  - og_image = tape.cover_url || tape.user.info.avatar
+  if og_image
+    meta( property="og:image"  content="#{og_image}" )
+    meta( name="twitter:image" content="#{og_image}")
+
+  meta( property="og:url"         content="#{s.base_path}/#{room.user.info.username}/#{room.info.slug}" )
+
+  - description = "Stream, record and save your DJ mixes instantly. Go live, interact with your audience and see who’s listening in real time."
+
+  meta( name="description" content=description ) 
+
+  - about = room.info.about || user.info.about
+
+  if about && about != ''
+    meta( property="og:description" content="#{strip_tags(about)}" )
+    meta( name="twitter:description" content="#{strip_tags(about)}")
+  else
+    meta( property="og:description" content=description )
+    meta( name="twitter:description" content=description)
 
 extends ../layout
 
