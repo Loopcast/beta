@@ -38,7 +38,7 @@ Transform =
 
   og_image: ( url ) -> 
     if not url or not url? or url.indexOf( "upload/" ) < 0
-      return DEFAULT.cover
+      return ""
     else
       url.replace "upload/", "upload/w_1200,h_630,c_fill/"
 
