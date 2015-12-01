@@ -17,7 +17,7 @@ block seo
 
   meta( name="description" content=description ) 
 
-  - about = room.info.about || user.info.about
+  - about = tape.about || tape.user.info.about
 
   if about && about != ''
     meta( property="og:description" content="#{strip_tags(about)}" )
