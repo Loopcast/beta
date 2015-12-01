@@ -133,6 +133,9 @@ appcast.start_stream = ( username, room_slug, password, device_name ) ->
   if appcast.get( "stream:online" )
     return console.error "stream is already online, cant start again"
 
+  if not device_name
+    device_name = appcast.get 'selected_device'
+      
   # audiopump connection configuration
   payload = 
     device_name : device_name
