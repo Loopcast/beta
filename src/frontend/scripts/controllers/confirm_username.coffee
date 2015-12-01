@@ -6,14 +6,17 @@ module.exports = class ConfirmUsername
   constructor: () ->
 
     @input = $('.username')
-    $btn = $('#complete')
+    $btn   = $('#complete')
+
     @submitting = false
 
     # Submit changed name on click
     $btn.click (e) =>
+
       e.preventDefault()
+
       @submitting = true
-      @checkUsername()
+      @checkUsername(e)
 
     # Check username while typing
     @input.on 'keyup', _.debounce( @checkUsername, 300 )
@@ -25,8 +28,15 @@ module.exports = class ConfirmUsername
     # don't try in case it's empty
     if username.length is 0
 
-      # remove error in case i't empty
+      # remove error in case it's empty
       $('.error-box').removeClass('error')
+
+      return
+
+    # if user try to complete the form with the username
+    # which was already randomly assigned, let it happen!
+    if username is window.user.username
+      window.complete_login()
 
       return
 

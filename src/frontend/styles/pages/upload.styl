@@ -1,3 +1,5 @@
+@import '../_shared/_bootstrap.styl'
+
 .upload-page
   .page2, .page3
     display none
@@ -23,7 +25,10 @@
     cursor pointer
     
     &:hover
-      border-color #4592D4
+      border-color BLUE
+      
+      .icon
+        color BLUE
     
     .icon
       margin-top 8px
@@ -43,7 +48,7 @@
     
   .button
     width 200px
-    margin 30px auto
+    margin 24px auto 30px
     
   #preview-template
     display none
@@ -69,7 +74,7 @@
         border-radius 4px
         background #fdbb30
     
-    form
+    .wrapper
       position relative
       padding 17px
       border-radius 3px
@@ -80,12 +85,16 @@
       width 290px
       height 290px
       float left
-      background #ccc
-      .button
+      background url('../images/default_uploaded_mix_cover.jpg') no-repeat center center
+      
+      .button, .cloudinary_fileupload
         position absolute
         left 50%
         bottom 10px
         transform translateX(-50%)
+
+      .button
+        z-index 0
         font-size 0.8em
         color #b6b6b6
         background-color rgba(0,0,0,0.77)
@@ -94,12 +103,31 @@
           top -3px
           font-size 1.8em
           margin-right 7px
-        span
+        .icon
           position relative
           top -9px
+        .progress
+          position absolute
+          top 0
+          left 0
+          height 2px
+          background-color YELLOW
+          &.hide
+            visibility hidden
+          
+          
+      .cloudinary_fileupload
+        z-index 1
+        opacity 0
+        height 100%
+        margin 0
+        padding 0
+
+        &:hover
+          cursor pointer
         
       
-    .form
+    #description
       margin-top -6px
       width 444px
       float right
@@ -115,6 +143,14 @@
           
         &.invalid
           border-color red
+          
+      .tagsinput
+        padding-top 6px
+        margin-bottom 10px
+        
+        input.ac_input
+          margin-bottom 6px
+          
       
     label
       color #2e2e2e
@@ -127,9 +163,14 @@
       margin-bottom 68px
       background-color #fff
       
+    .bottom
+      height 100%
+      position relative
+      clear both
+
     .share-fb
       position absolute
-      left 130px
+      left 110px
       bottom 37px
       width 160px
       text-align left

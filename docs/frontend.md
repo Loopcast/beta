@@ -55,8 +55,6 @@ If you want to get a reference of a view instance from your code, you need to su
 
 ```
 
-It's really important to unsubscribe from the binded callback, because it might be called several times, and you code could run more than one time, possibly breaking something.
-
 ### Api Interface
 
 you can interact with the backend api in any point of your coffeescript files by requiring the following singleton controller:

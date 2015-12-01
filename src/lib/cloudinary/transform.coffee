@@ -36,6 +36,12 @@ Transform =
     else
       url.replace "upload/", "upload/w_1140,h_350,c_fill/"
 
+  og_image: ( url ) -> 
+    if not url or not url? or url.indexOf( "upload/" ) < 0
+      return DEFAULT.cover
+    else
+      url.replace "upload/", "upload/w_1200,h_630,c_fill/"
+
   cover_mobile: ( url ) -> 
     if not url or not url? or url.indexOf( "upload/" ) < 0
       return DEFAULT.cover_mobile
@@ -85,6 +91,12 @@ Transform =
       return DEFAULT.cover_thumb_player
     else
       url.replace "upload/", "upload/w_70,h_70,c_fill/"
+
+  upload_mix_cover: ( url ) ->
+    if not url or not url? or url.indexOf( "upload/" ) < 0
+      return DEFAULT.cover_uploaded_mix
+    else
+      url.replace "upload/", "upload/w_290,h_290,c_fill/"
   
 
 module.exports = Transform
