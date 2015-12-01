@@ -39,6 +39,8 @@ block seo
 
     - og_image = room.info.cover_url || user.info.avatar
     if og_image
+      - og_image = transform.cover( og_image )
+      
       meta( property="og:image"       content="#{og_image}" )
       meta( name="twitter:image" content="#{og_image}")
      
