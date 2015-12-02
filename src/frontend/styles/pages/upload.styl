@@ -2,7 +2,23 @@
 
 .upload-page
   .page2, .page3
-    display none
+    // display none
+    
+
+
+
+  .page
+    width: 980px;
+    margin: 0 auto 300px;
+    background: hsla(0,0%,97%,1);
+    padding: 40px 0;
+    border-radius: 3px;
+
+  .page2
+    padding: 40px 100px 90px;
+
+
+
 
   // Page 1, drag and drop upload
   padding-top 40px
@@ -18,7 +34,7 @@
     margin 0 auto
     
   .drag-and-drop
-    width 780px
+    width 620px
     height 250px
     margin 40px auto 52px
     border 2px dashed #b3b3b3
@@ -31,7 +47,7 @@
         color BLUE
     
     .icon
-      margin-top 8px
+      margin-top 36px
       font-size 4em
     
     h2
@@ -48,7 +64,7 @@
     
   .button
     width 200px
-    margin 24px auto 30px
+    margin 24px auto 0
     
   #preview-template
     display none
@@ -58,13 +74,14 @@
     
   // Page 2, upload description form
   .page2
-    width 784px
-    margin 0 auto
+    .content
+      width 784px
+      margin 0 auto
     
     .progress
       .percent
         font-size 0.9em
-        color #07A6BE
+        // color #07A6BE
         margin-bottom 1px
         
       .bar
@@ -77,6 +94,7 @@
     .wrapper
       position relative
       padding 17px
+      padding-bottom 36px
       border-radius 3px
       background #fff
     
@@ -170,10 +188,8 @@
       clear both
 
     .share-fb
-      position absolute
-      left 110px
-      bottom 39px
       width 160px
+      margin 0 auto
       text-align left
       
       input
@@ -188,34 +204,38 @@
         color #A8A6A6
         
     .button
+      margin-top 9px
       clear both
       
   // Upload complete page
   .page3
-    width 784px
-    height 450px
-    margin 0 auto
-    text-align center
-    color #7D7D7D
-    background-color #fff
+    padding 70px 0
+    
+    .content
+      width 784px
+      padding 10px 0 36px
+      margin 0 auto
+      text-align center
+      color #7D7D7D
+      background-color #fff
     
     .icon
-      margin 14px auto 0
+      margin 25px auto 0
       width 58px
       height 58px
       background url('../images/complete.png')
       background-size 58px 58px
     
     h2
-      margin-top 5px
+      margin-top 3px
       font-size 1.2em
       line-height 1.6em
       
     p
-      margin-top 32px
+      margin-top 50px
       
     .social
-      margin 26px auto 36px
+      margin 20px auto 56px
       
       li, a
         display inline-block
@@ -223,7 +243,7 @@
         height 64px
         
       li
-        margin-left 10px
+        margin-left 24px
         &:first-child
           margin-left 0
       
@@ -239,3 +259,4 @@
         
     .white_button
       width 340px
+      margin-top 41px
