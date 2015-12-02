@@ -58,7 +58,7 @@ module.exports = class GoLive extends ButtonWithTimer
       # if already recording, don't need to start streaming again!
       if not appcast.get "stream:streaming"
 
-        appcast.start_stream username, room_slug, password, appcast.get 'selected_device'
+        appcast.start_stream username, room_slug, password
         
         # need to be called here otherwise recording will stop
         # streaming when you stop recording

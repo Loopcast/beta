@@ -104,8 +104,13 @@ module.exports = class AudioElement
     if not @info_loading_showed
       notify.info 'Loading the set is taking a while. Please wait or try again'
       @info_loading_showed = true
-    @set_src @src
-    @play()
+    
+    # force reset as previous code doesn't seem to work
+    $( 'audio' ).attr( "src", "" )
+
+    delay 150, => 
+      @set_src @src
+      @play()
 
 
 

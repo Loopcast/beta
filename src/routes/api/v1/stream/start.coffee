@@ -1,5 +1,4 @@
 uuid            = require 'node-uuid'
-update_metadata = lib 'icecast/update_metadata'
 
 module.exports =
   method : 'POST'

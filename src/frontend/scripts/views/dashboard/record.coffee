@@ -27,7 +27,7 @@ module.exports = class Record extends ButtonWithTimer
   check_room_status: ->
     @set_active @room.current_status.room.status.is_recording
   
-  start: ->
+  start: =>
     # log "[Record] start"
 
     if not appcast.get 'selected_device'
@@ -43,10 +43,15 @@ module.exports = class Record extends ButtonWithTimer
 
     else
 
-      # start streaming then start recording
-      # log "We should start streaming then start recording"
-      appcast.start_stream @owner_id, appcast.get 'selected_device'
-      appcast.on 'stream:online', @start_recording
+      username  = $( '#owner_username' ).val()
+      room_slug = $( '#room_slug' ).val()
+
+      L.stream.get_password @room_id, ( error, data ) =>
+        # start streaming then start recording
+        # log "We should start streaming then start recording"
+
+        appcast.start_stream username, room_slug, data.password
+        appcast.on 'stream:online', => @start_recording( true )
 
 
 
@@ -105,9 +110,6 @@ module.exports = class Record extends ButtonWithTimer
 
     ref = @
 
-    # username  = $( '#owner_username' ).val()
-    # room_slug = $( '#room_slug' ).val()
-      
     appcast.start_recording()
     L.rooms.start_recording @room_id, ( error, response ) ->
       

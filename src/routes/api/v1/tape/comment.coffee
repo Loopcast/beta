@@ -36,9 +36,6 @@ module.exports =
       tape_id  = request.payload.tape_id
       user_id  = request.payload.user_id
 
-      # build channel string
-      # room_subscribe_id    = pusher_tape_id owner_id, tape_id
-
       data = 
         type    : 'message'
         _id     : user._id

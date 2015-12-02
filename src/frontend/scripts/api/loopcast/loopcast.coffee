@@ -19,6 +19,21 @@ module.exports =
 
         callback? null, response
 
+  stream: 
+    get_password: ( room_id, callback ) ->
+      on_status_code =
+        401: ( response ) -> callback 'unauthorized, need log in!'
+        
+      data = room_id: room_id
+
+      request = $.post api_url + 'stream/get_password', data, on_status_code
+
+      request.error on_error "stream/get_password", callback
+
+      request.done ( response ) ->
+
+        callback? null, response
+
   rooms :
 
     is_available: ( title, callback ) ->
@@ -35,7 +50,7 @@ module.exports =
 
         callback? null, response
 
-    info: (room_id, callback ) ->
+    info: ( room_id, callback ) ->
 
       request = $.get api_url + "rooms/#{room_id}/info"
 

@@ -1,6 +1,8 @@
 extract_id   = lib 'cloudinary/extract_id'
 delete_image = lib 'cloudinary/delete'
 
+fb_scrape    = lib 'facebook/scrape'
+
 module.exports =
   method : 'PUT'
   path   : '/api/v1/tape/{id}'
@@ -44,9 +46,10 @@ module.exports =
         user  : user_id
 
       Tape.findOne( query )
-        .select( "_id cover_url" )
+        .select( "_id cover_url slug user" )
+        .populate( "user", "info.username" )
         .lean()
-        .exec ( error, room ) -> 
+        .exec ( error, tape ) -> 
 
           if error
 
@@ -54,7 +57,7 @@ module.exports =
 
             return reply Boom.preconditionFailed( "Database error" )
 
-          if not room 
+          if not tape 
 
             return reply Boom.resourceGone( "tape not found or user not owner" )
 
@@ -74,9 +77,9 @@ module.exports =
             update.cover_url = payload.cover_url
 
             new_id     = extract_id payload.cover_url
-            if room.cover_url
+            if tape.cover_url
               
-              current_id = extract_id room.cover_url
+              current_id = extract_id tape.cover_url
 
               if current_id != new_id
                 console.log 'will remove old cover fromcloudinary'
@@ -116,4 +119,10 @@ module.exports =
 
                 return reply Boom.preconditionFailed( "Database error" )
 
+              tape.slug = update[ 'info.slug' ] || tape.slug
+              
+              url = "#{s.base_path}/#{tape.user.info.username}/r/#{tape.slug}"
+
+              fb_scrape( url )
+          
               reply update

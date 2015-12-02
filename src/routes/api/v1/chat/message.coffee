@@ -37,9 +37,6 @@ module.exports =
       room_id  = request.payload.room_id
       user_id  = request.payload.user_id
 
-      # build channel string
-      # room_subscribe_id    = pusher_room_id owner_id, room_id
-
       data = 
         type    : 'message'
         _id     : user._id

@@ -1,6 +1,8 @@
 extract_id   = lib 'cloudinary/extract_id'
 delete_image = lib 'cloudinary/delete'
 
+fb_scrape    = lib 'facebook/scrape'
+
 module.exports =
   method : 'PUT'
   path   : '/api/v1/rooms/{id}'
@@ -42,7 +44,8 @@ module.exports =
         user  : user._id
 
       Room.findOne( query )
-        .select( "_id info.cover_url" )
+        .select( "_id info.cover_url user info.slug" )
+        .populate( "user", "info.username" )
         .lean()
         .exec ( error, room ) -> 
 
@@ -115,5 +118,11 @@ module.exports =
                 failed req, reply, error
 
                 return reply Boom.preconditionFailed( "Database error" )
+
+              room.slug = update[ 'info.slug' ] || room.info.slug
+
+              url = "#{s.base_path}/#{room.user.info.username}/#{room.slug}"
+
+              fb_scrape( url )
 
               reply update
