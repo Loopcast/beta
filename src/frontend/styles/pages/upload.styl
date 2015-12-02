@@ -133,23 +133,24 @@
       float right
       text-align left
       
+      .tagsinput, input
+        border 1px solid #DEDEDE
+        
       input
-        border: 1px solid #DEDEDE
         background #DEDEDE
         margin-bottom 10px
         
         placeholder
           color #A8A6A6
           
-        &.invalid
-          border-color red
+      .invalid
+        border 1px solid red
           
       .tagsinput
-        padding-top 6px
         margin-bottom 10px
         
         input.ac_input
-          margin-bottom 6px
+          margin-bottom 5px
           
       
     label
@@ -171,7 +172,7 @@
     .share-fb
       position absolute
       left 110px
-      bottom 37px
+      bottom 39px
       width 160px
       text-align left
       
@@ -180,6 +181,7 @@
         width 20px
         float left
       label
+        user-select none
         margin-top 6px
         font-size 0.8em
         text-transform none

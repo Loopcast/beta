@@ -2,12 +2,14 @@ LoggedView      = require 'app/views/logged_view'
 Dropzone        = require 'dropzone'
 Cloudinary      = require 'app/controllers/cloudinary'
 transform       = require 'lib/cloudinary/transform'
+Happens         = require 'happens'
 
 
 module.exports = class UploadPage
   constructor: ( @dom ) ->
 
-    view.on 'binded', @on_views_binded
+    Happens @
+    view.once 'binded', @on_views_binded
 
 
     # Init properties
@@ -17,15 +19,12 @@ module.exports = class UploadPage
     # Init upload drop zone
     @initDropzone()
 
-    # Prepare validation
-    @prepareValidation()
-
 
     # Submit form
     @dom.find('.publish').on 'click', (e) =>
       e.preventDefault();
       titleValid = @validate( @title )
-      tagsValid = @validate( @tags )
+      tagsValid = @validateTags()
 
       if titleValid and tagsValid
         @dom.find('.page2').hide()
@@ -60,24 +59,11 @@ module.exports = class UploadPage
       $( @element ).removeClass('dragenter')
 
     uploadMixDropzone.on 'addedfile', () =>
-      console.log 'addedFile'
-      
       @dom.find('.page1').hide()
       @dom.find('.page2').show()
 
     # uploadMixDropzone.on 'removedfile', () =>
     #   console.log 'removedFile'
-
-
-  prepareValidation: () ->
-    @title = @dom.find('input[name="title"]')
-    @tags = @dom.find('input[name="tags"]')
-
-    @title.on 'keyup', () =>
-      @validate( @title )
-
-    @tags.on 'keyup', () =>
-      @validate( @tags )
 
 
 
@@ -89,6 +75,22 @@ module.exports = class UploadPage
 
     else
       elem.removeClass('invalid')
+      return true
+
+  # Validate tags input
+  validateTags: (tags) =>
+    if tags is undefined
+      tags = @editableTags.get_tags()
+
+    if @tagsInput is undefined
+      @tagsInput = @dom.find('.tagsinput')
+
+    if tags.length is 0 or tags[0] is ''
+      @tagsInput.addClass('invalid')
+      return false
+    
+    else
+      @tagsInput.removeClass('invalid')
       return true
 
 
@@ -111,6 +113,16 @@ module.exports = class UploadPage
     view.off 'binded', @on_views_binded
     @coverUploader = view.get_by_dom @dom.find( '.mix-cover' )
     @coverUploader.on 'completed', @onCoverUploaded
+
+    # Prepare validation
+    @editableTags = view.get_by_dom @dom.find( '.tags_wrapper' )
+    
+    @editableTags.on 'change', @validateTags
+
+    @title = @dom.find('input[name="title"]')
+
+    @title.on 'keyup', () =>
+      @validate( @title )
 
 
   # Save data to backend
