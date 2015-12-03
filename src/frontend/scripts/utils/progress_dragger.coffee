@@ -26,7 +26,7 @@ module.exports = class ProgressDragger
 
     @emit 'drag:started'
     # log "[ProgressDragger] on_mouse_down", @dom.offset().left, @dom.position().left
-    e.preventDefault()
+    # e.preventDefault()
 
   on_mouse_move: ( e ) =>
     return if not @dragging

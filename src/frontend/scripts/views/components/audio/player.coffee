@@ -38,10 +38,10 @@ module.exports = class Player
     @dragger.on 'drag', @on_progress_dragger
     @dragger.on 'drag:started', @on_progress_started
     @dragger.on 'drag:ended', @on_progress_ended
-    @dragger.on 'click', @on_progress_click
+    # @dragger.on 'click', @on_progress_click
     @play_btn.on 'click', @on_play_clicked
     @like_btn.on 'click', @on_like_clicked
-    # @progress_parent.find('.hitarea').on 'click', @on_progress_click
+    @progress_parent.find('.hitarea').on 'click', @on_progress_click
     @dom.find( '.open_fullscreen' ).on 'click', @open_fullscreen
     @dom.find( '.close_fullscreen' ).on 'click', @close_fullscreen
     view.on 'binded', @on_views_binded
@@ -372,22 +372,18 @@ module.exports = class Player
     @progress.removeClass 'dragging'
     # log "[xxx] dragging", perc
     log "[Player] on_progress_ended() perc", perc
-    @dom.addClass 'loading'
-    @audio.snap_to perc/100
+    # @dom.addClass 'loading'
+    # @audio.snap_to perc/100
 
 
     delay 10, =>
       @is_dragging = false
 
-  on_progress_ended2: ( perc ) =>
-    log "[Player] on_progress_ended()2 perc", perc
-    
-
 
   on_progress_click: (e) =>
     log "[Player] on_progress_click() at first"
     return if not @audio.data.is_recorded
-    return if @is_dragging
+    # return if @is_dragging
     x = e.offsetX
     w = $(e.currentTarget).width()
     perc = x / w
