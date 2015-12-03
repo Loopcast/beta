@@ -27,6 +27,7 @@ module.exports = class EditModalOpener
 
     @edit_modal.on 'submit', @on_edit_modal_submit
     @edit_modal.dom.data( 'modal-close', true )
+    @edit_modal.set_type @type
 
 
     app.rooms.info @id, @type, (response) =>
