@@ -2,14 +2,11 @@
 
 .upload-page
   .page2, .page3
-    // display none
-    
-
-
+    display none
 
   .page
     width: 980px
-    margin: 0 auto 300px
+    margin: 0 auto 40px
     background white
     padding 40px 0;
     border 1px solid #DDD7D7
@@ -89,19 +86,28 @@
       margin 0 auto
     
     .progress
+      margin 0 17px
+      
       .percent
         font-size 0.9em
         // color #07A6BE
         margin-bottom 1px
         
       .bar
-        width 50%
         height 14px
-        margin 0 17px 10px
+        margin-bottom 10px
         border-radius 4px
-        background #fdbb30
+        overflow hidden
+        background-color #ddd7d7
+        
+        .value
+          width 50%
+          height 100%
+          background #fdbb30
+          
     
     .wrapper
+      min-height 502px
       position relative
       padding 17px
       padding-bottom 36px
@@ -155,7 +161,7 @@
           cursor pointer
         
       
-    #description
+    .description
       margin-top -6px
       width 444px
       float right
@@ -193,8 +199,9 @@
       background-color #fff
       
     .bottom
-      height 100%
-      position relative
+      width 100%
+      position absolute
+      bottom 46px
       clear both
 
     .share-fb
