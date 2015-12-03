@@ -1,0 +1,77 @@
+#sample-upload-box.upload-box.opaque
+  .container
+    .page.page1
+      h1 Upload your mix to Loopcast for free.
+      p.description Get your mixes shared with our vast community of DJs, Podcasters, Record Labels, Promoters and more!
+      .drag-and-drop
+        .dz-message
+          .icon.ss-uploadcloud
+          h2 Click to select file
+          p Or drag and drop into the marked area
+
+      p.record Don't already have a mix to upload? You can record a new one on Loopcast
+      a(href="/rooms/create").button.yellow_button.no_shadow Record Now
+
+        .preview-container
+        #preview-template
+          p Nothing here
+          
+
+    .page.page2
+      .content
+        .progress
+          p.percent 50%
+          .bar
+            .value
+
+        .wrapper.clearfix
+          .mix-cover(data-view="components/image_uploader", data-id="mix-cover")
+            form(class="cloudinary_form")
+                input.api_key(type="hidden", name="api_key", value="#{cloudinary.api_key}")
+                input.cloud_name(type="hidden", name="cloud_name", value="#{cloudinary.cloud_name}")
+                input.unsigned_id(type="hidden", name="unsigned_id", value="#{cloudinary.unsigned_ids.cover}")
+            
+            a.button.upload-cover.ss-camera(
+              title="Upload cover"
+              href=""
+            ) 
+              span.icon Add Cover
+              span.progress
+        
+          form(type="submit" name="mix-details").description.clearfix        
+            label(for="title") Title *
+            input(type="text" name="title" placeholder="Enter name of your session")
+
+            label(for="genre_input") Tags *
+            .tags_wrapper.genre(data-view="components/editables/editable_tags")
+              textarea( id="genre_input", rows="1")
+
+            label(for="location") Location
+            input(type="text" name="location" placeholder="Where are you?")
+
+            textarea(name="description" placeholder="Enter description")
+
+          .bottom
+            .share-fb
+              label(for="share-on-fb") Share on facebook
+              input(type="checkbox" name="share-on-fb" id="share-on-fb" checked)
+
+            button(type="submit").button.yellow_button.publish Publish
+
+
+
+    .page.page3
+      .content
+        .icon
+        h2 Upload Complete
+        p Why not share your upload?
+
+        ul.social
+          li
+            a.twitter(href="#", title="Share on Facebook" onClick="_gaq.push(['_trackEvent', 'Referral', 'Click', '']);") Twitter
+          li
+            a.googleplus(href="#", title="Share on Google Plus" onClick="_gaq.push(['_trackEvent', 'Referral', 'Click', '']);") Google+
+          li
+            a.fb(href="#", title="Share on Facebook" onClick="_gaq.push(['_trackEvent', 'Referral', 'Click', '']);") Facebook
+
+        button#return-to-upload.button.white_button Go to Upload Page

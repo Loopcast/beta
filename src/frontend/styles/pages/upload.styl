@@ -1,8 +1,66 @@
 @import '../_shared/_bootstrap.styl'
 
+
 .upload-page
-  .page2, .page3
+
+  .upload-box
+    width 980px
+    margin 0 auto
+    overflow hidden
+    opacity 1
+    transition opacity 0.6s
+    
+    &.opaque
+      opacity 0
+    
+    .container
+      width 2940px
+      transition transform 0.6s
+      transition-delay 0.1s
+      
+      &.page1-active
+        transform translate3d(0, 0, 0)
+        .page1
+          opacity 1
+        .page2, .page3
+          opacity 0
+        
+      &.page2-active
+        transform translate3d(-980px, 0, 0)
+        .page2
+          opacity 1
+        .page1, .page3
+          opacity 0
+        
+      &.page3-active
+        transform translate3d(-1960px, 0, 0)
+        .page3
+          opacity 1
+        .page1, .page2
+          opacity 0
+    
+      
+
+
+  .page
+    width: 980px
+    float left
+    margin: 0 0 40px
+    background white
+    padding 40px 0;
+    border 1px solid #DDD7D7
+    border-bottom: 2px solid #DDD7D7 
+    border-radius: 5px
+    transition opacity 0.4s
+
+  .page2
+    padding: 40px 100px 90px;
+    height: 589px
+
+  
+  #sample-upload-box
     display none
+
 
   // Page 1, drag and drop upload
   padding-top 40px
@@ -18,7 +76,7 @@
     margin 0 auto
     
   .drag-and-drop
-    width 780px
+    width 620px
     height 250px
     margin 40px auto 52px
     border 2px dashed #b3b3b3
@@ -26,12 +84,15 @@
     
     &:hover
       border-color BLUE
+      -webkit-box-shadow: 6px 6px 7px -1px rgba(171,171,171,1);
+      -moz-box-shadow: 6px 6px 7px -1px rgba(171,171,171,1);
+      box-shadow: 6px 6px 7px -1px rgba(171,171,171,1);
       
       .icon
         color BLUE
     
     .icon
-      margin-top 8px
+      margin-top 36px
       font-size 4em
     
     h2
@@ -48,7 +109,11 @@
     
   .button
     width 200px
-    margin 24px auto 30px
+    margin 24px auto 0
+    
+  .publish
+    color white 
+    
     
   #preview-template
     display none
@@ -58,25 +123,36 @@
     
   // Page 2, upload description form
   .page2
-    width 784px
-    margin 0 auto
+    .content
+      width 784px
+      margin 0 auto
     
     .progress
+      margin 0 17px
+      
       .percent
         font-size 0.9em
-        color #07A6BE
+        // color #07A6BE
         margin-bottom 1px
         
       .bar
-        width 50%
         height 14px
         margin-bottom 10px
         border-radius 4px
-        background #fdbb30
+        overflow hidden
+        background-color #b9b9b9
+        
+        .value
+          width 50%
+          height 100%
+          background #fdbb30
+          
     
     .wrapper
+      min-height 502px
       position relative
       padding 17px
+      padding-bottom 36px
       border-radius 3px
       background #fff
     
@@ -127,29 +203,30 @@
           cursor pointer
         
       
-    #description
+    .description
       margin-top -6px
       width 444px
       float right
       text-align left
       
+      .tagsinput, input
+        border 1px solid #DEDEDE
+        
       input
-        border: 1px solid #DEDEDE
         background #DEDEDE
         margin-bottom 10px
         
         placeholder
           color #A8A6A6
           
-        &.invalid
-          border-color red
+      .invalid
+        border 1px solid red
           
       .tagsinput
-        padding-top 6px
         margin-bottom 10px
         
         input.ac_input
-          margin-bottom 6px
+          margin-bottom 5px
           
       
     label
@@ -164,15 +241,14 @@
       background-color #fff
       
     .bottom
-      height 100%
-      position relative
+      width 100%
+      position absolute
+      bottom 46px
       clear both
 
     .share-fb
-      position absolute
-      left 110px
-      bottom 37px
       width 160px
+      margin 0 auto
       text-align left
       
       input
@@ -180,40 +256,45 @@
         width 20px
         float left
       label
+        user-select none
         margin-top 6px
         font-size 0.8em
         text-transform none
         color #A8A6A6
         
     .button
+      margin-top 9px
       clear both
       
   // Upload complete page
   .page3
-    width 784px
-    height 450px
-    margin 0 auto
-    text-align center
-    color #7D7D7D
-    background-color #fff
+    padding 70px 0
+    
+    .content
+      width 784px
+      padding 10px 0 36px
+      margin 0 auto
+      text-align center
+      color #7D7D7D
+      background-color #fff
     
     .icon
-      margin 14px auto 0
+      margin 25px auto 0
       width 58px
       height 58px
       background url('../images/complete.png')
       background-size 58px 58px
     
     h2
-      margin-top 5px
+      margin-top 3px
       font-size 1.2em
       line-height 1.6em
       
     p
-      margin-top 32px
+      margin-top 50px
       
     .social
-      margin 26px auto 36px
+      margin 20px auto 56px
       
       li, a
         display inline-block
@@ -221,7 +302,7 @@
         height 64px
         
       li
-        margin-left 10px
+        margin-left 24px
         &:first-child
           margin-left 0
       
@@ -237,3 +318,4 @@
         
     .white_button
       width 340px
+      margin-top 41px
