@@ -30,6 +30,7 @@ module.exports = class UserSet
       data.data = data.room
     log "[UserSet] on_room_udpate", data
 
+    # @dom.find( '.room_url' ).attr 'href', '/' + user.info.username + '/' + 
     @elements.title.html data.data.title
     @elements.genres.html tags_list( tags: data.data.genres )
     @elements.location.html data.data.location
