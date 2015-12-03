@@ -9622,7 +9622,7 @@ body.tape_view .chat_list_messages {
 
 /* line 13 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 282 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+/* line 321 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
 /* line 10 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
@@ -9642,7 +9642,7 @@ body.tape_view .chat_list_messages {
 
 /* line 90 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 282 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+/* line 321 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
 /* line 11 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
@@ -9670,7 +9670,7 @@ body.tape_view .chat_list_messages {
 
 /* line 5 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
 
-/* line 282 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+/* line 321 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
 /* line 12 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
@@ -9728,48 +9728,140 @@ body.tape_view .chat_list_messages {
   color: #7d7d7d;
 }
 
-/* line 5 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
-.upload-page .page2,
-.upload-page .page3 {
-  display: none;
+/* line 6 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+.upload-page .upload-box {
+  width: 980px;
+  margin: 0 auto;
+  overflow: hidden;
+  opacity: 1;
+  -ms-filter: none;
+  -webkit-filter: none;
+          filter: none;
+  transition: opacity 0.6s;
 }
 
-/* line 8 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 13 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+.upload-page .upload-box.opaque {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+}
+
+/* line 16 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+.upload-page .upload-box .container {
+  width: 2940px;
+  transition: -webkit-transform 0.6s;
+  transition: transform 0.6s;
+  transition-delay: 0.1s;
+}
+
+/* line 21 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+.upload-page .upload-box .container.page1-active {
+  -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+/* line 23 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+.upload-page .upload-box .container.page1-active .page1 {
+  opacity: 1;
+  -ms-filter: none;
+  -webkit-filter: none;
+          filter: none;
+}
+
+/* line 25 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+.upload-page .upload-box .container.page1-active .page2,
+.upload-page .upload-box .container.page1-active .page3 {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+}
+
+/* line 28 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+.upload-page .upload-box .container.page2-active {
+  -webkit-transform: translate3d(-980px, 0, 0);
+  -ms-transform: translate3d(-980px, 0, 0);
+  transform: translate3d(-980px, 0, 0);
+}
+
+/* line 30 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+.upload-page .upload-box .container.page2-active .page2 {
+  opacity: 1;
+  -ms-filter: none;
+  -webkit-filter: none;
+          filter: none;
+}
+
+/* line 32 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+.upload-page .upload-box .container.page2-active .page1,
+.upload-page .upload-box .container.page2-active .page3 {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+}
+
+/* line 35 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+.upload-page .upload-box .container.page3-active {
+  -webkit-transform: translate3d(-1960px, 0, 0);
+  -ms-transform: translate3d(-1960px, 0, 0);
+  transform: translate3d(-1960px, 0, 0);
+}
+
+/* line 37 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+.upload-page .upload-box .container.page3-active .page3 {
+  opacity: 1;
+  -ms-filter: none;
+  -webkit-filter: none;
+          filter: none;
+}
+
+/* line 39 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+.upload-page .upload-box .container.page3-active .page1,
+.upload-page .upload-box .container.page3-active .page2 {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+}
+
+/* line 45 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .page {
   width: 980px;
-  margin: 0 auto 40px;
+  float: left;
+  margin: 0 0 40px;
   background: #fff;
   padding: 40px 0;
   border: 1px solid #ddd7d7;
   border-bottom: 2px solid #ddd7d7;
   border-radius: 5px;
+  transition: opacity 0.4s;
 }
 
-/* line 17 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 56 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .page2 {
   padding: 40px 100px 90px;
   height: 589px;
 }
 
-/* line 22 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 61 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page #sample-upload-box {
   display: none;
 }
 
-/* line 30 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 69 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page h1 {
   font-size: 1.2em;
   line-height: 1.6em;
   margin-bottom: 8px;
 }
 
-/* line 35 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 74 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .description {
   width: 590px;
   margin: 0 auto;
 }
 
-/* line 39 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 78 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .drag-and-drop {
   width: 620px;
   height: 250px;
@@ -9778,82 +9870,82 @@ body.tape_view .chat_list_messages {
   cursor: pointer;
 }
 
-/* line 46 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 85 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .drag-and-drop:hover {
   border-color: #4592d4;
   box-shadow: 6px 6px 7px -1px #ababab;
 }
 
-/* line 52 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 91 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .drag-and-drop:hover .icon {
   color: #4592d4;
 }
 
-/* line 55 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 94 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .drag-and-drop .icon {
   margin-top: 36px;
   font-size: 4em;
 }
 
-/* line 59 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 98 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .drag-and-drop h2 {
   font-size: 1.4em;
   font-weight: normal;
   margin-bottom: 5px;
 }
 
-/* line 64 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 103 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .drag-and-drop p {
   font-size: 1.2em;
 }
 
-/* line 67 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 106 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page p.record {
   color: #7d7d7d;
   font-size: 0.9em;
 }
 
-/* line 71 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 110 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .button {
   width: 200px;
   margin: 24px auto 0;
 }
 
-/* line 75 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 114 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .publish {
   color: #fff;
 }
 
-/* line 79 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 118 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page #preview-template {
   display: none;
 }
 
-/* line 82 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 121 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .preview-container {
   display: none;
 }
 
-/* line 86 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 125 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 
-/* line 87 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 126 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .page2 .content {
   width: 784px;
   margin: 0 auto;
 }
 
-/* line 91 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 130 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .page2 .progress {
   margin: 0 17px;
 }
 
-/* line 94 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 133 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .page2 .progress .percent {
   font-size: 0.9em;
   margin-bottom: 1px;
 }
 
-/* line 99 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 138 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .page2 .progress .bar {
   height: 14px;
   margin-bottom: 10px;
@@ -9862,14 +9954,14 @@ body.tape_view .chat_list_messages {
   background-color: #b9b9b9;
 }
 
-/* line 106 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 145 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .page2 .progress .bar .value {
   width: 50%;
   height: 100%;
   background: #fdbb30;
 }
 
-/* line 112 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 151 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .page2 .wrapper {
   min-height: 502px;
   position: relative;
@@ -9879,7 +9971,7 @@ body.tape_view .chat_list_messages {
   background: #fff;
 }
 
-/* line 120 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 159 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .page2 .mix-cover {
   position: relative;
   width: 290px;
@@ -9888,7 +9980,7 @@ body.tape_view .chat_list_messages {
   background: url("../images/default_uploaded_mix_cover.jpg") no-repeat center center;
 }
 
-/* line 127 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 166 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .page2 .mix-cover .button,
 .upload-page .page2 .mix-cover .cloudinary_fileupload {
   position: absolute;
@@ -9899,7 +9991,7 @@ body.tape_view .chat_list_messages {
   transform: translateX(-50%);
 }
 
-/* line 133 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 172 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .page2 .mix-cover .button {
   z-index: 0;
   font-size: 0.8em;
@@ -9907,7 +9999,7 @@ body.tape_view .chat_list_messages {
   background-color: rgba(0,0,0,0.77);
 }
 
-/* line 138 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 177 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .page2 .mix-cover .button:before {
   position: relative;
   top: -3px;
@@ -9915,13 +10007,13 @@ body.tape_view .chat_list_messages {
   margin-right: 7px;
 }
 
-/* line 143 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 182 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .page2 .mix-cover .button .icon {
   position: relative;
   top: -9px;
 }
 
-/* line 146 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 185 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .page2 .mix-cover .button .progress {
   position: absolute;
   top: 0;
@@ -9930,12 +10022,12 @@ body.tape_view .chat_list_messages {
   background-color: #fdbb30;
 }
 
-/* line 152 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 191 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .page2 .mix-cover .button .progress.hide {
   visibility: hidden;
 }
 
-/* line 156 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 195 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .page2 .mix-cover .cloudinary_fileupload {
   z-index: 1;
   opacity: 0;
@@ -9946,12 +10038,12 @@ body.tape_view .chat_list_messages {
   padding: 0;
 }
 
-/* line 163 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 202 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .page2 .mix-cover .cloudinary_fileupload:hover {
   cursor: pointer;
 }
 
-/* line 167 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 206 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .page2 .description {
   margin-top: -6px;
   width: 444px;
@@ -9959,46 +10051,46 @@ body.tape_view .chat_list_messages {
   text-align: left;
 }
 
-/* line 173 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 212 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .page2 .description .tagsinput,
 .upload-page .page2 .description input {
   border: 1px solid #dedede;
 }
 
-/* line 176 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 215 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .page2 .description input {
   background: #dedede;
   margin-bottom: 10px;
 }
 
-/* line 180 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 219 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .page2 .description input placeholder {
   color: #a8a6a6;
 }
 
-/* line 183 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 222 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .page2 .description .invalid {
   border: 1px solid #f00;
 }
 
-/* line 186 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 225 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .page2 .description .tagsinput {
   margin-bottom: 10px;
 }
 
-/* line 189 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 228 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .page2 .description .tagsinput input.ac_input {
   margin-bottom: 5px;
 }
 
-/* line 193 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 232 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .page2 label {
   color: #2e2e2e;
   text-transform: uppercase;
   font-size: 0.8em;
 }
 
-/* line 198 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 237 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .page2 textarea {
   height: 84px;
   border: 1px solid #cfc4c4;
@@ -10006,7 +10098,7 @@ body.tape_view .chat_list_messages {
   background-color: #fff;
 }
 
-/* line 204 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 243 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .page2 .bottom {
   width: 100%;
   position: absolute;
@@ -10014,21 +10106,21 @@ body.tape_view .chat_list_messages {
   clear: both;
 }
 
-/* line 210 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 249 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .page2 .share-fb {
   width: 160px;
   margin: 0 auto;
   text-align: left;
 }
 
-/* line 215 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 254 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .page2 .share-fb input {
   margin: 6px 5px 0 0;
   width: 20px;
   float: left;
 }
 
-/* line 219 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 258 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .page2 .share-fb label {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -10040,18 +10132,18 @@ body.tape_view .chat_list_messages {
   color: #a8a6a6;
 }
 
-/* line 226 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 265 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .page2 .button {
   margin-top: 9px;
   clear: both;
 }
 
-/* line 231 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 270 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .page3 {
   padding: 70px 0;
 }
 
-/* line 234 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 273 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .page3 .content {
   width: 784px;
   padding: 10px 0 36px;
@@ -10061,7 +10153,7 @@ body.tape_view .chat_list_messages {
   background-color: #fff;
 }
 
-/* line 242 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 281 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .page3 .icon {
   margin: 25px auto 0;
   width: 58px;
@@ -10070,24 +10162,24 @@ body.tape_view .chat_list_messages {
   background-size: 58px 58px;
 }
 
-/* line 249 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 288 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .page3 h2 {
   margin-top: 3px;
   font-size: 1.2em;
   line-height: 1.6em;
 }
 
-/* line 254 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 293 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .page3 p {
   margin-top: 50px;
 }
 
-/* line 257 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 296 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .page3 .social {
   margin: 20px auto 56px;
 }
 
-/* line 260 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 299 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .page3 .social li,
 .upload-page .page3 .social a {
   display: inline-block;
@@ -10095,37 +10187,37 @@ body.tape_view .chat_list_messages {
   height: 64px;
 }
 
-/* line 265 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 304 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .page3 .social li {
   margin-left: 24px;
 }
 
-/* line 267 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 306 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .page3 .social li:first-child {
   margin-left: 0;
 }
 
-/* line 270 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 309 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .page3 .social a {
   text-indent: -9999px;
 }
 
-/* line 273 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 312 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .page3 .social .twitter {
   background-image: url("../images/64-twitter.png");
 }
 
-/* line 275 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 314 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .page3 .social .googleplus {
   background-image: url("../images/64-googleplus.png");
 }
 
-/* line 277 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 316 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .page3 .social .fb {
   background-image: url("../images/64-facebook.png");
 }
 
-/* line 280 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
+/* line 319 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
 .upload-page .page3 .white_button {
   width: 340px;
   margin-top: 41px;

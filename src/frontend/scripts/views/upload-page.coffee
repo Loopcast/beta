@@ -45,5 +45,8 @@ module.exports = class UploadPage
                  .addClass('new-upload-box')
                  .appendTo('.upload-page')
 
+    delay 2, () ->
+      box.removeClass('opaque')
+
     view.once 'binded', @on_views_binded
     view.bind()

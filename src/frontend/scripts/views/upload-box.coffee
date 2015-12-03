@@ -9,6 +9,9 @@ module.exports = class UploadBox
   constructor: ( @dom ) ->
 
     Happens @
+
+    @container = @dom.find('.container')
+
     view.once 'binded', @on_views_binded
 
 
@@ -23,15 +26,12 @@ module.exports = class UploadBox
       tagsValid = @validateTags()
 
       if titleValid and tagsValid
-        @dom.find('.page2').hide()
-        @dom.find('.page3').show()
+        @showPage(3)
 
 
     # Return to upload page btn
     @dom.find('#return-to-upload').click (e) =>
-      @dom.find('.page1').show()
-      @dom.find('.page2').hide()
-      @dom.find('.page3').hide()
+      @showPage(1)
 
 
     # Prepare social share
@@ -55,8 +55,7 @@ module.exports = class UploadBox
 
     uploadMixDropzone.on 'addedfile', () =>
       @emit 'addedFile'
-      @dom.find('.page1').hide()
-      @dom.find('.page2').show()
+      @showPage(2)
 
     # uploadMixDropzone.on 'removedfile', () =>
     #   console.log 'removedFile'
@@ -172,3 +171,7 @@ module.exports = class UploadBox
     window.open url, 'sharer', 'toolbar=0,status=0,width='+w+',height='+h+',top='+top+',left='+left
     return false
 
+
+  showPage: (number) ->
+    @container.removeClass('page1-active page2-active page3-active')
+              .addClass('page' + number + '-active')
