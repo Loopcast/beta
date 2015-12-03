@@ -38,10 +38,10 @@ module.exports = class Player
     @dragger.on 'drag', @on_progress_dragger
     @dragger.on 'drag:started', @on_progress_started
     @dragger.on 'drag:ended', @on_progress_ended
-
+    @dragger.on 'click', @on_progress_click
     @play_btn.on 'click', @on_play_clicked
     @like_btn.on 'click', @on_like_clicked
-    @progress_parent.find('.hitarea').on 'click', @on_progress_click
+    # @progress_parent.find('.hitarea').on 'click', @on_progress_click
     @dom.find( '.open_fullscreen' ).on 'click', @open_fullscreen
     @dom.find( '.close_fullscreen' ).on 'click', @close_fullscreen
     view.on 'binded', @on_views_binded
@@ -225,7 +225,7 @@ module.exports = class Player
     @open()
 
     # Choose the righth api to call
-    type = if @data_rooms[ room_id ].is_live then 'rooms' else 'tapes'
+    type = if @data_rooms[ room_id ].data.is_live then 'rooms' else 'tapes'
 
     log "[Player] playing", type, room_id
     # Call the api for stats
@@ -252,7 +252,7 @@ module.exports = class Player
     obj = data.data
     log "[Update info]", obj
 
-    if data.is_live
+    if obj.is_live
       room_link = "/#{obj.user.info.username}/#{obj.slug}"
     else
       room_link = "/#{obj.user.info.username}/r/#{obj.slug}"
@@ -370,17 +370,22 @@ module.exports = class Player
 
   on_progress_ended: (perc) =>
     @progress.removeClass 'dragging'
-    log "[Player] on_progress_ended() loading show"
+    # log "[xxx] dragging", perc
+    log "[Player] on_progress_ended() perc", perc
     @dom.addClass 'loading'
     @audio.snap_to perc/100
 
-    # log "[xxx] dragging", perc
+
     delay 10, =>
       @is_dragging = false
 
+  on_progress_ended2: ( perc ) =>
+    log "[Player] on_progress_ended()2 perc", perc
+    
+
 
   on_progress_click: (e) =>
-
+    log "[Player] on_progress_click() at first"
     return if not @audio.data.is_recorded
     return if @is_dragging
     x = e.offsetX

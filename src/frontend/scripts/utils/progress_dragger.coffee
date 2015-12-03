@@ -1,5 +1,6 @@
 happens = require 'happens'
 module.exports = class ProgressDragger
+  moving: false
   constructor: ( @dom ) ->
     happens @
     @handler = @dom.find 'span'
@@ -32,16 +33,21 @@ module.exports = class ProgressDragger
     x = @get_x e
     total = x - @x_dom
     @perc = Math.min( 100, Math.max( 0,  100 * total / @size ) )
-    
+    @moving = true
     @emit 'drag', @perc
 
-    # log "[ProgressDragger] on_mouse_move", perc
+    log "[ProgressDragger] on_mouse_move", @perc
     e.preventDefault()
 
   on_mouse_up: ( e ) =>
     return if not @dragging
+    log "[ProgressDragger] on_mouse_up", @perc
     @emit 'drag:ended', @perc
+
+    if not @moving
+      @emit 'click', e
     @dragging = false
+    @moving = false
 
   destroy: ->
     @dom.off evts.down, @on_mouse_down
