@@ -5504,7 +5504,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 13 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 387 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+/* line 335 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
 /* line 10 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
@@ -5524,7 +5524,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 90 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 387 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+/* line 335 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
 /* line 11 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
@@ -5552,7 +5552,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 5 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
 
-/* line 387 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+/* line 335 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
 /* line 12 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
@@ -8929,7 +8929,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 13 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 334 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+/* line 335 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
 /* line 10 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
@@ -8949,7 +8949,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 90 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 334 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+/* line 335 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
 /* line 11 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
@@ -8977,7 +8977,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 5 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
 
-/* line 334 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+/* line 335 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
 /* line 12 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
@@ -9174,27 +9174,28 @@ body.tape_view .chat_list_messages {
   position: absolute;
   top: 0;
   left: 0;
+  background: rgba(200,200,200,0.6);
 }
 
-/* line 104 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 105 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .tape_play.ss-pause {
   font-size: 44px;
   padding-left: 25px;
   padding-top: 21px;
 }
 
-/* line 108 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 109 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .tape_play img {
   display: block;
   width: 100%;
 }
 
-/* line 112 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 113 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .tape_view {
   text-align: left;
 }
 
-/* line 114 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 115 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .tape_header {
   position: relative;
   background-size: cover;
@@ -9204,7 +9205,7 @@ body.tape_view .chat_list_messages {
   padding: 40px;
 }
 
-/* line 123 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 124 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .tape_header .first_line {
   position: relative;
   z-index: 1;
@@ -9212,7 +9213,7 @@ body.tape_view .chat_list_messages {
   overflow: visible;
 }
 
-/* line 129 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 130 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .tape_header .waveform_wrapper {
   display: none;
   position: absolute;
@@ -9224,7 +9225,7 @@ body.tape_view .chat_list_messages {
   cursor: pointer;
 }
 
-/* line 136 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 137 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .tape_header .waveform_wrapper .inner {
   background-size: cover;
   background-image: url("/images/waveform_dark.png");
@@ -9232,7 +9233,7 @@ body.tape_view .chat_list_messages {
   position: relative;
 }
 
-/* line 141 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 142 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .tape_header .waveform_wrapper .inner .progress {
   position: absolute;
   top: 0;
@@ -9243,54 +9244,54 @@ body.tape_view .chat_list_messages {
   width: 0%;
 }
 
-/* line 149 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 150 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .tape_title {
   font-size: 2.7em;
   margin-bottom: 4px;
 }
 
-/* line 152 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 153 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .tape_author_wrapper {
   font-size: 1.3em;
 }
 
-/* line 155 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 156 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .tag_round {
   border-radius: 12px;
   padding-left: 12px;
   padding-right: 12px;
 }
 
-/* line 161 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 162 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .side_column {
   padding: 17px 24px;
   position: relative;
 }
 
-/* line 164 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 165 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .side_column .with_favourites {
   display: none;
 }
 
-/* line 167 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
-
 /* line 168 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+
+/* line 169 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .side_column.favourited .with_favourites {
   display: block;
 }
 
-/* line 171 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 172 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .side_column.favourited .no_favourites {
   display: none;
 }
 
-/* line 174 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 175 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .padded {
   padding-left: 40px;
   padding-right: 40px;
 }
 
-/* line 180 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 181 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .main_column {
   border-right: 1px solid #d6d2d2;
   -o-box-flex: 1;
@@ -9300,7 +9301,7 @@ body.tape_view .chat_list_messages {
   flex: 1;
 }
 
-/* line 183 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 184 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .side_column {
   -o-box-flex: 1;
   box-flex: 1;
@@ -9309,9 +9310,9 @@ body.tape_view .chat_list_messages {
   flex: 0 0 360px;
 }
 
-/* line 187 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
-
 /* line 188 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+
+/* line 189 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .main_column .first_line {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -9321,7 +9322,7 @@ body.tape_view .chat_list_messages {
   margin-bottom: 0px;
 }
 
-/* line 192 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 193 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .main_column .first_line .tags {
   -o-box-flex: 1;
   box-flex: 1;
@@ -9330,14 +9331,14 @@ body.tape_view .chat_list_messages {
   flex: 1;
 }
 
-/* line 194 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 195 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .main_column .first_line .buttons {
   width: 450px;
   font-size: 12px;
   text-align: right;
 }
 
-/* line 199 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 200 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .main_column .first_line .buttons > * {
   display: inline-block;
   vertical-align: top;
@@ -9345,14 +9346,14 @@ body.tape_view .chat_list_messages {
   font-size: 1rem;
 }
 
-/* line 205 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 206 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .main_column .first_line .buttons > *.share_icon {
   font-size: 1.3rem;
   position: relative;
   top: -2px;
 }
 
-/* line 210 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 211 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .main_column .first_line .buttons .label {
   vertical-align: top;
   margin-left: 10px;
@@ -9360,21 +9361,21 @@ body.tape_view .chat_list_messages {
   font-size: 0.8rem;
 }
 
-/* line 216 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
-
 /* line 217 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+
+/* line 218 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .like_counter .icon {
   cursor: pointer;
 }
 
-/* line 219 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
-
 /* line 220 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+
+/* line 221 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .like_counter.liked .icon {
   color: #f23131;
 }
 
-/* line 223 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 224 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .tape_brown_button {
   color: #fff;
   text-align: center;
@@ -9385,7 +9386,7 @@ body.tape_view .chat_list_messages {
   padding: 4px 10px;
 }
 
-/* line 231 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 232 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .chat_user_thumb {
   width: 50px;
   height: 50px;
@@ -9393,7 +9394,7 @@ body.tape_view .chat_list_messages {
   overflow: hidden;
 }
 
-/* line 236 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 237 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .chat_user_thumb.like {
   overflow: visible;
   font-size: 27px;
@@ -9402,13 +9403,13 @@ body.tape_view .chat_list_messages {
   padding-top: 7px;
 }
 
-/* line 243 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 244 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .chat_user_thumb img {
   display: block;
   width: 100%;
 }
 
-/* line 247 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 248 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .chat_line {
   position: relative;
   padding-left: 100px;
@@ -9417,24 +9418,24 @@ body.tape_view .chat_list_messages {
   padding-bottom: 20px;
 }
 
-/* line 253 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 254 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .chat_line .chat_user_thumb {
   position: absolute;
   top: 10px;
   left: 40px;
 }
 
-/* line 256 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 257 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .chat_line .chat_user_text {
   position: relative;
 }
 
-/* line 258 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 259 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .chat_line .chat_user_text p a {
   color: #4592d4;
 }
 
-/* line 261 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 262 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .chat_line .chat_name {
   font-weight: normal;
   font-size: 0.9rem;
@@ -9442,26 +9443,26 @@ body.tape_view .chat_list_messages {
   cursor: pointer;
 }
 
-/* line 266 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 267 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .chat_line .chat_name span {
   margin-bottom: 8px;
   font-size: 0.7rem;
   color: #929292;
 }
 
-/* line 271 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 272 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .chat_line .chat_name:hover {
   color: #4592d4;
 }
 
-/* line 274 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 275 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .post_comment_wrapper {
   background: #ededed;
   padding-right: 160px;
   padding-bottom: 10px;
 }
 
-/* line 278 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 279 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .post_comment_wrapper textarea {
   background: transparent;
   margin: 0;
@@ -9470,26 +9471,26 @@ body.tape_view .chat_list_messages {
   height: 54px;
 }
 
-/* line 288 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
-
 /* line 289 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+
+/* line 290 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .side_column .number {
   color: #4592d4;
 }
 
-/* line 291 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 292 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .side_column .list_users {
   margin: 0 auto;
   width: 310px;
 }
 
-/* line 292 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 293 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .side_column .list_users h3 {
   margin-left: 6px;
   margin-bottom: 20px;
 }
 
-/* line 297 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 298 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .side_column .list_users a {
   display: inline-block;
   margin-right: 6px;
@@ -9497,16 +9498,16 @@ body.tape_view .chat_list_messages {
   margin-bottom: 5px;
 }
 
-/* line 303 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 304 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 @media (max-width: 1100px) {
 
-/* line 304 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 305 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
   .tape_view .main_column .first_line {
     display: block;
     text-align: left;
   }
 
-/* line 307 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 308 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
   .tape_view .main_column .first_line .tags,
   .tape_view .main_column .first_line .buttons {
     -o-box-flex: 1;
@@ -9519,38 +9520,38 @@ body.tape_view .chat_list_messages {
     margin-bottom: 10px;
   }
 
-/* line 312 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 313 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
   .tape_view .main_column .first_line .buttons > * {
     margin-left: 0;
     margin-right: 22px;
   }
 }
 
-/* line 315 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 316 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .main_column .first_line .buttons .edit_icon {
   display: none;
 }
 
-/* line 318 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 319 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .is_owner.tape_view .main_column .first_line .buttons .edit_icon {
   display: inline-block;
 }
 
-/* line 322 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 323 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 
-/* line 324 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 325 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .no_touch_device .tape_view .main_column .first_line .buttons > a:hover {
   opacity: 0.8;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
   filter: alpha(opacity=80);
 }
 
-/* line 330 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 331 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .no_touch_device ._white_box:hover {
   background: rgba(255,255,255,0.6);
 }
 
-/* line 333 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
+/* line 334 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/tape.styl */
 .no_touch_device .tape_play:hover {
   opacity: 0.8;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
