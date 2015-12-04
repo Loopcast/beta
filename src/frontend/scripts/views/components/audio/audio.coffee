@@ -136,13 +136,13 @@ module.exports = class AudioElement
     return if not @data.is_recorded
 
     
+    log "[Audio] snap_to", perc, @duration * perc
 
     @snapping = true
     @dom[0].currentTime = @duration * perc
 
     if not @is_playing
       @play()
-    log "[Audio] snap_to", perc, @dom[0].currentTime
 
 
   destroy: ->

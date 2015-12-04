@@ -142,7 +142,7 @@ module.exports = class RoomModal extends Modal
     @current_data = data
 
     @dom.addClass 'edit_modal'
-    @title.attr( 'placeholder', 'Enter set name' ).val data.title
+    @title.val data.title
     @genre.add_tags data.genres
     @location.val data.location
     @description.val data.about
@@ -159,6 +159,22 @@ module.exports = class RoomModal extends Modal
 
     @genre.reset_tags()
 
+  set_type: ( type ) ->
+    log "[RoomModal] set_type", type
+    labels = 
+      tape: 
+        title: "Edit your recording"
+        title_placeholder: "Enter name of your recording"
+        desc_placeholder: "Describe your recording"
+      room:
+        title: "Edit your room"
+        title_placeholder: "Enter room name"
+        desc_placeholder: "Describe your room"
+
+    @dom.find( '.title' ).html labels[ type ].title
+    @dom.find( '.roomname' ).attr 'placeholder', labels[ type ].title_placeholder
+    @dom.find( '.description' ).attr 'placeholder', labels[ type ].desc_placeholder
+
   destroy: -> 
     # log "[RoomModal] destroy"
     # @room_image_uploader.off 'completed', @_on_cover_changed
@@ -171,6 +187,7 @@ module.exports = class RoomModal extends Modal
     @genre = null
 
     super()
+
 
 
 
