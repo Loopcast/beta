@@ -95,8 +95,12 @@ module.exports = class UploadBox
 
     cover = transform.upload_mix_cover data.result.url
 
-    @dom.find( '.mix-cover' ).css
-      'background-image': "url(#{cover})"
+    # Preload that image, then apply as bg
+    img = new Image()
+    img.src = cover
+    img.onload = () =>
+      @dom.find( '.mix-cover' ).css
+        'background-image': "url(#{cover})"
 
     @saveData cover_url: data.result.url
 
