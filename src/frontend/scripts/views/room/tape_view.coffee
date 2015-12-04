@@ -74,5 +74,5 @@ module.exports = class TapeView extends LoggedView
     
     socket.off @tape_id, @on_socket_message
 
-    delay 2000, ->
+    delay 100, ->
       app.body.removeClass 'tape_view'

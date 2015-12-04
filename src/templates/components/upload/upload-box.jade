@@ -1,13 +1,17 @@
-#sample-upload-box.upload-box.opaque
+#sample-upload-box.upload-box.opaque(data-sample-view="upload-box")
   .container
     .page.page1
       h1 Upload your mix to Loopcast for free.
       p.description Get your mixes shared with our vast community of DJs, Podcasters, Record Labels, Promoters and more!
-      .drag-and-drop
+      .drag-wrapper
+        .drag-and-drop
         .dz-message
           .icon.ss-uploadcloud
-          h2 Click to select file
-          p Or drag and drop into the marked area
+          .idle-msg
+            h2 Click to select file
+            p Or drag and drop into the marked area
+          .drag-msg
+            h2 Drop your file here
 
       p.record Don't already have a mix to upload? You can record a new one on Loopcast
       a(href="/rooms/create").button.yellow_button.no_shadow Record Now
@@ -19,13 +23,13 @@
 
     .page.page2
       .content
-        .progress
+        .progress-bar
           p.percent 50%
           .bar
             .value
 
         .wrapper.clearfix
-          .mix-cover(data-view="components/image_uploader", data-id="mix-cover")
+          .mix-cover(data-sample-view="components/image_uploader")
             form(class="cloudinary_form")
                 input.api_key(type="hidden", name="api_key", value="#{cloudinary.api_key}")
                 input.cloud_name(type="hidden", name="cloud_name", value="#{cloudinary.cloud_name}")
@@ -43,7 +47,7 @@
             input(type="text" name="title" placeholder="Enter name of your session")
 
             label(for="genre_input") Tags *
-            .tags_wrapper.genre(data-view="components/editables/editable_tags")
+            .tags_wrapper.genre(data-sample-view="components/editables/editable_tags")
               textarea( id="genre_input", rows="1")
 
             label(for="location") Location

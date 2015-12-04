@@ -50,6 +50,6 @@ module.exports = class Sidebar
 
 
   destroy: ->
-    @tape_view?.off 'like', @on_like_unlike
-    @tape_view?.off 'unlike', @on_like_unlike
+    @tape_view?.off? 'like', @on_like_unlike
+    @tape_view?.off? 'unlike', @on_like_unlike
     @tape_view = null
