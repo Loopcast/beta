@@ -9935,18 +9935,18 @@ body.tape_view .chat_list_messages {
 }
 
 /* line 130 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
-.upload-page .page2 .progress {
+.upload-page .page2 .progress-bar {
   margin: 0 17px;
 }
 
 /* line 133 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
-.upload-page .page2 .progress .percent {
+.upload-page .page2 .progress-bar .percent {
   font-size: 0.9em;
   margin-bottom: 1px;
 }
 
 /* line 138 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
-.upload-page .page2 .progress .bar {
+.upload-page .page2 .progress-bar .bar {
   height: 14px;
   margin-bottom: 10px;
   border-radius: 4px;
@@ -9955,7 +9955,7 @@ body.tape_view .chat_list_messages {
 }
 
 /* line 145 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/upload.styl */
-.upload-page .page2 .progress .bar .value {
+.upload-page .page2 .progress-bar .bar .value {
   width: 50%;
   height: 100%;
   background: #fdbb30;
