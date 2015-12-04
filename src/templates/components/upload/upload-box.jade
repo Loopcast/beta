@@ -3,11 +3,15 @@
     .page.page1
       h1 Upload your mix to Loopcast for free.
       p.description Get your mixes shared with our vast community of DJs, Podcasters, Record Labels, Promoters and more!
-      .drag-and-drop
+      .drag-wrapper
+        .drag-and-drop
         .dz-message
           .icon.ss-uploadcloud
-          h2 Click to select file
-          p Or drag and drop into the marked area
+          .idle-msg
+            h2 Click to select file
+            p Or drag and drop into the marked area
+          .drag-msg
+            h2 Drop your file here
 
       p.record Don't already have a mix to upload? You can record a new one on Loopcast
       a(href="/rooms/create").button.yellow_button.no_shadow Record Now

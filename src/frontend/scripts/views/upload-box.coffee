@@ -39,7 +39,7 @@ module.exports = class UploadBox
   
 
   initDropzone: () ->
-    uploadMixDropzone = new Dropzone @dom.find('.drag-and-drop')[0],
+    dropzone = new Dropzone @dom.find('.drag-and-drop')[0],
       url: '/upload/path'
       clickable: true
       previewsContainer: document.querySelector('.preview-container')
@@ -47,17 +47,18 @@ module.exports = class UploadBox
 
 
     # Init events
-    uploadMixDropzone.on 'dragenter', () ->
-      $( @element ).addClass('dragenter')
+    dropzone.on 'dragenter', () =>
+      @dom.addClass('drag')
 
-    uploadMixDropzone.on 'dragleave', () ->
-      $( @element ).removeClass('dragenter')
+    dropzone.on 'dragleave', () =>
+      @dom.removeClass('drag')
 
-    uploadMixDropzone.on 'addedfile', () =>
+    dropzone.on 'addedfile', () =>
       @emit 'addedFile'
+      @dom.removeClass('drag')
       @showPage(2)
 
-    # uploadMixDropzone.on 'removedfile', () =>
+    # dropzone.on 'removedfile', () =>
     #   console.log 'removedFile'
 
 

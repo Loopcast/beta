@@ -75,19 +75,30 @@
     width 590px
     margin 0 auto
     
-  .drag-and-drop
+  .drag-wrapper
+    position relative
     width 620px
     height 250px
     margin 40px auto 52px
-    border 2px dashed #b3b3b3
-    cursor pointer
-    
-    &:hover
-      border-color BLUE
-      -webkit-box-shadow: 6px 6px 7px -1px rgba(171,171,171,1);
-      -moz-box-shadow: 6px 6px 7px -1px rgba(171,171,171,1);
-      box-shadow: 6px 6px 7px -1px rgba(171,171,171,1);
       
+    .drag-msg
+      display none
+      
+    .drag-and-drop
+      position absolute
+      height 100%
+      width 100%
+      border 2px dashed #b3b3b3
+      &:hover
+        cursor pointer
+      
+    &:hover
+      
+      .drag-and-drop
+        border-color BLUE
+        box-shadow: 6px 6px 7px -1px rgba(171,171,171,1)
+        
+        
       .icon
         color BLUE
     
@@ -96,12 +107,16 @@
       font-size 4em
     
     h2
+      display inline-block
       font-size 1.4em
       font-weight normal
       margin-bottom 5px
       
     p
       font-size 1.2em
+      width 400px
+      margin-left auto
+      margin auto
       
   p.record
     color #7d7d7d
@@ -120,6 +135,26 @@
   
   .preview-container
     display none
+    
+
+  // Drag file effect
+  .drag
+    .drag-and-drop
+      border-color BLUE
+      box-shadow: 6px 6px 7px -1px rgba(171,171,171,1)
+    .icon
+      color BLUE
+        
+    .idle-msg
+      display none
+        
+    .drag-msg
+      display block
+        
+    h1, .description, .record, .button
+      opacity 0
+
+
     
   // Page 2, upload description form
   .page2
