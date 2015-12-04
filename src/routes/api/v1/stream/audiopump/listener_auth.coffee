@@ -23,11 +23,6 @@ module.exports =
       console.log 'user: ', user
       console.log 'pass: ', pass
 
-      console.log '- - -'
-      console.log 'new header!'
-      console.log '- - -'
-      
+      console.log '-- eo -- '
 
       reply().header( "icecast-auth-user", "1" )
-
-      return

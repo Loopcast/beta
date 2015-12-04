@@ -15,9 +15,6 @@ module.exports =
 
     handler: ( req, reply ) ->
 
-      console.log '- audiopump/stream_start'
-      console.log "new version"
-
       path = req.payload.data.path
       path = path.split( '/' )[2]
 
@@ -25,6 +22,14 @@ module.exports =
 
       username  = path[0]
       room_slug = path[1]
+
+
+      console.log '- audiopump/stream_start'
+
+      console.log 'user: ', username
+      console.log 'room: ', room_slug
+
+      console.log '-- eo -- '
 
       start_time = req.payload.data.startTime
 
@@ -87,9 +92,6 @@ module.exports =
               live: 
                 started_at: now( start_time ).format()
 
-            console.log "sockets broadcasting at channel: #{room._id}"
-            console.log "data ->", data
-            
             sockets.send room._id, data
 
             # save link to current recording on the room
