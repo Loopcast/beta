@@ -72,9 +72,6 @@ module.exports =
             live: 
               stopped_at: now( end_time ).format()
 
-          console.log "sending socket message to -> #{room._id}"
-          console.log "data is ->", data
-
           sockets.send room._id, data
 
           update = 
@@ -88,11 +85,7 @@ module.exports =
 
             if error
               console.log 'error updating streaming duration'
-              console.log 'error ->', error
-
-            console.log "updated room ->", response
-
-            
+              console.log 'error ->', error        
           
           started_at = now( room.stream.started_at )
           stopped_at = now( end_time )
