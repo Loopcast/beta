@@ -45,6 +45,12 @@ module.exports =
           .lean()
           .exec ( error, room ) -> 
 
+            if not room.recording
+
+              console.log "callbacks/completed error for room #{room_id}"
+
+              return
+
             data = 
               type : 'upload:finished'
               user : room.user
