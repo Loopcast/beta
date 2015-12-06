@@ -6,8 +6,8 @@ module.exports = ( url, callback ) ->
       id     : url
       scrape : true
 
-  console.log "facebook/scrape!"
-  console.log "data ->", data
+  # console.log "facebook/scrape!"
+  # console.log "data ->", data
   
   request.post data, ( error, response, body ) ->
 
