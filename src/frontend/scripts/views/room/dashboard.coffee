@@ -156,8 +156,8 @@ module.exports = class Dashboard extends RoomView
     @balloons.appcast.show()
 
 
-    if $( '.room_live' ).length > 0
-      app.emit 'room:go_offline'
+    # if $( '.room_live' ).length > 0
+    #   app.emit 'room:go_offline'
 
 
     # delay 4000, => @balloons.appcast.hide()
