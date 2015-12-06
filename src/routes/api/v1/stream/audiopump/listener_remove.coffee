@@ -12,15 +12,10 @@ module.exports =
       path = req.payload.data.path.split( "/" )[1]
       ip   = req.payload.data.requestHeaders.host
 
-      console.log '- audiopump/listener_remove'
+      # console.log '- audiopump/listener_remove'
 
-      console.log 'path: ', path
-      console.log 'ip  : ', ip
-
-      console.log '- - -'
-      console.log 'new header!'
-      console.log '- - -'
-      
+      # console.log 'path: ', path
+      # console.log 'ip  : ', ip
 
       reply()
 
