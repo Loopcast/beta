@@ -52,7 +52,7 @@ server.start = ( when_done ) ->
             
           hapi.auth.strategy 'google', 'bell',
             scope: [
-              'profile'
+              'profile', 'email'
             ]
             provider      : 'google',
             password      : 'cookie_encryption_password',
