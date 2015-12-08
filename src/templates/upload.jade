@@ -11,5 +11,7 @@ extends layout
 
 block content
 
+  input(type="hidden" class="s3-bucket" value="http://#{s3.bucket}.s3.amazonaws.com/")
+
   .upload-page(data-view="upload-page")
     include ./components/upload/upload-box.jade
