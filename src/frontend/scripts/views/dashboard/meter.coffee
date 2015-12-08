@@ -50,6 +50,17 @@ module.exports = class Meter extends RoomView
     waveform.update data: data
 
 
+    appcast.on 'vu:clipping', ( is_clipping ) ->
+
+      if is_clipping
+        console.log 'clipping!'
+
+    appcast.on 'vu:silent', ( is_silent ) ->
+
+      if is_silent
+        console.log 'silent!'
+
+
    on_room_created: (@room_id, @owner_id) =>
     
     # log "[Meter] on_room_created"

@@ -18,6 +18,11 @@ WebSocket = window.WebSocket || null
 appcast.messages = {}
 appcast.vu       = {}
 
+# counters silent and clipping frames
+counter = 
+  limit  : 0
+  silence: 0
+
 
 appcast.set 'connected', false
 # reset VU from the start
@@ -112,7 +117,21 @@ appcast.connect = ->
       # dont forward VU if not connected
       if not appcast.get( 'connected' ) then return
 
-      appcast.set 'stream:vu', buffer  
+      appcast.set 'stream:vu', buffer
+
+      if buffer[0] >= 1 or buffer[1] >= 1
+        counter.limit++
+      else
+        counter.limit = 0
+
+      if buffer[0] == 0 or buffer[1] == 0
+        counter.silence++
+      else
+        counter.silence = 0
+
+      # clipping
+      appcast.set 'vu:clipping', ( counter.limit   >= 6 )
+      appcast.set 'vu:silent'  , ( counter.silence >= 6 )
 
     reader.readAsArrayBuffer e.data
 
