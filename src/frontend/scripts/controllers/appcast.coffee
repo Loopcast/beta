@@ -119,6 +119,8 @@ appcast.connect = ->
 
       appcast.set 'stream:vu', buffer
 
+      # console.log buffer
+
       if buffer[0] >= 1 or buffer[1] >= 1
         counter.limit++
       else
@@ -130,7 +132,7 @@ appcast.connect = ->
         counter.silence = 0
 
       # clipping
-      appcast.set 'vu:clipping', ( counter.limit   >= 6 )
+      appcast.set 'vu:clipping', ( counter.limit   >= 1 )
       appcast.set 'vu:silent'  , ( counter.silence >= 6 )
 
     reader.readAsArrayBuffer e.data
