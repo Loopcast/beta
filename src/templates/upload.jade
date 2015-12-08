@@ -15,3 +15,8 @@ block content
 
   .upload-page(data-view="upload-page")
     include ./components/upload/upload-box.jade
+
+
+  form.upload( method="post", enctype="multipart/form-data" data-view="upload/form")
+    input(type="file" class="fileupload" name="file")
+    //- input(type="submit" value="Save")

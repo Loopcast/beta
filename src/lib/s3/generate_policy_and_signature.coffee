@@ -3,6 +3,9 @@ moment = require('moment')
 
 redirect = "#{s.base_path}/api/v1/upload/callback/amazon_done"
 
+if not s.is_beta
+  redirect = "http://staging.loopcast.fm/api/v1/upload/callback/amazon_done"
+
 s3 = 
   get_police: ( file_name ) ->
 
