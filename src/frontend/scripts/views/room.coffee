@@ -195,13 +195,15 @@ module.exports = class Room extends LoggedView
 
   on_status_changed: ( data ) =>
 
-    if data.is_live 
-      Intercom( 'trackEvent', 'stream-successful');
+    console.log 'data ->', data
 
     if data.is_recording 
-      Intercom( 'trackEvent', 'recording-successful');
 
-    if data.is_recording or data.is_live
+      console.info "data.is_recording"
+      console.info "data.is_recording"
+      console.info "data.is_recording"
+
+      Intercom( 'trackEvent', 'recording-successful');
       Intercom( 'trackEvent', 'appcast-successful');
 
     if data.is_live?
@@ -343,6 +345,7 @@ module.exports = class Room extends LoggedView
   on_room_live: ->
     log "[Room] on_room_live"
     @dom.addClass 'room_live'
+
     if not user_controller.check_guest_owner()
 
       app.player.fetch_room @room_id, true, =>
@@ -354,8 +357,12 @@ module.exports = class Room extends LoggedView
         @show_guest_popup()
           
     else
+
       app.player.stop()
       navigation.set_lock_live true, location.pathname
+
+      Intercom( 'trackEvent', 'stream-successful');
+      Intercom( 'trackEvent', 'appcast-successful');
     
 
 
