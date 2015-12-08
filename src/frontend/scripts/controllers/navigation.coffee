@@ -130,6 +130,8 @@ class Navigation
           @mobile_append new_content, @on_content_ready
         else
           @normal_append new_content, @on_content_ready
+
+        window.Intercom 'update', window.intercomSettings
         
 
   on_content_ready: =>
