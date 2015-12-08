@@ -95,7 +95,9 @@ class UserController
 
     $.post '/api/v1/user/logout', {}, (data) =>
       # log "[User] logout ~ success", data
-      
+
+      Intercom('shutdown')
+
       @delete_session()
 
       @_dispatch_logout()
@@ -237,6 +239,9 @@ class UserController
     $.getScript '/js/intercom.js', ->
 
       window.Intercom 'boot', window.intercomSettings
+
+      delay 500, ->
+        window.Intercom 'update', window.intercomSettings
 
       # console.log 'loaded intercom with settings', window.intercomSettings
 
