@@ -238,6 +238,9 @@ appcast.callbacks =
 
       appcast.set "stream:error", args.error
 
+      Intercom( 'trackEvent', 'appcast-connection-error');
+
+
       return
 
     console.info "APPCAST REPLIED: STREAM STARTED!"
