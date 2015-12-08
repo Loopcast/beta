@@ -26,6 +26,7 @@ module.exports =
 
       console.log '- audiopump/stream_start'
 
+      console.log 'fullpath:', req.payload.data.path
       console.log 'user: ', username
       console.log 'room: ', room_slug
 
@@ -72,8 +73,6 @@ module.exports =
             user       : room.user
             room       : room._id
             started_at : start_time
-
-          console.log 'creating stream -> ', stream
 
           stream = new Stream stream
 
