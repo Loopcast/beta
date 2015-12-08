@@ -194,7 +194,18 @@ module.exports = class Room extends LoggedView
         @_on_live_stop()
 
   on_status_changed: ( data ) =>
+
+    if data.is_live 
+      Intercom( 'trackEvent', 'stream-successful');
+
+    if data.is_recording 
+      Intercom( 'trackEvent', 'recording-successful');
+
+    if data.is_recording or data.is_live
+      Intercom( 'trackEvent', 'appcast-successful');
+
     if data.is_live?
+
       if data.is_live is true
         @on_room_live()
         @show_guest_popup()
