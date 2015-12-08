@@ -1,35 +1,36 @@
-# example copied from:
-# https://gist.github.com/nosolopau/4723662#file-s3-js
-# var policy = S3.generateS3Policy("user_" + req.user.id);
-# var credentials = S3.generateS3Credentials(policy);
-
 crypto = require('crypto')
 moment = require('moment')
 
+redirect = "#{s.base_path}/api/v1/upload/callback/amazon_done"
+
 s3 = 
-  generateS3Policy: (fileName) ->
+  get_police: ( file_name ) ->
+
+
+    expires = moment()
+      .add( 'minutes', 20 * 60 )
+      .format( 'YYYY-MM-DDTHH:MM:ss\\Z' )
 
     s3Policy = {
       'conditions': [
-        {
-          'bucket': CONF.s3.bucket
-        }, ['starts-with', '$key', 'uploads/' + fileName], {
-          'acl': 'public-read'
-        }, {
-          'success_action_redirect': 'http://' + CONF.host + '/upload_done'
-        }, ['content-length-range', 0, CONF.s3.policy.maxSize], ['starts-with', '$Content-Type', 'image']
+        { 'bucket': s.s3.bucket }, 
+        [ 'starts-with', '$key', "#{file_name}" ], 
+        { 'acl': 'public-read' }, 
+        { 'success_action_redirect': redirect }, 
+        [ 'content-length-range', 0, 10485760000 ], # 10.48gb i hope!
+        [ 'starts-with', '$Content-Type', 'audio' ]
       ],
-      'expiration': moment().add('minutes', CONF.s3.uploadWindow).format('YYYY-MM-DDTHH:MM:ss\\Z')
+      'expiration': expires
     }
 
-  generateS3Credentials: (s3Policy) ->
-    encodedPolicy = new Buffer(JSON.stringify(s3Policy)).toString('base64')
+  get_credentials: ( police ) ->
+    encodedPolicy = new Buffer( JSON.stringify( police ) ).toString('base64')
 
     credentials = 
       policy      : encodedPolicy
-      signature   : crypto.createHmac('sha1', CONF.s3.secretKey).update(encodedPolicy).digest('base64')
-      key         : CONF.s3.key
-      redirect    : 'http://' + CONF.host + '/upload_done'
-      plain_policy: s3Policy
+      signature   : crypto.createHmac('sha1', s.s3.secret).update(encodedPolicy).digest('base64')
+      key         : s.s3.key
+      redirect    : redirect
+      plain_policy: police
 
 module.exports = s3
