@@ -38,11 +38,11 @@ block content
 
   input(type='hidden' id='owner_id' value="#{tape.user._id}")
 
-  div.tape_view.centered(data-view="room/tape_view", data-tape-id="#{tape._id}")
+  div.tape_view(data-view="room/tape_view", data-tape-id="#{tape._id}")
     .tape_header
       .cover_image.for_desktop(style="background-image:url(#{transform.cover(tape.cover_url)})")
       .cover_image.for_mobile(style="background-image:url(#{transform.cover_mobile(tape.cover_url)})")
-      .first_line._overflow(data-view="components/audio/player_preview", data-room-id="#{tape._id}", data-is-live="", data-audio-url="#{tape.s3.location}")
+      .first_line._overflow.centered(data-view="components/audio/player_preview", data-room-id="#{tape._id}", data-is-live="", data-audio-url="#{tape.s3.location}")
         hidden( class="source_src" value="#{tape.s3.location}")
         
 
@@ -65,7 +65,7 @@ block content
           .progress
 
 
-    .tape_inner
+    .tape_inner.centered
       .main_column
         .first_line.padded
           .tags.for_desktop

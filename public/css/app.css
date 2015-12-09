@@ -9072,7 +9072,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 13 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 335 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+/* line 338 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
 /* line 10 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
@@ -9092,7 +9092,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 90 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 335 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+/* line 338 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
 /* line 11 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
@@ -9120,7 +9120,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 5 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
 
-/* line 335 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+/* line 338 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
 /* line 12 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
@@ -9316,7 +9316,7 @@ body.tape_view .chat_list_messages {
   font-size: 50px;
   position: absolute;
   top: 0;
-  left: 0;
+  left: 40px;
   background: rgba(200,200,200,0.6);
 }
 
@@ -9335,10 +9335,11 @@ body.tape_view .chat_list_messages {
 
 /* line 113 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .tape_view {
+  background-color: #ededed;
   text-align: left;
 }
 
-/* line 115 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 116 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .tape_header {
   position: relative;
   background-size: cover;
@@ -9348,15 +9349,15 @@ body.tape_view .chat_list_messages {
   padding: 40px;
 }
 
-/* line 124 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 125 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .tape_header .first_line {
   position: relative;
   z-index: 1;
-  padding-left: 120px;
+  padding-left: 160px;
   overflow: visible;
 }
 
-/* line 130 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 131 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .tape_header .waveform_wrapper {
   display: none;
   position: absolute;
@@ -9368,7 +9369,7 @@ body.tape_view .chat_list_messages {
   cursor: pointer;
 }
 
-/* line 137 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 138 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .tape_header .waveform_wrapper .inner {
   background-size: cover;
   background-image: url("/images/waveform_dark.png");
@@ -9376,7 +9377,7 @@ body.tape_view .chat_list_messages {
   position: relative;
 }
 
-/* line 142 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 143 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .tape_header .waveform_wrapper .inner .progress {
   position: absolute;
   top: 0;
@@ -9387,55 +9388,56 @@ body.tape_view .chat_list_messages {
   width: 0%;
 }
 
-/* line 150 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 151 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .tape_title {
   font-size: 2.7em;
   margin-bottom: 4px;
 }
 
-/* line 153 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 154 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .tape_author_wrapper {
   font-size: 1.3em;
 }
 
-/* line 156 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 157 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .tag_round {
   border-radius: 12px;
   padding-left: 12px;
   padding-right: 12px;
 }
 
-/* line 162 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 163 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .side_column {
   padding: 17px 24px;
   position: relative;
 }
 
-/* line 165 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 166 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .side_column .with_favourites {
   display: none;
 }
 
-/* line 168 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
-
 /* line 169 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+
+/* line 170 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .side_column.favourited .with_favourites {
   display: block;
 }
 
-/* line 172 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 173 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .side_column.favourited .no_favourites {
   display: none;
 }
 
-/* line 175 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 176 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .padded {
   padding-left: 40px;
   padding-right: 40px;
 }
 
-/* line 181 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 182 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .main_column {
+  background-color: #fff;
   border-right: 1px solid #d6d2d2;
   -o-box-flex: 1;
   box-flex: 1;
@@ -9444,18 +9446,19 @@ body.tape_view .chat_list_messages {
   flex: 1;
 }
 
-/* line 184 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 186 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .side_column {
   -o-box-flex: 1;
   box-flex: 1;
   -webkit-flex: 0 0 360px;
   -ms-flex: 0 0 360px;
   flex: 0 0 360px;
+  background-color: #fff;
 }
 
-/* line 188 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 191 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 
-/* line 189 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 192 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .main_column .first_line {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -9465,7 +9468,7 @@ body.tape_view .chat_list_messages {
   margin-bottom: 0px;
 }
 
-/* line 193 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 196 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .main_column .first_line .tags {
   -o-box-flex: 1;
   box-flex: 1;
@@ -9474,14 +9477,14 @@ body.tape_view .chat_list_messages {
   flex: 1;
 }
 
-/* line 195 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 198 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .main_column .first_line .buttons {
   width: 450px;
   font-size: 12px;
   text-align: right;
 }
 
-/* line 200 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 203 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .main_column .first_line .buttons > * {
   display: inline-block;
   vertical-align: top;
@@ -9489,14 +9492,14 @@ body.tape_view .chat_list_messages {
   font-size: 1rem;
 }
 
-/* line 206 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 209 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .main_column .first_line .buttons > *.share_icon {
   font-size: 1.3rem;
   position: relative;
   top: -2px;
 }
 
-/* line 211 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 214 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .main_column .first_line .buttons .label {
   vertical-align: top;
   margin-left: 10px;
@@ -9504,21 +9507,21 @@ body.tape_view .chat_list_messages {
   font-size: 0.8rem;
 }
 
-/* line 217 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 220 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 
-/* line 218 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 221 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .like_counter .icon {
   cursor: pointer;
 }
 
-/* line 220 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 223 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 
-/* line 221 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 224 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .like_counter.liked .icon {
   color: #f23131;
 }
 
-/* line 224 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 227 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .tape_brown_button {
   color: #fff;
   text-align: center;
@@ -9529,7 +9532,7 @@ body.tape_view .chat_list_messages {
   padding: 4px 10px;
 }
 
-/* line 232 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 235 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .chat_user_thumb {
   width: 50px;
   height: 50px;
@@ -9537,7 +9540,7 @@ body.tape_view .chat_list_messages {
   overflow: hidden;
 }
 
-/* line 237 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 240 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .chat_user_thumb.like {
   overflow: visible;
   font-size: 27px;
@@ -9546,13 +9549,13 @@ body.tape_view .chat_list_messages {
   padding-top: 7px;
 }
 
-/* line 244 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 247 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .chat_user_thumb img {
   display: block;
   width: 100%;
 }
 
-/* line 248 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 251 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .chat_line {
   position: relative;
   padding-left: 100px;
@@ -9561,24 +9564,24 @@ body.tape_view .chat_list_messages {
   padding-bottom: 20px;
 }
 
-/* line 254 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 257 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .chat_line .chat_user_thumb {
   position: absolute;
   top: 10px;
   left: 40px;
 }
 
-/* line 257 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 260 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .chat_line .chat_user_text {
   position: relative;
 }
 
-/* line 259 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 262 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .chat_line .chat_user_text p a {
   color: #4592d4;
 }
 
-/* line 262 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 265 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .chat_line .chat_name {
   font-weight: normal;
   font-size: 0.9rem;
@@ -9586,26 +9589,26 @@ body.tape_view .chat_list_messages {
   cursor: pointer;
 }
 
-/* line 267 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 270 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .chat_line .chat_name span {
   margin-bottom: 8px;
   font-size: 0.7rem;
   color: #929292;
 }
 
-/* line 272 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 275 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .chat_line .chat_name:hover {
   color: #4592d4;
 }
 
-/* line 275 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 278 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .post_comment_wrapper {
   background: #ededed;
   padding-right: 160px;
   padding-bottom: 10px;
 }
 
-/* line 279 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 282 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .post_comment_wrapper textarea {
   background: transparent;
   margin: 0;
@@ -9614,26 +9617,26 @@ body.tape_view .chat_list_messages {
   height: 54px;
 }
 
-/* line 289 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 292 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 
-/* line 290 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 293 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .side_column .number {
   color: #4592d4;
 }
 
-/* line 292 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 295 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .side_column .list_users {
   margin: 0 auto;
   width: 310px;
 }
 
-/* line 293 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 296 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .side_column .list_users h3 {
   margin-left: 6px;
   margin-bottom: 20px;
 }
 
-/* line 298 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 301 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .side_column .list_users a {
   display: inline-block;
   margin-right: 6px;
@@ -9641,16 +9644,16 @@ body.tape_view .chat_list_messages {
   margin-bottom: 5px;
 }
 
-/* line 304 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 307 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 @media (max-width: 1100px) {
 
-/* line 305 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 308 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
   .tape_view .main_column .first_line {
     display: block;
     text-align: left;
   }
 
-/* line 308 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 311 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
   .tape_view .main_column .first_line .tags,
   .tape_view .main_column .first_line .buttons {
     -o-box-flex: 1;
@@ -9663,38 +9666,38 @@ body.tape_view .chat_list_messages {
     margin-bottom: 10px;
   }
 
-/* line 313 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 316 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
   .tape_view .main_column .first_line .buttons > * {
     margin-left: 0;
     margin-right: 22px;
   }
 }
 
-/* line 316 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 319 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .tape_view .main_column .first_line .buttons .edit_icon {
   display: none;
 }
 
-/* line 319 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 322 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .is_owner.tape_view .main_column .first_line .buttons .edit_icon {
   display: inline-block;
 }
 
-/* line 323 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 326 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 
-/* line 325 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 328 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .no_touch_device .tape_view .main_column .first_line .buttons > a:hover {
   opacity: 0.8;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
   filter: alpha(opacity=80);
 }
 
-/* line 331 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 334 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .no_touch_device ._white_box:hover {
   background: rgba(255,255,255,0.6);
 }
 
-/* line 334 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
+/* line 337 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/tape.styl */
 .no_touch_device .tape_play:hover {
   opacity: 0.8;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";

@@ -100,7 +100,7 @@ body.tape_view
   font-size: 50px
   position: absolute
   top 0 
-  left 0
+  left 40px
   background rgba(200,200,200,0.6) 
   &.ss-pause
     font-size: 44px
@@ -111,6 +111,7 @@ body.tape_view
     width: 100%
     
 .tape_view
+  background-color #ededed
   text-align: left
   .tape_header
     position: relative
@@ -124,7 +125,7 @@ body.tape_view
     .first_line
       position: relative
       z-index: 1
-      padding-left: 120px
+      padding-left: 160px
       overflow: visible
       
     .waveform_wrapper
@@ -179,10 +180,12 @@ body.tape_view
 
   
   .main_column
+    background-color white
     border-right: 1px solid G_1
     flex: 1
   .side_column
     flex: 0 0 360px
+    background-color white
     
 
   .main_column
