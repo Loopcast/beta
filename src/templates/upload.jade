@@ -1,3 +1,12 @@
+extends layout
+
+block append head
+
+
+  //- jquery plugin i added in order
+  //- to try the upload to amazon
+  script(src='/js/jquery.fileupload.js')
+
 block seo
   title Upload Your DJ Mix or Podcast for Free - Loopcast 
   meta( name="description" content="Stream, record and share your DJ mixes instantly. Go live, interact with your audience and see who’s listening in real time." )
@@ -7,7 +16,6 @@ block seo
   meta( name="twitter:title" content="Upload Your DJ Mix or Podcast for Free - Loopcast")
   meta( name="twitter:description" content="Stream, record and share your DJ mixes instantly. Go live, interact with your audience and see who’s listening in real time.")    
 
-extends layout
 
 block content
 
@@ -17,6 +25,9 @@ block content
     include ./components/upload/upload-box.jade
 
 
+  //- some testing code i started to create in order to test uploading to
+  //- amazon
   form.upload( method="post", enctype="multipart/form-data" data-view="upload/form")
     input(type="file" class="fileupload" name="file")
     //- input(type="submit" value="Save")
+
