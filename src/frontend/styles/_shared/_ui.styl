@@ -978,10 +978,33 @@ input, textarea, div.tagsinput
     border-right: SIZE solid transparent
     border-left: SIZE solid transparent
     border-top: SIZE solid SHARE_BOX
+  
+  &.bottom:after
+    top auto
+    bottom 100%
+    left 50%
+    margin-left -10px
+    border-top none
+    border-bottom SIZE solid SHARE_BOX
     
   &.orientation_right:after
     left: auto
     right: 30px
+    
+  &.bouncy
+    transform translate3d(0, 0, 0)
+    animation balloon-animation 1.7s infinite
+    animation-timing-function ease-in-out
+    
+
+@keyframes balloon-animation
+  0%
+    transform translate3d(0, 0, 0)
+  50%
+    transform translate3d(0, -7px, 0)
+  100%
+    transform translate3d(0, 0, 0)
+
     
 
 .no_touch_device

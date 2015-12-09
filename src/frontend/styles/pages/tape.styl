@@ -28,7 +28,6 @@ body.tape_view
   .tape_view
     display: flex
     flex-direction: column
-    background: white
     font-size: 12px
     color: #424242
     // font-family: Helvetica
@@ -100,7 +99,7 @@ body.tape_view
   font-size: 50px
   position: absolute
   top 0 
-  left 0
+  left 40px
   background rgba(200,200,200,0.6) 
   &.ss-pause
     font-size: 44px
@@ -111,6 +110,7 @@ body.tape_view
     width: 100%
     
 .tape_view
+  background-color #ededed
   text-align: left
   .tape_header
     position: relative
@@ -119,12 +119,13 @@ body.tape_view
     height: 350px
     width: 100%
     padding: PADDING_SIDE
+    margin-bottom 18px
   
     
     .first_line
       position: relative
       z-index: 1
-      padding-left: 120px
+      padding-left: 160px
       overflow: visible
       
     .waveform_wrapper
@@ -179,10 +180,16 @@ body.tape_view
 
   
   .main_column
-    border-right: 1px solid G_1
+    background-color white
+    border: 1px solid OUTLINE_COLOR
+    border-top-left-radius: 3px
     flex: 1
   .side_column
     flex: 0 0 360px
+    background-color white 
+    border: 1px solid OUTLINE_COLOR
+    border-top-right-radius: 3px
+    border-left: none
     
 
   .main_column
