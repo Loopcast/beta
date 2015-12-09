@@ -149,7 +149,6 @@ module.exports = class Dashboard extends RoomView
     @balloons.appcast.hide()
 
   on_appcast_not_running: =>
-    alert "on_appcast_not_running"
     log "[Dashboard] on_appcast_not_running"
     @dom.removeClass( 'appcast_running' ).addClass( 'appcast_not_running' )
 
