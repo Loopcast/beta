@@ -30,8 +30,6 @@ module.exports =
       console.log 'user: ', username
       console.log 'room: ', room_slug
 
-      console.log '-- eo -- '
-
       start_time = req.payload.data.startTime
 
       query =
