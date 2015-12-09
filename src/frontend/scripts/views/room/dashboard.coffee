@@ -62,7 +62,7 @@ module.exports = class Dashboard extends RoomView
     #   log "[Dashboard] input changed", data
     #   appcast.set 'input_device', data
     #   appcast.select_device data
-    @on_appcast_not_running()
+    # @on_appcast_not_running()
     @on_appcast_connected()
     @appcast_not_running_message.on 'click', @toggle_not_running_balloon
     appcast.on 'connected', @on_appcast_connected
@@ -149,6 +149,7 @@ module.exports = class Dashboard extends RoomView
     @balloons.appcast.hide()
 
   on_appcast_not_running: =>
+    alert "on_appcast_not_running"
     log "[Dashboard] on_appcast_not_running"
     @dom.removeClass( 'appcast_running' ).addClass( 'appcast_not_running' )
 
