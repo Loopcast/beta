@@ -8,7 +8,7 @@
           ul
             li 
               | 1. 
-              a(id="download_appcast", href="#", data-mac="/download/Appcast_0.3.1_OSX.zip", data-win="/download/Appcast_0.3.1_Windows_Installer.zip" title="Download Appcast", onClick="mixpanel.track('Download Appcast');Intercom('trackEvent', 'download-appcast');_gaq.push(['_trackEvent', 'Download Appcast', 'Download', '']);") Download Appcast
+              a(id="download_appcast", href="#", data-mac="/download/Appcast_0.3.1_OSX.zip", data-win="/download/Appcast_0.3.1_Windows_Installer.zip" title="Download Appcast", onClick="mixpanel.track('Download Appcast');Intercom('trackEvent', 'download-appcast');_gaq.pusvh(['_trackEvent', 'Download Appcast', 'Download', '']);") Download Appcast
             li 2. Open Appcast (An icon will appear in your system tray)
             li 3. Select your input device below
 
@@ -24,6 +24,10 @@
             option Select your input source
 
         a#dashboard_help(href="https://loopcast.desk.com/customer/portal/articles/1460891-how-to-connect-your-audio-device-" target="_blank", title="Help" onclick="mixpanel.track('Help');") ?
+
+        #dashboard_help_baloon.balloon.bottom.bouncy(data-view="components/help/balloon", data-target="#dashboard_help", data-orientation="bottom")
+          p Need help connecting your device?
+
       .cell
         #go_live_balloon.balloon(data-view="components/help/balloon", data-target="#go_live_button")
           p Click go live to start your live stream and share it with friends, fans and followers everywhere.

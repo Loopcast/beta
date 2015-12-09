@@ -52,6 +52,7 @@ module.exports = class Dashboard extends RoomView
       appcast: view.get_by_dom( '#appcast_not_running_balloon' )
       record: view.get_by_dom( '#record_balloon' )
       live_instructions: view.get_by_dom( '#go_live_instructions' )
+      dashboard_help: view.get_by_dom( '#dashboard_help_baloon' )
 
     @appcast_not_running_message = @dom.find '.appcast_not_running_message'
     @meter = view.get_by_dom @dom.find( '.meter_wrapper' )
@@ -147,6 +148,7 @@ module.exports = class Dashboard extends RoomView
     @dom.addClass( 'appcast_running' ).removeClass( 'appcast_not_running' )
     @meter.activate()
     @balloons.appcast.hide()
+    @balloons.dashboard_help.show()
 
   on_appcast_not_running: =>
     log "[Dashboard] on_appcast_not_running"
