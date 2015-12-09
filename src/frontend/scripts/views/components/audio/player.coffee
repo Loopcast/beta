@@ -48,6 +48,20 @@ module.exports = class Player
 
     app.window.on 'resize', @on_resize
 
+    # Play / Pause set when pressing SPACE
+    $( window ).bind 'keypress', ( e ) =>
+
+      # don't do anything if on input
+      if e.target.nodeName is "INPUT"
+        return true
+
+      # hit the space bar?
+      if e.keyCode is 32
+        @play_btn.click()
+
+        # try to prevent event
+        return false
+
   on_resize: =>
     @close_fullscreen()
 
