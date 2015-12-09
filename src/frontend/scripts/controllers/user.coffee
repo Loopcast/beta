@@ -98,6 +98,8 @@ class UserController
 
       Intercom('shutdown')
 
+      mixpanel.track('User Logged out')
+
       @delete_session()
 
       @_dispatch_logout()

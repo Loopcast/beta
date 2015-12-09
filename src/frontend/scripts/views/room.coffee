@@ -206,6 +206,8 @@ module.exports = class Room extends LoggedView
       Intercom( 'trackEvent', 'recording-successful');
       Intercom( 'trackEvent', 'appcast-successful');
 
+      mixpanel.track('AppCast - Recording Successful')
+
     if data.is_live?
 
       if data.is_live is true
@@ -363,6 +365,8 @@ module.exports = class Room extends LoggedView
 
       Intercom( 'trackEvent', 'stream-successful');
       Intercom( 'trackEvent', 'appcast-successful');
+
+      mixpanel.track('AppCast - Streaming Successful')
     
 
 

@@ -240,6 +240,8 @@ appcast.callbacks =
 
       Intercom( 'trackEvent', 'appcast-connection-error');
 
+      mixpanel.track('Appcast - Connection Error')
+
 
       return
 
