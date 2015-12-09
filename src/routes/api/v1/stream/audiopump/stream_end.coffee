@@ -28,6 +28,7 @@ module.exports =
 
       console.log '- audiopump/stream_end'
 
+      console.log 'fullpath:', req.payload.data.path
       console.log 'user: ', username
       console.log 'room: ', room_slug
       console.log 'time: ', end_time

@@ -130,7 +130,7 @@ class Navigation
           @mobile_append new_content, @on_content_ready
         else
           @normal_append new_content, @on_content_ready
-        
+
 
   on_content_ready: =>
     @emit 'after_render'

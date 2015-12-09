@@ -119,7 +119,9 @@ appcast.connect = ->
 
       appcast.set 'stream:vu', buffer
 
-      if buffer[0] >= 1 or buffer[1] >= 1
+      # console.log buffer
+
+      if buffer[0] >= 0.99 or buffer[1] >= 0.99
         counter.limit++
       else
         counter.limit = 0
@@ -130,7 +132,7 @@ appcast.connect = ->
         counter.silence = 0
 
       # clipping
-      appcast.set 'vu:clipping', ( counter.limit   >= 6 )
+      appcast.set 'vu:clipping', ( counter.limit   >= 4 )
       appcast.set 'vu:silent'  , ( counter.silence >= 6 )
 
     reader.readAsArrayBuffer e.data
@@ -235,6 +237,9 @@ appcast.callbacks =
       console.error "- stream_started error:", args.error
 
       appcast.set "stream:error", args.error
+
+      Intercom( 'trackEvent', 'appcast-connection-error');
+
 
       return
 

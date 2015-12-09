@@ -1,7 +1,8 @@
-appcast = require 'app/controllers/appcast'
+notify   = require 'app/controllers/notify'
+appcast  = require 'app/controllers/appcast'
 RoomView = require 'app/views/room/room_view'
-user = require 'app/controllers/user'
-
+user     = require 'app/controllers/user'
+_        = require 'lodash'
 waveform      = null
 data          = []
 MAX_WIDTH     = 338
@@ -34,7 +35,7 @@ module.exports = class Meter extends RoomView
       width    : MAX_WIDTH
       height   : 31
       innerColor : "#dedede"
-      outerColor : "#46505A"
+      # outerColor : "#46505A"
       interpolate: false
 
     ctx = waveform.context;
@@ -50,15 +51,31 @@ module.exports = class Meter extends RoomView
     waveform.update data: data
 
 
+    clipping = ->
+      notify.info( "Your volume is too loud! Stay away from the red zone!" )
+
+    clipping = _.throttle clipping, 10000, trailing: false
+
     appcast.on 'vu:clipping', ( is_clipping ) ->
 
       if is_clipping
-        console.log 'clipping!'
+        # console.log 'clipping!'
+
+        $( ".meter_wrapper" ).addClass 'red'
+
+        clipping()    
+
+      else
+        # console.log 'not clipping!'
+
+        $( ".meter_wrapper" ).removeClass 'red'
 
     appcast.on 'vu:silent', ( is_silent ) ->
 
       if is_silent
-        console.log 'silent!'
+        # console.log 'silent!'
+      else
+        # console.log 'not silent!'
 
 
    on_room_created: (@room_id, @owner_id) =>
@@ -99,7 +116,6 @@ module.exports = class Meter extends RoomView
     data = data.slice(-MAX_WIDTH);
 
     waveform.update data: data
-
 
   destroy: ->
     super()

@@ -34,6 +34,22 @@ module.exports =
 
         callback? null, response
 
+  upload :
+
+    policy_and_signature: ( file_name, callback ) ->
+      on_status_code =
+        401: ( response ) -> callback 'unauthorized, need log in!'
+        
+      data = file_name: file_name
+
+      request = $.post api_url + 'upload/policy_and_signature', data, on_status_code
+
+      request.error on_error "upload/policy_and_signature", callback
+
+      request.done ( response ) ->
+
+        callback? null, response
+
   rooms :
 
     is_available: ( title, callback ) ->
