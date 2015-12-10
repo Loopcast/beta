@@ -142,7 +142,7 @@ module.exports = class Room extends LoggedView
       return @on_status_changed   data if data.type is "status"
 
       # temp
-      return @on_live_changed     data if (not data.type?) and data.is_live?
+      # return @on_live_changed     data if (not data.type?) and data.is_live?
 
       
         # unless user_controller.is_me data.user.id
@@ -341,32 +341,58 @@ module.exports = class Room extends LoggedView
 
   _on_live_stop: ->
     log "[Room] _on_live_stop"
-    notify.info 'The user has ended the stream'
+
+    if user_controller.check_guest_owner()
+      notify.info 'Your stream has stopped.'
+    else
+      notify.info 'The user has ended the stream'
+
+    # console.log 'saved ->', @_src
+
     @on_room_offline()
+
+    delay 100, =>
+      if $( "audio" ).attr( "src" )
+        @_src = $( "audio" ).attr( "src" )
+        $( "audio" ).attr( "src", "" )
     
   on_room_live: ->
-    log "[Room] on_room_live"
-    @dom.addClass 'room_live'
 
-    if not user_controller.check_guest_owner()
+    $( "#player" ).addClass "loading"
 
-      app.player.fetch_room @room_id, true, =>
-        log "[Room] fetch room callback", app.settings.theme
-        if app.settings.theme isnt 'mobile'
-          log "[Room] inside!"
-          app.player.play @room_id
+    delay 500, =>
 
-        @show_guest_popup()
-          
-    else
+      console.log 'loading ->', @_src
 
-      app.player.stop()
-      navigation.set_lock_live true, location.pathname
+      log "[Room] on_room_live"
+      @dom.addClass 'room_live'
 
-      Intercom( 'trackEvent', 'stream-successful');
-      Intercom( 'trackEvent', 'appcast-successful');
+      if not user_controller.check_guest_owner()
 
-      mixpanel.track('AppCast - Streaming Successful')
+        app.player.fetch_room @room_id, true, =>
+          log "[Room] fetch room callback", app.settings.theme
+
+          if @_src
+              $( "audio" ).attr( "src", @_src )
+              @_src = null
+
+          if app.settings.theme isnt 'mobile'
+            log "[Room] inside!"
+            app.player.play @room_id
+
+
+
+          @show_guest_popup()
+            
+      else
+
+        app.player.stop()
+        navigation.set_lock_live true, location.pathname
+
+        Intercom( 'trackEvent', 'live-successful');
+        Intercom( 'trackEvent', 'appcast-successful');
+
+        mixpanel.track('AppCast - Live Successful')
     
 
 

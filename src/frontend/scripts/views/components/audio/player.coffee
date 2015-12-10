@@ -52,8 +52,8 @@ module.exports = class Player
     $( window ).bind 'keypress', ( e ) =>
 
       # don't do anything if on input
-      if e.target.nodeName is "INPUT"
-        return true
+      return true if e.target.nodeName is "INPUT"
+      return true if e.target.nodeName is "TEXTAREA"
 
       # hit the space bar?
       if e.keyCode is 32
