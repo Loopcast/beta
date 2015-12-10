@@ -109,6 +109,7 @@ module.exports = class Dashboard extends RoomView
 
   on_device_changed: =>
     log "[Dashboard] on_device_changed", app.session.get( 'hide:help' )
+    @balloons.dashboard_help.hide()
     if not app.session.get( 'hide:help' )
       @balloons.live_instructions.show()
 
