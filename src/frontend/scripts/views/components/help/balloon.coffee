@@ -19,7 +19,7 @@ module.exports = class Balloon
     @checkbox.on 'change', @on_checkbox_changed
 
   on_checkbox_changed: =>
-    log "[Balloon] set show help", @checkbox.is(":checked")
+    # log "[Balloon] set show help", @checkbox.is(":checked")
 
     app.session.set 'hide:help', @checkbox.is(":checked")
 
@@ -50,11 +50,11 @@ module.exports = class Balloon
     
     data.left += @dom_offset
     
-    log "[Balloon] resize", "top", data.top, "left", data.left, "orientation", @orientation, "t top", p.top, "t left", p.left, "width", @width, "dom offset", @dom_offset
+    # log "[Balloon] resize", "top", data.top, "left", data.left, "orientation", @orientation, "t top", p.top, "t left", p.left, "width", @width, "dom offset", @dom_offset
     @dom.css data
 
   show: ->
-    log "[Balloon] show!"
+    # log "[Balloon] show!"
     @visible = true
     app.window.on 'resize', @on_resize
     @dom.addClass 'to_show'

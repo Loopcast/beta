@@ -195,7 +195,7 @@ module.exports = class Room extends LoggedView
 
   on_status_changed: ( data ) =>
 
-    console.log 'data ->', data
+    console.log 'on_status_changed ->', data
 
     if data.is_recording 
 
@@ -336,7 +336,7 @@ module.exports = class Room extends LoggedView
 
   on_room_offline: ->
     @dom.removeClass 'room_live'
-    app.player.stop()
+    app.player.on_room_offline()
     navigation.set_lock_live false, ""
 
   _on_live_stop: ->
@@ -379,6 +379,7 @@ module.exports = class Room extends LoggedView
           if app.settings.theme isnt 'mobile'
             log "[Room] inside!"
             app.player.play @room_id
+            app.player.on_room_live()
 
 
 

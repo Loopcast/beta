@@ -258,7 +258,13 @@ module.exports = class Player
   stop: ->
     @audio.pause()
 
+  on_room_offline: ->
+    @stop()
+    if @dom.hasClass 'is_live'
+      @dom.removeClass 'is_live'
 
+  on_room_live: ->
+    @dom.addClass 'is_live'
   
 
   update_info: ( data ) ->
