@@ -19,11 +19,11 @@ module.exports = class EditModalOpener
     @edit_modal = view.get_by_dom $( '#room_modal' )
 
     @dom.on 'click', @open_edit_modal
-    log "[EditModalOpener] on_views_binded", @edit_modal
+    # log "[EditModalOpener] on_views_binded", @edit_modal
 
 
   open_edit_modal: =>
-    log "[EditModalOpener] open_edit_modal", @id
+    # log "[EditModalOpener] open_edit_modal", @id
 
     @edit_modal.on 'submit', @on_edit_modal_submit
     @edit_modal.dom.data( 'modal-close', true )
@@ -31,9 +31,9 @@ module.exports = class EditModalOpener
 
 
     app.rooms.info @id, @type, (response) =>
-      log "[EditModalOpener] gettingo info from room", @id, response
+      # log "[EditModalOpener] gettingo info from room", @id, response
       data = @normalize_data response
-      log "[EditModalOpener] info", response, data
+      # log "[EditModalOpener] info", response, data
 
       # Check the is_live flag
       @edit_modal.open_with_data data
@@ -90,10 +90,10 @@ module.exports = class EditModalOpener
     to_submit = @normalize_data_for_update data
     key = if @type is 'room' then 'rooms' else 'tapes'
 
-    log "[EditModalOpener] _on_edit_submit", data, to_submit
+    # log "[EditModalOpener] _on_edit_submit", data, to_submit
 
     api[key].update @id, to_submit, (error, response) =>
-      log "[EditModalOpener] updated", error, response
+      # log "[EditModalOpener] updated", error, response
 
     @edit_modal.hide_message()
     @edit_modal.show_loading()

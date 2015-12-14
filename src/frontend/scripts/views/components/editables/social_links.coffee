@@ -49,7 +49,7 @@ module.exports = class SocialLinks
         
 
   build_read_mode_from_data: ->
-    log "build_read_mode_from_data", @data
+    # log "build_read_mode_from_data", @data
     html = ""
     for item in @data
       html += @read_template( item )

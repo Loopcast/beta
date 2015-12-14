@@ -105,7 +105,7 @@ module.exports = class Player
   unlike: ->
     type = if @data.data.is_live then 'rooms' else 'tapes'
     api[type].dislike @data.data._id, (error, response) =>
-      log "[Player] dislike", error, response
+      # log "[Player] dislike", error, response
       @like_lock = false
       
       if error
@@ -117,7 +117,7 @@ module.exports = class Player
   like: ->
     type = if @data.data.is_live then 'rooms' else 'tapes'
     api[type].like @data.data._id, (error, response) =>
-      log "[Player] like", error, response
+      # log "[Player] like", error, response
       @like_lock = false
 
       if error
@@ -129,7 +129,7 @@ module.exports = class Player
   on_loaded: ( duration ) =>
     if duration > 0
       time = time_to_string( parseInt( duration ) )
-      log "[Player] on_loaded", duration, time
+      # log "[Player] on_loaded", duration, time
       @time_tot.html time.str
 
   on_play_clicked: =>
@@ -148,91 +148,57 @@ module.exports = class Player
       start_time : obj.started_at
       src        : obj.url
       
-    log "[Get audio data]", data, audio_data
+    # log "[Get audio data]", data, audio_data
 
     return audio_data
 
+
+  # general method for playing both tape and room audio
+  general_play: ( room_id, source_src, is_tape ) ->
+    if is_tape
+      @play room_id, source_src
+    else
+      @play_live room_id, source_src
+
+
+  # shortcut for playing live rooms
   play_live: (room_id, src = null) ->
     @play room_id, src, true
 
-  play: (_room_id, src = null, is_live = false) ->
+  ###
+  Check if the room/tape information from room_id has been loaded.
+  If it's not, fetch the info and the call _play()
+  Otherwise, just call _play()
+  ###
+  play: (room_id, src = null, is_live = false) ->
 
-    room_id = _room_id
-    log "[Player] play", room_id, src, is_live
-
-    if not room_id? and @current_room_id
-      room_id = @current_room_id 
-    else if @current_room_id is room_id and @audio.is_playing
-      log "[Player] returning. already playing this room"
-      return false
-
-    if not @audio.is_playing and _room_id is @current_room_id
+    if @current_room_id is room_id
+      return if @audio.is_playing
+      log "[Player.play()] the audio is the same. Simply start playing."
       return @on_play_clicked()
 
 
     if not @data_rooms[ room_id ]?
+      log "[Player.play()] no data for this audio. Fetching it..."
       @fetch_room room_id, is_live, => @_play room_id
 
     else
+      log "[Player.play()] got data for this audio. Just play!"
       @_play room_id
 
-    if src?
 
-      audio_data = 
-        id         : room_id
-        is_recorded: !is_live
-        start_time : null
-        src        : src
-
-      @audio.set_data src
-
-    @audio.play()
-
-    # if src?
-    #   log "[Player] src is set", src
-    #   @audio.set_src src
-    #   @audio.play()
-
-    
-  fetch_room: ( room_id, is_live, callback ) ->
-
-    kallback = callback
-    log "[Player] fetch_room", room_id, @data_rooms[ room_id ]
-    if @data_rooms[ room_id ]?
-      log "[Player] fetch_room. data_rooms available", @data_rooms[ room_id ]
-      kallback?()
-    else
-
-      return if @requested_rooms[ room_id ]?
-
-      @requested_rooms[ room_id ] = true
-
-      log "[Player] no informations. fetching...", room_id
-
-      on_response = (error, response) => 
-        log "[Player] on_response", error, response
-        if response
-
-          @data_rooms[ room_id ] = normalize_info response, is_live
-          log '[Player] room info', response, @data_rooms[ room_id ]
-          kallback?()
-        else
-          @requested_rooms[ room_id ] = null
-          @on_error()
-
-      if is_live
-        log "[Player] fetching LIVE info. api.rooms.info", room_id
-        api.rooms.info room_id, on_response
-      else
-        log "[Player] fetching TAPE info. api.tapes.get", room_id
-        api.tapes.get room_id, on_response
-
-  on_error: ->
-    notify.error 'There was an error.'
-    app.emit 'audio:paused'
+    # For mobile, we gonna play the src straight away,
+    # as the click action must be directly connected to the 
+    # audio play method. We gonna load the room info as a parallel
+    # thread.
+    if app.settings.browser.mobile and src?
+      @audio.mobile_play src
 
 
-
+  ###
+  This is the actual play method who updates the UI and play 
+  the audio element.
+  ###
   _play: ( room_id ) ->
     @current_room_id = room_id
 
@@ -241,19 +207,49 @@ module.exports = class Player
     # Choose the righth api to call
     type = if @data_rooms[ room_id ].data.is_live then 'rooms' else 'tapes'
 
-    log "[Player] playing", type, room_id
-    # Call the api for stats
+    # update stats
     api[ type ].play room_id, (error, response) ->
 
     @data = @data_rooms[ room_id ]
-
-    log "[Player] _play", @data
-
 
     @update_info @data
     @audio.set_data @get_audio_data( @data )
 
     @reset_progress()
+    
+  fetch_room: ( room_id, is_live, callback ) ->
+
+    app.emit 'audio:loading', room_id
+
+    kallback = callback
+
+    if @data_rooms[ room_id ]?
+      kallback?()
+    else
+
+      return if @requested_rooms[ room_id ]?
+
+      @requested_rooms[ room_id ] = true
+
+      on_response = (error, response) => 
+        if response
+
+          @data_rooms[ room_id ] = normalize_info response, is_live
+          kallback?()
+        else
+          @requested_rooms[ room_id ] = null
+          @on_error()
+
+      if is_live
+        # log "[Player] fetching LIVE info. api.rooms.info", room_id
+        api.rooms.info room_id, on_response
+      else
+        # log "[Player] fetching TAPE info. api.tapes.get", room_id
+        api.tapes.get room_id, on_response
+
+  on_error: ->
+    notify.error 'There was an error.'
+    app.emit 'audio:paused'
     
   stop: ->
     @audio.pause()
@@ -270,7 +266,7 @@ module.exports = class Player
   update_info: ( data ) ->
 
     obj = data.data
-    log "[Update info]", obj
+    # log "[Update info]", obj
 
     if obj.is_live
       room_link = "/#{obj.user.info.username}/#{obj.slug}"
@@ -316,41 +312,44 @@ module.exports = class Player
 
     clearTimeout @timeout_follow_popup
     @timeout_follow_popup = setTimeout =>
-      log "[Player] checking popup", @audio.is_playing
+      # log "[Player] checking popup", @audio.is_playing
       if @audio.is_playing
         @follow_popup.show obj
     , 30000
 
   on_audio_started: =>    
-    if not @data?
-      log "[Player] on_audio_started. no data. then stop", @data
-      notify.error 'There was an error.'
-      @stop()
-      return
+    # if not @data?
+    #   log "[Player] on_audio_started. no data. then stop", @data
+    #   notify.error 'There was an error.'
+    #   @stop()
+    #   return
 
-    log "[Player] on_audio_started", @data
+    # log "[Player] on_audio_started", @data
       
 
     @play_btn.addClass( 'ss-pause' ).removeClass( 'ss-play' )
 
-    app.emit 'audio:started', @data.data._id
 
     # @loading.fadeOut()
-    log "[Player] loading hide"
+    # log "[Player] loading hide"
     @dom.removeClass 'loading'
 
+    if @data?
+      app.emit 'audio:started', @data.data._id
+
   on_audio_stopped: =>
-    log "[Player] on_audio_stopped"
+    # log "[Player] on_audio_stopped"
 
     @play_btn.removeClass( 'ss-pause' ).addClass( 'ss-play' )
 
     # @progress.css 'width', '0%'
     # @time.html "00:00:00"
 
-    app.emit 'audio:paused', @data.data._id
+    if @data?
+      app.emit 'audio:paused', @data.data._id
 
   on_audio_ended: =>
-    log "[Player] on_audio_ended"
+    # log "[Player] on_audio_ended"
     
     app.emit 'audio:ended', @data.data._id    
     @on_audio_stopped()
@@ -369,7 +368,7 @@ module.exports = class Player
     delay 100, => @progress.show()
 
   on_snapped: ->
-    log "[Player] loading hide"
+    # log "[Player] loading hide"
     @dom.removeClass 'loading'
 
   on_progress: (data) =>
@@ -379,8 +378,7 @@ module.exports = class Player
 
   on_progress_dragger: ( perc ) =>
     @progress.css 'width', perc + '%'
-    time = @audio.get_time_from_perc( perc / 100 )
-    # log "[xxx] dragging", perc, time
+    time = @audio.get_time_from_perc( perc / 100 ) 
     @time.html time.str
 
 
@@ -391,7 +389,7 @@ module.exports = class Player
   on_progress_ended: (perc) =>
     @progress.removeClass 'dragging'
     # log "[xxx] dragging", perc
-    log "[Player] on_progress_ended() perc", perc
+    # log "[Player] on_progress_ended() perc", perc
     # @dom.addClass 'loading'
     # @audio.snap_to perc/100
 
@@ -401,14 +399,14 @@ module.exports = class Player
 
 
   on_progress_click: (e) =>
-    log "[Player] on_progress_click() at first"
+    # log "[Player] on_progress_click() at first"
     return if not @audio.data.is_recorded
     # return if @is_dragging
     x = e.offsetX
     w = $(e.currentTarget).width()
     perc = x / w
 
-    log "[Player] on_progress_click() loading show"
+    # log "[Player] on_progress_click() loading show"
     @dom.addClass 'loading'
     @audio.snap_to perc
 
@@ -420,7 +418,7 @@ module.exports = class Player
 
   open: =>
     app.body.addClass 'player_visible'
-    log "[Player] open() loading show"
+    # log "[Player] open() loading show"
     @dom.show().addClass( 'loading' )
     delay 1, => @dom.addClass 'visible'
 
