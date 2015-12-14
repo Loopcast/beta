@@ -3,7 +3,7 @@ Isotope = require 'isotope-layout'
 module.exports = class Explore
   isotope: null
   constructor: ( @dom ) -> 
-    log "[Creating explore]"
+    # log "[Creating explore]"
     view.on 'binded', @on_views_binded
 
   on_views_binded: (scope) =>

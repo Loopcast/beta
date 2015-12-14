@@ -66,7 +66,7 @@ module.exports = class Record extends ButtonWithTimer
     L.rooms.stop_recording @room_id, ( error, response ) ->
 
       # console.log "GOT TAPE ID: #{response.room.recording}"
-      log "[Record Button] GOT TAPE ID", response, response.room.recording
+      # log "[Record Button] GOT TAPE ID", response, response.room.recording
 
       ref.tape_id = response.room.recording
 
@@ -133,4 +133,4 @@ module.exports = class Record extends ButtonWithTimer
   on_room_status_changed: ( data ) =>
     # @set_enabled( data.room.status.is_recording or data.room.status.is_live )
     @set_active data.room.status.is_recording
-    log "[ButtonWithTimer RECORD] on_room_status_changed", data
+    # log "[ButtonWithTimer RECORD] on_room_status_changed", data
