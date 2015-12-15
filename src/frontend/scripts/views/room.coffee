@@ -212,7 +212,7 @@ module.exports = class Room extends LoggedView
 
       if data.is_live is true
         @on_room_live()
-        @show_guest_popup()
+        # @show_guest_popup()
       else
         @_on_live_stop()
 
@@ -363,6 +363,7 @@ module.exports = class Room extends LoggedView
     delay 500, =>
 
       
+      
 
       log "[Room] on_room_live"
       @dom.addClass 'room_live'
@@ -383,11 +384,12 @@ module.exports = class Room extends LoggedView
             app.player.play @room_id
             app.player.on_room_live()
 
-
-
-          @show_guest_popup()
+          delay 300, => @show_guest_popup()
+          
             
       else
+
+        @show_guest_popup()
 
         app.player.stop()
         navigation.set_lock_live true, location.pathname

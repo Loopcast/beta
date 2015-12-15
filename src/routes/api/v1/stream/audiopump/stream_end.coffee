@@ -69,6 +69,8 @@ module.exports =
           # if the user don't press live, we need to send a socket message
           # in order to get users offline in the room
           if room.status.is_live
+            console.log 'sending SOCKET ------------------>'
+            
             # notify UI the stream is live
             data =
               type   : "status"
