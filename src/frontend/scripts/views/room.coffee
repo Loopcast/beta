@@ -12,6 +12,8 @@ transform       = require 'lib/cloudinary/transform'
 RoomModal       = require 'app/views/modals/room_modal'
 PeopleList      = require 'app/utils/rooms/people_list'
 
+is_live = null
+
 module.exports = class Room extends LoggedView
   room_created: false
   publish_modal: null
@@ -208,11 +210,18 @@ module.exports = class Room extends LoggedView
 
       mixpanel.track('AppCast - Recording Successful')
 
+    if data.is_live == is_live then return
+
+    is_live = data.is_live
+
     if data.is_live?
 
       if data.is_live is true
         @on_room_live()
-        @show_guest_popup()
+
+        # otherwise wait until player is running
+        if user_controller.check_guest_owner()
+          @show_guest_popup()
       else
         @_on_live_stop()
 
@@ -363,6 +372,7 @@ module.exports = class Room extends LoggedView
     delay 500, =>
 
       
+      
 
       log "[Room] on_room_live"
       @dom.addClass 'room_live'
@@ -383,9 +393,11 @@ module.exports = class Room extends LoggedView
             app.player.play @room_id
             app.player.on_room_live()
 
+          delay 2000, => 
 
-
-          @show_guest_popup()
+            # TODO: check if the player is actually already playing
+            @show_guest_popup()
+          
             
       else
 
@@ -403,10 +415,12 @@ module.exports = class Room extends LoggedView
   show_guest_popup: ->
 
     if app.settings.theme isnt 'mobile'
+
       if user_controller.check_guest_owner()
         message = 'You are now live! Use the sharing icon or Facebook send button below to invite some listeners'
       else
         message = 'You are now listening live on Loopcast'
+
       if user_controller.is_logged()
         notify.guest_room_logged message
       else
