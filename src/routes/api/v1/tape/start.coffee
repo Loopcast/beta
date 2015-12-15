@@ -39,23 +39,6 @@ module.exports =
         _id  : room_id
         user : user_id
 
-      # creating new recording document
-      doc = 
-        user: user_id
-        room: room_id
-
-      recording = new Tape doc
-
-      recording.save ( error, doc ) ->
-
-        if error 
-          console.log "error creating tape document"
-          console.log error
-          
-          return failed req, reply, error
-
-        recording = doc
-
       Room.findOne( query )
         .select( "_id user info.slug recording" )
         .lean()
@@ -76,65 +59,80 @@ module.exports =
 
             return reply Boom.preconditionFailed( "Still recording or uploading, please stop recording or wait upload complete" )
 
-          update =
-            # sets recording._id to the recording parent @ room
-            recording                     : recording._id
-            'status.is_recording'         : true
-            'status.recording.started_at' : now().format()
+          # creating new recording document
+          doc = 
+            user: user_id
+            room: room_id
 
-          # set the filename on the tape recording
-          rec_update =
-            started_at: update['status.recording.started_at']
+          recording = new Tape doc
 
-          Tape
-            .update( _id: recording._id, rec_update )
-            .lean()
-            .exec ( error, docs_updated ) ->
+          recording.save ( error, doc ) ->
 
-              if error 
-                console.log "error updating tape document"
-                console.log error
-                
-                return failed req, reply, error
-
-          data =
-            url: "#{s.tape.url}:8000/api/v1/start"
-            form:
-              hostname    : "http://cdn.audiopump.co"
-              path        : "http://46.101.25.152/loopcast-staging/#{username}_#{room.info.slug}"
-              room_id     : room_id
-              mount_point : "#{username}_#{room.info.slug}"
-
-          if s.is_beta
-            data.form.path = "http://46.101.25.152/loopcast/#{username}_#{room.info.slug}"
-
-          request.post data, ( error, response, body ) ->
-
-            if error or response.statusCode != 200
-
-              console.log "error contacting server tape"
+            if error 
+              console.log "error creating tape document"
               console.log error
-              console.log body
+              
+              return failed req, reply, error
 
-              return reply Boom.resourceGone( "could not connect to tape recorder" )
+            update =
+              # sets recording._id to the recording parent @ room
+              recording                     : doc._id
+              'status.is_recording'         : true
+              'status.recording.started_at' : now().format()
 
-            if response.error
+            # set the filename on the tape recording
+            rec_update =
+              started_at: update['status.recording.started_at']
 
-              console.log "error on the tape server while trying to record"
-              console.log error
-
-              return reply Boom.preconditionFailed( "Database error" )
-
-            # update[ 'status.recording.file' ] = body.file
-            
-            Room.update( _id: room_id, update )
+            Tape
+              .update( _id: recording._id, rec_update )
               .lean()
               .exec ( error, docs_updated ) ->
 
-                if error
+                if error 
+                  console.log "error updating tape document"
+                  console.log error
+                  
+                  return failed req, reply, error
 
-                  failed req, reply, error
+            data =
+              url: "#{s.tape.url}:8000/api/v1/start"
+              form:
+                hostname    : "http://cdn.audiopump.co"
+                path        : "http://46.101.25.152/loopcast-staging/#{username}_#{room.info.slug}"
+                room_id     : room_id
+                mount_point : "#{username}_#{room.info.slug}"
 
-                  return reply Boom.preconditionFailed( "Database error" )
+            if s.is_beta
+              data.form.path = "http://46.101.25.152/loopcast/#{username}_#{room.info.slug}"
 
-                reply update
+            request.post data, ( error, response, body ) ->
+
+              if error or response.statusCode != 200
+
+                console.log "error contacting server tape"
+                console.log error
+                console.log body
+
+                return reply Boom.resourceGone( "could not connect to tape recorder" )
+
+              if response.error
+
+                console.log "error on the tape server while trying to record"
+                console.log error
+
+                return reply Boom.preconditionFailed( "Database error" )
+
+              # update[ 'status.recording.file' ] = body.file
+              
+              Room.update( _id: room_id, update )
+                .lean()
+                .exec ( error, docs_updated ) ->
+
+                  if error
+
+                    failed req, reply, error
+
+                    return reply Boom.preconditionFailed( "Database error" )
+
+                  reply update
