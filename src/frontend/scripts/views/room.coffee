@@ -393,10 +393,7 @@ module.exports = class Room extends LoggedView
             app.player.play @room_id
             app.player.on_room_live()
 
-          delay 2000, => 
-
-            # TODO: check if the player is actually already playing
-            @show_guest_popup()
+          app.on 'audio:started', @show_guest_popup
           
             
       else
@@ -412,7 +409,7 @@ module.exports = class Room extends LoggedView
 
 
 
-  show_guest_popup: ->
+  show_guest_popup: =>
 
     if app.settings.theme isnt 'mobile'
 
