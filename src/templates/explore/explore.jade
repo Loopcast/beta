@@ -138,10 +138,14 @@ block grid
         span.icon.ss-play.circle_icon
         .loading_spin
 
+        - about = ""
+        if item.about
+          - about = item.about
+
         .share_wrapper(
           data-view="buttons/share", 
           data-title="#{item.title}",
-          data-summary="#{item.about}",
+          data-summary="#{about}",
           data-permalink="#{sharing_url}",
           data-image="#{item.cover_url}"
         )
