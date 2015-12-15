@@ -77,7 +77,10 @@ module.exports = class PeoplePopup extends ChatView
           opacity: 1
 
         if position is 'down'
-          css.top = coords.y - 20
+          css.top = coords.y + 55
+        # else
+        #   css.top = css.top
+
 
 
         @dom.css( css )
