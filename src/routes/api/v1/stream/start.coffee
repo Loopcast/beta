@@ -57,16 +57,14 @@ module.exports =
           update = 
             will_stream : true
 
-          if room.status.is_recording
+          if not room.status.is_recording
 
-            update[ 'status.is_live' ] = true
+            # if user isn't recording a new password must be generated
+            update.password = uuid.v4() 
 
-          else
+          update['status.is_live'] = true
+          update['info.url']       = "#{s.radio.url}#{username}_#{room.info.slug}"
 
-            update.password          = uuid.v4() 
-            update['info.url']       = "#{s.radio.url}#{username}_#{room.info.slug}"
-            update['status.is_live'] = true
-          
           Room.update( _id: room_id, update )
             .lean()
             .exec ( error, docs_updated ) ->
