@@ -76,6 +76,8 @@ module.exports = class Profile extends LoggedView
 					do ref.save_data
 
 
+
+
 		
 
 	on_user_logged: ( @user_data ) =>
@@ -239,11 +241,17 @@ module.exports = class Profile extends LoggedView
 		l = @elements.location.html().length
 		b = @elements.about.html().length
 
+		log "check_informations"
 		# log "[Profile] check_informations", @elements.location.html(), @elements.about.html()
 		if l > 0 or b > 0
 			@dom.removeClass 'no_information_yet'
+
+			log "inside", user_controller.is_owner
+			
 		else
 			@dom.addClass 'no_information_yet'
+			if user_controller.is_owner
+				do @write_mode
 		
 		if b > 0
 			str = link_to_text @elements.about.html()
