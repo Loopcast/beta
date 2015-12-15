@@ -212,6 +212,8 @@ module.exports = class Player
 
     @data = @data_rooms[ room_id ]
 
+
+    log "[Player._play()]", @data
     @update_info @data
     @audio.set_data @get_audio_data( @data )
 
