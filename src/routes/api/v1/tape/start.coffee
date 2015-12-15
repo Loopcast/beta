@@ -57,7 +57,7 @@ module.exports =
         recording = doc
 
       Room.findOne( query )
-        .select( "_id user info.slug" )
+        .select( "_id user info.slug recording" )
         .lean()
         .exec ( error, room ) -> 
 

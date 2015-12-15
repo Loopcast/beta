@@ -30,7 +30,7 @@ schema = new Schema
   # password for starting this stream
   password   : String
 
-  # true if user pressed start_streaming
+  # true if user called api/v1/stream/start
   will_stream: Boolean
 
   status:

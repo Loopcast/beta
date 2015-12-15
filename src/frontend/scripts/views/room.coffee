@@ -362,7 +362,7 @@ module.exports = class Room extends LoggedView
 
     delay 500, =>
 
-      console.log 'loading ->', @_src
+      
 
       log "[Room] on_room_live"
       @dom.addClass 'room_live'
@@ -373,8 +373,10 @@ module.exports = class Room extends LoggedView
           log "[Room] fetch room callback", app.settings.theme
 
           if @_src
-              $( "audio" ).attr( "src", @_src )
-              @_src = null
+            # console.log 'loading ->', @_src
+            
+            $( "audio" ).attr( "src", @_src )
+            @_src = null
 
           if app.settings.theme isnt 'mobile'
             log "[Room] inside!"

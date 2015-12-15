@@ -16,7 +16,7 @@ module.exports = (event) ->
   
   # log event.pageX, event.pageY
   el = $(event.currentTarget)
-  offset = el.offset()
+  offset = el.position()
 
   return {
     x: offset.left
