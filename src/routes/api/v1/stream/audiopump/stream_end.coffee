@@ -81,9 +81,9 @@ module.exports =
           update = 
             $set   : 
               # reset will strem status
-              will_stream       : false
-              streaming         : null
-              'status.is_live'  : false
+              will_stream      : false
+              streaming        : null
+              'status.is_live' : false
 
           Room.update _id: room._id, update, ( error, response ) ->
 
