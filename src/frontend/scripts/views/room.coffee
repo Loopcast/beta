@@ -199,10 +199,6 @@ module.exports = class Room extends LoggedView
 
     if data.is_recording 
 
-      console.info "data.is_recording"
-      console.info "data.is_recording"
-      console.info "data.is_recording"
-
       Intercom( 'trackEvent', 'recording-successful');
       Intercom( 'trackEvent', 'appcast-successful');
 
