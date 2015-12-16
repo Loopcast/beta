@@ -187,6 +187,7 @@ module.exports = class Room extends LoggedView
 
     @check_status()
 
+
   on_live_changed: ( data ) =>
     log "[Room live] on_live_changed", data
 
@@ -362,35 +363,16 @@ module.exports = class Room extends LoggedView
         $( "audio" ).attr( "src", "" )
     
   on_room_live: ->
-
-    $( "#player" ).addClass "loading"
-
     delay 500, =>
-
-      
-      
-
       log "[Room] on_room_live"
       @dom.addClass 'room_live'
 
       if not user_controller.check_guest_owner()
-
-        app.player.fetch_room @room_id, true, =>
-          log "[Room] fetch room callback", app.settings.theme
-
-          if @_src
-            # console.log 'loading ->', @_src
+        if not app.player.audio.is_playing
+          app.player.fetch_room @room_id, true, @on_player_fetched_room
             
-            $( "audio" ).attr( "src", @_src )
-            @_src = null
-
-          if app.settings.theme isnt 'mobile'
-            log "[Room] inside!"
-            app.player.play @room_id
-            app.player.on_room_live()
-
-          app.on 'audio:started', @show_guest_popup
-          
+        else
+          @on_player_already_playing()
             
       else
 
@@ -401,9 +383,38 @@ module.exports = class Room extends LoggedView
         Intercom( 'trackEvent', 'appcast-successful');
 
         mixpanel.track('AppCast - Live Successful')
+
+
+      if not @dom.hasClass 'show_play_button'
+        @on_player_not_playing()
     
+  on_player_fetched_room: =>
+    log "[Room] fetch room callback", app.settings.theme
 
+    if @_src
+      # console.log 'loading ->', @_src
+      
+      $( "audio" ).attr( "src", @_src )
+      @_src = null
 
+    if app.settings.theme isnt 'mobile'
+  
+      app.player.play @room_id
+      app.player.on_room_live()
+
+    app.on 'audio:started', @show_guest_popup
+
+  ###
+  When the user enter the live room but it's playing something else
+  on his player, we gonna show a play button for the live room
+  ###
+  on_player_already_playing: ->
+    log "[Player already playing] Dont play this room"
+    if @dom.hasClass 'room_live'
+      @dom.addClass 'show_play_button'
+
+  on_player_not_playing: ->
+    @dom.addClass 'hide_play_button'
 
   show_guest_popup: =>
 
@@ -514,6 +525,8 @@ module.exports = class Room extends LoggedView
     @modal = null
     @people_list.destroy()
     @people_list = null
+
+    app.off 'audio:started', @show_guest_popup
     super()
     
 

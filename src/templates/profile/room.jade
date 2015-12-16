@@ -110,7 +110,12 @@ block content
         .cover_image.for_desktop(style="background-image:url(#{transform.cover(cover_url)})")
         .cover_image.for_mobile(style="background-image:url(#{transform.cover_mobile(cover_url)})")
         
-        .content
+        - id = ""
+        if room && room._id
+          - id = room._id
+        .content(data-view="components/audio/player_preview", data-room-id="#{id}" data-is-live="true")
+          a(href="#", class="tape_play icon ss-play", title="play record") &nbsp;
+
           h1.name.black_background(data-view="components/editables/editable_text")
             span.text
               if room

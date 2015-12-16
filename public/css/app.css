@@ -6813,7 +6813,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 13 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 745 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+/* line 770 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
 /* line 10 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
@@ -6833,7 +6833,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 90 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 745 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+/* line 770 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
 /* line 11 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
@@ -6861,7 +6861,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 5 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
 
-/* line 745 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+/* line 770 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
 /* line 12 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
@@ -7184,17 +7184,17 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   margin-left: 20px;
 }
 
-/* line 186 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 187 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .cover .socials_room {
   margin-top: 5px;
 }
 
-/* line 188 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 189 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .cover .socials_room a {
   margin-right: 5px;
 }
 
-/* line 191 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 192 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .cover .type,
 .profile_theme .cover .genres,
 .profile_theme .cover .location {
@@ -7204,7 +7204,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   line-height: 1em;
 }
 
-/* line 198 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 199 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .cover .name,
 .profile_theme .cover .type,
 .profile_theme .cover .genres,
@@ -7212,24 +7212,24 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   margin-bottom: 1px;
 }
 
-/* line 202 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 203 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .cover .location {
   display: none;
 }
 
-/* line 205 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 206 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .cover .genres {
   max-width: 300px;
   line-height: 1.2em;
   overflow: visible;
 }
 
-/* line 210 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 211 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .cover .genres li {
   display: inline-block;
 }
 
-/* line 214 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 215 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .cover .profile_image {
   position: absolute;
   bottom: 0;
@@ -7239,14 +7239,14 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   box-shadow: 0px 20px 37px 12px rgba(0,0,0,0.75);
 }
 
-/* line 219 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 220 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .cover .profile_image img {
   box-shadow: 1px 1px 66px 3px #000;
   display: block;
   width: 100%;
 }
 
-/* line 223 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 224 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .cover .profile_image .edit_image {
   position: absolute;
   left: 0;
@@ -7266,7 +7266,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   transform: translateY(100%);
 }
 
-/* line 235 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 236 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .cover .profile_image .edit_image .spritesheet,
 .profile_theme .cover .profile_image .edit_image .icon {
   position: absolute;
@@ -7278,7 +7278,66 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   font-size: 23px;
 }
 
-/* line 240 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 241 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+.profile_theme .tape_play {
+  display: none;
+  top: 10px;
+  left: 20px;
+}
+
+/* line 247 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+
+/* line 248 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+
+/* line 249 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+.profile_theme.createroom .cover .name,
+.profile_theme.createroom .cover .type,
+.profile_theme.createroom .cover .genres,
+.profile_theme.createroom .cover .socials_room {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 0.3s linear;
+  transition: opacity 0.3s linear;
+}
+
+/* line 252 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+
+/* line 253 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+.profile_theme.show_play_button .tape_play {
+  display: block;
+}
+
+/* line 255 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+
+/* line 256 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+.profile_theme.show_play_button .cover .name,
+.profile_theme.show_play_button .cover .type,
+.profile_theme.show_play_button .cover .genres,
+.profile_theme.show_play_button .cover .socials_room {
+  margin-left: 130px;
+  opacity: 1;
+  -ms-filter: none;
+  -webkit-filter: none;
+          filter: none;
+}
+
+/* line 260 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+
+/* line 261 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+
+/* line 262 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+.profile_theme.hide_play_button .cover .name,
+.profile_theme.hide_play_button .cover .type,
+.profile_theme.hide_play_button .cover .genres,
+.profile_theme.hide_play_button .cover .socials_room {
+  opacity: 1;
+  -ms-filter: none;
+  -webkit-filter: none;
+          filter: none;
+}
+
+/* line 265 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .sidebar_right {
   position: absolute;
   top: 0;
@@ -7300,7 +7359,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   flex-direction: column;
 }
 
-/* line 249 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 274 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .big_number {
   -webkit-box-flex: 1;
   -o-box-flex: 1;
@@ -7325,17 +7384,17 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   text-align: center;
 }
 
-/* line 259 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 284 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .big_number:first-child {
   border-top: none;
 }
 
-/* line 262 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 287 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .big_number:last-child {
   border-bottom: none;
 }
 
-/* line 264 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 289 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .big_number .inner {
   width: 100%;
   display: block;
@@ -7347,31 +7406,31 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
           filter: none;
 }
 
-/* line 269 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 294 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .big_number span {
   display: block;
 }
 
-/* line 272 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 297 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .big_number span.number {
   font-size: 2rem;
   line-height: 1rem;
   margin-bottom: 10px;
 }
 
-/* line 277 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 302 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .big_number span.text {
   font-size: 0.8rem;
 }
 
-/* line 280 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 305 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .room_status {
   height: 32px;
   font-size: 11px;
   font-weight: 600;
 }
 
-/* line 284 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 309 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .room_status > div {
   color: #fff;
   text-align: center;
@@ -7381,18 +7440,18 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   padding: 9px 0px;
 }
 
-/* line 292 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 317 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .room_status .offair {
   background: #8d8d8d;
 }
 
-/* line 294 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 319 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .room_status .live {
   background: #f23131;
   display: none;
 }
 
-/* line 298 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 323 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .cover_button {
   position: absolute;
   bottom: 20px;
@@ -7400,14 +7459,14 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   display: none;
 }
 
-/* line 303 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 328 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .cover_button span.spritesheet {
   -webkit-transform: scale(0.7, 0.7);
   -ms-transform: scale(0.7, 0.7);
   transform: scale(0.7, 0.7);
 }
 
-/* line 306 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 331 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content {
   padding: 25px 0px;
   display: -webkit-box;
@@ -7418,21 +7477,21 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   text-align: left;
 }
 
-/* line 310 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 335 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .profile_left {
   position: relative;
   width: 290px;
   margin-right: 40px;
 }
 
-/* line 314 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 339 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .profile_bio {
   width: 100%;
   position: relative;
   padding: 13px 20px;
 }
 
-/* line 319 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 344 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .profile_bio .outline_icon {
   position: absolute;
   top: 7px;
@@ -7441,7 +7500,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   display: none;
 }
 
-/* line 326 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 351 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .profile_bio h4 {
   font-size: 1em;
   margin-bottom: 14px;
@@ -7449,30 +7508,30 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   word-wrap: break-word;
 }
 
-/* line 331 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 356 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .profile_bio .bio {
   color: #605b5b;
   font-size: 0.865em;
 }
 
-/* line 334 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 359 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .profile_bio .bio a {
   color: #4592d4;
   text-decoration: underline;
 }
 
-/* line 338 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 363 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .social {
   margin-top: 20px;
 }
 
-/* line 340 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 365 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .social a {
   display: inline-block;
   margin-right: 20px;
 }
 
-/* line 345 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 370 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .list_sessions {
   -webkit-box-flex: 1;
   -o-box-flex: 1;
@@ -7482,14 +7541,14 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   flex: 1;
 }
 
-/* line 347 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 372 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .list_sessions .no_activity {
   color: #474343;
   font-weight: 600;
   text-align: left;
 }
 
-/* line 351 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 376 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .list_sessions .button.bold_button {
   width: 300px;
   margin-top: 20px;
@@ -7497,7 +7556,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   margin-right: 0;
 }
 
-/* line 358 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 383 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session {
   height: 100px;
   width: 100%;
@@ -7511,7 +7570,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   overflow: visible;
 }
 
-/* line 366 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 391 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .image {
   width: 200px;
   background-size: cover;
@@ -7521,7 +7580,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   border-bottom-left-radius: 5px;
 }
 
-/* line 373 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 398 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .image .icon {
   position: absolute;
   left: 50%;
@@ -7531,7 +7590,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   transform: translateX(-50%) translateY(-50%);
 }
 
-/* line 377 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 402 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .content {
   -webkit-box-flex: 1;
   -o-box-flex: 1;
@@ -7543,7 +7602,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   position: relative;
 }
 
-/* line 382 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 407 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .public_screen {
   position: absolute;
   top: 0;
@@ -7568,7 +7627,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   justify-content: center;
 }
 
-/* line 392 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 417 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .public_screen .bg {
   position: absolute;
   top: 0;
@@ -7578,27 +7637,27 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   z-index: 0;
 }
 
-/* line 397 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 422 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .public_screen a {
   font-weight: bold;
   position: relative;
   z-index: 1;
 }
 
-/* line 407 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 432 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 
-/* line 408 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 433 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session.public .public_screen {
   display: none;
 }
 
-/* line 411 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 436 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session h2 {
   padding-right: 20px;
   margin-bottom: 8px;
 }
 
-/* line 415 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 440 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .session_author {
   color: #4592d4;
   font-size: 0.86em;
@@ -7606,24 +7665,24 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   display: block;
 }
 
-/* line 424 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 449 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .genres {
   margin-bottom: 4px;
 }
 
-/* line 427 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 452 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .small_info {
   color: #929292;
 }
 
-/* line 429 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 454 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .small_info > * {
   display: inline-block;
   margin-right: 10px;
   font-size: 0.8em;
 }
 
-/* line 433 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 458 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .small_info > * span.spritesheet,
 .profile_theme .profile_content .session .small_info > * span.icon {
   display: inline-block;
@@ -7632,13 +7691,13 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   top: 2px;
 }
 
-/* line 439 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 464 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .small_info > * span.ss-play {
   font-size: 0.8em;
   top: 1px;
 }
 
-/* line 442 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 467 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .live {
   position: absolute;
   bottom: 10px;
@@ -7650,13 +7709,13 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   font-size: 0.7em;
 }
 
-/* line 451 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 476 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .live .time,
 .profile_theme .profile_content .session .live .label {
   display: inline-block;
 }
 
-/* line 454 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 479 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .live .time {
   color: #f23131;
   margin-left: 10px;
@@ -7664,7 +7723,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   font-size: 1.4em;
 }
 
-/* line 460 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 485 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .live .label {
   background: #f23131;
   border-bottom-right-radius: 4px;
@@ -7676,7 +7735,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   text-align: left;
 }
 
-/* line 471 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 496 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .profile_content .session .live .label:after {
   content: "";
   background: #fff;
@@ -7691,25 +7750,25 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   left: 7px;
 }
 
-/* line 486 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 511 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 
-/* line 487 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 512 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .recorded_sessions .title {
   margin-bottom: 20px;
 }
 
-/* line 489 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 514 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .recorded_sessions .title * {
   display: inline-block;
   vertical-align: top;
 }
 
-/* line 492 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 517 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .recorded_sessions .title h2 {
   margin-right: 30px;
 }
 
-/* line 495 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 520 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .recorded_sessions .title .ss-record-wrapper,
 .profile_theme .recorded_sessions .title .ss-alert {
   position: relative;
@@ -7717,32 +7776,32 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   margin-right: 5px;
 }
 
-/* line 500 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 525 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .recorded_sessions .title .ss-alert {
   color: #f23131;
 }
 
-/* line 503 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 528 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .recorded_sessions .title .session_icon {
   position: relative;
   top: 3px;
   margin-right: 5px;
 }
 
-/* line 508 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 533 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .recorded_sessions .title .session_text {
   margin-right: 15px;
   padding-top: 1px;
 }
 
-/* line 512 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 537 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .recorded_sessions .title .alert_icon {
   position: relative;
   top: 3px;
   margin-right: 5px;
 }
 
-/* line 517 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 542 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme .recorded_sessions .title .alert_text {
   font-size: 0.7em;
   color: #f23131;
@@ -7750,76 +7809,76 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   padding-top: 4px;
 }
 
-/* line 523 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 548 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 
-/* line 524 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 549 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme.user_logged .cover_button {
   display: block;
 }
 
-/* line 527 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 552 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme.user_logged .profile_content .profile_bio .outline_icon {
   display: block;
 }
 
-/* line 530 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 555 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme.user_logged .edit_session_wrapper {
   display: block;
 }
 
-/* line 533 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 558 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_theme.user_logged .element_on_write_mode {
   display: none;
 }
 
-/* line 536 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 561 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 
-/* line 537 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 562 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 
-/* line 538 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 563 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .write_mode .profile_theme.user_logged .element_on_write_mode {
   display: block;
 }
 
-/* line 541 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 566 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .write_mode .profile_theme.user_logged .element_on_read_mode {
   display: none;
 }
 
-/* line 544 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 569 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .add_new_link {
   margin-bottom: 20px;
 }
 
-/* line 547 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 572 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_form {
   padding-top: 10px;
 }
 
-/* line 549 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 574 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_form textarea {
   height: 200px;
 }
 
-/* line 554 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 579 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .profile_form .save_button {
   padding-left: 40px;
   padding-right: 40px;
   margin: 0 auto 20px;
 }
 
-/* line 559 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 584 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .genres {
   overflow: hidden;
 }
 
-/* line 561 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 586 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .genres .tag {
   float: left;
   margin-bottom: 5px;
 }
 
-/* line 566 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 591 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .edit_session_wrapper {
   position: absolute;
   top: 10px;
@@ -7828,7 +7887,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   z-index: 2;
 }
 
-/* line 572 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 597 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .edit_session_wrapper .settings_button {
   opacity: 0.6;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
@@ -7841,7 +7900,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   transform-origin: 50% 40%;
 }
 
-/* line 577 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 602 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .edit_session_wrapper .settings_button.hovered {
   opacity: 1;
   -ms-filter: none;
@@ -7849,7 +7908,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
           filter: none;
 }
 
-/* line 582 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 607 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .edit_session_wrapper .edit_session_popup {
   position: absolute;
   top: -10px;
@@ -7872,7 +7931,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   transform-origin: 110% 14.66%;
 }
 
-/* line 597 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 622 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .edit_session_wrapper .edit_session_popup .triangle {
   content: "";
   position: absolute;
@@ -7885,12 +7944,12 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   border-left: 10px solid #373b3f;
 }
 
-/* line 608 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 633 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .edit_session_wrapper .edit_session_popup .button {
   margin-bottom: 15px;
 }
 
-/* line 610 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 635 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .edit_session_wrapper .edit_session_popup.hovered {
   display: block;
   -webkit-transform: scale(1, 1);
@@ -7904,12 +7963,12 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
           filter: none;
 }
 
-/* line 616 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 641 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .not_public .edit_session_wrapper .settings_button {
   color: #fff;
 }
 
-/* line 618 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 643 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .session {
   position: relative;
   -webkit-transition: -webkit-transform 0.2s ease-out;
@@ -7919,39 +7978,39 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   transform-origin: 50% 0;
 }
 
-/* line 622 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 647 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 
-/* line 623 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 648 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .session.to_delete .delete_screen {
   display: block;
 }
 
-/* line 626 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 651 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .session.deleted {
   -webkit-transform: scale(1, 0.001);
   -ms-transform: scale(1, 0.001);
   transform: scale(1, 0.001);
 }
 
-/* line 629 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 654 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .no_activity_wrapper {
   padding-right: 20px;
   display: none;
 }
 
-/* line 633 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 658 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .no_sessions .no_activity_wrapper {
   display: block;
 }
 
-/* line 636 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 661 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 
-/* line 637 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 662 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .no_recorded_sessions .recorded_sessions {
   display: none;
 }
 
-/* line 640 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 665 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .delete_screen {
   position: absolute;
   top: 0;
@@ -7965,7 +8024,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   display: none;
 }
 
-/* line 649 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 674 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .delete_screen .button {
   display: inline-block;
   margin: 10px;
@@ -7973,51 +8032,51 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   padding-right: 40px;
 }
 
-/* line 654 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 679 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .delete_screen .content {
   width: 355px;
   margin: 0 auto;
 }
 
-/* line 657 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 682 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .delete_screen h2 {
   color: #1f1f1f;
   font-size: 1.2em;
   font-weight: 600;
 }
 
-/* line 662 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 687 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 
-/* line 663 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 688 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .is_owner .profile_bio .location.empty {
   margin-bottom: 28px;
 }
 
-/* line 667 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 692 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .element_on_read_mode {
   display: block;
 }
 
-/* line 670 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 695 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .element_on_write_mode {
   display: none;
 }
 
-/* line 674 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 699 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 
-/* line 675 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 700 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .write_mode .element_on_read_mode {
   display: none;
 }
 
-/* line 678 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 703 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .write_mode .element_on_write_mode {
   display: block;
 }
 
-/* line 683 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 708 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 
-/* line 684 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 709 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .is_guest .cover_button,
 .is_guest .profile_bio .outline_icon,
 .is_guest .icon.ss-alert,
@@ -8026,57 +8085,57 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   display: none !important;
 }
 
-/* line 693 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 718 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 
-/* line 694 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 719 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 
-/* line 695 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 720 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .room_live.profile_theme .room_status .offair {
   display: none;
 }
 
-/* line 697 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 722 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .room_live.profile_theme .room_status .live {
   display: block;
 }
 
-/* line 702 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 727 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 
-/* line 703 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 728 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .no_touch_device .tag:hover {
   background: #8ea6b1;
 }
 
-/* line 706 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 731 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 
-/* line 707 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 732 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .no_touch_device .profile_theme .header_settings_hover:hover {
   opacity: 0.8;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
   filter: alpha(opacity=80);
 }
 
-/* line 710 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 735 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .no_touch_device .profile_theme .sidebar_right:hover {
   background: rgba(0,0,0,0.7);
   color: #e8e8e8;
 }
 
-/* line 714 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 739 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .no_touch_device .profile_theme .cover_button:hover {
   background: #fff;
 }
 
-/* line 717 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 742 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 
-/* line 720 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 745 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .no_touch_device .profile_theme .profile_content .session:hover .small_info {
   color: #605b5b;
 }
 
-/* line 724 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 749 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 
-/* line 725 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 750 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .no_touch_device .edit_session_wrapper .settings_button:hover {
   opacity: 1;
   -ms-filter: none;
@@ -8084,13 +8143,13 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
           filter: none;
 }
 
-/* line 728 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 753 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 
-/* line 729 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 754 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 
-/* line 730 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 755 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 
-/* line 731 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 756 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .no_touch_device.is_owner .profile_theme .profile_content .session.to_publish .public_screen {
   display: -webkit-box;
   display: -webkit-flex;
@@ -8099,28 +8158,28 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   display: flex;
 }
 
-/* line 733 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 758 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 
-/* line 734 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 759 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .no_touch_device.is_owner .profile_theme .profile_content .session .public_screen {
   display: none;
 }
 
-/* line 737 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 762 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 
-/* line 738 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 763 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .no_touch_device.is_owner .cover:hover .change_cover {
   display: block;
 }
 
-/* line 741 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 766 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .no_touch_device.is_owner .cover:hover .profile_image .edit_image {
   -webkit-transform: translateY(0);
   -ms-transform: translateY(0);
   transform: translateY(0);
 }
 
-/* line 744 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
+/* line 769 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/pages/profile.styl */
 .no_touch_device.is_owner .cover:hover .editable_text .icon {
   display: block;
 }
