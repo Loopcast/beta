@@ -16,80 +16,56 @@ module.exports =
     s3      = req.payload.s3
     tape_id = req.payload.tape_id
 
+    reply ok: 1
+
     Tape
       .findOne( _id: tape_id )
-      .select( "room" )
+      .populate( "user" )
+      .select( "user._id" )
       .lean().exec ( error, tape ) ->
 
-        room_id = tape.room
 
-        update = 
-          'info.file'          : s3.location
-          'status.is_recorded' : false
-          'status.recording.s3': s3
+        if not tape
+
+          return reply: error
 
         console.log '---'
         console.log 'tape callback completed'
-        console.log "room_id: #{room_id}"
-        console.log '---'
+        console.log "tape_id: #{tape_id}"
+        console.log "user_id: #{tape.user._id}"
 
-        Room
-          .update( _id: room_id, update )
-          .lean().exec ( error, response ) ->
+        data = 
+          type : 'upload:finished'
+          user : tape.user._id
+          tape : tape_id
+
+        sockets.send room.user._id, data
+
+        query = _id: mongoose.Types.ObjectId tape_id
+        Tape.collection.update query, $set: s3: s3, null, ( error, response ) ->
 
             if error
-              console.log 'error updated upload completed information '
-              console.log "room_id : #{room_id}"
+
+              console.log 'error adding s3 information to Tape'
               console.log error
 
-            reply ok: 1
+        # query = _id: mongoose.Types.ObjectId room_id
+        # Room.collection.update query, $set: recording: null, null, ( error, response ) ->
+
+        #     if error
+        #       console.log 'error removing tape from room'
+        #       console.log error
 
 
-            Room.findOne( _id: room_id )
-              .select( "_id user recording" )
-              .populate( "user", "_id info.username" )
-              .populate( "recording", "_id slug" )
-              .lean()
-              .exec ( error, room ) -> 
+        # Tape.update _id: room.recording._id, $set: s3: s3, ( error, response ) ->
 
-                if not room.recording
+        #   if error
 
-                  console.log "callbacks/completed error for room #{room_id}"
+        #     console.log 'error adding s3 information to Tape'
+        #     console.log error
 
-                  return
+        #   Room.update _id: room_id, $unset: recording: "", ( error, response ) ->
 
-                data = 
-                  type : 'upload:finished'
-                  user : room.user
-                  tape : room.recording
-
-                sockets.send room.user._id, data
-
-                query = _id: mongoose.Types.ObjectId room.recording._id
-                Tape.collection.update query, $set: s3: s3, null, ( error, response ) ->
-
-                    if error
-
-                      console.log 'error adding s3 information to Tape'
-                      console.log error
-
-                query = _id: mongoose.Types.ObjectId room_id
-                Room.collection.update query, $set: recording: null, null, ( error, response ) ->
-
-                    if error
-                      console.log 'error removing tape from room'
-                      console.log error
-
-
-                # Tape.update _id: room.recording._id, $set: s3: s3, ( error, response ) ->
-
-                #   if error
-
-                #     console.log 'error adding s3 information to Tape'
-                #     console.log error
-
-                #   Room.update _id: room_id, $unset: recording: "", ( error, response ) ->
-
-                #       if error
-                #         console.log 'error removing tape from room'
-                #         console.log error
+        #       if error
+        #         console.log 'error removing tape from room'
+        #         console.log error
