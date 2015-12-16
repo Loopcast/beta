@@ -37,7 +37,7 @@ class RoomsController
     
       
     on_load = (error, response) ->
-      log "[RoomsController] on_load response", id, type, response
+      # log "[RoomsController] on_load response", id, type, response
 
       ref.infos[id] = { type: type, data : response }
 
@@ -50,9 +50,9 @@ class RoomsController
   
 
   on_room_update: ( data ) =>
-    log "[Rooms Controller] on_room_update", data, data._id
+    # log "[Rooms Controller] on_room_update", data, data._id
     if not @infos[ data._id ]?
-      log "[Rooms Controller] id not found. returning."
+      # log "[Rooms Controller] id not found. returning."
       return 
 
     @emit 'update', data

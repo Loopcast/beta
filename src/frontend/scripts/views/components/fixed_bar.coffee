@@ -17,7 +17,7 @@ module.exports = ( dom ) ->
   obj = $ '[data-submenu]'
   if obj.length > 0
     submenu = obj.data 'submenu'
-    log "[Header] check submenu", obj, submenu
+    # log "[Header] check submenu", obj, submenu
     $( ".#{submenu}" ).addClass 'selected'
 
 

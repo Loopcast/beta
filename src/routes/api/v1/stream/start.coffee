@@ -39,7 +39,7 @@ module.exports =
         user : user_id
 
       Room.findOne( query )
-        .select( "_id user info.slug info.title info.genres info.about" )
+        .select( "_id user info.slug info.title info.genres info.about status.is_recording" )
         .lean()
         .exec ( error, room ) -> 
 
@@ -53,13 +53,18 @@ module.exports =
 
             return reply Boom.resourceGone( "room not found or user not owner" )
 
-          password = uuid.v4() 
 
           update = 
             will_stream : true
-            password    : password
-            'info.url'  : "#{s.radio.url}#{username}_#{room.info.slug}"
-          
+
+          if not room.status.is_recording
+
+            # if user isn't recording a new password must be generated
+            update.password = uuid.v4() 
+
+          update['status.is_live'] = true
+          update['info.url']       = "#{s.radio.url}#{username}_#{room.info.slug}"
+
           Room.update( _id: room_id, update )
             .lean()
             .exec ( error, docs_updated ) ->
@@ -70,4 +75,4 @@ module.exports =
 
                 return reply Boom.preconditionFailed( "Database error" )
 
-              reply password: password
+              reply update

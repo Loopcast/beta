@@ -115,7 +115,7 @@ if s.is_beta
     secret: 'b324ac27d8ec6f3f589a'
 
   s.tape = 
-    url: 'http://tape.loopcast.fm'
+    url: 'http://tape.loopcast.fm:8000'
     ips: [ "54.154.147.67", "46.101.25.152" ] # tape servers, so we dont count listeners from here
 
   s.radio = 
@@ -153,7 +153,7 @@ if not s.is_beta
     secret: '5a05943c7bf757cdd315'
 
   s.tape = 
-    url: 'http://staging-tape.loopcast.fm'
+    url: 'http://staging-tape.loopcast.fm:8001'
     ips: [ "54.154.147.67", "46.101.25.152" ] # tape servers, so we dont count listeners from here
 
   s.radio = 
@@ -188,5 +188,6 @@ if s.is_local
     password : 'p3e82a3uhokjej3sm8f1967vn2k'
     kue_db   : 0
 
+  # s.tape.url = "http://localhost:8001"
 
 module.exports = s

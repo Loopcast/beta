@@ -21,12 +21,22 @@ module.exports = class Record extends ButtonWithTimer
       @set_enabled true
       @set_active  true
 
-      appcast.set( "stream:recording", true )
-      appcast.set( "stream:streaming", true )
+      appcast.set "stream:recording", true 
+      # appcast.set "stream:online"   , true
   
   check_room_status: ->
     @set_active @room.current_status.room.status.is_recording
   
+  delayed_recording: => 
+
+    appcast.off 'stream:online', @delayed_recording
+
+    # hack to get recording always working
+    # this way we can hopefully always get a record
+    # after the authentication happened
+    delay 2000, =>
+      @start_recording( true )
+
   start: =>
     # log "[Record] start"
 
@@ -36,7 +46,7 @@ module.exports = class Record extends ButtonWithTimer
 
     @wait()
 
-    if appcast.get 'stream:online'
+    if appcast.get 'stream:streaming'
 
       # if streaming, start recording!
       @start_recording false
@@ -46,12 +56,15 @@ module.exports = class Record extends ButtonWithTimer
       username  = $( '#owner_username' ).val()
       room_slug = $( '#room_slug' ).val()
 
+      console.info "getting password!"
+      
       L.stream.get_password @room_id, ( error, data ) =>
         # start streaming then start recording
         # log "We should start streaming then start recording"
 
         appcast.start_stream username, room_slug, data.password
-        appcast.on 'stream:online', => @start_recording( true )
+
+        appcast.on 'stream:online', @delayed_recording
 
 
 
@@ -62,11 +75,18 @@ module.exports = class Record extends ButtonWithTimer
 
     ref = @
 
-    appcast.stop_recording()
+    appcast.set "stream:recording", false
     L.rooms.stop_recording @room_id, ( error, response ) ->
 
       # console.log "GOT TAPE ID: #{response.room.recording}"
-      log "[Record Button] GOT TAPE ID", response, response.room.recording
+      # log "[Record Button] GOT TAPE ID", response, response.room.recording
+
+      if response.error
+
+        console.error "ERROR ON STOP RECORDING!!!"
+        console.error "ERROR ON STOP RECORDING!!!"
+        console.log response
+        return
 
       ref.tape_id = response.room.recording
 
@@ -110,7 +130,7 @@ module.exports = class Record extends ButtonWithTimer
 
     ref = @
 
-    appcast.start_recording()
+    appcast.set "stream:recording", true
     L.rooms.start_recording @room_id, ( error, response ) ->
       
       if error
@@ -133,4 +153,4 @@ module.exports = class Record extends ButtonWithTimer
   on_room_status_changed: ( data ) =>
     # @set_enabled( data.room.status.is_recording or data.room.status.is_live )
     @set_active data.room.status.is_recording
-    log "[ButtonWithTimer RECORD] on_room_status_changed", data
+    # log "[ButtonWithTimer RECORD] on_room_status_changed", data

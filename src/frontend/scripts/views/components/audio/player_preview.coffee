@@ -18,17 +18,11 @@ module.exports = (dom) ->
   else if source.length > 0
     source_src = source.attr 'value'
 
-  log "[PlayerPreview] init", source_src
-
-  if not room_id then returns
-    
+  return if not room_id
 
   if handler.length <= 0
     handler       = dom.find '.image .ss-pause, .loading_spin, .ss-play'
-
-    if handler.length <= 0
-      log "ERROR -> [PLAYER PREVIEW]. handler.length <= 0"
-      return
+    return if handler.length <= 0
 
   ref = @
 
@@ -39,7 +33,6 @@ module.exports = (dom) ->
 
   on_play = (_room_id) ->
     if _room_id is room_id
-      log "[player_preview] on_play"
       is_playing = true
       dom.addClass 'playing'
       dom.removeClass 'preloading'
@@ -53,27 +46,29 @@ module.exports = (dom) ->
     dom.removeClass 'preloading'
     icon.removeClass( 'ss-pause' ).addClass( 'ss-play' )
 
+  on_loading = (_room_id) ->
+    if _room_id is room_id
+      dom.addClass 'preloading'
+    else
+      dom.removeClass 'preloading'
+
+
   toggle = (e) ->
     e.stopPropagation()
     e.preventDefault()
     
     if is_playing
-      dom.removeClass 'preloading'
       app.player.stop()
     else
-      dom.addClass 'preloading'
-
-      if is_tape
-        app.player.play room_id, source_src
-      else
-        app.player.play_live room_id, source_src
+      app.player.general_play room_id, source_src, is_tape
 
   init = ->
     handler.on 'click', toggle
     app.on  'audio:started', on_play
     app.on  'audio:paused', on_stop
+    app.on  'audio:loading', on_loading
 
-    if app.player?.current_room_id is room_id
+    if app.player.current_room_id is room_id and app.player.audio.is_playing
       on_play room_id
 
-  init()
+  delay 2, init

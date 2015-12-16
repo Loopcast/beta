@@ -31,6 +31,8 @@ module.exports = class People extends ChatView
     listener_id = el.data 'id'
     if @listeners_map[ listener_id ]?
       coords = get_coords e
+
+      log "----> here", coords.x, coords.w
       @popup.show @listeners_map[ listener_id ].id, coords
 
   on_mouse_out: ( e ) =>

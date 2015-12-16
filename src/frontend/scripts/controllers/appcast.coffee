@@ -174,14 +174,6 @@ appcast.start_stream = ( username, room_slug, password, device_name ) ->
 
   appcast.messages.send JSON.stringify [ "start_stream", payload ]
 
-appcast.start_recording = ->
-
-  appcast.set "stream:recording", true
-
-appcast.stop_recording = ->
-
-  appcast.set "stream:recording", false
-
 appcast.select_device = ( device_name ) ->
 
   appcast.set 'selected_device', device_name

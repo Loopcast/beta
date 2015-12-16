@@ -28,6 +28,7 @@ module.exports =
 
       data = 
         type     : 'like'
+        user_id  : user._id
         username : user.username
         name     : user.name
         avatar   : user.avatar

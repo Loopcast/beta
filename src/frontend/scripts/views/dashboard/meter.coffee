@@ -52,7 +52,7 @@ module.exports = class Meter extends RoomView
 
 
     clipping = ->
-      notify.info( "Your volume is too loud! Stay away from the red zone!" )
+      notify.info( "Your volume is too loud! Adjust your gain to avoid the red blinking" )
 
     clipping = _.throttle clipping, 10000, trailing: false
 

@@ -67,6 +67,7 @@ module.exports =
 
           update =
             $set:
+              will_stream              : false
               'status.is_live'         : false
               # 'status.is_public'       : false
               'status.live.stopped_at' : now().format()

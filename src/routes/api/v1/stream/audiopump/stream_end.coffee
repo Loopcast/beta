@@ -40,7 +40,7 @@ module.exports =
         'info.user'  : username
 
       Room.findOne( query )
-        .select( "_id stream" )
+        .select( "_id stream status.is_live status.is_recording" )
         .populate( "stream" )
         .lean()
         .exec ( error, room ) -> 
@@ -66,21 +66,35 @@ module.exports =
 
             return
 
-          # notify UI the stream is live
-          data =
-            type   : "status"
-            is_live: false
-            live: 
-              stopped_at: now( end_time ).format()
+          # if the user don't press live, we need to send a socket message
+          # in order to get users offline in the room
+          if room.status.is_live
+            # notify UI the stream is live
+            data =
+              type   : "status"
+              is_live: false
+              live: 
+                stopped_at: now( end_time ).format()
 
-          sockets.send room._id, data
+            sockets.send room._id, data
+
+          if room.status.is_recording
+            # notify UI the stream is live
+            data =
+              type        : "status"
+              is_recording: false
+              live: 
+                stopped_at: now( end_time ).format()
+
+            sockets.send room._id, data
 
           update = 
             $set   : 
               # reset will strem status
-              will_stream       : false
-              streaming         : null
-              'status.is_live'  : false
+              will_stream           : false
+              streaming             : null
+              'status.is_live'      : false
+              'status.is_recording' : false
 
           Room.update _id: room._id, update, ( error, response ) ->
 

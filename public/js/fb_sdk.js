@@ -11,7 +11,7 @@ function fb_init( app_id ){
 
     window.fb_ready = true;
     if($){
-      console.log( "[Facebook] triggering" );
+      // console.log( "[Facebook] triggering" );
       $(window).trigger( 'fb:ready' );
     } else {
       console.log( "[Facebook] jQuery non defined" );

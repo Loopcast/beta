@@ -55,7 +55,7 @@ class Navigation
 
     req.url = req.path.replace "/#", '' 
 
-    log "[Navigation] URL CHANGED", req, @custom_class, @lock_live, @prev_url
+    # log "[Navigation] URL CHANGED", req, @custom_class, @lock_live, @prev_url
 
     if not url_parser.is_internal_page req.url
       # log "NOT INTERNAL PAGE", req.url

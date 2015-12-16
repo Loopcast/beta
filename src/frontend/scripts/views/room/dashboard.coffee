@@ -52,6 +52,7 @@ module.exports = class Dashboard extends RoomView
       appcast: view.get_by_dom( '#appcast_not_running_balloon' )
       record: view.get_by_dom( '#record_balloon' )
       live_instructions: view.get_by_dom( '#go_live_instructions' )
+      dashboard_help: view.get_by_dom( '#dashboard_help_baloon' )
 
     @appcast_not_running_message = @dom.find '.appcast_not_running_message'
     @meter = view.get_by_dom @dom.find( '.meter_wrapper' )
@@ -107,7 +108,8 @@ module.exports = class Dashboard extends RoomView
   #     $(window).on 'fb:ready', fb_parse
 
   on_device_changed: =>
-    log "[Dashboard] on_device_changed", app.session.get( 'hide:help' )
+    # log "[Dashboard] on_device_changed", app.session.get( 'hide:help' )
+    @balloons.dashboard_help.hide()
     if not app.session.get( 'hide:help' )
       @balloons.live_instructions.show()
 
@@ -118,18 +120,18 @@ module.exports = class Dashboard extends RoomView
     # log "[Room] on_live_changed", data
 
   on_record_changed: ( data ) =>
-    log "[Room] on_record_changed", data
+    # log "[Room] on_record_changed", data
     # log "-> recording", data
     # log "is offline", $('.room_public').length <= 0
 
     if not data and $('.room_public').length <= 0
-      log "[Dashboard] publish_modal.open_with_id", @record_button.tape_id
+      # log "[Dashboard] publish_modal.open_with_id", @record_button.tape_id
       @publish_modal.open_with_id @record_button.tape_id
 
 
   on_appcast_connected: ( is_connected = false ) =>
 
-    log "[Dashboard] on_appcast_connected", is_connected
+    # log "[Dashboard] on_appcast_connected", is_connected
     @appcast_is_running = is_connected
 
     clearTimeout @timeout
@@ -143,13 +145,14 @@ module.exports = class Dashboard extends RoomView
       @on_appcast_not_running()
 
   on_appcast_running: =>
-    log "[Dashboard] on_appcast_running"
+    # log "[Dashboard] on_appcast_running"
     @dom.addClass( 'appcast_running' ).removeClass( 'appcast_not_running' )
     @meter.activate()
     @balloons.appcast.hide()
+    @balloons.dashboard_help.show()
 
   on_appcast_not_running: =>
-    log "[Dashboard] on_appcast_not_running"
+    # log "[Dashboard] on_appcast_not_running"
     @dom.removeClass( 'appcast_running' ).addClass( 'appcast_not_running' )
 
     @meter.deactivate()

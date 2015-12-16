@@ -12,6 +12,8 @@ transform       = require 'lib/cloudinary/transform'
 RoomModal       = require 'app/views/modals/room_modal'
 PeopleList      = require 'app/utils/rooms/people_list'
 
+is_live = null
+
 module.exports = class Room extends LoggedView
   room_created: false
   publish_modal: null
@@ -142,7 +144,7 @@ module.exports = class Room extends LoggedView
       return @on_status_changed   data if data.type is "status"
 
       # temp
-      return @on_live_changed     data if (not data.type?) and data.is_live?
+      # return @on_live_changed     data if (not data.type?) and data.is_live?
 
       
         # unless user_controller.is_me data.user.id
@@ -195,7 +197,7 @@ module.exports = class Room extends LoggedView
 
   on_status_changed: ( data ) =>
 
-    console.log 'data ->', data
+    console.log 'on_status_changed ->', data
 
     if data.is_recording 
 
@@ -204,11 +206,18 @@ module.exports = class Room extends LoggedView
 
       mixpanel.track('AppCast - Recording Successful')
 
+    if data.is_live == is_live then return
+
+    is_live = data.is_live
+
     if data.is_live?
 
       if data.is_live is true
         @on_room_live()
-        @show_guest_popup()
+
+        # otherwise wait until player is running
+        if user_controller.check_guest_owner()
+          @show_guest_popup()
       else
         @_on_live_stop()
 
@@ -332,48 +341,79 @@ module.exports = class Room extends LoggedView
 
   on_room_offline: ->
     @dom.removeClass 'room_live'
-    app.player.stop()
+    app.player.on_room_offline()
     navigation.set_lock_live false, ""
 
   _on_live_stop: ->
     log "[Room] _on_live_stop"
-    notify.info 'The user has ended the stream'
+
+    if user_controller.check_guest_owner()
+      notify.info 'Your stream has stopped.'
+    else
+      notify.info 'The user has ended the stream'
+
+    # console.log 'saved ->', @_src
+
     @on_room_offline()
+
+    delay 100, =>
+      if $( "audio" ).attr( "src" )
+        @_src = $( "audio" ).attr( "src" )
+        $( "audio" ).attr( "src", "" )
     
   on_room_live: ->
-    log "[Room] on_room_live"
-    @dom.addClass 'room_live'
 
-    if not user_controller.check_guest_owner()
+    $( "#player" ).addClass "loading"
 
-      app.player.fetch_room @room_id, true, =>
-        log "[Room] fetch room callback", app.settings.theme
-        if app.settings.theme isnt 'mobile'
-          log "[Room] inside!"
-          app.player.play @room_id
+    delay 500, =>
 
-        @show_guest_popup()
+      
+      
+
+      log "[Room] on_room_live"
+      @dom.addClass 'room_live'
+
+      if not user_controller.check_guest_owner()
+
+        app.player.fetch_room @room_id, true, =>
+          log "[Room] fetch room callback", app.settings.theme
+
+          if @_src
+            # console.log 'loading ->', @_src
+            
+            $( "audio" ).attr( "src", @_src )
+            @_src = null
+
+          if app.settings.theme isnt 'mobile'
+            log "[Room] inside!"
+            app.player.play @room_id
+            app.player.on_room_live()
+
+          app.on 'audio:started', @show_guest_popup
           
-    else
+            
+      else
 
-      app.player.stop()
-      navigation.set_lock_live true, location.pathname
+        app.player.stop()
+        navigation.set_lock_live true, location.pathname
 
-      Intercom( 'trackEvent', 'stream-successful');
-      Intercom( 'trackEvent', 'appcast-successful');
+        Intercom( 'trackEvent', 'live-successful');
+        Intercom( 'trackEvent', 'appcast-successful');
 
-      mixpanel.track('AppCast - Streaming Successful')
+        mixpanel.track('AppCast - Live Successful')
     
 
 
 
-  show_guest_popup: ->
+  show_guest_popup: =>
 
     if app.settings.theme isnt 'mobile'
+
       if user_controller.check_guest_owner()
         message = 'You are now live! Use the sharing icon or Facebook send button below to invite some listeners'
       else
         message = 'You are now listening live on Loopcast'
+
       if user_controller.is_logged()
         notify.guest_room_logged message
       else

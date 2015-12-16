@@ -7,7 +7,7 @@ module.exports = class CollapsableContent
 
     @read_more = @dom.find '.read_more'
 
-    log "[CollapsableContent] read_more", @read_more.length
+    # log "[CollapsableContent] read_more", @read_more.length
 
     app.on 'set:updated', @check_length
 
@@ -44,7 +44,7 @@ module.exports = class CollapsableContent
   check_length: =>
     delay 1, =>
       l = @content.text().length 
-      log "[CollapsableContent] check_length", l, @max_length
+      # log "[CollapsableContent] check_length", l, @max_length
       if l > @max_length
         # log "[Description] check_length", l, @max_length, "VISIBLE"
         @dom.addClass 'read_more_visible'

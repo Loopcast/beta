@@ -139,6 +139,7 @@ module.exports = class Share
 
   share_on_facebook: =>
 
+    log "data shared on facebook", @data
     FB.ui
       method: 'feed',
       link: @data.link,

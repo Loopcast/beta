@@ -25,8 +25,9 @@ module.exports = class GoLive extends ButtonWithTimer
       # log "[DDD] live button set active"
       @set_enabled true
       @set_active true
+
       appcast.set "stream:streaming", true
-      appcast.set "stream:online", true
+      # appcast.set "stream:online", true
 
   check_room_status: ->
     @set_active @room.current_status.room.status.is_live
@@ -53,17 +54,25 @@ module.exports = class GoLive extends ButtonWithTimer
         # LATER: CHECK IF USER IS OFFLINE AND WAIT FOR CONNECTION?
         return
 
-      password  = result.password
 
+      # need to be called here otherwise recording will stop
+      # streaming when you stop recording
+      appcast.set "stream:streaming", true
+        
       # if already recording, don't need to start streaming again!
-      if not appcast.get "stream:streaming"
+      if not appcast.get "stream:recording"
+
+        if not result.password
+          console.error 'error fetching password in order to stream'
+          console.log 'maybe already recording?'
+          console.log result
+
+          return
+
+        password  = result.password
 
         appcast.start_stream username, room_slug, password
         
-        # need to be called here otherwise recording will stop
-        # streaming when you stop recording
-        appcast.set "stream:streaming", true
-
         appcast.on 'stream:online', ( status ) =>
 
           return if not status
@@ -93,11 +102,11 @@ module.exports = class GoLive extends ButtonWithTimer
 
     # log "[GoLive] Clicked stop"
 
-    # if not appcast.get 'stream:online'
+    if not appcast.get 'stream:streaming'
 
-    #   notify.info '- cant stop stream if not streaming'
+      notify.info '- cant stop stream if not streaming'
 
-    #   return
+      return
 
     @wait()
 
@@ -106,6 +115,7 @@ module.exports = class GoLive extends ButtonWithTimer
 
       appcast.stop_stream()
 
+    appcast.set( "stream:streaming", false )
     L.rooms.stop_stream @room_id, ( error, callback ) =>
 
       if error
@@ -117,9 +127,6 @@ module.exports = class GoLive extends ButtonWithTimer
         return
 
       @set_active false
-
-      # not public anymore, so can start streaming again
-      appcast.set 'stream:online', false
 
       window._gaq.push(['_trackEvent', 'AppCast Stop Streaming', 'Successful', '']);
 

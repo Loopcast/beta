@@ -55,7 +55,7 @@ class UserController
         @_dispatch_logout()
 
   set_socket_id: ( socket_id ) =>
-    log "[User] on_socket_connected", socket_id
+    # log "[User] on_socket_connected", socket_id
     @socket_id = socket_id
     @emit 'socket:connected'
   ###
@@ -134,8 +134,8 @@ class UserController
 
     # console.log "[UserController] NORMALIZE DATA before", @data
     
-    if not @data.avatar?
-      log "[User Controller] user.avatar is undefined."
+    # if not @data.avatar?
+      # log "[User Controller] user.avatar is undefined."
       # @data.avatar = UserController.USER_DEFAULT_AVATAR
 
     # if not @data.cover?
@@ -162,43 +162,43 @@ class UserController
 
   follow: (user_id) ->
     if not @data?
-      log "[User] trying to follow but user unlogged", user_id, @data
+      # log "[User] trying to follow but user unlogged", user_id, @data
       return
 
-    log "[User] follow", user_id, @data.following
+    # log "[User] follow", user_id, @data.following
     ref = @
     api.user.follow user_id, ( error, result ) ->
 
       # Update the following map      
       ref.data.following[ user_id ] = true
 
-      log "[FollowButton] follow response", result
+      # log "[FollowButton] follow response", result
       ref.emit 'user:followed', user_id
       if error
         console.error 'error following #{@user_id}'
 
   unfollow: (user_id) ->
-    log "[User] unfollow", user_id, @data.following
+    # log "[User] unfollow", user_id, @data.following
     ref = @
     api.user.unfollow user_id, ( error, result ) ->
       
       # Update the following map      
       ref.data.following[ user_id ] = false
 
-      log "[FollowButton] unfollow response", result
+      # log "[FollowButton] unfollow response", result
       ref.emit 'user:unfollowed', user_id
       if error
         console.error 'error following #{@user_id}'
 
   on_user_followed: ( data ) =>
-    log "[User] on_user_followed", data
+    # log "[User] on_user_followed", data
     notify.info data.name + ' is following you!'
 
   on_upload_finished: ( data ) =>
-    log "[User] on_upload_finished", data
+    # log "[User] on_upload_finished", data
 
   on_upload_error: ( data ) =>
-    log "[User] on_upload_error", data
+    # log "[User] on_upload_error", data
 
   ###
   Private Methods
@@ -217,7 +217,7 @@ class UserController
     socket.subscribe @data._id # or room_id
 
     socket.on @data._id, ( data ) =>
-      log "[User]getting message from socket:", data
+      # log "[User]getting message from socket:", data
 
       if data.type is "like"
         @on_user_followed data
@@ -264,7 +264,7 @@ class UserController
 
   is_following: (id) ->
     output = @data? and @data.following? and @data.following[ id ]? and @data.following[ id ]
-    log "[User] is following", id, output
+    # log "[User] is following", id, output
     return output
 
       
@@ -398,12 +398,12 @@ class UserController
   fetch_from_session: ->
     @data = app.session.get 'user', null
 
-    log "[User] fetch_from_session", @data
+    # log "[User] fetch_from_session", @data
     if @data and not @data.images?
       @create_images()
 
   set_preferred_input: (input) ->
-    log "[User] set_preferred_input", input
+    # log "[User] set_preferred_input", input
     app.session.set 'input', input
 
   get_preferred_input: ->

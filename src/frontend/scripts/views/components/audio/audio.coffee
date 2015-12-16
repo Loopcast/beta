@@ -11,6 +11,7 @@ module.exports = class AudioElement
   duration: 0
   last_time: ""
   snapping: false
+  mobile_played: false
   data:
     id: ""
     src: ""
@@ -27,67 +28,71 @@ module.exports = class AudioElement
     @dom[0].addEventListener 'pause', @on_paused
     @dom[0].addEventListener 'ended', @on_ended
 
-
-  _log: (msg) ->
-    return
-    @debug.append "<p>#{msg}</p>"
-
-
   set_data: ( data ) ->
-    return if @data.id is data.id
+    # return if @data.id is data.id
 
     @data = data
 
-    @_log "set_data"
-    log "[AudioElement] set_data", @data
+    log "[AudioElement] set_data", @data.src?
 
-    @set_src @data.src
+
+    if @src isnt @data.src
+      @set_src @data.src
+    else if @mobile_played and @is_playing
+      @on_started()
+
 
 
   set_src: ( src ) ->
-    if src isnt @src 
-      @info_loading_showed = false
+    # log "[AudioElement] set_src", src
+    @info_loading_showed = false if src isnt @src 
+      
     @src = src
-    if @dom.attr( 'src' ) isnt @src
-      @dom.attr 'src', ''
-      delay 1, => @dom.attr 'src', @src
+    
+    @dom.attr 'src', ''
+    delay 1, => @dom.attr 'src', @src
 
   on_loaded_metadata: =>
     if @data.is_recorded
-      @_log "on loaded metadata"
-      log "[AudioElement] [on loaded metadata]", @dom[0].duration
+      # log "[AudioElement] [on loaded metadata]", @dom[0].duration
       @duration = @dom[0].duration
     else
-      log "[AudioElement] [on loaded metadata] it's a room!"
+      # log "[AudioElement] [on loaded metadata] it's a room!"
     @emit 'loaded', @duration
 
   on_paused: =>
     @is_playing = false
-    @_log "on paused"
-    log "[AudioElement] [on paused]"
+    # log "[AudioElement] [on paused]"
     @emit 'paused'
     clearInterval @timer_interval
 
   on_ended: =>
     @is_playing = false
-    @_log "on ended"
-    log "[AudioElement] [on ended]"
+    # log "[AudioElement] [on ended]"
     @emit 'ended'
     clearInterval @timer_interval
 
   on_started: =>
     @is_playing = true
     # @dom[0].volume = 0
-    @_log "on started"
-    log "[AudioElement] [on started]"
+    # log "[AudioElement] [on started]"
     @emit 'started'
 
     @check_time()
     clearInterval( @timer_interval ) if @timer_interval
     @timer_interval = setInterval @check_time, 500
 
+
+  mobile_play: ( src ) ->
+    log "[AudioElement] mobile_play", src
+    @src = src
+    @dom.attr 'src', @src
+    @mobile_played = true
+    @play()
+
+
   play: ->
-    log "[AudioElement] play"
+    # log "[AudioElement] play"
     @dom[0].play()
     @emit 'played'
     clearTimeout @loading_interval
@@ -97,10 +102,10 @@ module.exports = class AudioElement
     if !@is_playing
       @problems_with_playing()
     else
-      log "[Audio] no problems"
+      # log "[Audio] no problems"
 
   problems_with_playing: ->
-    log "[Audio] problems_with_playing"
+    # log "[Audio] problems_with_playing"
     if not @info_loading_showed
       # notify.info 'Loading the set is taking a while. Please wait or try again'
       @info_loading_showed = true
@@ -136,7 +141,7 @@ module.exports = class AudioElement
     return if not @data.is_recorded
 
     
-    log "[Audio] snap_to", perc, @duration * perc
+    # log "[Audio] snap_to", perc, @duration * perc
 
     @snapping = true
     @dom[0].currentTime = @duration * perc
