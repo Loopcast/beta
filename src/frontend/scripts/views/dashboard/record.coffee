@@ -27,6 +27,16 @@ module.exports = class Record extends ButtonWithTimer
   check_room_status: ->
     @set_active @room.current_status.room.status.is_recording
   
+  delayed_recording: => 
+
+    appcast.off 'stream:online', @delayed_recording
+
+    # hack to get recording always working
+    # this way we can hopefully always get a record
+    # after the authentication happened
+    delay 2000, =>
+      @start_recording( true )
+
   start: =>
     # log "[Record] start"
 
@@ -46,12 +56,15 @@ module.exports = class Record extends ButtonWithTimer
       username  = $( '#owner_username' ).val()
       room_slug = $( '#room_slug' ).val()
 
+      console.info "getting password!"
+      
       L.stream.get_password @room_id, ( error, data ) =>
         # start streaming then start recording
         # log "We should start streaming then start recording"
 
         appcast.start_stream username, room_slug, data.password
-        appcast.on 'stream:online', => @start_recording( true )
+
+        appcast.on 'stream:online', @delayed_recording
 
 
 
