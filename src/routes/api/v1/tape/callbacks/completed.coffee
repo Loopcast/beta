@@ -14,6 +14,7 @@ module.exports =
   handler: ( req, reply )->
 
     s3      = req.payload.s3
+    tape_id = req.payload.tape_id
 
     Tape
       .findOne( _id: tape_id )
