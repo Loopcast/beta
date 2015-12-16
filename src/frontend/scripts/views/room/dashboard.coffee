@@ -109,7 +109,10 @@ module.exports = class Dashboard extends RoomView
 
   on_device_changed: =>
     # log "[Dashboard] on_device_changed", app.session.get( 'hide:help' )
-    @balloons.dashboard_help.hide()
+      
+    if app.session.get( 'hide:dashboard_help' )
+      @balloons.dashboard_help.hide()
+    
     if not app.session.get( 'hide:help' )
       @balloons.live_instructions.show()
 
@@ -149,7 +152,12 @@ module.exports = class Dashboard extends RoomView
     @dom.addClass( 'appcast_running' ).removeClass( 'appcast_not_running' )
     @meter.activate()
     @balloons.appcast.hide()
-    @balloons.dashboard_help.show()
+    
+    # Show dashboard_help balloon only for the first time
+    if not app.session.get( 'hide:dashboard_help' )
+      @balloons.dashboard_help.show()
+      app.session.set( 'hide:dashboard_help', true )
+
 
   on_appcast_not_running: =>
     # log "[Dashboard] on_appcast_not_running"
