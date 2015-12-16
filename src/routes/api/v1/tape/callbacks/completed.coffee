@@ -38,7 +38,7 @@ module.exports =
           user : tape.user
           tape : tape_id
 
-        sockets.send room.user._id, data
+        sockets.send tape.user, data
 
         query = _id: mongoose.Types.ObjectId tape_id
         Tape.collection.update query, $set: s3: s3, null, ( error, response ) ->
