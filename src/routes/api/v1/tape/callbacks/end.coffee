@@ -23,7 +23,7 @@ module.exports =
     console.log '---'
 
     query =
-      _id        : room_id
+      _id        : tape_id
       stopped_at : $exists: false
 
     update = 

@@ -20,8 +20,7 @@ module.exports =
 
     Tape
       .findOne( _id: tape_id )
-      .populate( "user" )
-      .select( "user._id" )
+      .select( "user" )
       .lean().exec ( error, tape ) ->
 
 
@@ -32,11 +31,11 @@ module.exports =
         console.log '---'
         console.log 'tape callback completed'
         console.log "tape_id: #{tape_id}"
-        console.log "user_id: #{tape.user._id}"
+        console.log "user_id: #{tape.user}"
 
         data = 
           type : 'upload:finished'
-          user : tape.user._id
+          user : tape.user
           tape : tape_id
 
         sockets.send room.user._id, data
