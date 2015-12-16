@@ -55,9 +55,9 @@ module.exports =
             return reply Boom.resourceGone( "room not found or user not owner" )
 
           # this must be fixed better
-          if room.recording 
+          # if room.recording 
 
-            return reply Boom.preconditionFailed( "Still recording or uploading, please stop recording or wait upload complete" )
+            # return reply Boom.preconditionFailed( "Still recording or uploading, please stop recording or wait upload complete" )
 
           # creating new recording document
           doc = 
@@ -96,15 +96,14 @@ module.exports =
                   return failed req, reply, error
 
             data =
-              url: "#{s.tape.url}:8000/api/v1/start"
+              url: "#{s.tape.url}/api/v1/start"
               form:
-                hostname    : "http://cdn.audiopump.co"
-                path        : "http://46.101.25.152/loopcast-staging/#{username}_#{room.info.slug}"
-                room_id     : room_id
-                mount_point : "#{username}_#{room.info.slug}"
+                path    : "http://cdn.audiopump.co/loopcast-staging/#{username}_#{room.info.slug}"
+                tape    : doc._id.toString()
+                title   : room.info.slug
 
             if s.is_beta
-              data.form.path = "http://46.101.25.152/loopcast/#{username}_#{room.info.slug}"
+              data.form.path = "http://cdn.audiopump.co/loopcast/#{username}_#{room.info.slug}"
 
             request.post data, ( error, response, body ) ->
 

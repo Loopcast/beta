@@ -8,7 +8,7 @@ module.exports =
 
     validate:
       payload:
-        room_id : joi.string().required()
+        tape_id : joi.string().required()
         s3      : joi.object().required()
 
   handler: ( req, reply )->

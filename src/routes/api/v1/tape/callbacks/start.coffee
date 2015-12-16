@@ -6,24 +6,29 @@ module.exports =
 
     validate:
       payload:
-        room_id : joi.string().required()
+        tape_id : joi.string().required()
 
   handler: ( req, reply )->
 
-    room_id = req.payload.room_id
+    tape_id = req.payload.tape_id
 
-    update = 'status.is_recording': on
+    Tape.findOne( _id: tape_id )
+      .select( "room" )
+      .lean().exec ( error, tape ) -> 
 
-    console.log '---'
-    console.log 'tape callback start'
-    console.log "room_id: #{room_id}"
-    console.log '---'
+        update = 'status.is_recording': on
 
-    # notify UI the stream is live
-    data =
-      type        : "status"
-      is_recording: true
+        console.log '---'
+        console.log 'tape callback start'
+        console.log "tape_id: #{tape_id}"
+        console.log "room_id: #{tape.room}"
+        console.log '---'
 
-    sockets.send room_id, data
+        # notify UI the stream is live
+        data =
+          type        : "status"
+          is_recording: true
 
-    reply ok: 1
+        sockets.send tape.room, data
+
+        reply ok: 1

@@ -69,9 +69,11 @@ module.exports =
               'status.is_recording'         : on
 
           data =
-            url: "#{s.tape.url}:8000/api/v1/stop"
+            url: "#{s.tape.url}/api/v1/stop"
             form:
-              mount_point : "#{username}_#{room.info.slug}"
+              tape : room.recording.toString()
+
+          console.log 'posting data.form ->', data.form
 
           request.post data, ( error, response, body ) ->
 

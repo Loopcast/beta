@@ -6,11 +6,11 @@ module.exports =
 
     validate:
       payload:
-        room_id : joi.string().required()
+        tape_id : joi.string().required()
 
   handler: ( req, reply )->
 
-    room_id = req.payload.room_id
+    tape_id = req.payload.tape_id
 
     update = 'status.is_recording': off
 
