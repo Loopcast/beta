@@ -388,9 +388,11 @@ class UserController
       callback @infos[id]
     else
       api.user.info id, (error, response) =>
-        if not error
+        if not error and response.length > 0
           @infos[id] = response[0]
           callback @infos[id]
+        else
+          log "[User controller info_by_id()] error.", id, error
 
   ###
   Session (cookie) Methods 
