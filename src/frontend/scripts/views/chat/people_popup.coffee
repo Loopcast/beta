@@ -11,8 +11,6 @@ module.exports = class PeoplePopup extends ChatView
   follow_button: null
   current_id: null
 
-
-
   constructor: (@dom) ->
     # log "[PeoplePopup] constructor"
     @tmpl = require 'client_templates/chat/people_popup'
@@ -23,8 +21,6 @@ module.exports = class PeoplePopup extends ChatView
     view.on 'binded', @on_views_binded
 
     super @dom
-
-
     
 
   on_mouseover: =>
@@ -50,50 +46,34 @@ module.exports = class PeoplePopup extends ChatView
         images: transform.all( response.info.avatar )
         url : '/' + response.info.username
     
-
-      
-
       
       log "[Popup] show", data, user.is_me( data.id ), position
 
       @cancel_hide = true
       @visible     = true   
 
+
+      # Build the html of the popup and show it
+      h = if user.is_me( data.id ) then 170 else 230
+      w = 220
+
       @dom
         .show()
+        .css
+          opacity : 1 
+          left: coords.x - (w/2) + (coords.w/2)
+          top: coords.y - h - 10
         .find( '.outer_inner' )
         .html( @tmpl( data ) )
 
-      delay 1, =>
-        w = 235
-        if user.is_me data.id
-          h = 210
-        else
-          h = 240
-
-        css = 
-          left   : Math.max 0, coords.x + (coords.w/2) - w/2
-          top    : Math.max 0, coords.y - h
-          opacity: 1
-
-        if position is 'down'
-          css.top = coords.y + 55
-        # else
-        #   css.top = css.top
+      if not @follow_button
+        view.bind 'body'
+      else
+        is_guest = data.name is "Guest"
+        @follow_button.set_user_id data.id, is_guest
 
 
-
-        @dom.css( css )
-        log '------->', css.left, css.top, coords.x, coords.y, w, h, @dom.height()
-
-        if not @follow_button
-          view.bind 'body'
-        else
-          is_guest = data.name is "Guest"
-          @follow_button.set_user_id data.id, is_guest
-
-
-        delay 300, => @cancel_hide = false
+      delay 300, => @cancel_hide = false
 
   on_views_binded: ( data ) =>
     @follow_button = view.get_by_dom '.popup_follow_button'

@@ -1,97 +1,106 @@
 doctype html
 html
 
-	head
-		meta( charset='utf-8' )
-		meta( http-equiv='X-UA-Compatible', content='IE=edge' )
-		meta( name='viewport',    content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' )
-		meta( property="og:site_name" content="Loopcast.fm")
-		meta( property="fb:app_id"    content="#{fb_app_id}" )
-		meta( name="twitter:card" content="summary_large_image")
-		meta( name="twitter:site" content="@loopcastfm")
-		link( rel="icon", href="/favicon.ico" )
+  head
+    meta( charset='utf-8' )
+    meta( http-equiv='X-UA-Compatible', content='IE=edge' )
+    meta( name='viewport',    content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' )
+    meta( property="og:site_name" content="Loopcast.fm")
+    meta( property="fb:app_id"    content="#{fb_app_id}" )
+    meta( name="twitter:card" content="summary_large_image")
+    meta( name="twitter:site" content="@loopcastfm")
+    link( rel="icon", href="/favicon.ico" )
 
-		block seo
-			title loopcast.fm
-			meta( name="description" content="Loopcast Description" ) 
+    block seo
+      title loopcast.fm
+      meta( name="description" content="Loopcast Description" ) 
 
-		//- loopcast icon should be the last image when sharing, so user images
-		//- and room background images will have priority
-		meta( property="og:image" content="#{s.base_path}/images/thumbnail.png")
-		meta( name="twitter:image" content="#{s.base_path}/images/thumbnail.png")
+    //- loopcast icon should be the last image when sharing, so user images
+    //- and room background images will have priority
+    meta( property="og:image" content="#{s.base_path}/images/thumbnail.png")
+    meta( name="twitter:image" content="#{s.base_path}/images/thumbnail.png")
 
-		block head
-			link( href='//fonts.googleapis.com/css?family=Open+Sans:300,400,700,600', rel='stylesheet', type='text/css' )
-			link( href='/css/spritesheet.css', rel='stylesheet', type='text/css' )
-			link( href='/css/webfonts/ss-standard.css', rel='stylesheet', type='text/css' )
-			link( href='/css/app.css', rel='stylesheet', type='text/css' )
-			script( src="https://code.jquery.com/jquery-2.1.1.min.js" )
+    block head
+      link( href='//fonts.googleapis.com/css?family=Open+Sans:300,400,700,600', rel='stylesheet', type='text/css' )
+      link( href='/css/spritesheet.css', rel='stylesheet', type='text/css' )
+      link( href='/css/webfonts/ss-standard.css', rel='stylesheet', type='text/css' )
+      link( href='/css/app.css', rel='stylesheet', type='text/css' )
+      script( src="https://code.jquery.com/jquery-2.1.1.min.js" )
 
-			script(src='/js/check_ie.js')
-			script(src='/js/waveform.js')
-			script
-				| if( !is_browser_supported() ){ location.href = "/oldie"; }
+      script(src='/js/check_ie.js')
+      script(src='/js/waveform.js')
+      script
+        | if( !is_browser_supported() ){ location.href = "/oldie"; }
 
-			style.
-				#loading {display:block;position:absolute;top:0;left:0;background:#ececec;width:100%;height:100%;}
-				header{opacity:0;}
-
-
-	body.loading.not_logged
-		block body
-			script( src="/js/fb_sdk.js" )
-			script
-				| fb_init( #{fb_app_id} );
-
-			include ./shared/header.jade
-
-			#content
-				.inner_content
-					.dynamic_wrapper
-						block content
-
-			#loading.loading_screen(data-view="loading")
-				.inner
-					.loading_spin.large
-
-				
-			include ./components/audio/player
-
-			block modals
-			.md_overlay
-
-			//- #debug
-
-		//- tag manager iframe
-		script( src="//cdn.optimizely.com/js/1762630844.js" )
-		script( src="/js/app.js" )
-		script( src="/js/mixpanel.js" )
-		script( src="/js/ga.js" )
-
-		noscript
-			iframe(src='//www.googletagmanager.com/ns.html?id=GTM-N4ZZBR', height='0', width='0', style='display:none;visibility:hidden')
-
-		script( type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-525305dd58558134" async="async" )
-
-		script( src="/js/tag_manager.js" )
-		//- if user has adBlock or similar google_analytics.js might be blocked
-		//- and in this case it's better to defined __gaq inline, so we avoid
-		//- this problem
-		script
-			| var _gaq = [];
+      style.
+        #loading {display:block;position:absolute;top:0;left:0;background:#ececec;width:100%;height:100%;}
+        header{opacity:0;}
 
 
-		//- update socket.io js version when updating package.json
-		script( src="//cdn.socket.io/socket.io-1.3.5.js" )
+  body.loading.not_logged
+    block body
+      script( src="/js/fb_sdk.js" )
+      script
+        | fb_init( #{fb_app_id} );
 
-		script( src="//js.pusher.com/2.2/pusher.min.js" )
-		script
-			| var options   = { authEndpoint: '/api/v1/chat/auth' }
-			| options  = {} // while we don't implement presence channels
-			| window.pusher = new Pusher( '#{pusher.key}', options )
-			| window.intercomSettings = { app_id: "#{intercom.id}" }
-			if is_beta
-				| 
-				| var is_beta  = true;
+      include ./shared/header.jade
 
-		//- script( type='text/javascript', src='//connect.facebook.net/en_US/vb.js', async='async')
+      #content
+        .inner_content
+          .dynamic_wrapper
+            block content
+
+      #loading.loading_screen(data-view="loading")
+        .inner
+          .loading_spin.large
+
+        
+      include ./components/audio/player
+
+      block modals
+
+
+      .chat_user_popup(data-view="chat/people_popup")
+        ._outer
+          .outer_inner
+          a.follow_button(class="button yellow_button small_button_4 popup_follow_button", href="#",  data-view="profile/follow_button", data-user-id="#{id}") Follow
+
+
+          
+      .md_overlay
+
+      //- #debug
+
+    //- tag manager iframe
+    script( src="//cdn.optimizely.com/js/1762630844.js" )
+    script( src="/js/app.js" )
+    script( src="/js/mixpanel.js" )
+    script( src="/js/ga.js" )
+
+    noscript
+      iframe(src='//www.googletagmanager.com/ns.html?id=GTM-N4ZZBR', height='0', width='0', style='display:none;visibility:hidden')
+
+    script( type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-525305dd58558134" async="async" )
+
+    script( src="/js/tag_manager.js" )
+    //- if user has adBlock or similar google_analytics.js might be blocked
+    //- and in this case it's better to defined __gaq inline, so we avoid
+    //- this problem
+    script
+      | var _gaq = [];
+
+
+    //- update socket.io js version when updating package.json
+    script( src="//cdn.socket.io/socket.io-1.3.5.js" )
+
+    script( src="//js.pusher.com/2.2/pusher.min.js" )
+    script
+      | var options   = { authEndpoint: '/api/v1/chat/auth' }
+      | options  = {} // while we don't implement presence channels
+      | window.pusher = new Pusher( '#{pusher.key}', options )
+      | window.intercomSettings = { app_id: "#{intercom.id}" }
+      if is_beta
+        | 
+        | var is_beta  = true;
+
+    //- script( type='text/javascript', src='//connect.facebook.net/en_US/vb.js', async='async')

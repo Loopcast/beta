@@ -182,6 +182,7 @@
       
     .name, .type, .genres, .socials_room
       margin-left: SIDE_PADDING
+
       
     .socials_room
       margin-top: 5px
@@ -236,7 +237,31 @@
           absolute left 15px top 50%
           transform: translateY(-50%)
           font-size: 23px
+    
+  .tape_play
+    display: none
+    top: 10px
+    left: 20px
+    
+
+  &.createroom
+    .cover
+      .name, .type, .genres, .socials_room
+        opacity: 0
+        transition: opacity .3s linear
+  &.show_play_button
+    .tape_play
+      display: block
+    .cover 
+      .name, .type, .genres, .socials_room
+        margin-left: 130px
+        opacity: 1
         
+  &.hide_play_button
+    .cover 
+      .name, .type, .genres, .socials_room
+        opacity: 1
+      
   .sidebar_right
     absolute top 0 right 0
     height: 100%

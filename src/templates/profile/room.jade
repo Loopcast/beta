@@ -110,13 +110,18 @@ block content
         .cover_image.for_desktop(style="background-image:url(#{transform.cover(cover_url)})")
         .cover_image.for_mobile(style="background-image:url(#{transform.cover_mobile(cover_url)})")
         
-        .content
+        - id = ""
+        if room && room._id
+          - id = room._id
+        .content(data-view="components/audio/player_preview", data-room-id="#{id}" data-is-live="true")
+          a(href="#", class="tape_play icon ss-play", title="play record") &nbsp;
+
           h1.name.black_background(data-view="components/editables/editable_text")
             span.text
               if room
                 | #{room.info.title}
           br
-          h3.genres.black_background(data-view="room/popup_trigger", data-user-id="#{user._id}", data-position="down")
+          h3.genres.black_background
             a(href="/#{user.info.username}", title="#{user.info.name}") #{user.info.name}
 
           .socials_room(data-view="components/room_social_links", data-links="#{user.info.social}")

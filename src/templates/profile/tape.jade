@@ -51,7 +51,7 @@ block content
             span.for_mobile #{tape.short_title}
             span.for_desktop #{tape.title}
           .tape_author_wrapper._overflow
-            h3.black_background.tape_author(data-view="room/popup_trigger", data-user-id="#{tape.user._id}", data-position="down")
+            h3.black_background.tape_author
               a(href="/#{tape.user.info.username}") #{tape.user.info.name}
             br.for_mobile
             a(href="#", class="button grey_button small_button_2 follow_button", data-view="profile/follow_button", data-user-id="#{tape.user._id}" onClick="_gaq.push(['_trackEvent', 'Follow Message', 'Click', '']);") 
@@ -150,10 +150,10 @@ block content
               span.icon.ss-heart
               span.label #{tape.likes}
 
-    .chat_user_popup(data-view="chat/people_popup")
-      ._outer
-        .outer_inner
-        a.follow_button(class="button yellow_button small_button_4 popup_follow_button", href="#",  data-view="profile/follow_button", data-user-id="#{tape.user._id}") Follow
+    //- .chat_user_popup(data-view="chat/people_popup")
+    //-   ._outer
+    //-     .outer_inner
+    //-     a.follow_button(class="button yellow_button small_button_4 popup_follow_button", href="#",  data-view="profile/follow_button", data-user-id="#{tape.user._id}") Follow
 
   include ./../modals/room_modal.jade
 
