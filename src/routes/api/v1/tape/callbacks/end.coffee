@@ -36,8 +36,8 @@ module.exports =
       .lean().exec ( error, result ) ->
 
         if error
-          console.log 'error updated upload completed information '
-          console.log "room_id : #{room_id}"
+          console.log 'error updating upload completed information '
+          console.log "tape_id : #{tape_id}"
           console.log error
 
 
