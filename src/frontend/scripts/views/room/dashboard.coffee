@@ -52,9 +52,10 @@ module.exports = class Dashboard extends RoomView
       appcast: view.get_by_dom( '#appcast_not_running_balloon' )
       record: view.get_by_dom( '#record_balloon' )
       live_instructions: view.get_by_dom( '#go_live_instructions' )
-      dashboard_help: view.get_by_dom( '#dashboard_help_baloon' )
+      dashboard_help: view.get_by_dom( '#dashboard_help_balloon' )
 
     @device_change_count = 0
+
     @appcast_not_running_message = @dom.find '.appcast_not_running_message'
     @meter = view.get_by_dom @dom.find( '.meter_wrapper' )
 
@@ -117,8 +118,8 @@ module.exports = class Dashboard extends RoomView
     if app.session.get( 'hide:dashboard_help' ) and @device_change_count >= 2
       @balloons.dashboard_help.hide()
     
-    if not app.session.get( 'hide:help' )
-      @balloons.live_instructions.show()
+      if not app.session.get( 'hide:help' )
+        @balloons.live_instructions.show()
 
   toggle_not_running_balloon: =>
     @balloons.appcast.toggle()
