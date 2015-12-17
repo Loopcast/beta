@@ -61,10 +61,11 @@ module.exports =
 
           if not room.stream
 
+            console.log '- error, room.stream not found for this user'
             console.log '- user not streaming'
-            reply response: statusCode: 200
+            # reply response: statusCode: 200
 
-            return
+            # return
 
           # if the user don't press live, we need to send a socket message
           # in order to get users offline in the room
