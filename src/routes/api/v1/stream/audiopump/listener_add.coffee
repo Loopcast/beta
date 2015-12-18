@@ -9,12 +9,20 @@ module.exports =
 
     handler: ( req, reply ) ->
 
-      path = req.payload.data.path.split( "/" )[1]
       ip   = req.payload.data.requestHeaders.host
+
+      path = req.payload.data.path
+      path = path.split( '/' )[2]
+
+      path = path.split '_'
+
+      username  = path[0]
+      room_slug = path[1]
 
       console.log '- audiopump/listener_add'
 
-      console.log 'path: ', path
+      console.log 'username : ', username
+      console.log 'room_slug: ', room_slug
       console.log 'ip  : ', ip
 
       reply()
