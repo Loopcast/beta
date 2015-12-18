@@ -25,23 +25,17 @@ module.exports =
       console.log 'room_slug: ', room_slug
       console.log 'ip  : ', ip
 
-      reply()
-
-      return
-
-      console.log "listener_remove : #{mount_point}, ip: #{ip}"
+      reply ok: true
 
       if s.tape.ips.indexOf( ip ) isnt -1
 
         console.log "- ignored because comes from tape server"
         
-        return reply( ok: true ).header( "icecast-auth-user", "1" )
+        return
 
       query = 
-        $or      : [
-          { 'user' : mount_point, 'status.is_live'      : true }
-          { 'user' : mount_point, 'status.is_recording' : true }
-        ]
+        'info.user': username
+        'info.slug': room_slug
 
       Room.findOne( query )
         .select( "_id" )
@@ -50,15 +44,15 @@ module.exports =
         .exec ( error, room ) -> 
 
           if error
-            console.log "error finding room for listner_add"
+            console.log "error finding #{username}/#{room_slug} for listener_remove"
             console.log error
 
-            return reply( ok: true ).header( "icecast-auth-user", "1" )
+            return
 
           if not room
-            console.log "room not found for user #{mount_point}"
+            console.log "room not found #{username}/#{room_slug}"
 
-            return reply( ok: true ).header( "icecast-auth-user", "1" )
+            return
 
           console.log "listened removed for room_id #{room._id}"
       

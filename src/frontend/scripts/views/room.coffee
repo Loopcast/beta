@@ -35,6 +35,7 @@ module.exports = class Room extends LoggedView
       location    : @dom.find '.cover .location'
       cover       : @dom.find '.cover .cover_image'
       description : @dom.find '.chat_header p'
+      listeners   : $ '.stat_listeners .number'
 
     if Strings.is_empty( @elements.title.html() )
       @elements.title.addClass 'hidden'
@@ -142,6 +143,12 @@ module.exports = class Room extends LoggedView
       return @people_list.add     data if data.type is "listener:added"
       return @people_list.remove  data if data.type is "listener:removed"
       return @on_status_changed   data if data.type is "status"
+
+      if data.type is "listeners"
+
+        @elements.listeners.html data.listeners
+
+        return
 
       # temp
       # return @on_live_changed     data if (not data.type?) and data.is_live?
