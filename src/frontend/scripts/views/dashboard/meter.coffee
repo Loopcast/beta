@@ -15,12 +15,12 @@ current_volume = null
 draw = ->
 
   frame_counter++
-  frame_counter = frame_counter % 3
+  frame_counter = frame_counter % 2
 
-  if frame_counter % 3
-    animation_id = window.requestAnimationFrame( draw )
+  # if frame_counter % 2
+  #   animation_id = window.requestAnimationFrame( draw )
 
-    return 
+  #   return 
 
   data.push Math.max( current_volume, VOL_FLOOR )
 
