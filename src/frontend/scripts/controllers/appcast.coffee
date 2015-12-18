@@ -250,6 +250,10 @@ appcast.callbacks =
 
     # save current stream:online status
     appcast.set 'stream:online'  , false
+
+    appcast.set 'stream:streaming', false
+    appcast.set 'stream:recording', false
+
     appcast.set "stream:stopping", null
     appcast.set 'stream:vu'      , 0
 
