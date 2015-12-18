@@ -62,7 +62,9 @@ module.exports =
             # if user isn't recording a new password must be generated
             update.password = uuid.v4() 
 
-          update['status.is_live'] = true
+          # don't set live manually, this is can create problems
+          # always wait from audiopump
+          # update['status.is_live'] = true
           update['info.url']       = "#{s.radio.url}#{username}_#{room.info.slug}"
 
           Room.update( _id: room_id, update )
