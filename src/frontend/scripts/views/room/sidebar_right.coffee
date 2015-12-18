@@ -58,5 +58,5 @@ module.exports = class SidebarRight extends RoomView
 
   update_listeners: ( total ) ->
     @stats.listeners = total
-    @listeners.html total
+    # @listeners.html total
 

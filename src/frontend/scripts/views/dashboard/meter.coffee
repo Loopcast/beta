@@ -9,6 +9,27 @@ MAX_WIDTH     = 338
 VOL_FLOOR     = 0.03
 frame_counter = 0
 
+animation_id   = null
+current_volume = null
+
+draw = ->
+
+  frame_counter++
+  frame_counter = frame_counter % 3
+
+  if frame_counter % 3
+    animation_id = window.requestAnimationFrame( draw )
+
+    return 
+
+  data.push Math.max( current_volume, VOL_FLOOR )
+
+  data = data.slice( -MAX_WIDTH )
+
+  waveform.update data: data
+
+  animation_id = window.requestAnimationFrame( draw )
+
 module.exports = class Meter extends RoomView
   disabled: true
   current_block_index: -1
@@ -96,30 +117,57 @@ module.exports = class Meter extends RoomView
 
 
   deactivate: ->
+    console.info '---'
+    console.info 'deactivate'
+    console.info 'deactivate'
+    console.info 'deactivate'
+    console.info '---'
+
     # log "[Meter] deactivate", @current_block_index
     return if @current_block_index < 0
 
 
   activate: (perc) =>
+
+
+    console.info '---'
+    console.info 'activate'
+    console.info 'activate'
+    console.info 'activate'
+    console.info '---'
+
+    animation_id = window.requestAnimationFrame( draw )
+
     return if not perc
     # log "[Meter] activate", perc
     appcast.off 'stream:vu', @activate
 
+
+
   set_volume: ( perc ) =>
+
+    current_volume = Math.max( perc[0], VOL_FLOOR )
+
+    return
 
     frame_counter++
     frame_counter = frame_counter % 3
     return if frame_counter % 3
 
-    data.push Math.max( perc[0], VOL_FLOOR )
 
-    data = data.slice(-MAX_WIDTH);
-
-    waveform.update data: data
 
   destroy: ->
     super()
     
+    window.cancelAnimationFrame animation_id
+
+    console.info '---'
+    console.info 'destroy'
+    console.info 'destroy'
+    console.info 'destroy'
+    console.info '---'
+
     if @is_room_owner
       appcast.off 'stream:vu', @set_volume
+
     appcast.disconnect()

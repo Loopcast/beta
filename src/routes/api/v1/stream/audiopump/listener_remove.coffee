@@ -9,14 +9,66 @@ module.exports =
 
     handler: ( req, reply ) ->
 
-      path = req.payload.data.path.split( "/" )[1]
       ip   = req.payload.data.requestHeaders.host
 
-      # console.log '- audiopump/listener_remove'
+      path = req.payload.data.path
+      path = path.split( '/' )[2]
 
-      # console.log 'path: ', path
-      # console.log 'ip  : ', ip
+      path = path.split '_'
 
-      reply()
+      username  = path[0]
+      room_slug = path[1]
 
-      return
+      console.log '- audiopump/listener_remove'
+
+      console.log 'username : ', username
+      console.log 'room_slug: ', room_slug
+      console.log 'ip  : ', ip
+
+      reply ok: true
+
+      if s.tape.ips.indexOf( ip ) isnt -1
+
+        console.log "- ignored because comes from tape server"
+        
+        return
+
+      query = 
+        'info.user': username
+        'info.slug': room_slug
+
+      Room.findOne( query )
+        .select( "_id" )
+        .sort( _id: - 1 )
+        .lean()
+        .exec ( error, room ) -> 
+
+          if error
+            console.log "error finding #{username}/#{room_slug} for listener_remove"
+            console.log error
+
+            return
+
+          if not room
+            console.log "room not found #{username}/#{room_slug}"
+
+            return
+
+          console.log "listened removed for room_id #{room._id}"
+      
+          # count one less listener
+          redis_key = "#{room._id}:listeners"
+          redis.decr redis_key, ( error, value ) ->
+
+
+            value = Number value.toString()
+
+            console.log "updated redis with listener count: #{value}"
+
+            message = 
+              type     : "listeners"
+              listeners: value
+
+            sockets.send room._id, message
+
+          reply( ok: true ).header( "icecast-auth-user", "1" )

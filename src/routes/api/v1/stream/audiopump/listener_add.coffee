@@ -9,34 +9,33 @@ module.exports =
 
     handler: ( req, reply ) ->
 
-      path = req.payload.data.path.split( "/" )[1]
       ip   = req.payload.data.requestHeaders.host
 
-      # console.log '- audiopump/listener_add'
+      path = req.payload.data.path
+      path = path.split( '/' )[2]
 
-      # console.log 'path: ', path
-      # console.log 'ip  : ', ip
+      path = path.split '_'
 
-      reply()
+      username  = path[0]
+      room_slug = path[1]
 
-      return
+      console.log '- audiopump/listener_add'
 
-      mount_point = req.params.mount_point
-      method_name = req.payload.method_name
+      console.log 'username : ', username
+      console.log 'room_slug: ', room_slug
+      console.log 'ip  : ', ip
 
-      console.log "listener_remove : #{mount_point}, ip: #{req.payload.ip}"
+      reply ok: true
 
-      if s.tape.ips.indexOf( req.payload.ip ) isnt -1
+      if s.tape.ips.indexOf( ip ) isnt -1
 
         console.log "- ignored because comes from tape server"
         
-        return reply( ok: true ).header( "icecast-auth-user", "1" )
+        return
 
       query = 
-        $or      : [
-          { 'user' : mount_point, 'status.is_live'      : true }
-          { 'user' : mount_point, 'status.is_recording' : true }
-        ]
+        'info.user': username
+        'info.slug': room_slug
 
       Room.findOne( query )
         .select( "_id" )
@@ -45,22 +44,21 @@ module.exports =
         .exec ( error, room ) -> 
 
           if error
-            console.log "error finding room for listner_add"
+            console.log "error finding #{username}/#{room_slug} for listner_add"
             console.log error
 
-            return reply( ok: true ).header( "icecast-auth-user", "1" )
+            return
 
           if not room
-            console.log "room not found for user #{mount_point}"
+            console.log "room not found #{username}/#{room_slug}"
 
-            return reply( ok: true ).header( "icecast-auth-user", "1" )
+            return
 
-          console.log "listened removed for room_id #{room._id}"
-      
           # count one less listener
           redis_key = "#{room._id}:listeners"
           redis.decr redis_key, ( error, value ) ->
 
+            console.log "listened removed for #{username}/#{room_slug}"
 
             value = Number value.toString()
 
@@ -71,5 +69,3 @@ module.exports =
               listeners: value
 
             sockets.send room._id, message
-
-          reply( ok: true ).header( "icecast-auth-user", "1" )
