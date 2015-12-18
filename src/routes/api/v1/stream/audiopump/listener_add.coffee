@@ -12,10 +12,10 @@ module.exports =
       path = req.payload.data.path.split( "/" )[1]
       ip   = req.payload.data.requestHeaders.host
 
-      # console.log '- audiopump/listener_add'
+      console.log '- audiopump/listener_add'
 
-      # console.log 'path: ', path
-      # console.log 'ip  : ', ip
+      console.log 'path: ', path
+      console.log 'ip  : ', ip
 
       reply()
 
@@ -24,7 +24,7 @@ module.exports =
       mount_point = req.params.mount_point
       method_name = req.payload.method_name
 
-      console.log "listener_remove : #{mount_point}, ip: #{req.payload.ip}"
+      console.log "listener_add : #{mount_point}, ip: #{req.payload.ip}"
 
       if s.tape.ips.indexOf( req.payload.ip ) isnt -1
 
