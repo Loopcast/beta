@@ -219,19 +219,19 @@ block content
                     p.label 
                       span.for_desktop now live
                     p.time &nbsp;
-
-                .edit_session_wrapper
-                  a.icon.settings_button.ss-settings(href="#", title="Setting Session", data-view="components/click_trigger" data-target="#room_#{live._id} .edit_session_popup")
-                  .edit_session_popup
-                    .triangle
-                    a.edit_button.button.yellow_button.small_button_4(href="#", title="Edit", data-view="room/tape/edit_modal_opener", data-id="#{live._id}", data-type="room") Edit
-                    a.delete_button.button.red_button.small_button_4(href="#", title="Delete") Delete
-
-              .delete_screen
-                .content
-                  h2 Are you sure you want to delete this room?
-                  a.button.red_button.small_button_4.confirm_delete(href="#", title="Delete") Delete
-                  a.button.white_button.small_button_4.cancel_delete(href="#", title="Cancel") Cancel
+                if !live.status.is_live
+                  .edit_session_wrapper
+                    a.icon.settings_button.ss-settings(href="#", title="Setting Session", data-view="components/click_trigger" data-target="#room_#{live._id} .edit_session_popup")
+                    .edit_session_popup
+                      .triangle
+                      a.edit_button.button.yellow_button.small_button_4(href="#", title="Edit", data-view="room/tape/edit_modal_opener", data-id="#{live._id}", data-type="room") Edit
+                      a.delete_button.button.red_button.small_button_4(href="#", title="Delete") Delete
+              if !live.status.is_live
+                .delete_screen
+                  .content
+                    h2 Are you sure you want to delete this room?
+                    a.button.red_button.small_button_4.confirm_delete(href="#", title="Delete") Delete
+                    a.button.white_button.small_button_4.cancel_delete(href="#", title="Cancel") Cancel
 
 
         if tapes.length
