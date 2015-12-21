@@ -6,6 +6,7 @@ module.exports = class RoomModal extends Modal
   cover_uploaded: ""
   timeout_title: null
   current_data: null
+  room_name_available: false
   constructor: ( @dom ) ->
     
     super @dom
@@ -92,9 +93,13 @@ module.exports = class RoomModal extends Modal
         log error
         return 
 
-      if not result.available
+
+      if result.available
+        @room_name_available = true
+      else
         @title.addClass( 'required' ).focus()
         notify.error 'Room name not available'
+        @room_name_available = false
 
 
   _submit: ( ) =>
@@ -103,7 +108,7 @@ module.exports = class RoomModal extends Modal
       return
 
     # quick validation sketch
-    if not @title.val()
+    if not @title.val() or not @room_name_available
       @title.addClass( 'required' ).focus()
       return 
 
