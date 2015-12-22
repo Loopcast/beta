@@ -62,6 +62,11 @@ module.exports =
             # if user isn't recording a new password must be generated
             update.password = uuid.v4() 
 
+          else
+
+            update[ 'status.is_live' ] = true
+            update[ 'live.started_at'] = now().format()
+
           # don't set live manually, this is can create problems
           # always wait from audiopump
           # update['status.is_live'] = true
@@ -76,5 +81,15 @@ module.exports =
                 failed req, reply, error
 
                 return reply Boom.preconditionFailed( "Database error" )
+
+              if room.status.is_recording
+                
+                data =
+                  type   : "status"
+                  is_live: true
+                  live: 
+                    started_at: update[ 'live.started_at']
+
+                sockets.send room._id, data
 
               reply update
