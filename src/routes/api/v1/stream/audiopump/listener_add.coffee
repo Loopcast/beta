@@ -11,7 +11,7 @@ module.exports =
 
       console.log 'request ->', req.payload.data.requestHeaders
 
-      ip   = req.payload.data.remoteAddress
+      ip   = req.payload.data.remoteAddress.split( ":" )[3]
 
       path = req.payload.data.path
       path = path.split( '/' )[2]
