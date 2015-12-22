@@ -11,6 +11,8 @@ module.exports =
 
       ip   = req.payload.data.requestHeaders.host
 
+      console.log 'full data ->', req.payload.data
+      
       path = req.payload.data.path
       path = path.split( '/' )[2]
 
