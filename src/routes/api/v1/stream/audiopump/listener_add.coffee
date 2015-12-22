@@ -9,6 +9,8 @@ module.exports =
 
     handler: ( req, reply ) ->
 
+      console.log 'request ->', req.payload.data.requestHeaders
+      
       ip   = req.payload.data.requestHeaders.remoteAddress
 
       path = req.payload.data.path
