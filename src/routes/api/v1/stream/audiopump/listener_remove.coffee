@@ -66,6 +66,6 @@ module.exports =
 
             message = 
               type     : "listeners"
-              listeners: value
+              listeners: Math.max( 0, value )
 
             sockets.send room._id, message

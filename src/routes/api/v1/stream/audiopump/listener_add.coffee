@@ -9,7 +9,7 @@ module.exports =
 
     handler: ( req, reply ) ->
 
-      console.log 'request ->', req.payload.data.requestHeaders
+      # console.log 'request ->', req.payload.data.requestHeaders
 
       ip   = req.payload.data.remoteAddress.split( ":" )[3]
 
@@ -66,6 +66,6 @@ module.exports =
 
             message = 
               type     : "listeners"
-              listeners: value
+              listeners: Math.max( value, 0 )
 
             sockets.send room._id, message
