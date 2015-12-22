@@ -9,7 +9,7 @@ module.exports =
 
     handler: ( req, reply ) ->
 
-      ip   = req.payload.data.requestHeaders.host
+      ip   = req.payload.data.requestHeaders.remoteAddress
 
       path = req.payload.data.path
       path = path.split( '/' )[2]
