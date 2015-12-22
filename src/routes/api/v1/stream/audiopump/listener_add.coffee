@@ -56,13 +56,11 @@ module.exports =
 
           # count one less listener
           redis_key = "#{room._id}:listeners"
-          redis.decr redis_key, ( error, value ) ->
-
-            console.log "listened removed for #{username}/#{room_slug}"
+          redis.incr redis_key, ( error, value ) ->
 
             value = Number value.toString()
 
-            console.log "updated redis with listener count: #{value}"
+            console.log "listened INCR for #{username}/#{room_slug} = #{value}"
 
             message = 
               type     : "listeners"

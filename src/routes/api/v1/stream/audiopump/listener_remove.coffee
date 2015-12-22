@@ -60,15 +60,12 @@ module.exports =
           redis_key = "#{room._id}:listeners"
           redis.decr redis_key, ( error, value ) ->
 
-
             value = Number value.toString()
 
-            console.log "updated redis with listener count: #{value}"
+            console.log "listened DECR for #{username}/#{room_slug} = #{value}"
 
             message = 
               type     : "listeners"
               listeners: value
 
             sockets.send room._id, message
-
-          reply( ok: true ).header( "icecast-auth-user", "1" )
