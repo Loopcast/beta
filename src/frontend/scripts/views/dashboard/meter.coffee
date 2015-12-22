@@ -117,24 +117,11 @@ module.exports = class Meter extends RoomView
 
 
   deactivate: ->
-    console.info '---'
-    console.info 'deactivate'
-    console.info 'deactivate'
-    console.info 'deactivate'
-    console.info '---'
-
     # log "[Meter] deactivate", @current_block_index
     return if @current_block_index < 0
 
 
   activate: (perc) =>
-
-
-    console.info '---'
-    console.info 'activate'
-    console.info 'activate'
-    console.info 'activate'
-    console.info '---'
 
     animation_id = window.requestAnimationFrame( draw )
 
@@ -160,12 +147,6 @@ module.exports = class Meter extends RoomView
     super()
     
     window.cancelAnimationFrame animation_id
-
-    console.info '---'
-    console.info 'destroy'
-    console.info 'destroy'
-    console.info 'destroy'
-    console.info '---'
 
     if @is_room_owner
       appcast.off 'stream:vu', @set_volume
