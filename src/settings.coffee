@@ -115,7 +115,7 @@ if s.is_beta
     secret: 'b324ac27d8ec6f3f589a'
 
   s.tape = 
-    url: 'http://tape.loopcast.fm:8000'
+    url: 'http://tape.loopcast.fm:8001'
     ips: [ "52.16.136.56", "52.18.41.115" ] # tape servers, so we dont count listeners from here
 
   s.radio = 
