@@ -55,7 +55,8 @@ module.exports =
 
             return reply Boom.resourceGone( "room not found or user not owner" )
 
-          
+          reply ok: 1
+
           # status object to be sent down a socket Channel
           status =
             type   : "status"
@@ -105,8 +106,6 @@ module.exports =
             
             # streamed for this length
             console.log "Streamed #{duration} seconds"
-
-            reply response
 
 
             # updating stream
