@@ -521,11 +521,6 @@ module.exports = class Room extends LoggedView
 
       socket.rooms.unsubscribe @room_id
       
-      # pusher.unsubscribe @room_subscribe_id
-      # @channel.unbind 'listener:added', @on_listener_added
-      # @channel.unbind 'listener:removed', @on_listener_removed
-      # @channel.unbind 'message', @on_message
-
     if user_controller.check_guest_owner() and @description?
       @description.off 'changed', @on_description_changed
       @title.off 'changed', @on_title_changed
