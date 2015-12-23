@@ -144,9 +144,16 @@ module.exports = class RoomModal extends Modal
 
   open_with_data: ( data ) ->
     log "[RoomModal] open_with_data", data, data.genres, data.genres.length
+
     @current_data = data
 
     @dom.addClass 'edit_modal'
+
+    # room is available when editing!
+    @room_name_available = true
+
+    @title.removeClass 'required'
+
     @title.val data.title
     @genre.add_tags data.genres
     @location.val data.location
