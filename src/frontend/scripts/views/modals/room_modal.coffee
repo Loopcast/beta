@@ -87,6 +87,10 @@ module.exports = class RoomModal extends Modal
       el.addClass 'required'
 
   _check_room_name: =>
+
+    # for now simply don't check when editing
+    return if @dom.hasClass 'edit_modal'
+
     L.rooms.is_available @title.val(), (error, result) =>
       # log "[RoomModal] _check_room_name", @title.val(), "available?", result.available
       if error
@@ -104,11 +108,16 @@ module.exports = class RoomModal extends Modal
 
   _submit: ( ) =>
     
-    if @locked
-      return
+    return if @locked
 
     # quick validation sketch
-    if not @title.val() or not @room_name_available
+    if not @title.val()
+
+      @title.addClass( 'required' ).focus()
+      return 
+
+    if ( not @dom.hasClass 'edit_modal' ) and ( not @room_name_available )
+
       @title.addClass( 'required' ).focus()
       return 
 
@@ -123,6 +132,7 @@ module.exports = class RoomModal extends Modal
     if @is_tape()
       data.public = @current_data.public
       data.cover_url = data.cover
+
       if data.cover_url.length <= 0
         data.cover_url = @current_data.cover_url
 

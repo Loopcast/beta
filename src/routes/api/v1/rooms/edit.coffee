@@ -25,7 +25,7 @@ module.exports =
         title     : joi.string()
         location  : joi.any()
         about     : joi.any()
-        cover_url : joi.string()
+        cover_url : joi.any()
         genres    : joi.any()
         is_public : joi.boolean()
 
