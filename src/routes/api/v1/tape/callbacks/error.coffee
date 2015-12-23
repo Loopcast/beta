@@ -15,4 +15,3 @@ module.exports =
     console.log error
 
     reply ok: 1
-    # pusher.trigger "tape.#{mount_point}", "upload:error", error

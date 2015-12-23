@@ -77,14 +77,6 @@ global.intercom = new Intercom
   apiKey: s.intercom.key
   appId : s.intercom.id
 
-Pusher = require 'pusher'
-
-global.pusher = new Pusher
-  appId : s.pusher.appId
-  key   : s.pusher.key
-  secret: s.pusher.secret
-
-
 S3 = require 's3'
 
 global.s3 = S3.createClient
