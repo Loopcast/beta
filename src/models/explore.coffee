@@ -88,6 +88,7 @@ module.exports = ( page = 0, genres, search, callback ) ->
     s3         : 1 
     started_at : 1 
     stopped_at : 1
+    about      : 1
     duration   : 1
 
   options = 
