@@ -179,8 +179,13 @@ module.exports = class Room extends LoggedView
       app.on 'room:go_offline', @room_went_offline
 
     if @dom.hasClass 'room_live'
+
+      # console.info "has clas live!!!"
+
       delay 1000, => 
         # log "----------------- (0)"
+
+        # console.info "DELAY BEFORE ROOM LIVE!!!"
         @on_room_live()
 
     L.rooms.visit @room_id, (error, response) ->
@@ -221,6 +226,9 @@ module.exports = class Room extends LoggedView
     if data.is_live?
 
       if data.is_live is true
+
+        # console.warn "REAL LIVE EVENT!!!"
+
         @on_room_live()
 
         # otherwise wait until player is running
@@ -336,6 +344,9 @@ module.exports = class Room extends LoggedView
   _on_live_changed: (data) =>
     # log "[Room] on live changed", data
     if data
+
+      # console.warn "WEIRD ON LIVE CHANGED!"
+      # console.warn data
       @on_room_live()
     else
       @on_room_offline()
@@ -370,6 +381,9 @@ module.exports = class Room extends LoggedView
         $( "audio" ).attr( "src", "" )
     
   on_room_live: ->
+
+    # console.info "LIVE!!!"
+
     delay 500, =>
       log "[Room] on_room_live"
       @dom.addClass 'room_live'
@@ -409,6 +423,7 @@ module.exports = class Room extends LoggedView
       app.player.play @room_id
       app.player.on_room_live()
 
+    app.off 'audio:started', @show_guest_popup
     app.on 'audio:started', @show_guest_popup
 
   ###

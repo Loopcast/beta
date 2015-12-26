@@ -23,10 +23,10 @@ module.exports =
     validate:
       payload:
         title     : joi.string()
-        location  : joi.string()
-        about     : joi.string()
-        cover_url : joi.string()
-        genres    : joi.array()
+        location  : joi.any()
+        about     : joi.any()
+        cover_url : joi.any()
+        genres    : joi.any()
         is_public : joi.boolean()
 
     handler: ( req, reply ) ->

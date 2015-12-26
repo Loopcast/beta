@@ -6,6 +6,7 @@ module.exports = class RoomModal extends Modal
   cover_uploaded: ""
   timeout_title: null
   current_data: null
+  room_name_available: false
   constructor: ( @dom ) ->
     
     super @dom
@@ -86,24 +87,37 @@ module.exports = class RoomModal extends Modal
       el.addClass 'required'
 
   _check_room_name: =>
+
+    # for now simply don't check when editing
+    return if @dom.hasClass 'edit_modal'
+
     L.rooms.is_available @title.val(), (error, result) =>
       # log "[RoomModal] _check_room_name", @title.val(), "available?", result.available
       if error
         log error
         return 
 
-      if not result.available
+
+      if result.available
+        @room_name_available = true
+      else
         @title.addClass( 'required' ).focus()
         notify.error 'Room name not available'
+        @room_name_available = false
 
 
   _submit: ( ) =>
     
-    if @locked
-      return
+    return if @locked
 
     # quick validation sketch
     if not @title.val()
+
+      @title.addClass( 'required' ).focus()
+      return 
+
+    if ( not @dom.hasClass 'edit_modal' ) and ( not @room_name_available )
+
       @title.addClass( 'required' ).focus()
       return 
 
@@ -118,6 +132,7 @@ module.exports = class RoomModal extends Modal
     if @is_tape()
       data.public = @current_data.public
       data.cover_url = data.cover
+
       if data.cover_url.length <= 0
         data.cover_url = @current_data.cover_url
 
@@ -139,9 +154,16 @@ module.exports = class RoomModal extends Modal
 
   open_with_data: ( data ) ->
     log "[RoomModal] open_with_data", data, data.genres, data.genres.length
+
     @current_data = data
 
     @dom.addClass 'edit_modal'
+
+    # room is available when editing!
+    @room_name_available = true
+
+    @title.removeClass 'required'
+
     @title.val data.title
     @genre.add_tags data.genres
     @location.val data.location

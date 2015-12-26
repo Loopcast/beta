@@ -1,4 +1,5 @@
 tmpl = require 'templates/rooms/tapes/sidebar_favorite'
+transform   = require 'lib/cloudinary/transform'
 
 module.exports = class Sidebar
   people: {}
@@ -34,6 +35,7 @@ module.exports = class Sidebar
     @counter.html data.counter_likes
 
   on_like: ( data ) ->
+    data.thumb = transform.avatar data.avatar
     el = @dom.find( '[data-username='+data.username+']' )
     if el.length <= 0
       @list.append tmpl( data )

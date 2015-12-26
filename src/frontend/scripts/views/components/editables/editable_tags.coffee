@@ -2,19 +2,21 @@ require 'happens'
 require 'vendors/jquery.autocomplete.min.js'
 require 'vendors/jquery.tagsinput.js'
 
+notify = require 'app/controllers/notify'
 L = require '../../../api/loopcast/loopcast'
 
 module.exports = class EditableTags
   current_data: []
   ready: false
   tags: {}
-
+  tagcount  : 0
+  max_count : 5
   constructor: ( @dom ) ->
 
     happens @
 
     L.genres.all ( error, list ) =>
-      
+
       @dom.tagsInput 
         width:'auto'
         height: 'auto'
@@ -43,12 +45,23 @@ module.exports = class EditableTags
     
 
   on_add_tag: ( tag ) =>
+
+    @tagcount++
+    log "[EditableTags] on add tag", @tagcount
+    if @tagcount > @max_count
+      @dom.removeTag tag
+      log "[EditableTags] Limit reached. Tag removed"
+      notify.error 'You can add 5 tags maximum'
+      return
+
     @tags[ tag ] = true
     # log "[EditableTags] on_add_tag", tag
     @emit 'change', @get_tags()
 
 
   on_remove_tag: ( tag ) =>
+    @tagcount--
+    log "[EditableTags] on remove tag", @tagcount
     @tags[ tag ] = false
     # log "[EditableTags] on_remove_tag", tag
     @emit 'change', @get_tags()
@@ -63,7 +76,6 @@ module.exports = class EditableTags
     # log "[EditableTags] set_tags", tags
     for tag of @tags
       # log "[EditableTags] tag removed", tag
-
       @dom.removeTag tag
 
     @add_tags tags

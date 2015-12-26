@@ -9,7 +9,9 @@ module.exports =
 
     handler: ( req, reply ) ->
 
-      ip   = req.payload.data.requestHeaders.host
+      # console.log 'request ->', req.payload.data.requestHeaders
+
+      ip   = req.payload.data.remoteAddress.split( ":" )[3]
 
       path = req.payload.data.path
       path = path.split( '/' )[2]
@@ -56,16 +58,14 @@ module.exports =
 
           # count one less listener
           redis_key = "#{room._id}:listeners"
-          redis.decr redis_key, ( error, value ) ->
-
-            console.log "listened removed for #{username}/#{room_slug}"
+          redis.incr redis_key, ( error, value ) ->
 
             value = Number value.toString()
 
-            console.log "updated redis with listener count: #{value}"
+            console.log "listened INCR for #{username}/#{room_slug} = #{value}"
 
             message = 
               type     : "listeners"
-              listeners: value
+              listeners: Math.max( value, 0 )
 
             sockets.send room._id, message

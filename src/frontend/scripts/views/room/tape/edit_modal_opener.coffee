@@ -60,7 +60,7 @@ module.exports = class EditModalOpener
         public: tape.public
         cover_url: tape.cover_url  
 
-    output.cover_url ?= "/images/default_room_cover.jpg" 
+    # output.cover_url ?= "/images/default_room_cover.jpg" 
 
     return output
 
@@ -79,8 +79,8 @@ module.exports = class EditModalOpener
         genres    : data.genres
         is_public : true
 
-      if output.cover_url.length <= 0
-        output.cover_url = "/images/default_room_cover.jpg" 
+      # if output.cover_url.length <= 0
+      #   output.cover_url = "/images/default_room_cover.jpg" 
 
     return output
 
