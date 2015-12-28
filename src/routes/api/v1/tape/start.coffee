@@ -108,6 +108,7 @@ module.exports =
                 path    : "http://cdn.audiopump.co/loopcast-staging/#{username}_#{room.info.slug}"
                 tape    : doc._id.toString()
                 title   : room.info.slug
+                username: username
 
             if s.is_beta
               data.form.path = "http://cdn.audiopump.co/loopcast/#{username}_#{room.info.slug}"
