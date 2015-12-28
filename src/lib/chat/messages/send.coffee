@@ -5,7 +5,6 @@ module.exports = ( room_id, data, callback ) ->
 
   data.message = escape data.message
 
-  # response = pusher.trigger room_subscribe_id, "message", data
   sockets.send room_id, data
 
   # save message to redis

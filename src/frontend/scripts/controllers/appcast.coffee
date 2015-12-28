@@ -163,7 +163,7 @@ appcast.start_stream = ( username, room_slug, password, device_name ) ->
     mount_point : "loopcast-staging/#{username}_#{room_slug}"
     password    : password
     port        : "80"
-    server      : 'inbound-a.cdn.audiopump.co'
+    server      : 'inbound-b.cdn.audiopump.co'
 
   if window.is_beta
     payload.mount_point = "loopcast/#{username}_#{room_slug}"

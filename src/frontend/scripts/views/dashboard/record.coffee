@@ -105,24 +105,6 @@ module.exports = class Record extends ButtonWithTimer
 
       window._gaq.push(['_trackEvent', 'AppCast Stop Recording', 'Successful', '']);
       
-      channel = pusher.subscribe "tape.#{ref.owner_id}"
-
-      unbind_all = ->
-        channel.unbind 'upload:finished', on_upload_finish
-        channel.unbind 'upload:error', on_upload_error
-
-      on_upload_finish = (file) ->
-        notify.info "File Uploaded: #{file}"
-        unbind_all()
-
-      on_upload_error = (error) ->
-        # log '[Record]on_upload_error', error
-        notify.info "Upload Error"
-        unbind_all()
-
-      channel.bind "upload:finished", on_upload_finish
-      channel.bind "upload:error"   , on_upload_error
-
   start_recording: ( from_external_event = true ) =>
 
     if from_external_event

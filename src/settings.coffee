@@ -109,11 +109,6 @@ if s.is_beta
     key: "50c73c97d2be733425b373a6bd9e26c595390e44"
     id : "uk6rn1dt"
 
-  s.pusher = 
-    appId : '115738'
-    key   : '23e67be659fc6663206d'
-    secret: 'b324ac27d8ec6f3f589a'
-
   s.tape = 
     url: 'http://tape.loopcast.fm:8001'
     ips: [ "52.16.136.56", "52.18.41.115" ] # tape servers, so we dont count listeners from here
@@ -146,11 +141,6 @@ if not s.is_beta
   s.intercom = 
     key: "0ccd5941f4f1658d00ca02e8c0cea5dca7a1e01d"
     id : "e8diaexy"
-
-  s.pusher = 
-    appId : '115735',
-    key   : 'e269699ecff3c224a612',
-    secret: '5a05943c7bf757cdd315'
 
   s.tape = 
     url: 'http://staging-tape.loopcast.fm:8001'
