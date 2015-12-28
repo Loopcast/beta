@@ -66,6 +66,12 @@ module.exports =
 
             console.log "listened INCR for #{username}/#{room_slug} = #{value}"
 
+            # reset in case went negative
+            if value < 0
+              redis.set redis_key, 1
+
+              value = 1
+
             message = 
               type     : "listeners"
               listeners: Math.max( value, 0 )
