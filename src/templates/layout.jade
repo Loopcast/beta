@@ -97,6 +97,7 @@ html
     script
       | var options   = { authEndpoint: '/api/v1/chat/auth' }
       | options  = {} // while we don't implement presence channels
+      | window.Intercom = function( event ) { console.log( event + " could not be tracked because intercom isn't loaded yet")}
       | window.intercomSettings = { app_id: "#{intercom.id}" }
       if is_beta
         | 
