@@ -238,14 +238,14 @@ class UserController
     window.intercomSettings.widget     =
       activator: '#IntercomDefaultWidget'
 
-    $.getScript '/js/intercom.js', ->
+    # $.getScript '/js/intercom.js', ->
 
-      window.Intercom 'boot', window.intercomSettings
+    window.Intercom 'boot', window.intercomSettings
 
-      delay 500, ->
-        window.Intercom 'update', window.intercomSettings
+    delay 500, ->
+      window.Intercom 'update', window.intercomSettings
 
-      # console.log 'loaded intercom with settings', window.intercomSettings
+    # console.log 'loaded intercom with settings', window.intercomSettings
 
 
     @check_guest_owner()
