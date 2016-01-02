@@ -323,8 +323,7 @@ module.exports = class Player
 
   on_audio_started: =>    
     return if @last_audio_started is @data.data._id
-
-    @last_audio_started = @data.data._id    
+  
     # if not @data?
     #   log "[Player] on_audio_started. no data. then stop", @data
     #   notify.error 'There was an error.'
@@ -342,6 +341,7 @@ module.exports = class Player
     @dom.removeClass 'loading'
 
     if @data?
+      @last_audio_started = @data.data._id 
       app.emit 'audio:started', @data.data._id
 
   on_audio_stopped: =>
