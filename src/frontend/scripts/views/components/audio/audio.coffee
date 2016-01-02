@@ -141,7 +141,7 @@ module.exports = class AudioElement
     return if not @data.is_recorded
 
     
-    # log "[Audio] snap_to", perc, @duration * perc
+    log "[Audio] snap_to", perc, @duration * perc
 
     @snapping = true
     @dom[0].currentTime = @duration * perc
@@ -182,6 +182,6 @@ module.exports = class AudioElement
     @last_time = time
 
 
-
+    log "audio progress", "time", data.time, "perc", data.perc, "curr", @dom[0].currentTime, "dur", @duration
     @emit 'progress', data
     

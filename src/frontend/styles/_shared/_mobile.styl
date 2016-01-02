@@ -484,7 +484,7 @@ body
         margin: 0
       .player_time
         text-align: center
-        padding-right: 10px
+        // padding-right: 10px
         
     .mobile_dropdown
       position: fixed
@@ -724,11 +724,13 @@ body
       .player_progress
         flex: 1
         display: block
-        margin: 7px 11px 0
+        margin: 11px 11px 0
         
       .player_total_time
         font-size: 0.9em
         font-weight: 600
+        margin-right: 0
+        text-align: right
         
       
     .player_text
@@ -802,14 +804,21 @@ body
         text-align: center
         padding-top: 10px
         padding-left: 8px
+        position: relative
         
         &.ss-pause
           // padding-top: 9px
           padding-left: 1px
           
     .loading_spin
-      top: 10px
-          
+      top: 24px
+      position: absolute
+      left: 0
+      
+
+  #player.loading .player_button .icon
+    display: block
+    opacity: 0       
   body 
     .profile_content.chat .chat_main .chat_content
       height: 100%
