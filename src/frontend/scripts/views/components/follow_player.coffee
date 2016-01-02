@@ -2,14 +2,14 @@ tmpl = require 'client_templates/components/follow_player'
 transform = require 'lib/cloudinary/transform'
 user = require 'app/controllers/user'
 module.exports = class FollowPlayer
-
+  data : null
   constructor: ( @dom ) ->
     @dom.find( '.close_follow_player' ).on 'click', @hide
     # @dom.on 'click', '.follow_button', @hide
     user.on 'user:followed', @on_user_followed
 
   on_user_followed: ( user_id ) =>
-    if user_id is @data.user._id
+    if @data? and user_id is @data.user._id
       @hide()
 
   show: ( data ) ->
