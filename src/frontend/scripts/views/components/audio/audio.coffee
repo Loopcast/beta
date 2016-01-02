@@ -75,7 +75,7 @@ module.exports = class AudioElement
   on_started: =>
     @is_playing = true
     # @dom[0].volume = 0
-    # log "[AudioElement] [on started]"
+    log "[AudioElement] [on started]"
     @emit 'started'
 
     @check_time()

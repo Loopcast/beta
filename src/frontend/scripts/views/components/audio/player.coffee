@@ -14,6 +14,7 @@ module.exports = class Player
   last_time: ""
   data_rooms: {}
   is_dragging: false
+  last_audio_started: null
   ### 
   the map of the ids of the rooms requested (even not loaded).
   This is used to avoid multiple calls at the same time
@@ -200,6 +201,7 @@ module.exports = class Player
   the audio element.
   ###
   _play: ( room_id ) ->
+    @last_audio_started = null
     @current_room_id = room_id
 
     @open()
@@ -320,6 +322,9 @@ module.exports = class Player
     , 30000
 
   on_audio_started: =>    
+    return if @last_audio_started is @data.data._id
+
+    @last_audio_started = @data.data._id    
     # if not @data?
     #   log "[Player] on_audio_started. no data. then stop", @data
     #   notify.error 'There was an error.'
@@ -341,7 +346,7 @@ module.exports = class Player
 
   on_audio_stopped: =>
     # log "[Player] on_audio_stopped"
-
+    @last_audio_started = null
     @play_btn.removeClass( 'ss-pause' ).addClass( 'ss-play' )
 
     # @progress.css 'width', '0%'
