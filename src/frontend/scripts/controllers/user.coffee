@@ -42,12 +42,11 @@ class UserController
 
 
     api.user.status {}, (error, response) =>
-      # log "[User] checking status from the server", error, response.logged
-      
+      # error = true
+      log "[User] checking status from the server", error, response.logged
       if error or response.logged is false
-
-        emp = ->
-        @logout emp, true
+        callback = ->
+        @logout callback, true
 
       else if @is_logged()
         @_dispatch_login()
@@ -75,6 +74,8 @@ class UserController
 
     log "[UserController] user:logged", @data, data
 
+
+
     @_dispatch_login()
     
     @write_to_session()
@@ -87,16 +88,17 @@ class UserController
   ###
   logout: ( callback, disable_notify = false ) ->
 
-    # log "[UserController] logout"
+    log "[UserController] logout"
     
-    if not @is_logged() then return callback error: code: 'node_logged'
+    if not @is_logged()
+      callback?( error: code: 'node_logged' )
 
-    # log "[User] trying to logout..."
+    log "[User] trying to logout..."
 
     $.post '/api/v1/user/logout', {}, (data) =>
-      # log "[User] logout ~ success", data
+      log "[User] logout ~ success", data
 
-      Intercom('shutdown')
+      Intercom?('shutdown')
 
       mixpanel.track('User Logged out')
 

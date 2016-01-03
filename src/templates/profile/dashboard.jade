@@ -4,18 +4,18 @@
       .cell
         #appcast_not_running_balloon.balloon.appcast_not_running_balloon(data-view="components/help/balloon", data-target=".appcast_not_running_message")
           h2 Get started in less than 15s 
-          p Download and run appcast before you can select your input device.
+          p Download and run our Loopcast plugin before you can select your input device.
           ul
             li 
               | 1. 
-              a(id="download_appcast", href="#", data-mac="/download/Appcast_0.3.1_OSX.zip", data-win="/download/Appcast_0.3.1_Windows_Installer.exe" title="Download Appcast", onClick="mixpanel.track('Download Appcast');_gaq.push(['_trackEvent', 'Download Appcast', 'Download', '']);Intercom('trackEvent', 'download-appcast');") Download Appcast
-            li 2. Run Appcast (An icon will appear in your system tray)
+              a(id="download_appcast", href="#", data-mac="/download/Appcast_0.3.1_OSX.zip", data-win="/download/Appcast_0.3.1_Windows_Installer.exe" title="Download Appcast", onClick="mixpanel.track('Download Appcast');_gaq.push(['_trackEvent', 'Download Appcast', 'Download', '']);Intercom('trackEvent', 'download-appcast');") Download the plugin
+            li 2. Run the plugin (An icon will appear in your system tray)
             li 3. Select your input device below
 
           //-a.learn(href="https://loopcast.desk.com/customer/portal/articles/1507138-what-is-appcast-" target="_blank") More info
 
 
-        p.appcast_not_running_message.no_hover.button.dashboard_button.with_icon.handler Download and run Appcast 
+        p.appcast_not_running_message.no_hover.button.dashboard_button.with_icon.handler Download and run our plugin 
         .appcast_running_message.select_wrapper.input_select(data-view="dashboard/input_devices")
           a.button.dashboard_button.with_icon.handler(href="#") 
             span.text Select your input device 
