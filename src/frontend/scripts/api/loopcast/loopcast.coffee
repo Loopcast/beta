@@ -411,7 +411,7 @@ module.exports =
     socket_id: ( socket_id, callback ) ->
       request = $.put api_url + "user/socket_id/#{socket_id}"
 
-      request.error on_error "user/socket_id/#{socket_id}", callback
+      request.error on_error "user/socket_id/#{socket_id}", -> callback?()
 
       request.done ( response ) ->
         # log "[Loopcast] request done", response
