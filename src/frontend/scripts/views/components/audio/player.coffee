@@ -9,11 +9,13 @@ login_popup = require 'app/utils/login_popup'
 
 module.exports = class Player
   is_playing: false
+  loading_visible: false
   like_lock: false
   is_recorded: false
   last_time: ""
   data_rooms: {}
   is_dragging: false
+  last_audio_started: null
   ### 
   the map of the ids of the rooms requested (even not loaded).
   This is used to avoid multiple calls at the same time
@@ -41,7 +43,7 @@ module.exports = class Player
     # @dragger.on 'click', @on_progress_click
     @play_btn.on 'click', @on_play_clicked
     @like_btn.on 'click', @on_like_clicked
-    @progress_parent.find('.hitarea').on 'click', @on_progress_click
+    @progress_parent.find('.hitarea').on app.settings.events_map.up, @on_progress_click
     @dom.find( '.open_fullscreen' ).on 'click', @open_fullscreen
     @dom.find( '.close_fullscreen' ).on 'click', @close_fullscreen
     view.on 'binded', @on_views_binded
@@ -200,6 +202,7 @@ module.exports = class Player
   the audio element.
   ###
   _play: ( room_id ) ->
+    @last_audio_started = null
     @current_room_id = room_id
 
     @open()
@@ -319,7 +322,10 @@ module.exports = class Player
         @follow_popup.show obj
     , 30000
 
-  on_audio_started: =>    
+  on_audio_started: =>  
+
+    # return if @last_audio_started is @data.data._id
+  
     # if not @data?
     #   log "[Player] on_audio_started. no data. then stop", @data
     #   notify.error 'There was an error.'
@@ -334,14 +340,15 @@ module.exports = class Player
 
     # @loading.fadeOut()
     # log "[Player] loading hide"
-    @dom.removeClass 'loading'
+    @hide_loading()
 
     if @data?
+      @last_audio_started = @data.data._id 
       app.emit 'audio:started', @data.data._id
 
   on_audio_stopped: =>
     # log "[Player] on_audio_stopped"
-
+    @last_audio_started = null
     @play_btn.removeClass( 'ss-pause' ).addClass( 'ss-play' )
 
     # @progress.css 'width', '0%'
@@ -369,12 +376,15 @@ module.exports = class Player
 
     delay 100, => @progress.show()
 
-  on_snapped: ->
+  on_snapped: =>
     # log "[Player] loading hide"
-    @dom.removeClass 'loading'
+    @hide_loading()
 
   on_progress: (data) =>
     return if @is_dragging
+
+    @hide_loading()
+    log "progress width", data.perc + "%"
     @time.html data.time.str
     @progress.css 'width', data.perc + '%'
 
@@ -391,7 +401,7 @@ module.exports = class Player
   on_progress_ended: (perc) =>
     @progress.removeClass 'dragging'
     # log "[xxx] dragging", perc
-    # log "[Player] on_progress_ended() perc", perc
+    log "[Player] on_progress_ended() perc", perc
     # @dom.addClass 'loading'
     # @audio.snap_to perc/100
 
@@ -401,18 +411,15 @@ module.exports = class Player
 
 
   on_progress_click: (e) =>
-    # log "[Player] on_progress_click() at first"
+    log "[Player] on_progress_click() at first"
     return if not @audio.data.is_recorded
-    # return if @is_dragging
-    x = e.offsetX
+
+    x = if e.offsetX? then e.offsetX else e.originalEvent.layerX
     w = $(e.currentTarget).width()
     perc = x / w
-
-    # log "[Player] on_progress_click() loading show"
-    @dom.addClass 'loading'
+    log "[Player] on_progress_click()", e, "offset", x, "w", w, "%", perc
+    @show_loading()
     @audio.snap_to perc
-
-    return false
 
   close: ->
     app.body.removeClass 'player_visible'
@@ -421,10 +428,19 @@ module.exports = class Player
   open: =>
     app.body.addClass 'player_visible'
     # log "[Player] open() loading show"
-    @dom.show().addClass( 'loading' )
+    @dom.show()
+    @show_loading()
     delay 1, => @dom.addClass 'visible'
 
+  show_loading: ->
+    if not @loading_visible
+      @dom.addClass 'loading'
+      @loading_visible = true
 
+  hide_loading: ->
+    if @loading_visible
+      @dom.removeClass 'loading'
+      @loading_visible = false
 
   open_fullscreen: =>
     @dom.addClass 'fullscreen'
