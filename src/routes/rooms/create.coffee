@@ -22,10 +22,10 @@ module.exports =
 
     handler: ( req, reply )->
 
-      # if not req.auth.isAuthenticated
-      #   reply.redirect '/'
+      if not req.auth.isAuthenticated
+        reply.redirect '/'
         
-      #   return
+        return
 
       # TODO: check if the user is authenticated
 
