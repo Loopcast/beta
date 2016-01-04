@@ -22,6 +22,11 @@ module.exports =
 
     handler: ( req, reply )->
 
+      if not request.auth.isAuthenticated
+        reply.redirect '/'
+        
+        return
+
       # TODO: check if the user is authenticated
 
       url = '/profile/room'

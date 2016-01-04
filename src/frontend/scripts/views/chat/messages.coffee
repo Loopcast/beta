@@ -105,7 +105,7 @@ module.exports = class Messages extends ChatView
     if data.payload?.like
       obj.like = true
 
-    log "[Messages] on_message", data, @owner_id, obj
+    # log "[Messages] on_message", data, @owner_id, obj
 
     html = @tmpl obj
       
