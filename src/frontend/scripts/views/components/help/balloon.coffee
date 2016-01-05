@@ -3,8 +3,10 @@ module.exports = class Balloon
   orientation: "left"
   width: 0
   dom_offset: 0
+
   constructor: ( @dom ) ->
     @target = $ @dom.data( 'target' )
+
     if @dom.data 'orientation'
       @orientation = @dom.data 'orientation'
 
@@ -33,9 +35,10 @@ module.exports = class Balloon
   on_resize: =>
 
     @offset = @dom.outerHeight() + @target.outerHeight() - 10
-    @width = @dom.width()
+    @width  = @dom.width()
 
     p = @target.offset()
+    
     data = 
       'top': p.top - @offset
 
