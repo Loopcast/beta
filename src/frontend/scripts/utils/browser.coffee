@@ -83,13 +83,6 @@ BrowserDetect =
 			identity: "Mozilla"
 			versionSearch: "rv"
 		}
-		{
-			# for older Netscapes (4-)
-			string: navigator.userAgent
-			subString: "Mozilla"
-			identity: "Netscape"
-			versionSearch: "Mozilla"
-		}
 	]
 	dataOS: [
 		{
