@@ -1,5 +1,25 @@
 BrowserDetect = require 'app/utils/browser'
 
+detectIE = ->
+  ua = window.navigator.userAgent
+  msie = ua.indexOf('MSIE ')
+  if msie > 0
+    # IE 10 or older => return version number
+    return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10)
+  trident = ua.indexOf('Trident/')
+  if trident > 0
+    # IE 11 => return version number
+    rv = ua.indexOf('rv:')
+    return parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10)
+  edge = ua.indexOf('Edge/')
+  if edge > 0
+    # Edge (IE 12+) => return version number
+    return parseInt(ua.substring(edge + 5, ua.indexOf('.', edge)), 10)
+  # other browser
+  false
+  
+
+
 settings = 
 
 	# Browser id, version, OS
@@ -56,6 +76,12 @@ settings =
 
 	# Webp support
 	webp: false
+
+is_ie = detectIE()
+if is_ie
+	settings.browser.id = "Explorer"
+	settings.browser.version = is_ie
+
 
 settings.theme = "desktop"
 settings.threshold_theme = 700
@@ -179,6 +205,7 @@ has3d = ->
 
 
 settings.bind = (body)->
+
 	klasses = []
 	klasses.push settings.browser_class
 	klasses.push settings.browser.OS.replace( '/', '_' )
