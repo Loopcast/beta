@@ -23,6 +23,9 @@ counter =
   limit  : 0
   silence: 0
 
+socket_options =
+  reconnectInterval   : 100
+  maxReconnectInterval: 1500
 
 appcast.set 'connected', false
 # reset VU from the start
@@ -40,7 +43,7 @@ appcast.connect = ->
 
   messages_socket = 'ws://127.0.0.1:51234/loopcast/messages'
 
-  appcast.messages = new v.ReconnectingWebsocket messages_socket
+  appcast.messages = new v.ReconnectingWebsocket messages_socket, null, socket_options
 
   appcast.messages.onopen = ->
     console.info '- socket controller connection opened'
@@ -90,7 +93,7 @@ appcast.connect = ->
 
 
   vu_socket = 'ws://127.0.0.1:51234/loopcast/vu'
-  appcast.vu = new v.ReconnectingWebsocket vu_socket
+  appcast.vu = new v.ReconnectingWebsocket vu_socket, null, socket_options
 
   appcast.vu.onopen = ->
     console.info '- socket VU connection opened'
@@ -198,6 +201,21 @@ appcast.stop_stream = ->
 appcast.get_version = ->
 
   appcast.messages.send JSON.stringify [ "version" ]
+
+appcast.check = ->
+
+  success = ->
+    console.log "SUCCESS"
+    console.log arguments
+
+  error = ->
+    console.log "ERROR"
+    console.log arguments
+
+  try
+    $.get( "http://127.0.0.1:51234/" ).done( done ).error( error )
+  catch e
+    console.warn "CATHCED THE ERROR!"
 
 ###
 # callbacks are called by "messages" coming from the WebsocketServer created
