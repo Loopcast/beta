@@ -93,10 +93,11 @@ module.exports =
 
               console.error body.error
 
-              return reply body
+              reply body
             
             Room.findAndModify query, null, update, options, ( error, response ) ->
 
+              # TODO: don't reply if already replied with error
               if error then return failed request, reply, error
 
               started_at = now( response.value.status.recording.started_at )
@@ -108,12 +109,13 @@ module.exports =
                 stopped_at: update.$set['status.recording.stopped_at']
                 duration  : duration
 
-                slug      : room.info.slug
+                # slug      : room.info.slug
                 title     : room.info.title
                 genres    : room.info.genres
                 location  : room.info.location
                 about     : room.info.about
                 cover_url : room.info.cover_url
+                error     : body.error
 
               update = 'status.recording.duration': duration
 
@@ -126,10 +128,11 @@ module.exports =
               # recorded for this length
               console.log "Recorded #{duration} seconds"
 
-              # return the ROOM so the client side can show the information
-              # and also show the publish modal with the link to publish
-              # this tape
-              reply room: room
+              if not body.error?
+                # return the ROOM so the client side can show the information
+                # and also show the publish modal with the link to publish
+                # this tape
+                reply room: room
 
               update = ->
                 Tape
@@ -141,6 +144,7 @@ module.exports =
                       console.log "error updating tape document"
                       console.log error
                       
+                      # TODO: don't reply if already replied with error
                       return failed request, reply, error
 
               # if no cover, just update

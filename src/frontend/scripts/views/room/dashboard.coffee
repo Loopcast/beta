@@ -33,7 +33,7 @@ module.exports = class Dashboard extends RoomView
     @record_button = view.get_by_dom @dom.find( '#record_button' )
     @live_button.on 'changed', @on_live_changed
     @record_button.on 'changed', @on_record_changed
-    @share = view.get_by_dom @dom.find( '#share_dashboard' )
+    @share     = view.get_by_dom @dom.find( '#share_dashboard' )
     @room_view = view.get_by_dom '.createroom'
 
 
@@ -49,10 +49,13 @@ module.exports = class Dashboard extends RoomView
 
 
     @balloons = 
-      appcast: view.get_by_dom( '#appcast_not_running_balloon' )
-      record: view.get_by_dom( '#record_balloon' )
+      appcast          : view.get_by_dom( '#appcast_not_running_balloon' )
+      record           : view.get_by_dom( '#record_balloon' )
       live_instructions: view.get_by_dom( '#go_live_instructions' )
-      dashboard_help: view.get_by_dom( '#dashboard_help_balloon' )
+      dashboard_help   : view.get_by_dom( '#dashboard_help_balloon' )
+
+    if not @balloons.appcast
+      console.error "INSTRUCTIONS: ERROR FINDING APPCAST INSTRUCTIONS BALLON"
 
     @device_change_count = 0
 
@@ -88,8 +91,10 @@ module.exports = class Dashboard extends RoomView
 
     if app.settings.browser.OS is 'Mac'
       download.attr 'href', ( download.data( 'mac' ) )
+      $( "li.win" ).hide()
     else
       download.attr 'href', ( download.data( 'win' ) )
+      $( "li.osx" ).hide()
 
 
 
@@ -116,12 +121,14 @@ module.exports = class Dashboard extends RoomView
 
 
     if app.session.get( 'hide:dashboard_help' ) and @device_change_count >= 2
+
       @balloons.dashboard_help.hide()
     
       if not app.session.get( 'hide:help' )
         @balloons.live_instructions.show()
 
   toggle_not_running_balloon: =>
+    console.info "INSTRUCTIONS: TOGGLING"
     @balloons.appcast.toggle()
 
   on_live_changed: ( data ) =>
@@ -156,6 +163,8 @@ module.exports = class Dashboard extends RoomView
     # log "[Dashboard] on_appcast_running"
     @dom.addClass( 'appcast_running' ).removeClass( 'appcast_not_running' )
     @meter.activate()
+
+    console.info "INSTRUCTIONS: HIDING"
     @balloons.appcast.hide()
     
     # Show dashboard_help balloon only for the first time
@@ -169,6 +178,8 @@ module.exports = class Dashboard extends RoomView
     @dom.removeClass( 'appcast_running' ).addClass( 'appcast_not_running' )
 
     @meter.deactivate()
+
+    console.info "INSTRUCTIONS: SHOW"
     @balloons.appcast.show()
 
 
