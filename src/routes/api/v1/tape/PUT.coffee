@@ -65,7 +65,7 @@ module.exports =
           
           if payload.title?.length
             update.title = payload.title
-            update.slug  = slug payload.title.toLowerCase()
+            # update.slug  = slug payload.title.toLowerCase()
 
           if payload.location?.length
             update.location = payload.location
@@ -119,7 +119,7 @@ module.exports =
 
                 return reply Boom.preconditionFailed( "Database error" )
 
-              tape.slug = update[ 'info.slug' ] || tape.slug
+              # tape.slug = update[ 'info.slug' ] || tape.slug
               
               url = "#{s.base_path}/#{tape.user.info.username}/r/#{tape.slug}"
 
