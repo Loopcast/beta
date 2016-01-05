@@ -64,6 +64,11 @@ module.exports =
 
             console.log "listened DECR for #{username}/#{room_slug} = #{value}"
 
+            if value < 0
+              redis.set redis_key, 0
+
+              value = 0
+
             message = 
               type     : "listeners"
               listeners: Math.max( 0, value )
