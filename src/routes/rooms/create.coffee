@@ -22,7 +22,7 @@ module.exports =
 
     handler: ( req, reply )->
 
-      if not request.auth.isAuthenticated
+      if not req.auth.isAuthenticated
         reply.redirect '/'
         
         return

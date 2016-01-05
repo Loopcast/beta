@@ -350,15 +350,6 @@ module.exports =
         
   user:
 
-    is_available: ( username, callback ) ->
-      request = $.get api_url + "user/#{username}/is_available"
-
-      request.error on_error "user/#{username}/is_available", callback
-
-      request.done ( response ) ->
-
-        callback null, response
-
     info: ( user_id, callback ) ->
 
       if not user_id?
