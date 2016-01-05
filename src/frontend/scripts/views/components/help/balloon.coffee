@@ -31,6 +31,10 @@ module.exports = class Balloon
 
 
   on_resize: =>
+
+    @offset = @dom.outerHeight() + @target.outerHeight() - 10
+    @width = @dom.width()
+
     p = @target.offset()
     data = 
       'top': p.top - @offset
@@ -59,9 +63,7 @@ module.exports = class Balloon
     app.window.on 'resize', @on_resize
     @dom.addClass 'to_show'
 
-    delay 1, =>
-      @offset = @dom.outerHeight() + @target.outerHeight() - 10
-      @width = @dom.width()
+    delay 10, =>
       @on_resize()
       @dom.addClass 'show'
 
