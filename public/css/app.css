@@ -1589,12 +1589,16 @@ body.room_page .dynamic_wrapper > div {
   font-family: 'Open Sans', sans-serif;
 }
 
-/* line 433 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/_shared/_ui.styl */
+/* line 432 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/_shared/_ui.styl */
+.explorer textarea {
+  overflow: auto;
+}
+
+/* line 434 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/_shared/_ui.styl */
 input,
 textarea,
 div.tagsinput {
   display: block;
-  overflow: auto;
   border: none;
   background: #dedede;
   color: #1f1f1f;
@@ -2661,7 +2665,7 @@ div.tagsinput.link_input {
 
 /* line 82 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/_shared/_ui.styl */
 
-/* line 1052 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/_shared/_tags.styl */
+/* line 1056 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/_shared/_tags.styl */
 
 /* line 1 : /Users/ortisiltd/Code/Sites/others/loopcast.fm/src/frontend/styles/_shared/_tags.styl */
 
