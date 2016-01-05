@@ -291,7 +291,7 @@ module.exports = class Room extends LoggedView
         if not user = user_by_socket( socket_id )
 
           # check if the user is myself
-          if socket_id is socket.id
+          if socket_id is socket.id and user?
 
             user = 
               id        : user_controller.data._id

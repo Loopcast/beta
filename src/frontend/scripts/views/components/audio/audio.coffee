@@ -181,7 +181,5 @@ module.exports = class AudioElement
 
     @last_time = time
 
-
-    log "audio progress", "time", data.time, "perc", data.perc, "curr", @dom[0].currentTime, "dur", @duration
     @emit 'progress', data
     
