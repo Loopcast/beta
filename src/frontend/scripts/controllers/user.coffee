@@ -218,6 +218,9 @@ class UserController
     # Subscribe to the user channel
     socket.subscribe @data._id # or room_id
 
+    # identify user on google analytics
+    window.ga( 'set', 'userId', data._id )
+
     socket.on @data._id, ( data ) =>
       # log "[User]getting message from socket:", data
 
