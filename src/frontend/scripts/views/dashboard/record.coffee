@@ -83,10 +83,10 @@ module.exports = class Record extends ButtonWithTimer
 
       if response.error
 
-        console.error "ERROR ON STOP RECORDING!!!"
+        notify.error "There was a problem recording your tape, please contact the support"
+        
         console.error "ERROR ON STOP RECORDING!!!"
         console.log response
-        return
 
       ref.tape_id = response.room.recording
 
@@ -97,7 +97,7 @@ module.exports = class Record extends ButtonWithTimer
         appcast.stop_stream()
 
       if error
-        notify.error "Error while stopping recording"
+        
 
         window._gaq.push(['_trackEvent', 'AppCast Stop Recording', 'Failed', '']);
 
