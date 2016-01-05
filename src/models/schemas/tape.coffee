@@ -32,6 +32,9 @@ schema = new Schema
   # true if the user deleted the tape from this profile
   deleted    : { type: Boolean, default: false }
 
+  # true if there was an error when stop recording
+  error    : Object
+
   started_at : Date
   stopped_at : Date
   duration   : Number
