@@ -282,12 +282,13 @@ block content
                   .genres
                     
                     - counter = 0
-                    for genre in room.genres
-                      if genre.length > 0
-                        - klass = ""
-                        if counter++ >= 5
-                          - klass = "hide"
-                        a.tag(href="/explore?genres=#{genre}", title="#{genre}", class="#{klass}") #{genre}
+                    if room.genres
+                      for genre in room.genres
+                        if genre.length > 0
+                          - klass = ""
+                          if counter++ >= 5
+                            - klass = "hide"
+                          a.tag(href="/explore?genres=#{genre}", title="#{genre}", class="#{klass}") #{genre}
 
                     if room.genres.length > 5
                       span ...
