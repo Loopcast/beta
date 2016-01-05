@@ -19,6 +19,7 @@ mobile_list_item()
   
 
 
+
 .mobile_headphones
   margin-top: 10px
   &.room
@@ -129,8 +130,10 @@ body
   BLACK_TAPE_MOBILE = #292826
   TAPE_PADDING = 20px
   
+    
   body .tape_view .tape_title
     font-size: 1.8rem
+  body .profile_theme.show_play_button .tape_play
   .tape_view .main_column .first_line .buttons .custom-fb-send
     display: none
     
@@ -510,9 +513,9 @@ body
         bottom: 10px
         right: 67px
       .cover 
-        height: 184px
+        height: 230px
         .name, .type, .genres, .socials_room
-          margin-left: MARGIN_LEFT
+          margin-left: 10px !important
         .upload_element
           display: none
         .cloudinary_form
@@ -541,6 +544,7 @@ body
         display: none
       .big_number span.number
         font-size: 1rem
+      
         
       .profile_content
         display: block

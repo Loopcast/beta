@@ -384,7 +384,6 @@ module.exports = class Player
     return if @is_dragging
 
     @hide_loading()
-    log "progress width", data.perc + "%"
     @time.html data.time.str
     @progress.css 'width', data.perc + '%'
 
