@@ -55,6 +55,7 @@ module.exports = ( username, show_private, callback ) ->
             user   : user._id
             deleted: false
             public : true
+            s3     : $exists: true
 
           # if show private, then show all rooms, including
           # the not public ones
