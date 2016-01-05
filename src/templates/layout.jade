@@ -88,7 +88,8 @@ html
     //- and in this case it's better to defined __gaq inline, so we avoid
     //- this problem
     script
-      | var _gaq = [];
+      //- quickfix for people with adblocker
+      | if( !_gaq ) _gaq = []
 
 
     //- update socket.io js version when updating package.json
