@@ -1,4 +1,6 @@
 mongoose = require( 'mongoose')
+SlugHero = require('mongoose-slug-hero')
+
 Schema   = mongoose.Schema
 
 schema = new Schema
@@ -11,7 +13,7 @@ schema = new Schema
   room      : type: Schema.Types.ObjectId, ref: 'Stream'
 
   # slug used as the recording URL
-  slug      : type: String
+  # slug      : type: String
 
   title     : type: String
   genres    : type: Array
@@ -37,6 +39,8 @@ schema = new Schema
   # s3 information which comes back from the tape recorder
   s3         : Object
 
+
+schema.plugin SlugHero, doc: 'tape', field: 'title', scope: ['user']
 
 module.exports = mongoose.model 'Tape', schema
 

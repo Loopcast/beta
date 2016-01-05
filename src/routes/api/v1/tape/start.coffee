@@ -40,7 +40,7 @@ module.exports =
         user : user_id
 
       Room.findOne( query )
-        .select( "_id user info recording" )
+        .select( "_id user info.slug info.title recording" )
         .lean()
         .exec ( error, room ) -> 
 
@@ -61,10 +61,8 @@ module.exports =
 
           # creating new recording document
           doc = 
-            user: user_id
-            room: room_id
-
-            slug      : room.info.slug
+            user      : user_id
+            room      : room_id
             title     : room.info.title
             genres    : room.info.genres
             location  : room.info.location

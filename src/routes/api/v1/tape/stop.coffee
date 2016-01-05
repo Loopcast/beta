@@ -108,7 +108,7 @@ module.exports =
                 stopped_at: update.$set['status.recording.stopped_at']
                 duration  : duration
 
-                slug      : room.info.slug
+                # slug      : room.info.slug
                 title     : room.info.title
                 genres    : room.info.genres
                 location  : room.info.location
