@@ -57,8 +57,12 @@ module.exports = class Balloon
     
     data.left += @dom_offset
     
-    # log "[Balloon] resize", "top", data.top, "left", data.left, "orientation", @orientation, "t top", p.top, "t left", p.left, "width", @width, "dom offset", @dom_offset
-    @dom.css data
+    log "[Balloon] resize", "top", data.top, "left", data.left, "orientation", @orientation, "t top", p.top, "t left", p.left, "width", @width, "dom offset", @dom_offset
+
+    if data.left < 0
+      delay 500, => @on_resize()
+    else
+      @dom.css data
 
   show: ->
     # log "[Balloon] show!"
