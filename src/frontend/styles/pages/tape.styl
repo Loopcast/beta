@@ -186,9 +186,10 @@ body.tape_view
     border: 1px solid OUTLINE_COLOR
     border-top-right-radius: 3px
     
-  .tape_inner
+  OFFSET = 368px + 49px
+  .tape_inner, .tape_view .main_column
     position: relative
-    height: calc(100vh - 368px - 49px)
+    min-height: "calc(100vh - %s)" % OFFSET
   .main_column
     height: 100%
     .first_line
