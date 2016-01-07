@@ -14,7 +14,7 @@ start:
 	# DEBUG=app:* GIT_BRANCH=$(BRANCH) $(NODEMON) --debug --watch . -e coffee,jade ./src/app.coffee
 
 	# without remote debug
-	DEBUG=app:* GIT_BRANCH=$(BRANCH) $(NODEMON)	--watch . --ignore ./src/frontend/ -e coffee,jade ./src/app.coffee
+	DEBUG=app:* GIT_BRANCH=$(BRANCH) $(NODEMON)	--watch . --ignore ./src/frontend/ --ignore ./src/templates/ -e coffee,jade ./src/app.coffee
 
 # install modules and forks needed to compile frontend code
 setup:
