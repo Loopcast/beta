@@ -89,30 +89,43 @@ module.exports = class FollowButton
       @check_following()
 
   on_user_unfollow: (user_id) =>
-    # log "[Follow] on_user_unfollow", user_id, @user_id
     return if user_id isnt @user_id
+    log "[Follow] on_user_unfollow", user_id, @user_id
 
-    # log "[FollowButton] unfollow", @user_id
-    @dom.removeClass( 'following' ).html( 'Follow' )
-    @is_following = false  
+    @set_state false
 
   on_user_follow: (user_id) =>
-    # log "[Follow] on_user_follow", user_id, @user_id
     return if user_id isnt @user_id
+    log "[Follow] on_user_follow", user_id, @user_id
 
-    @dom.addClass( 'following' ).html( 'Unfollow' )
-    @is_following = true
+    @set_state true
 
 
   unfollow: ->
     # log "[FollowButton] unfollow"
     user.unfollow @user_id
+    @set_state false
 
   follow: ->
     # log "[FollowButton] follow", @user_id
     user.follow @user_id
+    @set_state true
 
+  ###
+  set the appearance of the dom element
+  state = true # followed
+  state = false # unfollowed
+  ###
+  set_state: ( state ) ->
 
+    return if @is_following is state
+
+    if state
+      @dom.addClass( 'following' ).html( 'Unfollow' )
+    else
+      @dom.removeClass( 'following' ).html( 'Follow' )
+
+    @is_following = state
   
 
   destroy: ->
