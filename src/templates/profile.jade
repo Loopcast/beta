@@ -290,7 +290,7 @@ block content
                             - klass = "hide"
                           a.tag(href="/explore?genres=#{genre}", title="#{genre}", class="#{klass}") #{genre}
 
-                    if room.genres.length > 5
+                    if ( room.genres && room.genres.length > 5 )
                       span ...
                     
                   .small_info
