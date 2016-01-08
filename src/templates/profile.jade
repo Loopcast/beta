@@ -159,7 +159,7 @@ block content
 
 
       - klass = "no_sessions"
-      if rooms.length || tapes.length
+      if ( rooms && rooms.length ) || tapes.length
         - klass = ""
 
       .list_sessions(class="#{klass}", data-view="profile/sets")
