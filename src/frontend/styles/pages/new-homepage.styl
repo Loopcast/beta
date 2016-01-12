@@ -1,0 +1,70 @@
+.new_homepage_page
+  
+  h1, h2
+    font-family 'Montserrat', sans-serif
+    
+  h1
+    font-size 4rem
+    
+  h1, h2, p, li
+    color white
+    
+  li
+    list-style disc
+    
+  .row
+    min-height 650px
+    padding 0 10px
+    background-size fill
+    background-repeat no-repeat
+    background-position center center
+
+    &.convenient
+      background-image url("../images/landing_img2.jpg")
+      
+    &.refined
+      background-image url("../images/landing_img3.jpg")
+      
+    &.join
+      min-height auto
+      
+
+  // First row
+  .intro
+    padding-top 45px
+    background-image url("../images/landing_img1.jpg")
+    
+    h1
+      font-size 2.31rem
+
+    p
+      font-size 1.31rem
+      line-height 2.8125rem
+      padding-bottom 40px
+      
+    .button
+      padding 0
+      text-transform uppercase
+      font-size 1.1875em
+      line-height 3.5rem
+      height auto
+
+    .stream
+      display none
+      
+    .listen
+      border: 2px solid white
+      background-color rgba(255,255,255,0.46)
+      border-radius 30px
+      
+
+// Tablet
+@media (min-width: 700px)
+  .intro
+    
+    h1
+      font-size 4rem
+
+    p
+      font-size 2rem
+      line-height 2.8125rem

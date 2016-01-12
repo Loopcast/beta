@@ -1,1 +1,50 @@
-h1 hello boy
+block seo
+  title Loopcast - Real Time Music 
+  meta( name="description" content="Stream, record and share your DJ mixes instantly. Go live, interact with your audience and see who’s listening in real time." )
+  meta( property="og:url" content="#{s.base_path}" )
+  meta( property="og:title" content="Loopcast | Real Time Music" )
+  meta( property="og:description" content="Stream, record and share your DJ mixes instantly. Go live, interact with your audience and see who’s listening in real time." )
+  meta( name="twitter:title" content="Loopcast | Real Time Music")
+  meta( name="twitter:description" content="Stream, record and share your DJ mixes instantly. Go live, interact with your audience and see who’s listening in real time.")  
+
+extends layout
+
+block content
+  .new-homepage(data-menu="new_homepage")
+    .row.intro
+      .centered
+        h1 Real. Time. Music.
+        
+        p 
+          | Stream, record and share your DJ mixes instantly.
+          br 
+          | Go live, interact with your audience and see your listeners in real time.
+
+        .buttons
+          a.button.yellow_rounded.stream(href="/rooms/create" title="Create Live Room", data-view="components/logged_link", onClick="mixpanel.track('Start Streaming');_gaq.push(['_trackEvent', 'Start Streaming', 'Click', '']);Intercom('trackEvent', 'start-streaming');") Start Streaming
+          a.button.listen(href="/explore", title="Explore live music", onClick="mixpanel.track('Explore');_gaq.push(['_trackEvent', 'Explore', 'Click', '']);") Listen
+
+    .row.convenient
+      .text
+        h2 Convenient and easy for DJs
+        ul
+          li Use any third party software or hardware
+          li Broadcast right from your browser
+          li Upload or record your mixes in real time 
+      .img-container
+
+    .row.refined
+      .text
+        h2 A refined listening experience
+        ul
+          li Be notified when your favorite DJs go live
+          li Chat with the DJ and other listeners
+          li Save your favorite mixes for later
+
+      .img-container
+
+      a.login_link(
+        title="Log In", 
+        data-view="components/login_popup_handler",
+        href="#"
+      ) Join now
