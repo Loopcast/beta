@@ -13,11 +13,38 @@
     list-style disc
     
   .row
-    min-height 650px
-    padding 0 10px
+    height 100vh
+    padding 45px 10px 0
     background-size fill
     background-repeat no-repeat
     background-position center center
+    // background-attachment fixed
+    
+    h1, h2
+      font-size 2.11rem
+
+    p
+      font-size 1.31rem
+      line-height 2.8125rem
+      padding 20px 0 40px
+      
+    .button
+      padding 0
+      text-transform uppercase
+      font-size 1.1875em
+      line-height 3.5rem
+      height auto
+      border: 2px solid white
+      background-color rgba(255,255,255,0.46)
+      border-radius 30px
+      
+    h2
+      padding-bottom 24px
+
+    li
+      font-size 1.0625em
+      line-height 2.47rem
+      margin 1rem 0
 
     &.convenient
       background-image url("../images/landing_img2.jpg")
@@ -31,40 +58,45 @@
 
   // First row
   .intro
-    padding-top 45px
     background-image url("../images/landing_img1.jpg")
-    
-    h1
-      font-size 2.31rem
-
-    p
-      font-size 1.31rem
-      line-height 2.8125rem
-      padding-bottom 40px
-      
-    .button
-      padding 0
-      text-transform uppercase
-      font-size 1.1875em
-      line-height 3.5rem
-      height auto
 
     .stream
       display none
       
-    .listen
-      border: 2px solid white
-      background-color rgba(255,255,255,0.46)
-      border-radius 30px
+
+  // Third row
+  .refined
+    .button
+      margin-top 40px
+      text-transform none
       
+
+// Small phones
+@media (max-height: 480px)
+  .new_homepage_page
+    .row
+      h1, h2
+        font-size 1.6rem
+      p
+        font-size 1rem
+        line-height 1.8rem
+      li
+        line-height 2rem
+        margin-bottom 1rem
+        
+      .button
+        font-size 1rem
+        line-height 2.5rem
+
 
 // Tablet
 @media (min-width: 700px)
-  .intro
-    
-    h1
-      font-size 4rem
+  .new_homepage_page
+    .intro
+      
+      h1
+        font-size 4rem
 
-    p
-      font-size 2rem
-      line-height 2.8125rem
+      p
+        font-size 2rem
+        line-height 2.8125rem
