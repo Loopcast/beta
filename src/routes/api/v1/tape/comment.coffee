@@ -53,7 +53,7 @@ module.exports =
       reply( sent: true ).header "Cache-Control", "no-cache, must-revalidate"
 
       Tape
-        .findOne( _id = tape_id )
+        .findOne( _id : tape_id )
         .select( "slug user" )
         .populate( "user", "_id info.username" )
         .lean().exec ( error, tape ) ->

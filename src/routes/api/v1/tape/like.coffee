@@ -44,7 +44,7 @@ module.exports =
         reply respose
 
       Tape
-        .findOne( _id = tape_id )
+        .findOne( _id : tape_id )
         .select( "slug user" )
         .populate( "user", "_id info.username" )
         .lean().exec ( error, tape ) ->
