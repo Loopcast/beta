@@ -57,6 +57,10 @@ module.exports = class SidebarRight extends RoomView
     @update_listeners data.total
 
   update_listeners: ( total ) ->
+
+    if isNaN( total ) or Number( total ) < 0
+      total = 0
+      
     @stats.listeners = total
     # @listeners.html total
 
