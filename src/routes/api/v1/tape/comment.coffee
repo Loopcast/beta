@@ -55,7 +55,7 @@ module.exports =
       Tape
         .findOne( _id = tape_id )
         .select( "slug user" )
-        .populate( "user", "_id info.slug" )
+        .populate( "user", "_id info.username" )
         .lean().exec ( error, tape ) ->
 
           set_commented user.name, tape.slug, tape.user
