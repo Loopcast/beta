@@ -44,7 +44,8 @@ schema.pre 'save', ( next, done ) ->
         
         doc.invalidate 'url', 'cant like it before unlike it'
 
-        return done new Error( 'already_liked' )
+        console.log 'already liked that item'
+        return done( 'already liked that item' )
 
       next()
 
