@@ -33,7 +33,13 @@ DARK_PERCENTAGE = 5
     color #404040
     border-color #CED0D0
     background-color #fff
-
+    
+  &.white_transparent_border
+    border: 2px solid white
+    background-color rgba(255,255,255,0.46)
+    border-radius 30px
+    &:hover
+      border-radius 64px !important
     
   &.red_button
     background: RED
@@ -83,7 +89,10 @@ DARK_PERCENTAGE = 5
     text-transform uppercase
     color white
     line-height 4rem
-    border-radius 64px 
+    border-radius 64px
+    background-color YELLOW
+    &:hover
+      border-radius 64px !important
   
   &.white_button
     background: white

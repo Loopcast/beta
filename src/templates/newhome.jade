@@ -22,7 +22,7 @@ block content
 
         .buttons
           a.button.yellow_rounded.stream(href="/rooms/create" title="Create Live Room", data-view="components/logged_link", onClick="mixpanel.track('Start Streaming');_gaq.push(['_trackEvent', 'Start Streaming', 'Click', '']);Intercom('trackEvent', 'start-streaming');") Start Streaming
-          a.button.listen(href="/explore", title="Explore live music", onClick="mixpanel.track('Explore');_gaq.push(['_trackEvent', 'Explore', 'Click', '']);") Listen
+          a.button.listen.white_transparent_border(href="/explore", title="Explore live music", onClick="mixpanel.track('Explore');_gaq.push(['_trackEvent', 'Explore', 'Click', '']);") Listen
 
     .row.convenient
       .text
@@ -43,7 +43,7 @@ block content
 
       .img-container
 
-      a.button(
+      a.button.white_transparent_border(
         title="Log In", 
         data-view="components/login_popup_handler",
         href="#"

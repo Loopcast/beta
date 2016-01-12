@@ -15,7 +15,7 @@
   .row
     height 100vh
     padding 45px 10px 0
-    background-size fill
+    background-size cover
     background-repeat no-repeat
     background-position center center
     // background-attachment fixed
@@ -34,9 +34,6 @@
       font-size 1.1875em
       line-height 3.5rem
       height auto
-      border: 2px solid white
-      background-color rgba(255,255,255,0.46)
-      border-radius 30px
       
     h2
       padding-bottom 24px
@@ -89,9 +86,14 @@
         line-height 2.5rem
 
 
-// Tablet
+// Tablet and up
 @media (min-width: 700px)
   .new_homepage_page
+    
+    .row
+      height auto
+      min-height 600px
+
     .intro
       
       h1
@@ -100,3 +102,15 @@
       p
         font-size 2rem
         line-height 2.8125rem
+        
+      .buttons
+        width 580px
+        margin 0 auto
+
+      .button
+        display inline-block
+        width 272px
+        float left
+        
+        &.listen
+          float right
