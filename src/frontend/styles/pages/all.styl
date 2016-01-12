@@ -1,5 +1,13 @@
 @import '../_shared/_bootstrap.styl'
 
+// align intercom icon
+#intercom-container .intercom-launcher-button 
+  bottom -10px !important
+  
+@media (max-width: 950px)
+  #intercom-container .intercom-launcher-button 
+    display: none
+    
 // STYLEGUIDE
 .styleguide
   padding: 20px
@@ -366,6 +374,7 @@ PLAYER_HEIGHT = 70px
     position: relative
     cursor: pointer
     border-radius: 5px
+
     .hitarea
       absolute top -20px left 0
       background: transparent
@@ -522,6 +531,7 @@ PLAYER_HEIGHT = 70px
 // OWNERSHIP
 .for_owner
   display: none
+
 .for_guest
   display: block
   
