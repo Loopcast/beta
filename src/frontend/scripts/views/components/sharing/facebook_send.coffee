@@ -1,8 +1,10 @@
 module.exports = (dom) ->
-  # 'Send your room link to friends'
-  url = if dom.data( 'link' )? then dom.data( 'link' ) else location.href
 
   dom.on 'click', ->
+
+    # 'Send your room link to friends'
+    url = if dom.data( 'link' )? then dom.data( 'link' ) else location.href
+  
     FB.ui
       method: 'send',
       name: dom.data 'text'
