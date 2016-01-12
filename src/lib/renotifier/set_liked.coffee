@@ -19,7 +19,7 @@ module.exports = ( follower_name, tape_slug, owner ) ->
       if not user then return
 
       message = "Congrats... #{follower_name} just liked your mix!"
-      url     = s.base_path + "#{owner.info.username}/r/#{tape_slug}"
+      url     = s.base_path + "/#{owner.info.username}/r/#{tape_slug}"
 
       data =
         url                : s.renotifier.api.url + '/trigger'
