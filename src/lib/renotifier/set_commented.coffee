@@ -1,7 +1,7 @@
-module.exports = ( follower_name, tape_slug, followed_id ) ->
+module.exports = ( follower_name, tape_slug, owner ) ->
  
   query = 
-    _id: followed_id
+    _id: owner._id
     'data.facebook.id': $exists: true
 
   User
@@ -19,7 +19,7 @@ module.exports = ( follower_name, tape_slug, followed_id ) ->
       if not user then return
 
       message = "#{follower_name} just commented on your mix!"
-      url     = s.base_path + "/r/#{tape_slug}"
+      url     = s.base_path + "/r/#{owner.info.slug}/#{tape_slug}"
 
       data =
         url                : s.renotifier.api.url + '/trigger'

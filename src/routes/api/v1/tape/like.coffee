@@ -46,6 +46,7 @@ module.exports =
       Tape
         .findOne( _id = tape_id )
         .select( "slug user" )
+        .populate( "user", "_id info.slug" )
         .lean().exec ( error, tape ) ->
 
           set_liked user.name, tape.slug, tape.user
