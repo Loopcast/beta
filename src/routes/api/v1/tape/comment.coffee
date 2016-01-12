@@ -1,4 +1,5 @@
-send = lib 'tape/comments/send'
+send          = lib 'tape/comments/send'
+set_commented = lib 'renotifier/set_commented'
 
 module.exports =
   method : 'POST'
@@ -56,5 +57,5 @@ module.exports =
         .select( "slug user" )
         .lean().exec ( error, tape ) ->
 
-          set_liked user.name, tape.slug, tape.user
+          set_commented user.name, tape.slug, tape.user
 
