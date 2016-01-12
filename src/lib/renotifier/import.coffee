@@ -1,7 +1,7 @@
 module.exports = ( facebook_id, callback ) ->
 
   data =
-    url                : s.renotifier.api.url
+    url                : s.renotifier.api.url + '/import'
 
     rejectUnauthorized : false
     strictSSL          : false

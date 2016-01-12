@@ -1,4 +1,5 @@
-like = lib 'user/like'
+like          = lib 'user/like'
+user_followed = lib 'renotifier/user_followed'
 
 module.exports =
   method : 'PUT'
@@ -44,3 +45,5 @@ module.exports =
         if error then return reply error: error.message
         
         reply respose
+
+      user_followed user.name, user.username, following_id
