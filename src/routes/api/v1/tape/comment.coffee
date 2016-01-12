@@ -52,11 +52,13 @@ module.exports =
 
       reply( sent: true ).header "Cache-Control", "no-cache, must-revalidate"
 
-      Tape
-        .findOne( _id : tape_id )
-        .select( "slug user" )
-        .populate( "user", "_id info.username" )
-        .lean().exec ( error, tape ) ->
+      # don't send notification if it's a "like" comment
+      unless request.payload.payload.like?
+        Tape
+          .findOne( _id : tape_id )
+          .select( "slug user" )
+          .populate( "user", "_id info.username" )
+          .lean().exec ( error, tape ) ->
 
-          set_commented user.name, tape.slug, tape.user
+            set_commented user.name, tape.slug, tape.user
 

@@ -42,6 +42,7 @@ module.exports = class LikeButton extends LoggedView
     @dom.addClass 'liked'  
   
     send_message @tape_id, "Liked this session", like: @liked
+    
     L.tapes.like @tape_id, (error, response) =>
       log "[LikeButton] like response", error, response
 
