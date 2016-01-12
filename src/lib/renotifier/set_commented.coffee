@@ -1,4 +1,4 @@
-module.exports = ( follower_name, username, followed_id ) ->
+module.exports = ( follower_name, tape_slug, followed_id ) ->
  
   query = 
     _id: followed_id
@@ -18,8 +18,8 @@ module.exports = ( follower_name, username, followed_id ) ->
       # not a facebook user, can't send fb notification
       if not user then return
 
-      message = "Congrats... #{follower_name} just followed you!"
-      url     = s.base_path + "/#{username}"
+      message = "#{follower_name} just commented on your mix!"
+      url     = s.base_path + "/r/#{tape_slug}"
 
       data =
         url                : s.renotifier.api.url + '/trigger'
@@ -31,7 +31,7 @@ module.exports = ( follower_name, username, followed_id ) ->
           Authorization  : "Token #{s.renotifier.api.token}"
         
         form:
-          trigger_id    : 36
+          trigger_id    : 38
           facebook_id   : user.data.facebook.id
           message       : message
           url           : url

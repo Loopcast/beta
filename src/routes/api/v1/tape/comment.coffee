@@ -51,3 +51,10 @@ module.exports =
 
       reply( sent: true ).header "Cache-Control", "no-cache, must-revalidate"
 
+      Tape
+        .findOne( _id = tape_id )
+        .select( "slug user" )
+        .lean().exec ( error, tape ) ->
+
+          set_liked user.name, tape.slug, tape.user
+

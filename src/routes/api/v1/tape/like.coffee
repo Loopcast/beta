@@ -1,4 +1,5 @@
-like = lib 'likes/add'
+like      = lib 'likes/add'
+set_liked = lib 'renotifier/set_liked'
 
 module.exports =
   method : 'PUT'
@@ -41,3 +42,10 @@ module.exports =
           return reply Boom.badImplementation( error.message, error )
         
         reply respose
+
+      Tape
+        .findOne( _id = tape_id )
+        .select( "slug user" )
+        .lean().exec ( error, tape ) ->
+
+          set_liked user.name, tape.slug, tape.user
