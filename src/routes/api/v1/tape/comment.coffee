@@ -53,7 +53,7 @@ module.exports =
       reply( sent: true ).header "Cache-Control", "no-cache, must-revalidate"
 
       # don't send notification if it's a "like" comment
-      unless request.payload.payload.like?
+      unless request.payload.payload?.like?
         Tape
           .findOne( _id : tape_id )
           .select( "slug user" )
