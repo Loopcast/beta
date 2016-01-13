@@ -63,6 +63,7 @@ module.exports = class RoomModal extends Modal
     @emit 'input:changed', { name: 'cover', value: data.result }
 
   _on_title_changed: ( ) =>
+    @lock()
     @_check_length @title
     clearTimeout @timeout_title
     if @title.val().length > 0
@@ -91,7 +92,9 @@ module.exports = class RoomModal extends Modal
     # for now simply don't check when editing
     return if @dom.hasClass 'edit_modal'
 
+    @lock()
     L.rooms.is_available @title.val(), (error, result) =>
+      @unlock()
       # log "[RoomModal] _check_room_name", @title.val(), "available?", result.available
       if error
         log error
@@ -112,16 +115,13 @@ module.exports = class RoomModal extends Modal
 
     # quick validation sketch
     if not @title.val()
-
       @title.addClass( 'required' ).focus()
       return 
 
     if ( not @dom.hasClass 'edit_modal' ) and ( not @room_name_available )
-
       @title.addClass( 'required' ).focus()
       return 
 
-    log "[Check here] ----->", @genre.get_tags()
     data = 
       title    : @title.val()
       genres   : @genre.get_tags( true )
