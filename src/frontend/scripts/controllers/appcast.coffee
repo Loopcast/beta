@@ -169,7 +169,7 @@ appcast.start_stream = ( username, room_slug, password, device_name ) ->
     server      : 'inbound-a.cdn.audiopump.co'
 
   payload.server = '46.101.25.152'
-  payload.port   = "8000"
+  payload.port   = "80"
 
   if window.is_beta
     payload.mount_point = "loopcast/#{username}_#{room_slug}"
