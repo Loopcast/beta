@@ -5,7 +5,7 @@
 
 /* line 13 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 355 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+/* line 286 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
 /* line 10 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
@@ -25,7 +25,7 @@
 
 /* line 90 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 355 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+/* line 286 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
 /* line 11 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
@@ -53,7 +53,7 @@
 
 /* line 5 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
 
-/* line 355 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+/* line 286 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
 /* line 12 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
@@ -105,9 +105,9 @@
   color: #fdbb30;
 }
 
-/* line 355 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_bootstrap.styl */
+/* line 286 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_bootstrap.styl */
 
-/* line 355 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 287 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 
 /* line 1 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header {
@@ -249,20 +249,21 @@ header.header .left {
 header.header .left > * {
   border-right: 1px solid #1f1f1f;
   border-left: 1px solid #353535;
+  transition: border 0.6s;
   padding: 13px 25px;
 }
 
-/* line 100 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 101 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .left > *:first-child {
   border-left: none;
 }
 
-/* line 102 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 103 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .left > *.no_border {
   border-right: none;
 }
 
-/* line 105 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 106 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .right {
   float: none;
   position: absolute;
@@ -270,55 +271,55 @@ header.header .right {
   right: 0;
 }
 
-/* line 110 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 111 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .right > * {
   float: none;
   display: inline-block;
 }
 
-/* line 114 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 115 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .settings_dropdown {
   width: 140px;
 }
 
-/* line 120 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 121 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .search_box {
   position: relative;
   padding-left: 56px;
 }
 
-/* line 123 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 124 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .search_box .icon {
   position: absolute;
   top: 16px;
   left: 25px;
 }
 
-/* line 127 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 128 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .search_box form {
   display: inline-block;
 }
 
-/* line 130 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 131 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .user_logged {
   display: none;
   padding: 0;
 }
 
-/* line 133 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 134 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .user_logged > * {
   display: inline-block;
   vertical-align: middle;
 }
 
-/* line 136 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 137 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .user_logged .thumb_wrapper {
   padding-right: 30px;
   position: relative;
   height: 49px;
 }
 
-/* line 141 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 142 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .user_logged .thumb_wrapper .rounded_top_bar {
   width: 28px;
   height: 28px;
@@ -328,7 +329,7 @@ header.header .user_logged .thumb_wrapper .rounded_top_bar {
   margin-top: 11px;
 }
 
-/* line 148 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 149 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .user_logged .thumb_wrapper span {
   position: absolute;
   top: 42%;
@@ -336,31 +337,31 @@ header.header .user_logged .thumb_wrapper span {
   font-size: 0.6em;
 }
 
-/* line 153 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
-
 /* line 154 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+
+/* line 155 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .user_logged .thumb_wrapper.hovered span {
   top: 36%;
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 
-/* line 158 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 159 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .user_dropdown {
   right: 0px;
 }
 
-/* line 161 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 162 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .ss-dropdown {
   color: #ccc;
 }
 
-/* line 164 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 165 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .ss-dropdown:hover {
   color: #fff;
 }
 
-/* line 167 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 168 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .ss-mail {
   display: block;
   position: relative;
@@ -369,14 +370,14 @@ header.header .ss-mail {
   color: #ccc;
 }
 
-/* line 174 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 175 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header .ss-mail:hover {
   color: #fff;
 }
 
-/* line 177 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
-
 /* line 178 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+
+/* line 179 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 .first_loaded header {
   opacity: 1;
   -ms-filter: none;
@@ -384,128 +385,141 @@ header.header .ss-mail:hover {
           filter: none;
 }
 
-/* line 180 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
-
 /* line 181 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 
 /* line 182 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+
+/* line 183 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 .logged header .user_logged {
   display: inline-block;
 }
 
-/* line 184 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 185 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 .logged header .login_link {
   display: none;
 }
 
-/* line 187 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 188 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 .unfixed {
   padding-top: 0;
 }
 
-/* line 189 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 190 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 .unfixed header {
   position: relative;
 }
 
-/* line 193 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
-
 /* line 194 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+
+/* line 195 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 .no_touch_device .header_shadow_item.selected {
   box-shadow: inset 0 0 10px rgba(0,0,0,0.4);
 }
 
-/* line 196 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 197 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 .no_touch_device .header_shadow_item:hover {
   box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
 }
 
-/* line 200 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
-.new_homepage_page {
+/* line 201 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+header.for_desktop {
+  transition: all 0.3s;
+}
+
+/* line 204 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+.new_homepage_page.loaded {
   padding-top: 0;
 }
 
-/* line 203 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
-.new_homepage_page header.for_desktop.top {
-  padding: 24px 0 24px 24px;
+/* line 207 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+.new_homepage_page.loaded header.for_desktop.top {
+  padding: 5px 0;
   height: auto;
   transition: all 0.3s;
 }
 
-/* line 208 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
-.new_homepage_page header.for_desktop.top .background {
+/* line 212 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+.new_homepage_page.loaded header.for_desktop.top .background {
   display: none;
 }
 
-/* line 211 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
-.new_homepage_page header.for_desktop.top .left > * {
+/* line 215 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+.new_homepage_page.loaded header.for_desktop.top .left > * {
   border: none;
 }
 
-/* line 214 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
-.new_homepage_page header.for_desktop.top .search_box {
+/* line 218 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+.new_homepage_page.loaded header.for_desktop.top .header_shadow_item {
+  box-shadow: none;
+}
+
+/* line 221 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+.new_homepage_page.loaded header.for_desktop.top .search_box {
   padding-top: 7px;
   padding-left: 17px;
 }
 
-/* line 217 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
-.new_homepage_page header.for_desktop.top .search_box .icon {
+/* line 224 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+.new_homepage_page.loaded header.for_desktop.top .search_box .icon {
   display: none;
 }
 
-/* line 219 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
-.new_homepage_page header.for_desktop.top .search_box input[type="text"] {
+/* line 226 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+.new_homepage_page.loaded header.for_desktop.top .search_box input[type="text"] {
   padding: 8px 10px;
   font-size: 1rem;
   background: transparent;
 }
 
-/* line 224 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
-.new_homepage_page header.for_desktop.top .search_box input[type="text"].focus,
-.new_homepage_page header.for_desktop.top .search_box input[type="text"]:focus,
-.new_homepage_page header.for_desktop.top .search_box input[type="text"]:active {
+/* line 231 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+.new_homepage_page.loaded header.for_desktop.top .search_box input[type="text"].focus,
+.new_homepage_page.loaded header.for_desktop.top .search_box input[type="text"]:focus,
+.new_homepage_page.loaded header.for_desktop.top .search_box input[type="text"]:active {
   background: #393939;
 }
 
-/* line 227 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
-.new_homepage_page header.for_desktop.top .search_box ::-webkit-input-placeholder {
+/* line 234 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+.new_homepage_page.loaded header.for_desktop.top .search_box ::-webkit-input-placeholder {
   color: #fff;
 }
 
-/* line 229 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
-.new_homepage_page header.for_desktop.top .search_box :-moz-placeholder {
-  color: #fff;
-  opacity: 1;
-  -ms-filter: none;
-  filter: none;
-}
-
-/* line 232 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
-.new_homepage_page header.for_desktop.top .search_box ::-moz-placeholder {
+/* line 236 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+.new_homepage_page.loaded header.for_desktop.top .search_box :-moz-placeholder {
   color: #fff;
   opacity: 1;
   -ms-filter: none;
   filter: none;
 }
 
-/* line 235 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
-.new_homepage_page header.for_desktop.top .search_box :-ms-input-placeholder {
+/* line 239 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+.new_homepage_page.loaded header.for_desktop.top .search_box ::-moz-placeholder {
+  color: #fff;
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+}
+
+/* line 242 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+.new_homepage_page.loaded header.for_desktop.top .search_box :-ms-input-placeholder {
   color: #fff;
 }
 
-/* line 237 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
-.new_homepage_page header.for_desktop.top .search_box :placeholder-shown {
+/* line 244 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+.new_homepage_page.loaded header.for_desktop.top .search_box :placeholder-shown {
   color: #fff;
 }
 
-/* line 240 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
-.new_homepage_page header.for_desktop.top .sign_up_link {
+/* line 247 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+.new_homepage_page.loaded header.for_desktop.top .sign_up_link {
+  height: auto;
+  margin-top: 3px;
+  padding: 10px 22px;
   color: #060606;
   border-radius: 6px;
   background: #e3e1e1;
 }
 
-/* line 325 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 256 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 footer {
   background: #1f1f1f;
   text-align: center;
@@ -514,7 +528,7 @@ footer {
   position: relative;
 }
 
-/* line 332 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 263 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 body.room_page {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -528,7 +542,7 @@ body.room_page {
   padding-top: 0 !important;
 }
 
-/* line 338 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 269 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 body.room_page #content {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -541,7 +555,7 @@ body.room_page #content {
   flex: 1;
 }
 
-/* line 342 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 273 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 body.room_page #content .inner_content,
 body.room_page #content .dynamic_wrapper {
   -o-box-flex: 1;
@@ -555,7 +569,7 @@ body.room_page #content .dynamic_wrapper {
   display: flex;
 }
 
-/* line 347 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 278 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 body.room_page .profile_content.chat {
   -o-box-flex: 1;
   box-flex: 1;
@@ -564,7 +578,7 @@ body.room_page .profile_content.chat {
   flex: 1;
 }
 
-/* line 350 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 281 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 body.room_page .dynamic_wrapper > div {
   display: -webkit-flex;
   display: -ms-flexbox;
