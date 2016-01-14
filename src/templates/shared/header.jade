@@ -11,7 +11,7 @@ header.header.for_desktop(data-view="header")
 
         span.icon.ss-icon &#x1F50E;
         form
-          input.dark_input(type="text" name="search" placeholder="Search...", data-view="components/search_input")
+          input.dark_input(type="text" name="search" placeholder="Search", data-view="components/search_input")
 
 
     .right
@@ -28,6 +28,19 @@ header.header.for_desktop(data-view="header")
         data-view="components/login_popup_handler",
         href="#"
       ) Log in / Sign up
+
+      .separate_buttons
+        a.login_link(
+          title="Log In", 
+          data-view="components/login_popup_handler",
+          href="#"
+        ) Log in
+
+        a.sign_up_link(
+          title="Log In", 
+          data-view="components/login_popup_handler",
+          href="#"
+        ) Sign up
 
       div.settings.hover_dropdown_trigger(title="Settings" data-view="[components/click_trigger,components/settings]" data-target=".settings_dropdown")
         span.icon.ss-settings
