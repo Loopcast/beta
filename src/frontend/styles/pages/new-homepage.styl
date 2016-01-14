@@ -9,9 +9,6 @@
   h1, h2, p, li
     color white
     
-  li
-    list-style disc
-    
   .row
     height 100vh
     padding 45px 10px 0
@@ -29,6 +26,9 @@
       padding 20px 0 40px
       
     .button
+      max-width 400px
+      margin-left auto
+      margin-right auto
       padding 0
       text-transform uppercase
       font-size 1.1875em
@@ -43,6 +43,7 @@
       line-height 2.47rem
       margin 1rem 0
 
+
     &.convenient
       background-image url("../images/landing_img2.jpg")
       
@@ -51,6 +52,9 @@
       
     &.join
       min-height auto
+      
+  .img-container
+    display none
       
 
   // First row
@@ -89,21 +93,48 @@
 // Tablet and up
 @media (min-width: 700px)
   .new_homepage_page
+
+    .container
+      max-width 1140px
+      padding-left 25px
+      padding-right 25px
+      margin-left auto
+      margin-right auto
     
     .row
       height auto
-      min-height 600px
+      min-height 850px
+      
+      h2
+        font-size 2rem
+        line-height 3rem
+      
+    .img-container
+      display block
+      width 75%
+      margin 0 auto 30px
+      
+      img
+        width 100%
 
+    
+    // First row
     .intro
+      padding-top 164px
       
       h1
+        width 440px
+        margin-left auto
+        margin-right auto
         font-size 4rem
-
       p
-        font-size 2rem
-        line-height 2.8125rem
-        
+        padding-top 60px
+        font-size 1.5rem
+        line-height 2.1rem
+        padding-bottom 76px
+      
       .buttons
+        overflow hidden
         width 580px
         margin 0 auto
 
@@ -114,3 +145,81 @@
         
         &.listen
           float right
+    
+          
+    // Second row
+    .convenient
+      padding-top 88px
+      
+      h2
+        width 320px
+        margin-left auto
+        margin-right auto
+          
+
+    .refined
+      .img-container
+        margin-bottom 25px
+      .text
+        margin-bottom 35px
+      .button
+        width 510px
+        margin 0 auto
+        clear both
+        text-transform uppercase
+
+
+// Desktop and up
+@media (min-width: 960px)
+  .new_homepage_page
+    
+    .text, .img-container
+      width 50%
+      text-align left
+    
+    .text
+      float left
+      
+    .img-container
+      float right
+    
+    .row
+      min-height 700px
+
+      li
+        list-style disc
+        
+      h2
+        font-size 3rem
+        line-height 4.5rem
+
+    .convenient, .refined
+      ul
+        padding-left 20px
+      li
+        font-size 1.5rem
+        line-height 2.8rem      
+
+    // First row
+    .intro
+      padding-top 184px
+      
+      h1
+        width auto
+        font-size 4rem
+        margin-left 0
+      p
+        font-size 2rem
+        line-height 2.8125rem
+        padding-top 20px
+        padding-bottom 76px
+      
+    // Second row
+    .convenient
+      padding-top 137px
+      
+      h2
+        width 490px
+        
+      .img-container
+        margin-bottom 125px

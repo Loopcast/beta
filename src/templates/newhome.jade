@@ -12,7 +12,7 @@ extends layout
 block content
   .new-homepage(data-menu="new_homepage")
     .row.intro
-      .centered
+      .container
         h1 Real. Time. Music.
         
         p 
@@ -25,26 +25,29 @@ block content
           a.button.listen.white_transparent_border(href="/explore", title="Explore live music", onClick="mixpanel.track('Explore');_gaq.push(['_trackEvent', 'Explore', 'Click', '']);") Listen
 
     .row.convenient
-      .text
-        h2 Convenient and easy for DJs
-        ul
-          li Use any third party software or hardware
-          li Broadcast right from your browser
-          li Upload or record your mixes in real time 
-      .img-container
+      .container
+        .img-container
+          img(src="images/screenshot1.jpg" alt="App screenshot")
+        .text
+          h2 Convenient and easy for DJs
+          ul
+            li Use any third party software or hardware
+            li Broadcast right from your browser
+            li Upload or record your mixes in real time 
 
     .row.refined
-      .text
-        h2 A refined listening experience
-        ul
-          li Be notified when your favorite DJs go live
-          li Chat with the DJ and other listeners
-          li Save your favorite mixes for later
+      .container
+        .img-container
+          img(src="images/screenshot2.jpg" alt="App screenshot")
+        .text
+          h2 A refined listening experience
+          ul
+            li Be notified when your favorite DJs go live
+            li Chat with the DJ and other listeners
+            li Save your favorite mixes for later
 
-      .img-container
-
-      a.button.white_transparent_border(
-        title="Log In", 
-        data-view="components/login_popup_handler",
-        href="#"
-      ) Join Now
+        a.button.yellow_rounded(
+          title="Log In", 
+          data-view="components/login_popup_handler",
+          href="#"
+        ) Join Loopcast Now
