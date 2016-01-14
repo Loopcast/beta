@@ -128,10 +128,12 @@ module.exports  = class Header
 		search_input.blur ->
 			$(this).removeClass 'focus'
 
+		@dom.addClass 'top'
+
 		$(window).scroll () =>
 			top = $(window).scrollTop()
 
 			if top > 0
-				@dom.addClass 'scrolled'
+				@dom.removeClass 'top'
 			else
-				@dom.removeClass 'scrolled'
+				@dom.addClass 'top'
