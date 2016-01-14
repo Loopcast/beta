@@ -201,8 +201,17 @@ header.header
 .new_homepage_page
   padding-top 0
   
-  header
+  header.for_desktop
+    padding 24px 0 24px 24px
+    height auto
+    transition background 0.3s
+    
+    &.scrolled
+      background black
+    
     .menu_logo
+      border-radius 2px
+      margin-right 25px
       background url("../images/yellow_logo.png") no-repeat center center
     .background, .sprite_small_logo, .beta-label
       display none
@@ -211,14 +220,19 @@ header.header
       text-transform uppercase
     
     .search_box 
-      padding-left 25px
+      padding-top 7px
+      padding-left 17px
       .icon
         display none
       input[type="text"]
-        background transparent
-        padding 0
+        padding 8px 10px
         font-size 1rem
         text-transform uppercase
+        background transparent
+        
+        &.focus, &:focus, &:active
+          background #393939
+          
       ::-webkit-input-placeholder /* WebKit, Blink, Edge */
         color white
         text-transform uppercase
@@ -255,7 +269,12 @@ header.header
         color #060606
         border-radius 6px
         background #E3E1E1
-  
+        
+/* Retina-specific stuff here */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+  .menu_logo
+    background url("../images/yellow_logo@2x.png") no-repeat center center
+ 
 
 
 footer

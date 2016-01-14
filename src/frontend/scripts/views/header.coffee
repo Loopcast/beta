@@ -14,6 +14,13 @@ module.exports  = class Header
 		navigation.on 'content:ready', @check_menu
 		@check_menu()
 
+		
+		# New home page header Add bg to search box on focus
+		if $('body').hasClass('new_homepage_page')
+			@prepareNewHeader()
+		
+		
+
 	check_menu: =>
 		@check_desktop_menu()
 		@check_mobile_menu()
@@ -110,3 +117,21 @@ module.exports  = class Header
 	on_user_unlogged: ( data ) =>
 		return if not @user_logged
 		@user_logged = false
+
+
+	prepareNewHeader: ->
+		search_input = @dom.find('.search_box input')
+		
+		search_input.focus ->
+			$(this).addClass 'focus'
+
+		search_input.blur ->
+			$(this).removeClass 'focus'
+
+		$(window).scroll () =>
+			top = $(window).scrollTop()
+
+			if top > 0
+				@dom.addClass 'scrolled'
+			else
+				@dom.removeClass 'scrolled'
