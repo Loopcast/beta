@@ -30,17 +30,23 @@ header.header
     & > *
     
       float: left
-      padding: 13px 22px
+      padding: 16px 22px
       vertical-align: top
       height: HEADER_HEIGHT
       text-transform uppercase
+      border-right: 1px solid #1f1f1f
+      border-left: 1px solid #353535
+      font-size 0.9375rem
+      transition border 0.3s
       
       &.settings
-        padding-top: 13px
+        padding-top: 16px
         padding-bottom: 0
         cursor: pointer
         height: HEADER_HEIGHT
         position: relative
+        border-right none
+        margin-left -4px
         .ss-settings
           transition: transform .1s linear
           display: block
@@ -94,10 +100,7 @@ header.header
     float: none
     & > *
       
-      border-right: 1px solid #1f1f1f
-      border-left: 1px solid #353535
-      padding: 13px 25px
-      transition border 0.3s
+      padding: 16px 25px
       
       &:first-child
         border-left: none
@@ -112,6 +115,9 @@ header.header
     & > *
       float: none
       display: inline-block
+      
+  .login_link
+    border-left none
     
   .settings_dropdown
     width: 140px
@@ -124,7 +130,7 @@ header.header
     padding-left: 56px
     .icon
       position: absolute
-      top: 16px
+      top: 19px
       left: 25px
     form
       display: inline-block
@@ -140,6 +146,9 @@ header.header
     :placeholder-shown /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
       text-transform uppercase
       
+  .menu_logo
+    padding-top 14px
+
   .user_logged
     display: none
     padding: 0
@@ -227,7 +236,7 @@ header.for_desktop
       opacity 0
       transition opacity 0.3s
       
-    .left > *
+    .left > *, .right > *
       border-color transparent
       
     .header_shadow_item
@@ -263,10 +272,10 @@ header.for_desktop
       :placeholder-shown /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
         color white
         text-transform uppercase
-        
+
     .sign_up_link
       height auto
-      margin-top 7px
+      margin-top 10px
       padding 6px 22px
       color #060606
       border-radius 6px
