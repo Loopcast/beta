@@ -10,12 +10,16 @@
     color white
     
   .row
+    display flex
     height 100vh
-    padding 45px 10px 0
+    padding 0 10px
     background-size cover
     background-repeat no-repeat
     background-position center center
     // background-attachment fixed
+      
+    .container
+      margin auto
     
     h1, h2
       font-size 2.11rem
@@ -23,10 +27,10 @@
     p
       font-size 1.31rem
       line-height 2.8125rem
-      padding 20px 0 40px
+      padding 20px 0 32px
       
     .button
-      max-width 400px
+      max-width 260px
       margin-left auto
       margin-right auto
       padding 0
@@ -44,11 +48,19 @@
       margin 1rem 0
 
 
+    &.intro
+      .container
+        padding-bottom 55px
+
     &.convenient
       background-image url("../images/landing_img2.jpg")
+      h2
+        padding-bottom 8px
       
     &.refined
       background-image url("../images/landing_img3.jpg")
+      h2
+        padding-bottom 14px
       
     &.join
       min-height auto
@@ -68,7 +80,7 @@
   // Third row
   .refined
     .button
-      margin-top 40px
+      margin-top 34px
       text-transform none
       
 
@@ -105,6 +117,9 @@
       height auto
       min-height 850px
       
+      .button
+        max-width 400px
+      
       h2
         font-size 2rem
         line-height 3rem
@@ -116,12 +131,11 @@
       
       img
         width 100%
+        border-radius 7px
 
     
     // First row
     .intro
-      padding-top 164px
-      
       h1
         width 440px
         margin-left auto
@@ -149,8 +163,6 @@
           
     // Second row
     .convenient
-      padding-top 88px
-      
       h2
         width 320px
         margin-left auto
@@ -179,9 +191,11 @@
     
     .text
       float left
+      padding-right 5px
       
     .img-container
       float right
+      padding-left 5px
     
     .row
       min-height 700px
@@ -190,8 +204,8 @@
         list-style disc
         
       h2
-        font-size 3rem
-        line-height 4.5rem
+        // font-size 3rem
+        // line-height 4.5rem
 
     .convenient, .refined
       ul
@@ -202,24 +216,28 @@
 
     // First row
     .intro
-      padding-top 184px
-      
       h1
         width auto
-        font-size 4rem
+        // font-size 4rem
         margin-left 0
       p
-        font-size 2rem
-        line-height 2.8125rem
-        padding-top 20px
+        // font-size 2rem
+        // line-height 2.8125rem
+        padding-top 52px
         padding-bottom 76px
       
     // Second row
     .convenient
-      padding-top 137px
-      
       h2
         width 490px
+        margin-left 0
+        margin-right 0
         
       .img-container
         margin-bottom 125px
+        
+    //  Third
+    .refined
+      .img-container
+        margin-bottom 75px
+        
