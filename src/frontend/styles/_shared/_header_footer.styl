@@ -33,6 +33,7 @@ header.header
       padding: 13px 22px
       vertical-align: top
       height: HEADER_HEIGHT
+      text-transform uppercase
       
       &.settings
         padding-top: 13px
@@ -95,8 +96,8 @@ header.header
       
       border-right: 1px solid #1f1f1f
       border-left: 1px solid #353535
-      transition border 0.6s
       padding: 13px 25px
+      transition border 0.3s
       
       &:first-child
         border-left: none
@@ -127,6 +128,17 @@ header.header
       left: 25px
     form
       display: inline-block
+      
+    ::-webkit-input-placeholder /* WebKit, Blink, Edge */
+      text-transform uppercase
+    :-moz-placeholder /* Mozilla Firefox 4 to 18 */
+       text-transform uppercase
+    ::-moz-placeholder /* Mozilla Firefox 19+ */
+       text-transform uppercase
+    :-ms-input-placeholder /* Internet Explorer 10-11 */
+       text-transform uppercase
+    :placeholder-shown /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+      text-transform uppercase
       
   .user_logged
     display: none
@@ -199,32 +211,35 @@ header.header
     
 // New home page header
 header.for_desktop
-  transition all 0.3s
+  .background
+    opacity 1
+    transition opacity 0.3s
 
 .new_homepage_page.loaded
   padding-top 0
   
   header.for_desktop.top
-    padding 5px 0
-    height auto
-    transition all 0.3s
+    // padding 5px 0
+    // height auto
+    // transition all 0.3s
     
     .background
-      display none
+      opacity 0
+      transition opacity 0.3s
       
     .left > *
-      border none
+      border-color transparent
       
     .header_shadow_item
       box-shadow none
 
     .search_box 
-      padding-top 7px
-      padding-left 17px
-      .icon
-        display none
+      // padding-top 7px
+      // padding-left 17px
+      // .icon
+      //   display none
       input[type="text"]
-        padding 8px 10px
+        padding 2px
         font-size 1rem
         background transparent
         
@@ -233,25 +248,34 @@ header.for_desktop
           
       ::-webkit-input-placeholder /* WebKit, Blink, Edge */
         color white
+        text-transform uppercase
       :-moz-placeholder /* Mozilla Firefox 4 to 18 */
          color white
          opacity 1
+         text-transform uppercase
       ::-moz-placeholder /* Mozilla Firefox 19+ */
          color white
          opacity 1
+         text-transform uppercase
       :-ms-input-placeholder /* Internet Explorer 10-11 */
          color white
+         text-transform uppercase
       :placeholder-shown /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
         color white
+        text-transform uppercase
         
     .sign_up_link
       height auto
-      margin-top 3px
-      padding 10px 22px
+      margin-top 7px
+      padding 6px 22px
       color #060606
       border-radius 6px
       background #E3E1E1
 
+
+.logged .header .sign_up_link
+  display none
+  
 
 footer
   background: BLACK
