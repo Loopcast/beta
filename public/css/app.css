@@ -7365,8 +7365,8 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 /* line 245 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
 
 /* line 246 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
-  .explorer_11 .new_homepage_page .row,
-  .explorer_10 .new_homepage_page .row {
+  .explorer_11.new_homepage_page .row,
+  .explorer_10.new_homepage_page .row {
     padding-top: 100px;
   }
 }
