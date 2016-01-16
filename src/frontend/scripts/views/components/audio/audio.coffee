@@ -33,7 +33,7 @@ module.exports = class AudioElement
 
     @data = data
 
-    log "[AudioElement] set_data", @data.src?
+    # log "[AudioElement] set_data", @data.src?
 
 
     if @src isnt @data.src
@@ -75,7 +75,7 @@ module.exports = class AudioElement
   on_started: =>
     @is_playing = true
     # @dom[0].volume = 0
-    log "[AudioElement] [on started]"
+    # log "[AudioElement] [on started]"
     @emit 'started'
 
     @check_time()
@@ -84,7 +84,7 @@ module.exports = class AudioElement
 
 
   mobile_play: ( src ) ->
-    log "[AudioElement] mobile_play", src
+    # log "[AudioElement] mobile_play", src
     @src = src
     @dom.attr 'src', @src
     @mobile_played = true
@@ -141,7 +141,7 @@ module.exports = class AudioElement
     return if not @data.is_recorded
 
     
-    log "[Audio] snap_to", perc, @duration * perc
+    # log "[Audio] snap_to", perc, @duration * perc
 
     @snapping = true
     @dom[0].currentTime = @duration * perc

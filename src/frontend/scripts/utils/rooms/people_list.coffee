@@ -17,12 +17,12 @@ module.exports = class PeopleList
     user = data.user
 
 
-    log "[PeopleList] ######## ADD", data, user, user.socket_id, user.name, @list
+    log "[PeopleList] ######## ADD", user.socket_id, data, user.name
 
     if @ids[ user.id ]? or not user.socket_id?
-      log "[PeopleList] ######## ADD (already present)", user, user.socket_id, user.name, @list, @ids
-      log "[PeopleList] motivazione", user.id, @ids[ user.id ]?, (not user.socket_id?)
-      log "[PeopleList] #####################"
+      # log "[PeopleList] ######## ADD (already present)", user, user.socket_id, user.name, @list, @ids
+      # log "[PeopleList] motivazione", user.id, @ids[ user.id ]?, (not user.socket_id?)
+      # log "[PeopleList] #####################"
 
       return false
     

@@ -135,7 +135,7 @@ module.exports = class Room extends LoggedView
 
     socket.on @room_id, ( data ) =>
 
-      log "[Room DEBUG]", data.type, data
+      # log "[Room DEBUG]", data.type, data
 
       return @on_like_room        data if data.type is "like"
       return @on_unlike_room      data if data.type is "unlike"
@@ -201,16 +201,16 @@ module.exports = class Room extends LoggedView
 
 
   on_live_changed: ( data ) =>
-    log "[Room live] on_live_changed", data
+    # log "[Room live] on_live_changed", data
 
     if data.is_live? and data.is_live is false
-      log "[Room DEBUG] live stop. user check guest owner", user_controller.check_guest_owner()
+      # log "[Room DEBUG] live stop. user check guest owner", user_controller.check_guest_owner()
       if not user_controller.check_guest_owner()
         @_on_live_stop()
 
   on_status_changed: ( data ) =>
 
-    console.log 'on_status_changed ->', data
+    # console.log 'on_status_changed ->', data
 
     if data.is_recording 
 
@@ -240,15 +240,15 @@ module.exports = class Room extends LoggedView
 
 
   check_status: =>
-    log "[Room] status:changed checking", @room_id
+    # log "[Room] status:changed checking", @room_id
     L.rooms.info @room_id, (error, data) =>
-      log "[Room] status:changed", data
+      # log "[Room] status:changed", data
       @emit 'status:changed', data
       @current_status = data
 
   room_went_offline: =>
 
-    log '[Dashboard] ROOM WENT OFFLINE'
+    # log '[Dashboard] ROOM WENT OFFLINE'
     @on_room_offline()
     @live_button.set_active false
     notify.error 'Oops, something went wrong while you were streaming ( or recording ) and your session went offline'
@@ -258,15 +258,15 @@ module.exports = class Room extends LoggedView
       room_id : @room_id
       user    : user_controller.get_info()
 
-    log "[Room] broadcast_enter", data
+    # log "[Room] broadcast_enter", data
 
     L.chat.enter data, ( error, response ) ->
-      log "[Room] chat.enter", error, response      
+      # log "[Room] chat.enter", error, response      
 
 
   get_people : =>
     L.chat.people @room_id, (error, response) =>
-      log "[People response]", error, response
+      # log "[People response]", error, response
       user_by_socket = ( socket_id ) ->
         for user in response.users
           if user.socket_id is socket_id
@@ -364,7 +364,7 @@ module.exports = class Room extends LoggedView
     navigation.set_lock_live false, ""
 
   _on_live_stop: ->
-    log "[Room] _on_live_stop"
+    # log "[Room] _on_live_stop"
 
     if user_controller.check_guest_owner()
       notify.info 'Your stream has stopped.'
@@ -385,7 +385,7 @@ module.exports = class Room extends LoggedView
     # console.info "LIVE!!!"
 
     delay 500, =>
-      log "[Room] on_room_live"
+      # log "[Room] on_room_live"
       @dom.addClass 'room_live'
 
       if not user_controller.check_guest_owner()
@@ -410,7 +410,7 @@ module.exports = class Room extends LoggedView
         @on_player_not_playing()
     
   on_player_fetched_room: =>
-    log "[Room] fetch room callback", app.settings.theme
+    # log "[Room] fetch room callback", app.settings.theme
 
     if @_src
       # console.log 'loading ->', @_src
@@ -431,7 +431,7 @@ module.exports = class Room extends LoggedView
   on his player, we gonna show a play button for the live room
   ###
   on_player_already_playing: ->
-    log "[Player already playing] Dont play this room"
+    # log "[Player already playing] Dont play this room"
     if @dom.hasClass 'room_live'
       @dom.addClass 'show_play_button'
 
