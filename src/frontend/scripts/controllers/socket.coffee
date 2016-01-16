@@ -1,5 +1,6 @@
 L     = require 'api/loopcast/loopcast'
 
+
 # socket-io client!!
 connection = io()
 
@@ -14,7 +15,14 @@ connection.on "uid", ( socket_id ) ->
 
   # set user socket_id when authenticating
   if User.is_logged()
-    L.user.socket_id socket.id
+    log "socket id of the logged user", socket_id
+    L.user.socket_id socket.id, (error, response) ->
+      # if there is an error on the socket id
+      # of the logged user, it means the user is not valid,
+      # then let's unlog him
+      # if error
+      #   User.logout null, true
+
   else
     User.on 'user:logged', ->
       L.user.socket_id socket.id

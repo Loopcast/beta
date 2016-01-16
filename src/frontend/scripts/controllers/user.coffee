@@ -258,6 +258,11 @@ class UserController
     @emit 'user:logged', @data
 
     api.user.following ( error, result ) =>
+
+      # if the user logged out in the meantime,
+      # then return
+      return if @data is null
+
       @data.following = {}
 
       for item in result

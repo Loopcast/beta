@@ -400,9 +400,14 @@ module.exports =
         callback null, response
 
     socket_id: ( socket_id, callback ) ->
+
+      # clean socket_id
+      if socket_id.substring(0,1) is '/'
+        socket_id = socket_id.substring 1
+
       request = $.put api_url + "user/socket_id/#{socket_id}"
 
-      request.error on_error "user/socket_id/#{socket_id}", -> callback?()
+      request.error on_error "user/socket_id/#{socket_id}", -> callback?(true)
 
       request.done ( response ) ->
         # log "[Loopcast] request done", response
