@@ -6930,7 +6930,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 13 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 271 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+/* line 272 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
 /* line 10 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
@@ -6950,7 +6950,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 90 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 271 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+/* line 272 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
 /* line 11 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
@@ -6978,7 +6978,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 5 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
 
-/* line 271 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+/* line 272 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
 /* line 12 : /Users/thomasamundsen/Documents/loopcastcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
@@ -7077,125 +7077,126 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   font-size: 0.9rem;
   line-height: 3.3rem;
   height: auto;
+  font-weight: 600;
 }
 
-/* line 40 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 41 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
 .new_homepage_page .row .button.stream {
   border: 2px solid #fdbb30;
 }
 
-/* line 42 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 43 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
 .new_homepage_page .row .button.listen.white_transparent_border:hover {
   background: #fff;
   color: #373737;
 }
 
-/* line 46 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 47 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
 .new_homepage_page .row .button.yellow_rounded.stream:hover {
   background: #fbad0a;
 }
 
-/* line 49 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 50 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
 .new_homepage_page .row .button.yellow_rounded:hover {
   background: #fbad0a;
 }
 
-/* line 52 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 53 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
 .new_homepage_page .row h2 {
   padding-bottom: 24px;
 }
 
-/* line 55 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 56 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
 .new_homepage_page .row li {
   font-size: 1.0625em;
   line-height: 2.47rem;
   margin: 1rem 0;
 }
 
-/* line 61 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
-
 /* line 62 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+
+/* line 63 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
 .new_homepage_page .row.intro .container {
   padding-bottom: 55px;
 }
 
-/* line 65 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
-
 /* line 66 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+
+/* line 67 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
 .new_homepage_page .row.convenient h2 {
   padding-bottom: 8px;
 }
 
-/* line 69 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
-
 /* line 70 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+
+/* line 71 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
 .new_homepage_page .row.refined h2 {
   padding-bottom: 14px;
 }
 
-/* line 73 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 74 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
 .new_homepage_page .row.join {
   min-height: auto;
 }
 
-/* line 76 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 77 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
 .new_homepage_page .img-container {
   display: none;
 }
 
-/* line 81 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
-
 /* line 82 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+
+/* line 83 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
 .new_homepage_page .intro .stream {
   display: none;
 }
 
-/* line 87 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
-
 /* line 88 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+
+/* line 89 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
 .new_homepage_page .refined .button {
   margin-top: 34px;
   text-transform: none;
 }
 
-/* line 94 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
-@media (max-height: 480px) {
-
 /* line 95 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+@media (max-height: 480px) {
 
 /* line 96 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
 
 /* line 97 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+
+/* line 98 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .row h1,
   .new_homepage_page .row h2 {
     font-size: 1.6rem;
   }
 
-/* line 99 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 100 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .row p {
     font-size: 1rem;
     line-height: 1.8rem;
   }
 
-/* line 102 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 103 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .row li {
     line-height: 2rem;
     margin-bottom: 1rem;
   }
 
-/* line 106 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 107 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .row .button {
     font-size: 1rem;
     line-height: 2.5rem;
   }
 }
 
-/* line 112 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 113 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
 @media (min-width: 700px) {
 
-/* line 113 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 114 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
 
-/* line 115 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 116 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .container {
     max-width: 1140px;
     padding-left: 25px;
@@ -7204,39 +7205,39 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
     margin-right: auto;
   }
 
-/* line 122 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 123 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .row {
     height: auto;
     min-height: 850px;
   }
 
-/* line 126 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 127 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .row .button {
     max-width: 400px;
   }
 
-/* line 129 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 130 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .row h2 {
     font-size: 2rem;
     line-height: 3rem;
   }
 
-/* line 133 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 134 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .img-container {
     display: block;
     width: 75%;
     margin: 0 auto 30px;
   }
 
-/* line 138 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 139 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .img-container img {
     width: 100%;
     border-radius: 7px;
   }
 
-/* line 144 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
-
 /* line 145 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+
+/* line 146 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .intro h1 {
     width: 440px;
     margin-left: auto;
@@ -7244,7 +7245,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
     font-size: 4rem;
   }
 
-/* line 150 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 151 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .intro p {
     padding-top: 60px;
     font-size: 1.5rem;
@@ -7252,47 +7253,47 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
     padding-bottom: 76px;
   }
 
-/* line 156 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 157 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .intro .buttons {
     overflow: hidden;
     width: 580px;
     margin: 0 auto;
   }
 
-/* line 161 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 162 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .intro .button {
     display: inline-block;
     width: 272px;
     float: left;
   }
 
-/* line 166 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 167 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .intro .button.listen {
     float: right;
   }
 
-/* line 171 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
-
 /* line 172 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+
+/* line 173 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .convenient h2 {
     width: 320px;
     margin-left: auto;
     margin-right: auto;
   }
 
-/* line 178 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
-
 /* line 179 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+
+/* line 180 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .refined .img-container {
     margin-bottom: 25px;
   }
 
-/* line 181 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 182 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .refined .text {
     margin-bottom: 35px;
   }
 
-/* line 183 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 184 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .refined .button {
     width: 510px;
     margin: 0 auto;
@@ -7301,115 +7302,115 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   }
 }
 
-/* line 191 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 192 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
 @media (min-width: 960px) {
 
-/* line 192 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
-
 /* line 193 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+
+/* line 194 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .text,
   .new_homepage_page .img-container {
     width: 50%;
     text-align: left;
   }
 
-/* line 197 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 198 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .text {
     float: left;
     padding-right: 5px;
   }
 
-/* line 201 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 202 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .img-container {
     float: right;
     padding-left: 5px;
   }
 
-/* line 205 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 206 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .row {
     min-height: 700px;
   }
 
-/* line 208 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 209 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .row li {
     list-style: disc;
   }
 
-/* line 211 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
-
-/* line 215 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 212 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
 
 /* line 216 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+
+/* line 217 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .convenient ul,
   .new_homepage_page .refined ul {
     padding-left: 20px;
   }
 
-/* line 218 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 219 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .convenient li,
   .new_homepage_page .refined li {
     font-size: 1.5rem;
     line-height: 2.8rem;
   }
 
-/* line 223 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
-
 /* line 224 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+
+/* line 225 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .row.intro .container {
     padding-bottom: 0;
   }
 
-/* line 227 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 228 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .row.intro h1 {
     width: auto;
     margin-left: 0;
   }
 
-/* line 231 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 232 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .row.intro p {
     padding-top: 52px;
     padding-bottom: 76px;
   }
 
-/* line 238 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
-
 /* line 239 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+
+/* line 240 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .convenient h2 {
     width: 490px;
     margin-left: 0;
     margin-right: 0;
   }
 
-/* line 244 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 245 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .convenient .img-container {
     margin-bottom: 125px;
   }
 
-/* line 248 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
-
 /* line 249 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+
+/* line 250 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .refined .img-container {
     margin-bottom: 75px;
   }
 
-/* line 254 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
-
 /* line 255 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
 
 /* line 256 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+
+/* line 257 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
   .explorer_11.new_homepage_page .row,
   .explorer_10.new_homepage_page .row {
     display: block;
     position: relative;
   }
 
-/* line 260 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 261 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
   .explorer_11.new_homepage_page .row.refined,
   .explorer_10.new_homepage_page .row.refined {
     overflow: hidden;
   }
 
-/* line 263 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 264 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
   .explorer_11.new_homepage_page .container,
   .explorer_10.new_homepage_page .container {
     width: 960px;
@@ -7420,7 +7421,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
     transform: translate(-50%, -50%);
   }
 
-/* line 270 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 271 : /Users/thomasamundsen/Documents/loopcastcode/beta/src/frontend/styles/pages/new-homepage.styl */
   .explorer_11.new_homepage_page .container h2,
   .explorer_10.new_homepage_page .container h2 {
     width: auto;
