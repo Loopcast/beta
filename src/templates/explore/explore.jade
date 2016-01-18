@@ -158,6 +158,7 @@ block grid
           a.room_subtitle.blue(title="#{item.user.info.name}", href="#{author_url}") #{item.user.info.name}
           .genres.small
             - counter = 0
+			- if( !item.genres ) item.genres = []
             for genre in item.genres
               - klass = ""
               if counter++ >= 5
