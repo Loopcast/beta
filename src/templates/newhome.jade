@@ -11,7 +11,8 @@ extends layout
 
 block content
   .new-homepage(data-menu="new_homepage" data-view="new_homepage")
-    .row.intro
+    
+    .row.intro.parallax-container(data-factor="1", data-image-parallax="/images/landing_img1.jpg")
       .container
         h1 Real. Time. Music.
         
@@ -24,7 +25,7 @@ block content
           a.button.yellow_rounded.stream(href="/rooms/create" title="Create Live Room", data-view="components/logged_link", onClick="mixpanel.track('Start Streaming');_gaq.push(['_trackEvent', 'Start Streaming', 'Click', '']);Intercom('trackEvent', 'start-streaming');") Start Streaming
           a.button.listen.white_transparent_border(href="/explore", title="Explore live music", onClick="mixpanel.track('Explore');_gaq.push(['_trackEvent', 'Explore', 'Click', '']);") Listen
 
-    .row.convenient
+    .row.convenient.parallax-container(data-factor="1.07", data-image-parallax="/images/landing_img2.jpg")
       .container
         .img-container
           img(src="images/screenshot1.jpg" alt="App screenshot")
@@ -35,7 +36,7 @@ block content
             li Broadcast right from your browser
             li Upload or record your mixes in real time 
 
-    .row.refined
+    .row.refined.parallax-container(data-factor="1.03", data-image-parallax="/images/landing_img3.jpg")
       .container
         .img-container
           img(src="images/screenshot2.jpg" alt="App screenshot")

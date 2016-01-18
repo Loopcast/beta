@@ -6930,7 +6930,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 13 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 283 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+/* line 262 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
 /* line 10 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
@@ -6950,7 +6950,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 90 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 283 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+/* line 262 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
 /* line 11 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
@@ -6978,7 +6978,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 5 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
 
-/* line 283 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+/* line 262 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
 /* line 12 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
@@ -7104,94 +7104,82 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 }
 
 /* line 56 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
-.new_homepage_page .row.convenient {
-  background: linear-gradient(rgba(55,55,55,0.7), rgba(55,55,55,0.7)), url("../images/landing_img2.jpg");
-  background-size: cover;
-}
 
-/* line 64 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 57 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
 .new_homepage_page .row.convenient h2 {
   padding-bottom: 8px;
 }
 
-/* line 67 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
-.new_homepage_page .row.refined {
-  background: linear-gradient(rgba(55,55,55,0.8), rgba(55,55,55,0.9)), url("../images/landing_img3.jpg");
-  background-size: cover;
-}
+/* line 60 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
 
-/* line 75 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 61 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
 .new_homepage_page .row.refined h2 {
   padding-bottom: 14px;
 }
 
-/* line 78 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 64 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
 .new_homepage_page .row.join {
   min-height: auto;
 }
 
-/* line 81 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 67 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
 .new_homepage_page .img-container {
   display: none;
 }
 
-/* line 86 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
-.new_homepage_page .intro {
-  background: linear-gradient(rgba(55,55,55,0.9), rgba(55,55,55,0.9)), url("../images/landing_img1.jpg");
-  background-size: cover;
-}
+/* line 72 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
 
-/* line 94 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 73 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
 .new_homepage_page .intro .stream {
   display: none;
 }
 
-/* line 99 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 78 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
 
-/* line 100 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 79 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
 .new_homepage_page .refined .button {
   margin-top: 34px;
   text-transform: none;
 }
 
-/* line 106 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 85 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
 @media (max-height: 480px) {
 
-/* line 107 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 86 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
 
-/* line 108 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 87 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
 
-/* line 109 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 88 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .row h1,
   .new_homepage_page .row h2 {
     font-size: 1.6rem;
   }
 
-/* line 111 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 90 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .row p {
     font-size: 1rem;
     line-height: 1.8rem;
   }
 
-/* line 114 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 93 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .row li {
     line-height: 2rem;
     margin-bottom: 1rem;
   }
 
-/* line 118 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 97 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .row .button {
     font-size: 1rem;
     line-height: 2.5rem;
   }
 }
 
-/* line 124 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 103 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
 @media (min-width: 700px) {
 
-/* line 125 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 104 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
 
-/* line 127 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 106 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .container {
     max-width: 1140px;
     padding-left: 25px;
@@ -7200,39 +7188,39 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
     margin-right: auto;
   }
 
-/* line 134 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 113 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .row {
     height: auto;
     min-height: 850px;
   }
 
-/* line 138 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 117 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .row .button {
     max-width: 400px;
   }
 
-/* line 141 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 120 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .row h2 {
     font-size: 2rem;
     line-height: 3rem;
   }
 
-/* line 145 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 124 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .img-container {
     display: block;
     width: 75%;
     margin: 0 auto 30px;
   }
 
-/* line 150 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 129 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .img-container img {
     width: 100%;
     border-radius: 7px;
   }
 
-/* line 156 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 135 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
 
-/* line 157 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 136 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .intro h1 {
     width: 440px;
     margin-left: auto;
@@ -7240,7 +7228,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
     font-size: 4rem;
   }
 
-/* line 162 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 141 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .intro p {
     padding-top: 60px;
     font-size: 1.5rem;
@@ -7248,47 +7236,47 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
     padding-bottom: 76px;
   }
 
-/* line 168 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 147 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .intro .buttons {
     overflow: hidden;
     width: 580px;
     margin: 0 auto;
   }
 
-/* line 173 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 152 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .intro .button {
     display: inline-block;
     width: 272px;
     float: left;
   }
 
-/* line 178 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 157 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .intro .button.listen {
     float: right;
   }
 
-/* line 183 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 162 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
 
-/* line 184 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 163 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .convenient h2 {
     width: 320px;
     margin-left: auto;
     margin-right: auto;
   }
 
-/* line 190 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 169 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
 
-/* line 191 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 170 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .refined .img-container {
     margin-bottom: 25px;
   }
 
-/* line 193 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 172 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .refined .text {
     margin-bottom: 35px;
   }
 
-/* line 195 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 174 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .refined .button {
     width: 510px;
     margin: 0 auto;
@@ -7297,115 +7285,115 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   }
 }
 
-/* line 203 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 182 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
 @media (min-width: 960px) {
 
-/* line 204 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 183 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
 
-/* line 205 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 184 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .text,
   .new_homepage_page .img-container {
     width: 50%;
     text-align: left;
   }
 
-/* line 209 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 188 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .text {
     float: left;
     padding-right: 5px;
   }
 
-/* line 213 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 192 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .img-container {
     float: right;
     padding-left: 5px;
   }
 
-/* line 217 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 196 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .row {
     min-height: 700px;
   }
 
-/* line 220 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 199 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .row li {
     list-style: disc;
   }
 
-/* line 223 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 202 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
 
-/* line 227 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 206 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
 
-/* line 228 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 207 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .convenient ul,
   .new_homepage_page .refined ul {
     padding-left: 20px;
   }
 
-/* line 230 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 209 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .convenient li,
   .new_homepage_page .refined li {
     font-size: 1.5rem;
     line-height: 2.8rem;
   }
 
-/* line 235 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 214 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
 
-/* line 236 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 215 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .row.intro .container {
     padding-bottom: 0;
   }
 
-/* line 239 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 218 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .row.intro h1 {
     width: auto;
     margin-left: 0;
   }
 
-/* line 243 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 222 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .row.intro p {
     padding-top: 52px;
     padding-bottom: 76px;
   }
 
-/* line 250 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 229 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
 
-/* line 251 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 230 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .convenient h2 {
     width: 490px;
     margin-left: 0;
     margin-right: 0;
   }
 
-/* line 256 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 235 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .convenient .img-container {
     margin-bottom: 125px;
   }
 
-/* line 260 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 239 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
 
-/* line 261 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 240 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
   .new_homepage_page .refined .img-container {
     margin-bottom: 75px;
   }
 
-/* line 266 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 245 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
 
-/* line 267 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 246 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
 
-/* line 268 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 247 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
   .explorer_11.new_homepage_page .row,
   .explorer_10.new_homepage_page .row {
     display: block;
     position: relative;
   }
 
-/* line 272 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 251 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
   .explorer_11.new_homepage_page .row.refined,
   .explorer_10.new_homepage_page .row.refined {
     overflow: hidden;
   }
 
-/* line 275 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 254 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
   .explorer_11.new_homepage_page .container,
   .explorer_10.new_homepage_page .container {
     width: 960px;
@@ -7416,7 +7404,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
     transform: translate(-50%, -50%);
   }
 
-/* line 282 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
+/* line 261 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/new-homepage.styl */
   .explorer_11.new_homepage_page .container h2,
   .explorer_10.new_homepage_page .container h2 {
     width: auto;
