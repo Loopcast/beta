@@ -168,6 +168,7 @@ block grid
             if item.genres.length > 5
               span ...
 
+          - if( !item.location ) item.location = []
           if item.location.length > 0
             p.room_location
               a(href="/explore?search=#{item.location}")
