@@ -241,7 +241,21 @@
         margin-bottom 75px
         
 
+  // Old browsers
   .explorer_11, .explorer_10
     &.new_homepage_page
       .row
-        padding-top 100px
+        display block
+        position relative
+        
+        &.refined
+          overflow hidden
+      
+      .container
+        position absolute
+        top 50%
+        left 50%
+        transform translate(-50%, -50%)
+        
+        h2
+          width auto
