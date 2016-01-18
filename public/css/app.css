@@ -107,7 +107,7 @@
 
 /* line 337 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_bootstrap.styl */
 
-/* line 340 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
+/* line 337 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 
 /* line 1 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 header.header {
@@ -168,7 +168,6 @@ header.header .right > * {
   border-right: 1px solid #1f1f1f;
   border-left: 1px solid #353535;
   font-size: 0.9375rem;
-  transition: border 0.3s;
 }
 
 /* line 42 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
@@ -471,14 +470,14 @@ header.for_desktop .background {
 }
 
 /* line 229 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
-.new_homepage_page.loaded {
+.new_homepage_page {
   padding-top: 0;
 }
 
 /* line 232 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 
 /* line 237 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
-.new_homepage_page.loaded header.for_desktop.top .background {
+.new_homepage_page header.for_desktop.top .background {
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
@@ -486,40 +485,40 @@ header.for_desktop .background {
 }
 
 /* line 241 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
-.new_homepage_page.loaded header.for_desktop.top .left > *,
-.new_homepage_page.loaded header.for_desktop.top .right > * {
+.new_homepage_page header.for_desktop.top .left > *,
+.new_homepage_page header.for_desktop.top .right > * {
   border-color: transparent;
 }
 
 /* line 244 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
-.new_homepage_page.loaded header.for_desktop.top .header_shadow_item {
+.new_homepage_page header.for_desktop.top .header_shadow_item {
   box-shadow: none;
 }
 
 /* line 247 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
 
 /* line 252 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
-.new_homepage_page.loaded header.for_desktop.top .search_box input[type="text"] {
+.new_homepage_page header.for_desktop.top .search_box input[type="text"] {
   padding: 2px;
   font-size: 1rem;
   background: transparent;
 }
 
 /* line 257 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
-.new_homepage_page.loaded header.for_desktop.top .search_box input[type="text"].focus,
-.new_homepage_page.loaded header.for_desktop.top .search_box input[type="text"]:focus,
-.new_homepage_page.loaded header.for_desktop.top .search_box input[type="text"]:active {
+.new_homepage_page header.for_desktop.top .search_box input[type="text"].focus,
+.new_homepage_page header.for_desktop.top .search_box input[type="text"]:focus,
+.new_homepage_page header.for_desktop.top .search_box input[type="text"]:active {
   background: #393939;
 }
 
 /* line 260 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
-.new_homepage_page.loaded header.for_desktop.top .search_box ::-webkit-input-placeholder {
+.new_homepage_page header.for_desktop.top .search_box ::-webkit-input-placeholder {
   color: #fff;
   text-transform: uppercase;
 }
 
 /* line 263 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
-.new_homepage_page.loaded header.for_desktop.top .search_box :-moz-placeholder {
+.new_homepage_page header.for_desktop.top .search_box :-moz-placeholder {
   color: #fff;
   opacity: 1;
   -ms-filter: none;
@@ -528,7 +527,7 @@ header.for_desktop .background {
 }
 
 /* line 267 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
-.new_homepage_page.loaded header.for_desktop.top .search_box ::-moz-placeholder {
+.new_homepage_page header.for_desktop.top .search_box ::-moz-placeholder {
   color: #fff;
   opacity: 1;
   -ms-filter: none;
@@ -537,19 +536,19 @@ header.for_desktop .background {
 }
 
 /* line 271 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
-.new_homepage_page.loaded header.for_desktop.top .search_box :-ms-input-placeholder {
+.new_homepage_page header.for_desktop.top .search_box :-ms-input-placeholder {
   color: #fff;
   text-transform: uppercase;
 }
 
 /* line 274 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
-.new_homepage_page.loaded header.for_desktop.top .search_box :placeholder-shown {
+.new_homepage_page header.for_desktop.top .search_box :placeholder-shown {
   color: #fff;
   text-transform: uppercase;
 }
 
 /* line 278 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
-.new_homepage_page.loaded header.for_desktop.top .sign_up_link {
+.new_homepage_page header.for_desktop.top .sign_up_link {
   height: auto;
   margin-top: 10px;
   padding: 6px 22px;
@@ -559,28 +558,28 @@ header.for_desktop .background {
 }
 
 /* line 286 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
-.new_homepage_page.loaded header.for_desktop.top .login_link {
+.new_homepage_page header.for_desktop.top .login_link {
   border-left-color: transparent;
 }
 
 /* line 289 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
-.new_homepage_page.loaded header.for_desktop.top .right {
+.new_homepage_page header.for_desktop.top .right {
   border-left-color: transparent;
 }
 
 /* line 293 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
-.new_homepage_page.loaded header.for_desktop.top .settings_dropdown {
+.new_homepage_page header.for_desktop.top .settings_dropdown {
   background: transparent;
   box-shadow: none;
 }
 
 /* line 297 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
-.new_homepage_page.loaded header.for_desktop.top .settings_dropdown li {
+.new_homepage_page header.for_desktop.top .settings_dropdown li {
   border-bottom: none;
 }
 
 /* line 299 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_header_footer.styl */
-.new_homepage_page.loaded header.for_desktop.top .settings_dropdown li:hover {
+.new_homepage_page header.for_desktop.top .settings_dropdown li:hover {
   box-shadow: none;
 }
 
