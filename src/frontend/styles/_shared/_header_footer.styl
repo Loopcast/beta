@@ -118,8 +118,9 @@ header.header
       display: inline-block
     
   .settings_dropdown
-    width: 140px
-    text-transform none
+    width: 154px
+    text-transform uppercase
+    
   
   // .separate_buttons
   //   display none
@@ -287,6 +288,16 @@ header.for_desktop
       
     .right
       border-left-color transparent
+      
+    // Settings dropdown
+    .settings_dropdown
+      background transparent
+      box-shadow none
+
+      li
+        border-bottom none
+        &:hover
+          box-shadow none
 
 
 .logged .header .sign_up_link
