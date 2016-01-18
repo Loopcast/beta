@@ -13,10 +13,8 @@
     display flex
     height 100vh
     padding 0 10px
-    background-size cover
     background-repeat no-repeat
     background-position center center
-    // background-attachment fixed
       
     .container
       margin auto
@@ -56,12 +54,24 @@
         padding-bottom 55px
 
     &.convenient
-      background-image url("../images/landing_img2.jpg")
+      background linear-gradient(
+        rgba(55, 55, 55, 0.7), 
+        rgba(55, 55, 55, 0.7)
+      ),
+      url("../images/landing_img2.jpg")
+      background-size cover
+      
       h2
         padding-bottom 8px
       
     &.refined
-      background-image url("../images/landing_img3.jpg")
+      background linear-gradient(
+        rgba(55, 55, 55, 0.7), 
+        rgba(55, 55, 55, 0.7)
+      ),
+      url("../images/landing_img3.jpg")
+      background-size cover
+      
       h2
         padding-bottom 14px
       
@@ -78,7 +88,7 @@
         rgba(55, 55, 55, 0.7), 
         rgba(55, 55, 55, 0.7)
       ),
-      url("../images/landing_img4.jpg")
+      url("../images/landing_img1.jpg")
     background-size cover
 
     .stream
