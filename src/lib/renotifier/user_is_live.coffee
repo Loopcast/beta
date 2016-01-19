@@ -4,24 +4,6 @@ module.exports = ( followed_id, room_slug ) ->
  
   data = aware {}
 
-  find_followers followed_id, ( error, users ) ->
-
-    console.log 'got users ->', users
-
-    data.set 'users', users
-
-  User
-    .findOne( _id: followed_id )
-    .select( "info.name info.username" )
-    .lean().exec ( error, user ) ->
-
-      console.log 'got user ->', user
-
-      data.set 'user', user
-
-  data.on 'user' , notify
-  data.on 'users', notify
-
   notify = ->
 
     return if not data.get 'users'
@@ -58,3 +40,21 @@ module.exports = ( followed_id, room_slug ) ->
         console.log '---'
         console.log body
         console.log '---'
+        
+  find_followers followed_id, ( error, users ) ->
+
+    console.log 'got users ->', users
+
+    data.set 'users', users
+
+  User
+    .findOne( _id: followed_id )
+    .select( "info.name info.username" )
+    .lean().exec ( error, user ) ->
+
+      console.log 'got user ->', user
+
+      data.set 'user', user
+
+  data.on 'user' , notify
+  data.on 'users', notify
