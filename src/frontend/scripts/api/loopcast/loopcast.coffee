@@ -153,7 +153,7 @@ module.exports =
       request.done ( response ) ->
         callback? null, response
 
-    start_stream: ( room_id, notify_followers, callback ) ->
+    start_stream: ( room_id, notify, callback ) ->
       on_status_code =
         401: ( response ) -> callback 'unauthorized, need log in!'
 
