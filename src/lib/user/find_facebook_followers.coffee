@@ -1,5 +1,7 @@
 module.exports = ( liked_id, callback ) ->
 
+  console.log 'arguments ->', arguments
+  
   query =
     liked_id: liked_id
     end     : $exists: false
