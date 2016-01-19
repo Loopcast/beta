@@ -39,9 +39,10 @@ module.exports =
 
         return reply Boom.unauthorized('needs authentication')
 
-      user_id = req.auth.credentials.user._id
-      tape_id = req.params.id
-      payload = req.payload
+      user_id  = req.auth.credentials.user._id
+      username = req.auth.credentials.user.username
+      tape_id  = req.params.id
+      payload  = req.payload
 
       query =
         _id   : tape_id
@@ -132,7 +133,7 @@ module.exports =
                     # spam all followers about the new set !
                     notify_set_published user_id, tape.slug
                   
-                  url = "#{s.base_path}/#{tape.user.info.username}/r/#{tape.slug}"
+                  url = "#{s.base_path}/#{username}/r/#{tape.slug}"
 
                   fb_scrape( url )
           
