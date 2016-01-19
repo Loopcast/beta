@@ -6,6 +6,8 @@ module.exports = ( followed_id, room_slug ) ->
 
   find_followers followed_id, ( error, users ) ->
 
+    console.log 'got users ->', users
+
     data.set 'users', users
 
   User
@@ -13,6 +15,8 @@ module.exports = ( followed_id, room_slug ) ->
     .select( "info.name info.username" )
     .lean().exec ( error, user ) ->
 
+      console.log 'got user ->', user
+      
       data.set 'user', user
 
 
