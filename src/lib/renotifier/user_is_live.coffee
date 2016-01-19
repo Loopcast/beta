@@ -41,7 +41,7 @@ module.exports = ( followed_id, room_slug ) ->
       
       form:
         trigger_id    : 34
-        facebook_id   : users
+        facebook_id   : users.join ","
         message       : message
         url           : url
         url_in_canvas : false
@@ -55,5 +55,3 @@ module.exports = ( followed_id, room_slug ) ->
         console.log '---'
         console.log body
         console.log '---'
-
-        return callback? error
