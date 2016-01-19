@@ -40,10 +40,8 @@ module.exports = ( followed_id, room_slug ) ->
         console.log '---'
         console.log body
         console.log '---'
-        
-  find_followers followed_id, ( error, users ) ->
 
-    console.log 'got users ->', users
+  find_followers followed_id, ( error, users ) ->
 
     data.set 'users', users
 
@@ -51,8 +49,6 @@ module.exports = ( followed_id, room_slug ) ->
     .findOne( _id: followed_id )
     .select( "info.name info.username" )
     .lean().exec ( error, user ) ->
-
-      console.log 'got user ->', user
 
       data.set 'user', user
 
