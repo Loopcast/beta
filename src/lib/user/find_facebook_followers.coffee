@@ -14,7 +14,7 @@ module.exports = ( liked_id, callback ) ->
 
       if error then return callback error
 
-      response = _.map response, "_id"
+      response = _.map response, "user_id"
 
       console.log "found followers", response
 
