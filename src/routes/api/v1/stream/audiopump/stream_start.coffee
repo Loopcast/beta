@@ -40,7 +40,7 @@ module.exports =
         'info.user'  : username
 
       Room.findOne( query )
-        .select( "_id user stream will_stream" )
+        .select( "_id user stream will_stream info.slug" )
         .lean()
         .exec ( error, room ) -> 
 
