@@ -4,7 +4,7 @@ Room = schema 'room'
 mongoose        = require 'mongoose'
 update_metadata = lib 'icecast/update_metadata'
 
-notify_user_is_live  = lib 'user/find_facebook_followers'
+notify_user_is_live  = lib 'renotifier/user_is_live'
 
 module.exports =
   method: [ 'PUT', 'POST', 'GET' ]
