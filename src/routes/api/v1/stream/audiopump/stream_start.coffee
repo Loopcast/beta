@@ -4,7 +4,7 @@ Room = schema 'room'
 mongoose        = require 'mongoose'
 update_metadata = lib 'icecast/update_metadata'
 
-find_followers  = lib 'user/find_facebook_followers'
+notify_user_is_live  = lib 'user/find_facebook_followers'
 
 module.exports =
   method: [ 'PUT', 'POST', 'GET' ]
@@ -107,11 +107,8 @@ module.exports =
 
                   return reply Boom.preconditionFailed( "Database error" )
 
-                console.log "TRYING TO FIND USERS!!"
-                
-                find_followers room.user, ( error, users ) ->
-
-                  console.log "found followers ->", users
+                # spam all followers about the room!
+                notify_user_is_live room.user, room.slug
 
 
                 reply response: statusCode: 200
