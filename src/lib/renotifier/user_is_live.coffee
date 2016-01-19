@@ -10,7 +10,7 @@ module.exports = ( followed_id, room_slug ) ->
 
   User
     .findOne( _id: followed_id )
-    .select( "info.name", "info.username" )
+    .select( "info.name info.username" )
     .lean().exec ( error, user ) ->
 
       data.set 'user', user
