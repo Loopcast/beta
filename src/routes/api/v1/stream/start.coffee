@@ -23,6 +23,7 @@ module.exports =
     validate:
       payload:
         room_id : joi.string().required()
+        notify  : joi.boolean()
 
     handler: ( req, reply ) ->
 
@@ -56,6 +57,7 @@ module.exports =
 
           update = 
             will_stream : true
+            notify      : req.payload.notify
 
           if not room.status.is_recording
 

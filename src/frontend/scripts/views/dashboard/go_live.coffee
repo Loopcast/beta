@@ -44,6 +44,8 @@ module.exports = class GoLive extends ButtonWithTimer
     username  = $( '#owner_username' ).val()
     room_slug = $( '#room_slug' ).val()
 
+    alert 'checked -> ' + $( ".notify_checkbox" )[0].checked
+
     L.rooms.start_stream @room_id, ( error, result ) =>
 
       if error

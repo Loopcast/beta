@@ -33,6 +33,9 @@ schema = new Schema
   # true if user called api/v1/stream/start
   will_stream: Boolean
 
+  # true if notifying users
+  notify: { type: Boolean, default: true }
+
   status:
     # 
     # WONT BE USED ANYMORE !?

@@ -153,11 +153,13 @@ module.exports =
       request.done ( response ) ->
         callback? null, response
 
-    start_stream: ( room_id, callback ) ->
+    start_stream: ( room_id, notify_followers, callback ) ->
       on_status_code =
         401: ( response ) -> callback 'unauthorized, need log in!'
 
-      data = room_id: room_id
+      data = 
+        room_id : room_id
+        notify  : notify  
 
       request = $.post api_url + 'stream/start', data, on_status_code
 

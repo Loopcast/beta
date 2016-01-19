@@ -40,7 +40,7 @@ module.exports =
         'info.user'  : username
 
       Room.findOne( query )
-        .select( "_id user stream will_stream info.slug" )
+        .select( "_id user stream will_stream info.slug notify" )
         .lean()
         .exec ( error, room ) -> 
 
@@ -107,8 +107,9 @@ module.exports =
 
                   return reply Boom.preconditionFailed( "Database error" )
 
-                # spam all followers about the room!
-                notify_user_is_live room.user, room.info.slug
+                if room.notify or not room.notify?
+                  # spam all followers about the room!
+                  notify_user_is_live room.user, room.info.slug
 
 
                 reply response: statusCode: 200
