@@ -6,7 +6,7 @@ module.exports = ( followed_id, room_slug ) ->
 
   find_followers followed_id, ( error, users ) ->
 
-    data.set 'users', data
+    data.set 'users', users
 
   User
     .findOne( _id: followed_id )
@@ -23,6 +23,10 @@ module.exports = ( followed_id, room_slug ) ->
 
     user  = data.get 'user'
     users = data.get 'users'
+
+    console.log "user ->" , user
+    console.log 'users ->', users
+
 
     data.on 'user' , notify
     data.on 'users', notify

@@ -1,8 +1,5 @@
 module.exports = ( liked_id, callback ) ->
 
-
-  console.log 'find facebook followers for', liked_id
-
   query =
     liked_id: liked_id
     end     : $exists: false
@@ -16,8 +13,6 @@ module.exports = ( liked_id, callback ) ->
 
       response = _.map response, "user_id"
 
-      console.log "found followers", response
-
       query = 
         _id               : $in: response
         'data.facebook.id': $exists: true
@@ -28,9 +23,5 @@ module.exports = ( liked_id, callback ) ->
         .lean().exec ( error, response ) ->
 
           response = _.map response, "data.facebook.id"
-
-          console.log "got facebook ids!!"
-          console.log response
-          console.log 'asdasdsad'
 
           callback error, response
