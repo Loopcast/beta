@@ -1,7 +1,7 @@
 module.exports = ( follower_name, tape_slug, owner ) ->
  
   query = 
-    _id: owner._id
+    _id               : owner._id
     'data.facebook.id': $exists: true
 
   User
