@@ -1,66 +1,56 @@
-module.exports = ( tape_id ) ->
+find_followers  = lib 'user/find_facebook_followers'
+
+module.exports = ( followed_id, tape_slug ) ->
  
+  data = aware {}
 
-  Tape
-    .findOne( _id: tape_id )
-    .select( "user slug" )
-    .populate( 'user', '_id info.name info.username' )
-    .lean().exec ( error, tape ) ->
+  notify = ->
 
-      user_id   = tape.user._id
-      name      = tape.user.info.name
-      username  = tape.user.info.username
-      tape_slug = tape.slug
+    return if not data.get 'users'
+    return if not data.get 'user'
 
+    user  = data.get 'user'
+    users = data.get 'users'
 
-      # find all facebook ids that liked this tape
-      return
+    message = "#{user.info.name} just published a set!"
+    url     = s.base_path + "/#{user.info.username}/r/#{tape_slug}"
 
-  query = 
-    _id: followed_id
-    'data.facebook.id': $exists: true
+    data =
+      url                : s.renotifier.api.url + '/trigger'
+
+      rejectUnauthorized : false
+      strictSSL          : false
+
+      headers :
+        Authorization  : "Token #{s.renotifier.api.token}"
+      
+      form:
+        trigger_id    : 35
+        facebook_id   : users.join ","
+        message       : message
+        url           : url
+        url_in_canvas : false
+
+    request.post data, ( error, response, body ) ->
+
+      if error or response.statusCode != 201
+
+        console.log "error notifying user is live"
+        console.log "statusCode: #{response.statusCode}"
+        console.log '---'
+        console.log body
+        console.log '---'
+
+  find_followers followed_id, ( error, users ) ->
+
+    data.set 'users', users
 
   User
-    .findOne( query )
-    .select( "data.facebook.id" )
+    .findOne( _id: followed_id )
+    .select( "info.name info.username" )
     .lean().exec ( error, user ) ->
 
-      if error
-        console.error "Error notifying #{followed_id}"
-        console.log error
+      data.set 'user', user
 
-        return
-
-      # not a facebook user, can't send fb notification
-      if not user then return
-
-      message = "#{name} just published a mix!"
-      url     = s.base_path + "/r/username/#{tape_slug}"
-
-      data =
-        url                : s.renotifier.api.url + '/trigger'
-
-        rejectUnauthorized : false
-        strictSSL          : false
-
-        headers :
-          Authorization  : "Token #{s.renotifier.api.token}"
-        
-        form:
-          trigger_id    : 35
-          facebook_id   : user.data.facebook.id
-          message       : message
-          url           : url
-          url_in_canvas : false
-
-      request.post data, ( error, response, body ) ->
-
-        if error or response.statusCode != 201
-
-          console.log "error notifying user following"
-          console.log "statusCode: #{response.statusCode}"
-          console.log '---'
-          console.log body
-          console.log '---'
-
-          return callback? error
+  data.on 'user' , notify
+  data.on 'users', notify

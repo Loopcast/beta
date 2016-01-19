@@ -3,6 +3,8 @@ delete_image = lib 'cloudinary/delete'
 
 fb_scrape    = lib 'facebook/scrape'
 
+notify_set_published  = lib 'renotifier/set_published'
+
 module.exports =
   method : 'PUT'
   path   : '/api/v1/tape/{id}'
@@ -119,10 +121,19 @@ module.exports =
 
                 return reply Boom.preconditionFailed( "Database error" )
 
-              # tape.slug = update[ 'info.slug' ] || tape.slug
-              
-              url = "#{s.base_path}/#{tape.user.info.username}/r/#{tape.slug}"
+              Tape
+                .findOne( _id: tape_id )
+                .select( "slug" )
+                .learn()
+                .exec ( error, tape ) ->
 
-              fb_scrape( url )
+                  # if public notify users about a new set
+                  if payload.public
+                    # spam all followers about the new set !
+                    notify_set_published user_id, tape.slug
+                  
+                  url = "#{s.base_path}/#{tape.user.info.username}/r/#{tape.slug}"
+
+                  fb_scrape( url )
           
               reply update
