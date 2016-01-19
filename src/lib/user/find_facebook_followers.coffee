@@ -27,7 +27,7 @@ module.exports = ( liked_id, callback ) ->
         .select( 'data.facebook.id' )
         .lean().exec ( error, response ) ->
 
-
+          response = _.map response, "data.facebook.id"
 
           console.log "got facebook ids!!"
           console.log response
