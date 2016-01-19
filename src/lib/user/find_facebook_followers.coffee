@@ -14,7 +14,10 @@ module.exports = ( liked_id, callback ) ->
 
       if error then return callback error
 
+      response = _.map response, "_id"
+
       console.log "found followers", response
+
 
       query = 
         _id               : response
@@ -26,7 +29,7 @@ module.exports = ( liked_id, callback ) ->
         .lean().exec ( error, response ) ->
 
 
-          
+
           console.log "got facebook ids!!"
           console.log response
 
