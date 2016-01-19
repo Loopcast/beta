@@ -108,7 +108,7 @@ module.exports =
                   return reply Boom.preconditionFailed( "Database error" )
 
                 # spam all followers about the room!
-                notify_user_is_live room.user, room.slug
+                notify_user_is_live room.user, room.info.slug
 
 
                 reply response: statusCode: 200
