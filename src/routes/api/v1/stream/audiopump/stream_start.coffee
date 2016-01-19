@@ -4,6 +4,8 @@ Room = schema 'room'
 mongoose        = require 'mongoose'
 update_metadata = lib 'icecast/update_metadata'
 
+find_followers  = lib 'user/find_facebook_followers'
+
 module.exports =
   method: [ 'PUT', 'POST', 'GET' ]
   path   : '/api/v1/stream/audiopump/stream_start'
@@ -104,5 +106,12 @@ module.exports =
                   failed req, reply, error
 
                   return reply Boom.preconditionFailed( "Database error" )
+
+                console.log "TRYING TO FIND USERS!!"
+                
+                find_followers room.user, ( error, users ) ->
+
+                  console.log "found followers ->", users
+
 
                 reply response: statusCode: 200

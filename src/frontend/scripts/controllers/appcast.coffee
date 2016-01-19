@@ -168,7 +168,7 @@ appcast.start_stream = ( username, room_slug, password, device_name ) ->
     port        : "80"
     server      : 'inbound-a.cdn.audiopump.co'
 
-  payload.server = '46.101.25.152'
+  # payload.server = '46.101.25.152'
   payload.port   = "80"
 
   if window.is_beta
