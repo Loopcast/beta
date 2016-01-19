@@ -69,6 +69,7 @@ block content
       .main_column
         .first_line.padded
           .tags.for_desktop
+            - if( !tape.genres ) tape.genres = []
             for item in tape.genres
               a.tag.tag_round(href="/explore?genres=#{item}") #{item}
 

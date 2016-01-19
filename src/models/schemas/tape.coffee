@@ -17,7 +17,7 @@ schema = new Schema
 
   title     : type: String
   genres    : { type: Array, default: [] }
-  location  : String
+  location  : { type: String, default: '' }
   about     : String
   cover_url : String
 
