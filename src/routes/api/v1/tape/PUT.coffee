@@ -124,7 +124,7 @@ module.exports =
               Tape
                 .findOne( _id: tape_id )
                 .select( "slug" )
-                .learn()
+                .lean()
                 .exec ( error, tape ) ->
 
                   # if public notify users about a new set
