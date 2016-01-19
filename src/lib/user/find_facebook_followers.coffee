@@ -18,9 +18,8 @@ module.exports = ( liked_id, callback ) ->
 
       console.log "found followers", response
 
-
       query = 
-        _id               : response
+        _id               : $in: response
         'data.facebook.id': $exists: true
 
       User
@@ -32,5 +31,6 @@ module.exports = ( liked_id, callback ) ->
 
           console.log "got facebook ids!!"
           console.log response
+          console.log 'asdasdsad'
 
           callback error, response
