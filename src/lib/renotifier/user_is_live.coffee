@@ -16,9 +16,11 @@ module.exports = ( followed_id, room_slug ) ->
     .lean().exec ( error, user ) ->
 
       console.log 'got user ->', user
-      
+
       data.set 'user', user
 
+  data.on 'user' , notify
+  data.on 'users', notify
 
   notify = ->
 
@@ -27,13 +29,6 @@ module.exports = ( followed_id, room_slug ) ->
 
     user  = data.get 'user'
     users = data.get 'users'
-
-    console.log "user ->" , user
-    console.log 'users ->', users
-
-
-    data.on 'user' , notify
-    data.on 'users', notify
 
     message = "#{user.info.name} just went live!"
     url     = s.base_path + "/#{user.info.username}/#{room_slug}"
