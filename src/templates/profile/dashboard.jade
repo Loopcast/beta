@@ -48,7 +48,10 @@
             a.gray_part.left_part(href="#") Go live
             span.yellow_part.right_part 00:00:00
 
-          
+          a#notify_followers( data-view="buttons/notify")
+            input(type="checkbox" checked="checked")
+            | Notify followers
+
           #share_dashboard.share_wrapper( data-view="buttons/share" )
             a.white.ss-action(href="#", title="Share" onClick="mixpanel.track('Share-room');")
 
