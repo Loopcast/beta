@@ -16,17 +16,23 @@ module.exports = class PeopleList
     
     user = data.user
 
+
+    log "[PeopleList] ######## ADD", user.socket_id, data, user.name
+
     if @ids[ user.id ]? or not user.socket_id?
       # log "[PeopleList] ######## ADD (already present)", user, user.socket_id, user.name, @list, @ids
+      # log "[PeopleList] motivazione", user.id, @ids[ user.id ]?, (not user.socket_id?)
       # log "[PeopleList] #####################"
 
       return false
     
     @total++
 
-    log "[PeopleList] ######## ADD (new)", user, user.socket_id, user.name, @list
+    # log "[PeopleList] ######## ADD (new)", user, user.socket_id, user.name, @list
     @list[ user.socket_id ] = user
-    @ids[ user.id ] = user.socket_id
+
+    if user.id?
+      @ids[ user.id ] = user.socket_id
 
     # log "[PeopleList] checking the item (after)", @list[ user.socket_id ], "total", @total
     # log "[PeopleList] #####################"
@@ -39,7 +45,7 @@ module.exports = class PeopleList
 
   remove: ( data ) ->
     socket_id = data.user.socket_id
-    # log "[PeopleList] ########## THE REMOVE", data, socket_id, @list
+    log "[PeopleList] ########## THE REMOVE", data, socket_id, @list
 
     if @list[ socket_id ]?
       @total--

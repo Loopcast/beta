@@ -176,16 +176,16 @@ module.exports = class Player
 
     if @current_room_id is room_id
       return if @audio.is_playing
-      log "[Player.play()] the audio is the same. Simply start playing."
+      # log "[Player.play()] the audio is the same. Simply start playing."
       return @on_play_clicked()
 
 
     if not @data_rooms[ room_id ]?
-      log "[Player.play()] no data for this audio. Fetching it..."
+      # log "[Player.play()] no data for this audio. Fetching it..."
       @fetch_room room_id, is_live, => @_play room_id
 
     else
-      log "[Player.play()] got data for this audio. Just play!"
+      # log "[Player.play()] got data for this audio. Just play!"
       @_play room_id
 
 
@@ -216,7 +216,7 @@ module.exports = class Player
     @data = @data_rooms[ room_id ]
 
 
-    log "[Player._play()]", @data
+    # log "[Player._play()]", @data
     @update_info @data
     @audio.set_data @get_audio_data( @data )
 
@@ -400,7 +400,7 @@ module.exports = class Player
   on_progress_ended: (perc) =>
     @progress.removeClass 'dragging'
     # log "[xxx] dragging", perc
-    log "[Player] on_progress_ended() perc", perc
+    # log "[Player] on_progress_ended() perc", perc
     # @dom.addClass 'loading'
     # @audio.snap_to perc/100
 
@@ -410,13 +410,13 @@ module.exports = class Player
 
 
   on_progress_click: (e) =>
-    log "[Player] on_progress_click() at first"
+    # log "[Player] on_progress_click() at first"
     return if not @audio.data.is_recorded
 
     x = if e.offsetX? then e.offsetX else e.originalEvent.layerX
     w = $(e.currentTarget).width()
     perc = x / w
-    log "[Player] on_progress_click()", e, "offset", x, "w", w, "%", perc
+    # log "[Player] on_progress_click()", e, "offset", x, "w", w, "%", perc
     @show_loading()
     @audio.snap_to perc
 

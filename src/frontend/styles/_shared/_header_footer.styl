@@ -30,16 +30,23 @@ header.header
     & > *
     
       float: left
-      padding: 13px 22px
+      padding: 16px 22px
       vertical-align: top
       height: HEADER_HEIGHT
+      text-transform uppercase
+      border-right: 1px solid #1f1f1f
+      border-left: 1px solid #353535
+      font-size 0.9375rem
+      // transition border 0.3s
       
       &.settings
-        padding-top: 13px
+        padding-top: 16px
         padding-bottom: 0
         cursor: pointer
         height: HEADER_HEIGHT
         position: relative
+        border-right none
+        margin-left -4px
         .ss-settings
           transition: transform .1s linear
           display: block
@@ -93,9 +100,7 @@ header.header
     float: none
     & > *
       
-      border-right: 1px solid #1f1f1f
-      border-left: 1px solid #353535
-      padding: 13px 25px
+      padding: 16px 25px
       
       &:first-child
         border-left: none
@@ -107,24 +112,43 @@ header.header
     position: absolute
     top: 0
     right: 0
+    border-left 1px solid #1f1f1f;
     & > *
       float: none
       display: inline-block
     
   .settings_dropdown
-    width: 140px
+    width: 154px
+    text-transform uppercase
     
+  
+  // .separate_buttons
+  //   display none
   
   .search_box
     position: relative
     padding-left: 56px
     .icon
       position: absolute
-      top: 16px
+      top: 19px
       left: 25px
     form
       display: inline-block
       
+    ::-webkit-input-placeholder /* WebKit, Blink, Edge */
+      text-transform uppercase
+    :-moz-placeholder /* Mozilla Firefox 4 to 18 */
+       text-transform uppercase
+    ::-moz-placeholder /* Mozilla Firefox 19+ */
+       text-transform uppercase
+    :-ms-input-placeholder /* Internet Explorer 10-11 */
+       text-transform uppercase
+    :placeholder-shown /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+      text-transform uppercase
+      
+  .menu_logo
+    padding-top 14px
+
   .user_logged
     display: none
     padding: 0
@@ -132,6 +156,7 @@ header.header
       display: inline-block
       vertical-align: middle
     .thumb_wrapper
+      padding-left 26px
       padding-right: 30px
       // margin-right: 20px
       position: relative
@@ -142,7 +167,7 @@ header.header
         border-radius: 2px
         overflow: hidden
         position: relative
-        margin-top: 11px
+        margin-top: 13px
       span
         position: absolute
         top: 42%
@@ -154,6 +179,7 @@ header.header
           transform: rotate(180deg)
         
   .user_dropdown
+    text-transform none
     right: 0px
     
   .ss-dropdown 
@@ -193,6 +219,90 @@ header.header
     box-shadow: inset 0 0 10px rgba(0,0,0,.4)
   .header_shadow_item:hover
     box-shadow: inset 0 0 10px rgba(0,0,0,.2)
+    
+// New home page header
+header.for_desktop
+  .background
+    opacity 1
+    transition opacity 0.3s
+
+.new_homepage_page
+  padding-top 0
+  
+  header.for_desktop.top
+    // padding 5px 0
+    // height auto
+    // transition all 0.3s
+    
+    .background
+      opacity 0
+      transition opacity 0.3s
+      
+    .left > *, .right > *
+      border-color transparent
+      
+    .header_shadow_item
+      box-shadow none
+
+    .search_box 
+      // padding-top 7px
+      // padding-left 17px
+      // .icon
+      //   display none
+      input[type="text"]
+        padding 2px
+        font-size 1rem
+        background transparent
+        
+        &.focus, &:focus, &:active
+          background #393939
+          
+      ::-webkit-input-placeholder /* WebKit, Blink, Edge */
+        color white
+        text-transform uppercase
+      :-moz-placeholder /* Mozilla Firefox 4 to 18 */
+         color white
+         opacity 1
+         text-transform uppercase
+      ::-moz-placeholder /* Mozilla Firefox 19+ */
+         color white
+         opacity 1
+         text-transform uppercase
+      :-ms-input-placeholder /* Internet Explorer 10-11 */
+         color white
+         text-transform uppercase
+      :placeholder-shown /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+        color white
+        text-transform uppercase
+
+    .sign_up_link
+      height auto
+      margin-top 10px
+      padding 6px 22px
+      color #060606
+      border-radius 6px
+      background #E3E1E1
+      
+    .login_link
+      border-left-color transparent
+      
+    .right
+      border-left-color transparent
+      
+    // Settings dropdown
+    .settings_dropdown
+      background transparent
+      box-shadow none
+
+      li
+        border-bottom none
+        &:hover
+          box-shadow none
+
+
+.logged .header .sign_up_link
+  display none
+  
 
 footer
   background: BLACK

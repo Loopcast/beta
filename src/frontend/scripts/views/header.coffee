@@ -13,6 +13,7 @@ module.exports  = class Header
 
 		navigation.on 'content:ready', @check_menu
 		@check_menu()
+		
 
 	check_menu: =>
 		@check_desktop_menu()
@@ -110,3 +111,4 @@ module.exports  = class Header
 	on_user_unlogged: ( data ) =>
 		return if not @user_logged
 		@user_logged = false
+
