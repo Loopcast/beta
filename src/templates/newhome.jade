@@ -36,6 +36,8 @@ block content
             li Broadcast right from your browser
             li Upload or record your mixes in real time 
 
+        a.button.yellow_rounded.stream(href="/rooms/create" title="Create Live Room", data-view="components/logged_link", onClick="mixpanel.track('Start Streaming');_gaq.push(['_trackEvent', 'Start Streaming', 'Click', '']);Intercom('trackEvent', 'start-streaming');") Start Streaming
+
     .row.refined.parallax-container(data-factor="1.03", data-image-parallax="/images/landing_img3.jpg")
       .container
         .img-container
