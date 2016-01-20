@@ -1,8 +1,6 @@
-module.exports = (dom) ->
+module.exports = ( dom ) ->
 
     dom.click ->
-
-      console.log ' ->', dom.find( "input" ).attr ('checked')
 
       if dom.find( "input" ).attr ('checked')
         dom.find( "input" ).removeAttr 'checked'

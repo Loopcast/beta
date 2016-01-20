@@ -54,9 +54,6 @@ module.exports = class Dashboard extends RoomView
       live_instructions: view.get_by_dom( '#go_live_instructions' )
       dashboard_help   : view.get_by_dom( '#dashboard_help_balloon' )
 
-    if not @balloons.appcast
-      console.error "INSTRUCTIONS: ERROR FINDING APPCAST INSTRUCTIONS BALLON"
-
     @device_change_count = 0
 
     @appcast_not_running_message = @dom.find '.appcast_not_running_message'
@@ -128,7 +125,6 @@ module.exports = class Dashboard extends RoomView
         @balloons.live_instructions.show()
 
   toggle_not_running_balloon: =>
-    console.info "INSTRUCTIONS: TOGGLING"
     @balloons.appcast.toggle()
 
   on_live_changed: ( data ) =>
@@ -164,7 +160,6 @@ module.exports = class Dashboard extends RoomView
     @dom.addClass( 'appcast_running' ).removeClass( 'appcast_not_running' )
     @meter.activate()
 
-    console.info "INSTRUCTIONS: HIDING"
     @balloons.appcast.hide()
     
     # Show dashboard_help balloon only for the first time
@@ -179,7 +174,6 @@ module.exports = class Dashboard extends RoomView
 
     @meter.deactivate()
 
-    console.info "INSTRUCTIONS: SHOW"
     @balloons.appcast.show()
 
 

@@ -33,7 +33,7 @@ client:
 # action to be executed before releasing the app
 release:
 	# compile frontend javascript and css
-	$(POLVO) -r
+	ENV=production $(POLVO) -r
 
 spritesheet:
 	$(LIVE_SPRITESHEET) -c src/frontend/sprites/config.json

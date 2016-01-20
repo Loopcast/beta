@@ -8,7 +8,11 @@ window.delay = require './globals/delay'
 
 window.interval  = require './globals/interval'
 
+# polvo:if ENV = production
+window.log = ->
+# polvo:else
 window.log   = require './globals/log'
+# polvo:fi
 
 window.mover = require './globals/mover'
 
