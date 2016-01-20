@@ -199,6 +199,8 @@ module.exports = class Room extends LoggedView
 
     @check_status()
 
+    @share_view = view.get_by_dom '#share_dashboard'
+
 
   on_live_changed: ( data ) =>
     # log "[Room live] on_live_changed", data
@@ -477,9 +479,12 @@ module.exports = class Room extends LoggedView
 
   on_title_changed: ( value ) =>
     @save_data title: value, (error, response) =>
-      # log "title changed", response
       if not error
-        navigation.go_silent "/#{user_controller.data.username}/#{response[ 'info.slug' ]}"
+        new_link = "/#{user_controller.data.username}/#{response[ 'info.slug' ]}"
+
+        @share_view.update_link new_link
+
+        navigation.go_silent new_link
 
 
 
@@ -517,6 +522,8 @@ module.exports = class Room extends LoggedView
   destroy: ->
     navigation.set_lock_live false, ""
 
+    @share_view = null
+    
     if @room_created
 
       socket.rooms.unsubscribe @room_id
