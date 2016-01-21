@@ -121,6 +121,7 @@ module.exports = class Share
       
 
   update_link: ( link ) ->
+    @data.link = link
     @input.val link
 
 
