@@ -8810,7 +8810,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 13 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 622 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+/* line 626 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
 /* line 10 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
@@ -8830,7 +8830,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 90 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 622 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+/* line 626 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
 /* line 11 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
@@ -8858,7 +8858,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 5 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
 
-/* line 622 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+/* line 626 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
 /* line 12 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
@@ -9194,50 +9194,56 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   background-color: transparent;
 }
 
-/* line 181 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
-.dashboard_bar #share_dashboard {
+/* line 180 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+.windows .dashboard_bar #notify_followers input {
+  position: relative;
+  top: 2px;
+}
+
+/* line 185 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+.windows .dashboard_bar #notify_followers input #share_dashboard {
   position: absolute;
   left: 100%;
   top: 42px;
   margin-left: 23px;
 }
 
-/* line 187 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
-.dashboard_bar .fb-send,
-.dashboard_bar .custom-fb-send {
+/* line 191 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+.windows .dashboard_bar #notify_followers input .fb-send,
+.windows .dashboard_bar #notify_followers input .custom-fb-send {
   position: absolute;
   left: 100%;
   top: 47px;
   margin-left: 68px;
 }
 
-/* line 195 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
-
-/* line 196 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
-.dashboard_bar.appcast_running .appcast_not_running_message {
-  display: none;
-}
-
 /* line 199 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 
 /* line 200 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
-.dashboard_bar.appcast_not_running .appcast_not_running_message {
+.windows .dashboard_bar #notify_followers input.appcast_running .appcast_not_running_message {
+  display: none;
+}
+
+/* line 203 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+
+/* line 204 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+.windows .dashboard_bar #notify_followers input.appcast_not_running .appcast_not_running_message {
   display: block;
   text-align: center;
 }
 
-/* line 204 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
-.dashboard_bar.appcast_not_running .appcast_running_message {
+/* line 208 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+.windows .dashboard_bar #notify_followers input.appcast_not_running .appcast_running_message {
   display: none;
 }
 
-/* line 207 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
-.dashboard_bar .live_button_wrapper {
+/* line 211 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+.windows .dashboard_bar #notify_followers input .live_button_wrapper {
   position: relative;
 }
 
-/* line 211 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
-.dashboard_bar .inner {
+/* line 215 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+.windows .dashboard_bar #notify_followers input .inner {
   position: relative;
   max-width: 700px;
   height: 100%;
@@ -9246,8 +9252,8 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   display: none;
 }
 
-/* line 220 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
-.dashboard_bar .inner .row {
+/* line 224 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+.windows .dashboard_bar #notify_followers input .inner .row {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: box;
@@ -9255,8 +9261,8 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   margin-bottom: 10px;
 }
 
-/* line 223 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
-.dashboard_bar .inner .row .cell {
+/* line 227 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+.windows .dashboard_bar #notify_followers input .inner .row .cell {
   -o-box-flex: 1;
   box-flex: 1;
   -webkit-flex: 1;
@@ -9266,77 +9272,77 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   height: 32px;
 }
 
-/* line 228 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
-.dashboard_bar #go_live_button,
-.dashboard_bar #record_button {
+/* line 232 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+.windows .dashboard_bar #notify_followers input #go_live_button,
+.windows .dashboard_bar #notify_followers input #record_button {
   display: block;
 }
 
-/* line 232 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
-.dashboard_bar .half {
+/* line 236 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+.windows .dashboard_bar #notify_followers input .half {
   padding: 0 1.5%;
 }
 
-/* line 235 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
-.dashboard_bar .half._left {
+/* line 239 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+.windows .dashboard_bar #notify_followers input .half._left {
   text-align: right;
 }
 
-/* line 238 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
-.dashboard_bar .half._left .appcast_not_running_message {
+/* line 242 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+.windows .dashboard_bar #notify_followers input .half._left .appcast_not_running_message {
   margin-bottom: 4px;
 }
 
-/* line 240 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
-.dashboard_bar .half._left .appcast_running_message {
+/* line 244 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+.windows .dashboard_bar #notify_followers input .half._left .appcast_running_message {
   margin-bottom: 10px;
 }
 
-/* line 243 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
-.dashboard_bar .half._left .meter_wrapper {
+/* line 247 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+.windows .dashboard_bar #notify_followers input .half._left .meter_wrapper {
   margin-bottom: 3px;
 }
 
-/* line 246 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
-.dashboard_bar .half._left > * {
+/* line 250 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+.windows .dashboard_bar #notify_followers input .half._left > * {
   float: right;
 }
 
-/* line 249 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
-.dashboard_bar .half._right {
+/* line 253 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+.windows .dashboard_bar #notify_followers input .half._right {
   text-align: left;
 }
 
-/* line 251 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
-.dashboard_bar .half > * {
+/* line 255 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+.windows .dashboard_bar #notify_followers input .half > * {
   margin-bottom: 12px;
   display: block;
 }
 
-/* line 255 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
-.dashboard_bar .half br {
+/* line 259 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+.windows .dashboard_bar #notify_followers input .half br {
   margin-bottom: 0;
 }
 
-/* line 258 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
-.dashboard_bar .half .meter_wrapper {
+/* line 262 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+.windows .dashboard_bar #notify_followers input .half .meter_wrapper {
   margin-bottom: 0;
-}
-
-/* line 260 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
-.dashboard_bar .left_part,
-.dashboard_bar .right_part {
-  width: 50%;
 }
 
 /* line 264 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+.windows .dashboard_bar #notify_followers input .left_part,
+.windows .dashboard_bar #notify_followers input .right_part {
+  width: 50%;
+}
 
-/* line 265 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
-.dashboard_bar .select_wrapper .button {
+/* line 268 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+
+/* line 269 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+.windows .dashboard_bar #notify_followers input .select_wrapper .button {
   overflow: visible;
 }
 
-/* line 270 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 274 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat {
   min-height: 440px;
   display: -webkit-flex;
@@ -9353,7 +9359,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   line-height: 1.2em;
 }
 
-/* line 279 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 283 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_sidebar {
   width: 300px;
   border-left: 1px solid #d5d5d5;
@@ -9369,7 +9375,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   flex-direction: column;
 }
 
-/* line 287 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 291 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_sidebar .inner {
   -o-box-flex: 1;
   box-flex: 1;
@@ -9378,31 +9384,31 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   flex: 1;
 }
 
-/* line 289 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 293 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_sidebar h3 {
   text-transform: uppercase;
   color: #000;
   font-weight: 600;
 }
 
-/* line 293 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 297 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_sidebar h3 span {
   color: #4592d4;
 }
 
-/* line 296 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 300 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_sidebar h3,
 .profile_content.chat .chat_sidebar .social {
   padding-left: 5px;
 }
 
-/* line 300 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 304 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_sidebar .users {
   text-align: left;
   margin-top: 20px;
 }
 
-/* line 304 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 308 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_sidebar .img_wrapper {
   display: inline-block;
   overflow: hidden;
@@ -9410,19 +9416,19 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   margin: 4px;
 }
 
-/* line 309 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 313 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_sidebar .img_wrapper img {
   display: block;
 }
 
-/* line 312 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 316 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_sidebar .spritesheet {
   display: inline-block;
   margin-right: 8px;
   text-indent: -9999px;
 }
 
-/* line 317 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 321 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main {
   border-left: 1px solid #d5d5d5;
   -o-box-flex: 1;
@@ -9440,31 +9446,31 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   display: flex;
 }
 
-/* line 322 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 326 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header,
 .profile_content.chat .chat_main .chat_footer {
   position: relative;
   overflow: hidden;
 }
 
-/* line 326 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 330 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header p,
 .profile_content.chat .chat_main .chat_footer p {
   width: 100%;
 }
 
-/* line 329 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 333 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header {
   padding-right: 60px;
 }
 
-/* line 332 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 336 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header #description_room {
   float: left;
   position: relative;
 }
 
-/* line 336 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 340 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header .ss-tag {
   cursor: pointer;
   float: right;
@@ -9474,51 +9480,51 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   top: 5px;
 }
 
-/* line 344 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 348 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header .tags {
   position: absolute;
   top: 20px;
   right: 20px;
 }
 
-/* line 346 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 350 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header .tags .list {
   display: none;
   float: right;
   margin-right: 20px;
 }
 
-/* line 350 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 354 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header .tags.no_tags {
   display: none;
 }
 
-/* line 354 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 358 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 
-/* line 355 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 359 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header .tags_visible .tags .list {
   display: block;
 }
 
-/* line 358 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 362 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header .tags_visible .read_more {
   display: none !important;
 }
 
-/* line 360 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 364 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header .tags_visible #description_room {
   display: none;
 }
 
-/* line 363 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 367 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 
-/* line 366 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 370 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header .editable_text .icon {
   top: 11px;
   right: -20px;
 }
 
-/* line 369 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 373 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header .editable_text input {
   font-size: 12px;
   width: 100%;
@@ -9526,23 +9532,23 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   left: -5px;
 }
 
-/* line 375 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 379 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header .editable_text.edit_mode {
   display: block;
 }
 
-/* line 377 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 381 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header .editable_text.edit_mode .icon {
   display: none;
 }
 
-/* line 380 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 384 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_header .inner {
   width: 100%;
   text-align: left;
 }
 
-/* line 387 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 391 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_content {
   -o-box-flex: 1;
   box-flex: 1;
@@ -9556,7 +9562,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   overflow-y: scroll;
 }
 
-/* line 397 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 401 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_content.no_chat_yet {
   padding: 0;
   display: -webkit-flex;
@@ -9573,12 +9579,12 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   justify-content: center;
 }
 
-/* line 402 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 406 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_main .chat_content.no_chat_yet .no-message {
   display: block;
 }
 
-/* line 405 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 409 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .no-message {
   display: none;
   font-size: 2em;
@@ -9588,28 +9594,28 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   padding: 0 30px;
 }
 
-/* line 414 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 418 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .message {
   position: relative;
   margin-bottom: 30px;
   overflow: hidden;
 }
 
-/* line 419 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 423 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .message .content a {
   color: #4592d4;
   text-decoration: underline;
 }
 
-/* line 423 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 427 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 
-/* line 424 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 428 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .message.show .inner {
   -webkit-transform: translate3d(0, 0px, 0);
   transform: translate3d(0, 0px, 0);
 }
 
-/* line 426 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 430 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .message .inner {
   padding-left: 58px;
   padding-right: 58px;
@@ -9619,14 +9625,14 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   transition: transform 0.2s ease-out;
 }
 
-/* line 433 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 437 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .message .headphone {
   position: absolute;
   top: 0;
   right: 20px;
 }
 
-/* line 436 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 440 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .message .name {
   color: #465059;
   font-weight: 600;
@@ -9634,17 +9640,17 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   margin-bottom: 4px;
 }
 
-/* line 441 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 445 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .message .name span {
   color: #b8bdc1;
 }
 
-/* line 444 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 448 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .message .name span.dash {
   margin-left: 4px;
 }
 
-/* line 447 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 451 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .message .img_wrapper_2 {
   position: absolute;
   top: 0;
@@ -9654,7 +9660,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   text-align: center;
 }
 
-/* line 454 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 458 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .message .img_wrapper_2 .icon {
   color: #f23131;
   font-size: 27px;
@@ -9662,19 +9668,19 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   line-height: 40px;
 }
 
-/* line 466 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 470 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_footer {
   padding: 6px 60px 0;
 }
 
-/* line 469 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 473 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_footer .for_unlogged_users p {
   padding-top: 20px;
   padding-bottom: 20px;
   text-align: center;
 }
 
-/* line 476 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 480 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_footer .icon {
   position: absolute;
   top: 27px;
@@ -9684,12 +9690,12 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   display: block;
 }
 
-/* line 483 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 487 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_footer .icon.liked {
   color: #f23131;
 }
 
-/* line 486 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 490 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_footer textarea {
   position: relative;
   top: -7px;
@@ -9699,27 +9705,27 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   margin-bottom: 0;
 }
 
-/* line 495 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 499 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_footer textarea::-webkit-input-placeholder {
   color: #7b7878;
 }
 
-/* line 497 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 501 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_footer textarea:-moz-placeholder {
   color: #7b7878;
 }
 
-/* line 499 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 503 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_footer textarea::-moz-placeholder {
   color: #7b7878;
 }
 
-/* line 501 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 505 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .chat_footer textarea:-ms-input-placeholder {
   color: #7b7878;
 }
 
-/* line 506 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 510 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .img_wrapper_2 {
   display: inline-block;
   border-radius: 4px;
@@ -9729,29 +9735,29 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   top: 10px;
 }
 
-/* line 511 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 515 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .profile_content.chat .img_wrapper_2 img {
   display: block;
 }
 
-/* line 514 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 518 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .for_unlogged_users {
   display: none;
 }
 
-/* line 517 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 521 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 
-/* line 518 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 522 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .not_logged .for_logged_users {
   display: none;
 }
 
-/* line 520 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 524 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .not_logged .for_unlogged_users {
   display: block;
 }
 
-/* line 523 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 527 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .chat_user_popup {
   z-index: 1;
   position: absolute;
@@ -9769,7 +9775,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   color: #929292;
 }
 
-/* line 537 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 541 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .chat_user_popup ._outer {
   background: #fff;
   position: relative;
@@ -9778,13 +9784,13 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   box-shadow: 0 0 1px rgba(76,86,103,0.25), 0 2px 18px rgba(31,37,50,0.32);
 }
 
-/* line 544 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 548 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .chat_user_popup p {
   font-size: 11px;
   font-weight: 600;
 }
 
-/* line 548 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 552 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .chat_user_popup .img_wrapper {
   display: block;
   width: 84px;
@@ -9794,19 +9800,19 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   margin: 0 auto 10px;
 }
 
-/* line 556 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 560 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .chat_user_popup .name {
   color: #1f1f1f;
   margin-bottom: 5px;
   font-weight: 600;
 }
 
-/* line 561 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 565 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .chat_user_popup .name:hover {
   color: #000;
 }
 
-/* line 564 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 568 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .chat_user_popup .button {
   width: 120px;
   padding-top: 3px;
@@ -9814,7 +9820,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   margin: 10px auto 0;
 }
 
-/* line 570 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 574 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 #dashboard_help {
   color: #fdbb30;
   display: block;
@@ -9833,9 +9839,9 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   padding-left: 2px;
 }
 
-/* line 587 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 591 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 
-/* line 588 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 592 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .firefox .profile_content.chat .chat_main .chat_content {
   -o-box-flex: 1;
   box-flex: 1;
@@ -9844,53 +9850,53 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   flex: auto;
 }
 
-/* line 590 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 594 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .firefox .profile_content.chat .chat_footer {
   padding-bottom: 5px;
 }
 
-/* line 593 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 597 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 
-/* line 594 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 598 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .no_touch_device .profile_content.chat .chat_sidebar .spritesheet:hover {
   opacity: 0.8;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
   filter: alpha(opacity=80);
 }
 
-/* line 597 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 601 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .no_touch_device .profile_content.chat .message .name:hover {
   color: #4592d4;
 }
 
-/* line 600 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 604 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .no_touch_device #dashboard_help:hover {
   background: #727272;
 }
 
-/* line 603 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 607 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 
-/* line 605 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 609 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .no_touch_device #help_balloon .dashboard_button:hover {
   background: #30363d;
 }
 
-/* line 608 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 612 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .no_touch_device #help_balloon .dashboard_yellow:hover {
   background: #f8a902;
 }
 
-/* line 611 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 615 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 
-/* line 613 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 617 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .room_live .appcast_running_message select,
 .room_recording .appcast_running_message select {
   display: none;
 }
 
-/* line 620 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 624 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 
-/* line 621 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 625 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/room.styl */
 .explorer.player_visible .profile_content.chat {
   padding-bottom: 70px;
 }
