@@ -53,8 +53,11 @@ module.exports = class Dashboard extends RoomView
       record           : view.get_by_dom( '#record_balloon' )
       live_instructions: view.get_by_dom( '#go_live_instructions' )
       dashboard_help   : view.get_by_dom( '#dashboard_help_balloon' )
+      notify_followers : view.get_by_dom( '#notify_followers_instructions' )
 
     @device_change_count = 0
+    
+    @prepare_notify_followers_balloon()
 
     @appcast_not_running_message = @dom.find '.appcast_not_running_message'
     @meter = view.get_by_dom @dom.find( '.meter_wrapper' )
@@ -182,6 +185,17 @@ module.exports = class Dashboard extends RoomView
 
 
     # delay 4000, => @balloons.appcast.hide()
+
+  
+  prepare_notify_followers_balloon: ->
+    @notify = view.get_by_dom( '#notify_followers' )
+
+    @notify.mouseover =>
+      
+      if not app.session.get( 'hide:notify_balloon' )
+        @balloons.notify_followers.show()
+
+      app.session.set 'hide:notify_balloon', true
 
 
   destroy: ->
