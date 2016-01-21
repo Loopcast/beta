@@ -1,5 +1,7 @@
 Url = require 'app/utils/url_parser'
 transform = require 'lib/cloudinary/transform'
+get_host = require 'app/utils/get_host'
+
 module.exports = class Share
 
   opened    : false
@@ -121,8 +123,11 @@ module.exports = class Share
       
 
   update_link: ( link ) ->
+    if link.indexOf( 'http' ) < 0
+      link = get_host() + link
+      
     @data.link = link
-    @input.val link
+    @input.val @data.link
 
 
   destroy: ->
