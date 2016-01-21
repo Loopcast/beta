@@ -29,6 +29,8 @@
 
         #dashboard_help_balloon.balloon.bottom.bouncy(data-view="components/help/balloon", data-target="#dashboard_help", data-orientation="bottom")
           p Need help connecting your device?
+          a.button.close(href="#", title="Close") x
+
 
       .cell
         #go_live_balloon.balloon(data-view="components/help/balloon", data-target="#go_live_button")
@@ -42,6 +44,9 @@
 
           a.button.following.small_button_4(href="#", title="Got it") Got it
 
+        #notify_followers_instructions.balloon.narrow(data-view="components/help/balloon", data-target="#notify_followers" data-orientation="left" data-offset="-60")
+          p If you leave the checkbox ticked when pressing 'Go live' your followers will receive a notification on Facebook with a link to your room.
+          a.button.close(href="#", title="Close") x
         
         .live_button_wrapper
           p#go_live_button.button.dashboard_button.with_timer(data-view="dashboard/go_live")
