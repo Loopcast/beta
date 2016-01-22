@@ -12,7 +12,7 @@ extends layout
 block content
   .new-homepage(data-menu="new_homepage" data-view="new_homepage")
     
-    .row.intro.parallax-container(data-factor="1", data-image-parallax="/images/landing_img1.jpg")
+    .row.intro.parallax-container(data-factor="1", data-image-parallax="/images/mixer.jpg")
       .container
         h1 Real. Time. Music.
         
@@ -25,7 +25,7 @@ block content
           a.button.yellow_rounded.stream(href="/rooms/create" title="Create Live Room", data-view="components/logged_link", onClick="mixpanel.track('Start Streaming');_gaq.push(['_trackEvent', 'Start Streaming', 'Click', '']);Intercom('trackEvent', 'start-streaming');") Start Streaming
           a.button.listen.white_transparent_border(href="/explore", title="Explore live music", onClick="mixpanel.track('Explore');_gaq.push(['_trackEvent', 'Explore', 'Click', '']);") Listen
 
-    .row.convenient.parallax-container(data-factor="1.07", data-image-parallax="/images/landing_img2.jpg")
+    .row.convenient.parallax-container(data-factor="1.07", data-image-parallax="/images/headphones.jpg")
       .container
         .img-container
           img(src="images/screenshot2.jpg" alt="App screenshot")
@@ -36,9 +36,9 @@ block content
             li Broadcast right from your browser
             li Upload or record your mixes in real time 
 
-        a.button.yellow_rounded.stream(href="/rooms/create" title="Create Live Room", data-view="components/logged_link", onClick="mixpanel.track('Start Streaming');_gaq.push(['_trackEvent', 'Start Streaming', 'Click', '']);Intercom('trackEvent', 'start-streaming');") Start Streaming
+        a.button.yellow_rounded.stream.second(href="/rooms/create" title="Create Live Room", data-view="components/logged_link", onClick="mixpanel.track('Start Streaming');_gaq.push(['_trackEvent', 'Start Streaming', 'Click', '']);Intercom('trackEvent', 'start-streaming');") Start Streaming
 
-    .row.refined.parallax-container(data-factor="1.03", data-image-parallax="/images/landing_img3.jpg")
+    .row.refined.parallax-container(data-factor="1.03", data-image-parallax="/images/computers.jpg")
       .container
         .img-container
           img(src="images/screenshot1.jpg" alt="App screenshot")

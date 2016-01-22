@@ -13,6 +13,11 @@ module.exports = class Balloon
     if @dom.data 'offset'
       @dom_offset = @dom.data 'offset'
 
+    if @dom.data 'offset-top'
+      @dom_offset_top = @dom.data 'offset-top'
+    else
+      @dom_offset_top = 0
+
     @dom.addClass 'orientation_' + @orientation
     view.on 'binded', @on_views_binded
 
@@ -34,7 +39,7 @@ module.exports = class Balloon
 
   on_resize: =>
 
-    @offset = @dom.outerHeight() + @target.outerHeight() - 10
+    @offset = @dom.outerHeight() + @target.outerHeight() - 10 + @dom_offset_top
     @width  = @dom.width()
 
     p = @target.offset()
