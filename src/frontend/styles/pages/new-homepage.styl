@@ -40,6 +40,7 @@
       
       &.stream
         border 2px solid #fdbb30
+        
     .button.listen.white_transparent_border:hover
       background: white
       color: rgb(55,55,55)
@@ -49,6 +50,14 @@
       
     .button.yellow_rounded:hover
       background: #FBAD0A
+      
+    .button.yellow_rounded.join
+      background: none 
+      border: 2px solid white
+      
+    .button.yellow_rounded.join:hover
+      background: white
+      color: rgb(55,55,55)   
       
       
     h2
@@ -91,6 +100,10 @@
       margin-top 34px
       text-transform none
       
+  // hide stream buttons for mobile
+  .stream
+    display none
+      
 
 // Small phones
 @media (max-height: 480px)
@@ -126,7 +139,8 @@
       min-height 850px
       
       .button
-        max-width 400px
+        max-width 300px
+        
       
       h2
         font-size 1.7375rem
@@ -177,6 +191,7 @@
         margin-right auto
         
       .button
+        display block
         clear both
           
 
@@ -186,6 +201,7 @@
       .text
         margin-bottom 35px
       .button
+        display block
         width 510px
         margin 0 auto
         clear both
@@ -225,7 +241,7 @@
         font-size 1.2375rem
         line-height 1.6rem
       .img-container
-        margin-bottom 35px
+        margin-bottom -90px
       .button
         margin-left 0
         margin-right 0
