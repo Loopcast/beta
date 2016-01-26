@@ -40,6 +40,7 @@
       
       &.stream
         border 2px solid #fdbb30
+        
     .button.listen.white_transparent_border:hover
       background: white
       color: rgb(55,55,55)
@@ -90,6 +91,10 @@
     .button
       margin-top 34px
       text-transform none
+      
+  // hide stream buttons for mobile
+  .stream
+    display none
       
 
 // Small phones
@@ -177,6 +182,7 @@
         margin-right auto
         
       .button
+        display block
         clear both
           
 
@@ -186,6 +192,7 @@
       .text
         margin-bottom 35px
       .button
+        display block
         width 510px
         margin 0 auto
         clear both
