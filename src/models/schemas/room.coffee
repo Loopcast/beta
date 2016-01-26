@@ -1,5 +1,6 @@
-mongoose   = require( 'mongoose')
-Schema     = mongoose.Schema
+mongoose = require( 'mongoose')
+Schema   = mongoose.Schema
+SlugHero = require('mongoose-slug-hero')
 
 schema = new Schema
   # _id of the user owning the room
