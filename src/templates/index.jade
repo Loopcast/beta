@@ -32,9 +32,11 @@ block content
         .text
           h2 Convenient and easy for DJs
           ul
-            li Use any third party software or hardware
-            li Broadcast right from your browser
-            li Upload or record your mixes in real time 
+            li Connect your mixer and broadcast you DJ-sets
+            li Record your mixes directly in the browser
+            li Upload and share recordings instantly
+            li We notify you followers when you go live
+            
 
         a.button.yellow_rounded.stream.second(href="/rooms/create" title="Create Live Room", data-view="components/logged_link", onClick="mixpanel.track('Start Streaming');_gaq.push(['_trackEvent', 'Start Streaming', 'Click', '']);Intercom('trackEvent', 'start-streaming');") Start Streaming
 
@@ -47,7 +49,7 @@ block content
           ul
             li Be notified when your favorite DJs go live
             li Chat with the DJ and other listeners
-            li Save your favorite mixes for later
+            li Explore live or recorded DJ mixes on any device
 
         a.button.yellow_rounded.join(
           title="Log In", 
