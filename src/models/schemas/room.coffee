@@ -84,6 +84,8 @@ schema.statics.findAndModify = (query, sort, doc, options, callback) ->
 
   @collection.findAndModify query, sort, doc, options, callback
 
+schema.plugin SlugHero, doc: 'room', field: 'info.title', slugField: 'info.slug', scope: ['user']
+
 Room = mongoose.model 'Room', schema
 
 text_indexes = 

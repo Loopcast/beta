@@ -6,7 +6,6 @@ module.exports = class RoomModal extends Modal
   cover_uploaded: ""
   timeout_title: null
   current_data: null
-  room_name_available: false
   constructor: ( @dom ) ->
     
     super @dom
@@ -63,11 +62,12 @@ module.exports = class RoomModal extends Modal
     @emit 'input:changed', { name: 'cover', value: data.result }
 
   _on_title_changed: ( ) =>
-    @lock()
-    @_check_length @title
-    clearTimeout @timeout_title
     if @title.val().length > 0
-      @timeout_title = setTimeout @_check_room_name, 1000
+      @title.removeClass 'required'
+      @unlock()
+    else
+      @title.addClass 'required'
+      @lock()
 
     @emit 'input:changed', { name: 'title', value: @title.val() }
 
@@ -81,45 +81,38 @@ module.exports = class RoomModal extends Modal
   _on_description_changed: ( ) =>
     @emit 'input:changed', { name: 'description', value: @description.val() }
 
-  _check_length: ( el ) ->
-    if el.val().length > 0
-      el.removeClass 'required'
-    else
-      el.addClass 'required'
-
   _check_room_name: =>
 
     # for now simply don't check when editing
     return if @dom.hasClass 'edit_modal'
 
-    @lock()
-    L.rooms.is_available @title.val(), (error, result) =>
-      @unlock()
-      # log "[RoomModal] _check_room_name", @title.val(), "available?", result.available
-      if error
-        log error
-        return 
+    # @lock()
+    # L.rooms.is_available @title.val(), (error, result) =>
+    #   @unlock()
+    #   # log "[RoomModal] _check_room_name", @title.val(), "available?", result.available
+    #   if error
+    #     log error
+    #     return 
 
 
-      if result.available
-        @room_name_available = true
-      else
-        @title.addClass( 'required' ).focus()
-        notify.error 'Room name not available'
-        @room_name_available = false
+    #   if result.available
+    #     @room_name_available = true
+    #   else
+    #     @title.addClass( 'required' ).focus()
+    #     notify.error 'Room name not available'
+    #     @room_name_available = false
 
 
   _submit: ( ) =>
     
+    console.log 'locked ->', @locked
     return if @locked
 
     # quick validation sketch
     if not @title.val()
       @title.addClass( 'required' ).focus()
-      return 
 
-    if ( not @dom.hasClass 'edit_modal' ) and ( not @room_name_available )
-      @title.addClass( 'required' ).focus()
+      console.log 1
       return 
 
     data = 
@@ -138,7 +131,7 @@ module.exports = class RoomModal extends Modal
 
       delete data.cover
 
-
+    console.log 3
     # log "[Create Room]submit", data
 
     @emit 'submit', data

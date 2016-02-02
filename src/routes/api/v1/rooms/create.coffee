@@ -53,7 +53,7 @@ module.exports =
         info:
           user     : user.username
           title    : payload.title
-          slug     : slug payload.title.toLowerCase()
+          # slug     : slug payload.title.toLowerCase()
           genres   : payload.genres
           location : payload.location
           about    : payload.about

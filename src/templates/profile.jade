@@ -8,11 +8,15 @@ block seo
   meta( property="og:type"  content="profile" )
   meta( name="twitter:title" content="#{user.info.name} | Live Sessions on Loopcast")
       
+  - og_image = user.info.avatar || user.info.cover
+  - if( og_image ) og_image = transform.og_image( og_image )
 
-  - og_image = "#{s.base_path}/images/thumbnail.png"
+  if og_image
+    
+    meta( property="og:image"  content="#{og_image}" )
+    meta( name="twitter:image" content="#{og_image}")
 
-  //- if user.info.avatar
-    - og_image = "#{s.base_path}#{user.info.avatar}"
+  - og_image = s.base_path + "/images/thumbnail.png"
 
   meta( name="og:image"  content="#{og_image}" )
   meta( name="url"       content="#{s.base_path}/#{user.info.username}" )

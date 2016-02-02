@@ -34,7 +34,7 @@ module.exports =
 
     query = 
       user       : user_id
-      'info.slug': title
+      'slug': title
 
     Room.find( query, _id: off )
       # can't have same slug twice
