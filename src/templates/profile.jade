@@ -83,17 +83,15 @@ block content
           .big_number
             .inner
               span.icon.for_mobile.ss-rss
-              span.number #{user.stats.streams}
+              span.number #{stream_count}
               span.text.for_desktop Streams 
 
           .big_number
             .inner
               span.icon.spritesheet.for_mobile.mobile_headphones
-              span.number #{user.stats.listeners}
+              span.number #{plays_count}
               span.text.for_desktop
-                | Total
-                br 
-                | Listeners 
+                | Listens 
 
         .change_cover.upload_wrapper(data-view="components/image_uploader", data-id="profile_cover")
           a.upload_element.button_with_icon.black_button(href="#")

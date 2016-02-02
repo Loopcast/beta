@@ -15,6 +15,31 @@ module.exports = ( username, show_private, callback ) ->
   # if somebody types Uppercase letters, we read as lowercase
   username = username.toLowerCase()
 
+  data = aware {}
+
+  reply = ->
+    
+    return if not data.get 'user'
+    return if not data.get 'rooms'
+    return if not data.get 'tapes'
+    return if not data.get 'stream_count'
+    return if not data.get 'plays_count'
+    
+
+    data = 
+      user         : data.get 'user'
+      rooms        : data.get 'rooms'
+      tapes        : data.get 'tapes'
+      stream_count : data.get 'stream_count'
+      plays_count  : data.get 'plays_count'
+
+    callback null, data
+
+  data.on 'user'        , reply
+  data.on 'rooms'       , reply
+  data.on 'tapes'       , reply
+  data.on 'stream_count', reply
+
   User
     .findOne( 'info.username': username )
     .select( "_id info likes stats")
@@ -27,10 +52,9 @@ module.exports = ( username, show_private, callback ) ->
 
         return callback null, null
 
-      data = 
-        user  : user
-        rooms : []
-        tapes : []
+      data.set 'user', user
+
+
 
       rooms = 
         user             : user._id
@@ -48,51 +72,53 @@ module.exports = ( username, show_private, callback ) ->
 
           if error then return callback error
 
-          data.rooms = rooms
+          data.set 'rooms', rooms
 
-          tapes = 
-            # don't show deleted rooms
-            user   : user._id
-            deleted: false
-            public : true
-            s3     : $exists: true
+      tapes = 
+        # don't show deleted rooms
+        user   : user._id
+        deleted: false
+        public : true
+        s3     : $exists: true
 
-          # if show private, then show all rooms, including
-          # the not public ones
-          if show_private then delete tapes.public
+      # if show private, then show all rooms, including
+      # the not public ones
+      if show_private then delete tapes.public
 
-          Tape
-            .find( tapes )
-            .sort( _id: - 1 )
-            .lean().exec ( error, tapes ) ->
+      Tape
+        .find( tapes )
+        .sort( _id: - 1 )
+        .lean().exec ( error, tapes ) ->
 
-              if error then return callback error
+          if error then return callback error
 
-              data.tapes = tapes
+          data.set 'tapes', tapes
 
-              callback null, data
+      query =
+        user    : user._id
+        duration:'$gt' : 60
 
-      # old code
-      # recorded = 
-      #   'user'               : user._id
-      #   'status.is_recorded' : true
-      #   'status.is_public'   : true
+      Stream.count query, ( error, count ) ->
 
-      # if show_private 
-      #   delete recorded[ 'status.is_public' ]
+        if error
+          console.log 'error finding stream count ->', error
 
-      # # just shows live or recorded rooms
-      # query = $or : [ live, recorded ]
+          return
 
-      # Room.find( query ).lean().exec ( error, rooms ) ->
+        data.set 'stream_count', count
 
-      #   if error then return callback error
+      aggreg =
+        $group: 
+          _id: user._id, 
+          plays: $sum: "$plays" 
 
-      #   for room in rooms
+      Tape.aggregate aggreg, ( error, result ) ->
 
-      #     if room.status.is_live
-      #       data.live = room
-      #     else
-      #       data.recorded.push room
+        if error
+          console.log 'error aggregating plays ->', error
 
-      #   callback null, data
+          return
+
+        console.log 'got plays ->', result[0].plays
+
+        data.set 'plays_count', result[0].plays

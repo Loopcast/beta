@@ -45,6 +45,8 @@ schema = new Schema
 
 schema.plugin SlugHero, doc: 'tape', field: 'title', scope: ['user']
 
+schema.index duration: 1
+
 module.exports = mongoose.model 'Tape', schema
 
 
