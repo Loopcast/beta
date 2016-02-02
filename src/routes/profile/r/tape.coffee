@@ -51,7 +51,11 @@ module.exports =
             if error then return failed req, reply, error
 
             # if tape doesn't exist
-            if not tape then return reply( "Page not found" ).code 404
+            if not tape
+              
+              reply.redirect( "/#{profile}" )
+
+              return
 
             query =
               liked_id : tape._id
