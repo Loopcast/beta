@@ -107,10 +107,15 @@ module.exports = ( username, show_private, callback ) ->
 
         data.set 'stream_count', count
 
-      aggreg =
-        $group: 
-          _id: user._id, 
-          plays: $sum: "$plays" 
+      aggreg = [
+        { $match: user: user._id },
+        {
+          $group: 
+            _id: user._id, 
+            plays: $sum: "$plays" 
+        }
+      ]
+
 
       Tape.aggregate aggreg, ( error, result ) ->
 
