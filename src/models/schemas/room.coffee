@@ -118,31 +118,31 @@ schema.pre 'save', ( next ) ->
 
   next()
 
-schema.pre 'save', ( next, done ) ->
+# schema.pre 'save', ( next, done ) ->
 
-  # TODO: if finds another room with same URL refuses to save, otherwise
-  # we would have two sessions with the name address
+#   # TODO: if finds another room with same URL refuses to save, otherwise
+#   # we would have two sessions with the name address
   
-  doc = @
+#   doc = @
 
-  query = 
-    user       : @user
-    'info.slug': @info.slug
+#   query = 
+#     user       : @user
+#     'info.slug': @info.slug
 
-  Room.find( query, _id: off )
-    # can't have same slug twice
-    # .where( "status.is_live", true )
-    .select( "url" )
-    .lean()
-    .exec ( error, room ) -> 
-      if error then failed null, null, error
+#   Room.find( query, _id: off )
+#     # can't have same slug twice
+#     # .where( "status.is_live", true )
+#     .select( "url" )
+#     .lean()
+#     .exec ( error, room ) -> 
+#       if error then failed null, null, error
 
-      if room.length
-        console.log " ! Found another room with same slug ->", room
+#       if room.length
+#         console.log " ! Found another room with same slug ->", room
 
-        doc.invalidate 'url', 'cant have same slug on different sessions'
-        return done new Error('cant_have_same_slug_twice')
+#         doc.invalidate 'url', 'cant have same slug on different sessions'
+#         return done new Error('cant_have_same_slug_twice')
 
-      next()
+#       next()
 
 module.exports = Room
