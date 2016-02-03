@@ -1,6 +1,6 @@
 module.exports = ( room_id, callback ) ->
 
-  redis.lrange "#{room_id}:messages", -50, -1, ( error, response ) ->
+  redis.lrange "#{room_id}:messages", 0, 50, ( error, response ) ->
 
     if error then return callback error
 
