@@ -12,7 +12,7 @@ schema = new Schema
     # using this for search purposes at the moment
     user      : type: String, required: on
     title     : type: String, required: on
-    slug      : type: String, required: on
+    # slug      : type: String, required: on
     genres    : { type: Array, default: [] }
     location  : String
     about     : String
