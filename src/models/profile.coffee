@@ -70,7 +70,10 @@ module.exports = ( username, show_private, callback ) ->
         .sort( _id: - 1 )
         .lean().exec ( error, rooms ) ->
 
-          if error then return callback error
+          if error
+            data.set 'rooms', []
+
+            return callback error
 
           data.set 'rooms', rooms
 
@@ -90,7 +93,10 @@ module.exports = ( username, show_private, callback ) ->
         .sort( _id: - 1 )
         .lean().exec ( error, tapes ) ->
 
-          if error then return callback error
+          if error
+            data.set 'tapes', []
+
+            return callback error
 
           data.set 'tapes', tapes
 
