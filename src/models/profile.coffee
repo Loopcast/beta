@@ -103,6 +103,8 @@ module.exports = ( username, show_private, callback ) ->
         if error
           console.log 'error finding stream count ->', error
 
+          data.set 'stream_count', 0
+          
           return
 
         data.set 'stream_count', count || 0
@@ -121,6 +123,8 @@ module.exports = ( username, show_private, callback ) ->
 
         if error
           console.log 'error aggregating plays ->', error
+
+          data.set 'plays_count', 0
 
           return
 
