@@ -105,7 +105,7 @@ module.exports = ( username, show_private, callback ) ->
 
           return
 
-        data.set 'stream_count', count
+        data.set 'stream_count', count || 0
 
       aggreg = [
         { $match: user: user._id },
