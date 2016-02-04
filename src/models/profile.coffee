@@ -121,7 +121,7 @@ module.exports = ( username, show_private, callback ) ->
           
           return
 
-        console.log 'got stream_count ->', stream_count
+        console.log 'got stream_count ->', count || 0
 
         data.set 'stream_count', count || 0
 
