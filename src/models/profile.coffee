@@ -124,6 +124,4 @@ module.exports = ( username, show_private, callback ) ->
 
           return
 
-        console.log 'got plays ->', result[0].plays
-
-        data.set 'plays_count', result[0].plays
+        data.set 'plays_count', result[0].plays || 0
