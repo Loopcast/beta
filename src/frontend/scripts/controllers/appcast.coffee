@@ -166,14 +166,11 @@ appcast.start_stream = ( username, room_slug, password, device_name ) ->
     mount_point : "loopcast-staging/#{username}_#{room_slug}"
     password    : password
     port        : "80"
-    server      : 'inbound-a.cdn.audiopump.co'
+    server      : "192.241.228.179"
 
-  # payload.server = '46.101.25.152'
-  payload.port   = "80"
-  payload.server = '192.241.228.179'
-  
   if window.is_beta
     payload.mount_point = "loopcast/#{username}_#{room_slug}"
+    payload.server      = 'inbound-a.cdn.audiopump.co'
 
   console.log 'stream with payload ->', payload
 
