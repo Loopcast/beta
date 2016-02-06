@@ -25,7 +25,7 @@
           select
             option Select your input source
 
-        a#dashboard_help(href="https://loopcast.desk.com/customer/en/portal/topics/878765-connecting-your-device-to-loopcast/articles" target="_blank", title="Help" onclick="mixpanel.track('Help');") ?
+        a#dashboard_help(href="https://loopcast.desk.com/customer/en/portal/topics/878765-connecting-your-device-to-loopcast/articles" target="_blank", title="Help" onclick="mixpanel.track('Help');Intercom('trackEvent', 'help');") ?
 
         #dashboard_help_balloon.balloon.bottom.bouncy(data-view="components/help/balloon", data-target="#dashboard_help", data-orientation="bottom")
           p Need help connecting your device?
