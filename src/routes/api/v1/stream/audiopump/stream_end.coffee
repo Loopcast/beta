@@ -93,7 +93,7 @@ module.exports =
           update = 
             $set   : 
               # reset will strem status
-              will_stream           : false
+              # will_stream           : false
               streaming             : null
               'status.is_live'      : false
               'status.is_recording' : false

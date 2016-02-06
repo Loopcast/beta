@@ -33,8 +33,6 @@ module.exports =
           { 'user' : mount_point, 'status.is_recording' : true }
         ]
 
-      console.log "Looking for a room with th following query:", query
-      
       Room.findOne( query )
         .select( "_id" )
         .sort( _id: - 1 )

@@ -107,11 +107,7 @@ module.exports =
 
                   return reply Boom.preconditionFailed( "Database error" )
 
-                console.log "CHECKING FOR NOTIFY"
-
                 if room.notify or not room.notify?
-
-                  console.log "NOTIFYING"
 
                   # spam all followers about the room!
                   notify_user_is_live room.user, room.info.slug

@@ -52,8 +52,6 @@ module.exports = ( username, show_private, callback ) ->
 
         return callback null, null
 
-      console.log 'got user ->', user
-
       data.set 'user', user
 
 
@@ -79,8 +77,6 @@ module.exports = ( username, show_private, callback ) ->
 
             return callback error
 
-          console.log 'got rooms ->', rooms
-
           data.set 'rooms', rooms
 
       tapes = 
@@ -104,8 +100,6 @@ module.exports = ( username, show_private, callback ) ->
 
             return callback error
 
-          console.log 'got tapes ->', tapes
-
           data.set 'tapes', tapes
 
       query =
@@ -120,8 +114,6 @@ module.exports = ( username, show_private, callback ) ->
           data.set 'stream_count', 0
           
           return
-
-        console.log 'got stream_count ->', count || 0
 
         data.set 'stream_count', count || 0
 
@@ -145,7 +137,5 @@ module.exports = ( username, show_private, callback ) ->
           return
 
         plays_count = result[0]?.plays || 0
-
-        console.log 'plays_count ->', plays_count
 
         data.set 'plays_count', result[0]?.plays || 0
