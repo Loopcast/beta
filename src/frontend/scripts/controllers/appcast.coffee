@@ -170,7 +170,8 @@ appcast.start_stream = ( username, room_slug, password, device_name ) ->
 
   # payload.server = '46.101.25.152'
   payload.port   = "80"
-
+  payload.server = '192.241.228.179'
+  
   if window.is_beta
     payload.mount_point = "loopcast/#{username}_#{room_slug}"
 
