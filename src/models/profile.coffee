@@ -22,8 +22,8 @@ module.exports = ( username, show_private, callback ) ->
     return if not data.get 'user'
     return if not data.get 'rooms'
     return if not data.get 'tapes'
-    return if not data.get 'stream_count'
-    return if not data.get 'plays_count'
+    return if not data.get( 'stream_count' )?
+    return if not data.get( 'plays_count' )?
     
 
     data = 
@@ -70,7 +70,12 @@ module.exports = ( username, show_private, callback ) ->
         .sort( _id: - 1 )
         .lean().exec ( error, rooms ) ->
 
-          if error then return callback error
+          if error
+
+
+            data.set 'rooms', []
+
+            return callback error
 
           data.set 'rooms', rooms
 
@@ -90,7 +95,10 @@ module.exports = ( username, show_private, callback ) ->
         .sort( _id: - 1 )
         .lean().exec ( error, tapes ) ->
 
-          if error then return callback error
+          if error
+            data.set 'tapes', []
+
+            return callback error
 
           data.set 'tapes', tapes
 
@@ -103,9 +111,11 @@ module.exports = ( username, show_private, callback ) ->
         if error
           console.log 'error finding stream count ->', error
 
+          data.set 'stream_count', 0
+          
           return
 
-        data.set 'stream_count', count
+        data.set 'stream_count', count || 0
 
       aggreg = [
         { $match: user: user._id },
@@ -122,6 +132,10 @@ module.exports = ( username, show_private, callback ) ->
         if error
           console.log 'error aggregating plays ->', error
 
+          data.set 'plays_count', 0
+
           return
 
-        data.set 'plays_count', result[0].plays || 0
+        plays_count = result[0]?.plays || 0
+
+        data.set 'plays_count', result[0]?.plays || 0
