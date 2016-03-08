@@ -30,8 +30,10 @@ module.exports = class PeoplePopup extends ChatView
     @cancel_hide = false
     @hide()
 
-  show: (id, coords, position) -> 
-    return if @current_id is id
+  show: (id, coords, callback = ->) -> 
+    if @current_id is id
+      log "[ddd] return 1"
+      return
 
     @current_id = id
 
@@ -47,7 +49,7 @@ module.exports = class PeoplePopup extends ChatView
         url : '/' + response.info.username
     
       
-      log "[Popup] show", data, user.is_me( data.id ), position
+      log "[Popup] show", data, user.is_me( data.id )
 
       @cancel_hide = true
       @visible     = true   
@@ -57,12 +59,17 @@ module.exports = class PeoplePopup extends ChatView
       h = if user.is_me( data.id ) then 170 else 230
       w = 220
 
+      log "[ddd] return 2"
+      callback()
+
+
+
       @dom
         .show()
         .css
           opacity : 1 
           left: coords.x - (w/2) + (coords.w/2)
-          top: coords.y - h - 10
+          top: coords.y - h
         .find( '.outer_inner' )
         .html( @tmpl( data ) )
 
@@ -72,6 +79,7 @@ module.exports = class PeoplePopup extends ChatView
         is_guest = data.name is "Guest"
         @follow_button.set_user_id data.id, is_guest
 
+      
 
       delay 300, => @cancel_hide = false
 
@@ -82,12 +90,12 @@ module.exports = class PeoplePopup extends ChatView
       view.off 'binded', @on_views_binded
 
 
-  hide: ->
+  hide: (callback = ->) ->
     delay 200, =>
       if not @cancel_hide
-        @_hide()
+        @_hide(callback)
 
-  _hide: ->
+  _hide: (callback = ->)->
     @visible = false
     @dom.css 'opacity', 0
     delay 200, => 
@@ -95,6 +103,7 @@ module.exports = class PeoplePopup extends ChatView
         @dom.hide()
 
         @current_id = null
+        callback()
 
   destroy: ->
     # log "[PeoplePopup] destroy"
