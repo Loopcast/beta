@@ -57,6 +57,13 @@ module.exports =
 
           if not room 
 
+            console.log "STREAM END OUT OF ORDER!!"
+            console.log "STREAM END OUT OF ORDER!!"
+            console.log "STREAM END OUT OF ORDER!!"
+            console.log "STREAM END OUT OF ORDER!!"
+            console.log "STREAM END OUT OF ORDER!!"
+            console.log "STREAM END OUT OF ORDER!!"
+            
             # for instance if there is a new audiopump_id
             # console.log "failed to find #{room_slug} for #{username}"
 
