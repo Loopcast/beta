@@ -34,6 +34,7 @@ module.exports =
         return
 
       query = 
+        'status.audiopump_id' : req.payload.data.id
         'info.user': username
         'info.slug': room_slug
 

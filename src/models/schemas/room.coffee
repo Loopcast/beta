@@ -38,6 +38,7 @@ schema = new Schema
   notify: { type: Boolean, default: true }
 
   status:
+    audiopump_id : { type: String, default: "" }
     # 
     # WONT BE USED ANYMORE !?
     is_live      : { type: Boolean, default: off } # when user press go live

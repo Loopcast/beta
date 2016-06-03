@@ -67,8 +67,10 @@ module.exports =
             return
 
           room_update =
+            'status.audiopump_id'    : req.payload.data.id
             'status.is_live'         : true
             'status.live.started_at' : start_time
+            'status.live.listeners'  : 0
 
           stream = 
             user       : room.user

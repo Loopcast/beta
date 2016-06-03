@@ -37,8 +37,9 @@ module.exports =
       console.log '-- eo -- '
 
       query =
-        'info.slug'  : room_slug
-        'info.user'  : username
+        'status.audiopump_id' : req.payload.data.id
+        'info.slug'           : room_slug
+        'info.user'           : username
 
       Room.findOne( query )
         .select( "_id stream status.is_live status.is_recording" )
