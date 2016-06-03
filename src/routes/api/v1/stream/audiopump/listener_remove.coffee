@@ -60,7 +60,7 @@ module.exports =
 
           console.log "listened removed for room_id #{room._id}"
       
-          Room.update( _id: room._id, $inc: 'status.live.listeners': -1 )
+          Room.update( _id: room._id, update: $inc: 'status.live.listeners': -1 )
 
           # count one less listener
           redis_key = "#{room._id}:listeners"
