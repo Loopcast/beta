@@ -39,7 +39,7 @@ module.exports =
               console.error "room: #{req.params.id}"
               console.error error.payload
 
-              data.set 'listeners', -1
+              data.set 'listeners', 0
             else
               data.set 'listeners', listeners
 
