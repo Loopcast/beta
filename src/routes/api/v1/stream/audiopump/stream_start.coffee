@@ -97,6 +97,10 @@ module.exports =
 
             sockets.send room._id, data
 
+            # reset redis count
+            redis_key = "#{room._id}:listeners"
+            redis.set redis_key, 0
+
             # save link to current recording on the room
             room_update.stream = doc._id
 

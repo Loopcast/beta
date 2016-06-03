@@ -37,7 +37,7 @@ module.exports =
         return
 
       query = 
-        # 'status.audiopump_id' : req.payload.data.id
+        'status.audiopump_id' : req.payload.data.id
         'info.user': username
         'info.slug': room_slug
 
@@ -58,6 +58,8 @@ module.exports =
             # console.log "room not found #{username}/#{room_slug}"
 
             return
+
+          Room.update( _id: room._id, $inc: 'status.live.listeners': 1 )
 
           # count one less listener
           redis_key = "#{room._id}:listeners"
