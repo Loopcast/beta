@@ -57,7 +57,8 @@ module.exports =
 
           if not room 
 
-            console.log "failed to find #{room_slug} for #{username}"
+            # for instance if there is a new audiopump_id
+            # console.log "failed to find #{room_slug} for #{username}"
 
             return reply Boom.resourceGone( "room not found or user not owner" )
 

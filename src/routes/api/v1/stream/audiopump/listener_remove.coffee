@@ -51,7 +51,8 @@ module.exports =
             return
 
           if not room
-            console.log "room not found #{username}/#{room_slug}"
+            # if audiopump id is old for instance
+            # console.log "room not found #{username}/#{room_slug}"
 
             return
 
