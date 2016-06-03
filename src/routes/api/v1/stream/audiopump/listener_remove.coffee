@@ -53,7 +53,8 @@ module.exports =
 
           if not room
             # if audiopump id is old for instance
-            # console.log "room not found #{username}/#{room_slug}"
+            console.log 'id ->', req.payload.data.id
+            console.log "room not found #{username}/#{room_slug}"
 
             return
 
