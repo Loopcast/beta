@@ -23,6 +23,7 @@ module.exports =
 
       console.log 'username : ', username
       console.log 'room_slug: ', room_slug
+      console.log 'audiopump_id:', req.payload.data.id
       console.log 'ip  : ', ip
 
       reply ok: true
@@ -34,7 +35,7 @@ module.exports =
         return
 
       query = 
-        'status.audiopump_id' : req.payload.data.id
+        # 'status.audiopump_id' : req.payload.data.id
         'info.user': username
         'info.slug': room_slug
 
