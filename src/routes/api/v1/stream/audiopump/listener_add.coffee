@@ -37,7 +37,7 @@ module.exports =
         return
 
       query = 
-        'status.audiopump_id' : req.payload.data.id
+        # 'status.audiopump_id' : req.payload.data.id
         'info.user': username
         'info.slug': room_slug
 
@@ -68,7 +68,7 @@ module.exports =
 
             value = Number value.toString()
 
-            console.log "listened INCR for #{username}/#{room_slug} = #{value}"
+            # console.log "listened INCR for #{username}/#{room_slug} = #{value}"
 
             # reset in case went negative
             if value < 0

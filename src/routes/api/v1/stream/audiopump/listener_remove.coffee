@@ -35,7 +35,7 @@ module.exports =
         return
 
       query = 
-        'status.audiopump_id' : req.payload.data.id
+        # 'status.audiopump_id' : req.payload.data.id
         'info.user': username
         'info.slug': room_slug
 
@@ -68,7 +68,7 @@ module.exports =
 
             value = Number value.toString()
 
-            console.log "listened DECR for #{username}/#{room_slug} = #{value}"
+            # console.log "listened DECR for #{username}/#{room_slug} = #{value}"
 
             if value < 0
               redis.set redis_key, 0
