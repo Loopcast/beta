@@ -324,6 +324,22 @@ appcast.callbacks =
 
       if error then console.error error
 
+# appcast.check_connection = ->
+
+#  jQuery.ajaxSetup({async:false});
+
+ 
+#  re="";
+#  r=Math.round(Math.random() * 10000);
+#  $.get("http://staging.loopcast.fm",function(d){
+#   re=true;
+# console.log("connected")
+#  }).error(function(){
+#   re=false;
+# console.error( "error" )
+#  });
+#  return re;
+# }
 
 # should try to connect only on it's own profile page
 # appcast.connect()
