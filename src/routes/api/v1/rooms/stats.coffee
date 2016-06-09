@@ -47,7 +47,7 @@ module.exports =
 
         else
 
-          data.set 'listeners', -1
+          data.set 'listeners', 0
           data.set 'jobs', data.get( "jobs" ) - 1
 
         data.set 'room', room
