@@ -265,6 +265,42 @@ appcast.callbacks =
     appcast.set "stream:starting", null
     appcast.set "stream:error"   , null
 
+
+  buffer_status : ( args ) ->
+
+    if args? and args.error?
+
+      console.log 'error on buffer status'
+
+      return
+
+    # console.log 'buffer status ->', args
+
+
+    if args.filled > 1
+
+      # check if buffer is rising
+
+      if appcast.get( 'buffer:filled' )
+
+        # if buffer is increasing in size
+        if appcast.get( 'buffer:filled' ) < args.filled
+
+          appcast.set 'status', 'buffering'
+
+
+    appcast.set 'buffer:filled', args.filled
+
+  stream_status : ( args ) ->
+
+    if args? and args.error?
+
+      console.log 'error on buffer status'
+
+      return
+
+    appcast.set 'status', args.status
+
   stream_stopped: ->
 
     # save current stream:online status
@@ -293,3 +329,7 @@ appcast.callbacks =
 # appcast.connect()
 
 module.exports = window.appcast = appcast
+
+appcast.on 'status', ( status ) ->
+
+  console.info "NEW APPCAST STATUS: #{status}"

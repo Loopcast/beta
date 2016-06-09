@@ -1,4 +1,5 @@
 appcast = require 'app/controllers/appcast'
+notify = require 'app/controllers/notify'
 RoomView = require 'app/views/room/room_view'
 user = require 'app/controllers/user'
 L = require 'api/loopcast/loopcast'
@@ -71,6 +72,8 @@ module.exports = class Dashboard extends RoomView
     # @on_appcast_not_running()
     @on_appcast_connected()
     @appcast_not_running_message.on 'click', @toggle_not_running_balloon
+
+    appcast.on 'status', @on_status
     appcast.on 'connected', @on_appcast_connected
     app.on 'appcast:input_device', @on_device_changed
 
@@ -151,6 +154,27 @@ module.exports = class Dashboard extends RoomView
     clearTimeout @timeout
     
     @timeout = setTimeout @check_appcast_running, 100
+
+  on_status: ( status ) ->
+
+    if status is 'buffering'
+
+      notify.info "The connection is slow at the moment. Please make sure you have
+      no other uploads happening at the same time"
+
+    if status is 'reconnecting'
+
+      notify.info "Connection lost. Trying to reconnect..."
+
+    if status is 'stopped'
+
+      if $( '.room_live' ).length > 0
+        app.emit 'room:go_offline'
+
+    if status is 'error'
+      notify.error "There was a problem while streaming, is the internet connection OK?"
+
+    console.log 'got status ->', status
 
   check_appcast_running: =>
     if @appcast_is_running
