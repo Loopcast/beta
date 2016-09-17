@@ -17,9 +17,11 @@ module.exports = class NewHomePage
     
     search_input.focus ->
       $(this).addClass 'focus'
+      $(this).closest('.search_box').addClass 'focus'
 
     search_input.blur ->
       $(this).removeClass 'focus'
+      $(this).closest('.search_box').removeClass 'focus'
 
 
 
