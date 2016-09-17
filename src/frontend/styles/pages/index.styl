@@ -1,4 +1,6 @@
 NEW_GREEN = #07D159
+DARK_GREY = #4B4B4B
+NAME_BLUE = #549AE6
 
 .homepage_page
   h1, h2
@@ -9,37 +11,70 @@ NEW_GREEN = #07D159
   .intro
     height 405px
     background: url('../images/home_mobile_bg.jpg') no-repeat 50% 50%
+    .container
+      position absolute
+      top 50%
+      left 0
+      transform: translate(0, -50%)
+      padding 0 10px
   .row
+    position relative
     padding 0 10px
     .container
       margin auto
     p
-      font-size 1.31rem
-      line-height 2.8125rem
+      font-size 0.9375rem
+      line-height 1.9375rem
       padding 20px 0 32px
+      color white
     .button
       max-width 260px
       margin-left auto
       margin-right auto
-      padding 0
-      text-transform uppercase
+      padding 0 27px
+      // text-transform uppercase
       font-size 0.9rem
       line-height 3.3rem
       height auto
       font-weight 600
-
-// Small phones
-@media (max-height: 480px)
-  .homepage_page
-    .row
-      h1, h2
-        font-size 1.6rem
-      p
-        font-size 1rem
-        line-height 1.8rem
-      .button
-        font-size 1rem
-        line-height 2.5rem
+  .featured
+    padding 44px
+    .title
+      font-size 1.5rem
+      line-height 1.75rem
+      color DARK_GREY
+      border-bottom 1px solid #979797
+      text-align center
+      padding-bottom 9px
+      margin-bottom 25px
+    h2
+      margin 16px 0 10px
+      font-size 1.5rem
+      line-height 1.75rem
+      color DARK_GREY
+      text-align left
+    .room_subtitle
+      color NAME_BLUE
+    .room_content
+      text-align left
+      
+  .room_cell
+    margin-bottom 30px
+    .thumb_wrapper
+      display block
+      position relative
+      overflow hidden
+      &:before
+        display block
+        content ""
+        width 100%
+        padding-top 100%
+      img
+        height 100%
+        position absolute
+        top 50%
+        left 50%
+        transform translate(-50%, -50%)
 
 
 // Tablet and up
@@ -52,8 +87,6 @@ NEW_GREEN = #07D159
       margin-left auto
       margin-right auto
     .row
-      height auto
-      min-height 850px
       .button
         max-width 300px
 
