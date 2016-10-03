@@ -25,6 +25,20 @@ module.exports = class NewHomePage
       $(this).removeClass 'focus'
       $(this).closest('.search_box').removeClass 'focus'
 
+
+    # header carousel
+    @intro = $ '.intro.swiper-container'
+    options =
+      direction: 'horizontal'
+      loop: true
+      pagination: '.swiper-pagination'
+      paginationClickable: true
+
+    # init swiper only for tablets and desktops
+    if window.innerWidth > 700
+      introSwiper = new Swiper @intro, options
+
+
     # featured channels carousel
     @featured = $ '.featured .swiper-container'
     options = 
