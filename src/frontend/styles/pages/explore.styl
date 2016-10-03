@@ -96,16 +96,9 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
     .room_cell
       width: 210px
       text-align: left
-      background: white
-      // margin-right: MARGIN_GRID
       margin-bottom: MARGIN_GRID
-      
-      // float: left
-      // overflow: hidden
       position: relative
-      border: 1px solid #DDD7D7
-      border-bottom: 2px solid #DDD7D7 
-      border-radius: 5px
+      
       
       &.not_live
         .room_location
@@ -126,8 +119,6 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
       .thumb_wrapper
         position: relative
         display: block
-        border-top-left-radius: 3px
-        border-top-right-radius: 3px
         overflow: hidden
       & > .thumb_wrapper
         width: 208px
@@ -262,3 +253,14 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
   
 
       
+// tablet and up
+@media (min-width 600px)
+  .explore_page
+    .container
+      max-width 1140px
+    #content
+      height calc(100vh - 55px)
+      background url('../images/explore_bg.jpg') no-repeat top left
+    .explore
+      padding-top 0
+      background-size cover

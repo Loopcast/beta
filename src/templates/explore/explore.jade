@@ -12,51 +12,60 @@ block seo
 
 
 block grid
+  .container
+    .arrows
+      a(href="").prevSlide.arrow
+        img(src="images/arrow_left.svg", alt="Previous Slide")
+      a(href="").nextSlide.arrow
+        img(src="images/arrow_right.svg", alt="Next Slide")
 
-  for item in tapes
+    .swiper-container
+      .swiper-wrapper
 
-    - klasses = "item-all-genres"
+        for item in tapes
 
-    - url         = "/"+ item.user.info.username + "/r/" + item.slug
-    - sharing_url = url
-    - author_url  = "/"+ item.user.info.username
-    - cover_url   = item.cover_url || item.user.info.avatar
+          - klasses = "item-all-genres"
 
-    //- for g in item.genres
-    //-   - console.log( slugify(g) )
+          - url         = "/"+ item.user.info.username + "/r/" + item.slug
+          - sharing_url = url
+          - author_url  = "/"+ item.user.info.username
+          - cover_url   = item.cover_url || item.user.info.avatar
 
-    //- if not uploaded yet, just skip it
-    - if( !item.s3 ) continue
+          //- for g in item.genres
+          //-   - console.log( slugify(g) )
 
-    .room_cell.item(class="#{klasses}", data-view="components/audio/player_preview", data-room-id="#{item._id}" data-is-live="", data-audio-url="#{item.s3.location}")
-      hidden( class="source_src" value="#{item.s3.location}")
+          //- if not uploaded yet, just skip it
+          - if( !item.s3 ) continue
 
-            
-      a(href="#{url}", title="#{item.title}", class="thumb_wrapper") 
-        img.room_thumb.for_desktop(src="#{transform.explore_thumb(cover_url)}")
-        img.room_thumb.for_mobile(src="#{transform.explore_thumb_mobile(cover_url)}")
+          .room_cell.item.swiper-slide(class="#{klasses}", data-view="components/audio/player_preview", data-room-id="#{item._id}" data-is-live="", data-audio-url="#{item.s3.location}")
+            hidden( class="source_src" value="#{item.s3.location}")
 
-        span.icon.ss-play.circle_icon
-        .loading_spin
+                  
+            a(href="#{url}", title="#{item.title}", class="thumb_wrapper") 
+              img.room_thumb.for_desktop(src="#{transform.explore_thumb(cover_url)}")
+              img.room_thumb.for_mobile(src="#{transform.explore_thumb_mobile(cover_url)}")
 
-        - about = ""
-        if item.about
-          - about = item.about
+              span.icon.ss-play.circle_icon
+              .loading_spin
 
-        .share_wrapper(
-          data-view="buttons/share", 
-          data-title="#{item.title}",
-          data-summary="#{about}",
-          data-permalink="#{sharing_url}",
-          data-image="#{item.cover_url}"
-        )
-          a.yellow.ss-action(href="#", title="Share")
+              - about = ""
+              if item.about
+                - about = item.about
 
-      .room_content
-        .text
-          h2.room_title
-            a(href="#{url}", title="#{item.title}") #{item.title}
-          a.room_subtitle.blue(title="#{item.user.info.name}", href="#{author_url}") #{item.user.info.name}
+              .share_wrapper(
+                data-view="buttons/share", 
+                data-title="#{item.title}",
+                data-summary="#{about}",
+                data-permalink="#{sharing_url}",
+                data-image="#{item.cover_url}"
+              )
+                a.yellow.ss-action(href="#", title="Share")
+
+            .room_content
+              .text
+                h2.room_title
+                  a(href="#{url}", title="#{item.title}") #{item.title}
+                a.room_subtitle.blue(title="#{item.user.info.name}", href="#{author_url}") #{item.user.info.name}
 
   script
     //- THIS IS JUST FOR DEBUGGIN. TO BE REMOVED
