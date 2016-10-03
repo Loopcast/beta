@@ -24,11 +24,6 @@ block grid
 
     //- for g in item.genres
     //-   - console.log( slugify(g) )
-      
-
-    - klasses += " not_live"
-
-    - klasses += " is_recorded"
 
     //- if not uploaded yet, just skip it
     - if( !item.s3 ) continue
@@ -40,9 +35,6 @@ block grid
       a(href="#{url}", title="#{item.title}", class="thumb_wrapper") 
         img.room_thumb.for_desktop(src="#{transform.explore_thumb(cover_url)}")
         img.room_thumb.for_mobile(src="#{transform.explore_thumb_mobile(cover_url)}")
-        
-        span.recorded Recorded
-        span.now_live Now Live
 
         span.icon.ss-play.circle_icon
         .loading_spin
@@ -65,31 +57,6 @@ block grid
           h2.room_title
             a(href="#{url}", title="#{item.title}") #{item.title}
           a.room_subtitle.blue(title="#{item.user.info.name}", href="#{author_url}") #{item.user.info.name}
-          .genres.small
-            - counter = 0
-            - if( !item.genres ) item.genres = []
-            for genre in item.genres
-              - klass = ""
-              if counter++ >= 5
-                - klass = "hide"
-              a.tag(href="?genres=#{genre}", title="#{genre}", data-genre-id="#{genre}", class="#{klass}") #{genre}
-
-            if item.genres.length > 5
-              span ...
-
-          - if( !item.location ) item.location = []
-          if item.location.length > 0
-            p.room_location
-              a(href="/explore?search=#{item.location}")
-                span.icon.ss-location
-                | #{item.location}
-
-          .likes 
-            span.icon.ss-heart
-            span.text #{item.likes}
-          .plays
-            span.icon.ss-play
-            span.text #{item.plays}
 
   script
     //- THIS IS JUST FOR DEBUGGIN. TO BE REMOVED
