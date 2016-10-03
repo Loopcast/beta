@@ -72,64 +72,7 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
     
   .explore_content > .loading
     top: 45px
-    
-
-  .sub_header
-    background: #EFF3F6
-    height: HEIGHT_SUBHEADER
-    border-bottom: 1px solid GRAY_SUBHEADER_BORDER
-    color: GRAY_2
-    font-size: .9em
-    font-weight: 600
-    absolute top 0 left 0
-    width: 100%
-    z-index: 1
-    a
-      display: block
-    li
-      display: inline-block
-      height: HEIGHT_SUBHEADER
-      padding: 10px 40px 0
-      
-      .spritesheet, .icon
-        position: relative
-        top: 2px
-        margin-right: 5px
-        
-      .ss-record-wrapper
-        top: -1px
-        margin-right: 6px
-        
-      &.selected
-        background: GRAY
-        border-left: 1px solid GRAY_SUBHEADER_BORDER
-        border-right: 1px solid GRAY_SUBHEADER_BORDER
-        border-bottom: 1px solid GRAY
-        // transition: border-color .3s linear
-        a
-          cursor: default
-          
-    &.fixed
-      position: fixed
-      backface-visibility: hidden
-      li.selected
-        border-bottom-color: GRAY_SUBHEADER_BORDER
-          
-
-  .likes, .plays
-    font-size: .7em
-    color: GRAY_4
-    margin: 5px 1px
-    .spritesheet
-      position: relative
-      top: 2px
-    .text
-      margin-left: 5px
-      
-  .plays
-    .spritesheet
-      margin-left: 3px
-      margin-right: 1px
+  
         
   .explore_content
     padding-top: SIDE_PADDING * 2
@@ -137,50 +80,6 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
   
 
   MARGIN_GRID = 30px
-  
-  .now_live
-  .recorded
-    
-    color: white
-    text-transform: uppercase
-    font-size: 0.7em
-    padding: 2px 6px
-    absolute top 0 left 0
-    border-bottom-right-radius: 3px
-    display: none
-    
-  .now_live
-    background: RED
-    
-  .recorded
-    background: #02B016
-    
-  .is_live
-    .now_live
-      display: inline-block
-      
-  .is_recorded
-    .recorded
-      display: inline-block
-    
-  .genres_list
-    width: 150px
-    margin-right: MARGIN_GRID
-    font-size: 0.8em
-    a
-      display: block
-      background: #dedede
-      color: #444235
-      padding: 6px 12px
-      text-align: left
-      margin-bottom: 5px
-      border-radius: 4px 
-      text-transform: capitalize
-      &.selected
-        background: #747C83
-        color: #dedede
-        font-weight: 600
-        
       
     
   .rooms_grid
@@ -331,35 +230,10 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
   &.tab_filter .rooms_grid .loading
     opacity: 1
     
-
-// .visible
-//   &.tab_filter .rooms_grid .loading
-//   &.tab_1 .explore_content > .loading
-//     z-index: 1
     
-// .custom_loading
-//   &.tab_filter .rooms_grid .loading
-//   &.tab_1 .explore_content > .loading
-//     opacity: 1
-//     transition: opacity .1s linear
-    
-  
-// .tab_1
-//   &.visible .explore_content > .loading
-//     opacity: 1
-    
-    
-
-
 
 .no_touch_device
   .explore
-    .sub_header li:hover
-      color: BLACK
-    .genres_list
-      a:hover
-        background:  #747C83
-        color: #dedede
     .room_cell:hover
       .share_set, .like_set
         color: GRAY_2
