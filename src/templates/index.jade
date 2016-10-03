@@ -26,13 +26,22 @@ block content
     .row.featured
       .container
         h2.title Featured Channels
-        include fake_room_card.jade
-        include fake_room_card.jade
-        include fake_room_card.jade
-        include fake_room_card.jade
-        include fake_room_card.jade
-        include fake_room_card.jade
-        include fake_room_card.jade
+        
+        .arrows
+          a(href="").prevSlide.arrow
+            img(src="images/arrow_left.svg", alt="Previous Slide")
+          a(href="").nextSlide.arrow
+            img(src="images/arrow_right.svg", alt="Next Slide")
+
+        .swiper-container
+          .swiper-wrapper
+            include fake_room_card.jade
+            include fake_room_card.jade
+            include fake_room_card.jade
+            include fake_room_card.jade
+            include fake_room_card.jade
+            include fake_room_card.jade
+            include fake_room_card.jade
 
 
     

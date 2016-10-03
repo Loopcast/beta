@@ -1,5 +1,6 @@
 Happens         = require 'happens'
 preload         = require 'app/utils/preload'
+Swiper          = require 'swiper'
 
 
 module.exports = class NewHomePage
@@ -13,6 +14,7 @@ module.exports = class NewHomePage
     @header = $ 'header'
     @header.addClass 'top'
 
+    # search field
     search_input = @header.find('.search_box input')
     
     search_input.focus ->
@@ -22,6 +24,21 @@ module.exports = class NewHomePage
     search_input.blur ->
       $(this).removeClass 'focus'
       $(this).closest('.search_box').removeClass 'focus'
+
+    # featured channels carousel
+    @featured = $ '.featured .swiper-container'
+    options = 
+      direction: 'horizontal'
+      loop: true
+      slidesPerView: 5
+      slidesPerGroup: 5
+      spaceBetween: 25
+      prevButton: '.prevSlide'
+      nextButton: '.nextSlide'
+
+    # init swiper only for tablets and desktops
+    if window.innerWidth > 700
+      featuredSwiper = new Swiper @featured, options
 
 
 

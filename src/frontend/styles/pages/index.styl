@@ -12,10 +12,11 @@ NAME_BLUE = #549AE6
     height 405px
     background: url('../images/home_mobile_bg.jpg') no-repeat 50% 50%
     .container
+      width 100%
       position absolute
       top 50%
-      left 0
-      transform: translate(0, -50%)
+      left 50%
+      transform: translate(-50%, -50%)
       padding 0 10px
   .row
     position relative
@@ -81,17 +82,52 @@ NAME_BLUE = #549AE6
 @media (min-width: 700px)
   .homepage_page
     .container
-      max-width 1140px
-      padding-left 25px
-      padding-right 25px
-      margin-left auto
-      margin-right auto
+        max-width 1140px
+    .intro
+      background url(../images/carousel1.jpg) no-repeat 50% 50%
+      background-size cover
+      .container
+        left 0
+        padding-top 27px
+        padding-left 25px
+        transform translate(0, -50%)
+      h1, p
+        text-align left
+      h1
+        font-size 34px
+      p
+        font-size 17px
+        max-width 560px
+      .button
+        margin-left 0
     .row
       .button
         max-width 300px
+    
+    .featured
+      padding-left 25px
+      padding-right 25px
+      .title
+        text-align left
+      .container
+        position relative
+      .arrows
+        position absolute
+        top -12px
+        right 0
+      .arrow
+        &:first-child
+          margin-right 25px
+        &:hover
+          opacity 0.8
+          transition opacity 0.2s
+      .room_title
+        font-family 'Open sans', sans-serif
+        font-size 1.25rem
+        line-height 1.5rem
 
 
 // Desktop and up
 @media (min-width: 960px)
   .homepage_page
-    // empty for now
+    // empty
