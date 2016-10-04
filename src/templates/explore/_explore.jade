@@ -3,7 +3,7 @@ extends ./../layout
 block content
   .explore(data-menu="explore", data-menu-fixed="false")
 
-    .explore_content.flex.centered(data-view="explore")
+    .explore_content.centered(data-view="explore")
       .loading
 
       .no_result
@@ -18,7 +18,7 @@ block content
           span.icon.ss-directup
 
 
-      .flex_content.rooms_grid
+      .rooms_grid
         .loading
         .inner
           input(type="hidden", name="current_genre", value="#{current_genre}")

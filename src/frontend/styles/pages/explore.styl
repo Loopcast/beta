@@ -52,6 +52,9 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
     .flex_sidebar, .flex_content
       display: none
       
+  h2
+    color white
+
   .no_result
     text-align: center
     font-size: 1.2rem
@@ -83,10 +86,6 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
       
     
   .rooms_grid
-    
-      
-
-
     .inner
       position: relative
       width: 100%
@@ -121,8 +120,8 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
         display: block
         overflow: hidden
       & > .thumb_wrapper
-        width: 208px
-        height: 208px
+        width: 200px
+        height: 200px
         
       .room_thumb
         width: 100%
@@ -130,7 +129,7 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
         
         
       h2
-        color: BLACK
+        color: #E0E0E0
         font-size: 1em
         font-weight: 800
         line-height: 1.3em
@@ -260,7 +259,37 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
       max-width 1140px
     #content
       height calc(100vh - 55px)
-      background url('../images/explore_bg.jpg') no-repeat top left
+      background #262626
     .explore
       padding-top 0
       background-size cover
+    .explore_content
+      padding 0 20px
+    .swiper-slide
+      display flex
+      flex-direction row
+      flex-wrap wrap
+      
+      .room_cell
+        width 18.4%
+        margin-left 2%
+        &.first-inline
+          margin-left 0%
+        .thumb_wrapper
+          width 100%
+          height auto
+          box-sizing border-box
+          display inline-block
+          position relative
+          &:before
+            content ""
+            display block
+            margin-top 100%
+          img
+            position absolute
+            top 0
+            bottom 0
+            left 0
+            right 0
+            &.for_mobile
+              display none

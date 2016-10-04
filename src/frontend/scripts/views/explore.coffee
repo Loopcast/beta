@@ -16,14 +16,27 @@ module.exports = class Explore
       @dom.addClass 'no_result_explore'
       return
 
+    cells = @dom.find('.room_cell')
+    slidesCount = Math.ceil( cells.length / 10 )
+    wrapper = $ '.swiper-wrapper'
+
+    for a in [1..slidesCount]
+      wrapper.append('<div class="swiper-slide"></div>')
+
+    slides = wrapper.find '.swiper-slide'
+
+    for cell, index in cells
+      slideIndex = Math.floor( index / 10 )
+      cells.eq(index).appendTo( slides.eq(slideIndex) )
+
+      if index % 5 is 0
+        cells.eq(index).addClass 'first-inline'
+
+
     @container = $ '.swiper-container'
     options =
       direction: 'horizontal'
-      loop: true
-      slidesPerView: 5
-      slidesPerGroup: 10
-      slidesPerColumn: 2
-      spaceBetween: 25
+      loop: false
       prevButton: '.prevSlide'
       nextButton: '.nextSlide'
 
