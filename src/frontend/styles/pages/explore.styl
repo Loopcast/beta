@@ -3,6 +3,9 @@
 HEIGHT_SUBHEADER = 45px
 GRAY_SUBHEADER_BORDER = #d5d4d4
 
+.explore_page
+  #content, .dynamic_wrapper
+    background #262626
 
 .circle_icon
   color: white
@@ -249,20 +252,38 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
   
   .circle_icon:hover
     background: rgba(PLAY_BUTTON_COLOR,PLAY_BUTTON_COLOR,PLAY_BUTTON_COLOR,0.7)
+
+
   
+@media (max-width 767px)
+  .explore_page
+    .swiper-wrapper
+      display block
+      max-width 300px
+      margin 0 auto
+    .explore 
+      .explore_content
+        padding-top 20px
+      .rooms_grid .room_cell
+        border-bottom none
+    .main_title, .arrows
+      display none
+        
+@media (max-width 320px)
+  .explore_page
+    .swiper-wrapper
+      max-width 280px
 
       
 // tablet and up
-@media (min-width 600px)
+@media (min-width 768px)
   .explore_page
     .container
       max-width 1140px
     #content
       height calc(100vh - 55px)
-      background #262626
     .explore
       padding-top 0
-      background-size cover
     .explore_content
       padding 0 20px
     .swiper-slide
@@ -275,7 +296,7 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
         margin-left 2%
         &.first-inline
           margin-left 0%
-        .thumb_wrapper
+        & > .thumb_wrapper
           width 100%
           height auto
           box-sizing border-box

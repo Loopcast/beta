@@ -16,6 +16,10 @@ module.exports = class Explore
       @dom.addClass 'no_result_explore'
       return
 
+    if window.innerWidth > 767 then @init_swiper()
+
+
+  init_swiper: ->
     cells = @dom.find('.room_cell')
     slidesCount = Math.ceil( cells.length / 10 )
     wrapper = $ '.swiper-wrapper'
