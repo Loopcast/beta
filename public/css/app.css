@@ -5,7 +5,7 @@
 
 /* line 13 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 848 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+/* line 849 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
 /* line 10 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
@@ -25,7 +25,7 @@
 
 /* line 90 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 848 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+/* line 849 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
 /* line 11 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
@@ -53,7 +53,7 @@
 
 /* line 5 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
 
-/* line 848 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+/* line 849 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
 /* line 12 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
@@ -2978,7 +2978,7 @@ div.tagsinput div {
   color: #fff;
 }
 
-/* line 848 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_tags.styl */
+/* line 849 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_tags.styl */
 
 /* line 247 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
 
@@ -3053,12 +3053,11 @@ body {
 /* line 61 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
 .mobile_header {
   height: 55px;
-  background: rgba(41,44,47,0.99);
+  background: #231e1c;
   width: 100%;
   top: 0;
   left: 0;
   font-size: 22px;
-  border-bottom: 2px solid #fdbb30;
   color: #818181;
   position: fixed;
   z-index: 4;
@@ -3074,13 +3073,13 @@ body {
   transition: transform 0.1s ease-out;
 }
 
-/* line 76 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 75 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
 .mobile_header.hide {
   -webkit-transform: translate3d(0, -55px, 0);
   transform: translate3d(0, -55px, 0);
 }
 
-/* line 78 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 77 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
 .mobile_header a {
   -o-box-flex: 1;
   box-flex: 1;
@@ -3093,38 +3092,37 @@ body {
   top: 3px;
 }
 
-/* line 84 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 83 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+.mobile_header a:before {
+  color: #12853e;
+}
+
+/* line 85 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
 .mobile_header a span {
   position: relative;
   top: -1px;
 }
 
-/* line 87 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
-.mobile_header a.selected,
-.mobile_header a.mobile_opened {
-  color: #fdbb30;
-}
-
-/* line 90 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 91 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
 .mobile_header .ss-users {
   position: relative;
   margin-left: -5px;
   margin-right: 5px;
 }
 
-/* line 95 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 96 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
 .mobile_header .ss-search {
   position: relative;
   margin-left: 10px;
   margin-right: -10px;
 }
 
-/* line 100 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 101 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
 .dynamic_wrapper {
   position: relative;
 }
 
-/* line 103 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 104 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
 .mobile_dropdown {
   -webkit-transform: translate3d(0, -100%, 0);
   transform: translate3d(0, -100%, 0);
@@ -3132,23 +3130,23 @@ body {
   transition: transform 0.3s ease-out;
 }
 
-/* line 107 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
-
 /* line 108 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+
+/* line 109 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
 .mobile_dropdown_opened .background_mobile_dropdown {
   z-index: 2;
 }
 
-/* line 111 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
-
 /* line 112 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+
+/* line 113 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
 .mobile_dropdown_opened_2 .background_mobile_dropdown {
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
 }
 
-/* line 116 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 117 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
 .background_mobile_dropdown {
   position: fixed;
   top: 0;
@@ -3163,44 +3161,44 @@ body {
   transition: opacity 0.2s linear;
 }
 
-/* line 125 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 126 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
 .profile_theme .big_number span.icon {
   display: none;
 }
 @media (max-width: 700px) {
 
-/* line 134 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 135 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .tape_view .tape_title {
     font-size: 1.8rem;
   }
 
-/* line 136 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 137 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme.show_play_button .tape_play,
   .tape_view .main_column .first_line .buttons .custom-fb-send {
     display: none;
   }
 
-/* line 140 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 141 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .tape_view .tape_header .first_line {
     padding-left: 0;
   }
 
-/* line 143 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 144 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device,
   body.tape_view.touch_device {
     display: block;
     min-height: 100%;
   }
 
-/* line 147 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 148 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device .tape_view .tape_header .first_line,
   body.tape_view.touch_device .tape_view .tape_header .first_line {
     position: static;
   }
 
-/* line 149 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
-
 /* line 150 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+
+/* line 151 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device .main_column .first_line,
   body.tape_view.touch_device .main_column .first_line {
     margin-bottom: 0;
@@ -3208,21 +3206,21 @@ body {
     display: block;
   }
 
-/* line 154 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 155 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device .main_column .first_line .buttons,
   body.tape_view.touch_device .main_column .first_line .buttons {
     text-align: center;
     width: 100%;
   }
 
-/* line 157 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 158 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device .main_column .first_line .buttons > *,
   body.tape_view.touch_device .main_column .first_line .buttons > * {
     margin-left: 5px;
     margin-right: 5px;
   }
 
-/* line 160 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 161 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device .main_column .first_line .tags,
   body.tape_view.touch_device .main_column .first_line .tags {
     -o-box-flex: 1;
@@ -3234,7 +3232,7 @@ body {
     margin-top: 10px;
   }
 
-/* line 165 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 166 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device .main_column .first_line,
   body.tape_view.touch_device .main_column .first_line,
   body.tape_view.no_touch_device .main_column .tape_description,
@@ -3243,13 +3241,13 @@ body {
     color: #424242;
   }
 
-/* line 169 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 170 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device .main_column .tape_description,
   body.tape_view.touch_device .main_column .tape_description {
     padding-bottom: 10px;
   }
 
-/* line 172 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 173 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device #content,
   body.tape_view.touch_device #content,
   body.tape_view.no_touch_device .inner_content,
@@ -3268,7 +3266,7 @@ body {
     flex: auto;
   }
 
-/* line 179 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 180 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device .tape_header,
   body.tape_view.touch_device .tape_header {
     position: relative;
@@ -3276,78 +3274,78 @@ body {
     height: 330px;
   }
 
-/* line 183 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 184 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device .tape_header ._overflow,
   body.tape_view.touch_device .tape_header ._overflow {
     overflow: visible;
   }
 
-/* line 185 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 186 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device .tape_header ._overflow > *,
   body.tape_view.touch_device .tape_header ._overflow > * {
     float: none;
   }
 
-/* line 189 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 190 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device .padded,
   body.tape_view.touch_device .padded {
     padding-left: 20px;
     padding-right: 20px;
   }
 
-/* line 192 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 193 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device .tape_view,
   body.tape_view.touch_device .tape_view {
     background: #808080;
     color: #424242;
   }
 
-/* line 195 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 196 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device .tape_view .chat_line.padded,
   body.tape_view.touch_device .tape_view .chat_line.padded {
     padding-left: 80px;
   }
 
-/* line 197 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 198 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device .tape_view .post_comment_wrapper,
   body.tape_view.touch_device .tape_view .post_comment_wrapper {
     background: #ededed;
   }
 
-/* line 199 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 200 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device .tape_view .post_comment_wrapper textarea,
   body.tape_view.touch_device .tape_view .post_comment_wrapper textarea {
     padding-left: 0;
     height: 100px;
   }
 
-/* line 202 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 203 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device .tape_view .chat_line .chat_user_thumb,
   body.tape_view.touch_device .tape_view .chat_line .chat_user_thumb {
     left: 20px;
   }
 
-/* line 204 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 205 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device .chat_name,
   body.tape_view.touch_device .chat_name {
     color: #424242;
   }
 
-/* line 206 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 207 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device .chat_list_messages,
   body.tape_view.touch_device .chat_list_messages {
     background: #fff;
   }
 
-/* line 209 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 210 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device .side_column,
   body.tape_view.touch_device .side_column {
     display: none;
   }
 
-/* line 213 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
-
 /* line 214 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+
+/* line 215 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device .first_line .tape_play,
   body.tape_view.touch_device .first_line .tape_play {
     position: absolute;
@@ -3361,24 +3359,24 @@ body {
     padding-left: 25px;
   }
 
-/* line 223 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 224 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device .first_line .tape_play.ss-pause,
   body.tape_view.touch_device .first_line .tape_play.ss-pause {
     padding-left: 23px;
   }
 
-/* line 226 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
-
 /* line 227 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+
+/* line 228 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device div.tape_info .follow_button,
   body.tape_view.touch_device div.tape_info .follow_button {
     display: inline-block;
     margin-top: 6px;
   }
 
-/* line 231 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
-
 /* line 232 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+
+/* line 233 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body.tape_view.no_touch_device .tape_view .main_column,
   body.tape_view.touch_device .tape_view .main_column {
     -o-box-flex: 1;
@@ -3390,95 +3388,95 @@ body {
     padding-right: 0;
   }
 
-/* line 237 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 238 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   .fb_edge_comment_widget {
     margin-left: 0 !important;
   }
 
-/* line 240 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 241 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player .follow_player_popup {
     width: 90%;
     left: 5%;
   }
 
-/* line 243 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 244 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   .player_buttons {
     display: none;
   }
 
-/* line 246 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
-
 /* line 247 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+
+/* line 248 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .no_sessions .no_activity_wrapper,
   body .no_sessions .recorded_sessions {
     display: none;
   }
 
-/* line 251 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 252 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body.player_visible #content {
     padding-bottom: 55px;
   }
 
-/* line 254 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 255 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   .profile_theme .big_number span.icon {
     display: block;
   }
 
-/* line 257 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 258 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .profile_content .session .live .label {
     padding-left: 4px;
     padding-right: 18px;
   }
 
-/* line 260 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 261 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body {
     padding-top: 0 !important;
   }
 
-/* line 263 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 264 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .cover .content {
     padding-right: 68px;
   }
 
-/* line 266 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 267 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body.is_owner .room_ready .dashboard_bar .inner {
     display: none;
   }
 
-/* line 268 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 269 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body.is_owner .room_ready .dashboard_bar {
     height: 8px;
   }
 
-/* line 271 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
-
 /* line 272 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+
+/* line 273 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .background_mobile_dropdown {
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0);
   }
 
-/* line 274 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 275 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .mobile_dropdown.mobile_opened {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
     top: 55px;
   }
 
-/* line 280 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 281 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .tag {
     font-size: 0.5rem;
   }
 
-/* line 282 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
-
 /* line 283 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+
+/* line 284 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body.login_page .for_mobile {
     display: none;
   }
 
-/* line 285 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 286 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .dynamic_wrapper {
     padding-top: 55px;
     background: #ececec;
@@ -3488,7 +3486,7 @@ body {
     transform: translate3d(0, 0, 0);
   }
 
-/* line 290 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 291 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .dynamic_wrapper.moving {
     position: absolute;
     top: 0;
@@ -3498,13 +3496,13 @@ body {
     transform: translate3d(-100%, 0, 0);
   }
 
-/* line 297 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 298 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .dynamic_wrapper.moved {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
 
-/* line 300 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 301 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #loading {
     display: none !important;
     position: fixed;
@@ -3514,22 +3512,22 @@ body {
     filter: alpha(opacity=50);
   }
 
-/* line 306 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 307 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .for_mobile {
     display: block;
   }
 
-/* line 309 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 310 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .for_desktop {
     display: none;
   }
 
-/* line 314 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 315 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .parallax-mirror {
     display: none;
   }
 
-/* line 317 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 318 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .mobile_header {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -3537,7 +3535,7 @@ body {
     display: flex;
   }
 
-/* line 322 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 323 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .black_box {
     position: relative;
     margin: 0px auto;
@@ -3546,61 +3544,61 @@ body {
     max-width: 300px;
   }
 
-/* line 328 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 329 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .black_box h1 {
     line-height: 23px;
     font-size: 1.5rem;
     margin-bottom: 20px;
   }
 
-/* line 332 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 333 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .black_box p {
     font-size: 1rem;
     line-height: 25px;
   }
 
-/* line 336 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 337 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .black_box .button {
     width: 100% !important;
   }
 
-/* line 341 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 342 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .buttons .right {
     float: none;
   }
 
-/* line 344 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 345 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .secondary_screen .black_box {
     right: auto;
     top: auto;
   }
 
-/* line 347 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 348 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .secondary_screen .black_box h1 {
     line-height: 23px;
   }
 
-/* line 350 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 351 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .secondary_screen .black_box p {
     padding: 0;
     font-weight: inherit;
     line-height: inherit;
   }
 
-/* line 355 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 356 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .explore {
     padding-top: 0;
   }
 
-/* line 358 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 359 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .explore .explore_content {
     display: block;
     padding: 56px 0 0;
   }
 
-/* line 363 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
-
 /* line 364 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+
+/* line 365 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .explore .genres_list {
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
@@ -3617,7 +3615,7 @@ body {
     transform: translate3d(0, -100%, 0);
   }
 
-/* line 374 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 375 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .explore .genres_list.mobile_opened {
     -webkit-transform: translate3d(0, 0%, 0);
     transform: translate3d(0, 0%, 0);
@@ -3629,7 +3627,7 @@ body {
     transition: transform 0.3s ease-out, opacity 0.1s linear;
   }
 
-/* line 378 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 379 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .explore .genres_list a {
     display: block;
     margin-bottom: 0;
@@ -3653,24 +3651,24 @@ body {
     color: #484739;
   }
 
-/* line 381 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 382 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .explore .rooms_grid {
     display: block;
     padding: 10px;
   }
 
-/* line 385 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
-
 /* line 386 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+
+/* line 387 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .explore .rooms_grid.loading_visible_1 .loading {
     z-index: 1;
   }
 
-/* line 389 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
-
 /* line 390 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
 
-/* line 393 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 391 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+
+/* line 394 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .explore .rooms_grid .room_cell {
     width: 100%;
     max-width: 480px;
@@ -3681,13 +3679,13 @@ body {
     border-bottom: 1px solid #ddd7d7;
   }
 
-/* line 402 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 403 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .explore .rooms_grid .room_cell > .thumb_wrapper {
     width: 100%;
     height: auto;
   }
 
-/* line 406 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 407 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .filter_list {
     background: #eaeaea;
     border-bottom: 1px solid #d4d4d4;
@@ -3703,7 +3701,7 @@ body {
     cursor: pointer;
   }
 
-/* line 419 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 420 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .filter_list span {
     font-size: 8px;
     border: 1px solid #d4d4d4;
@@ -3715,46 +3713,46 @@ body {
     top: 0px;
   }
 
-/* line 428 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 429 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .filter_list .ss-directup {
     display: none;
   }
 
-/* line 430 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
-
 /* line 431 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+
+/* line 432 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .filter_list.mobile_opened .ss-dropdown {
     display: none;
   }
 
-/* line 433 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 434 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .filter_list.mobile_opened .ss-directup {
     display: inline-block;
   }
 
-/* line 435 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 436 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player {
     height: 55px;
     transition: height 0.2s ease-out;
   }
 
-/* line 438 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 439 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player .player_icon {
     height: 55px;
     width: 55px;
   }
 
-/* line 442 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 443 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen {
     height: 100%;
   }
 
-/* line 445 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 446 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player .player_title {
     font-size: 0.8em;
   }
 
-/* line 447 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 448 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player .player_button {
     font-size: 1.3rem;
     padding: 0 18px;
@@ -3777,43 +3775,43 @@ body {
     height: 100%;
   }
 
-/* line 458 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 459 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player .player_button .icon {
     position: relative;
     top: 2px;
     left: -1px;
   }
 
-/* line 462 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 463 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player .player_button .loading_spin {
     position: relative;
     left: -5px;
   }
 
-/* line 466 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 467 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player .player_text {
     margin-left: 10px;
     margin-right: 10px;
   }
 
-/* line 470 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 471 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player .player_progress {
     display: none;
   }
 
-/* line 472 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 473 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player .player_buttons {
     margin-left: 5px;
   }
 
-/* line 474 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 475 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player .player_buttons > * {
     margin: 0 4px;
     position: relative;
     top: 2px;
   }
 
-/* line 478 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 479 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player .player_buttons,
   body #player .player_right {
     -o-box-flex: 1;
@@ -3824,17 +3822,17 @@ body {
     text-align: center;
   }
 
-/* line 483 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 484 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player .player_right {
     margin: 0;
   }
 
-/* line 485 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 486 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player .player_time {
     text-align: center;
   }
 
-/* line 489 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 490 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .mobile_dropdown {
     position: fixed;
     top: 0px;
@@ -3843,13 +3841,13 @@ body {
     z-index: 3;
   }
 
-/* line 495 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 496 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .mobile_dropdown > div {
     z-index: 0;
     position: relative;
   }
 
-/* line 498 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 499 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .mobile_dropdown a {
     display: block;
     margin-bottom: 0;
@@ -3873,27 +3871,27 @@ body {
     color: #484739;
   }
 
-/* line 500 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 501 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .outline_box {
     border-radius: 0px;
     border-left: 0;
     border-right: 0;
   }
 
-/* line 504 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 505 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
 
-/* line 508 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 509 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .cover_buttons {
     bottom: 10px;
     right: 67px;
   }
 
-/* line 511 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 512 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .cover {
     height: 230px;
   }
 
-/* line 513 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 514 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .cover .name,
   body .profile_theme .cover .type,
   body .profile_theme .cover .genres,
@@ -3901,45 +3899,45 @@ body {
     margin-left: 10px !important;
   }
 
-/* line 515 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 516 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .cover .upload_element {
     display: none;
   }
 
-/* line 517 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 518 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .cover .cloudinary_form {
     display: none;
   }
 
-/* line 519 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 520 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .cover .name {
     font-size: 1.1rem;
     padding: 4px 10px 5px;
   }
 
-/* line 522 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 523 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .cover .type {
     font-size: 0.8rem;
   }
 
-/* line 524 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 525 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .cover .socials_room {
     display: none !important;
   }
 
-/* line 526 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 527 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .cover .genres {
     font-size: 0.8rem;
     line-height: 1rem;
   }
 
-/* line 531 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 532 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .cover .profile_image {
     width: 87px;
     left: 10px;
   }
 
-/* line 534 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 535 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .big_number {
     padding: 0 20px;
     background: rgba(41,44,47,0.8);
@@ -3947,45 +3945,45 @@ body {
     border-top: none;
   }
 
-/* line 539 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 540 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .big_number span.text {
     display: none;
   }
 
-/* line 541 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 542 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .big_number span.number {
     font-size: 1rem;
   }
 
-/* line 545 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 546 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .profile_content {
     display: block;
     padding: 10px 0;
   }
 
-/* line 549 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 550 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .profile_content .profile_bio {
     padding-left: 10px;
     padding-right: 10px;
     border-bottom: 1px solid #ddd7d7;
   }
 
-/* line 553 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 554 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .profile_content .profile_bio h4 {
     margin-bottom: 0;
   }
 
-/* line 555 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 556 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .profile_content .profile_bio .outline_icon {
     display: none !important;
   }
 
-/* line 557 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 558 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .profile_content .profile_left {
     width: 100%;
   }
 
-/* line 559 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 560 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .profile_content .social {
     position: relative;
     left: 0px;
@@ -3993,18 +3991,18 @@ body {
     height: 40px;
   }
 
-/* line 564 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 565 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .profile_content .social a {
     margin-right: 10px;
   }
 
-/* line 566 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 567 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .profile_content .spritesheet {
     -webkit-transform: scale(0.5, 0.5);
     transform: scale(0.5, 0.5);
   }
 
-/* line 569 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 570 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .profile_content .session {
     border: none;
     border-bottom: 1px solid #dadada;
@@ -4014,7 +4012,7 @@ body {
     overflow: hidden;
   }
 
-/* line 577 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 578 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .profile_content .session .image {
     width: 84px;
     height: 74px;
@@ -4022,7 +4020,7 @@ body {
     margin: 10px;
   }
 
-/* line 582 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 583 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .profile_content .session .image .icon {
     opacity: 1;
     -ms-filter: none;
@@ -4032,12 +4030,12 @@ body {
     transform: translateX(-50%) translateY(-50%) scale(0.6, 0.6);
   }
 
-/* line 586 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 587 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .profile_content .session .image .share_wrapper {
     display: none;
   }
 
-/* line 590 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 591 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .profile_content .session .content {
     padding-top: 10px;
     padding-right: 10px;
@@ -4045,62 +4043,62 @@ body {
     padding-left: 0;
   }
 
-/* line 596 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 597 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .profile_content .session h2 {
     font-size: 0.9rem;
     margin-bottom: 0;
   }
 
-/* line 599 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 600 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .profile_content .session .session_author {
     font-size: 0.8rem;
     margin-bottom: 2px;
   }
 
-/* line 602 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 603 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .profile_content .session .edit_session_wrapper {
     display: none !important;
   }
 
-/* line 605 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 606 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .profile_content .session .genres {
     margin-bottom: 0;
   }
 
-/* line 607 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 608 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .profile_content .session .genres a {
     display: none;
   }
 
-/* line 609 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 610 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .profile_content .session .genres a:nth-child(1),
   body .profile_theme .profile_content .session .genres a:nth-child(2) {
     display: inline-block;
   }
 
-/* line 613 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 614 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .profile_content .session .small_info {
     position: relative;
     top: -3px;
     line-height: 16px;
   }
 
-/* line 618 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 619 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .profile_content .session .public_screen {
     display: none !important;
   }
 
-/* line 621 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 622 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .big_number span.icon {
     padding-top: 14px;
   }
 
-/* line 624 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 625 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .location {
     color: #474343;
   }
 
-/* line 627 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 628 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .recorded_sessions .title {
     margin-top: 10px;
     background: #fff;
@@ -4110,24 +4108,24 @@ body {
     padding: 10px;
   }
 
-/* line 635 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 636 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .recorded_sessions .title * {
     display: none;
   }
 
-/* line 637 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 638 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_theme .recorded_sessions .title h2 {
     display: block;
     color: #474343;
     font-size: 1rem;
   }
 
-/* line 643 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 644 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .chat_sidebar {
     display: none !important;
   }
 
-/* line 646 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 647 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_content.chat {
     position: relative;
     -o-box-orient: vertical;
@@ -4136,12 +4134,12 @@ body {
     flex-direction: column;
   }
 
-/* line 649 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 650 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_content.chat .chat_header {
     display: none;
   }
 
-/* line 651 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 652 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_content.chat .chat_main {
     position: absolute;
     top: 0;
@@ -4150,38 +4148,38 @@ body {
     height: 100%;
   }
 
-/* line 658 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 659 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_content.chat .chat_main .chat_content {
     padding: 10px;
     -webkit-overflow-scrolling: touch;
     overflow-scrolling: touch;
   }
 
-/* line 662 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 663 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_content.chat .img_wrapper_2 {
     left: 10px;
     width: 36px;
   }
 
-/* line 665 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 666 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_content.chat .img_wrapper_2 img {
     width: 100%;
   }
 
-/* line 668 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 669 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_content.chat .chat_footer {
     padding-left: 40px;
   }
 
-/* line 671 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 672 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_content.chat .chat_footer .icon {
     right: 17px;
     top: 22px;
   }
 
-/* line 674 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
-
 /* line 675 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+
+/* line 676 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .player_preview .circle_icon {
     opacity: 1;
     -ms-filter: none;
@@ -4189,25 +4187,25 @@ body {
             filter: none;
   }
 
-/* line 677 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 678 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .player_preview .share_wrapper {
     display: none;
   }
 
-/* line 679 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 680 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   .socials_room {
     position: relative;
     left: 0px;
   }
 
-/* line 683 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 684 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   .mobile_search_wrapper {
     padding: 10px 80px;
     border-bottom: 1px solid #cacaca;
     background: #eaeaea;
   }
 
-/* line 687 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 688 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   .mobile_search_wrapper input {
     margin-bottom: 0;
     border: 1px solid #cacaca;
@@ -4217,7 +4215,7 @@ body {
     text-decoration: none;
   }
 
-/* line 695 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 696 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   .open_fullscreen {
     top: 0;
     right: 0;
@@ -4227,13 +4225,13 @@ body {
     padding-top: 17px;
   }
 
-/* line 703 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 704 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen {
     height: 100%;
     z-index: 4;
   }
 
-/* line 707 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 708 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .fullscreen_elements {
     display: block;
     width: 100%;
@@ -4241,7 +4239,7 @@ body {
     padding-bottom: 60px;
   }
 
-/* line 717 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 718 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen a.close_fullscreen {
     display: block;
     margin-bottom: 10px;
@@ -4258,7 +4256,7 @@ body {
     padding-top: 14px;
   }
 
-/* line 735 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 736 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .progress_wrapper {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -4266,7 +4264,7 @@ body {
     display: flex;
   }
 
-/* line 737 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 738 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .progress_wrapper .player_progress {
     -o-box-flex: 1;
     box-flex: 1;
@@ -4277,7 +4275,7 @@ body {
     margin: 11px 11px 0;
   }
 
-/* line 742 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 743 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .progress_wrapper .player_total_time {
     font-size: 0.9em;
     font-weight: 600;
@@ -4285,13 +4283,13 @@ body {
     text-align: right;
   }
 
-/* line 749 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 750 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .player_text {
     text-align: center;
     margin-bottom: 10px;
   }
 
-/* line 753 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 754 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .player_buttons {
     display: block;
     position: absolute;
@@ -4307,7 +4305,7 @@ body {
     left: 0;
   }
 
-/* line 764 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 765 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .player_buttons .share_wrapper {
     position: absolute;
     left: 50%;
@@ -4316,7 +4314,7 @@ body {
     top: 0;
   }
 
-/* line 770 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 771 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .player_buttons .ss-heart {
     position: absolute;
     right: 50%;
@@ -4325,29 +4323,29 @@ body {
     margin-right: -90px;
   }
 
-/* line 777 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 778 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .player_buttons .ss-heart,
   body #player.fullscreen .player_buttons .share_wrapper {
     font-size: 1.5rem;
   }
 
-/* line 781 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 782 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .player_title {
     font-size: 1rem;
     font-weight: bold;
   }
 
-/* line 785 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 786 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .player_author {
     font-size: 0.9rem;
   }
 
-/* line 788 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 789 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .no_fullscreen {
     display: none !important;
   }
 
-/* line 791 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 792 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .centered {
     min-height: 100vh;
     -o-box-orient: vertical;
@@ -4357,7 +4355,7 @@ body {
     padding: 10px;
   }
 
-/* line 796 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 797 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .player_icon {
     width: 100%;
     height: auto;
@@ -4369,7 +4367,7 @@ body {
     margin-bottom: 3px;
   }
 
-/* line 802 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 803 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .player_button {
     display: inline-block;
     -o-box-flex: 1;
@@ -4385,7 +4383,7 @@ body {
     height: 56px;
   }
 
-/* line 812 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 813 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .player_button .icon {
     border: 1px solid #fff;
     border-radius: 50%;
@@ -4397,19 +4395,19 @@ body {
     position: relative;
   }
 
-/* line 822 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 823 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .player_button .icon.ss-pause {
     padding-left: 1px;
   }
 
-/* line 826 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 827 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body #player.fullscreen .loading_spin {
     top: 24px;
     position: absolute;
     left: 0;
   }
 
-/* line 832 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 833 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   #player.loading .player_button .icon {
     display: block;
     opacity: 0;
@@ -4417,14 +4415,14 @@ body {
     filter: alpha(opacity=0);
   }
 
-/* line 835 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
-
 /* line 836 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+
+/* line 837 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_content.chat .chat_main .chat_content {
     height: 100%;
   }
 
-/* line 838 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 839 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .profile_content.chat {
     min-height: initial;
     -o-box-flex: 1;
@@ -4434,7 +4432,7 @@ body {
     flex: 1;
   }
 
-/* line 841 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 842 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body .createroom {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -4448,7 +4446,7 @@ body {
     padding-top: 55px;
   }
 
-/* line 847 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 848 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body.room_page .dynamic_wrapper {
     padding-top: 0;
   }
@@ -4626,7 +4624,7 @@ html {
 
 /* line 136 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/app.styl */
 body {
-  background: #ececec;
+  background: #fff;
   color: #1f1f1f;
   font-size: 100%;
   font-family: 'Open Sans', sans-serif;
@@ -6117,7 +6115,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 13 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 316 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+/* line 320 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
 /* line 10 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
@@ -6137,7 +6135,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 90 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 316 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+/* line 320 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
 /* line 11 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
@@ -6165,7 +6163,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 5 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
 
-/* line 316 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+/* line 320 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
 /* line 12 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
@@ -6226,6 +6224,12 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 }
 
 /* line 10 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+.explore_page .main_title {
+  font-family: 'Lato', sans-serif;
+  font-weight: normal;
+}
+
+/* line 14 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .circle_icon {
   color: #fff;
   background: rgba(200,200,200,0.6);
@@ -6243,16 +6247,16 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   transform: translateX(-50%) translateY(-50%);
 }
 
-/* line 23 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 27 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .circle_icon.ss-pause {
   font-size: 24px;
   padding-left: 1px;
   padding-top: 16px;
 }
 
-/* line 30 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 34 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 31 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 35 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .player_preview .share_wrapper {
   position: absolute;
   top: 5px;
@@ -6263,7 +6267,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   transition: opacity 0.2s linear;
 }
 
-/* line 36 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 40 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .player_preview .loading_spin {
   position: absolute;
   opacity: 0;
@@ -6275,9 +6279,9 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   transform: translateX(-50%) translateY(-50%);
 }
 
-/* line 43 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 47 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 44 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 48 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .player_preview.preloading .loading_spin {
   opacity: 1;
   -ms-filter: none;
@@ -6285,31 +6289,31 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
           filter: none;
 }
 
-/* line 48 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 52 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore {
   position: relative;
   padding-top: 45px;
 }
 
-/* line 51 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 55 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 52 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 56 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .no_result_explore .no_result {
   display: block;
 }
 
-/* line 55 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 59 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .no_result_explore .flex_sidebar,
 .explore .no_result_explore .flex_content {
   display: none;
 }
 
-/* line 58 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 62 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore h2 {
   color: #fff;
 }
 
-/* line 61 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 65 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .no_result {
   text-align: center;
   font-size: 1.2rem;
@@ -6323,7 +6327,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   display: none;
 }
 
-/* line 70 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 74 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .loading {
   position: absolute;
   top: 0;
@@ -6338,20 +6342,20 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   filter: alpha(opacity=0);
 }
 
-/* line 79 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 83 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .explore_content > .loading {
   top: 45px;
 }
 
-/* line 83 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 87 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .explore_content {
   padding-top: 40px;
   padding-left: 20px;
 }
 
-/* line 91 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 95 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 92 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 96 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .inner {
   position: relative;
   width: 100%;
@@ -6360,7 +6364,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   overflow: hidden;
 }
 
-/* line 98 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 102 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell {
   width: 210px;
   text-align: left;
@@ -6368,51 +6372,51 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   position: relative;
 }
 
-/* line 105 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 109 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 106 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 110 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell.not_live .room_location {
   margin-bottom: 7px;
 }
 
-/* line 109 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 113 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell .room_content {
   padding: 10px 5px 5px;
   word-wrap: break-word;
 }
 
-/* line 113 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 117 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell .room_content .text .ss-play {
   font-size: 0.8em;
   position: relative;
   padding-left: 1px;
 }
 
-/* line 118 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 122 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell .text {
   padding: 0 5px;
 }
 
-/* line 121 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 125 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell .thumb_wrapper {
   position: relative;
   display: block;
   overflow: hidden;
 }
 
-/* line 125 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 129 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell > .thumb_wrapper {
   width: 200px;
   height: 200px;
 }
 
-/* line 129 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 133 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell .room_thumb {
   width: 100%;
   display: block;
 }
 
-/* line 134 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 138 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell h2 {
   color: #e0e0e0;
   font-size: 1em;
@@ -6422,12 +6426,12 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   font-weight: 600;
 }
 
-/* line 142 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 146 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell h2:hover {
   color: #000;
 }
 
-/* line 145 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 149 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell .room_subtitle {
   font-size: 0.8em;
   line-height: 1em;
@@ -6436,20 +6440,20 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   font-weight: 600;
 }
 
-/* line 151 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 155 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell .room_subtitle.blue {
   color: #4592d4;
   font-weight: 400;
 }
 
-/* line 155 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 159 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell .genres {
   margin-bottom: 7px;
 }
 
-/* line 158 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 162 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 159 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 163 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell .likes .text,
 .explore .rooms_grid .room_cell .plays .text {
   position: relative;
@@ -6457,7 +6461,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   margin-left: 0;
 }
 
-/* line 163 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 167 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell .room_location {
   text-transform: capitalize;
   color: #929292;
@@ -6465,28 +6469,28 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   margin-bottom: 15px;
 }
 
-/* line 168 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 172 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell .room_location .icon {
   position: relative;
   top: 2px;
   margin-right: 3px;
 }
 
-/* line 176 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 180 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .share_set,
 .like_set {
   margin: 9px 4px;
   color: #929292;
 }
 
-/* line 180 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 184 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .share_set {
   top: 2px;
   position: relative;
   left: 2px;
 }
 
-/* line 185 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 189 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .like_set {
   border-radius: 50%;
   width: 30px;
@@ -6498,26 +6502,26 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   left: -1px;
 }
 
-/* line 196 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 200 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .following_item {
   display: none;
 }
 
-/* line 199 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 203 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 200 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 204 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .following .not_following_item {
   display: none;
 }
 
-/* line 202 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 206 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .following .following_item {
   display: block;
 }
 
-/* line 206 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 210 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 207 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 211 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .player_preview .circle_icon {
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
@@ -6525,9 +6529,9 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   transition: opacity 0.2s linear;
 }
 
-/* line 210 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 214 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 212 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 216 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .player_preview.playing .circle_icon,
 .player_preview.preloading .circle_icon {
   opacity: 1;
@@ -6536,17 +6540,17 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
           filter: none;
 }
 
-/* line 217 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 221 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 218 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 222 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .loading_on_top.tab_1 .explore_content > .loading,
 .loading_on_top.tab_filter .rooms_grid .loading {
   z-index: 1;
 }
 
-/* line 221 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 225 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 222 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 226 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .loading_visible.tab_1 .explore_content > .loading,
 .loading_visible.tab_filter .rooms_grid .loading {
   opacity: 1;
@@ -6555,37 +6559,37 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
           filter: none;
 }
 
-/* line 228 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 232 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 229 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 233 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 230 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 234 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 231 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 235 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .no_touch_device .explore .room_cell:hover .share_set,
 .no_touch_device .explore .room_cell:hover .like_set {
   color: #605b5b;
 }
 
-/* line 234 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 238 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .no_touch_device .explore .room_cell:hover .like_set:hover {
   background: #605b5b;
   color: #fff;
 }
 
-/* line 238 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 242 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .no_touch_device .explore .rooms_grid .room_cell .room_subtitle:hover {
   text-decoration: underline;
 }
 
-/* line 241 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 245 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .no_touch_device .explore .rooms_grid .room_cell .room_location:hover {
   color: #605b5b;
 }
 
-/* line 244 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 248 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 245 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 249 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .no_touch_device .player_preview:hover .circle_icon {
   opacity: 1;
   -ms-filter: none;
@@ -6593,7 +6597,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
           filter: none;
 }
 
-/* line 248 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 252 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .no_touch_device .player_preview:hover .share_wrapper {
   opacity: 1;
   -ms-filter: none;
@@ -6601,79 +6605,79 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
           filter: none;
 }
 
-/* line 253 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 257 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .no_touch_device .circle_icon:hover {
   background: rgba(200,200,200,0.7);
 }
 
-/* line 258 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 262 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 @media (max-width: 767px) {
 
-/* line 259 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 263 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 260 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 264 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
   .explore_page .swiper-wrapper {
     display: block;
     max-width: 300px;
     margin: 0 auto;
   }
 
-/* line 264 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 268 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 265 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 269 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
   .explore_page .explore .explore_content {
     padding-top: 20px;
   }
 
-/* line 267 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 271 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
   .explore_page .explore .rooms_grid .room_cell {
     border-bottom: none;
   }
 
-/* line 269 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 273 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
   .explore_page .main_title,
   .explore_page .arrows {
     display: none;
   }
 }
 
-/* line 272 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 276 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 @media (max-width: 320px) {
 
-/* line 273 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 277 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 274 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 278 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
   .explore_page .swiper-wrapper {
     max-width: 280px;
   }
 }
 
-/* line 279 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 283 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 @media (min-width: 768px) {
 
-/* line 280 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 284 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 281 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 285 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
   .explore_page .container {
     max-width: 1140px;
   }
 
-/* line 283 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 287 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
   .explore_page #content {
     height: calc(100vh - 55px);
   }
 
-/* line 285 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 289 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
   .explore_page .explore {
     padding-top: 0;
   }
 
-/* line 287 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 291 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
   .explore_page .explore_content {
     padding: 0 20px;
   }
 
-/* line 289 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 293 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
   .explore_page .swiper-slide {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -6691,18 +6695,18 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
     flex-wrap: wrap;
   }
 
-/* line 294 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 298 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
   .explore_page .swiper-slide .room_cell {
     width: 18.4%;
     margin-left: 2%;
   }
 
-/* line 297 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 301 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
   .explore_page .swiper-slide .room_cell.first-inline {
     margin-left: 0%;
   }
 
-/* line 299 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 303 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
   .explore_page .swiper-slide .room_cell > .thumb_wrapper {
     width: 100%;
     height: auto;
@@ -6711,14 +6715,14 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
     position: relative;
   }
 
-/* line 305 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 309 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
   .explore_page .swiper-slide .room_cell > .thumb_wrapper:before {
     content: "";
     display: block;
     margin-top: 100%;
   }
 
-/* line 309 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 313 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
   .explore_page .swiper-slide .room_cell > .thumb_wrapper img {
     position: absolute;
     top: 0;
@@ -6727,7 +6731,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
     right: 0;
   }
 
-/* line 315 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 319 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/pages/explore.styl */
   .explore_page .swiper-slide .room_cell > .thumb_wrapper img.for_mobile {
     display: none;
   }

@@ -60,12 +60,11 @@ body
 
 .mobile_header
   height: 55px
-  background: rgba(41,44,47,0.99) 
+  background: #231E1C
   width: 100%
   top: 0
   left: 0
   font-size: 22px
-  border-bottom: 2px solid YELLOW
   color: #818181
   position: fixed
   z-index: 4
@@ -81,11 +80,13 @@ body
     transition: color .2s linear
     position: relative
     top: 3px
+    &:before
+      color: #12853E
     span
       position: relative
       top: -1px
-    &.selected, &.mobile_opened
-      color: YELLOW
+    // &.selected, &.mobile_opened
+    //   color: YELLOW
       
   .ss-users
     position: relative
