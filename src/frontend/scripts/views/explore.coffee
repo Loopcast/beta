@@ -43,6 +43,7 @@ module.exports = class Explore
       loop: false
       prevButton: '.prevSlide'
       nextButton: '.nextSlide'
+      pagination: '.pagination'
 
     swiper = new Swiper @container, options
 

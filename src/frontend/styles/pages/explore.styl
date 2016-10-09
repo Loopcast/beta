@@ -4,8 +4,12 @@ HEIGHT_SUBHEADER = 45px
 GRAY_SUBHEADER_BORDER = #d5d4d4
 
 .explore_page
-  #content, .dynamic_wrapper
+  &, #content, .dynamic_wrapper
     background #262626
+    
+  .main_title
+    font-family 'Lato', sans-serif
+    font-weight normal
 
 .circle_icon
   color: white
@@ -257,6 +261,8 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
   
 @media (max-width 767px)
   .explore_page
+    .loading
+      top 0
     .swiper-wrapper
       display block
       max-width 300px
@@ -284,8 +290,24 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
       height calc(100vh - 55px)
     .explore
       padding-top 0
+    .main_title
+      margin 72px auto 36px
+      max-width 510px
     .explore_content
       padding 0 20px
+    .arrows, .pagination
+      display inline-block
+      float right
+      margin-bottom 20px
+    .pagination
+      margin 19px 19px 0 0
+    .nextSlide
+      margin-left 20px
+    .swiper-container
+      clear both
+    .rooms_grid
+      .room_cell
+        margin-bottom 10px
     .swiper-slide
       display flex
       flex-direction row
