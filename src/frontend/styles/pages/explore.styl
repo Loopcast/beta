@@ -280,11 +280,16 @@ body.loading
     .explore 
       .explore_content
         padding-top 20px
-      .rooms_grid .room_cell
-        border-bottom none
+      .rooms_grid 
+        .room_cell
+          border-bottom none
+          .room_content
+            padding-left 0
+            .text
+              padding-left 0
     .main_title, .arrows
       display none
-        
+
 @media (max-width 320px)
   .explore_page
     .swiper-wrapper
