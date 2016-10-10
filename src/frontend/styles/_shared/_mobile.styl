@@ -67,7 +67,7 @@ body
   font-size: 22px
   color: #818181
   position: fixed
-  z-index: 4
+  z-index: 5
   align-items: center
   justify-content: center
   transition: transform .1s ease-out
@@ -445,6 +445,15 @@ body
         
       .player_title
         font-size: 0.8em
+      .itunes
+        display block
+        width 65px
+        height 24px
+        margin 0 auto 5px
+        background url('../images/get_on_iTunes.png')
+        background-size contain
+        text-indent -9999px
+        
       .player_button
         font-size: 1.3rem
         padding: 0 18px
@@ -724,14 +733,16 @@ body
       // right: 20px
       z-index: 1
       color: white
-      text-shadow: 1px 1px 1px black
       // top: 21px
       width: 50px
       height: 50px
       text-align: center
-      right: 10px
-      top: 10px
+      right: 15px
+      top: 65px
       padding-top: 14px
+      
+      .icon
+        font-size 22px
         
     .progress_wrapper
       display: flex
@@ -780,8 +791,10 @@ body
         font-size: 1.5rem
         
     .player_title
-      font-size: 1rem
-      font-weight: bold
+      margin 12px auto 14px
+      font-size: 1.3rem
+      font-family 'Montserrat', sans-serif
+      font-weight: regular
       
     .player_author
       font-size: .9rem
@@ -792,7 +805,7 @@ body
     .centered
       min-height: 100vh
       flex-direction: column
-      padding: 10px
+      padding: 75px 20px 20px
       
     .player_icon
       width: 100%
@@ -805,7 +818,7 @@ body
       flex: initial
       position: relative
       height: auto
-      margin-top: 0px
+      margin-top: 10px
       margin-bottom: 10px
       font-size: 1.7rem
       height: 56px
