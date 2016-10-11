@@ -5,7 +5,7 @@
 
 /* line 13 : /Users/thomasamundsen/Documents/traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 346 : /Users/thomasamundsen/Documents/traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+/* line 57 : /Users/thomasamundsen/Documents/traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
 /* line 10 : /Users/thomasamundsen/Documents/traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
@@ -25,7 +25,7 @@
 
 /* line 90 : /Users/thomasamundsen/Documents/traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 346 : /Users/thomasamundsen/Documents/traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+/* line 57 : /Users/thomasamundsen/Documents/traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
 /* line 11 : /Users/thomasamundsen/Documents/traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
@@ -53,7 +53,7 @@
 
 /* line 5 : /Users/thomasamundsen/Documents/traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
 
-/* line 346 : /Users/thomasamundsen/Documents/traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+/* line 57 : /Users/thomasamundsen/Documents/traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
 /* line 12 : /Users/thomasamundsen/Documents/traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
@@ -1817,7 +1817,7 @@ div.tagsinput.white_textarea {
 input.dark_input,
 textarea.dark_input,
 div.tagsinput.dark_input {
-  background-color: #393939;
+  background-color: #fff;
   color: #fff;
   font-size: 0.7rem;
   padding: 6px;
