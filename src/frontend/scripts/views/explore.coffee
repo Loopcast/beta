@@ -16,28 +16,35 @@ module.exports = class Explore
       @dom.addClass 'no_result_explore'
       return
 
-    if window.innerWidth > 767 then @init_swiper()
+    if window.innerWidth > 699 then @init_swiper true
+
+    $(window).resize () =>
+      @swiper.destroy(true, true)
+      if window.innerWidth > 699
+        @init_swiper false
 
 
-  init_swiper: ->
-    cells = @dom.find('.room_cell')
-    slidesCount = Math.ceil( cells.length / 10 )
-    wrapper = $ '.swiper-wrapper'
+  init_swiper: (prepareSlides) ->
 
-    for a in [1..slidesCount]
-      wrapper.append('<div class="swiper-slide"></div>')
+    if prepareSlides
+      cells = @dom.find('.room_cell')
+      slidesCount = Math.ceil( cells.length / 10 )
+      wrapper = $ '.swiper-wrapper'
 
-    slides = wrapper.find '.swiper-slide'
+      for a in [1..slidesCount]
+        wrapper.append('<div class="swiper-slide"></div>')
 
-    for cell, index in cells
-      slideIndex = Math.floor( index / 10 )
-      cells.eq(index).appendTo( slides.eq(slideIndex) )
+      slides = wrapper.find '.swiper-slide'
 
-      if index % 5 is 0
-        cells.eq(index).addClass 'first-inline'
+      for cell, index in cells
+        slideIndex = Math.floor( index / 10 )
+        cells.eq(index).appendTo( slides.eq(slideIndex) )
 
+        if index % 5 is 0
+          cells.eq(index).addClass 'first-inline'
 
-    @container = $ '.swiper-container'
+      @container = $ '.swiper-container'
+
     options =
       direction: 'horizontal'
       loop: false
@@ -45,7 +52,7 @@ module.exports = class Explore
       nextButton: '.nextSlide'
       pagination: '.pagination'
 
-    swiper = new Swiper @container, options
+    @swiper = new Swiper @container, options
 
 
   on_genre_click: (e) =>
