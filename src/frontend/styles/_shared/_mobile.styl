@@ -738,7 +738,7 @@ body
       height: 50px
       text-align: center
       right: 15px
-      top: 65px
+      top: 10px
       padding-top: 14px
       
       .icon
@@ -805,7 +805,7 @@ body
     .centered
       min-height: 100vh
       flex-direction: column
-      padding: 75px 20px 20px
+      padding: 20px
       
     .player_icon
       width: 100%
@@ -861,3 +861,19 @@ body
     &.room_page .dynamic_wrapper
       padding-top: 0
       
+
+// small phones player layout
+@media (max-height: 550px)
+  body #player.fullscreen
+    .player_text
+      overflow hidden
+      margin-left 0
+      margin-right 0
+    .player_title, .player_author
+      float left
+      text-align left
+    .player_title
+      margin 7px auto 2px
+    .itunes
+      float right
+      margin 16px 0 0 0
