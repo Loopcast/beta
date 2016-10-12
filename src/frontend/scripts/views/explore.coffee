@@ -16,7 +16,7 @@ module.exports = class Explore
       @dom.addClass 'no_result_explore'
       return
 
-    if window.innerWidth > 699 then @init_swiper true
+    if window.innerWidth >= 768 then @init_swiper true
 
     $(window).resize () =>
       @handleResize()
@@ -25,7 +25,7 @@ module.exports = class Explore
 
 
   handleResize: ->
-    if window.innerWidth < 700 and @swiper
+    if window.innerWidth < 768 and @swiper
       @swiper.destroy true, true
       @swiper = null
       setTimeout =>
