@@ -211,7 +211,7 @@ body .notifyjs-container
     padding-right: 60px
     
 // PLAYER
-PLAYER_HEIGHT = 70px
+PLAYER_HEIGHT = 55px
 #player
   z-index: 2
   background: rgba(41, 44, 47, 0.99)
@@ -341,7 +341,7 @@ PLAYER_HEIGHT = 70px
     font-size: 2.8em
     margin: 0 16px
     position: relative
-    top: 3px
+    top: -1px
     .icon
       display: block
     
@@ -361,7 +361,7 @@ PLAYER_HEIGHT = 70px
     
   .player_title
     font-size: 1em
-    margin-bottom: 4px
+    margin-bottom: 2px
     
   .player_author
     font-size: .7em
@@ -369,7 +369,7 @@ PLAYER_HEIGHT = 70px
   .player_progress
     background: #3e3e40
     height: 4px
-    flex: 6
+    flex: 5
     margin: 0 15px
     position: relative
     cursor: pointer
@@ -402,7 +402,12 @@ PLAYER_HEIGHT = 70px
     .player_progress
       span
         background: darken(YELLOW, 30)
-      
+  
+  .player_track_name
+    flex 2
+    font-size 0.8rem
+    min-width 120px
+    margin-bottom 4px
   
   .player_buttons
     margin-left: 0px
@@ -474,6 +479,8 @@ PLAYER_HEIGHT = 70px
 
 @media (min-width 700px)
   #player
+    .centered
+      margin-top -4px
     .player_buttons
       .itunes
         display inline-block
@@ -497,6 +504,8 @@ PLAYER_HEIGHT = 70px
       
 @media (min-width 900px)
   #player
+    .player_progress
+      flex 4
     .player_buttons
       flex 3
       
@@ -597,6 +606,19 @@ PLAYER_HEIGHT = 70px
   .notifyjs-loopcast-base
     .close-notify:hover
       background: #222
+
+@media (max-width: 768px)
+  #player .player_track_name
+    display none
+  #player 
+    .fullscreen_elements 
+      .player_track_name
+        display block
+        font-size 1rem
+      .player_author
+        display none
+    
+
     
 @media (max-width: 950px)
   .about_page

@@ -281,7 +281,7 @@ module.exports = class Player
     @thumb.attr 'src', transform.player_thumb obj.cover_url
     title = string_utils.cut_text obj.title, 36
     @title.html title
-    @author.html 'Jesse Saunders - On and On' # "By " + obj.user.info.name
+    @author.html 'By ' + obj.user.info.name
 
     @author.attr 'title', obj.user.info.name
     @title.attr 'title', obj.title
@@ -372,7 +372,7 @@ module.exports = class Player
 
       @on_progress
         perc: 0.0
-        time: str: "00:00:00"
+        time: str: "00:00"
 
     delay 100, => @progress.show()
 
