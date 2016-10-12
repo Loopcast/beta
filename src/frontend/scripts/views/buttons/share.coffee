@@ -99,7 +99,20 @@ module.exports = class Share
 
     
 
-    if diff < h + 100
+    # if diff < h + 100
+    #   @dom.addClass 'on_bottom'
+    # else
+    #   @dom.removeClass 'on_bottom'
+
+    # 
+    # in the new layout, all share boxes other than one in the footer 
+    # should open below the button, because otherwise they will be clipped by the carousel
+    # container's overflow: hidden property
+    # 
+
+    isRoomCell = @handler.closest('.room_cell').length > 0
+
+    if isRoomCell
       @dom.addClass 'on_bottom'
     else
       @dom.removeClass 'on_bottom'
