@@ -26,6 +26,13 @@ module.exports = class NewHomePage
       $(this).closest('.search_box').removeClass 'focus'
 
 
+    @initSwipers()
+
+    $(window).resize () =>
+      @handleResize()
+
+
+  initSwipers: =>
     # header carousel
     @intro = $ '.intro.swiper-container'
     options =
@@ -36,7 +43,7 @@ module.exports = class NewHomePage
 
     # init swiper only for tablets and desktops
     if window.innerWidth > 700
-      introSwiper = new Swiper @intro, options
+      @introSwiper = new Swiper @intro, options
 
 
     # featured channels carousel
@@ -52,10 +59,22 @@ module.exports = class NewHomePage
 
     # init swiper only for tablets and desktops
     if window.innerWidth > 700
-      featuredSwiper = new Swiper @featured, options
+      @featuredSwiper = new Swiper @featured, options
 
 
+  handleResize: ->
+    if window.innerWidth < 700 and @introSwiper
+      @introSwiper.destroy true, true
+      @introSwiper = null
 
+    if window.innerWidth < 700 and @featuredSwiper
+      @featuredSwiper.destroy true, true
+      @featuredSwiper = null
+
+    if window.innerWidth >= 700 and not @featuredSwiper and not @introSwiper
+      @initSwipers()
+
+  
   destroy: ( ) ->
     # log "[Homepage] destroyed"
     @header.removeClass 'top'
