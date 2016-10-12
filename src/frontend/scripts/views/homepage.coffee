@@ -45,6 +45,14 @@ module.exports = class NewHomePage
     if window.innerWidth > 700
       @introSwiper = new Swiper @intro, options
 
+      # show next slide after some time
+      time = 3000
+      transitionDuration = 600
+
+      @interval = setInterval () =>
+        @introSwiper.slideNext false, transitionDuration
+      , time
+
 
     # featured channels carousel
     @featured = $ '.featured .swiper-container'
@@ -60,12 +68,14 @@ module.exports = class NewHomePage
     # init swiper only for tablets and desktops
     if window.innerWidth > 700
       @featuredSwiper = new Swiper @featured, options
+      # interval next slide
 
 
   handleResize: ->
     if window.innerWidth < 700 and @introSwiper
       @introSwiper.destroy true, true
       @introSwiper = null
+      clearInterval @interval
 
     if window.innerWidth < 700 and @featuredSwiper
       @featuredSwiper.destroy true, true
@@ -78,6 +88,7 @@ module.exports = class NewHomePage
   destroy: ( ) ->
     # log "[Homepage] destroyed"
     @header.removeClass 'top'
+    clearInterval @interval
     
 
   # on_views_binded: ( scope ) =>
