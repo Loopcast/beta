@@ -19,9 +19,21 @@ module.exports = class Explore
     if window.innerWidth > 699 then @init_swiper true
 
     $(window).resize () =>
-      @swiper.destroy(true, true)
-      if window.innerWidth > 699
-        @init_swiper false
+      @handleResize()
+
+    @slides = @dom.find '.swiper-slide'
+
+
+  handleResize: ->
+    if window.innerWidth < 700 and @swiper
+      @swiper.destroy true, true
+      @swiper = null
+      setTimeout =>
+        @slides.width 'auto'
+      , 50
+
+    else
+      @init_swiper false
 
 
   init_swiper: (prepareSlides) ->
