@@ -467,17 +467,23 @@ PLAYER_HEIGHT = 70px
     .share_wrapper:hover
       color: YELLOW
       
+#player
+  .player_buttons
+    .itunes
+      display none
+
 @media (min-width 700px)
   #player
-    .itunes
-      display inline-block
-      width 65px
-      height 24px
-      margin-left 5px
-      margin-right 16px
-      background url('../images/get_on_iTunes.png')
-      background-size contain
-      text-indent -9999px
+    .player_buttons
+      .itunes
+        display inline-block
+        width 65px
+        height 24px
+        margin-left 5px
+        margin-right 16px
+        background url('../images/get_on_iTunes.png')
+        background-size contain
+        text-indent -9999px
       
 @media (min-width 1000px)
   #player
