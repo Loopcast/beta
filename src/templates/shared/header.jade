@@ -23,7 +23,17 @@ header.header.for_desktop(data-view="header")
 
       .user_logged
 
-      
+      a.login_link(
+        title="Log In", 
+        data-view="components/login_popup_handler",
+        href="#"
+      ) Log in
+
+      a.sign_up_link(
+        title="Log In", 
+        data-view="components/login_popup_handler",
+        href="#"
+      ) Sign up
 
       div.settings.hover_dropdown_trigger(title="Settings" data-view="[components/click_trigger,components/settings]" data-target=".settings_dropdown")
         span.icon.ss-settings
