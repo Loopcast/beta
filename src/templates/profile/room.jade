@@ -100,19 +100,19 @@ block content
     - public_class = ""
     if room && room.status.is_public
       - public_class = "room_public"  
-    .createroom.profile_theme.centered(data-menu="#{data_menu}", data-view="room", class="#{live_class} #{recording_class} #{public_class}")
+    .createroom.profile_theme(data-menu="#{data_menu}", data-view="room", class="#{live_class} #{recording_class} #{public_class}")
       .cover
         - cover_url = false
         if room
           - cover_url = room.info.cover_url
-
+        
         .cover_image.for_desktop(style="background-image:url(#{transform.cover(cover_url)})")
         .cover_image.for_mobile(style="background-image:url(#{transform.cover_mobile(cover_url)})")
         
         - id = ""
         if room && room._id
           - id = room._id
-        .content(data-view="components/audio/player_preview", data-room-id="#{id}" data-is-live="true")
+        .content.centered(data-view="components/audio/player_preview", data-room-id="#{id}" data-is-live="true")
           a(href="#", class="tape_play icon ss-play", title="play record") &nbsp;
 
           h1.name.black_background(data-view="components/editables/editable_text")
