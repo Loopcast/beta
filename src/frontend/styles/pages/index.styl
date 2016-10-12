@@ -1,292 +1,192 @@
+NEW_GREEN = #07D159
+DARK_GREY = #4B4B4B
+BRANDING = #07D159
+NAME_BLUE = #549AE6
+
 .homepage_page
-  
   h1, h2
     font-family 'Montserrat', sans-serif
-    
   h1
-    font-size 4rem
-    
-  header, #content
-    h1, h2, p, li
-      color white
-    
+    font-size 1.5625rem
+    color BRANDING
+  .intro
+    height 405px
+    background: url('../images/home_mobile_bg.jpg') no-repeat 50% 50%
+    .container
+      width 100%
+      position absolute
+      top 50%
+      left 50%
+      transform: translate(-50%, -50%)
+      padding 0 10px
+    .swiper-slide
+      display none
+      &:first-child
+        display block
+  .swiper-pagination, .arrows
+    display none
   .row
-    display flex
-    height 100vh
+    position relative
     padding 0 10px
-    background-repeat no-repeat
-    background-position center center
-      
     .container
       margin auto
-    
-    h1, h2
-      font-size 2.11rem
-
     p
-      font-size 1.31rem
-      line-height 2.8125rem
+      font-size 0.9375rem
+      line-height 1.9375rem
       padding 20px 0 32px
-      
+      color white
     .button
       max-width 260px
       margin-left auto
       margin-right auto
-      padding 0
-      text-transform uppercase
+      padding 0 27px
+      // text-transform uppercase
       font-size 0.9rem
       line-height 3.3rem
       height auto
       font-weight 600
-      
-      &.stream
-        border 2px solid #fdbb30
-        
-    .button.listen.white_transparent_border:hover
-      background: white
-      color: rgb(55,55,55)
-      
-    .button.yellow_rounded.stream:hover
-      background: #FBAD0A
-      
-    .button.yellow_rounded:hover
-      background: #FBAD0A
-      
-    .button.yellow_rounded.join
-      background: none 
-      border: 2px solid white
-      
-    .button.yellow_rounded.join:hover
-      background: white
-      color: rgb(55,55,55)   
-      
-      
+  .featured
+    padding 32px 44px
+    .title
+      font-family 'Lato', sans-serif
+      font-weight normal
+      font-size 1.5rem
+      line-height 1.75rem
+      color DARK_GREY
+      border-bottom 1px solid #979797
+      text-align center
+      padding-bottom 9px
+      margin-bottom 25px
     h2
-      padding-bottom 24px
-
-    li
-      font-size 1.0625em
-      line-height 2.47rem
-      margin 1rem 0
-
-
-    &.intro
-      .container
-        padding-bottom 55px
-
-    &.convenient
-      h2
-        padding-bottom 8px
-      
-    &.refined
-      h2
-        padding-bottom 14px
-      
-    &.join
-      min-height auto
-      
-  .img-container
-    display none
-      
-
-  // First row
-  .intro
-    .stream
-      display none
-      
-
-  // Third row
-  .refined
-    .button
-      margin-top 34px
-      text-transform none
-      
-  // hide stream buttons for mobile
-  .stream
-    display none
-      
-
-// Small phones
-@media (max-height: 480px)
-  .homepage_page
-    .row
-      h1, h2
-        font-size 1.6rem
-      p
-        font-size 1rem
-        line-height 1.8rem
-      li
-        line-height 2rem
-        margin-bottom 1rem
-        
-      .button
-        font-size 1rem
-        line-height 2.5rem
-
-
-// Tablet and up
-@media (min-width: 700px)
-  .homepage_page
-
-    .container
-      max-width 1140px
-      padding-left 25px
-      padding-right 25px
-      margin-left auto
-      margin-right auto
-    
-    .row
-      height auto
-      min-height 850px
-      
-      .button
-        max-width 300px
-        
-      
-      h2
-        font-size 1.7375rem
-        line-height 3rem
-      
-    .img-container
-      display block
-      width 75%
-      margin 0 auto 30px
-      
-      img
-        width 100%
-        border-radius 7px
-
-    
-    // First row
-    .intro
-      h1
-        width 440px
-        margin-left auto
-        margin-right auto
-        font-size 4rem
-      p
-        padding-top 60px
-        font-size 1.5rem
-        line-height 2.1rem
-        padding-bottom 76px
-      
-      .buttons
-        overflow hidden
-        width 580px
-        margin 0 auto
-
-      .button
-        display inline-block
-        width 272px
-        float left
-        
-        &.listen
-          float right
-    
-          
-    // Second row
-    .convenient
-      h2
-        width 320px
-        margin-left auto
-        margin-right auto
-        
-      .button
-        display block
-        clear both
-          
-
-    .refined
-      .img-container
-        margin-bottom 25px
-      .text
-        margin-bottom 35px
-      .button
-        display block
-        width 510px
-        margin 0 auto
-        clear both
-        text-transform uppercase
-
-
-// Desktop and up
-@media (min-width: 960px)
-  .homepage_page
-    .text, .img-container
-      width 50%
+      margin 16px 0 10px
+      font-size 1.5rem
+      line-height 1.75rem
+      color DARK_GREY
       text-align left
-    
-    .text
-      float left
-      padding-right 5px
+    .room_subtitle
+      color NAME_BLUE
+    .room_content
+      text-align left
       
-    .img-container
-      float right
-      padding-left 5px
-    
-    .row
-      min-height 700px
-
-      li
-        list-style disc
-        
-      h2
-        // font-size 3rem
-        // line-height 4.5rem
-
-    .convenient, .refined
-      ul
-        padding-left 20px
-        margin-bottom 35px
-      li
-        font-size 1.2375rem
-        line-height 1.6rem
-      .img-container
-        margin-bottom -90px
-      .button
-        margin-left 0
-        margin-right 0
-
-    // First row
-    .row.intro
-      .container
-        padding-bottom 0
-      
-      h1
-        width auto
-        // font-size 4rem
-        margin-left 0
-      p
-        // font-size 2rem
-        // line-height 2.8125rem
-        padding-top 52px
-        padding-bottom 76px
-      
-      
-    // Second row
-    .convenient
-      h2
-        width 490px
-        margin-left 0
-        margin-right 0
-        
-
-  // Old browsers
-  .explorer_11, .explorer_10
-    &.homepage_page
-      .row
+  .room_cell
+    margin-bottom 30px
+    .room_title
+      font-family 'Lato', sans-serif
+      font-size 1.25rem
+      font-weight normal
+    & > .thumb_wrapper
+      display block
+      position relative
+      overflow hidden
+      &:before
         display block
-        position relative
-        
-        &.refined
-          overflow hidden
-      
-      .container
-        width 960px
+        content ""
+        width 100%
+        padding-top 100%
+      img
+        height 100%
         position absolute
         top 50%
         left 50%
         transform translate(-50%, -50%)
         
-        h2
-          width auto
+// only for mobile
+@media (max-width: 699px)
+  .homepage_page
+    .intro
+      h1, p
+        max-width 300px
+        margin-left auto
+        margin-right auto
+    .dynamic_wrapper
+      background white
+    .row .button
+      max-width 150px
+      
+    .featured
+      .swiper-wrapper
+        display block
+
+
+// Tablet and up
+@media (min-width: 700px)
+  .homepage_page
+    .container
+        max-width 1140px
+    .intro
+      padding-left 0
+      padding-right 0
+      background none
+      .swiper-pagination
+        display block
+        width 100%
+        height 12px
+        position absolute
+        z-index 100
+        bottom 24px
+        left 50%
+        transform translate(-50%, 0)
+      .container
+        left 0
+        padding-top 27px
+        padding-left 25px
+        transform translate(0, -50%)
+      .swiper-slide
+        display block
+      .first-slide
+        background url(../images/carousel1.jpg) no-repeat 50% 50%
+        background-size cover
+      .second-slide
+        background url(../images/carousel2.jpg) no-repeat 50% 50%
+        background-size cover
+      h1, p
+        text-align left
+      h1
+        font-size 34px
+      p
+        font-size 17px
+        max-width 560px
+      .button
+        margin-left 0
+    .row
+      .button
+        max-width 300px
+    
+    .featured
+      padding-left 25px
+      padding-right 25px
+      .title
+        text-align left
+      .container
+        position relative
+      .arrows
+        display block
+        position absolute
+        top -12px
+        right 0
+      .arrow
+        &:first-child
+          margin-right 25px
+        &:hover
+          opacity 0.8
+          transition opacity 0.2s
+      .room_title
+        font-family 'Open sans', sans-serif
+        font-size 1.25rem
+        line-height 1.5rem
+
+
+// Desktop and up
+@media (min-width: 960px)
+  .homepage_page
+    // empty
+      
+
+// Large Desktop
+@media (min-width: 1140px)
+  .homepage_page
+    .intro
+      .container
+        left 50%
+        padding-left 0
+        transform translate(-50%, -50%)

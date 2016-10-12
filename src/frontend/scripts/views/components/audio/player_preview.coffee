@@ -36,7 +36,7 @@ module.exports = (dom) ->
       is_playing = true
       dom.addClass 'playing'
       dom.removeClass 'preloading'
-      icon.addClass( 'ss-pause' ).removeClass( 'ss-play' )      
+      icon.addClass( 'fa-pause-circle' ).removeClass( 'fa-play-circle' )      
     else
       on_stop()
 
@@ -44,7 +44,7 @@ module.exports = (dom) ->
     is_playing = false
     dom.removeClass 'playing'
     dom.removeClass 'preloading'
-    icon.removeClass( 'ss-pause' ).addClass( 'ss-play' )
+    icon.removeClass( 'fa-play-circle' ).addClass( 'fa-pause-circle' )
 
   on_loading = (_room_id) ->
     if _room_id is room_id

@@ -74,7 +74,7 @@ header.header
     left 1px
     font-size 10px
     font-weight bold
-    color YELLOW
+    color BRANDING
     letter-spacing: 3px
     padding-left 2px
     background-color rgba( 255, 255, 255, 0.1)
@@ -89,7 +89,7 @@ header.header
       left: 0
       width: 100%
       height: 0px
-      background: BLUE
+      background: BRANDING
       transition: height .1s ease-out
     &.selected:after
       height: 3px
@@ -244,18 +244,27 @@ header.for_desktop
     .header_shadow_item
       box-shadow none
 
-    .search_box 
-      // padding-top 7px
-      // padding-left 17px
-      // .icon
-      //   display none
-      input[type="text"]
-        padding 2px
-        font-size 1rem
+    .search_box
+      padding-left 0
+      margin-top -4px
+      transition: all 0.3s
+      &.focus
+        margin-right 100px
+      form
+        position relative
+      .icon
+        top 7px
+        left 12px
         background transparent
+      input[type="text"]
+        padding 7px 7px 7px 38px
+        font-size 1rem
+        background rgba(51,51,51,0.79)
+        transition all 0.3s
         
         &.focus, &:focus, &:active
-          background #393939
+          width 150%
+          background rgba(51,51,51,1)
           
       ::-webkit-input-placeholder /* WebKit, Blink, Edge */
         color white
@@ -279,9 +288,9 @@ header.for_desktop
       height auto
       margin-top 10px
       padding 6px 22px
-      color #060606
+      color white
       border-radius 6px
-      background #E3E1E1
+      background BRANDING
       
     .login_link
       border-left-color transparent

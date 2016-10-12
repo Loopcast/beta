@@ -10,177 +10,73 @@ block seo
     meta( name="twitter:description" content="Explore live DJ mixes on Loopcast. Chat with other listeners and follow your favourite DJs")    
 
 
-block submenu
-  span(data-submenu="sub_header_rooms", data-menu-mobile="mobile_explore")
-
-
 
 block grid
+  .container
+    .arrows
+      a(href="").prevSlide.arrow
+        img(src="images/arrow_white_left.svg", alt="Previous Slide")
+      a(href="").nextSlide.arrow
+        img(src="images/arrow_right_white.svg", alt="Next Slide")
+    .pagination
 
-  for item in rooms    
+    .swiper-container
+      .swiper-wrapper
 
-    - klasses = "item-all-genres"
+        for item in rooms
 
-    - url         = "/"+ item.user.info.username + "/" + item.info.slug
-    - sharing_url = url
-    - author_url  = "/"+ item.user.info.username
-    - cover_url   = item.info.cover_url || item.user.info.avatar
+          - klasses = "item-all-genres"
 
-    if !item.status.is_live
-      - url = "#"
-
-    //- - console.log( "[-------------]", item.info.genres )
-    //- for g in item.info.genres
-    //-   - console.log( slugify(g) )
-    //- - klasses += " item-" + slugify(g)
-
-    if item.status.is_live
-      - klasses += " is_live"
-    else
-      - klasses += " not_live"
-
-    //- only show as "is_recorded" after file has been uploaded to S3
-    if item.status.recording.s3 && !item.status.is_live
-      - klasses += " is_recorded"
-
-    .room_cell.item(class="#{klasses}", data-view="components/audio/player_preview", data-room-id="#{item._id}" data-is-live="#{item.status.is_live}")
-      if item.status.is_live
-        hidden( class="source_src" value="#{item.info.url}")
-      else
-        if item.status.is_recorded
-          hidden( class="source_src" value="#{item.info.file}")
-
-            
-      a(href="#{url}", title="#{item.info.title}", class="thumb_wrapper") 
-        img.room_thumb.for_desktop(src="#{transform.explore_thumb(cover_url)}")
-        img.room_thumb.for_mobile(src="#{transform.explore_thumb_mobile(cover_url)}")
-        
-        span.recorded Recorded
-        span.now_live Now Live
-
-        span.icon.ss-play.circle_icon
-        .loading_spin
-
-        .share_wrapper(
-          data-view="buttons/share", 
-          data-title="#{item.info.title}",
-          data-summary="#{item.info.about}",
-          data-permalink="#{sharing_url}",
-          data-image="#{item.info.cover_url}"
-        )
-          a.yellow.ss-action(href="#", title="Share")
-
-      .room_content
-        .text
-          h2.room_title
-            a(href="#{url}", title="#{item.info.title}") #{item.info.title}
-          a.room_subtitle.blue(title="#{item.user.info.name}", href="#{author_url}") #{item.user.info.name}
-          .genres.small
-            - counter = 0
-            for genre in item.info.genres
-              - klass = ""
-              if counter++ >= 5
-                - klass = "hide"
-              a.tag(href="?genres=#{genre}", title="#{genre}", data-genre-id="#{genre}", class="#{klass}") #{genre}
-
-            if item.info.genres.length > 5
-              span ...
-
-          if item.info.location.length > 0
-            p.room_location
-              a(href="/explore?search=#{item.info.location}")
-                span.icon.ss-location
-                | #{item.info.location}
+          - url         = "/"+ item.user.info.username + "/" + item.info.slug
+          - sharing_url = url
+          - author_url  = "/"+ item.user.info.username
+          - cover_url   = item.info.cover_url || item.user.info.avatar
 
           if !item.status.is_live
-            .likes 
-              span.icon.ss-heart
-              span.text #{item.likes}
-            .plays
-              span.icon.ss-play
-              span.text #{item.status.recording.plays}
+            - url = "#"
 
-        if item.status.is_live
-          a.enter_room(href="#{url}", class="button yellow_button no_shadow small_button small_button_2", title="Enter Room") Enter Room
+          //- - console.log( "[-------------]", item.info.genres )
+          //- for g in item.info.genres
+          //-   - console.log( slugify(g) )
+          //- - klasses += " item-" + slugify(g)
 
+          if item.status.is_live
+            - klasses += " is_live"
+          else
+            - klasses += " not_live"
 
-  for item in tapes
+          //- only show as "is_recorded" after file has been uploaded to S3
+          if item.status.recording.s3 && !item.status.is_live
+            - klasses += " is_recorded"
 
-    - klasses = "item-all-genres"
+          .room_cell.item(class="#{klasses}", data-view="components/audio/player_preview", data-room-id="#{item._id}" data-is-live="#{item.status.is_live}")
+            if item.status.is_live
+              hidden( class="source_src" value="#{item.info.url}")
+            else
+              if item.status.is_recorded
+                hidden( class="source_src" value="#{item.info.file}")
 
-    - url         = "/"+ item.user.info.username + "/r/" + item.slug
-    - sharing_url = url
-    - author_url  = "/"+ item.user.info.username
-    - cover_url   = item.cover_url || item.user.info.avatar
+                  
+            a(href="#{url}", title="#{item.info.title}", class="thumb_wrapper") 
+              img.room_thumb.for_desktop(src="#{transform.explore_thumb(cover_url)}")
 
-    //- for g in item.genres
-    //-   - console.log( slugify(g) )
-      
+              i.fa.fa-play-circle.circle_icon(aria-hidden="true")
+              .loading_spin
 
-    - klasses += " not_live"
+              .share_wrapper(
+                data-view="buttons/share", 
+                data-title="#{item.info.title}",
+                data-summary="#{item.info.about}",
+                data-permalink="#{sharing_url}",
+                data-image="#{item.info.cover_url}"
+              )
+                a.yellow.ss-action(href="#", title="Share")
 
-    - klasses += " is_recorded"
-
-    //- if not uploaded yet, just skip it
-    - if( !item.s3 ) continue
-
-    .room_cell.item(class="#{klasses}", data-view="components/audio/player_preview", data-room-id="#{item._id}" data-is-live="", data-audio-url="#{item.s3.location}")
-      hidden( class="source_src" value="#{item.s3.location}")
-
-            
-      a(href="#{url}", title="#{item.title}", class="thumb_wrapper") 
-        img.room_thumb.for_desktop(src="#{transform.explore_thumb(cover_url)}")
-        img.room_thumb.for_mobile(src="#{transform.explore_thumb_mobile(cover_url)}")
-        
-        span.recorded Recorded
-        span.now_live Now Live
-
-        span.icon.ss-play.circle_icon
-        .loading_spin
-
-        - about = ""
-        if item.about
-          - about = item.about
-
-        .share_wrapper(
-          data-view="buttons/share", 
-          data-title="#{item.title}",
-          data-summary="#{about}",
-          data-permalink="#{sharing_url}",
-          data-image="#{item.cover_url}"
-        )
-          a.yellow.ss-action(href="#", title="Share")
-
-      .room_content
-        .text
-          h2.room_title
-            a(href="#{url}", title="#{item.title}") #{item.title}
-          a.room_subtitle.blue(title="#{item.user.info.name}", href="#{author_url}") #{item.user.info.name}
-          .genres.small
-            - counter = 0
-            - if( !item.genres ) item.genres = []
-            for genre in item.genres
-              - klass = ""
-              if counter++ >= 5
-                - klass = "hide"
-              a.tag(href="?genres=#{genre}", title="#{genre}", data-genre-id="#{genre}", class="#{klass}") #{genre}
-
-            if item.genres.length > 5
-              span ...
-
-          - if( !item.location ) item.location = []
-          if item.location.length > 0
-            p.room_location
-              a(href="/explore?search=#{item.location}")
-                span.icon.ss-location
-                | #{item.location}
-
-          .likes 
-            span.icon.ss-heart
-            span.text #{item.likes}
-          .plays
-            span.icon.ss-play
-            span.text #{item.plays}
+            .room_content
+              .text
+                h2.room_title
+                  a(href="#{url}", title="#{item.info.title}") #{item.info.title}
+                a.room_subtitle.blue(title="#{item.user.info.name}", href="#{author_url}") #{item.user.info.name}
 
   script
     //- THIS IS JUST FOR DEBUGGIN. TO BE REMOVED

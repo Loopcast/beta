@@ -1,59 +1,60 @@
 block seo
   title Loopcast - Real Time Music 
-  meta( name="description" content="Stream, record and share your DJ mixes instantly. Go live, interact with your audience and see your listeners in real time." )
+  meta( name="description" content="Explore human-curated channels by the most forward thinking DJs and selectors" )
   meta( property="og:url" content="#{s.base_path}" )
   meta( property="og:title" content="Loopcast | Real Time Music" )
-  meta( property="og:description" content="Stream, record and share your DJ mixes instantly. Go live, interact with your audience and see your listeners in real time." )
+  meta( property="og:description" content="Explore human-curated channels by the most forward thinking DJs and selectors" )
   meta( name="twitter:title" content="Loopcast | Real Time Music")
-  meta( name="twitter:description" content="Stream, record and share your DJ mixes instantly. Go live, interact with your audience and see your listeners in real time.")  
+  meta( name="twitter:description" content="Explore human-curated channels by the most forward thinking DJs and selectors")  
 
 extends layout
 
 block content
   .homepage(data-menu="homepage" data-view="homepage")
     
-    .row.intro.parallax-container(data-factor="1", data-image-parallax="/images/mixer.jpg")
+    //- intro section
+    .row.intro.swiper-container
+      .swiper-wrapper
+        //- first slide
+        .swiper-slide.first-slide
+          .container
+            h1 Discover Music For Every Moment
+            p Explore human-curated channels by the most forward thinking DJs and selectors. Unique, rare and niche music for every moment.
+
+            a.button.new_green(href="/explore", title="Explore All Channels", onClick="mixpanel.track('Explore');_gaq.push(['_trackEvent', 'Explore', 'Click', '']);") Start Listening
+
+        //- second slide
+        .swiper-slide.second-slide
+          .container
+            h1 Dance Music Discovery Tool
+            p Tune into a unique channel for any sub-genres of dance music. Chat with other listeners in the channel and purchase the tracks you love.
+
+            a.button.new_green(href="/explore", title="Explore All Channels", onClick="mixpanel.track('Explore');_gaq.push(['_trackEvent', 'Explore', 'Click', '']);") Start Listening
+
+      .swiper-pagination
+
+      .carousel
+
+    //- Featured Channels section
+    .row.featured
       .container
-        h1 Real. Time. Music.
+        h2.title Featured Channels
         
-        p 
-          | Stream, record and share your DJ mixes instantly.
-          br 
-          | Go live, interact with your audience and see your listeners in real time.
+        .arrows
+          a(href="").prevSlide.arrow
+            img(src="images/arrow_left.svg", alt="Previous Slide")
+          a(href="").nextSlide.arrow
+            img(src="images/arrow_right.svg", alt="Next Slide")
 
-        .buttons
-          a.button.yellow_rounded.stream(href="/rooms/create" title="Create Live Room", data-view="components/logged_link", onClick="mixpanel.track('Start Streaming');_gaq.push(['_trackEvent', 'Start Streaming', 'Click', '']);Intercom('trackEvent', 'start-streaming');") Start Streaming
-          a.button.listen.white_transparent_border(href="/explore", title="Explore live music", onClick="mixpanel.track('Explore');_gaq.push(['_trackEvent', 'Explore', 'Click', '']);") Listen
+        .swiper-container
+          .swiper-wrapper
+            include fake_room_card.jade
+            include fake_room_card.jade
+            include fake_room_card.jade
+            include fake_room_card.jade
+            include fake_room_card.jade
+            include fake_room_card.jade
+            include fake_room_card.jade
 
-    .row.convenient.parallax-container(data-factor="1.07", data-image-parallax="/images/headphones1.jpg")
-      .container
-        .img-container
-          img(src="images/screenshot2.jpg" alt="App screenshot")
-        .text
-          h2 Convenient and easy for DJs
-          ul
-            li Connect your mixer and broadcast your DJ sets
-            li Record your mixes directly in the browser
-            li Upload and share recordings instantly
-            li We notify your followers when you go live
-            
 
-        a.button.yellow_rounded.stream.second(href="/rooms/create" title="Create Live Room", data-view="components/logged_link", onClick="mixpanel.track('Start Streaming');_gaq.push(['_trackEvent', 'Start Streaming', 'Click', '']);Intercom('trackEvent', 'start-streaming');") Start Streaming
-
-    .row.refined.parallax-container(data-factor="1.03", data-image-parallax="/images/computers1.jpg")
-      .container
-        .img-container
-          img(src="images/screenshot1.jpg" alt="App screenshot")
-        .text
-          h2 A refined listening experience
-          ul
-            li Be notified when your favorite DJs go live
-            li Chat with the DJ and other listeners
-            li Explore live or recorded DJ mixes on any device
-
-        a.button.yellow_rounded.join(
-          title="Log In", 
-          data-view="components/login_popup_handler",
-          href="#"
-        ) Join Loopcast Now
     

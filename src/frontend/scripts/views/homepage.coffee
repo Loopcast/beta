@@ -1,5 +1,6 @@
 Happens         = require 'happens'
 preload         = require 'app/utils/preload'
+Swiper          = require 'swiper'
 
 
 module.exports = class NewHomePage
@@ -13,60 +14,51 @@ module.exports = class NewHomePage
     @header = $ 'header'
     @header.addClass 'top'
 
+    # search field
     search_input = @header.find('.search_box input')
     
     search_input.focus ->
       $(this).addClass 'focus'
+      $(this).closest('.search_box').addClass 'focus'
 
     search_input.blur ->
       $(this).removeClass 'focus'
+      $(this).closest('.search_box').removeClass 'focus'
 
 
-    $(window).scroll () =>
-      top = $(window).scrollTop()
+    # header carousel
+    @intro = $ '.intro.swiper-container'
+    options =
+      direction: 'horizontal'
+      loop: true
+      pagination: '.swiper-pagination'
+      paginationClickable: true
 
-      if top > 0
-        @header.removeClass 'top'
-      else
-        @header.addClass 'top'
+    # init swiper only for tablets and desktops
+    if window.innerWidth > 700
+      introSwiper = new Swiper @intro, options
 
 
-    # Parallax functionality
-    @dom.addClass 'request_preloading'
+    # featured channels carousel
+    @featured = $ '.featured .swiper-container'
+    options = 
+      direction: 'horizontal'
+      loop: true
+      slidesPerView: 5
+      slidesPerGroup: 5
+      spaceBetween: 25
+      prevButton: '.prevSlide'
+      nextButton: '.nextSlide'
 
-    elements = []
-    images = []
+    # init swiper only for tablets and desktops
+    if window.innerWidth > 700
+      featuredSwiper = new Swiper @featured, options
 
-    @dom.find( '.parallax-container' ).each ->
-      elements.push $( @ )
-      images.push $( @ ).data( 'image-parallax' )
-
-    preload images, ( images_loaded ) =>
-
-      # log "[Preloaded]", images_loaded
-
-      for el, i in elements
-        # log "parallax", i
-        el.parallax
-          imageSrc     : images_loaded[ i ].src
-          bleed        : 10
-          parallax     : 'scroll'
-          naturalWidth : images_loaded[ i ].width
-          naturalheight: images_loaded[ i ].height
-
-      
-      @ready()
-
-  ready: ->
-    delay 100, -> app.window.obj.trigger 'resize'
-    delay 200, => @emit 'ready'
 
 
   destroy: ( ) ->
     # log "[Homepage] destroyed"
-    p = $( '.parallax-mirror' )
-    p.addClass( 'hide' )
-    delay 300, -> p.remove()
+    @header.removeClass 'top'
     
 
   # on_views_binded: ( scope ) =>

@@ -14,7 +14,8 @@
       .inner
         
     .player_button.no_fullscreen
-      a.icon.ss-play(href="#",title="Play") 
+      a(href="#",title="Play")
+        i.fa.fa-play-circle
       .loading_spin.medium
 
     .player_text.no_fullscreen
@@ -33,22 +34,21 @@
     p.player_total_time.for_desktop 00:00:00
 
     .player_buttons
+      a.itunes(href="#", title="Buy on iTunes") Buy on iTunes
       a.icon.ss-heart(href="#")
 
       .share_wrapper( data-view="buttons/share" )
         a.player_share.ss-action(href="#", title="Share")
 
-    .player_right.for_desktop
-      
-      p.player_label Now Live
 
     a.open_fullscreen(href="#", title="Fullscreen player").for_mobile.no_fullscreen
       span.icon.ss-navigateup
 
     .fullscreen_elements
       .player_text
-        a.player_title(href="#", title="Title") 
-        a.player_author(href="#", title="Author") 
+        //- a.player_title(href="#", title="Title") 
+        a.itunes(href="#", title="Buy on iTunes") Buy on iTunes
+        a.player_author(href="#", title="Author")
 
       .progress_wrapper
         p.player_time 00:00:00

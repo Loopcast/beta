@@ -3,65 +3,17 @@ extends ./../layout
 block content
   .explore(data-menu="explore", data-menu-fixed="false")
 
-    block submenu
-
-    .sub_header.for_desktop(data-view="components/fixed_bar")
-      ul.centered
-        li.sub_header_rooms
-          a(href="/explore" title="Sets", data-nav-load=".explore .explore_content", data-nav-custom-class="tab_1")
-            .icon.ss-music 
-            span Listen
-        li.sub_header_people
-          a(href="/explore/people" title="People", data-nav-load=".explore .explore_content", data-nav-custom-class="tab_1")
-            span.icon.ss-users
-            span People
-
-    .explore_content.flex.centered(data-view="explore")
+    .explore_content.centered(data-view="explore")
       .loading
 
       .no_result
         p Sorry, we didn't find any results.
         
       block no_content
-      
-      .for_mobile.filter_list(data-view="explore/mobile_filter")
-        p 
-          | Filter
-          span.icon.ss-dropdown
-          span.icon.ss-directup
 
-      .flex_sidebar.genres_list
-
-
-        - klass = ""
-        if current_genre.length <= 0
-          - klass = "selected"
-        a(
-          class="#{klass}" 
-          title="All genres", 
-          href="#{url}", 
-          data-nav-load=".flex_content.rooms_grid > .inner",
-          data-nav-custom-class="tab_filter",
-          data-genre-id=""
-        ) Popular 
-
-        each g in genres
-          - g_url = url + "?genres=" + encodeURIComponent( g )
-          - klass = ""
-          if current_genre == g
-            - klass = "selected"
-          a(
-            class="#{klass}", 
-            title="#{g}",
-            href="#{g_url}", 
-            data-nav-load=".flex_content.rooms_grid > .inner",
-            data-nav-custom-class="tab_filter",
-            data-genre-id="#{g}"
-          ) #{g}
-
-
-      .flex_content.rooms_grid
+      .rooms_grid
         .loading
         .inner
           input(type="hidden", name="current_genre", value="#{current_genre}")
+          h2.main_title Discover your favourite genres, join a channel and chat with our community
           block grid

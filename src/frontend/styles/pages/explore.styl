@@ -4,16 +4,27 @@ HEIGHT_SUBHEADER = 45px
 GRAY_SUBHEADER_BORDER = #d5d4d4
 
 
+// preloading
+body.loading
+  .explore
+    height: 100vh
+    background #262626
+  .explore_content
+    opacity 0
+
+
+.explore_page
+  &, #content, .dynamic_wrapper
+    background #262626
+    
+  .main_title
+    font-family 'Lato', sans-serif
+    font-weight normal
+
 .circle_icon
   color: white
-  background: rgba(PLAY_BUTTON_COLOR,PLAY_BUTTON_COLOR,PLAY_BUTTON_COLOR,0.6)
-  width: PLAY_BUTTON_W
-  height: PLAY_BUTTON_W
   text-align: center
-  padding-top: 14px
-  padding-left: 7px
-  font-size: 28px
-  border-radius: 50%
+  font-size: 108px
   absolute left 50% top 50%
   transform: translateX(-50%) translateY(-50%)
   
@@ -52,6 +63,9 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
     .flex_sidebar, .flex_content
       display: none
       
+  h2
+    color white
+
   .no_result
     text-align: center
     font-size: 1.2rem
@@ -72,64 +86,7 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
     
   .explore_content > .loading
     top: 45px
-    
-
-  .sub_header
-    background: #EFF3F6
-    height: HEIGHT_SUBHEADER
-    border-bottom: 1px solid GRAY_SUBHEADER_BORDER
-    color: GRAY_2
-    font-size: .9em
-    font-weight: 600
-    absolute top 0 left 0
-    width: 100%
-    z-index: 1
-    a
-      display: block
-    li
-      display: inline-block
-      height: HEIGHT_SUBHEADER
-      padding: 10px 40px 0
-      
-      .spritesheet, .icon
-        position: relative
-        top: 2px
-        margin-right: 5px
-        
-      .ss-record-wrapper
-        top: -1px
-        margin-right: 6px
-        
-      &.selected
-        background: GRAY
-        border-left: 1px solid GRAY_SUBHEADER_BORDER
-        border-right: 1px solid GRAY_SUBHEADER_BORDER
-        border-bottom: 1px solid GRAY
-        // transition: border-color .3s linear
-        a
-          cursor: default
-          
-    &.fixed
-      position: fixed
-      backface-visibility: hidden
-      li.selected
-        border-bottom-color: GRAY_SUBHEADER_BORDER
-          
-
-  .likes, .plays
-    font-size: .7em
-    color: GRAY_4
-    margin: 5px 1px
-    .spritesheet
-      position: relative
-      top: 2px
-    .text
-      margin-left: 5px
-      
-  .plays
-    .spritesheet
-      margin-left: 3px
-      margin-right: 1px
+  
         
   .explore_content
     padding-top: SIDE_PADDING * 2
@@ -137,57 +94,9 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
   
 
   MARGIN_GRID = 30px
-  
-  .now_live
-  .recorded
-    
-    color: white
-    text-transform: uppercase
-    font-size: 0.7em
-    padding: 2px 6px
-    absolute top 0 left 0
-    border-bottom-right-radius: 3px
-    display: none
-    
-  .now_live
-    background: RED
-    
-  .recorded
-    background: #02B016
-    
-  .is_live
-    .now_live
-      display: inline-block
-      
-  .is_recorded
-    .recorded
-      display: inline-block
-    
-  .genres_list
-    width: 150px
-    margin-right: MARGIN_GRID
-    font-size: 0.8em
-    a
-      display: block
-      background: #dedede
-      color: #444235
-      padding: 6px 12px
-      text-align: left
-      margin-bottom: 5px
-      border-radius: 4px 
-      text-transform: capitalize
-      &.selected
-        background: #747C83
-        color: #dedede
-        font-weight: 600
-        
       
     
   .rooms_grid
-    
-      
-
-
     .inner
       position: relative
       width: 100%
@@ -197,16 +106,12 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
     .room_cell
       width: 210px
       text-align: left
-      background: white
-      // margin-right: MARGIN_GRID
       margin-bottom: MARGIN_GRID
-      
-      // float: left
-      // overflow: hidden
       position: relative
-      border: 1px solid #DDD7D7
-      border-bottom: 2px solid #DDD7D7 
-      border-radius: 5px
+      
+      .circle_icon
+        font-size 100px
+      
       
       &.not_live
         .room_location
@@ -227,12 +132,10 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
       .thumb_wrapper
         position: relative
         display: block
-        border-top-left-radius: 3px
-        border-top-right-radius: 3px
         overflow: hidden
       & > .thumb_wrapper
-        width: 208px
-        height: 208px
+        width: 200px
+        height: 200px
         
       .room_thumb
         width: 100%
@@ -240,7 +143,7 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
         
         
       h2
-        color: BLACK
+        color: #E0E0E0
         font-size: 1em
         font-weight: 800
         line-height: 1.3em
@@ -331,35 +234,10 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
   &.tab_filter .rooms_grid .loading
     opacity: 1
     
-
-// .visible
-//   &.tab_filter .rooms_grid .loading
-//   &.tab_1 .explore_content > .loading
-//     z-index: 1
     
-// .custom_loading
-//   &.tab_filter .rooms_grid .loading
-//   &.tab_1 .explore_content > .loading
-//     opacity: 1
-//     transition: opacity .1s linear
-    
-  
-// .tab_1
-//   &.visible .explore_content > .loading
-//     opacity: 1
-    
-    
-
-
 
 .no_touch_device
   .explore
-    .sub_header li:hover
-      color: BLACK
-    .genres_list
-      a:hover
-        background:  #747C83
-        color: #dedede
     .room_cell:hover
       .share_set, .like_set
         color: GRAY_2
@@ -380,11 +258,88 @@ GRAY_SUBHEADER_BORDER = #d5d4d4
       
     .share_wrapper
         opacity: 1
-        
-        
+
+
   
-  .circle_icon:hover
-    background: rgba(PLAY_BUTTON_COLOR,PLAY_BUTTON_COLOR,PLAY_BUTTON_COLOR,0.7)
-  
+@media (max-width 767px)
+  .explore_page
+    .loading
+      top 0
+    .swiper-wrapper
+      display block
+      max-width 300px
+      margin 0 auto
+    .explore 
+      .explore_content
+        padding-top 20px
+      .rooms_grid 
+        .room_cell
+          border-bottom none
+          .room_content
+            padding-left 0
+            .text
+              padding-left 0
+    .main_title, .arrows
+      display none
+
+@media (max-width 320px)
+  .explore_page
+    .swiper-wrapper
+      max-width 280px
 
       
+// tablet and up
+@media (min-width 768px)
+  .explore_page
+    .container
+      max-width 1140px
+    #content
+      height calc(100vh - 55px)
+    .explore
+      padding-top 0
+    .main_title
+      margin 72px auto 24px
+      max-width 510px
+    .explore_content
+      padding 0 20px
+    .arrows, .pagination
+      display inline-block
+      float right
+      margin-bottom 20px
+    .pagination
+      margin 19px 19px 0 0
+    .nextSlide
+      margin-left 20px
+    .swiper-container
+      clear both
+    .rooms_grid
+      .room_cell
+        margin-bottom 10px
+    .swiper-slide
+      display flex
+      flex-direction row
+      flex-wrap wrap
+      
+      .room_cell
+        width 18.4%
+        margin-left 2%
+        &.first-inline
+          margin-left 0%
+        & > .thumb_wrapper
+          width 100%
+          height auto
+          box-sizing border-box
+          display inline-block
+          position relative
+          &:before
+            content ""
+            display block
+            margin-top 100%
+          img
+            position absolute
+            top 0
+            bottom 0
+            left 0
+            right 0
+            &.for_mobile
+              display none

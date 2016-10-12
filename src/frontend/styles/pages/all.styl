@@ -338,8 +338,8 @@ PLAYER_HEIGHT = 70px
 
 
   .player_button
-    font-size: 1.6em
-    margin: 0 25px
+    font-size: 2.8em
+    margin: 0 16px
     position: relative
     top: 3px
     .icon
@@ -394,18 +394,7 @@ PLAYER_HEIGHT = 70px
       transition: width .1s linear, background .2s linear
       &.dragging
         transition: none
-        
-      &:after
-        content: ""
-        position: absolute
-        top: -5px
-        right: 0
-        width: 13px
-        height: 13px
-        border-radius: 50%
-        border: 2px solid YELLOW
-        background: BLACK_BOX_COLOR
-        transform: translateX(47%)
+
       &.no_transition
         transition: none
       
@@ -418,7 +407,7 @@ PLAYER_HEIGHT = 70px
   .player_buttons
     margin-left: 0px
     font-size: 1.3em
-    flex: 1
+    flex: 2
     
     & > *
       display: inline-block
@@ -454,9 +443,6 @@ PLAYER_HEIGHT = 70px
   &.is_live
     .player_label
       display: block
-      
-    .player_total_time
-      display: none
     
   .player_right
     margin-right: 10px
@@ -480,6 +466,38 @@ PLAYER_HEIGHT = 70px
 
     .share_wrapper:hover
       color: YELLOW
+      
+@media (min-width 700px)
+  #player
+    .itunes
+      display inline-block
+      width 65px
+      height 24px
+      margin-left 5px
+      margin-right 16px
+      background url('../images/get_on_iTunes.png')
+      background-size contain
+      text-indent -9999px
+      
+@media (min-width 1000px)
+  #player
+    .centered
+      padding 0
+
+@media (min-width 700px)
+  #player
+    .player_buttons
+      flex 7
+      
+@media (min-width 900px)
+  #player
+    .player_buttons
+      flex 3
+      
+@media (min-width 1080px)
+  #player
+    .player_buttons
+      flex 2
       
 // GUI
 #gui

@@ -6,12 +6,7 @@ header.header.for_desktop(data-view="header")
         span.spritesheet(class="sprite_small_logo") Loopcast Logo
         span.beta-label beta
       a.explore_item.menu_item.header_shadow_item(href="/explore" title="Explore" onClick="mixpanel.track('Explore');_gaq.push(['_trackEvent', 'Explore', 'Click', '']);") Explore
-      a.create_room_item.menu_item.header_shadow_item(href="/rooms/create" title="Create Room", data-view="components/logged_link" onClick="mixpanel.track('Start Streaming');_gaq.push(['_trackEvent', 'Start Streaming', 'Click', '']);Intercom('trackEvent', 'start-streaming');") Start Streaming
-      .search_box.no_border
-
-        span.icon.ss-icon &#x1F50E;
-        form
-          input.dark_input(type="text" name="search" placeholder="Search", data-view="components/search_input")
+      //- a.create_room_item.menu_item.header_shadow_item(href="/rooms/create" title="Create Room", data-view="components/logged_link" onClick="mixpanel.track('Start Streaming');_gaq.push(['_trackEvent', 'Start Streaming', 'Click', '']);Intercom('trackEvent', 'start-streaming');") Start Streaming
 
 
     .right
@@ -20,6 +15,11 @@ header.header.for_desktop(data-view="header")
       //-   title="Upload"
       //-   href="/upload"
       //- ) Upload
+      
+      .search_box.no_border
+        form
+          span.icon.ss-icon &#x1F50E;
+          input.dark_input(type="text" name="search" placeholder="Search", data-view="components/search_input")
 
       .user_logged
 
@@ -41,8 +41,6 @@ header.header.for_desktop(data-view="header")
 
         ul.settings_dropdown.hover_dropdown
           li
-            a(href="/about" title="About Loopcast") About Loopcast
-          li
             a(href="https://loopcast.desk.com/" target="_blank" title="Help") Help
           li
             a(href="http://blog.loopcast.fm/" target="_blank" title="Blog") Blog
@@ -56,9 +54,7 @@ header.header.for_desktop(data-view="header")
 
 .for_mobile.mobile_header
   a.icon.ss-music.mobile_explore_item(href="/explore", title="Explore") &nbsp;
-  a.icon.ss-users.mobile_people_item(href="/explore/people") &nbsp;
-  a(href="/", title="Homepage")
-    span.spritesheet.mobile_white_logo
+  a.icon.ss-home(href="/", title="Homepage") &nbsp;
   a.icon.ss-search(href="#", data-view="components/mobile/dropdown_trigger", data-dropdown=".search_menu") &nbsp;
   a.icon.ss-ellipsis(href="#", data-view="components/mobile/dropdown_trigger", data-dropdown=".more_menu") &nbsp;
 

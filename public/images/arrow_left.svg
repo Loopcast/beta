@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39 (31667) - http://www.bohemiancoding.com/sketch -->
+    <title>arrow_left</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="arrow_left" transform="translate(1.000000, 1.000000)">
+            <ellipse id="Oval-4" stroke="#424242" stroke-width="2" cx="17" cy="17" rx="17" ry="17"></ellipse>
+            <path d="M13.0966727,16.6447368 L20.6844606,24.5505757 C20.9267863,24.7929014 20.9267863,25.0352236 20.6844606,25.2775493 L19.3213849,26.6860609 C19.0790591,26.9283866 18.836737,26.9283866 18.5944112,26.6860609 L9.32549675,17.0082237 C9.23462459,16.9173515 9.18918919,16.7961905 9.18918919,16.6447368 C9.18918919,16.4932832 9.23462459,16.3721222 9.32549675,16.28125 L18.5944112,6.60341283 C18.8064463,6.39137778 19.0487684,6.40652291 19.3213849,6.64884868 L20.6844606,8.01192434 C20.9267863,8.25425012 20.9267863,8.49657225 20.6844606,8.73889803 L13.0966727,16.6447368 Z" id="ion-chevron-left---Ionicons" fill="#424242"></path>
+        </g>
+    </g>
+</svg>

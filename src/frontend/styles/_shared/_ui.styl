@@ -22,9 +22,13 @@ DARK_PERCENTAGE = 5
     background: BLUE
     color: white
     font-size: .8rem
-    
+  
+  &.new_green
+    background: BRANDING
+    color white
+
   &.green_button
-    background: GREEN
+    background: BRANDING
     color: white
     
   &.white_button
@@ -468,7 +472,7 @@ input, textarea, div.tagsinput
     height: 100px
     
   &.dark_input
-    background-color: lighten( #2c2c2c, 5 )
+    background-color: white
     color: white
     font-size: 0.7rem
     padding: 6px
@@ -478,7 +482,6 @@ input, textarea, div.tagsinput
     
     &:focus
       outline: 0
-      width: 150%
       background-color: lighten( #2c2c2c, 10 )
       
   &.link_input
@@ -856,17 +859,17 @@ input, textarea, div.tagsinput
     opacity: 0
 
 .yellow.ss-action
-  color: BLACK
-  background: YELLOW
+  color: GRAY_3
+  background: BRANDING
   border-radius: 3px
   text-align: center
   display: inline-block
   width: 23px
-  height: 23px
+  height: 20px
   padding-left: 2px
   font-size: 0.9rem
   padding-top: 3px
-  border: 1px solid YELLOW
+  border: 1px solid BRANDING
   
 .white.ss-action
   color: white
@@ -1064,7 +1067,7 @@ input, textarea, div.tagsinput
 
   .yellow.ss-action:hover
     background: BLACK
-    color: YELLOW
+    color: #07d159
   
   .white.ss-action:hover
     color: darken(white, 20)

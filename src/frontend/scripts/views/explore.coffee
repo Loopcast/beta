@@ -1,4 +1,5 @@
-Isotope = require 'isotope-layout'
+Swiper = require 'swiper'
+
 
 module.exports = class Explore
   isotope: null
@@ -10,32 +11,49 @@ module.exports = class Explore
     return if not scope.main
 
     @dom.removeClass 'no_result_explore'
-    container_isotope = @dom.find( '.rooms_grid' )[ 0 ]
-
-    @isotope.destroy() if @isotope
 
     if @dom.find( '.room_cell' ).length <= 0
       @dom.addClass 'no_result_explore'
       return
 
+    if window.innerWidth > 699 then @init_swiper true
 
-    if $( 'input[name=current_genre]' ).length > 0
-      current_genre = $( 'input[name=current_genre]' ).val()
-      
-    @isotope = new Isotope container_isotope,
-      itemSelector: '.item',
-      gutter: 30
-      layoutMode: 'masonry'
-      masonry:
-        columnWidth: 210,
-        gutter: 30
-
-    @filters = @dom.find '.genres_list a'
-    @filters.removeClass 'selected'
-    @dom.find( '.genres_list a[data-genre-id="'+current_genre+'"]' ).addClass 'selected'
+    $(window).resize () =>
+      @swiper.destroy(true, true)
+      if window.innerWidth > 699
+        @init_swiper false
 
 
-    delay 1000, => $(window).resize()
+  init_swiper: (prepareSlides) ->
+
+    if prepareSlides
+      cells = @dom.find('.room_cell')
+      slidesCount = Math.ceil( cells.length / 10 )
+      wrapper = $ '.swiper-wrapper'
+
+      for a in [1..slidesCount]
+        wrapper.append('<div class="swiper-slide"></div>')
+
+      slides = wrapper.find '.swiper-slide'
+
+      for cell, index in cells
+        slideIndex = Math.floor( index / 10 )
+        cells.eq(index).appendTo( slides.eq(slideIndex) )
+
+        if index % 5 is 0
+          cells.eq(index).addClass 'first-inline'
+
+      @container = $ '.swiper-container'
+
+    options =
+      direction: 'horizontal'
+      loop: false
+      prevButton: '.prevSlide'
+      nextButton: '.nextSlide'
+      pagination: '.pagination'
+
+    @swiper = new Swiper @container, options
+
 
   on_genre_click: (e) =>
     # genre_id = $(e.currentTarget).data 'genre-id'

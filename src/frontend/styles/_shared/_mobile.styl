@@ -60,15 +60,14 @@ body
 
 .mobile_header
   height: 55px
-  background: rgba(41,44,47,0.99) 
+  background: #231E1C
   width: 100%
   top: 0
   left: 0
   font-size: 22px
-  border-bottom: 2px solid YELLOW
   color: #818181
   position: fixed
-  z-index: 4
+  z-index: 5
   align-items: center
   justify-content: center
   transition: transform .1s ease-out
@@ -81,11 +80,13 @@ body
     transition: color .2s linear
     position: relative
     top: 3px
+    &:before
+      color: #12853E
     span
       position: relative
       top: -1px
-    &.selected, &.mobile_opened
-      color: YELLOW
+    // &.selected, &.mobile_opened
+    //   color: YELLOW
       
   .ss-users
     position: relative
@@ -402,10 +403,6 @@ body
           & > .thumb_wrapper
             width: 100%
             height: auto
-            img.for_desktop
-              display: none
-            img.for_mobile
-              display: block
       
     .filter_list
       background: #eaeaea
@@ -448,9 +445,18 @@ body
         
       .player_title
         font-size: 0.8em
+      .itunes
+        display block
+        width 65px
+        height 24px
+        margin 0 auto 5px
+        background url('../images/get_on_iTunes.png')
+        background-size contain
+        text-indent -9999px
+        
       .player_button
-        font-size: 1.3rem
-        padding: 0 18px
+        font-size: 2.4rem
+        padding: 0 11px
         margin: 0
         display: flex
         align-items: center
@@ -727,14 +733,16 @@ body
       // right: 20px
       z-index: 1
       color: white
-      text-shadow: 1px 1px 1px black
       // top: 21px
       width: 50px
       height: 50px
       text-align: center
-      right: 10px
+      right: 15px
       top: 10px
       padding-top: 14px
+      
+      .icon
+        font-size 22px
         
     .progress_wrapper
       display: flex
@@ -783,8 +791,10 @@ body
         font-size: 1.5rem
         
     .player_title
-      font-size: 1rem
-      font-weight: bold
+      margin 12px auto 14px
+      font-size: 1.3rem
+      font-family 'Montserrat', sans-serif
+      font-weight: regular
       
     .player_author
       font-size: .9rem
@@ -795,7 +805,7 @@ body
     .centered
       min-height: 100vh
       flex-direction: column
-      padding: 10px
+      padding: 20px
       
     .player_icon
       width: 100%
@@ -808,7 +818,7 @@ body
       flex: initial
       position: relative
       height: auto
-      margin-top: 0px
+      margin-top: 10px
       margin-bottom: 10px
       font-size: 1.7rem
       height: 56px
@@ -851,3 +861,19 @@ body
     &.room_page .dynamic_wrapper
       padding-top: 0
       
+
+// small phones player layout
+@media (max-height: 550px)
+  body #player.fullscreen
+    .player_text
+      overflow hidden
+      margin-left 0
+      margin-right 0
+    .player_title, .player_author
+      float left
+      text-align left
+    .player_title
+      margin 7px auto 2px
+    .itunes
+      float right
+      margin 16px 0 0 0

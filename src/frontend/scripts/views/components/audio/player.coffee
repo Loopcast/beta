@@ -281,7 +281,7 @@ module.exports = class Player
     @thumb.attr 'src', transform.player_thumb obj.cover_url
     title = string_utils.cut_text obj.title, 36
     @title.html title
-    @author.html "By " + obj.user.info.name
+    @author.html 'Jesse Saunders - On and On' # "By " + obj.user.info.name
 
     @author.attr 'title', obj.user.info.name
     @title.attr 'title', obj.title
@@ -442,6 +442,7 @@ module.exports = class Player
       @loading_visible = false
 
   open_fullscreen: =>
+    $('.mobile_header').addClass 'hide'
     @dom.addClass 'fullscreen'
 
   close_fullscreen: =>
