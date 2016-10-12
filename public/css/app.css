@@ -5,7 +5,7 @@
 
 /* line 13 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 875 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+/* line 1104 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
 /* line 10 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
@@ -25,7 +25,7 @@
 
 /* line 90 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 875 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+/* line 1104 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
 /* line 11 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
@@ -53,7 +53,7 @@
 
 /* line 5 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
 
-/* line 875 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+/* line 1104 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
 /* line 12 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
@@ -1079,7 +1079,7 @@ body.room_page .dynamic_wrapper > div {
           filter: none;
 }
 
-/* line 1101 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
+/* line 1104 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_modal.styl */
 
 /* line 1 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 
@@ -2444,7 +2444,14 @@ div.tagsinput.link_input {
   position: relative;
 }
 
+/* line 885 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+
 /* line 886 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+.share_wrapper.on_bottom .button.small_button_2 {
+  height: 18px;
+}
+
+/* line 889 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .share_wrapper .share_box {
   text-align: left;
   position: absolute;
@@ -2460,7 +2467,7 @@ div.tagsinput.link_input {
   display: none;
 }
 
-/* line 896 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 899 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .share_wrapper .share_box:after {
   content: "";
   position: absolute;
@@ -2475,7 +2482,7 @@ div.tagsinput.link_input {
   border-color: #373b3f transparent transparent transparent;
 }
 
-/* line 907 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 910 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .share_wrapper .share_box h4 {
   color: #fff;
   font-size: 1.3rem;
@@ -2483,7 +2490,7 @@ div.tagsinput.link_input {
   margin-bottom: 5px;
 }
 
-/* line 913 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 916 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .share_wrapper .share_box .share_row {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2491,7 +2498,7 @@ div.tagsinput.link_input {
   display: flex;
 }
 
-/* line 915 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 918 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .share_wrapper .share_box .share_row input {
   -o-box-flex: 5;
   box-flex: 5;
@@ -2501,7 +2508,7 @@ div.tagsinput.link_input {
   margin-right: 10px;
 }
 
-/* line 918 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 921 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .share_wrapper .share_box .share_row .button {
   -o-box-flex: 1;
   box-flex: 1;
@@ -2513,18 +2520,18 @@ div.tagsinput.link_input {
   padding-top: 5px;
 }
 
-/* line 924 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 927 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 
-/* line 925 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 928 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .share_wrapper .share_box .socials a {
   display: inline-block;
   margin-right: 8px;
   text-indent: -9999px;
 }
 
-/* line 930 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 933 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 
-/* line 931 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 934 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .share_wrapper.on_bottom .share_box {
   bottom: auto;
   position: absolute;
@@ -2532,7 +2539,7 @@ div.tagsinput.link_input {
   left: 50%;
 }
 
-/* line 935 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 938 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .share_wrapper.on_bottom .share_box:after {
   content: "";
   top: auto;
@@ -2543,9 +2550,9 @@ div.tagsinput.link_input {
   border-color: transparent transparent #373b3f transparent;
 }
 
-/* line 942 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 945 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 
-/* line 943 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 946 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .share_wrapper.on_right .share_box {
   left: auto;
   right: 0;
@@ -2553,27 +2560,27 @@ div.tagsinput.link_input {
   transform: translateX(7px);
 }
 
-/* line 947 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 950 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .share_wrapper.on_right .share_box:after {
   left: auto;
   right: 0;
 }
 
-/* line 951 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 954 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 
-/* line 952 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 955 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .share_wrapper.on_left .share_box {
   left: 0;
   -webkit-transform: translateX(0);
   transform: translateX(0);
 }
 
-/* line 955 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 958 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .share_wrapper.on_left .share_box:after {
   left: 70px;
 }
 
-/* line 958 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 961 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .share_wrapper.opened {
   opacity: 1 !important;
   -ms-filter: none;
@@ -2581,18 +2588,18 @@ div.tagsinput.link_input {
           filter: none;
 }
 
-/* line 960 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 963 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .share_wrapper.opened .share_box {
   display: block;
 }
 
-/* line 963 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 966 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .ss-record-wrapper {
   display: inline-block;
   text-align: center;
 }
 
-/* line 967 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 970 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .balloon {
   display: none;
   position: absolute;
@@ -2609,14 +2616,14 @@ div.tagsinput.link_input {
   width: 250px;
 }
 
-/* line 982 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 985 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 
-/* line 983 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 986 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .balloon:hover .close {
   display: block;
 }
 
-/* line 986 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 989 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .balloon .close {
   display: none;
   position: absolute;
@@ -2630,12 +2637,12 @@ div.tagsinput.link_input {
   line-height: 1.1rem;
 }
 
-/* line 998 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 1001 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .balloon .close:hover {
   border-radius: 20px;
 }
 
-/* line 1002 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 1005 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .balloon.to_show {
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
@@ -2647,7 +2654,7 @@ div.tagsinput.link_input {
   transform: translate3d(0, -20px, 0);
 }
 
-/* line 1008 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 1011 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .balloon.show {
   opacity: 1;
   -ms-filter: none;
@@ -2657,7 +2664,7 @@ div.tagsinput.link_input {
   transform: translate3d(0, 0, 0);
 }
 
-/* line 1013 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 1016 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .balloon:after {
   content: "";
   position: absolute;
@@ -2670,7 +2677,7 @@ div.tagsinput.link_input {
   border-top: 10px solid #373b3f;
 }
 
-/* line 1024 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 1027 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .balloon.bottom:after {
   top: auto;
   bottom: 100%;
@@ -2680,13 +2687,13 @@ div.tagsinput.link_input {
   border-bottom: 10px solid #373b3f;
 }
 
-/* line 1032 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 1035 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .balloon.orientation_right:after {
   left: auto;
   right: 30px;
 }
 
-/* line 1036 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 1039 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .balloon.bouncy {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -2698,83 +2705,83 @@ div.tagsinput.link_input {
   animation-timing-function: ease-in-out;
 }
 
-/* line 1041 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 1044 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .balloon.narrow {
   width: 170px;
 }
 @media (min-width: 1100px) {
 
-/* line 1045 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 1048 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
   .balloon.narrow {
     width: 250px;
   }
 }
 
-/* line 1059 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
-
-/* line 1061 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
-
 /* line 1062 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+
+/* line 1064 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+
+/* line 1065 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .no_touch_device .ss-play:hover:before,
 .no_touch_device .ss-pause:hover:before {
   text-shadow: 1px 1px 4px #000;
 }
 
-/* line 1065 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 1068 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .no_touch_device .gray_button_2:hover {
   background-color: #251a14;
 }
 
-/* line 1068 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 1071 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .no_touch_device .yellow.ss-action:hover {
   background: #1f1f1f;
   color: #07d159;
 }
 
-/* line 1072 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 1075 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .no_touch_device .white.ss-action:hover {
   color: #ccc;
 }
 
-/* line 1075 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 1078 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 
-/* line 1076 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 1079 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .no_touch_device .select_wrapper:hover .handler {
   background: #474343;
 }
 
-/* line 1080 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 1083 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .no_touch_device .rounded_border:hover {
   border-color: #b5b5b5;
 }
 
-/* line 1085 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 1088 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .no_touch_device .underline_link:hover {
   text-decoration: underline;
 }
 
-/* line 1087 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 1090 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 
-/* line 1088 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 1091 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .no_touch_device .hover_dropdown li:hover {
   color: #fff;
   box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
 }
 
-/* line 1092 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 1095 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .no_touch_device .outline_icon:hover {
   border-color: #605b5b;
 }
 
-/* line 1095 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 1098 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 
-/* line 1096 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 1099 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .no_touch_device .button_with_icon:hover.black_button {
   color: #ececec;
   background: #1f1f1f;
 }
 
-/* line 1100 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 1103 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 .no_touch_device .share_wrapper .share_box .socials a:hover {
   opacity: 0.8;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
@@ -2817,48 +2824,48 @@ div.tagsinput.link_input {
   }
 }
 
-/* line 1049 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 1052 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 
-/* line 1049 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 1052 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 @-webkit-keyframes balloon-animation {
 
-/* line 1050 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 1053 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
   0% {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
 
-/* line 1052 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 1055 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
   50% {
     -webkit-transform: translate3d(0, -7px, 0);
     transform: translate3d(0, -7px, 0);
   }
 
-/* line 1054 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 1057 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
   100% {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
 }
 
-/* line 1049 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 1052 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 
-/* line 1049 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 1052 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
 @keyframes balloon-animation {
 
-/* line 1050 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 1053 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
   0% {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
 
-/* line 1052 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 1055 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
   50% {
     -webkit-transform: translate3d(0, -7px, 0);
     transform: translate3d(0, -7px, 0);
   }
 
-/* line 1054 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
+/* line 1057 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_ui.styl */
   100% {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
