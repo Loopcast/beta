@@ -863,17 +863,13 @@ body
       
 
 // small phones player layout
-// @media (max-height: 550px)
-//   body #player.fullscreen
-//     .player_text
-//       overflow hidden
-//       margin-left 0
-//       margin-right 0
-//     .player_title, .player_author
-//       float left
-//       text-align left
-//     .player_title
-//       margin 7px auto 2px
-//     .itunes
-//       float right
-//       margin 16px 0 0 0
+@media (max-height: 480px)
+  body #player.fullscreen
+    .player_icon
+      margin-bottom 10px
+    .player_text
+      margin-bottom 5px
+    .player_button
+      margin-top 4px
+    .player_buttons
+      bottom 95px

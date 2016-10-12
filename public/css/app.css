@@ -5,7 +5,7 @@
 
 /* line 13 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 878 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+/* line 875 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
 /* line 10 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
@@ -25,7 +25,7 @@
 
 /* line 90 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 878 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+/* line 875 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
 /* line 11 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
@@ -53,7 +53,7 @@
 
 /* line 5 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
 
-/* line 878 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+/* line 875 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
 /* line 12 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
@@ -2978,7 +2978,7 @@ div.tagsinput div {
   color: #fff;
 }
 
-/* line 878 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_tags.styl */
+/* line 875 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_tags.styl */
 
 /* line 247 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
 
@@ -4466,6 +4466,30 @@ body {
 /* line 861 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
   body.room_page .dynamic_wrapper {
     padding-top: 0;
+  }
+}
+@media (max-height: 480px) {
+
+/* line 867 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+
+/* line 868 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+  body #player.fullscreen .player_icon {
+    margin-bottom: 10px;
+  }
+
+/* line 870 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+  body #player.fullscreen .player_text {
+    margin-bottom: 5px;
+  }
+
+/* line 872 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+  body #player.fullscreen .player_button {
+    margin-top: 4px;
+  }
+
+/* line 874 : /Users/ondrejrohon/Documents/webdesign/loopcast/beta/src/frontend/styles/_shared/_mobile.styl */
+  body #player.fullscreen .player_buttons {
+    bottom: 95px;
   }
 }
 
