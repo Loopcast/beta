@@ -42,7 +42,7 @@
     "socket.io-redis": "^0.1.4",
     "swiper": "^3.3.1",
     "xml2js": "^0.4.9",
-    "radiokit-toolkit-streaming": "^0.0.4"
+    "radiokit-toolkit-streaming": "^0.0.5"
   },
   "devDependencies": {
     "isotope-layout": "^2.1.1",
