@@ -49,7 +49,7 @@ block grid
           if item.status.recording.s3 && !item.status.is_live
             - klasses += " is_recorded"
 
-          .room_cell.item(class="#{klasses}", data-view="components/audio/player_preview", data-room-id="#{item._id}" data-is-live="#{item.status.is_live}")
+          .room_cell.item(class="#{klasses}", data-view="components/audio/player_preview", data-radiokit-channel-id="#{item.status.radiokit_channel_id}" data-room-id="#{item._id}" data-is-live="#{item.status.is_live}")
             if item.status.is_live
               hidden( class="source_src" value="#{item.info.url}")
             else
