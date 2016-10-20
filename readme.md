@@ -1,5 +1,5 @@
 # ~ staging.loopcast.fm
-  
+
 ### requirements
 
  - git
@@ -10,7 +10,15 @@
 
 ````
 make setup
+mkdir node_modules/polvo/node_modules/socket.io/node_modules/
+cp -rv node_modules/polvo/node_modules/socket.io-client/ node_modules/polvo/node_modules/socket.io/node_modules/socket.io-client
 ````
+
+On Ubuntu 16.04:
+
+```
+sudo apt-get install coffeescript
+```
 
 ### running server
 
