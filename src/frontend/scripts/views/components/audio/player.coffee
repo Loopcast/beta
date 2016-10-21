@@ -157,45 +157,31 @@ module.exports = class Player
 
 
   # general method for playing both tape and room audio
-  general_play: ( room_id, source_src, is_tape ) ->
-    if is_tape
-      @play room_id, source_src
-    else
-      @play_live room_id, source_src
+  general_play: ( room_id, radiokit_channel_id ) ->
+    radiokit_channel_id = '3d49ef93-a010-4649-b3ed-b0f99fe96173' #FIXME - to be deleted
+    @play(room_id, radiokit_channel_id)
 
-
-  # shortcut for playing live rooms
-  play_live: (room_id, src = null) ->
-    @play room_id, src, true
 
   ###
   Check if the room/tape information from room_id has been loaded.
   If it's not, fetch the info and the call _play()
   Otherwise, just call _play()
   ###
-  play: (room_id, src = null, is_live = false) ->
+  play: (room_id, radiokit_channel_id) ->
+    if !@radiokit_player
+      @radiokit_player = new radiokit_toolkit_streaming.Player(radiokit_channel_id)
 
     if @current_room_id is room_id
-      return if @audio.is_playing
-      # log "[Player.play()] the audio is the same. Simply start playing."
-      return @on_play_clicked()
-
+      @stop()
 
     if not @data_rooms[ room_id ]?
       # log "[Player.play()] no data for this audio. Fetching it..."
-      @fetch_room room_id, is_live, => @_play room_id
+      @fetch_room room_id, => @_play room_id
 
     else
+      @radiokit_player.stop()
       # log "[Player.play()] got data for this audio. Just play!"
       @_play room_id
-
-
-    # For mobile, we gonna play the src straight away,
-    # as the click action must be directly connected to the
-    # audio play method. We gonna load the room info as a parallel
-    # thread.
-    if app.settings.browser.mobile and src?
-      @audio.mobile_play src
 
 
   ###
@@ -209,7 +195,7 @@ module.exports = class Player
     @open()
 
     # Choose the righth api to call
-    type = if @data_rooms[ room_id ].data.is_live then 'rooms' else 'tapes'
+    type = 'rooms'
 
     # update stats
     api[ type ].play room_id, (error, response) ->
@@ -223,7 +209,9 @@ module.exports = class Player
 
     @reset_progress()
 
-  fetch_room: ( room_id, is_live, callback ) ->
+    @radiokit_player.start()
+
+  fetch_room: ( room_id, callback ) ->
 
     app.emit 'audio:loading', room_id
 
@@ -239,26 +227,20 @@ module.exports = class Player
 
       on_response = (error, response) =>
         if response
-
-          @data_rooms[ room_id ] = normalize_info response, is_live
+          @data_rooms[ room_id ] = normalize_info response
           kallback?()
         else
           @requested_rooms[ room_id ] = null
           @on_error()
 
-      if is_live
-        # log "[Player] fetching LIVE info. api.rooms.info", room_id
-        api.rooms.info room_id, on_response
-      else
-        # log "[Player] fetching TAPE info. api.tapes.get", room_id
-        api.tapes.get room_id, on_response
+      api.rooms.info room_id, on_response
 
   on_error: ->
     notify.error 'There was an error.'
     app.emit 'audio:paused'
 
   stop: ->
-    @audio.pause()
+    @radiokit_player.stop()
 
   on_room_offline: ->
     @stop()
