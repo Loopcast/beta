@@ -1,7 +1,7 @@
 L = require 'api/loopcast/loopcast'
 
 module.exports = (dom) ->
-  
+
   is_playing = false
   handler    = dom.find '.circle_icon, .loading_spin, .tape_play'
   icon       = dom.find '.circle_icon, .tape_play'
@@ -10,6 +10,7 @@ module.exports = (dom) ->
   is_tape    = not dom.data( 'is-live' )
   room_info = null
   source_src = null
+  radiokit_channel_id = dom.data 'radiokit-channel-id'
 
   source = dom.find '.source_src'
 
@@ -36,7 +37,7 @@ module.exports = (dom) ->
       is_playing = true
       dom.addClass 'playing'
       dom.removeClass 'preloading'
-      icon.addClass( 'fa-pause-circle' ).removeClass( 'fa-play-circle' )      
+      icon.addClass( 'fa-pause-circle' ).removeClass( 'fa-play-circle' )
     else
       on_stop()
 
@@ -56,11 +57,11 @@ module.exports = (dom) ->
   toggle = (e) ->
     e.stopPropagation()
     e.preventDefault()
-    
+
     if is_playing
       app.player.stop()
     else
-      app.player.general_play room_id, source_src, is_tape
+      app.player.general_play room_id, radiokit_channel_id
 
   init = ->
     handler.on 'click', toggle
