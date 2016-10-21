@@ -6,6 +6,7 @@ string_utils = require 'app/utils/string'
 ProgressDragger = require 'app/utils/progress_dragger'
 normalize_info = require 'app/utils/rooms/normalize_info'
 login_popup = require 'app/utils/login_popup'
+radiokit_toolkit_streaming = require 'radiokit-toolkit-streaming'
 
 module.exports = class Player
   is_playing: false
@@ -16,11 +17,11 @@ module.exports = class Player
   data_rooms: {}
   is_dragging: false
   last_audio_started: null
-  ### 
+  ###
   the map of the ids of the rooms requested (even not loaded).
   This is used to avoid multiple calls at the same time
   ###
-  requested_rooms: {} 
+  requested_rooms: {}
   current_room_id: null
   timeout_follow_popup: null
 
@@ -36,7 +37,7 @@ module.exports = class Player
     @progress = @dom.find '.player_progress span'
     @progress_parent = @dom.find '.player_progress'
 
-    @dragger = new ProgressDragger @progress_parent 
+    @dragger = new ProgressDragger @progress_parent
     @dragger.on 'drag', @on_progress_dragger
     @dragger.on 'drag:started', @on_progress_started
     @dragger.on 'drag:ended', @on_progress_ended
@@ -80,12 +81,12 @@ module.exports = class Player
     @audio.on 'snapped', @on_snapped
     @audio.on 'loaded', @on_loaded
     view.off 'binded', @on_views_binded
-    
+
   on_like_clicked: =>
 
     if not user.is_logged()
       app.settings.after_login_url = location.pathname
-      app.settings.action = 
+      app.settings.action =
         type: "like"
         room_id: @data.data._id
         is_live: @data.data.is_live
@@ -109,11 +110,11 @@ module.exports = class Player
     api[type].dislike @data.data._id, (error, response) =>
       # log "[Player] dislike", error, response
       @like_lock = false
-      
+
       if error
         notify.error "There was an error. Please try later."
         return
-        
+
       @like_btn.removeClass 'liked'
 
   like: ->
@@ -141,15 +142,15 @@ module.exports = class Player
   get_audio_data : (data) ->
     audio_data = {}
 
-    
+
     obj = data.data
-    
-    audio_data = 
+
+    audio_data =
       id         : obj._id
       is_recorded: !obj.is_live
       start_time : obj.started_at
       src        : obj.url
-      
+
     # log "[Get audio data]", data, audio_data
 
     return audio_data
@@ -190,7 +191,7 @@ module.exports = class Player
 
 
     # For mobile, we gonna play the src straight away,
-    # as the click action must be directly connected to the 
+    # as the click action must be directly connected to the
     # audio play method. We gonna load the room info as a parallel
     # thread.
     if app.settings.browser.mobile and src?
@@ -198,7 +199,7 @@ module.exports = class Player
 
 
   ###
-  This is the actual play method who updates the UI and play 
+  This is the actual play method who updates the UI and play
   the audio element.
   ###
   _play: ( room_id ) ->
@@ -221,7 +222,7 @@ module.exports = class Player
     @audio.set_data @get_audio_data( @data )
 
     @reset_progress()
-    
+
   fetch_room: ( room_id, is_live, callback ) ->
 
     app.emit 'audio:loading', room_id
@@ -236,7 +237,7 @@ module.exports = class Player
 
       @requested_rooms[ room_id ] = true
 
-      on_response = (error, response) => 
+      on_response = (error, response) =>
         if response
 
           @data_rooms[ room_id ] = normalize_info response, is_live
@@ -255,7 +256,7 @@ module.exports = class Player
   on_error: ->
     notify.error 'There was an error.'
     app.emit 'audio:paused'
-    
+
   stop: ->
     @audio.pause()
 
@@ -266,7 +267,7 @@ module.exports = class Player
 
   on_room_live: ->
     @dom.addClass 'is_live'
-  
+
 
   update_info: ( data ) ->
 
@@ -322,10 +323,10 @@ module.exports = class Player
         @follow_popup.show obj
     , 30000
 
-  on_audio_started: =>  
+  on_audio_started: =>
 
     # return if @last_audio_started is @data.data._id
-  
+
     # if not @data?
     #   log "[Player] on_audio_started. no data. then stop", @data
     #   notify.error 'There was an error.'
@@ -333,7 +334,7 @@ module.exports = class Player
     #   return
 
     # log "[Player] on_audio_started", @data
-      
+
 
     @play_btn.addClass( 'ss-pause' ).removeClass( 'ss-play' )
 
@@ -343,7 +344,7 @@ module.exports = class Player
     @hide_loading()
 
     if @data?
-      @last_audio_started = @data.data._id 
+      @last_audio_started = @data.data._id
       app.emit 'audio:started', @data.data._id
 
   on_audio_stopped: =>
@@ -359,10 +360,10 @@ module.exports = class Player
 
   on_audio_ended: =>
     # log "[Player] on_audio_ended"
-    
-    app.emit 'audio:ended', @data.data._id    
+
+    app.emit 'audio:ended', @data.data._id
     @on_audio_stopped()
-    
+
     # Snap back the progress bar
     @reset_progress()
 
@@ -389,7 +390,7 @@ module.exports = class Player
 
   on_progress_dragger: ( perc ) =>
     @progress.css 'width', perc + '%'
-    time = @audio.get_time_from_perc( perc / 100 ) 
+    time = @audio.get_time_from_perc( perc / 100 )
     @time.html time.str
 
 
