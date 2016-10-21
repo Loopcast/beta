@@ -173,15 +173,13 @@ module.exports = class Player
 
     if @current_room_id is room_id
       @stop()
-
-    if not @data_rooms[ room_id ]?
-      # log "[Player.play()] no data for this audio. Fetching it..."
-      @fetch_room room_id, => @_play room_id
-
     else
-      @radiokit_player.stop()
-      # log "[Player.play()] got data for this audio. Just play!"
-      @_play room_id
+      if not @data_rooms[ room_id ]?
+        # log "[Player.play()] no data for this audio. Fetching it..."
+        @fetch_room room_id, => @_play room_id
+      else
+        # log "[Player.play()] got data for this audio. Just play!"
+        @_play room_id
 
 
   ###
@@ -189,16 +187,16 @@ module.exports = class Player
   the audio element.
   ###
   _play: ( room_id ) ->
+    # stop current playback to initialize new one
+    @stop()
+
     @last_audio_started = null
     @current_room_id = room_id
 
     @open()
 
-    # Choose the righth api to call
-    type = 'rooms'
-
     # update stats
-    api[ type ].play room_id, (error, response) ->
+    api[ 'rooms' ].play room_id, (error, response) ->
 
     @data = @data_rooms[ room_id ]
 
@@ -240,6 +238,7 @@ module.exports = class Player
     app.emit 'audio:paused'
 
   stop: ->
+    @current_room_id = null
     @radiokit_player.stop()
 
   on_room_offline: ->
