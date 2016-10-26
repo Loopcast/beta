@@ -158,7 +158,6 @@ module.exports = class Player
 
   # general method for playing both tape and room audio
   general_play: ( room_id, radiokit_channel_id ) ->
-    radiokit_channel_id = '3d49ef93-a010-4649-b3ed-b0f99fe96173' #FIXME - to be deleted
     @play(room_id, radiokit_channel_id)
 
 
