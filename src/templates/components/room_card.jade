@@ -1,0 +1,24 @@
+.room_cell.item.player_preview.swiper-slide(class="", data-view="components/audio/player_preview", data-radiokit-channel-id="#{room.status.radiokit_channel_id}" data-room-id="#{room._id}" data-is-live="#{room.status.is_live}")
+
+  a.thumb_wrapper(href='/#{room.info.user}/#{room.info.slug}', title='#{room.info.title}')
+    img.room_thumb.for_desktop(src='#{transform.explore_thumb(room.info.cover_url)}')
+    img.room_thumb.for_mobile(src='#{transform.explore_thumb_mobile(room.info.cover_url)}')
+    i.fa.fa-play-circle.circle_icon(aria-hidden="true")
+    .loading_spin
+  .share_wrapper(data-title='#{room.info.title}', data-summary='#{room.info.about}', data-permalink='/#{room.info.user}/#{room.info.slug}', data-image='https://res.cloudinary.com/hfbojwbxj/image/upload/v1467847063/cover/bsr9xjhvxk9aebuo1ue3.jpg', data-uid='44')
+    a.thumb_wrapper(href='/#{room.info.user}/#{room.info.slug}', title='#{room.info.title}')
+    a.yellow.ss-action(href='#', title='Share')
+    .share_box
+      h4 Share
+      .share_row
+        input.link_input(type='text', value='')
+        a.button.yellow_button.small_button_2(href='#', title='Copy') Copy
+      .socials
+        a.spritesheet.share_popup_facebook(href='#', title='Share on Facebook', onclick="_gaq.push(['_trackEvent', 'Referral', 'Click', '']);")  
+        a.spritesheet.share_popup_twitter(href='#', title='Share on Twitter', onclick="_gaq.push(['_trackEvent', 'Referral', 'Click', '']);")  
+        a.spritesheet.share_popup_google(href='#', title='Share on Google Plus', onclick="_gaq.push(['_trackEvent', 'Referral', 'Click', '']);")  
+  .room_content
+    .text
+      h2.room_title
+        a(href='/#{room.info.user}/#{room.info.slug}', title='#{room.info.title}') #{room.info.title}
+      a.room_subtitle.blue(title='#{room.info.title}', href='/#{room.info.user}') #{room.info.title}

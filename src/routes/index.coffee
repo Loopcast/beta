@@ -1,4 +1,5 @@
 template = lib 'render/template'
+#find     = find 'rooms'
 
 module.exports =
   method: 'GET'
@@ -16,8 +17,34 @@ module.exports =
       # always inject user data into requests
       data = request.auth.credentials || {}
 
-      template url, data, ( error, response ) ->
+      # ~ fetch rooms
+      query = featured: true
 
-        if not error then return reply response
+      fields  =
+        user  : 1
+        info  : 1
+        status: 1
+        likes : 1
 
-        reply error
+      options = {}
+        #sort :
+          #'status.live.started_at': -1
+
+        #limit: page_limit
+        #skip : page_limit * page
+
+      console.log 'find is ->', find
+
+      find( 'rooms' ) query, fields, options, ( error, rooms ) ->
+
+        console.log 'hello find!', arguments
+
+        if error then return callback error
+
+        data.rooms = rooms
+
+        template url, data, ( error, response ) ->
+
+          if not error then return reply response
+
+          reply error

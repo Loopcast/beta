@@ -31,6 +31,8 @@ schema = new Schema
   # password for starting this stream
   password   : String
 
+  featured   : { type: Boolean, default: false }
+
   # true if user called api/v1/stream/start
   will_stream: Boolean
 
@@ -39,7 +41,7 @@ schema = new Schema
 
   status:
     audiopump_id : { type: String, default: "" }
-    # 
+    #
     # WONT BE USED ANYMORE !?
     is_live      : { type: Boolean, default: off } # when user press go live
     is_recording : { type: Boolean, default: off } # when user press start recording
@@ -51,11 +53,11 @@ schema = new Schema
       listeners    : { type: Number, default: 0 }
       started_at  : Date
 
-      # 
+      #
       # WONT BE USED ANYMORE !?
       duration    : Number
 
-      # 
+      #
       # WONT BE USED ANYMORE !?
       stopped_at  : Date
 
@@ -89,7 +91,7 @@ schema.plugin SlugHero, doc: 'room', field: 'info.title', slugField: 'info.slug'
 
 Room = mongoose.model 'Room', schema
 
-text_indexes = 
+text_indexes =
   'info.user'    : 'text'
   'info.title'   : 'text'
   'info.genres'  : 'text'
@@ -101,7 +103,7 @@ mongoose.connection.collections['rooms'].ensureIndex text_indexes, ( error ) ->
   if error
     console.error "error indexing fields for text search"
     console.error error
-    return 
+    return
 
 #
 # hooks
@@ -123,10 +125,10 @@ schema.pre 'save', ( next ) ->
 
 #   # TODO: if finds another room with same URL refuses to save, otherwise
 #   # we would have two sessions with the name address
-  
+
 #   doc = @
 
-#   query = 
+#   query =
 #     user       : @user
 #     'info.slug': @info.slug
 
@@ -135,7 +137,7 @@ schema.pre 'save', ( next ) ->
 #     # .where( "status.is_live", true )
 #     .select( "url" )
 #     .lean()
-#     .exec ( error, room ) -> 
+#     .exec ( error, room ) ->
 #       if error then failed null, null, error
 
 #       if room.length

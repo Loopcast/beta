@@ -1,17 +1,17 @@
 block seo
-  title Loopcast - Real Time Music 
+  title Loopcast - Real Time Music
   meta( name="description" content="Explore human-curated channels by the most forward thinking DJs and selectors" )
   meta( property="og:url" content="#{s.base_path}" )
   meta( property="og:title" content="Loopcast | Real Time Music" )
   meta( property="og:description" content="Explore human-curated channels by the most forward thinking DJs and selectors" )
   meta( name="twitter:title" content="Loopcast | Real Time Music")
-  meta( name="twitter:description" content="Explore human-curated channels by the most forward thinking DJs and selectors")  
+  meta( name="twitter:description" content="Explore human-curated channels by the most forward thinking DJs and selectors")
 
 extends layout
 
 block content
   .homepage(data-menu="homepage" data-view="homepage")
-    
+
     //- intro section
     .row.intro.swiper-container
       .swiper-wrapper
@@ -39,7 +39,7 @@ block content
     .row.featured
       .container
         h2.title Featured Channels
-        
+
         .arrows
           a(href="").prevSlide.arrow
             img(src="images/arrow_left.svg", alt="Previous Slide")
@@ -48,13 +48,5 @@ block content
 
         .swiper-container
           .swiper-wrapper
-            include fake_room_card.jade
-            include fake_room_card.jade
-            include fake_room_card.jade
-            include fake_room_card.jade
-            include fake_room_card.jade
-            include fake_room_card.jade
-            include fake_room_card.jade
-
-
-    
+            each room in rooms
+              include components/room_card.jade
