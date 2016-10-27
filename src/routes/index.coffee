@@ -33,11 +33,7 @@ module.exports =
         #limit: page_limit
         #skip : page_limit * page
 
-      console.log 'find is ->', find
-
       find( 'rooms' ) query, fields, options, ( error, rooms ) ->
-
-        console.log 'hello find!', arguments
 
         if error then return callback error
 
