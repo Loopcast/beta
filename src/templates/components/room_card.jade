@@ -21,4 +21,5 @@
     .text
       h2.room_title
         a(href='/#{room.info.user}/#{room.info.slug}', title='#{room.info.title}') #{room.info.title}
-      a.room_subtitle.blue(title='#{room.info.title}', href='/#{room.info.user}') #{room.info.title}
+      a.room_subtitle.blue(title='#{room.info.title}', href='/#{room.info.user}') #{room.user.info.name}
+
