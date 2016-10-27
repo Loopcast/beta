@@ -12,10 +12,11 @@
     .follow_player_popup(data-view="components/follow_player")
       a.close_follow_player(href="#", title="Close") X
       .inner
-        
+
     .player_button.no_fullscreen
       a(href="#",title="Play")
         i.fa.fa-play-circle
+        i.fa.fa-pause-circle(style="display:none")
       .loading_spin.medium
 
     .player_text.no_fullscreen
@@ -48,7 +49,7 @@
 
     .fullscreen_elements
       .player_text
-        //- a.player_title(href="#", title="Title") 
+        //- a.player_title(href="#", title="Title")
         a.itunes(href="#", title="Buy on iTunes") Buy on iTunes
         p.player_track_name Jesse Saunders - On and On
         a.player_author(href="#", title="Author")
@@ -59,9 +60,10 @@
           span
           p.hitarea
         p.player_total_time 00:00
-        
+
       .player_button
-        a.icon.ss-play(href="#",title="Play") 
+        a.icon.ss-play(href="#",title="Play")
+        a.icon.ss-pause(href="#",title="Pause",style="display:none")
         .loading_spin.medium
 
   audio(autoplay="true", data-view="components/audio/audio")
