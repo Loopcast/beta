@@ -168,7 +168,10 @@ module.exports = class Player
   ###
   play: (room_id, radiokit_channel_id) ->
     if !@radiokit_player
-      @radiokit_player = new radiokit_toolkit_streaming.Player(radiokit_channel_id)
+      @initialize_player(radiokit_channel_id)
+    else
+      unless @current_room_id is room_id
+        @initialize_player(radiokit_channel_id)
 
     if @current_room_id is room_id
       @stop()
@@ -186,9 +189,6 @@ module.exports = class Player
   the audio element.
   ###
   _play: ( room_id ) ->
-    # stop current playback to initialize new one
-    @stop()
-
     @last_audio_started = null
     @current_room_id = room_id
 
@@ -207,6 +207,12 @@ module.exports = class Player
     @reset_progress()
 
     @radiokit_player.start()
+
+  initialize_player: ( radiokit_channel_id ) ->
+    if @radiokit_player
+      @stop()
+      
+    @radiokit_player = new radiokit_toolkit_streaming.Player(radiokit_channel_id)
 
   fetch_room: ( room_id, callback ) ->
 
