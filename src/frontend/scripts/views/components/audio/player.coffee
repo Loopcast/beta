@@ -27,14 +27,17 @@ module.exports = class Player
 
 
   constructor: ( @dom ) ->
-    @thumb    = @dom.find '.player_icon img'
-    @title    = @dom.find '.player_title'
-    @author   = @dom.find '.player_author'
-    @time     = @dom.find '.player_time'
-    @time_tot = @dom.find '.player_total_time'
-    @play_btn = @dom.find '.ss-play'
-    @like_btn = @dom.find '.ss-heart'
-    @progress = @dom.find '.player_progress span'
+    @thumb           = @dom.find '.player_icon img'
+    @title           = @dom.find '.player_title'
+    @author          = @dom.find '.player_author'
+    @time            = @dom.find '.player_time'
+    @time_tot        = @dom.find '.player_total_time'
+    @play_btn        = @dom.find '.ss-play'
+    @like_btn        = @dom.find '.ss-heart'
+    @progress        = @dom.find '.player_progress span'
+    @track_artist    = @dom.find '.track_artist'
+    @track_separator = @dom.find '.track_separator'
+    @track_title     = @dom.find '.track_title'
     @progress_parent = @dom.find '.player_progress'
 
     @dragger = new ProgressDragger @progress_parent
@@ -193,6 +196,7 @@ module.exports = class Player
     @current_room_id = room_id
 
     @open()
+    @clearFileInfo()
 
     # update stats
     api[ 'rooms' ].play room_id, (error, response) ->
@@ -211,8 +215,22 @@ module.exports = class Player
   initialize_player: ( radiokit_channel_id ) ->
     if @radiokit_player
       @stop()
-      
+
     @radiokit_player = new radiokit_toolkit_streaming.Player(radiokit_channel_id)
+    @radiokit_player.on('fileStarted', @onFileStarted)
+
+  onFileStarted: (event, player, current_track) =>
+    if current_track.metadata.artist
+      @track_artist.html current_track.metadata.artist
+    if current_track.metadata.title
+      @track_title.html current_track.metadata.title
+    if current_track.metadata.artist and current_track.metadata.title
+      @track_separator.html ' - '
+
+  clearFileInfo: () =>
+    @track_artist.html ''
+    @track_title.html ''
+    @track_separator.html ''
 
   fetch_room: ( room_id, callback ) ->
 
