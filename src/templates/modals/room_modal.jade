@@ -3,18 +3,18 @@
     .loading
       .loading_spin.center_el.medium
     .md_content
-      h4.create_label Create Room
-      h4.edit_label.title Edit your session 
+      h4.create_label Create Channel
+      h4.edit_label.title Edit your channel 
       
     
       label(for="username") Title*
-      input.roomname(name="name", type="text", placeholder="Enter the name of your session")
+      input.roomname(name="name", type="text", placeholder="Enter the name of your channel")
       label(for="genre") Tags
       .tags_wrapper.genre(data-view="components/editables/editable_tags")
         textarea( id="genre_input", rows="1", style="width:310px")
       label.location_label(for="location") Location
       input.location(name="location", type="text", placeholder="Where are you?")
-      textarea.description.white_textarea(name="description", placeholder="Describe your session")
+      textarea.description.white_textarea(name="description", placeholder="Describe your channel")
 
       .room_image.upload_wrapper(data-view="components/image_uploader", data-id="profile_cover")
 
