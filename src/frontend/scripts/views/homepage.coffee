@@ -46,7 +46,7 @@ module.exports = class NewHomePage
       @introSwiper = new Swiper @intro, options
 
       # show next slide after some time
-      time = 3000
+      time = 8000
       transitionDuration = 600
 
       @interval = setInterval () =>
