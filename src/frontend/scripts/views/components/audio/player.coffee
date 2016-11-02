@@ -218,7 +218,7 @@ module.exports = class Player
     if current_track.metadata.artist and current_track.metadata.title
       @track_separator.html ' - '
     if current_track.metadata.itunes
-      @itunes_button.attr('href', current_track.metadata.itunes)
+      @itunes_button.attr('href', current_track.metadata.itunes + '&at=1000l5ZB')
       @itunes_button.css('display', 'block')
     else
       @clearItunesInfo()
