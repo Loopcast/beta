@@ -39,6 +39,7 @@ module.exports = class Player
     @track_separator = @dom.find '.track_separator'
     @track_title     = @dom.find '.track_title'
     @progress_parent = @dom.find '.player_progress'
+    @itunes_button   = @dom.find '.track_itunes'
 
     @dragger = new ProgressDragger @progress_parent
     @dragger.on 'drag', @on_progress_dragger
@@ -226,11 +227,17 @@ module.exports = class Player
       @track_title.html current_track.metadata.title
     if current_track.metadata.artist and current_track.metadata.title
       @track_separator.html ' - '
+    if current_track.metadata.itunes
+      @itunes_button[0].href = current_track.metadata.itunes
+      @itunes_button[0].style.display = 'block'
 
   clearFileInfo: () =>
     @track_artist.html ''
     @track_title.html ''
     @track_separator.html ''
+    @itunes_button[0].href = ''
+    @itunes_button[0].style.display = 'none'
+
 
   fetch_room: ( room_id, callback ) ->
 
