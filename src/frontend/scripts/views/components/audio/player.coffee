@@ -220,12 +220,17 @@ module.exports = class Player
     if current_track.metadata.itunes
       @itunes_button.attr('href', current_track.metadata.itunes)
       @itunes_button.css('display', 'block')
+    else
+      @clearItunesInfo()
 
   clearFileInfo: () =>
     @track_artist.html ''
     @track_title.html ''
     @track_separator.html ''
-    @itunes_button.attr('href', '')
+    @clearItunesInfo()
+
+  clearItunesInfo: () =>
+    @itunes_button.attr('href', '#')
     @itunes_button.css('display', 'none')
 
 
