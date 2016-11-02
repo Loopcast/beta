@@ -32,7 +32,6 @@ module.exports = class Player
     @author          = @dom.find '.player_author'
     @time            = @dom.find '.player_time'
     @time_tot        = @dom.find '.player_total_time'
-    @play_btn        = @dom.find '.ss-play'
     @like_btn        = @dom.find '.ss-heart'
     @progress        = @dom.find '.player_progress span'
     @track_artist    = @dom.find '.track_artist'
@@ -46,8 +45,6 @@ module.exports = class Player
     @dragger.on 'drag:started', @on_progress_started
     @dragger.on 'drag:ended', @on_progress_ended
     # @dragger.on 'click', @on_progress_click
-    @play_btn.on 'click', @on_play_clicked
-    @like_btn.on 'click', @on_like_clicked
     @progress_parent.find('.hitarea').on app.settings.events_map.up, @on_progress_click
     @dom.find( '.open_fullscreen' ).on 'click', @open_fullscreen
     @dom.find( '.close_fullscreen' ).on 'click', @close_fullscreen
@@ -61,13 +58,6 @@ module.exports = class Player
       # don't do anything if on input
       return true if e.target.nodeName is "INPUT"
       return true if e.target.nodeName is "TEXTAREA"
-
-      # hit the space bar?
-      if e.keyCode is 32
-        @play_btn.click()
-
-        # try to prevent event
-        return false
 
   on_resize: =>
     @close_fullscreen()
@@ -228,15 +218,15 @@ module.exports = class Player
     if current_track.metadata.artist and current_track.metadata.title
       @track_separator.html ' - '
     if current_track.metadata.itunes
-      @itunes_button[0].href = current_track.metadata.itunes
-      @itunes_button[0].style.display = 'block'
+      @itunes_button.attr('href', current_track.metadata.itunes)
+      @itunes_button.css('display', 'block')
 
   clearFileInfo: () =>
     @track_artist.html ''
     @track_title.html ''
     @track_separator.html ''
-    @itunes_button[0].href = ''
-    @itunes_button[0].style.display = 'none'
+    @itunes_button.attr('href', '')
+    @itunes_button.css('display', 'none')
 
 
   fetch_room: ( room_id, callback ) ->
@@ -346,10 +336,6 @@ module.exports = class Player
 
     # log "[Player] on_audio_started", @data
 
-
-    @play_btn.addClass( 'ss-pause' ).removeClass( 'ss-play' )
-
-
     # @loading.fadeOut()
     # log "[Player] loading hide"
     @hide_loading()
@@ -361,8 +347,6 @@ module.exports = class Player
   on_audio_stopped: =>
     # log "[Player] on_audio_stopped"
     @last_audio_started = null
-    @play_btn.removeClass( 'ss-pause' ).addClass( 'ss-play' )
-
     # @progress.css 'width', '0%'
     # @time.html "00:00:00"
 
