@@ -211,6 +211,7 @@ module.exports = class Player
     @radiokit_player.on('fileStarted', @onFileStarted)
 
   onFileStarted: (event, player, current_track) =>
+    @clearFileInfo()
     if current_track.metadata.artist
       @track_artist.html current_track.metadata.artist
     if current_track.metadata.title
@@ -220,19 +221,13 @@ module.exports = class Player
     if current_track.metadata.itunes
       @itunes_button.attr('href', current_track.metadata.itunes + '&at=1000l5ZB')
       @itunes_button.css('display', 'block')
-    else
-      @clearItunesInfo()
 
   clearFileInfo: () =>
     @track_artist.html ''
     @track_title.html ''
     @track_separator.html ''
-    @clearItunesInfo()
-
-  clearItunesInfo: () =>
     @itunes_button.attr('href', '#')
     @itunes_button.css('display', 'none')
-
 
   fetch_room: ( room_id, callback ) ->
 
