@@ -11462,6 +11462,12 @@ require.register('node_modules/immutable/dist/immutable', function(require, modu
 
 }));
 }, {});
+require.register('node_modules/isarray/index', function(require, module, exports){
+module.exports = Array.isArray || function (arr) {
+  return Object.prototype.toString.call(arr) == '[object Array]';
+};
+
+}, {});
 require.register('node_modules/lodash/index', function(require, module, exports){
 /**
  * @license
@@ -23818,7 +23824,7 @@ require.register('node_modules/lodash/index', function(require, module, exports)
 }, {});
 require.register('node_modules/moment/moment', function(require, module, exports){
 //! moment.js
-//! version : 2.15.1
+//! version : 2.15.2
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
 //! momentjs.com
@@ -24649,7 +24655,7 @@ require.register('node_modules/moment/moment', function(require, module, exports
 
     // LOCALES
 
-    var MONTHS_IN_FORMAT = /D[oD]?(\[[^\[\]]*\]|\s+)+MMMM?/;
+    var MONTHS_IN_FORMAT = /D[oD]?(\[[^\[\]]*\]|\s)+MMMM?/;
     var defaultLocaleMonths = 'January_February_March_April_May_June_July_August_September_October_November_December'.split('_');
     function localeMonths (m, format) {
         if (!m) {
@@ -28014,7 +28020,7 @@ require.register('node_modules/moment/moment', function(require, module, exports
     // Side effect imports
 
 
-    utils_hooks__hooks.version = '2.15.1';
+    utils_hooks__hooks.version = '2.15.2';
 
     setHookCallback(local__createLocal);
 
@@ -29102,13 +29108,7 @@ function pathToRegexp (path, keys, options) {
   return stringToRegexp(path, keys, options)
 }
 
-}, {"isarray":"node_modules/path-to-regexp/node_modules/isarray/index"});
-require.register('node_modules/path-to-regexp/node_modules/isarray/index', function(require, module, exports){
-module.exports = Array.isArray || function (arr) {
-  return Object.prototype.toString.call(arr) == '[object Array]';
-};
-
-}, {});
+}, {"isarray":"node_modules/isarray/index"});
 require.register('node_modules/promise-polyfill/promise', function(require, module, exports){
 (function (root) {
 
@@ -50257,7 +50257,7 @@ module.exports = function($dom) {
 require.register('src/frontend/templates/buttons/share', function(require, module, exports){
 module.exports = function anonymous(locals
 /**/) {
-jade.debug = [{ lineno: 1, filename: "/Users/lucek/workspace/loopcast/src/frontend/templates/buttons/share.jade" }];
+jade.debug = [{ lineno: 1, filename: "/Users/thomasamundsen/Documents/traxnwaxcode/beta/src/frontend/templates/buttons/share.jade" }];
 try {
 var buf = [];
 jade.debug.unshift({ lineno: 1, filename: jade.debug[0].filename });
@@ -50336,7 +50336,7 @@ jade.debug.shift();;return buf.join("");
 require.register('src/frontend/templates/chat/chat_listener', function(require, module, exports){
 module.exports = function anonymous(locals
 /**/) {
-jade.debug = [{ lineno: 1, filename: "/Users/lucek/workspace/loopcast/src/frontend/templates/chat/chat_listener.jade" }];
+jade.debug = [{ lineno: 1, filename: "/Users/thomasamundsen/Documents/traxnwaxcode/beta/src/frontend/templates/chat/chat_listener.jade" }];
 try {
 var buf = [];
 var locals_ = (locals || {}),socket_id = locals_.socket_id,url = locals_.url,name = locals_.name,images = locals_.images;jade.debug.unshift({ lineno: 1, filename: jade.debug[0].filename });
@@ -50379,7 +50379,7 @@ jade.debug.shift();;return buf.join("");
 require.register('src/frontend/templates/chat/chat_message', function(require, module, exports){
 module.exports = function anonymous(locals
 /**/) {
-jade.debug = [{ lineno: 1, filename: "/Users/lucek/workspace/loopcast/src/frontend/templates/chat/chat_message.jade" }];
+jade.debug = [{ lineno: 1, filename: "/Users/thomasamundsen/Documents/traxnwaxcode/beta/src/frontend/templates/chat/chat_message.jade" }];
 try {
 var buf = [];
 var locals_ = (locals || {}),user = locals_.user,like = locals_.like,time = locals_.time,message = locals_.message;jade.debug.unshift({ lineno: 1, filename: jade.debug[0].filename });
@@ -50489,7 +50489,7 @@ jade.debug.shift();;return buf.join("");
 require.register('src/frontend/templates/chat/people_popup', function(require, module, exports){
 module.exports = function anonymous(locals
 /**/) {
-jade.debug = [{ lineno: 1, filename: "/Users/lucek/workspace/loopcast/src/frontend/templates/chat/people_popup.jade" }];
+jade.debug = [{ lineno: 1, filename: "/Users/thomasamundsen/Documents/traxnwaxcode/beta/src/frontend/templates/chat/people_popup.jade" }];
 try {
 var buf = [];
 var locals_ = (locals || {}),url = locals_.url,name = locals_.name,images = locals_.images,occupation = locals_.occupation,likes = locals_.likes;jade.debug.unshift({ lineno: 1, filename: jade.debug[0].filename });
@@ -50562,7 +50562,7 @@ jade.debug.shift();;return buf.join("");
 require.register('src/frontend/templates/chat/tape_message', function(require, module, exports){
 module.exports = function anonymous(locals
 /**/) {
-jade.debug = [{ lineno: 1, filename: "/Users/lucek/workspace/loopcast/src/frontend/templates/chat/tape_message.jade" }];
+jade.debug = [{ lineno: 1, filename: "/Users/thomasamundsen/Documents/traxnwaxcode/beta/src/frontend/templates/chat/tape_message.jade" }];
 try {
 var buf = [];
 var locals_ = (locals || {}),like = locals_.like,user = locals_.user,time = locals_.time,message = locals_.message;jade.debug.unshift({ lineno: 1, filename: jade.debug[0].filename });
@@ -50665,7 +50665,7 @@ jade.debug.shift();;return buf.join("");
 require.register('src/frontend/templates/components/editables/editable_profile_tags', function(require, module, exports){
 module.exports = function anonymous(locals
 /**/) {
-jade.debug = [{ lineno: 1, filename: "/Users/lucek/workspace/loopcast/src/frontend/templates/components/editables/editable_profile_tags.jade" }];
+jade.debug = [{ lineno: 1, filename: "/Users/thomasamundsen/Documents/traxnwaxcode/beta/src/frontend/templates/components/editables/editable_profile_tags.jade" }];
 try {
 var buf = [];
 jade.debug.unshift({ lineno: 1, filename: jade.debug[0].filename });
@@ -50696,7 +50696,7 @@ jade.debug.shift();;return buf.join("");
 require.register('src/frontend/templates/components/editables/editable_select', function(require, module, exports){
 module.exports = function anonymous(locals
 /**/) {
-jade.debug = [{ lineno: 1, filename: "/Users/lucek/workspace/loopcast/src/frontend/templates/components/editables/editable_select.jade" }];
+jade.debug = [{ lineno: 1, filename: "/Users/thomasamundsen/Documents/traxnwaxcode/beta/src/frontend/templates/components/editables/editable_select.jade" }];
 try {
 var buf = [];
 var locals_ = (locals || {}),values = locals_.values;jade.debug.unshift({ lineno: 1, filename: jade.debug[0].filename });
@@ -50771,7 +50771,7 @@ jade.debug.shift();;return buf.join("");
 require.register('src/frontend/templates/components/editables/editable_text', function(require, module, exports){
 module.exports = function anonymous(locals
 /**/) {
-jade.debug = [{ lineno: 1, filename: "/Users/lucek/workspace/loopcast/src/frontend/templates/components/editables/editable_text.jade" }];
+jade.debug = [{ lineno: 1, filename: "/Users/thomasamundsen/Documents/traxnwaxcode/beta/src/frontend/templates/components/editables/editable_text.jade" }];
 try {
 var buf = [];
 jade.debug.unshift({ lineno: 1, filename: jade.debug[0].filename });
@@ -50793,7 +50793,7 @@ jade.debug.shift();;return buf.join("");
 require.register('src/frontend/templates/components/editables/social_link_read_mode', function(require, module, exports){
 module.exports = function anonymous(locals
 /**/) {
-jade.debug = [{ lineno: 1, filename: "/Users/lucek/workspace/loopcast/src/frontend/templates/components/editables/social_link_read_mode.jade" }];
+jade.debug = [{ lineno: 1, filename: "/Users/thomasamundsen/Documents/traxnwaxcode/beta/src/frontend/templates/components/editables/social_link_read_mode.jade" }];
 try {
 var buf = [];
 var locals_ = (locals || {}),value = locals_.value,title = locals_.title,social = locals_.social;jade.debug.unshift({ lineno: 1, filename: jade.debug[0].filename });
@@ -50815,7 +50815,7 @@ jade.debug.shift();;return buf.join("");
 require.register('src/frontend/templates/components/editables/social_links', function(require, module, exports){
 module.exports = function anonymous(locals
 /**/) {
-jade.debug = [{ lineno: 1, filename: "/Users/lucek/workspace/loopcast/src/frontend/templates/components/editables/social_links.jade" }];
+jade.debug = [{ lineno: 1, filename: "/Users/thomasamundsen/Documents/traxnwaxcode/beta/src/frontend/templates/components/editables/social_links.jade" }];
 try {
 var buf = [];
 var locals_ = (locals || {}),links = locals_.links;jade.debug.unshift({ lineno: 1, filename: jade.debug[0].filename });
@@ -50896,7 +50896,7 @@ jade.debug.shift();;return buf.join("");
 require.register('src/frontend/templates/components/follow_player', function(require, module, exports){
 module.exports = function anonymous(locals
 /**/) {
-jade.debug = [{ lineno: 1, filename: "/Users/lucek/workspace/loopcast/src/frontend/templates/components/follow_player.jade" }];
+jade.debug = [{ lineno: 1, filename: "/Users/thomasamundsen/Documents/traxnwaxcode/beta/src/frontend/templates/components/follow_player.jade" }];
 try {
 var buf = [];
 var locals_ = (locals || {}),url = locals_.url,name = locals_.name,image = locals_.image,occupation = locals_.occupation,user_id = locals_.user_id;jade.debug.unshift({ lineno: 1, filename: jade.debug[0].filename });
@@ -50990,7 +50990,7 @@ jade.debug.shift();;return buf.join("");
 require.register('src/frontend/templates/components/tags_list', function(require, module, exports){
 module.exports = function anonymous(locals
 /**/) {
-jade.debug = [{ lineno: 1, filename: "/Users/lucek/workspace/loopcast/src/frontend/templates/components/tags_list.jade" }];
+jade.debug = [{ lineno: 1, filename: "/Users/thomasamundsen/Documents/traxnwaxcode/beta/src/frontend/templates/components/tags_list.jade" }];
 try {
 var buf = [];
 var locals_ = (locals || {}),tags = locals_.tags;jade.debug.unshift({ lineno: 1, filename: jade.debug[0].filename });
@@ -51047,7 +51047,7 @@ jade.debug.shift();;return buf.join("");
 require.register('src/frontend/templates/debug/gui', function(require, module, exports){
 module.exports = function anonymous(locals
 /**/) {
-jade.debug = [{ lineno: 1, filename: "/Users/lucek/workspace/loopcast/src/frontend/templates/debug/gui.jade" }];
+jade.debug = [{ lineno: 1, filename: "/Users/thomasamundsen/Documents/traxnwaxcode/beta/src/frontend/templates/debug/gui.jade" }];
 try {
 var buf = [];
 jade.debug.unshift({ lineno: 1, filename: jade.debug[0].filename });
@@ -51081,7 +51081,7 @@ jade.debug.shift();;return buf.join("");
 require.register('src/frontend/templates/rooms/tapes/sidebar_favorite', function(require, module, exports){
 module.exports = function anonymous(locals
 /**/) {
-jade.debug = [{ lineno: 1, filename: "/Users/lucek/workspace/loopcast/src/frontend/templates/rooms/tapes/sidebar_favorite.jade" }];
+jade.debug = [{ lineno: 1, filename: "/Users/thomasamundsen/Documents/traxnwaxcode/beta/src/frontend/templates/rooms/tapes/sidebar_favorite.jade" }];
 try {
 var buf = [];
 var locals_ = (locals || {}),username = locals_.username,id = locals_.id,thumb = locals_.thumb;jade.debug.unshift({ lineno: 1, filename: jade.debug[0].filename });
@@ -51103,7 +51103,7 @@ jade.debug.shift();;return buf.join("");
 require.register('src/frontend/templates/shared/header_user_logged', function(require, module, exports){
 module.exports = function anonymous(locals
 /**/) {
-jade.debug = [{ lineno: 1, filename: "/Users/lucek/workspace/loopcast/src/frontend/templates/shared/header_user_logged.jade" }];
+jade.debug = [{ lineno: 1, filename: "/Users/thomasamundsen/Documents/traxnwaxcode/beta/src/frontend/templates/shared/header_user_logged.jade" }];
 try {
 var buf = [];
 var locals_ = (locals || {}),images = locals_.images;jade.debug.unshift({ lineno: 1, filename: jade.debug[0].filename });
