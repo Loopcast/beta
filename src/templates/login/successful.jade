@@ -1,11 +1,12 @@
 script
-  | if( window.opener._gaq )
+  | if( window.opener._gaq ) {
   | window.opener._gaq.push(['_trackEvent', 'Customer Login', 'Successful', '']);
-  |
+  | }
+  //-|
   //- save template variable into source code
   //- so we can change it later from the confirm_username page
   | window.user = !{ JSON.stringify( user ) };
-  |
+  //-|
 
   //- called once the login is succesful and the user doesn't need
   //- to update the username
