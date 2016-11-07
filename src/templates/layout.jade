@@ -15,7 +15,7 @@ html
 
     block seo
       title loopcast.fm
-      meta( name="description" content="Loopcast Description" ) 
+      meta( name="description" content="Loopcast Description" )
 
     //- loopcast icon should be the last image when sharing, so user images
     //- and room background images will have priority
@@ -59,7 +59,7 @@ html
         .inner
           .loading_spin.large
 
-        
+
       include ./components/audio/player
 
       block modals
@@ -71,7 +71,7 @@ html
           a.follow_button(class="button yellow_button small_button_4 popup_follow_button", href="#",  data-view="profile/follow_button", data-user-id="#{id}") Follow
 
 
-          
+
       .md_overlay
 
       //- #debug
@@ -92,6 +92,8 @@ html
     //- and in this case it's better to defined __gaq inline, so we avoid
     //- this problem
     script
+      //-| alert('hello');
+      //-|
       //- quickfix for people with adblocker
       | if( !_gaq ) _gaq = []
 
@@ -107,7 +109,6 @@ html
       | options  = {} // while we don't implement presence channels
       | window.intercomSettings = { app_id: "#{intercom.id}" }
       if is_beta
-        | 
         | var is_beta  = true;
 
     //- script( type='text/javascript', src='//connect.facebook.net/en_US/vb.js', async='async')
