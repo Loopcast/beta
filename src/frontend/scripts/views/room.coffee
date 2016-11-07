@@ -29,7 +29,7 @@ module.exports = class Room extends LoggedView
 
     @people_list = new PeopleList
 
-    @elements = 
+    @elements =
       title       : @dom.find '.cover .name'
       genre       : @dom.find '.cover .genres'
       location    : @dom.find '.cover .location'
@@ -60,7 +60,7 @@ module.exports = class Room extends LoggedView
     else
       @on_room_created()
 
-    
+
 
   on_input_changed: ( data ) =>
     switch data.name
@@ -100,7 +100,7 @@ module.exports = class Room extends LoggedView
 
       delay 1000, =>
 
-        # appends room_id to body in order to be compatible with 
+        # appends room_id to body in order to be compatible with
         # server side rendered template
         hidden = "<input type='hidden' id='room_id' value='#{room._id}'>"
         $( 'body' ).append hidden
@@ -121,7 +121,7 @@ module.exports = class Room extends LoggedView
     @owner_id = document.getElementById( 'owner_id' ).value
     @room_id  = document.getElementById( 'room_id' ).value
     # log "on room created", data, @owner_id
-    
+
     @room_created = true
     @dom.removeClass( 'page_create' ).addClass( 'room_ready' )
 
@@ -153,13 +153,13 @@ module.exports = class Room extends LoggedView
       # temp
       # return @on_live_changed     data if (not data.type?) and data.is_live?
 
-      
+
         # unless user_controller.is_me data.user.id
-        #   return @on_listener_added   data 
+        #   return @on_listener_added   data
 
     @publish_modal = view.get_by_dom '#publish_modal'
     @confirm_exit_modal = view.get_by_dom '#confirm_exit_modal'
-    
+
     @publish_modal.on 'room:published', @on_room_published
     @live_button = view.get_by_dom '#go_live_button'
     @live_button.on 'changed', @_on_live_changed
@@ -182,7 +182,7 @@ module.exports = class Room extends LoggedView
 
       # console.info "has clas live!!!"
 
-      delay 1000, => 
+      delay 1000, =>
         # log "----------------- (0)"
 
         # console.info "DELAY BEFORE ROOM LIVE!!!"
@@ -214,7 +214,7 @@ module.exports = class Room extends LoggedView
 
     # console.log 'on_status_changed ->', data
 
-    if data.is_recording 
+    if data.is_recording
 
       Intercom( 'trackEvent', 'recording-successful');
       Intercom( 'trackEvent', 'appcast-successful');
@@ -256,14 +256,14 @@ module.exports = class Room extends LoggedView
     notify.error 'Oops, something went wrong while you were streaming ( or recording ) and your session went offline'
 
   broadcast_enter: =>
-    data = 
+    data =
       room_id : @room_id
       user    : user_controller.get_info()
 
     # log "[Room] broadcast_enter", data
 
     L.chat.enter data, ( error, response ) ->
-      # log "[Room] chat.enter", error, response      
+      # log "[Room] chat.enter", error, response
 
 
   get_people : =>
@@ -273,7 +273,7 @@ module.exports = class Room extends LoggedView
         for user in response.users
           if user.socket_id is socket_id
 
-            user = 
+            user =
               id        : user._id
               socket_id : socket_id
               username  : user.info.username
@@ -295,7 +295,7 @@ module.exports = class Room extends LoggedView
           # check if the user is myself
           if socket_id is socket.id and user?
 
-            user = 
+            user =
               id        : user_controller.data._id
               socket_id : socket_id
               username  : user_controller.data.username
@@ -308,7 +308,7 @@ module.exports = class Room extends LoggedView
           else
 
             # TODO: populate with Guest information
-            user = 
+            user =
               socket_id : socket_id
               name      : "Guest"
               occupation: "Guest"
@@ -316,15 +316,15 @@ module.exports = class Room extends LoggedView
               likes : 0
               url       : "#"
 
-        message = 
-          type  : "listener:added", 
+        message =
+          type  : "listener:added",
           method: "added"
           user  : user
 
         # log "[Chat people] on_listener added", message
         @people_list.add message
 
-  
+
 
   update_genres: (genres) ->
     # log "UPDATE GENRES", genres
@@ -342,7 +342,7 @@ module.exports = class Room extends LoggedView
     if room_id is @room_id
       @dom.addClass 'room_public'
 
-  
+
   _on_live_changed: (data) =>
     # log "[Room] on live changed", data
     if data
@@ -381,7 +381,7 @@ module.exports = class Room extends LoggedView
       if $( "audio" ).attr( "src" )
         @_src = $( "audio" ).attr( "src" )
         $( "audio" ).attr( "src", "" )
-    
+
   on_room_live: ->
 
     # console.info "LIVE!!!"
@@ -393,13 +393,16 @@ module.exports = class Room extends LoggedView
       if not user_controller.check_guest_owner()
         if not app.player.audio.is_playing
           app.player.fetch_room @room_id, true, @on_player_fetched_room
-            
+
         else
           @on_player_already_playing()
-            
+
       else
 
-        app.player.stop()
+        # Old behaviour on Loopcast.fm when going life.
+        # we must fix this to happen if the user is actually
+        # live in a room
+        #app.player.stop()
         navigation.set_lock_live true, location.pathname
 
         Intercom( 'trackEvent', 'live-successful');
@@ -410,18 +413,18 @@ module.exports = class Room extends LoggedView
 
       if not @dom.hasClass 'show_play_button'
         @on_player_not_playing()
-    
+
   on_player_fetched_room: =>
     # log "[Room] fetch room callback", app.settings.theme
 
     if @_src
       # console.log 'loading ->', @_src
-      
+
       $( "audio" ).attr( "src", @_src )
       @_src = null
 
     if app.settings.theme isnt 'mobile'
-  
+
       app.player.play @room_id
       app.player.on_room_live()
 
@@ -523,11 +526,11 @@ module.exports = class Room extends LoggedView
     navigation.set_lock_live false, ""
 
     @share_view = null
-    
+
     if @room_created
 
       socket.rooms.unsubscribe @room_id
-      
+
     if user_controller.check_guest_owner() and @description?
       @description.off 'changed', @on_description_changed
       @title.off 'changed', @on_title_changed
@@ -543,7 +546,7 @@ module.exports = class Room extends LoggedView
 
     if @live_button
       @live_button.off 'changed', @_on_live_changed
-      
+
 
     view.destroy_view @modal
     @modal = null
@@ -552,8 +555,8 @@ module.exports = class Room extends LoggedView
 
     app.off 'audio:started', @show_guest_popup
     super()
-    
 
-    
-    
-    
+
+
+
+
