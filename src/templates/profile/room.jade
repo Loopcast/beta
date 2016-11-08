@@ -18,16 +18,15 @@ block seo
 
     meta( name="description" content=description )
 
-    meta( property="og:description" content="Listen to expert-curated #{room.info.title} 24/7 on Loopcast. Discover new tracks and save your favourites" )
-    meta( name="twitter:description" content="Listen to expert-curated #{room.info.title} 24/7 on Loopcast. Discover new tracks and save your favourites" )
-    //- about = room.info.about || user.info.about
 
-    //if about && about != ''
-      //meta( property="og:description" content="#{strip_tags(about)}" )
-      //meta( name="twitter:description" content="#{strip_tags(about)}")
-    //else
-      //meta( property="og:description" content=description )
-      //meta( name="twitter:description" content=description)
+    - about = room.info.about || user.info.about
+
+    if about && about != ''
+      meta( property="og:description" content="#{strip_tags(about)}" )
+      meta( name="twitter:description" content="#{strip_tags(about)}")
+    else
+      meta( property="og:description" content=description )
+      meta( name="twitter:description" content=description)
 
     if room.status.is_live
       meta( property="og:title"  content="#{room.info.title} Channel | Streaming 24/7 on Loopcast")
