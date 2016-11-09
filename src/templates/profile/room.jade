@@ -118,7 +118,9 @@ block content
         .content.centered(data-view="components/audio/player_preview", data-room-id="#{id}" data-is-live="true")
           a(href="#", class="tape_play icon ss-play", title="play record") &nbsp;
 
-          h1.name.black_background(data-view="components/editables/editable_text")
+          i.fa.fa-play-circle.channel_player
+
+          h1.name.black_background.channel_title(data-view="components/editables/editable_text")
             span.text
               if room
                 | #{room.info.title}
@@ -128,12 +130,12 @@ block content
 
           .socials_room(data-view="components/room_social_links", data-links="#{user.info.social}")
           
-          .profile_image.upload_wrapper
-            img(src="#{transform.avatar(user.info.avatar)}")
+          //.profile_image.upload_wrapper
+            //img(src="#{transform.avatar(user.info.avatar)}")
 
           if room
             div.room_play_handler.for_mobile(data-room-id="#{room._id}", data-view="components/audio/player_preview", data-is-live="#{room.status.is_live}")
-              a.icon.ss-play.circle_icon(href="#",title="Play") 
+              a.icon.fa.fa-play-circle.circle_icon(href="#",title="Play") 
               .loading_spin
 
           .change_cover.upload_wrapper(data-view="components/image_uploader", data-id="profile_cover")
