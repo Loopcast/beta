@@ -5110,7 +5110,7 @@ body {
 
 /* line 13 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 691 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+/* line 690 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
 /* line 10 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
@@ -5130,7 +5130,7 @@ body {
 
 /* line 90 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 691 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+/* line 690 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
 /* line 11 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
@@ -5158,7 +5158,7 @@ body {
 
 /* line 5 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
 
-/* line 691 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+/* line 690 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
 /* line 12 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
@@ -6282,10 +6282,9 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 .notfoundimage,
 .imagecontainer_notfound {
   background-color: #262626;
-  width: 100%;
-  min-height: 900px;
-  background-size: cover;
   position: absolute;
+  height: 100vh;
+  width: 100%;
 }
 
 
@@ -6295,7 +6294,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 13 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 60 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+/* line 349 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
 /* line 10 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
@@ -6315,7 +6314,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 90 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 60 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+/* line 349 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
 /* line 11 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
@@ -6343,7 +6342,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 5 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
 
-/* line 60 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+/* line 349 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
 /* line 12 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
