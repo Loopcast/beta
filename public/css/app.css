@@ -5110,7 +5110,7 @@ body {
 
 /* line 13 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 690 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+/* line 698 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
 /* line 10 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
@@ -5130,7 +5130,7 @@ body {
 
 /* line 90 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 690 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+/* line 698 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
 /* line 11 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
@@ -5158,7 +5158,7 @@ body {
 
 /* line 5 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
 
-/* line 690 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+/* line 698 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
 /* line 12 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
@@ -6285,6 +6285,17 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   position: absolute;
   height: 100vh;
   width: 100%;
+}
+
+/* line 692 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/src/frontend/styles/pages/all.styl */
+.browser {
+  margin-top: 100px;
+}
+
+/* line 696 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/src/frontend/styles/pages/all.styl */
+.browser_p {
+  margin-top: 20px;
+  margin-bottom: 40px;
 }
 
 
