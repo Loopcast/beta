@@ -1,0 +1,22 @@
+block seo
+  title Looks like the page you are looking for does not existing.
+
+
+extends layout
+
+block content
+
+  .imagecontainer_notfound
+    h1.notfound Safari not supported 
+    h2.notfoundmain It looks like you're on the Safari browser :(
+    p.notfoundp During beta we do currently not support Safari due to streaming issues with the browser. In order to fully expierence Loopcast, please choose one of the browsers below
+    .links.safari_notsupported
+    a(href="https://www.mozilla.org/en-US/firefox/new/", title="Download latest Firefox", target="_blank")
+    img(src="/images/chrome.svg" width="200" height="200")
+    a(href="https://www.google.com/chrome/browser/desktop/", title="Download latest Chrome", target="_blank")
+    img(src="/images/firefox.svg" width="200" height="200")
+    a(href="https://support.apple.com/downloads/", title="Download latest Safari", target="_blank")
+    img(src="/images/edge.svg" width="200" height="200")
+
+
+  
