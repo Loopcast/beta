@@ -5110,7 +5110,7 @@ body {
 
 /* line 13 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 732 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+/* line 730 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
 /* line 10 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
@@ -5130,7 +5130,7 @@ body {
 
 /* line 90 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 732 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+/* line 730 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
 /* line 11 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
@@ -5158,7 +5158,7 @@ body {
 
 /* line 5 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
 
-/* line 732 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+/* line 730 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
 /* line 12 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
@@ -6253,17 +6253,14 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 .notfoundp {
   margin-top: 20px;
   color: #fff;
-  width: 900px;
-  margin-right: auto;
-  margin-left: auto;
 }
 
-/* line 668 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/src/frontend/styles/pages/all.styl */
+/* line 666 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/src/frontend/styles/pages/all.styl */
 .notfoundmain {
   color: #fff;
 }
 
-/* line 671 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/src/frontend/styles/pages/all.styl */
+/* line 669 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/src/frontend/styles/pages/all.styl */
 .notfoundbutton {
   background-color: #07d159;
   margin-top: 40px;
@@ -6277,12 +6274,12 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   font-weight: bold;
 }
 
-/* line 684 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/src/frontend/styles/pages/all.styl */
+/* line 682 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/src/frontend/styles/pages/all.styl */
 .notfoundbutton:hover {
   background-color: #0ca94c;
 }
 
-/* line 687 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/src/frontend/styles/pages/all.styl */
+/* line 685 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/src/frontend/styles/pages/all.styl */
 .notfoundimage,
 .imagecontainer_notfound {
   background-color: #262626;
@@ -6291,18 +6288,18 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   width: 100%;
 }
 
-/* line 696 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/src/frontend/styles/pages/all.styl */
+/* line 694 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/src/frontend/styles/pages/all.styl */
 .browser {
   margin-top: 100px;
 }
 
-/* line 700 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/src/frontend/styles/pages/all.styl */
+/* line 698 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/src/frontend/styles/pages/all.styl */
 .browser_p {
   margin-top: 20px;
   margin-bottom: 40px;
 }
 
-/* line 704 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/src/frontend/styles/pages/all.styl */
+/* line 702 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/src/frontend/styles/pages/all.styl */
 .advert_header {
   position: absolute;
   width: 100%;
@@ -6311,7 +6308,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   background: #262626;
 }
 
-/* line 713 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/src/frontend/styles/pages/all.styl */
+/* line 711 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/src/frontend/styles/pages/all.styl */
 .advert_headerimg {
   width: 100%;
   height: 100%;
@@ -6319,19 +6316,19 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   filter: blur(15px);
 }
 
-/* line 720 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/src/frontend/styles/pages/all.styl */
+/* line 718 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/src/frontend/styles/pages/all.styl */
 .adheader_text {
   position: absolute;
   margin-top: -300px;
   margin-left: 200px;
 }
 
-/* line 726 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/src/frontend/styles/pages/all.styl */
+/* line 724 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/src/frontend/styles/pages/all.styl */
 .safari_notsupported {
-  margin-top: 30px;
+  margin-top: 60px;
 }
 
-/* line 729 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/src/frontend/styles/pages/all.styl */
+/* line 727 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/src/frontend/styles/pages/all.styl */
 .adtitle_1 {
   color: #fff;
   margin-top: 70px;
