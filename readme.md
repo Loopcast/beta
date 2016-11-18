@@ -20,6 +20,16 @@ On Ubuntu 16.04:
 sudo apt-get install coffeescript
 ```
 
+If you are getting errors regarding undefined `process.EventEmitter` it means
+you are running too fresh node.js for the app, then you can apply a hotfix by
+running:
+
+```
+rpl -R 'process.EventEmitter' "require('events').EventEmitter" node_modules/
+```
+
+(of course do `brew install rpl` or `sudo apt-get install rpl` first).
+
 ### running server
 
 ````

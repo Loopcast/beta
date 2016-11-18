@@ -6,7 +6,7 @@ string_utils = require 'app/utils/string'
 ProgressDragger = require 'app/utils/progress_dragger'
 normalize_info = require 'app/utils/rooms/normalize_info'
 login_popup = require 'app/utils/login_popup'
-radiokit_toolkit_streaming = require 'radiokit-toolkit-streaming'
+radiokit = require 'radiokit-toolkit-playback'
 
 module.exports = class Player
   is_playing: false
@@ -161,11 +161,7 @@ module.exports = class Player
   Otherwise, just call _play()
   ###
   play: (room_id, radiokit_channel_id) ->
-    if !@radiokit_player
-      @initialize_player(radiokit_channel_id)
-    else
-      unless @current_room_id is room_id
-        @initialize_player(radiokit_channel_id)
+    @initialize_player(radiokit_channel_id)
 
     if @current_room_id is room_id
       @stop()
@@ -207,20 +203,50 @@ module.exports = class Player
     if @radiokit_player
       @stop()
 
-    @radiokit_player = new radiokit_toolkit_streaming.Player(radiokit_channel_id)
-    @radiokit_player.on('fileStarted', @onFileStarted)
+    @radiokit_player = new radiokit.Channel.Player(radiokit_channel_id, '1:i23jsnduSD82jSjda7sndyasbj*ID2hdydhs')
+    @radiokit_player.on('track-playback-started', @onTrackPlaybackStarted)
+    @radiokit_player.on('track-position', @onTrackPosition)
 
-  onFileStarted: (event, player, current_track) =>
+  onTrackPlaybackStarted: (track) =>
     @clearFileInfo()
-    if current_track.metadata.artist
-      @track_artist.html current_track.metadata.artist
-    if current_track.metadata.title
-      @track_title.html current_track.metadata.title
-    if current_track.metadata.artist and current_track.metadata.title
-      @track_separator.html ' - '
-    if current_track.metadata.itunes
-      @itunes_button.attr('href', current_track.metadata.itunes + '&at=1000l5ZB')
-      @itunes_button.css('display', 'block')
+
+    track.getInfoAsync()
+      .then (info) =>
+        metadata = info.getMetadata()
+        affiliates = info.getAffiliates()
+
+        if metadata.artist
+          @track_artist.html metadata.artist
+        if metadata.title
+          @track_title.html metadata.title
+        if metadata.artist and metadata.title
+          @track_separator.html ' - '
+        if affiliates.itunes
+          @itunes_button.attr('href', metadata.itunes.trackViewUrl + '&at=1000l5ZB')
+          @itunes_button.css('display', 'block')
+
+
+  onTrackPosition: (track, position, duration) =>
+    @progress.css 'width', (position / duration * 100) + '%'
+    @time.html @_humanTime(position)
+    @time_tot.html "-" + @_humanTime(duration - position)
+
+  _humanTime: (time) =>
+    milliseconds = time % 1000
+
+    secondsTotal = (time - milliseconds) / 1000
+    seconds = secondsTotal % 60
+
+    minutesTotal = (secondsTotal - seconds) / 60
+    minutes = minutesTotal % 60
+
+    @_padTwo(minutes) + ":" + @_padTwo(seconds)
+
+  _padTwo: (number) =>
+    if number < 10
+      "0" + number
+    else
+      number
 
   clearFileInfo: () =>
     @track_artist.html ''
@@ -259,6 +285,7 @@ module.exports = class Player
 
   stop: ->
     @current_room_id = null
+    @radiokit_player.offAll()
     @radiokit_player.stop()
 
   on_room_offline: ->
