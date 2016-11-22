@@ -17,19 +17,19 @@ module.exports = ( $dom ) ->
 
       console.log 'r ->', r
 
-      options = 
+      options =
         url       : $( ".s3-bucket" ).val()
 
-        type      : 'POST'                                              
+        type      : 'POST'
         autoUpload: true
 
         formData:
           key                  : r.file_name
           AWSAccessKeyId       : r.credentials.key
-          acl                  : "public-read",                                        
+          acl                  : "public-read",
           policy               : r.credentials.policy
           signature            : r.credentials.signature
-          success_action_status: "201"  
+          success_action_status: "201"
 
         progressall: (e, data) ->
           progress = parseInt(data.loaded / data.total * 100, 10);

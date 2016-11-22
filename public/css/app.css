@@ -5110,7 +5110,7 @@ body {
 
 /* line 13 : /Volumes/backpack/git/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 736 : /Volumes/backpack/git/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+/* line 756 : /Volumes/backpack/git/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
 /* line 10 : /Volumes/backpack/git/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
@@ -5130,7 +5130,7 @@ body {
 
 /* line 90 : /Volumes/backpack/git/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 736 : /Volumes/backpack/git/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+/* line 756 : /Volumes/backpack/git/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
 /* line 11 : /Volumes/backpack/git/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
@@ -5158,7 +5158,7 @@ body {
 
 /* line 5 : /Volumes/backpack/git/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
 
-/* line 736 : /Volumes/backpack/git/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+/* line 756 : /Volumes/backpack/git/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
 /* line 12 : /Volumes/backpack/git/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
@@ -6248,25 +6248,29 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   cursor: pointer;
 }
 
-/* line 661 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/all.styl */
+/* line 663 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/all.styl */
+>>>>>>> 040665284673d27a3b810e40932ac17950ed1c91,
 .notfound {
-  margin-top: 150px;
+  margin-top: 90px;
   color: #fff;
   font-size: 60px;
+  line-height: 60px;
+  margin-bottom: 10px;
 }
 
-/* line 666 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/all.styl */
+/* line 671 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/all.styl */
+>>>>>>> 040665284673d27a3b810e40932ac17950ed1c91,
 .notfoundp {
   margin-top: 20px;
   color: #fff;
 }
 
-/* line 671 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/all.styl */
+/* line 677 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/all.styl */
 .notfoundmain {
   color: #fff;
 }
 
-/* line 674 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/all.styl */
+/* line 680 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/all.styl */
 .notfoundbutton {
   background-color: #07d159;
   margin-top: 40px;
@@ -6280,12 +6284,12 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   font-weight: bold;
 }
 
-/* line 687 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/all.styl */
+/* line 693 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/all.styl */
 .notfoundbutton:hover {
   background-color: #0ca94c;
 }
 
-/* line 690 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/all.styl */
+/* line 696 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/all.styl */
 .notfoundimage,
 .imagecontainer_notfound {
   background-color: #262626;
@@ -6294,18 +6298,18 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   width: 100%;
 }
 
-/* line 699 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/all.styl */
+/* line 705 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/all.styl */
 .browser {
   margin-top: 100px;
 }
 
-/* line 703 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/all.styl */
+/* line 709 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/all.styl */
 .browser_p {
   margin-top: 20px;
   margin-bottom: 40px;
 }
 
-/* line 707 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/all.styl */
+/* line 713 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/all.styl */
 .advert_s1 {
   width: 100%;
   background: #f00;
@@ -6313,12 +6317,12 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   background: #262626;
 }
 
-/* line 714 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/all.styl */
+/* line 720 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/all.styl */
 .safari_notsupported {
   margin-top: 60px;
 }
 
-/* line 717 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/all.styl */
+/* line 723 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/all.styl */
 .adtitle_1 {
   color: #fff;
   margin-top: 90px;
@@ -6329,13 +6333,13 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   transform: translate(-50%, -50%);
 }
 
-/* line 725 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/all.styl */
+/* line 731 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/all.styl */
 .advert_s2 {
   height: 400px;
   background: #07d159;
 }
 
-/* line 729 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/all.styl */
+/* line 735 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/all.styl */
 .adtext_1 {
   color: #fff;
   margin-top: 170px;
@@ -6344,6 +6348,35 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+
+/* line 743 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/all.styl */
+@media (max-width: 640px) {
+
+/* line 744 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/all.styl */
+  .imagecontainer_notfound {
+    height: 120vh;
+  }
+
+/* line 746 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/all.styl */
+  .notfound {
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+}
+
+/* line 752 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/all.styl */
+@media (max-width: 320px) {
+
+/* line 753 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/all.styl */
+  .imagecontainer_notfound {
+    height: 145vh;
+  }
+
+/* line 755 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/all.styl */
+  .notfound {
+    margin-top: 50px;
+  }
 }
 
 
@@ -6564,13 +6597,13 @@ body.loading .explore_content {
 /* line 70 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .no_result {
   text-align: center;
-  font-size: 1.2rem;
-  color: #1f1f1f;
+  font-size: 1.5rem;
+  color: #fff;
   -o-box-flex: 1;
   box-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  padding-top: 50px;
+  padding-top: 100px;
   display: none;
 }
 
@@ -9007,7 +9040,7 @@ body.loading .explore_content {
 
 /* line 13 : /Volumes/backpack/git/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 641 : /Volumes/backpack/git/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+/* line 642 : /Volumes/backpack/git/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
 /* line 10 : /Volumes/backpack/git/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
@@ -9027,7 +9060,7 @@ body.loading .explore_content {
 
 /* line 90 : /Volumes/backpack/git/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 641 : /Volumes/backpack/git/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+/* line 642 : /Volumes/backpack/git/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
 /* line 11 : /Volumes/backpack/git/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
@@ -9055,7 +9088,7 @@ body.loading .explore_content {
 
 /* line 5 : /Volumes/backpack/git/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
 
-/* line 641 : /Volumes/backpack/git/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+/* line 642 : /Volumes/backpack/git/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
 /* line 12 : /Volumes/backpack/git/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
@@ -10085,7 +10118,7 @@ body.loading .explore_content {
 
 /* line 630 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/room.styl */
 .channel_player {
-  font-size: 120px;
+  font-size: 120px !important;
   color: #fff;
   float: left;
   margin-left: 20px;
@@ -10093,7 +10126,7 @@ body.loading .explore_content {
   cursor: pointer;
 }
 
-/* line 638 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/room.styl */
+/* line 639 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/room.styl */
 .channel_title {
   margin-top: 45px !important;
   margin-left: 20px;

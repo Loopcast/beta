@@ -33,8 +33,14 @@ html
       script(src='/js/check_ie.js')
       script(src='/js/animation_frame.js')
       script(src='/js/waveform.js')
-      script( src="/js/adsense.js" )
 
+      script(src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
+
+      script.
+        (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-4605459762661165",
+          enable_page_level_ads: true
+        });
       script
         | if( !is_browser_supported() ){ location.href = "/oldie"; }
 
@@ -94,10 +100,7 @@ html
     //- and in this case it's better to defined __gaq inline, so we avoid
     //- this problem
     script
-      //-| alert('hello');
-      //-|
-      //- quickfix for people with adblocker
-      | if( !_gaq ) _gaq = []
+      | if( window['_gaq'] ) _gaq = []
 
 
     //- update socket.io js version when updating package.json
