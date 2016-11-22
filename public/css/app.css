@@ -6589,13 +6589,13 @@ body.loading .explore_content {
 /* line 69 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/src/frontend/styles/pages/explore.styl */
 .explore .no_result {
   text-align: center;
-  font-size: 1.2rem;
-  color: #1f1f1f;
+  font-size: 1.5rem;
+  color: #fff;
   -o-box-flex: 1;
   box-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  padding-top: 50px;
+  padding-top: 100px;
   display: none;
 }
 
