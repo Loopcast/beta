@@ -6386,7 +6386,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 13 : /Volumes/backpack/git/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 350 : /Volumes/backpack/git/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+/* line 354 : /Volumes/backpack/git/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
 /* line 10 : /Volumes/backpack/git/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
@@ -6406,7 +6406,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 90 : /Volumes/backpack/git/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 350 : /Volumes/backpack/git/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+/* line 354 : /Volumes/backpack/git/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
 /* line 11 : /Volumes/backpack/git/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
@@ -6434,7 +6434,7 @@ body .notifyjs-container .notifyjs-loopcast_success-base {
 
 /* line 5 : /Volumes/backpack/git/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
 
-/* line 350 : /Volumes/backpack/git/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+/* line 354 : /Volumes/backpack/git/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
 /* line 12 : /Volumes/backpack/git/loopcast/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
@@ -6563,38 +6563,46 @@ body.loading .explore_content {
 /* line 51 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 
 /* line 53 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+.player_preview.preloading .fa-play-circle {
+  opacity: 0 !important;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)" !important;
+  filter: alpha(opacity=0) !important;
+}
+
+/* line 56 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .player_preview.preloading .loading_spin {
   opacity: 1;
   -ms-filter: none;
   -webkit-filter: none;
           filter: none;
+  font-size: 50px;
 }
 
-/* line 57 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 61 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore {
   position: relative;
   padding-top: 45px;
 }
 
-/* line 60 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 64 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 61 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 65 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .no_result_explore .no_result {
   display: block;
 }
 
-/* line 64 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 68 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .no_result_explore .flex_sidebar,
 .explore .no_result_explore .flex_content {
   display: none;
 }
 
-/* line 67 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 71 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore h2 {
   color: #fff;
 }
 
-/* line 70 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 74 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .no_result {
   text-align: center;
   font-size: 1.5rem;
@@ -6607,7 +6615,7 @@ body.loading .explore_content {
   display: none;
 }
 
-/* line 79 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 83 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .loading {
   position: absolute;
   top: 0;
@@ -6622,20 +6630,20 @@ body.loading .explore_content {
   filter: alpha(opacity=0);
 }
 
-/* line 88 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 92 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .explore_content > .loading {
   top: 45px;
 }
 
-/* line 92 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 96 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .explore_content {
   padding-top: 40px;
   padding-left: 20px;
 }
 
-/* line 100 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 104 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 101 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 105 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .inner {
   position: relative;
   width: 100%;
@@ -6644,7 +6652,7 @@ body.loading .explore_content {
   overflow: hidden;
 }
 
-/* line 107 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 111 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell {
   width: 210px;
   text-align: left;
@@ -6652,51 +6660,51 @@ body.loading .explore_content {
   position: relative;
 }
 
-/* line 113 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 117 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell .circle_icon {
   font-size: 100px;
 }
 
-/* line 117 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 121 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 118 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 122 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell.not_live .room_location {
   margin-bottom: 7px;
 }
 
-/* line 121 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 125 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell .room_content {
   padding: 10px 0 5px;
   word-wrap: break-word;
 }
 
-/* line 125 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 129 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell .room_content .text .ss-play {
   font-size: 0.8em;
   position: relative;
   padding-left: 1px;
 }
 
-/* line 130 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 134 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell .thumb_wrapper {
   position: relative;
   display: block;
   overflow: hidden;
 }
 
-/* line 134 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 138 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell > .thumb_wrapper {
   width: 200px;
   height: 200px;
 }
 
-/* line 138 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 142 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell .room_thumb {
   width: 100%;
   display: block;
 }
 
-/* line 143 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 147 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell h2 {
   color: #e0e0e0;
   font-size: 1em;
@@ -6706,12 +6714,12 @@ body.loading .explore_content {
   font-weight: 600;
 }
 
-/* line 151 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 155 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell h2:hover {
   color: #fff;
 }
 
-/* line 154 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 158 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell .room_subtitle {
   font-size: 0.8em;
   line-height: 1em;
@@ -6720,20 +6728,20 @@ body.loading .explore_content {
   font-weight: 600;
 }
 
-/* line 160 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 164 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell .room_subtitle.blue {
   color: #4592d4;
   font-weight: 400;
 }
 
-/* line 164 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 168 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell .genres {
   margin-bottom: 7px;
 }
 
-/* line 167 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 171 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 168 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 172 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell .likes .text,
 .explore .rooms_grid .room_cell .plays .text {
   position: relative;
@@ -6741,7 +6749,7 @@ body.loading .explore_content {
   margin-left: 0;
 }
 
-/* line 172 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 176 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell .room_location {
   text-transform: capitalize;
   color: #929292;
@@ -6749,28 +6757,28 @@ body.loading .explore_content {
   margin-bottom: 15px;
 }
 
-/* line 177 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 181 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .explore .rooms_grid .room_cell .room_location .icon {
   position: relative;
   top: 2px;
   margin-right: 3px;
 }
 
-/* line 185 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 189 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .share_set,
 .like_set {
   margin: 9px 4px;
   color: #929292;
 }
 
-/* line 189 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 193 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .share_set {
   top: 2px;
   position: relative;
   left: 2px;
 }
 
-/* line 194 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 198 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .like_set {
   border-radius: 50%;
   width: 30px;
@@ -6782,26 +6790,26 @@ body.loading .explore_content {
   left: -1px;
 }
 
-/* line 205 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 209 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .following_item {
   display: none;
 }
 
-/* line 208 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 212 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 209 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 213 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .following .not_following_item {
   display: none;
 }
 
-/* line 211 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 215 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .following .following_item {
   display: block;
 }
 
-/* line 215 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 219 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 216 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 220 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .player_preview .circle_icon {
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
@@ -6809,9 +6817,9 @@ body.loading .explore_content {
   transition: opacity 0.2s linear;
 }
 
-/* line 219 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 223 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 221 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 225 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .player_preview.playing .circle_icon,
 .player_preview.preloading .circle_icon {
   opacity: 1;
@@ -6820,17 +6828,17 @@ body.loading .explore_content {
           filter: none;
 }
 
-/* line 226 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 230 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 227 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 231 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .loading_on_top.tab_1 .explore_content > .loading,
 .loading_on_top.tab_filter .rooms_grid .loading {
   z-index: 1;
 }
 
-/* line 230 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 234 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 231 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 235 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .loading_visible.tab_1 .explore_content > .loading,
 .loading_visible.tab_filter .rooms_grid .loading {
   opacity: 1;
@@ -6839,37 +6847,37 @@ body.loading .explore_content {
           filter: none;
 }
 
-/* line 237 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 241 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 238 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 242 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 239 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 243 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 240 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 244 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .no_touch_device .explore .room_cell:hover .share_set,
 .no_touch_device .explore .room_cell:hover .like_set {
   color: #605b5b;
 }
 
-/* line 243 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 247 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .no_touch_device .explore .room_cell:hover .like_set:hover {
   background: #605b5b;
   color: #fff;
 }
 
-/* line 247 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 251 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .no_touch_device .explore .rooms_grid .room_cell .room_subtitle:hover {
   text-decoration: underline;
 }
 
-/* line 250 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 254 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .no_touch_device .explore .rooms_grid .room_cell .room_location:hover {
   color: #605b5b;
 }
 
-/* line 253 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 257 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 254 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 258 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .no_touch_device .player_preview:hover .circle_icon {
   opacity: 1;
   -ms-filter: none;
@@ -6877,7 +6885,7 @@ body.loading .explore_content {
           filter: none;
 }
 
-/* line 257 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 261 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 .no_touch_device .player_preview:hover .share_wrapper {
   opacity: 1;
   -ms-filter: none;
@@ -6885,113 +6893,113 @@ body.loading .explore_content {
           filter: none;
 }
 
-/* line 262 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 266 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 @media (max-width: 767px) {
 
-/* line 263 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 267 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 264 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 268 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
   .explore_page .loading {
     top: 0;
   }
 
-/* line 266 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 270 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
   .explore_page .swiper-wrapper {
     display: block;
     max-width: 300px;
     margin: 0 auto;
   }
 
-/* line 270 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 274 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 271 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 275 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
   .explore_page .explore .explore_content {
     padding-top: 20px;
   }
 
-/* line 273 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 277 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 274 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 278 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
   .explore_page .explore .rooms_grid .room_cell {
     border-bottom: none;
   }
 
-/* line 276 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 280 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
   .explore_page .explore .rooms_grid .room_cell .room_content {
     padding-left: 0;
   }
 
-/* line 278 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 282 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
   .explore_page .explore .rooms_grid .room_cell .room_content .text {
     padding-left: 0;
   }
 
-/* line 280 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 284 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
   .explore_page .main_title,
   .explore_page .arrows {
     display: none;
   }
 }
 
-/* line 283 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 287 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 @media (max-width: 320px) {
 
-/* line 284 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 288 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 285 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 289 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
   .explore_page .swiper-wrapper {
     max-width: 280px;
   }
 }
 
-/* line 288 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 292 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 @media (max-width: 768px) {
 
-/* line 289 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 293 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 290 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 294 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
   .explore_page .room_cell {
     max-width: 100%;
   }
 
-/* line 292 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 296 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
   .explore_page .pagination {
     display: none;
   }
 }
 
-/* line 297 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 301 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 @media (min-width: 768px) {
 
-/* line 298 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 302 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 299 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 303 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
   .explore_page .container {
     max-width: 1140px;
   }
 
-/* line 301 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 305 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
   .explore_page #content {
     height: calc(100vh - 55px);
   }
 
-/* line 303 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 307 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
   .explore_page .explore {
     padding-top: 0;
   }
 
-/* line 305 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 309 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
   .explore_page .main_title {
     margin: 42px auto -11px;
     max-width: 510px;
   }
 
-/* line 308 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 312 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
   .explore_page .explore_content {
     padding: 0 20px;
   }
 
-/* line 310 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 314 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
   .explore_page .arrows,
   .explore_page .pagination {
     display: inline-block;
@@ -6999,29 +7007,29 @@ body.loading .explore_content {
     margin-bottom: 20px;
   }
 
-/* line 314 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 318 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
   .explore_page .pagination {
     margin: 19px 19px 0 0;
   }
 
-/* line 316 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 320 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
   .explore_page .nextSlide {
     margin-left: 20px;
   }
 
-/* line 318 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 322 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
   .explore_page .swiper-container {
     clear: both;
   }
 
-/* line 320 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 324 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
 
-/* line 321 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 325 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
   .explore_page .rooms_grid .room_cell {
     margin-bottom: 10px;
   }
 
-/* line 323 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 327 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
   .explore_page .swiper-slide {
     display: -ms-flexbox;
     display: box;
@@ -7036,18 +7044,18 @@ body.loading .explore_content {
     flex-wrap: wrap;
   }
 
-/* line 328 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 332 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
   .explore_page .swiper-slide .room_cell {
     width: 18.4%;
     margin-left: 2%;
   }
 
-/* line 331 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 335 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
   .explore_page .swiper-slide .room_cell.first-inline {
     margin-left: 0%;
   }
 
-/* line 333 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 337 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
   .explore_page .swiper-slide .room_cell > .thumb_wrapper {
     width: 100%;
     height: auto;
@@ -7056,14 +7064,14 @@ body.loading .explore_content {
     position: relative;
   }
 
-/* line 339 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 343 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
   .explore_page .swiper-slide .room_cell > .thumb_wrapper:before {
     content: "";
     display: block;
     margin-top: 100%;
   }
 
-/* line 343 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 347 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
   .explore_page .swiper-slide .room_cell > .thumb_wrapper img {
     position: absolute;
     top: 0;
@@ -7072,7 +7080,7 @@ body.loading .explore_content {
     right: 0;
   }
 
-/* line 349 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
+/* line 353 : /Volumes/backpack/git/loopcast/beta/src/frontend/styles/pages/explore.styl */
   .explore_page .swiper-slide .room_cell > .thumb_wrapper img.for_mobile {
     display: none;
   }

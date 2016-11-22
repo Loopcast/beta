@@ -30,8 +30,6 @@ module.exports = (dom) ->
   dom.addClass 'player_preview'
 
 
-
-
   on_play = (_room_id) ->
     if _room_id is room_id
       is_playing = true
@@ -39,19 +37,20 @@ module.exports = (dom) ->
       dom.removeClass 'preloading'
       icon.addClass( 'fa-pause-circle' ).removeClass( 'fa-play-circle' )
     else
-      on_stop()
+      on_stop(_room_id)
 
-  on_stop = ->
+  on_stop = (_room_id)->
     is_playing = false
     dom.removeClass 'playing'
     dom.removeClass 'preloading'
-    icon.removeClass( 'fa-play-circle' ).addClass( 'fa-pause-circle' )
+    icon.removeClass( 'fa-pause-circle' ).addClass( 'fa-play-circle' )
 
   on_loading = (_room_id) ->
     if _room_id is room_id
       dom.addClass 'preloading'
+      dom.removeClass 'playing'
     else
-      dom.removeClass 'preloading'
+      on_stop(_room_id)
 
 
   toggle = (e) ->
@@ -67,11 +66,11 @@ module.exports = (dom) ->
 
   init = ->
     handler.on 'click', toggle
-    app.on  'audio:started', on_play
-    app.on  'audio:paused', on_stop
-    app.on  'audio:loading', on_loading
+    app.on 'audio:started', on_play
+    app.on 'audio:paused' , on_stop
+    app.on 'audio:loading', on_loading
 
-    if app.player.current_room_id is room_id and app.player.audio.is_playing
+    if app.player.current_room_id is room_id and app.player.is_playing
       on_play room_id
 
   delay 2, init

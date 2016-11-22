@@ -5,6 +5,7 @@
     img.room_thumb.for_mobile(src='#{transform.explore_thumb_mobile(room.info.cover_url)}')
     i.fa.fa-play-circle.circle_icon(aria-hidden="true")
     .loading_spin
+    //-i.fa.fa-refresh.fa-spin.fa-3x.fa-fw.margin-bottom(style="display:none")
   .share_wrapper(data-title='#{room.info.title}', data-summary='#{room.info.about}', data-permalink='/#{room.info.user}/#{room.info.slug}', data-image='#{room.info.cover_url}')
     a.thumb_wrapper(href='/#{room.info.user}/#{room.info.slug}', title='#{room.info.title}')
     a.yellow.ss-action(href='#', title='Share')

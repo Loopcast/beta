@@ -70,21 +70,17 @@ module.exports = class Player
     @share = view.get_by_dom @dom.find( '.share_wrapper' )
     @audio = view.get_by_dom @dom.find( 'audio' )
     @follow_popup = view.get_by_dom @dom.find '.follow_player_popup'
-    @audio.on 'started', @on_audio_started
-    @audio.on 'paused', @on_audio_stopped
-    @audio.on 'ended', @on_audio_ended
-    @audio.on 'progress', @on_progress
-    @audio.on 'snapped', @on_snapped
-    @audio.on 'loaded', @on_loaded
+    #@audio.on 'started', @on_audio_started
+    #@audio.on 'paused', @on_audio_stopped
+    #@audio.on 'ended', @on_audio_ended
+    #@audio.on 'progress', @on_progress
+    #@audio.on 'snapped', @on_snapped
+    #@audio.on 'loaded', @on_loaded
     view.off 'binded', @on_views_binded
 
     @dom.find( ".player_button.no_fullscreen" ).click @on_play_clicked
 
-    console.log " player ->", @dom.find( ".player_button.no_fullscreen" ).length
-
   on_like_clicked: =>
-    console.info "like clicked"
-
     if not user.is_logged()
       app.settings.after_login_url = location.pathname
       app.settings.action =
@@ -138,10 +134,6 @@ module.exports = class Player
 
   on_play_clicked: =>
 
-    console.info "play clicked"
-
-    console.log 'radiokit status ->'
-
     if @radiokit_player.isStarted()
       @radiokit_player.stop()
       @show_play_button()
@@ -183,7 +175,6 @@ module.exports = class Player
   ###
   play: (room_id, radiokit_channel_id) ->
     if @current_room_id is room_id
-      console.warn "stopping from play"
       @stop()
 
       return
@@ -247,11 +238,13 @@ module.exports = class Player
 
 
   show_play_button: =>
+    @is_playing = false
     @dom.find( ".fa-play-circle" ).show()
     @dom.find( ".fa-pause-circle" ).hide()
     @dom.find( ".fa-refresh" ).hide()
 
   show_pause_button: =>
+    @is_playing = true
     @dom.find( ".fa-play-circle" ).hide()
     @dom.find( ".fa-pause-circle" ).show()
     @dom.find( ".fa-refresh" ).hide()
@@ -264,7 +257,10 @@ module.exports = class Player
 
   onTrackPlaybackStarted: (track) =>
 
-    app.emit "audio:started", @room_id
+    console.log "onTrackPlayback"
+    console.log "audio:started ->", @current_room_id
+
+    app.emit "audio:started", @current_room_id
     @show_pause_button()
 
     @clearFileInfo()
@@ -342,10 +338,10 @@ module.exports = class Player
 
   stop: =>
 
-    app.emit "audio:paused", @room_id
+    app.emit "audio:paused", @current_room_id
 
     @show_play_button()
-    @current_room_id = null
+    #@current_room_id = null
 
     try
       @radiokit_player.offAll()
@@ -435,7 +431,7 @@ module.exports = class Player
 
     if @data?
       @last_audio_started = @data.data._id
-      app.emit 'audio:started', @data.data._id
+      app.emit 'audio:started', @room_id
 
   on_audio_stopped: =>
     # log "[Player] on_audio_stopped"
