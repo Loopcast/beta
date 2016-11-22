@@ -22,9 +22,11 @@ setup:
 	rm -rf node_modules/polvo/node_modules/polvo-stylus
 	cd node_modules/polvo/node_modules/ && git clone https://github.com/hems/polvo-stylus
 	cd node_modules/polvo/node_modules/polvo-stylus/ && npm install
-#	mkdir -p node_modules/polvo/node_modules/socket.io/node_modules
-#	cp -r node_modules/polvo/node_modules/socket.io-client node_modules/polvo/node_modules/socket.io/node_modules
+	mkdir -p node_modules/polvo/node_modules/socket.io/node_modules
+	cp -r node_modules/polvo/node_modules/socket.io-client node_modules/polvo/node_modules/socket.io/node_modules
 
+	#@mkdir -p node_modules/polvo/node_modules/socket.io/node_modules/
+	#@cp -R node_modules/socket.io-client node_modules/polvo/node_modules/socket.io/node_modules/socket.io-client
 debug:
 	coffee --nodejs --debug ./src/app.coffee
 
