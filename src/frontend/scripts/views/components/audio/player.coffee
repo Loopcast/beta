@@ -40,10 +40,10 @@ module.exports = class Player
     @progress_parent = @dom.find '.player_progress'
     @itunes_button   = @dom.find '.track_itunes'
 
-    @dragger = new ProgressDragger @progress_parent
-    @dragger.on 'drag', @on_progress_dragger
-    @dragger.on 'drag:started', @on_progress_started
-    @dragger.on 'drag:ended', @on_progress_ended
+    #@dragger = new ProgressDragger @progress_parent
+    #@dragger.on 'drag', @on_progress_dragger
+    #@dragger.on 'drag:started', @on_progress_started
+    #@dragger.on 'drag:ended', @on_progress_ended
     # @dragger.on 'click', @on_progress_click
     @progress_parent.find('.hitarea').on app.settings.events_map.up, @on_progress_click
     @dom.find( '.open_fullscreen' ).on 'click', @open_fullscreen
@@ -58,6 +58,8 @@ module.exports = class Player
       # don't do anything if on input
       return true if e.target.nodeName is "INPUT"
       return true if e.target.nodeName is "TEXTAREA"
+
+      @on_play_clicked()
 
   on_resize: =>
     @close_fullscreen()
@@ -76,7 +78,12 @@ module.exports = class Player
     @audio.on 'loaded', @on_loaded
     view.off 'binded', @on_views_binded
 
+    @dom.find( ".player_button.no_fullscreen" ).click @on_play_clicked
+
+    console.log " player ->", @dom.find( ".player_button.no_fullscreen" ).length
+
   on_like_clicked: =>
+    console.info "like clicked"
 
     if not user.is_logged()
       app.settings.after_login_url = location.pathname
@@ -130,7 +137,21 @@ module.exports = class Player
       @time_tot.html time.str
 
   on_play_clicked: =>
-    @audio.toggle()
+
+    console.info "play clicked"
+
+    console.log 'radiokit status ->'
+
+    if @radiokit_player.isStarted()
+      @radiokit_player.stop()
+      @show_play_button()
+      app.emit 'audio:paused', @room_id
+    else
+      app.emit 'audio:loading', @room_id
+      @radiokit_player.start()
+      @show_loading()
+
+    #@audio.toggle()
     return false
 
   get_audio_data : (data) ->
@@ -161,17 +182,23 @@ module.exports = class Player
   Otherwise, just call _play()
   ###
   play: (room_id, radiokit_channel_id) ->
+    if @current_room_id is room_id
+      console.warn "stopping from play"
+      @stop()
+
+      return
+
     @initialize_player(radiokit_channel_id)
 
-    if @current_room_id is room_id
-      @stop()
-    else
-      if not @data_rooms[ room_id ]?
-        # log "[Player.play()] no data for this audio. Fetching it..."
-        @fetch_room room_id, => @_play room_id
-      else
-        # log "[Player.play()] got data for this audio. Just play!"
+    @radiokit_player.start()
+
+    if not @data_rooms[ room_id ]?
+      # log "[Player.play()] no data for this audio. Fetching it..."
+      @fetch_room room_id, =>
         @_play room_id
+    else
+      # log "[Player.play()] got data for this audio. Just play!"
+      @_play room_id
 
 
   ###
@@ -197,17 +224,49 @@ module.exports = class Player
 
     @reset_progress()
 
-    @radiokit_player.start()
+    #@radiokit_player.start()
 
-  initialize_player: ( radiokit_channel_id ) ->
+  initialize_player: ( radiokit_channel_id ) =>
     if @radiokit_player
-      @stop()
+      try
+        @radiokit_player.offAll()
+        @radiokit_player.stop()
+      catch e
+        console.log "error stopping player on initialize_player"
+        console.log e
 
-    @radiokit_player = new radiokit.Channel.Player(radiokit_channel_id, '1:i23jsnduSD82jSjda7sndyasbj*ID2hdydhs')
+    @radiokit_player = new radiokit.Channel.Player(
+      radiokit_channel_id,
+      '1:i23jsnduSD82jSjda7sndyasbj*ID2hdydhs'
+    )
     @radiokit_player.on('track-playback-started', @onTrackPlaybackStarted)
     @radiokit_player.on('track-position', @onTrackPosition)
+    @radiokit_player.on 'error-network', ->
+      console.error 'radiokit network error'
+      console.log arguments
+
+
+  show_play_button: =>
+    @dom.find( ".fa-play-circle" ).show()
+    @dom.find( ".fa-pause-circle" ).hide()
+    @dom.find( ".fa-refresh" ).hide()
+
+  show_pause_button: =>
+    @dom.find( ".fa-play-circle" ).hide()
+    @dom.find( ".fa-pause-circle" ).show()
+    @dom.find( ".fa-refresh" ).hide()
+
+
+  show_loading: =>
+    @dom.find( ".fa-play-circle" ).hide()
+    @dom.find( ".fa-pause-circle" ).hide()
+    @dom.find( ".fa-refresh" ).show()
 
   onTrackPlaybackStarted: (track) =>
+
+    app.emit "audio:started", @room_id
+    @show_pause_button()
+
     @clearFileInfo()
 
     track.getInfoAsync()
@@ -259,10 +318,8 @@ module.exports = class Player
 
     app.emit 'audio:loading', room_id
 
-    kallback = callback
-
     if @data_rooms[ room_id ]?
-      kallback?()
+      callback?()
     else
 
       return if @requested_rooms[ room_id ]?
@@ -272,7 +329,7 @@ module.exports = class Player
       on_response = (error, response) =>
         if response
           @data_rooms[ room_id ] = normalize_info response
-          kallback?()
+          callback?()
         else
           @requested_rooms[ room_id ] = null
           @on_error()
@@ -283,10 +340,19 @@ module.exports = class Player
     notify.error 'There was an error.'
     app.emit 'audio:paused'
 
-  stop: ->
+  stop: =>
+
+    app.emit "audio:paused", @room_id
+
+    @show_play_button()
     @current_room_id = null
-    @radiokit_player.offAll()
-    @radiokit_player.stop()
+
+    try
+      @radiokit_player.offAll()
+      @radiokit_player.stop()
+    catch e
+      console.log "error stopping player on initialize_player"
+      console.log e
 
   on_room_offline: ->
     @stop()
@@ -440,7 +506,6 @@ module.exports = class Player
     w = $(e.currentTarget).width()
     perc = x / w
     # log "[Player] on_progress_click()", e, "offset", x, "w", w, "%", perc
-    @show_loading()
     @audio.snap_to perc
 
   close: ->
@@ -454,10 +519,10 @@ module.exports = class Player
     @show_loading()
     delay 1, => @dom.addClass 'visible'
 
-  show_loading: ->
-    if not @loading_visible
-      @dom.addClass 'loading'
-      @loading_visible = true
+  #show_loading: ->
+    #if not @loading_visible
+      #@dom.addClass 'loading'
+      #@loading_visible = true
 
   hide_loading: ->
     if @loading_visible

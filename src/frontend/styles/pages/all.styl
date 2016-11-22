@@ -1,13 +1,13 @@
 @import '../_shared/_bootstrap.styl'
 
 // align intercom icon
-#intercom-container .intercom-launcher-button 
+#intercom-container .intercom-launcher-button
   bottom -10px !important
-  
+
 @media (max-width: 700px)
-  #intercom-container .intercom-launcher-button 
+  #intercom-container .intercom-launcher-button
     display: none
-    
+
 // STYLEGUIDE
 .styleguide
   padding: 20px
@@ -17,18 +17,18 @@
       display: inline-block
       margin-right: 10px
       margin-bottom: 10px
-    
+
   .loading_wrapper
     background: white
     padding: 10px
     border: 1px solid #ccc
-    
+
   .tags_wrapper
   .loading_wrapper
     width: 50%
     margin: 10px
     vertical-align: top
-    
+
   .tags_wrapper
     background: BLACK
     color: GRAY
@@ -48,7 +48,7 @@
 // NOTIFY
 body
   min-height: 100vh
-  
+
   &.touch_device
     .create_room_item
       display: none
@@ -60,7 +60,7 @@ body
       left: 0
       width: 100%
       height: 100%
-      
+
     .loading_spin
       display: inline-block
       top: 50%
@@ -73,7 +73,7 @@ body
   .notifyjs-container > div
     background-image: none
     padding-left: 15px
-    background: white  
+    background: white
     color: GRAY_3
     border-color: SHARE_BOX
     -webkit-box-shadow: 2px 0 19px rgba(0,0,0,.1),0 0 1px rgba(0,0,0,.16)
@@ -84,16 +84,16 @@ body
     padding: 15px
     border-radius: 3px
     position: relative
-    
-    .icon  
+
+    .icon
       margin-right: 10px
       position: relative
       top: 2px
-      
+
     a
       color: BLUE
       text-decoration: underline
-    
+
     .close-notify
       position: absolute
       top: -4px
@@ -107,35 +107,35 @@ body
       font-weight: bold
       padding-top: 2px
       cursor: pointer
-      
-  .notifyjs-corner 
+
+  .notifyjs-corner
     margin-right: 20px
     margin-top: 50px
     .notifyjs-wrapper, .notifyjs-container
       margin-bottom: 12px
-      
+
   &.is_guest .notifyjs-container .icon.ss-alert
     display: inline-block!important
-      
+
 body .notifyjs-container
-  
+
   // How to theme notifications
-    
+
   .notifyjs-loopcast_info-base
-     background: BLUE 
-     color: white 
+     background: BLUE
+     color: white
      opacity: 0.9
-      
+
 
   .notifyjs-loopcast_error-base
-    background: RED   
+    background: RED
     color: white
     opacity: 0.9
-    
+
   .notifyjs-loopcast_success-base
-    background: GREEN 
+    background: GREEN
     border: 1px solid green
-    color: white 
+    color: white
     opacity: 0.9
 
 
@@ -145,23 +145,23 @@ body .notifyjs-container
   text-align: left
   padding: 0 20px
   margin-bottom: 20px
-  
+
   &.privacy_page, &.terms_page
     .about_content
       text-align: left
-    
+
       div
         margin-bottom: 20px
         h3
           margin-bottom: 5px
-  
+
   .about_title
     font-size: 1.8em
     font-weight: 800
-    
+
   h1
     border-bottom: 1px solid GRAY
-    
+
     padding: 11px 30px
     position: relative
     &:after
@@ -194,22 +194,22 @@ body .notifyjs-container
       max-width: 200px
       margin: 0 auto
       display: block
-      
+
     h4
       color: #5ca7b3
       font-size: 1.4em
       font-weight: 600
       margin-bottom: 30px
-      
+
     p
       line-height: 21px
-      
+
   .button
     margin: 20px 0
     display: inline-block
     padding-left: 60px
     padding-right: 60px
-    
+
 // PLAYER
 PLAYER_HEIGHT = 55px
 #player
@@ -224,17 +224,22 @@ PLAYER_HEIGHT = 55px
   //box-shadow: -1px 1px 4px 2px rgba(0,0,0,0.75)
   color: white
   border-top: solid 1px GRAY_3
-  
+
   transform: translateY(100%)
   transition: transform .15s ease-out
   &.visible
     transform: translateY(0)
-    
+
   .player_text
     margin-right: 10px
-  
+
   .loading_spin
     display: none
+
+  .fa-refresh
+    font-size: 30px
+    margin-bottom: 8px
+
   &.loading
     .player_button
       .icon
@@ -246,10 +251,10 @@ PLAYER_HEIGHT = 55px
 
   // .loading_screen
   //   background: rgba(0,0,0,0.6)
-    
+
   //   z-index: 2
   //   display: none
-    
+
   // .loading_spin
   //   display: none
 
@@ -262,8 +267,8 @@ PLAYER_HEIGHT = 55px
     width: 20px
     height: 20px
     border-radius: 50%
-    padding-left: 1px 
-    
+    padding-left: 1px
+
 
   .follow_player_popup
     position: absolute
@@ -282,11 +287,11 @@ PLAYER_HEIGHT = 55px
     transition: opacity .2s linear, transform .2s ease-out
     &.show_1
       display: block
-      
+
     &.show_2
       opacity: 1
       transform: translate3d(0,0,0)
-    
+
     &:after
       SIZE = 10px
       content: ""
@@ -294,7 +299,7 @@ PLAYER_HEIGHT = 55px
       left: 50%
       transform: translateX(-50%)
       top: 100%
-      
+
       width: 0
       height: 0
       border-right: SIZE solid transparent
@@ -304,7 +309,7 @@ PLAYER_HEIGHT = 55px
       overflow: hidden
       border-bottom: 1px solid OUTLINE_COLOR
       padding-bottom: 10px
-    
+
     .text
       padding-top: 10px
     .bottom
@@ -321,7 +326,7 @@ PLAYER_HEIGHT = 55px
       float: left
       img
         display: block
-        
+
     .blue
       color: #4592d4
       font-weight: 400
@@ -344,7 +349,7 @@ PLAYER_HEIGHT = 55px
     top: -1px
     .icon
       display: block
-    
+
 
   .player_icon
     width: PLAYER_HEIGHT
@@ -353,19 +358,19 @@ PLAYER_HEIGHT = 55px
     img
       display: block
       width: 100%
-  
-  .player_title 
+
+  .player_title
   .player_author
     font-weight: 600
     display: block
-    
+
   .player_title
     font-size: 1em
     margin-bottom: 2px
-    
+
   .player_author
     font-size: .7em
-    
+
   .player_progress
     background: #3e3e40
     height: 4px
@@ -397,29 +402,29 @@ PLAYER_HEIGHT = 55px
 
       &.no_transition
         transition: none
-      
+
   &.loading
     .player_progress
       span
         background: darken(YELLOW, 30)
-  
+
   .player_track_name
     flex 2
     font-size 0.8rem
     min-width 120px
     margin-bottom 4px
-  
+
   .player_buttons
     margin-left: 0px
     font-size: 1.3em
     flex: 2
-    
+
     & > *
       display: inline-block
-      
+
     .ss-heart
       margin-right: 7px
-  
+
   .player_time
   .player_total_time
     font-size: 0.8em
@@ -428,11 +433,11 @@ PLAYER_HEIGHT = 55px
     margin-top: 3px
     padding-left: 2px
     text-align: right
-    
+
   .player_total_time
     margin-right: 12px
     padding-left: 0px
-    
+
   .player_label
     background: RED
     color: white
@@ -440,7 +445,7 @@ PLAYER_HEIGHT = 55px
     font-size: 0.7em
     text-align: center
     font-weight: 600
-    border-radius: 2px 
+    border-radius: 2px
     padding: 1px 3px
     display: none
     position: relative
@@ -448,22 +453,22 @@ PLAYER_HEIGHT = 55px
   &.is_live
     .player_label
       display: block
-    
+
   .player_right
     margin-right: 10px
-    
+
 .ss-heart.liked
   color: RED
 
 .no_touch_device
-  
-  #player 
+
+  #player
     .close_follow_player:hover
       color: white
     .player_progress span:hover
       &:after
         background: YELLOW
-  .player_buttons 
+  .player_buttons
     .ss-heart:hover
       color: #aaa
     .ss-heart.liked:hover
@@ -471,7 +476,7 @@ PLAYER_HEIGHT = 55px
 
     .share_wrapper:hover
       color: YELLOW
-      
+
 #player
   .player_buttons
     .itunes
@@ -491,7 +496,7 @@ PLAYER_HEIGHT = 55px
         background url('../images/get_on_iTunes.png')
         background-size contain
         text-indent -9999px
-      
+
 @media (min-width 1000px)
   #player
     .centered
@@ -501,19 +506,19 @@ PLAYER_HEIGHT = 55px
   #player
     .player_buttons
       flex 7
-      
+
 @media (min-width 900px)
   #player
     .player_progress
       flex 4
     .player_buttons
       flex 3
-      
+
 @media (min-width 1080px)
   #player
     .player_buttons
       flex 2
-      
+
 // GUI
 #gui
   position: fixed
@@ -521,8 +526,8 @@ PLAYER_HEIGHT = 55px
   bottom: 0
   left: 0
   background: white
-  
-  
+
+
   color: black
   text-align: left
   &.clickable
@@ -530,50 +535,50 @@ PLAYER_HEIGHT = 55px
     &.closed:hover
       background: black
       color: white
-  
-  pre 
-    outline: 1px solid #ccc 
-    padding: 5px 
+
+  pre
+    outline: 1px solid #ccc
+    padding: 5px
     margin: 5px
-  .string 
+  .string
     color: green
-  .number 
+  .number
     color: darkorange
-  .boolean 
+  .boolean
     color: blue
-  .null 
+  .null
     color: magenta
-  .key 
+  .key
     color: red
 
   .icon
     display: none
     padding-top: 4px
     font-weight: bold
-  
+
   &.closed
     text-align: center
     width: 30px
     height: 30px
-    overflow: hidden  
+    overflow: hidden
     .icon
       display: block
     .content
       display: none
-      
+
 // OWNERSHIP
 .for_owner
   display: none
 
 .for_guest
   display: block
-  
+
 .is_owner
   .for_owner
     display: block
   .for_guest
     display: none
-    
+
 .status_debug
   position: fixed
   bottom: 0
@@ -581,25 +586,25 @@ PLAYER_HEIGHT = 55px
   & > *
     float: left
     text-align: right
-    
+
   .square
     background: white
-    
+
     padding: 4px
     font-weight: bold
-      
-  
+
+
 // VERTICAL CENTERING
 .v_center
   display: flex
   align-items: center
   justify-content: center
   text-align: left
-  
+
 .no_touch_device
   .close-notify
     display: none
-    
+
   .notifyjs-wrapper:hover
     .close-notify
       display: block
@@ -610,41 +615,41 @@ PLAYER_HEIGHT = 55px
 @media (max-width: 768px)
   #player .player_track_name
     display none
-  #player 
-    .fullscreen_elements 
+  #player
+    .fullscreen_elements
       .player_track_name
         display block
         font-size 1rem
       .player_author
         display none
-    
 
-    
+
+
 @media (max-width: 950px)
   .about_page
     .about_column
       width: 100%
       float: none
-      
+
 .oldie
   background: white
   body
     background: white
     color: #A6A6A6
-    
+
   h1
     line-height: 42px
     margin-bottom: 20px
     font-size: 43px
-    
+
   p
     font-size: 20px
-    
+
   #content
     max-width: 600px
     margin: 0 auto
     text-align: left
-    
+
   .links
     text-align: center
     margin-top: 70px
@@ -652,20 +657,20 @@ PLAYER_HEIGHT = 55px
       display: inline-block
       margin: 0 10px
       cursor: pointer
-      
+
 .notfound
   margin-top: 150px
   color: white
   font-size: 60px
-  
+
 .notfoundp
   margin-top: 20px
   color: white
 
-  
+
 .notfoundmain
   color: white
-  
+
 .notfoundbutton
   background-color: BRANDING
   margin-top: 40px
@@ -678,34 +683,34 @@ PLAYER_HEIGHT = 55px
   text-transform: uppercase
   font-weight: bold
 
-  
+
 .notfoundbutton:hover
   background-color: rgb(12, 169, 76)
 
 .notfoundimage
 
 
-.imagecontainer_notfound  
-  background-color: BACKGROUND 
+.imagecontainer_notfound
+  background-color: BACKGROUND
   position: absolute
   height: 95vh;
   width:100%;
-  
+
 .browser
   margin-top: 100px
-  
+
 
 .browser_p
-  margin-top: 20px 
+  margin-top: 20px
   margin-bottom: 40px
-  
+
 .advert_s1
   width: 100%
   background: red
   height: 400px
   background: BACKGROUND
 
-  
+
 .safari_notsupported
   margin-top: 60px
 
@@ -719,8 +724,8 @@ PLAYER_HEIGHT = 55px
 
 .advert_s2
   height: 400px
-  background: BRANDING 
-  
+  background: BRANDING
+
 .adtext_1
   color: white
   margin-top: 170px
@@ -728,8 +733,8 @@ PLAYER_HEIGHT = 55px
   position: absolute
   left: 50%
   transform: translate(-50%,-50%)
- 
 
 
 
-      
+
+

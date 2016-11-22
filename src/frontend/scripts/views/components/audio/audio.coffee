@@ -5,7 +5,7 @@ notify          = require 'app/controllers/notify'
 
 module.exports = class AudioElement
   timer_interval: null
-  loading_interval: null 
+  loading_interval: null
   info_loading_showed: false
   is_playing: false
   duration: 0
@@ -29,7 +29,9 @@ module.exports = class AudioElement
     @dom[0].addEventListener 'ended', @on_ended
 
   set_data: ( data ) ->
-    # return if @data.id is data.id
+    # return if @data.id is data.i
+    #
+    # @on_play_clicked()d
 
     @data = data
 
@@ -45,10 +47,10 @@ module.exports = class AudioElement
 
   set_src: ( src ) ->
     # log "[AudioElement] set_src", src
-    @info_loading_showed = false if src isnt @src 
-      
+    @info_loading_showed = false if src isnt @src
+
     @src = src
-    
+
     @dom.attr 'src', ''
     delay 1, => @dom.attr 'src', @src
 
@@ -109,11 +111,11 @@ module.exports = class AudioElement
     if not @info_loading_showed
       # notify.info 'Loading the set is taking a while. Please wait or try again'
       @info_loading_showed = true
-    
+
     # force reset as previous code doesn't seem to work
     $( 'audio' ).attr( "src", "" )
 
-    delay 150, => 
+    delay 150, =>
       @set_src @src
       @play()
 
@@ -140,7 +142,7 @@ module.exports = class AudioElement
   snap_to: (perc) ->
     return if not @data.is_recorded
 
-    
+
     # log "[Audio] snap_to", perc, @duration * perc
 
     @snapping = true
@@ -162,7 +164,7 @@ module.exports = class AudioElement
     if @data.is_recorded
       time = time_to_string @dom[0].currentTime
 
-      data = 
+      data =
         time: time
         perc: Math.min( 100, @dom[0].currentTime / @duration * 100 )
 
@@ -170,7 +172,7 @@ module.exports = class AudioElement
       seconds = now_to_seconds @data.start_time
       time = time_to_string seconds
 
-      data = 
+      data =
         time: time
 
     # Trying to fix a Safari Bug
@@ -182,4 +184,4 @@ module.exports = class AudioElement
     @last_time = time
 
     @emit 'progress', data
-    
+

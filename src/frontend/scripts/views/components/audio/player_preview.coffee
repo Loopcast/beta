@@ -55,6 +55,8 @@ module.exports = (dom) ->
 
 
   toggle = (e) ->
+    console.warn "toggling!!"
+
     e.stopPropagation()
     e.preventDefault()
 

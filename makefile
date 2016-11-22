@@ -18,6 +18,7 @@ start:
 
 # install modules and forks needed to compile frontend code
 setup:
+	rm -rf node_modules
 	npm install
 	rm -rf node_modules/polvo/node_modules/polvo-stylus
 	cd node_modules/polvo/node_modules/ && git clone https://github.com/hems/polvo-stylus
