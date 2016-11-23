@@ -32,6 +32,9 @@ module.exports = (dom) ->
 
   on_play = (_room_id) ->
     if _room_id is room_id
+
+      console.log "playing ->", room_id
+
       is_playing = true
       dom.addClass 'playing'
       dom.removeClass 'preloading'
@@ -40,6 +43,11 @@ module.exports = (dom) ->
       on_stop(_room_id)
 
   on_stop = (_room_id)->
+
+    return if not is_playing
+
+    console.log 'stopping :', _room_id
+
     is_playing = false
     dom.removeClass 'playing'
     dom.removeClass 'preloading'
@@ -54,7 +62,7 @@ module.exports = (dom) ->
 
 
   toggle = (e) ->
-    console.warn "toggling!!"
+    console.warn "toggling!! preview: ", room_id
 
     e.stopPropagation()
     e.preventDefault()
