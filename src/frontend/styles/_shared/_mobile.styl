@@ -16,7 +16,7 @@ mobile_list_item()
 
 .fullscreen_elements
   display: none
-  
+
 
 
 
@@ -24,28 +24,28 @@ mobile_list_item()
   margin-top: 10px
   &.room
     margin-top: 30px
-  
+
 .open_fullscreen
   position: absolute
   top: 17px
   right: 18px
-    
+
 body a.close_fullscreen
   display: none
-  
+
 body
   min-width: 320px
-  
+
 .for_mobile
   display: none
-  
+
 .homepage_mobile_screen
   padding: 60px 40px 80px
   width: 100%
   position: relative
   background-size: cover
   background-position: center center
-  
+
 .room_play_handler
   position: absolute
   width: 60px
@@ -54,7 +54,7 @@ body
   left: 50%
   transform translateX(-50%) translateY(-50%)
   z-index: 2
-  &.player_preview 
+  &.player_preview
     .circle_icon
       opacity: 1
 
@@ -71,7 +71,7 @@ body
   align-items: center
   justify-content: center
   transition: transform .1s ease-out
-  
+
   &.hide
     transform: translate3d(0, -55px, 0)
   a
@@ -87,31 +87,31 @@ body
       top: -1px
     // &.selected, &.mobile_opened
     //   color: YELLOW
-      
+
   .ss-users
     position: relative
     margin-left: -5px
     margin-right: 5px
-    
+
   .ss-search
     position: relative
     margin-left: 10px
     margin-right: -10px
-      
+
 .dynamic_wrapper
   position: relative
-  
+
 .mobile_dropdown
   transform: translate3d(0,-100%,0)
   transition: transform .3s ease-out
 
-.mobile_dropdown_opened    
+.mobile_dropdown_opened
   .background_mobile_dropdown
     z-index: 2
-    
+
 .mobile_dropdown_opened_2
   .background_mobile_dropdown
-    opacity: 0  
+    opacity: 0
 
 
 .background_mobile_dropdown
@@ -125,19 +125,19 @@ body
 
 .profile_theme .big_number span.icon
   display: none
-  
+
 
 @media (max-width: 700px)
   BLACK_TAPE_MOBILE = #292826
   TAPE_PADDING = 20px
-  
-    
+
+
   body .tape_view .tape_title
     font-size: 1.8rem
   body .profile_theme.show_play_button .tape_play
   .tape_view .main_column .first_line .buttons .custom-fb-send
     display: none
-    
+
   body .tape_view .tape_header .first_line
     padding-left: 0
 
@@ -164,12 +164,12 @@ body
           margin-top: 10px
 
       .first_line, .tape_description
-        background: white 
+        background: white
         color: #424242
-        
+
       .tape_description
         padding-bottom: 10px
-      
+
     #content
     .inner_content
     .dynamic_wrapper
@@ -185,13 +185,13 @@ body
         overflow: visible
         & > *
           float: none
-          
-      
+
+
     .padded
       padding-left: TAPE_PADDING
       padding-right: TAPE_PADDING
     .tape_view
-      background: grey 
+      background: grey
       color: #424242
     .tape_view .chat_line.padded
       padding-left: 80px
@@ -205,12 +205,12 @@ body
     .chat_name
       color: #424242
     .chat_list_messages
-      background: white 
-      
+      background: white
+
     .side_column
       display: none
-          
-      
+
+
     .first_line
       .tape_play
         position: absolute
@@ -223,13 +223,13 @@ body
         padding-left: 25px
         &.ss-pause
           padding-left: 23px
-        
+
     div.tape_info
       .follow_button
         display: inline-block
         margin-top: 6px
-        
-    .tape_view 
+
+    .tape_view
       .main_column
         flex: auto
         display: block
@@ -237,45 +237,45 @@ body
 
   .fb_edge_comment_widget
     margin-left: 0 !important
-  
+
   body #player .follow_player_popup
     width: 90%
     left: 5%
   .player_buttons
     display: none
 
-  body .no_sessions 
+  body .no_sessions
     .no_activity_wrapper
     .recorded_sessions
       display: none
-    
+
   body.player_visible #content
     padding-bottom: 55px
-    
+
   .profile_theme .big_number span.icon
     display: block
-    
+
   body .profile_theme .profile_content .session .live .label
     padding-left: 4px
     padding-right: 18px
   body
     padding-top: 0!important
-    
+
     .profile_theme .cover .content
       padding-right: 68px
-    
+
     &.is_owner .room_ready .dashboard_bar .inner
       display: none
     &.is_owner .room_ready .dashboard_bar
       height: 8px
-      
+
     &
       .background_mobile_dropdown
         opacity: 0
     .mobile_dropdown.mobile_opened
       transform: translate3d(0,0,0)
       top: 55px
-      
+
 
 
     .tag
@@ -293,7 +293,7 @@ body
         top: 0
         left: 0
         width: 100%
-        
+
         transform: translate3d(-100%, 0, 0)
       &.moved
         transform: translate3d(0, 0, 0)
@@ -306,20 +306,20 @@ body
 
     .for_mobile
       display: block
-      
+
     .for_desktop
       display: none
-      
 
-      
+
+
     .parallax-mirror
       display: none
-      
+
     .mobile_header
       display: flex
 
-   
-      
+
+
     .black_box
       position: relative
       margin: 0px auto
@@ -333,35 +333,35 @@ body
       p
         font-size: 1rem
         line-height: 25px
-        
+
       .button
         width: 100%!important
-        
-        
-      
+
+
+
     .buttons .right
       float: none
-      
+
     .secondary_screen .black_box
       right: auto
       top: auto
       h1
         line-height: 23px
-        
+
       p
         padding: 0
         font-weight: inherit
         line-height: inherit
-        
+
     .explore
       padding-top: 0
-      
+
       .explore_content
         display: block
         padding: 56px 0 0
-      
-      
-    .explore 
+
+
+    .explore
       .genres_list
         opacity: 0
         display: block
@@ -378,19 +378,19 @@ body
           transition: transform .3s ease-out, opacity .1s linear
         a
           mobile_list_item()
-      
+
       .rooms_grid
         display: block
         padding: 10px
-        
+
         &.loading_visible_1
           .loading
             z-index: 1
-            
+
         &.loading_visible_2
           .loading
             // opacity: 1
-        
+
         .room_cell
           width: 100%
           max-width: 480px
@@ -399,11 +399,11 @@ body
           top: 0!important
           left: 0!important
           border-bottom: 1px solid #ddd7d7
-          
+
           & > .thumb_wrapper
             width: 100%
             height: auto
-      
+
     .filter_list
       background: #eaeaea
       border-bottom: 1px solid #D4D4D4
@@ -439,10 +439,10 @@ body
       .player_icon
         height: 55px
         width: 55px
-      
+
       &.fullscreen
         height: 100%
-        
+
       .player_title
         font-size: 0.8em
       .itunes
@@ -450,10 +450,10 @@ body
         width 65px
         height 24px
         margin 0 auto 14px
-        background url('../images/get_on_iTunes.png')
+        background url('/images/get_on_iTunes.png')
         background-size contain
         text-indent -9999px
-        
+
       .player_button
         font-size: 2.4rem
         padding: 0 11px
@@ -472,30 +472,30 @@ body
         .loading_spin
           position: relative
           left: -5px
-          
+
       .player_text
         margin-left: 10px
         margin-right: 10px
-        
+
       .player_progress
         display: none
       .player_buttons
         margin-left: 5px
       .player_buttons > *
-        margin: 0 4px  
+        margin: 0 4px
         position: relative
         top: 2px
-      .player_buttons  
+      .player_buttons
       .player_right
         flex: 1
         text-align: center
-        
+
       .player_right
         margin: 0
       .player_time
         text-align: center
         // padding-right: 10px
-        
+
     .mobile_dropdown
       position: fixed
       top: 0px
@@ -511,14 +511,14 @@ body
       border-radius: 0px
       border-left: 0
       border-right: 0
-    .profile_theme 
-      
+    .profile_theme
+
       MARGIN_LEFT = 10px
 
       .cover_buttons
         bottom: 10px
         right: 67px
-      .cover 
+      .cover
         height: 230px
         .name, .type, .genres, .socials_room
           margin-left: 10px !important
@@ -536,27 +536,27 @@ body
         .genres
           font-size: 0.8rem
           line-height: 1rem
-        
-          
+
+
         .profile_image
           width: 87px
           left: MARGIN_LEFT
       .big_number
         padding: 0 20px
-        background: rgba(41, 44, 47, 0.8)    
+        background: rgba(41, 44, 47, 0.8)
         border-bottom: none
         border-top: none
       .big_number span.text
         display: none
       .big_number span.number
         font-size: 1rem
-      
-        
+
+
       .profile_content
         display: block
         padding: 10px 0
 
-        .profile_bio 
+        .profile_bio
           padding-left: MARGIN_LEFT
           padding-right: MARGIN_LEFT
           border-bottom: 1px solid #ddd7d7
@@ -575,7 +575,7 @@ body
             margin-right: 10px
         .spritesheet
           transform: scale(0.5,0.5)
-          
+
         .session
           border: none
           border-bottom: 1px solid #dadada
@@ -583,7 +583,7 @@ body
           height: auto
           margin-bottom: 0
           overflow: hidden
-          
+
           .image
             width: 84px
             height: 74px
@@ -592,7 +592,7 @@ body
             .icon
               opacity: 1
               transform translateX(-50%) translateY(-50%) scale(0.6,0.6)
-              
+
             .share_wrapper
               display: none
 
@@ -602,7 +602,7 @@ body
             padding-right: MARGIN_LEFT
             padding-bottom: MARGIN_LEFT
             padding-left: 0
-            
+
           h2
             font-size: 0.9rem
             margin-bottom: 0
@@ -611,7 +611,7 @@ body
             margin-bottom: 2px
           .edit_session_wrapper
             display: none!important
-            
+
           .genres
             margin-bottom: 0
             a
@@ -619,27 +619,27 @@ body
               &:nth-child(1)
               &:nth-child(2)
                 display: inline-block
-            
+
           .small_info
             position: relative
             top: -3px
             line-height: 16px
-            
+
           .public_screen
             display: none!important
-        
+
       .big_number span.icon
         padding-top: 14px
-      
+
       .location
         color: GRAY_3
-        
-      .recorded_sessions .title 
+
+      .recorded_sessions .title
         margin-top: 10px
         background: white
         border-top: 1px solid #dadada
         border-bottom: 1px solid #dadada
-        
+
         margin-bottom: 0
         padding: MARGIN_LEFT
         *
@@ -648,11 +648,11 @@ body
           display: block
           color: GRAY_3
           font-size: 1rem
-          
-    
+
+
     .chat_sidebar
       display: none!important
-    
+
     .profile_content.chat
       position: relative
       flex-direction: column
@@ -664,24 +664,24 @@ body
         left: 0
         width: 100%
         height: 100%
-        
+
         .chat_content
           padding: 10px
           overflow-scrolling: touch
-          
+
       .img_wrapper_2
         left: 10px
         width: 36px
         img
           width: 100%
-      
+
       .chat_footer
         padding-left: 40px
-        
+
         .icon
           right: 17px
           top: 22px
-    .player_preview 
+    .player_preview
       .circle_icon
         opacity: 1
       .share_wrapper
@@ -689,7 +689,7 @@ body
   .socials_room
     position: relative
     left: 0px
-    
+
   .mobile_search_wrapper
     padding: 10px 80px
     border-bottom: 1px solid #CACACA
@@ -701,7 +701,7 @@ body
       padding-left: 20px
       padding-right: 20px
       text-decoration: none
-    
+
   .open_fullscreen
     top: 0
     right: 0
@@ -713,7 +713,7 @@ body
   body #player.fullscreen
     height: 100%
     z-index: 4
-    
+
     .fullscreen_elements
       display: block
       width: 100%
@@ -724,7 +724,7 @@ body
       // .player_total_time
       // .player_progress
       //   display: inline-block
-        
+
     a.close_fullscreen
       display: block
       margin-bottom: 10px
@@ -741,28 +741,28 @@ body
       right: 15px
       top: 10px
       padding-top: 14px
-      
+
       .icon
         font-size 22px
-        
+
     .progress_wrapper
       display: flex
       .player_progress
         flex: 1
         display: block
         margin: 11px 11px 0
-        
+
       .player_total_time
         font-size: 0.9em
         font-weight: 600
         margin-right: 0
         text-align: right
-        
-      
+
+
     .player_text
       text-align: center
       margin-bottom: 10px
-      
+
     .player_buttons
       display: block
       position: absolute
@@ -772,7 +772,7 @@ body
       margin: 0
       flex: initial
       left: 0
-      
+
       MARGIN = 90px
       .share_wrapper
         position: absolute
@@ -786,34 +786,34 @@ body
         top: 0
         margin: 0
         margin-right: -(MARGIN)
-        
+
       .ss-heart
       .share_wrapper
         font-size: 1.5rem
-        
+
     .player_title
       margin 12px auto 14px
       font-size: 1.3rem
       font-family 'Montserrat', sans-serif
       font-weight: regular
-      
+
     .player_author
       font-size: .9rem
-      
+
     .no_fullscreen
       display: none!important
-      
+
     .centered
       min-height: 100vh
       flex-direction: column
       padding: 20px
-      
+
     .player_icon
       width: 100%
       height: auto
       flex: 1
       margin-bottom: 3px
-      
+
     .player_button
       display: inline-block
       flex: initial
@@ -823,7 +823,7 @@ body
       margin-bottom: 10px
       font-size: 1.7rem
       height: 56px
-      
+
       .icon
         border: 1px solid white
         border-radius: 50%
@@ -833,21 +833,21 @@ body
         padding-top: 10px
         padding-left: 8px
         position: relative
-        
+
         &.ss-pause
           // padding-top: 9px
           padding-left: 1px
-          
+
     .loading_spin
       top: 24px
       position: absolute
       left: 0
-      
+
 
   #player.loading .player_button .icon
     display: block
-    opacity: 0       
-  body 
+    opacity: 0
+  body
     .profile_content.chat .chat_main .chat_content
       height: 100%
     .profile_content.chat
@@ -858,10 +858,10 @@ body
       min-height: 100vh
       flex-direction: column
       padding-top: 55px
-      
+
     &.room_page .dynamic_wrapper
       padding-top: 0
-      
+
 
 // small phones player layout
 @media (max-height: 480px)
@@ -873,8 +873,8 @@ body
     .player_button
       margin-top 4px
     .player_buttons
-      bottom 95px 
-      
+      bottom 95px
+
 
 @media (max-width: 480px)
     .channel_player
@@ -886,13 +886,13 @@ body
       margin-top: 67px
     img.itunesicon_desktop
       display: none
-      
+
 
 @media (max-width: 320px)
     .fullscreen_elements
       margin-top: 47px
-     
-      
+
+
 
 
 
