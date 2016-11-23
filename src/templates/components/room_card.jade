@@ -6,14 +6,20 @@
     i.fa.fa-play-circle.circle_icon(aria-hidden="true")
     .loading_spin
     //-i.fa.fa-refresh.fa-spin.fa-3x.fa-fw.margin-bottom(style="display:none")
-  .share_wrapper(data-title='#{room.info.title}', data-summary='#{room.info.about}', data-permalink='/#{room.info.user}/#{room.info.slug}', data-image='#{room.info.cover_url}')
+  .share_wrapper(
+    data-title='#{room.info.title}', 
+    data-view="buttons/share" 
+    data-summary='#{room.info.about}', 
+    data-permalink='/#{room.info.user}/#{room.info.slug}', 
+    data-image='#{room.info.cover_url}'
+    )
     a.thumb_wrapper(href='/#{room.info.user}/#{room.info.slug}', title='#{room.info.title}')
     a.yellow.ss-action(href='#', title='Share')
     .share_box
       h4 Share
       .share_row
         input.link_input(type='text', value='')
-        a.button.yellow_button.small_button_2(href='#', title='Copy') Copy
+        a(href='#', title='Copy') Copy
       .socials
         a.spritesheet.share_popup_facebook(href='#', title='Share on Facebook', onclick="_gaq.push(['_trackEvent', 'Referral', 'Click', '']);")  
         a.spritesheet.share_popup_twitter(href='#', title='Share on Twitter', onclick="_gaq.push(['_trackEvent', 'Referral', 'Click', '']);")  
