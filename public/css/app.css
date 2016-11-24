@@ -6581,11 +6581,6 @@ body.loading .explore_content {
 /* line 51 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/src/frontend/styles/pages/explore.styl */
 
 /* line 53 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/src/frontend/styles/pages/explore.styl */
-.player_preview.preloading .fa-play-circle {
-  opacity: 0 !important;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)" !important;
-  filter: alpha(opacity=0) !important;
-}
 
 /* line 56 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/src/frontend/styles/pages/explore.styl */
 .player_preview.preloading .loading_spin {
