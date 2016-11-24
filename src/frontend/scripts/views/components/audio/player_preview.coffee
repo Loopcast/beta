@@ -44,9 +44,7 @@ module.exports = (dom) ->
 
   on_stop = (_room_id)->
 
-    return if not is_playing
-
-    console.log 'stopping :', _room_id
+    #return if not is_playing
 
     is_playing = false
     dom.removeClass 'playing'
@@ -54,6 +52,8 @@ module.exports = (dom) ->
     icon.removeClass( 'fa-pause-circle' ).addClass( 'fa-play-circle' )
 
   on_loading = (_room_id) ->
+    console.warn "LOADING"
+
     if _room_id is room_id
       dom.addClass 'preloading'
       dom.removeClass 'playing'
@@ -75,10 +75,12 @@ module.exports = (dom) ->
   init = ->
     handler.on 'click', toggle
     app.on 'audio:started', on_play
-    app.on 'audio:paused' , on_stop
     app.on 'audio:loading', on_loading
+    app.on 'audio:paused' , on_stop
 
     if app.player.current_room_id is room_id and app.player.is_playing
       on_play room_id
+    else
+      on_stop room_id
 
   delay 2, init

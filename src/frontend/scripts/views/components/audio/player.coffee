@@ -312,7 +312,8 @@ module.exports = class Player
 
   fetch_room: ( room_id, callback ) ->
 
-    app.emit 'audio:loading', room_id
+    if not $( ".in_a_room" ).length
+      app.emit 'audio:loading', room_id
 
     if @data_rooms[ room_id ]?
       callback?()

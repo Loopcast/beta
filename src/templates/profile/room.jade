@@ -8,7 +8,7 @@ block seo
 
     if room.stream
       - room.status.is_live = true
-    
+
     if room.status.is_live
       title #{room.info.title} Channel | Streaming 24/7 On Loopcast
     else
@@ -44,12 +44,12 @@ block seo
     - og_image = transform.og_image( og_image )
 
     if og_image
-      
+
       meta( property="og:image"  content="#{og_image}" )
       meta( name="twitter:image" content="#{og_image}")
-     
+
     meta( property="og:site_name"   content="Loopcast.fm" )
-    
+
     //- meta( property="music:creator"  content="#{s.base_path}/#{room.user.info.username}/" )
 
     //- only if the stream is live we have audio tags
@@ -66,7 +66,7 @@ block seo
 
   else
     title Open Your Room and Start Streaming on Loopcast
-    meta( name="description" content="Stream, record and save your DJ mixes instantly. Go live, interact with your audience and see who’s listening in real time." ) 
+    meta( name="description" content="Stream, record and save your DJ mixes instantly. Go live, interact with your audience and see who’s listening in real time." )
 
 
 block content
@@ -102,20 +102,20 @@ block content
 
     - public_class = ""
     if room && room.status.is_public
-      - public_class = "room_public"  
+      - public_class = "room_public"
     .createroom.profile_theme(data-menu="#{data_menu}", data-view="room", class="#{live_class} #{recording_class} #{public_class}")
       .cover
         - cover_url = false
         if room
           - cover_url = room.info.cover_url
-        
+
         .cover_image.for_desktop(style="background-image:url(#{transform.cover(cover_url)})")
         .cover_image.for_mobile(style="background-image:url(#{transform.cover_mobile(cover_url)})")
-        
+
         - id = ""
         if room && room._id
           - id = room._id
-        .content.centered(data-view="components/audio/player_preview", data-room-id="#{id}" data-is-live="true")
+        .in_a_room.content.centered(data-view="components/audio/player_preview", data-room-id="#{id}" data-is-live="true")
           a(href="#", class="tape_play icon ss-play", title="play record") &nbsp;
 
           i.fa.fa-play-circle.channel_player
@@ -129,13 +129,13 @@ block content
             a(href="/#{user.info.username}", title="#{user.info.name}") #{user.info.name}
 
           .socials_room(data-view="components/room_social_links", data-links="#{user.info.social}")
-          
+
           //.profile_image.upload_wrapper
             //img(src="#{transform.avatar(user.info.avatar)}")
 
           if room
             div.room_play_handler.for_mobile(data-room-id="#{room._id}", data-view="components/audio/player_preview", data-is-live="#{room.status.is_live}")
-              a.icon.fa.fa-play-circle.circle_icon(href="#",title="Play") 
+              a.icon.fa.fa-play-circle.circle_icon(href="#",title="Play")
               .loading_spin
 
           .change_cover.upload_wrapper(data-view="components/image_uploader", data-id="profile_cover")
@@ -152,13 +152,13 @@ block content
           .sidebar_right.not_loaded(data-view="room/sidebar_right")
             .big_number.stat_listeners
               .inner
-                span.icon.spritesheet.for_mobile.mobile_headphones.room 
+                span.icon.spritesheet.for_mobile.mobile_headphones.room
                 span.number 0
                 span.text Listeners
 
             .big_number.stat_likes
               .inner
-                span.icon.for_mobile.ss-heart 
+                span.icon.for_mobile.ss-heart
                 span.number 0
                 span.text Likes
 
@@ -166,10 +166,10 @@ block content
               .inner
                 span.icon.for_mobile.ss-users
                 span.number 0
-                span.text 
-                  | Total 
+                span.text
+                  | Total
                   br
-                  | Visitors  
+                  | Visitors
 
             .room_status
               .offair OFF AIR
@@ -177,8 +177,8 @@ block content
 
       include ./dashboard.jade
 
-      include ../chat/chat.jade    
-      
+      include ../chat/chat.jade
+
       .modals
         include ../modals/room_modal.jade
 
