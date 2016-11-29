@@ -5,7 +5,7 @@
 
 /* line 13 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 895 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+/* line 899 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
 /* line 10 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
@@ -25,7 +25,7 @@
 
 /* line 90 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 895 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+/* line 899 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
 /* line 11 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
@@ -53,7 +53,7 @@
 
 /* line 5 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
 
-/* line 895 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+/* line 899 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
 /* line 12 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
@@ -2969,7 +2969,7 @@ div.tagsinput div {
   color: #fff;
 }
 
-/* line 895 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/src/frontend/styles/_shared/_tags.styl */
+/* line 899 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/src/frontend/styles/_shared/_tags.styl */
 
 /* line 247 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/src/frontend/styles/_shared/_mobile.styl */
 
@@ -4466,33 +4466,36 @@ body {
 
 /* line 880 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/src/frontend/styles/_shared/_mobile.styl */
   .channel_player {
-    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-67%) translateY(-60%);
+    transform: translateX(-67%) translateY(-60%);
   }
 
-/* line 882 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 887 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/src/frontend/styles/_shared/_mobile.styl */
   .chanel_title {
-    margin-top: 10px !important;
-    color: #f00 !important;
+    margin-top: -50px !important;
   }
 
-/* line 885 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 889 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/src/frontend/styles/_shared/_mobile.styl */
   .fullscreen_elements {
     margin-top: 37px;
   }
 
-/* line 887 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 891 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/src/frontend/styles/_shared/_mobile.styl */
   img.itunesicon_desktop {
     display: none;
   }
 
-/* line 889 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 893 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/src/frontend/styles/_shared/_mobile.styl */
   .remove_mobile {
     display: none !important;
   }
 }
 @media (max-width: 320px) {
 
-/* line 894 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/src/frontend/styles/_shared/_mobile.styl */
+/* line 898 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/src/frontend/styles/_shared/_mobile.styl */
   .fullscreen_elements {
     margin-top: 20px;
   }
@@ -9064,7 +9067,7 @@ body.loading .explore_content {
 
 /* line 13 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/stylus/lib/functions/index.styl */
 
-/* line 642 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
+/* line 645 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
 /* line 10 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/index.styl */
 
@@ -9084,7 +9087,7 @@ body.loading .explore_content {
 
 /* line 90 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/flex.styl */
 
-/* line 642 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
+/* line 645 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
 /* line 11 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/gradients.styl */
 
@@ -9112,7 +9115,7 @@ body.loading .explore_content {
 
 /* line 5 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/reset.styl */
 
-/* line 642 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
+/* line 645 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
 /* line 12 : /Users/thomasamundsen/Documents/Traxnwaxcode/beta/node_modules/polvo/node_modules/polvo-stylus/node_modules/nib/lib/nib/text/index.styl */
 
