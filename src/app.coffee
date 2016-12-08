@@ -25,7 +25,7 @@ server.start ( error ) ->
   mongoose.connect s.mongo.url, ( error ) ->
 
     if error
-      
+
       console.error error
 
       server.hapi.stop()
@@ -44,7 +44,8 @@ server.start ( error ) ->
 
         server.hapi.route require( file )
 
-      process.nextTick -> 
+      process.nextTick ->
+
         # open socket server after routing all routes
         sockets.connect server.hapi.listener
 
@@ -58,12 +59,12 @@ shutdown = ( signal ) ->
   ->
 
     console.log "-- SIGNAL: #{signal}"
-    
+
     # stop the https server
     server.hapi.stop { timeout: 5 * 1000}, ->
-  
+
       # shutdown sockets gracefully
-      sockets.shutdown -> 
+      sockets.shutdown ->
         if signal is 'SIGTERM'
           return process.exit 0
 

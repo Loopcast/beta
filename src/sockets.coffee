@@ -23,20 +23,25 @@ sockets.connect = ( listener ) ->
 
   io = sockets.io = require('socket.io')(listener)
 
-  redis_client = require('redis').createClient
-  adapter      = require('socket.io-redis')
+  try
+    redis_client = require('redis').createClient
+    adapter      = require('socket.io-redis')
 
-  pub = redis_client s.heroku_redis.port, s.heroku_redis.host,
-    auth_pass: s.heroku_redis.password
+    pub = redis_client s.heroku_redis.port, s.heroku_redis.host,
+      auth_pass: s.heroku_redis.password
 
-  sub = redis_client s.heroku_redis.port, s.heroku_redis.host,
-    auth_pass     : s.heroku_redis.password
-    detect_buffers: true
+    sub = redis_client s.heroku_redis.port, s.heroku_redis.host,
+      auth_pass     : s.heroku_redis.password
+      detect_buffers: true
 
-  io.adapter adapter(
-    pubClient: pub
-    subClient: sub
-  )
+    io.adapter adapter(
+      pubClient: pub
+      subClient: sub
+    )
+
+  catch e
+    console.log 'error connecting to redis?'
+    console.log e
 
   sockets.online = true
   sockets.boot io
@@ -46,11 +51,9 @@ sockets.boot = ( server ) ->
 
   server.on 'connection', ( socket ) ->
 
-    # console.log "socket connected ->", socket.id
-
     socket.emit "uid", socket.id
 
-    stats[ socket.id ] = 
+    stats[ socket.id ] =
       connected: true
       rooms    : {}
 
@@ -83,14 +86,15 @@ sockets.boot = ( server ) ->
             delete stats[ socket.id ]
 
     # sub / unsub jazz
-    socket.on 'subscribe'  , ( room ) -> 
+    socket.on 'subscribe'  , ( room ) ->
+
       socket.join  room
 
-    socket.on 'unsubscribe', ( room ) -> 
+    socket.on 'unsubscribe', ( room ) ->
       socket.leave room
 
     # add / remove user from room when subscribing
-    socket.on 'subscribe-room', ( room, callback ) -> 
+    socket.on 'subscribe-room', ( room, callback ) ->
       socket.join  room
 
       stats[socket.id].rooms[room] = true
@@ -107,15 +111,15 @@ sockets.boot = ( server ) ->
 
         # console.log "#{socket.id} added to room #{room}"
 
-        if callback 
+        if callback
           socket.emit "#{room}-done", 'done!'
-          
+
           # console.log "emited done for " + "#{room}-done"
 
           callback()
 
-      
-    socket.on 'unsubscribe-room', ( room ) -> 
+
+    socket.on 'unsubscribe-room', ( room ) ->
       socket.leave room
       stats[socket.id].rooms[room] = false
 
@@ -132,9 +136,9 @@ sockets.boot = ( server ) ->
           console.log error
 
         # console.log "#{socket.id} removed from room #{room}"
-      
 
-sockets.shutdown = ( callback ) -> 
+
+sockets.shutdown = ( callback ) ->
 
   return callback() if not sockets.online
 
@@ -145,12 +149,12 @@ sockets.shutdown = ( callback ) ->
 
   if not clients.length then return callback()
 
-  redis_client.end()
-  
+  redis_client.end?()
+
   query   = in_chat  : $in    : clients
   update  = $pullAll : in_chat: clients
   options = multi    : true
-  
+
   Room.update query, update, options, ( error ) ->
     if error
       console.log "error removing users from room when server shutdown"
