@@ -137,9 +137,15 @@ module.exports = class Player
     if @radiokit_player.isStarted()
       @radiokit_player.stop()
       @show_play_button()
-      app.emit 'audio:paused', @room_id
+      console.log 'audio:paused due to on_play_clicked'
+      console.log "@current_room_id", @current_room_id
+
+      app.emit 'audio:paused', @current_room_id
     else
-      app.emit 'audio:loading', @room_id
+      console.log 'audio:loading due to on_play_clicked'
+      console.log "@current_room_id ", @current_room_id
+
+      app.emit 'audio:loading', @current_room_id
       @radiokit_player.start()
       @show_loading()
 
@@ -257,7 +263,6 @@ module.exports = class Player
 
   onTrackPlaybackStarted: (track) =>
 
-    console.log "onTrackPlayback"
     console.log "audio:started ->", @current_room_id
 
     app.emit "audio:started", @current_room_id
@@ -313,6 +318,8 @@ module.exports = class Player
   fetch_room: ( room_id, callback ) ->
 
     if not $( ".in_a_room" ).length
+      console.log 'audio:loading room_id ->', room_id
+
       app.emit 'audio:loading', room_id
 
     if @data_rooms[ room_id ]?
@@ -334,11 +341,13 @@ module.exports = class Player
       api.rooms.info room_id, on_response
 
   on_error: ->
+    console.log 'audio:pause due to error'
     notify.error 'There was an error.'
     app.emit 'audio:paused'
 
   stop: =>
 
+    console.log 'audio:pause due to stop'
     app.emit "audio:paused", @current_room_id
 
     @show_play_button()
@@ -432,7 +441,9 @@ module.exports = class Player
 
     if @data?
       @last_audio_started = @data.data._id
-      app.emit 'audio:started', @room_id
+
+      console.log 'audio:started'
+      app.emit 'audio:started', @current_room_id
 
   on_audio_stopped: =>
     # log "[Player] on_audio_stopped"
@@ -441,11 +452,13 @@ module.exports = class Player
     # @time.html "00:00:00"
 
     if @data?
+      console.log 'audio:pause due to on_audio_stopped event'
       app.emit 'audio:paused', @data.data._id
 
   on_audio_ended: =>
     # log "[Player] on_audio_ended"
 
+    console.log 'audio:ended'
     app.emit 'audio:ended', @data.data._id
     @on_audio_stopped()
 

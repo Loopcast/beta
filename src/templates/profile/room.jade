@@ -113,7 +113,7 @@ block content
         - id = ""
         if room && room._id
           - id = room._id
-        .in_a_room.content.centered(data-view="components/audio/player_preview", data-room-id="#{id}" data-is-live="true")
+        .in_a_room.content.centered(data-view="components/audio/player_preview", data-room-id="#{id}" data-is-live="true" data-radiokit-channel-id="#{room.status.radiokit_channel_id}")
           a(href="#", class="tape_play icon ss-play", title="play record") &nbsp;
 
           i.fa.fa-play-circle.channel_player

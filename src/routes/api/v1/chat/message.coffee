@@ -37,7 +37,7 @@ module.exports =
       room_id  = request.payload.room_id
       user_id  = request.payload.user_id
 
-      data = 
+      data =
         type    : 'message'
         _id     : user._id
         name    : user.name
