@@ -14,7 +14,7 @@ module.exports = class Messages extends ChatView
   unread_messages : 0
 
   users : {}
-    
+
   on_room_created: ( @room_id, @owner_id ) =>
     super @room_id, @owner_id
 
@@ -29,7 +29,7 @@ module.exports = class Messages extends ChatView
 
 
     api.chat.messages @room_id, (error, response) =>
-      log "[Messages] old messages", response
+      #log "[Messages] old messages", response
       return if error
       response = response.reverse()
       for m in response
@@ -72,10 +72,10 @@ module.exports = class Messages extends ChatView
     @popup.hide()
 
   on_message: (data) =>
-    
+
 
     if not @users[data.username]?
-      @users[data.username] = 
+      @users[data.username] =
         avatar: data.avatar
         id: data.username
         images: transform.all data.avatar
@@ -95,7 +95,7 @@ module.exports = class Messages extends ChatView
     obj =
       message: autolink( data.message )
       time: data.time
-      user: 
+      user:
         url: "/" + data.username
         name: data.name
         thumb: transform.chat_thumb( data.avatar )
@@ -108,7 +108,7 @@ module.exports = class Messages extends ChatView
     # log "[Messages] on_message", data, @owner_id, obj
 
     html = @tmpl obj
-      
+
     @increment_title() if @onfocused
 
     h = $(html)

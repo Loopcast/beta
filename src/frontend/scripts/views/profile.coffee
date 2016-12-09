@@ -33,9 +33,9 @@ module.exports = class Profile extends LoggedView
 
 	on_views_binded: ( scope ) =>
 		return unless scope.main
-		
 
-		@elements = 
+
+		@elements =
 			location         : @dom.find '.profile_bio .location'
 			location_input   : @dom.find '.location_input'
 			about            : @dom.find '.bio'
@@ -55,7 +55,7 @@ module.exports = class Profile extends LoggedView
 
 
 	manage_form: ->
-		
+
 
 		@form_bio = @dom.find '.profile_form'
 		@form_bio.on 'submit', (e) -> e.preventDefault()
@@ -78,11 +78,11 @@ module.exports = class Profile extends LoggedView
 
 
 
-		
+
 
 	on_user_logged: ( @user_data ) =>
 		if @user_logged or not @elements?
-			return 
+			return
 
 		@user_logged = true
 
@@ -111,7 +111,7 @@ module.exports = class Profile extends LoggedView
 		# Listen to images upload events
 		@change_cover_uploader = view.get_by_dom @dom.find( '.change_cover' )
 		@change_cover_uploader.on 'completed', @on_cover_uploaded
-			
+
 		@change_picture_uploader = view.get_by_dom @dom.find( '.profile_image' )
 		@change_picture_uploader.on 'completed', @on_avatar_uploaded
 
@@ -119,7 +119,7 @@ module.exports = class Profile extends LoggedView
 	on_name_changed: ( new_name ) =>
 		return if new_name is user_controller.data.name
 
-		
+
 		log "[Profile] on_name_changed", new_name
 		if new_name.length > 0
 
@@ -135,7 +135,7 @@ module.exports = class Profile extends LoggedView
 
 		notify.info "You changed your name"
 		navigation.go_silent "/" + response[ 'info.username' ]
-		user_controller.name_updated 
+		user_controller.name_updated
 			username: response[ 'info.username' ]
 			name: response[ 'info.name' ]
 
@@ -151,7 +151,7 @@ module.exports = class Profile extends LoggedView
 		log "[occupation] changed", data
 		return if data.default_state
 		@send_to_server occupation: data.value
-		
+
 	on_cover_uploaded: (data) =>
 		log "[Cover uploader]", data.result.secure_url, data
 
@@ -200,16 +200,16 @@ module.exports = class Profile extends LoggedView
 	# Open the write/edit mode
 	write_mode : ->
 		app.body.addClass 'write_mode'
-	
-	
+
+
 	save_data : ->
-		
+
 		# Form submitted.
 
 		# Get the values from the form
 		@elements.links.close_read_mode()
 
-		data = 
+		data =
 			location : @elements.location_input.val().trim()
 			about    : StringUtils.line_breaks_to_br @elements.about_input.val().trim()
 			social   : @elements.links.get_current_value()
@@ -241,18 +241,18 @@ module.exports = class Profile extends LoggedView
 		l = @elements.location.html().length
 		b = @elements.about.html().length
 
-		log "check_informations"
+		#log "check_informations"
 		# log "[Profile] check_informations", @elements.location.html(), @elements.about.html()
 		if l > 0 or b > 0
 			@dom.removeClass 'no_information_yet'
 
-			log "inside", user_controller.is_owner
-			
+			#log "inside", user_controller.is_owner
+
 		else
 			@dom.addClass 'no_information_yet'
 			if user_controller.is_owner
 				do @write_mode
-		
+
 		if b > 0
 			str = link_to_text @elements.about.html()
 			@elements.about_input.val str
@@ -278,10 +278,10 @@ module.exports = class Profile extends LoggedView
 		super()
 
 		app.body.removeClass 'write_mode'
-		
+
 		if @modal
 			view.destroy_view @modal
-			
+
 		if user_controller.is_owner
 			@change_cover_uploader.off 'completed', @on_cover_uploaded
 			@change_picture_uploader.off 'completed', @on_avatar_uploaded

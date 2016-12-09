@@ -9,7 +9,7 @@ module.exports = (dom) ->
 
   l = user.string_to_social_data links
 
-  log "links", links, l
+  #log "links", links, l
 
   tmpl = require 'client_templates/components/editables/social_link_read_mode'
   html = ""
@@ -17,4 +17,4 @@ module.exports = (dom) ->
     html += tmpl( item )
 
   dom.append html
-  
+

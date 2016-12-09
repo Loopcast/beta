@@ -11,7 +11,7 @@ module.exports = class FollowButton
     id = @dom.data 'user-id'
     if id
       @user_id = id
-    
+
     # log "[FollowButton] constructor", @user_id
 
     @dom.on 'click', @toggle
@@ -27,8 +27,8 @@ module.exports = class FollowButton
       @check_following()
     else
       user.on 'following:loaded', @on_user_following_loaded
-        
-    
+
+
 
     if user.is_me @user_id
       @dom.hide()
@@ -48,7 +48,7 @@ module.exports = class FollowButton
       @dom.show()
 
       if user.is_following @user_id
-        @on_user_follow @user_id 
+        @on_user_follow @user_id
       else
         @on_user_unfollow @user_id
 
@@ -60,7 +60,7 @@ module.exports = class FollowButton
       @_toggle()
     else
       app.settings.after_login_url = location.pathname
-      app.settings.action = 
+      app.settings.action =
         type: "follow"
         user_id: @user_id
 
@@ -90,13 +90,13 @@ module.exports = class FollowButton
 
   on_user_unfollow: (user_id) =>
     return if user_id isnt @user_id
-    log "[Follow] on_user_unfollow", user_id, @user_id
+    #log "[Follow] on_user_unfollow", user_id, @user_id
 
     @set_state false
 
   on_user_follow: (user_id) =>
     return if user_id isnt @user_id
-    log "[Follow] on_user_follow", user_id, @user_id
+    #log "[Follow] on_user_follow", user_id, @user_id
 
     @set_state true
 
@@ -126,7 +126,7 @@ module.exports = class FollowButton
       @dom.removeClass( 'following' ).html( 'Follow' )
 
     @is_following = state
-  
+
 
   destroy: ->
-    @dom.off 'click', @toggle    
+    @dom.off 'click', @toggle

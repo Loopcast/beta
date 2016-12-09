@@ -1,5 +1,5 @@
 happens = require 'happens'
-module.exports = class PeopleList 
+module.exports = class PeopleList
   list: {}
   ids: {}
   total: 0
@@ -13,11 +13,11 @@ module.exports = class PeopleList
 
 
   add: ( data ) ->
-    
+
     user = data.user
 
 
-    log "[PeopleList] ######## ADD", user.socket_id, data, user.name
+    #log "[PeopleList] ######## ADD", user.socket_id, data, user.name
 
     if @ids[ user.id ]? or not user.socket_id?
       # log "[PeopleList] ######## ADD (already present)", user, user.socket_id, user.name, @list, @ids
@@ -25,7 +25,7 @@ module.exports = class PeopleList
       # log "[PeopleList] #####################"
 
       return false
-    
+
     @total++
 
     # log "[PeopleList] ######## ADD (new)", user, user.socket_id, user.name, @list
@@ -37,7 +37,7 @@ module.exports = class PeopleList
     # log "[PeopleList] checking the item (after)", @list[ user.socket_id ], "total", @total
     # log "[PeopleList] #####################"
 
-    @emit 'listener:added', 
+    @emit 'listener:added',
       item: user
       total: @total
 
@@ -58,7 +58,7 @@ module.exports = class PeopleList
 
       # log "[PeopleList] #####################"
 
-      @emit 'listener:removed', 
+      @emit 'listener:removed',
         item: obj
         total: @total
 
@@ -82,6 +82,6 @@ module.exports = class PeopleList
     delete @ids
     @total = 0
 
-      
+
 
 

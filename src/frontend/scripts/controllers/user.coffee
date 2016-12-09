@@ -22,7 +22,7 @@ class UserController
   constructor: ->
 
     if UserController.instance
-      console.error "You can't instantiate this UserController twice" 
+      console.error "You can't instantiate this UserController twice"
       return
 
     UserController.instance = @
@@ -31,8 +31,8 @@ class UserController
     window.user = @
     @fetch_from_session()
 
-    view.on 'binded', @on_views_binded 
-      
+    view.on 'binded', @on_views_binded
+
 
   on_views_binded: ( scope ) =>
     return unless scope.main
@@ -43,7 +43,7 @@ class UserController
 
     api.user.status {}, (error, response) =>
       # error = true
-      log "[User] checking status from the server", error, response.logged
+      #log "[User] checking status from the server", error, response.logged
       if error or response.logged is false
         callback = ->
         @logout callback, true
@@ -63,11 +63,11 @@ class UserController
   login: ( data ) ->
 
     # This is what we gonna save to the cookie
-    @data = 
+    @data =
       _id        : data._id
       avatar     : data.avatar
-      email      : data.email 
-      created_at : data.created_at 
+      email      : data.email
+      created_at : data.created_at
       images     : transform.all data.avatar
       name       : data.name
       username   : data.username
@@ -77,7 +77,7 @@ class UserController
 
 
     @_dispatch_login()
-    
+
     @write_to_session()
 
 
@@ -89,7 +89,7 @@ class UserController
   logout: ( callback, disable_notify = false ) ->
 
     log "[UserController] logout"
-    
+
     if not @is_logged()
       callback?( error: code: 'node_logged' )
 
@@ -117,7 +117,7 @@ class UserController
 
   owner_id: ->
     document.getElementById( 'owner_id' )?.value
-    
+
   check_guest_owner: ->
     owner_id = @owner_id()
 
@@ -135,7 +135,7 @@ class UserController
   create_images: ->
 
     # console.log "[UserController] NORMALIZE DATA before", @data
-    
+
     # if not @data.avatar?
       # log "[User Controller] user.avatar is undefined."
       # @data.avatar = UserController.USER_DEFAULT_AVATAR
@@ -154,7 +154,7 @@ class UserController
 
     @emit 'name:updated', @data
     @write_to_session()
-    
+
 
   check_following: (ids, callback) ->
     api.user.is_following ids, (error, response) ->
@@ -171,7 +171,7 @@ class UserController
     ref = @
     api.user.follow user_id, ( error, result ) ->
 
-      # Update the following map      
+      # Update the following map
       ref.data.following[ user_id ] = true
 
       # log "[FollowButton] follow response", result
@@ -183,8 +183,8 @@ class UserController
     # log "[User] unfollow", user_id, @data.following
     ref = @
     api.user.unfollow user_id, ( error, result ) ->
-      
-      # Update the following map      
+
+      # Update the following map
       ref.data.following[ user_id ] = false
 
       # log "[FollowButton] unfollow response", result
@@ -209,10 +209,10 @@ class UserController
 
     @create_images()
 
-    log "[====== USER LOGGED =======]"
-    log "#{@data.username} / #{@data.name}"
-    log @data
-    log "[==========================]"
+    #log "[====== USER LOGGED =======]"
+    #log "#{@data.username} / #{@data.name}"
+    #log @data
+    #log "[==========================]"
 
 
     # Subscribe to the user channel
@@ -277,7 +277,7 @@ class UserController
     # log "[User] is following", id, output
     return output
 
-      
+
 
   _dispatch_logout: ->
     log "[====== USER NOT LOGGED =======]"
@@ -287,7 +287,7 @@ class UserController
     app.body.removeClass( "logged" ).addClass( 'not_logged' )
     @emit 'user:unlogged'
 
-  
+
 
 
   ###
@@ -307,7 +307,7 @@ class UserController
   ###
   Social Methods
   ###
-  
+
 
   get_social_info_from_url: ( s ) ->
 
@@ -375,7 +375,7 @@ class UserController
 
 
     if @data
-      data = 
+      data =
         _id      : @data._id
         socket_id: @socket_id
         info:
@@ -383,7 +383,7 @@ class UserController
           name     : @data.name
           avatar   : @data.images.chat_sidebar
     else
-      data = 
+      data =
         _id      : @socket_id
         socket_id: @socket_id
         info:
@@ -405,7 +405,7 @@ class UserController
           log "[User controller info_by_id()] error.", id, error
 
   ###
-  Session (cookie) Methods 
+  Session (cookie) Methods
   ###
   fetch_from_session: ->
     @data = app.session.get 'user', null

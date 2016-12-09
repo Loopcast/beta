@@ -2,7 +2,7 @@ L = require '../../api/loopcast/loopcast'
 transform = require 'lib/cloudinary/transform'
 ChatView = require 'app/views/room/chat_view'
 user = require 'app/controllers/user'
-get_coords  = require 'app/utils/io/get_coords' 
+get_coords  = require 'app/utils/io/get_coords'
 
 module.exports = class People extends ChatView
   listeners_map: []
@@ -44,7 +44,7 @@ module.exports = class People extends ChatView
   on_listener_added: ( data ) =>
     # log "[People] ####### on_listener_added", listener.user.username
     @_on_listener_added data.item, data.total
-    
+
 
   _on_listener_added: ( listener, total ) ->
 
@@ -52,8 +52,8 @@ module.exports = class People extends ChatView
     if @listeners_map[ listener.socket_id ]?
       # log "[People] listener already added", listener.socket_id
       return
-      
-    log "[People] on_listener_added", listener
+
+    #log "[People] on_listener_added", listener
     @listeners_map[ listener.socket_id ] = listener
 
     @listeners_wrapper.append @tmpl( listener )
@@ -62,7 +62,7 @@ module.exports = class People extends ChatView
   on_listener_removed: ( data ) =>
     listener = data.item
     # log "[People] on_listener_removed", listener
-    
+
     @listeners_wrapper.find( '#listener_' + listener.socket_id ).remove()
 
     @listeners_map[ listener.socket_id ] = null
