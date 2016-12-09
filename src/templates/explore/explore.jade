@@ -41,7 +41,7 @@ block grid
           //- - klasses += " item-" + slugify(g)
 
           if item.status.is_live
-            - klasses += " is_live"
+            - klasses += " is_live" 
           else
             - klasses += " not_live"
 
@@ -57,10 +57,10 @@ block grid
                 hidden( class="source_src" value="#{item.info.file}")
 
                   
-            a(href="#{url}", title="#{item.info.title}", class="thumb_wrapper") 
+            a(href="#{url}", title="#{item.info.title}", class="thumb_wrapper" onClick="mixpanel.track('Enters Channel');_gaq.push(['_trackEvent', 'Enters Channel', 'Click', '']);") 
               img.room_thumb.for_desktop(src="#{transform.explore_thumb(cover_url)}")
 
-              i.fa.fa-play-circle.circle_icon(aria-hidden="true")
+              i.fa.fa-play-circle.circle_icon(aria-hidden="true" onClick="mixpanel.track('Plays Channel');_gaq.push(['_trackEvent', 'Plays Channel', 'Click', '']);")
               .loading_spin
 
               .share_wrapper(
@@ -75,7 +75,7 @@ block grid
             .room_content
               .text
                 h2.room_title
-                  a(href="#{url}", title="#{item.info.title}") #{item.info.title}
+                  a(href="#{url}", title="#{item.info.title}" onClick="mixpanel.track('Enters Channel');_gaq.push(['_trackEvent', 'Enters Channel', 'Click', '']);" ) #{item.info.title}
                 a.room_subtitle.blue(title="#{item.user.info.name}", href="#{author_url}") #{item.user.info.name}
 
   script
