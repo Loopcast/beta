@@ -75,6 +75,7 @@ module.exports = (dom) ->
       dom.find( ".fa-pause-circle" ).hide()
       dom.find( ".fa-play-circle" ).show()
     else
+      console.log "Removing"
       icon.removeClass( 'fa-pause-circle' ).addClass( 'fa-play-circle' )
 
   on_loading = (_room_id) ->
@@ -83,7 +84,7 @@ module.exports = (dom) ->
     #console.log "room_id", room_id
 
     if _room_id is room_id
-      #console.log "ITS ME!"
+      console.log "ITS ME!"
       dom.addClass 'preloading'
       dom.removeClass 'playing'
     else
@@ -95,6 +96,8 @@ module.exports = (dom) ->
 
     e.stopPropagation()
     e.preventDefault()
+
+    console.log 'is_playing?', is_playing
 
     if is_playing
       app.player.stop()

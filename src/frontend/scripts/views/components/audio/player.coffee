@@ -180,10 +180,10 @@ module.exports = class Player
   Otherwise, just call _play()
   ###
   play: (room_id, radiokit_channel_id) ->
-    if @current_room_id is room_id
-      @stop()
+    #if @current_room_id is room_id
+      #@stop()
 
-      return
+      #return
 
     @initialize_player(radiokit_channel_id)
 
