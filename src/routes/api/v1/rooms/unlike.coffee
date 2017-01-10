@@ -26,7 +26,7 @@ module.exports =
       user    = req.auth.credentials.user
       room_id = req.params.id
 
-      # data = 
+      # data =
       #   type     : 'unlike'
       #   username : user.username
       #   name     : user.name
@@ -34,9 +34,9 @@ module.exports =
 
       # sockets.send room_id, data
 
-      like user._id, Room, room_id, ( error, respose ) ->
+      unlike user._id, Room, room_id, ( error, respose ) ->
 
         if error
           return reply Boom.badImplementation( error.message, error )
-        
+
         reply respose
