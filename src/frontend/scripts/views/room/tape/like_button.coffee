@@ -74,7 +74,7 @@ module.exports = class LikeButton extends LoggedView
         type: 'like_tape'
         data: 
           tape_id: @tape_id
-          message: "Liked this session"
+          message: "Liked this channel"
 
       app.settings.room_to_like = true
       app.settings.after_login_url = location.pathname

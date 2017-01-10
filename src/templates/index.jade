@@ -6,6 +6,7 @@ block seo
   meta( property="og:description" content="Discover expert-curated dance music channels. Tune into your favourite dance music genre, explore new music with other users and save your favourites." )
   meta( name="twitter:title" content="Loopcast - Discover Music For Every Mood")
   meta( name="twitter:description" content="Discover expert-curated dance music channels. Tune into your favourite dance music genre, explore new music with other users and save your favourites.")
+  meta( name="google-site-verification" content="bKR94RwtrtgY79Pz1-BPqowaimM136gbglIzV3D-xVY" )
 
 extends layout
 
@@ -21,7 +22,7 @@ block content
             h1 Discover Music For Every Moment
             p Explore human-curated channels by the most forward thinking DJs and selectors. Unique, rare and niche music for every moment.
 
-            a.button.new_green(href="/explore", title="Explore All Channels", onClick="mixpanel.track('Explore');_gaq.push(['_trackEvent', 'Explore', 'Click', '']);") Start Listening
+            a.button.new_green(href="/explore", title="Explore All Channels", onClick="mixpanel.track('Explore Channels');_gaq.push(['_trackEvent', 'Explore', 'Click', '']);") Start Listening
 
         //- second slide
         .swiper-slide.second-slide
@@ -29,7 +30,7 @@ block content
             h1 Dance Music Discovery Tool
             p Tune into a unique channel for any sub-genres of dance music. Chat with other listeners in the channel and purchase the tracks you love.
 
-            a.button.new_green(href="/explore", title="Explore All Channels", onClick="mixpanel.track('Explore');_gaq.push(['_trackEvent', 'Explore', 'Click', '']);") Start Listening
+            a.button.new_green(href="/explore", title="Explore All Channels", onClick="mixpanel.track('Explore Channels');_gaq.push(['_trackEvent', 'Explore', 'Click', '']);") Start Listening
 
       .swiper-pagination
 
