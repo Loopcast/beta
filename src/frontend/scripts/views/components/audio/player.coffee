@@ -79,8 +79,10 @@ module.exports = class Player
     view.off 'binded', @on_views_binded
 
     @dom.find( ".player_button.no_fullscreen" ).click @on_play_clicked
+    @like_btn.click @on_like_clicked
 
   on_like_clicked: =>
+
     if not user.is_logged()
       app.settings.after_login_url = location.pathname
       app.settings.action =
