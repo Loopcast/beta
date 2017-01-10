@@ -111,9 +111,13 @@ block content
         .cover_image.for_mobile(style="background-image:url(#{transform.cover_mobile(cover_url)})")
 
         - id = ""
+        - channel_id = ""
+
         if room && room._id
-          - id = room._id
-        .in_a_room.content.centered(data-view="components/audio/player_preview", data-room-id="#{id}" data-is-live="true" data-radiokit-channel-id="#{room.status.radiokit_channel_id}")
+          - id         = room._id
+          - channel_id = room.status.radiokit_channel_id
+
+        .in_a_room.content.centered(data-view="components/audio/player_preview", data-room-id="#{id}" data-is-live="true" data-radiokit-channel-id=channel_id)
           a(href="#", class="tape_play icon ss-play", title="play record") &nbsp;
 
           i.fa.fa-play-circle.channel_player
