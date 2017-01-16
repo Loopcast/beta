@@ -59,7 +59,7 @@ html
         account_token: 'NPS-3de38917' // This is your unique account token.
         };
         window.wootric('run');
-      // end Wootric code 
+      // end Wootric code
 
 
 
@@ -127,7 +127,8 @@ html
     script
       | var options   = { authEndpoint: '/api/v1/chat/auth' }
       | options  = {} // while we don't implement presence channels
-      | window.intercomSettings = { app_id: "#{intercom.id}" }
+      | window.intercomSettings = { app_id: "#{intercom.id}" };
+
       if is_beta
         | var is_beta  = true;
 
