@@ -236,19 +236,24 @@ class UserController
         @on_upload_error data
         return
 
-    # updates intercom information
-    window.intercomSettings.name       = @data.name
-    window.intercomSettings.email      = @data.email
-    # window.intercomSettings.created_at = new Date(@data.created_at).getTime()
-    window.intercomSettings.widget     =
-      activator: '#IntercomDefaultWidget'
+    try
+      # updates intercom information
+      window.intercomSettings.name       = @data.name
+      window.intercomSettings.email      = @data.email
+      # window.intercomSettings.created_at = new Date(@data.created_at).getTime()
+      window.intercomSettings.widget     =
+        activator: '#IntercomDefaultWidget'
 
-    # $.getScript '/js/intercom.js', ->
+      # $.getScript '/js/intercom.js', ->
 
-    window.Intercom 'boot', window.intercomSettings
+      window.Intercom 'boot', window.intercomSettings
 
-    delay 500, ->
-      window.Intercom 'update', window.intercomSettings
+      delay 500, ->
+        window.Intercom 'update', window.intercomSettings
+
+    catch e
+      console.log 'problem dealing with intercom'
+      console.log e
 
     # console.log 'loaded intercom with settings', window.intercomSettings
 
