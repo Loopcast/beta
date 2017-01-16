@@ -48,6 +48,21 @@ html
         #loading {display:block;position:absolute;top:0;left:0;background:#ececec;width:100%;height:100%;}
         header{opacity:0;}
 
+             // begin Wootric code
+      script(type='text/javascript', src='https://disutgh7q0ncc.cloudfront.net/beacon.js')
+      script(type='text/javascript').
+        wootric_survey_immediately = true; // Shows survey immediately for testing purposes.  TODO: Comment out for production.
+        window.wootricSettings = {
+        email: 'nps@example.com', // TODO: The current logged in user's email address. OPTIONAL
+        // external_id: 'abc123', // TODO: The current logged in user's unique ID in your system.  Reference field for external integrations only.  OPTIONAL
+        created_at: 1234567890, // TODO: The current logged in user's sign-up date as a 10 digit Unix timestamp in seconds. OPTIONAL
+        account_token: 'NPS-3de38917' // This is your unique account token.
+        };
+        window.wootric('run');
+      // end Wootric code 
+
+
+
 
   body.loading.not_logged
     block body
