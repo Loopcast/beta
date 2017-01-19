@@ -30,7 +30,7 @@ block content
             h1 Explore New Music Together
             p Join a channel and chat with other listeners about your experience. Purchase the tracks you like on iTunes or save to Apple Music.
 
-            a.button.new_green(href="/explore", title="Explore All Channels", onClick="mixpanel.track('Explore Channels');_gaq.push(['_trackEvent', 'Explore', 'Click', '']);") Start Listening
+            a.button.new_green(href="/explore", title="Explore All Channels", onClick="mixpanel.track('Explore Channels');_gaq.push(['_trackEvent', 'Explore', 'Click', '']); Intercom('trackEvent', 'start-listening');") Start Listening
 
       .swiper-pagination
 
