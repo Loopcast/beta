@@ -283,8 +283,8 @@ module.exports = class Player
           @track_title.html metadata.title
         if metadata.artist and metadata.title
           @track_separator.html ' - '
-        if affiliates.itunes
-          @itunes_button.attr('href', affiliates.itunes.trackViewUrl + '&at=1000l5ZB')
+        if affiliates.itunes and affiliates.itunes.getItemUrl()
+          @itunes_button.attr('href', affiliates.itunes.getItemUrl() + '&at=1000l5ZB')
           @itunes_button.css('display', 'block')
 
 
