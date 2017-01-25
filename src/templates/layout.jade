@@ -48,6 +48,19 @@ html
         #loading {display:block;position:absolute;top:0;left:0;background:#ececec;width:100%;height:100%;}
         header{opacity:0;}
 
+          //mailchimp goal tracking code starts here
+
+      script(type='text/javascript').
+        var $mcGoal = {'settings':{'uuid':'5ab25e4734b75b66830fe3cd7','dc':'us3'}};
+        (function() {
+        var sp = document.createElement('script'); sp.type = 'text/javascript'; sp.async = true; sp.defer = true;
+        sp.src = ('https:' == document.location.protocol ? 'https://s3.amazonaws.com/downloads.mailchimp.com' : 'http://downloads.mailchimp.com') + '/js/goal.min.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sp, s);
+        })();
+
+          // mailchimp code ends here
+          
+
              // begin Wootric code
       script(type='text/javascript', src='https://disutgh7q0ncc.cloudfront.net/beacon.js')
       script(type='text/javascript').
@@ -60,6 +73,8 @@ html
         };
         window.wootric('run');
       // end Wootric code
+
+
 
 
 
