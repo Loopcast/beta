@@ -60,7 +60,7 @@ block grid
             a(href="#{url}", title="#{item.info.title}", class="thumb_wrapper" onClick="mixpanel.track('Enters Channel'); Intercom('trackEvent', 'enters channel'); ") 
               img.room_thumb.for_desktop(src="#{transform.explore_thumb(cover_url)}")
 
-              i.fa.fa-play-circle.circle_icon(aria-hidden="true" onClick="mixpanel.track('Plays Channel'); Intercom('trackEvent', 'plays channel');    ")
+              i.fa.fa-play-circle.circle_icon(aria-hidden="true" onClick="mixpanel.track('Plays Channel'); Intercom('trackEvent', 'plays channel');")
               .loading_spin
 
               .share_wrapper(
