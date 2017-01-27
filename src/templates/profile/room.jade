@@ -10,11 +10,11 @@ block seo
       - room.status.is_live = true
 
     if room.status.is_live
-      title #{room.info.title} Channel | Streaming 24/7 On Loopcast
+      title #{room.info.title} Channel | Streaming 24/7 On TraxVibes
     else
-      title #{room.info.title} | #{room.user.info.name} On Loopcast
+      title #{room.info.title} | #{room.user.info.name} On TraxVibes
 
-    - description = "Listen to expert-curated music 24/7 on Loopcast. Discover new tracks and save your favourites"
+    - description = "Listen to expert-curated music 24/7 on TraxVibes. Discover new tracks and save your favourites"
 
     meta( name="description" content=description )
 
@@ -29,8 +29,8 @@ block seo
       meta( name="twitter:description" content=description)
 
     if room.status.is_live
-      meta( property="og:title"  content="#{room.info.title} Channel | Streaming 24/7 on Loopcast")
-      meta( name="twitter:title" content="#{room.info.title} Channel | Streaming 24/7 on Loopcast")
+      meta( property="og:title"  content="#{room.info.title} Channel | Streaming 24/7 on TraxVibes")
+      meta( name="twitter:title" content="#{room.info.title} Channel | Streaming 24/7 on TraxVibes")
     else
       meta( property="og:title"       content="#{room.info.title} | #{room.user.info.name}" )
       meta( name="twitter:title" content="#{room.info.title} | #{room.user.info.name}")
@@ -46,7 +46,7 @@ block seo
       meta( property="og:image"  content="#{og_image}" )
       meta( name="twitter:image" content="#{og_image}")
 
-    meta( property="og:site_name"   content="Loopcast.fm" )
+    meta( property="og:site_name"   content="Traxvibes.com" )
 
     //- meta( property="music:creator"  content="#{s.base_path}/#{room.user.info.username}/" )
 
