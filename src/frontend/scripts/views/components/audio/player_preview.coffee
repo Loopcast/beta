@@ -5,7 +5,7 @@ module.exports = (dom) ->
   is_playing = false
 
   if dom.hasClass "in_a_room"
-    handler    = dom
+    handler    = dom.find '.fa.channel_player'
   else
     handler    = dom.find '.circle_icon, .loading_spin, .tape_play'
 
