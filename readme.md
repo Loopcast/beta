@@ -1,4 +1,4 @@
-# ~ staging.loopcast.fm
+# ~ staging.traxvibes.com
 
 ### requirements
 
@@ -55,8 +55,8 @@ They are on the frontend folder just for convenience while developing the templa
 make release
 ````
 
-### publishing to [http://development.loopcast.fm](http://development.loopcast.fm)
+### publishing to [http://staging.traxvibes.com](http://staging.traxvibes.com)
 
 ````
-git push origin development
+git push origin staging
 ````
