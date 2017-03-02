@@ -29,11 +29,11 @@ html
       link( href='/css/spritesheet.css', rel='stylesheet', type='text/css' )
       link( href='/css/webfonts/ss-standard.css', rel='stylesheet', type='text/css' )
       link( href='/css/app.css', rel='stylesheet', type='text/css' )
+      script(src='/js/tagmanager.js')
       script( src="https://code.jquery.com/jquery-2.1.1.min.js" )
       script(src='/js/check_ie.js')
       script(src='/js/animation_frame.js')
       script(src='/js/waveform.js')
-
       script(src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
 
       script.
@@ -111,17 +111,18 @@ html
 
       .md_overlay
 
-      //- #debug
 
-    //- tag manager iframe
+    // Google Tag Manager (noscript)
+    noscript
+      iframe(src='https://www.googletagmanager.com/ns.html?id=GTM-TL6TFBV', height='0', width='0', style='display:none;visibility:hidden')
+    // End Google Tag Manager (noscript)
+
+    
     script( src="//cdn.optimizely.com/js/1762630844.js" )
     script( src="/js/app.js" )
     script( src="/js/mixpanel.js" )
     script( src="/js/ga.js" )
 
-
-    //- noscript
-    //-   iframe(src='//www.googletagmanager.com/ns.html?id=GTM-N4ZZBR', height='0', width='0', style='display:none;visibility:hidden')
 
     script( type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-525305dd58558134" async="async" )
 
