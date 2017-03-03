@@ -2,7 +2,7 @@ extends ./_explore
 
 block seo
 
-    title Traxvibes - expert-curated channels for dance music fans
+    title Traxvibes - Expert-curated Channels For Dance Music Fans
 
     meta( name="description" content="Choose your favourite genre and discover an endless selection of the latest and most striking underground music.")
     meta( property="og:url" content="#{s.base_path}/explore" )
@@ -59,7 +59,7 @@ block grid
                 hidden( class="source_src" value="#{item.info.file}")
 
                   
-            a(href="#{url}", title="#{item.info.title}", class="thumb_wrapper" onClick="mixpanel.track('Enters Channel'); Intercom('trackEvent', 'enters channel'); ") 
+            a(href="#{url}", title="#{item.info.title}", class="thumb_wrapper" onClick="mixpanel.track('Enters Channel'); Intercom('trackEvent', 'enters channel'); ga(‘send’, ‘event’, ‘Click’, ‘Enter Channel); ") 
               img.room_thumb.for_desktop(src="#{transform.explore_thumb(cover_url)}")
 
               i.fa.fa-play-circle.circle_icon(aria-hidden="true" onClick="mixpanel.track('Plays Channel'); Intercom('trackEvent', 'plays channel');")
