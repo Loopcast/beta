@@ -1,6 +1,6 @@
-API Documentation for Native App
+## API Documentation for Native App
 
-Our app will have a page (explore channels) which shows a list of all our channels. This list must be fetched from our database.\
+Our app will have a page (explore channels) which shows a list of all our channels. This list must be fetched from our database.
 
 method: POST
 path: /api/v1/rooms
