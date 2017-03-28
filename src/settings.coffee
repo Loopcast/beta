@@ -9,9 +9,9 @@ s =
   https          : off
 
 if s.is_beta
-  s.base_path = "http://beta.loopcast.fm"
+  s.base_path = "http://www.traxvibes.com"
 else
-  s.base_path = "http://staging.loopcast.fm"
+  s.base_path = "http://www.traxvibes.com"
 
 if s.is_local
   s.base_path = "http://localhost:1993"
