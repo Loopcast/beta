@@ -275,7 +275,6 @@ module.exports = class Player
     track.getInfoAsync()
       .then (info) =>
         metadata = info.getMetadata()
-        affiliates = info.getAffiliates()
 
         if metadata.artist
           @track_artist.html metadata.artist
