@@ -238,6 +238,7 @@ module.exports = class Player
       radiokit_channel_id,
       '1:i23jsnduSD82jSjda7sndyasbj*ID2hdydhs'
     )
+    @radiokit_player.on('playback-started', @onPlaybackStarted)
     @radiokit_player.on('track-playback-started', @onTrackPlaybackStarted)
     @radiokit_player.on('track-position', @onTrackPosition)
     @radiokit_player.on 'error-network', ->
@@ -263,13 +264,16 @@ module.exports = class Player
     @dom.find( ".fa-pause-circle" ).hide()
     @dom.find( ".fa-refresh" ).show()
 
-  onTrackPlaybackStarted: (track) =>
-
+  onPlaybackStarted:  =>
     console.log "audio:started ->", @current_room_id
 
     app.emit "audio:started", @current_room_id
     @show_pause_button()
 
+    @clearFileInfo()
+
+
+  onTrackPlaybackStarted: (track) =>
     @clearFileInfo()
 
     track.getInfoAsync()
@@ -357,6 +361,7 @@ module.exports = class Player
     try
       @radiokit_player.offAll()
       @radiokit_player.stop()
+      @radiokit_player.stopFetching()
     catch e
       console.log "error stopping player on initialize_player"
       console.log e
