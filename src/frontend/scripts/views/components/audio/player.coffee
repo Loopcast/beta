@@ -239,6 +239,7 @@ module.exports = class Player
       '1:i23jsnduSD82jSjda7sndyasbj*ID2hdydhs'
     )
     @radiokit_player.on('playback-started', @onPlaybackStarted)
+    @radiokit_player.on('channel-metadata-update', @onChannelMetadataUpdate)
     @radiokit_player.on('track-playback-started', @onTrackPlaybackStarted)
     @radiokit_player.on('track-position', @onTrackPosition)
     @radiokit_player.on 'error-network', ->
@@ -271,6 +272,21 @@ module.exports = class Player
     @show_pause_button()
 
     @clearFileInfo()
+
+
+  onChannelMetadataUpdate: (payload) =>
+    @clearFileInfo()
+
+    if payload.metadata
+      if payload.metadata.artist
+        @track_artist.html payload.metadata.artist
+      if payload.metadata.title
+        @track_title.html payload.metadata.title
+      if payload.metadata.artist and payload.metadata.title
+        @track_separator.html ' - '
+      if payload.metadata.itunes_view_url and payload.metadata.itunes_view_url.trim() != ""
+        @itunes_button.attr('href', payload.metadata.itunes_view_url + '&at=1000l5ZB')
+        @itunes_button.css('display', 'block')
 
 
   onTrackPlaybackStarted: (track) =>
