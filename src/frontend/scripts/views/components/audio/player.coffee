@@ -249,21 +249,24 @@ module.exports = class Player
 
   show_play_button: =>
     @is_playing = false
-    @dom.find( ".fa-play-circle" ).show()
-    @dom.find( ".fa-pause-circle" ).hide()
-    @dom.find( ".fa-refresh" ).hide()
+    # FIXME hack on safari, @dom.find didn't worked
+    $( "#player .fa-play-circle" ).show()
+    $( "#player .fa-pause-circle" ).hide()
+    $( "#player .fa-refresh" ).hide()
 
   show_pause_button: =>
     @is_playing = true
-    @dom.find( ".fa-play-circle" ).hide()
-    @dom.find( ".fa-pause-circle" ).show()
-    @dom.find( ".fa-refresh" ).hide()
+    # FIXME hack on safari, @dom.find didn't worked
+    $( "#player .fa-play-circle" ).hide()
+    $( "#player .fa-pause-circle" ).show()
+    $( "#player .fa-refresh" ).hide()
 
 
   show_loading: =>
-    @dom.find( ".fa-play-circle" ).hide()
-    @dom.find( ".fa-pause-circle" ).hide()
-    @dom.find( ".fa-refresh" ).show()
+    # FIXME hack on safari, @dom.find didn't worked
+    $( "#player .fa-play-circle" ).hide()
+    $( "#player .fa-pause-circle" ).hide()
+    $( "#player .fa-refresh" ).show()
 
   onPlaybackStarted:  =>
     console.log "audio:started ->", @current_room_id
