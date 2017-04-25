@@ -6,7 +6,8 @@ string_utils = require 'app/utils/string'
 ProgressDragger = require 'app/utils/progress_dragger'
 normalize_info = require 'app/utils/rooms/normalize_info'
 login_popup = require 'app/utils/login_popup'
-radiokit = require 'radiokit-toolkit-playback'
+radiokit_playback = require 'radiokit-toolkit-playback'
+radiokit_metadata = require 'radiokit-toolkit-broadcast-metadata'
 
 module.exports = class Player
   is_playing: false
@@ -137,7 +138,7 @@ module.exports = class Player
   on_play_clicked: =>
 
     if @radiokit_player.isStarted()
-      @radiokit_player.stop()
+      @radiokit_stop()
       @show_play_button()
       console.log 'audio:paused due to on_play_clicked'
       console.log "@current_room_id", @current_room_id
@@ -148,11 +149,28 @@ module.exports = class Player
       console.log "@current_room_id ", @current_room_id
 
       app.emit 'audio:loading', @current_room_id
-      @radiokit_player.start()
       @show_loading()
+      @radiokit_start()
 
     #@audio.toggle()
     return false
+
+
+  radiokit_start : ->
+    @radiokit_player.start()
+    @radiokit_metadata.start()
+      .then(() => console.log('radiokit metadata started'))
+      .catch(() => console.warn('radiokit metadata start failed', reason))
+
+
+  radiokit_stop : ->
+    @radiokit_player.stop()
+    @radiokit_player.stopFetching()
+    @radiokit_player.offAll()
+    @radiokit_metadata.stop()
+      .then(() => console.log('radiokit metadata stopped'))
+      .catch(() => console.warn('radiokit metadata stop failed', reason))
+
 
   get_audio_data : (data) ->
     audio_data = {}
@@ -189,7 +207,7 @@ module.exports = class Player
 
     @initialize_player(radiokit_channel_id)
 
-    @radiokit_player.start()
+    @radiokit_start()
 
     if not @data_rooms[ room_id ]?
       # log "[Player.play()] no data for this audio. Fetching it..."
@@ -228,20 +246,23 @@ module.exports = class Player
   initialize_player: ( radiokit_channel_id ) =>
     if @radiokit_player
       try
-        @radiokit_player.offAll()
-        @radiokit_player.stop()
+        @radiokit_stop()
       catch e
         console.log "error stopping player on initialize_player"
         console.log e
 
-    @radiokit_player = new radiokit.Channel.Player(
+    @radiokit_player = new radiokit_playback.Channel.Player(
       radiokit_channel_id,
       '1:i23jsnduSD82jSjda7sndyasbj*ID2hdydhs'
     )
+    @radiokit_metadata = new radiokit_metadata.MetadataListener(
+      '1:i23jsnduSD82jSjda7sndyasbj*ID2hdydhs',
+      radiokit_channel_id      
+    )
     @radiokit_player.on('playback-started', @onPlaybackStarted)
-    @radiokit_player.on('channel-metadata-update', @onChannelMetadataUpdate)
-    @radiokit_player.on('track-playback-started', @onTrackPlaybackStarted)
-    @radiokit_player.on('track-position', @onTrackPosition)
+    @radiokit_metadata.setUpdateCallback(@onMetadata)
+    @radiokit_metadata.setPositionInterval(250)
+    @radiokit_metadata.setPositionCallback(@onPosition)
     @radiokit_player.on 'error-network', ->
       console.error 'radiokit network error'
       console.log arguments
@@ -269,39 +290,21 @@ module.exports = class Player
     app.emit "audio:started", @current_room_id
     @show_pause_button()
 
-  onChannelMetadataUpdate: (payload) =>
+  onMetadata: (metadata) =>
     @clearFileInfo()
 
-    if payload.metadata
-      if payload.metadata.artist
-        @track_artist.html payload.metadata.artist
-      if payload.metadata.title
-        @track_title.html payload.metadata.title
-      if payload.metadata.artist and payload.metadata.title
+    if metadata
+      if metadata.artist
+        @track_artist.html metadata.artist
+      if metadata.title
+        @track_title.html metadata.title
+      if metadata.artist and metadata.title
         @track_separator.html ' - '
-      if payload.metadata.itunes_view_url and payload.metadata.itunes_view_url.trim() != ""
-        @itunes_button.attr('href', payload.metadata.itunes_view_url + '&at=1000l5ZB')
+      if metadata.itunes_view_url and metadata.itunes_view_url.trim() != ""
+        @itunes_button.attr('href', metadata.itunes_view_url + '&at=1000l5ZB')
         @itunes_button.css('display', 'block')
 
-  onTrackPlaybackStarted: (track) =>
-    @clearFileInfo()
-
-    track.getInfoAsync()
-      .then (info) =>
-        metadata = info.getMetadata()
-
-        if metadata.artist
-          @track_artist.html metadata.artist
-        if metadata.title
-          @track_title.html metadata.title
-        if metadata.artist and metadata.title
-          @track_separator.html ' - '
-        if metadata.itunes_view_url and metadata.itunes_view_url.trim() != ""
-          @itunes_button.attr('href', metadata.itunes_view_url + '&at=1000l5ZB')
-          @itunes_button.css('display', 'block')
-
-
-  onTrackPosition: (track, position, duration) =>
+  onPosition: (position, duration) =>
     @progress.css 'width', (position / duration * 100) + '%'
     @time.html @_humanTime(position)
     @time_tot.html "-" + @_humanTime(duration - position)
@@ -369,9 +372,7 @@ module.exports = class Player
     #@current_room_id = null
 
     try
-      @radiokit_player.offAll()
-      @radiokit_player.stop()
-      @radiokit_player.stopFetching()
+      @radiokit_stop()
     catch e
       console.log "error stopping player on initialize_player"
       console.log e
