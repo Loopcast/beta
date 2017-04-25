@@ -246,7 +246,6 @@ module.exports = class Player
       console.error 'radiokit network error'
       console.log arguments
 
-
   show_play_button: =>
     @is_playing = false
     @dom.find( ".fa-play-circle" ).show()
@@ -259,7 +258,6 @@ module.exports = class Player
     @dom.find( ".fa-pause-circle" ).show()
     @dom.find( ".fa-refresh" ).hide()
 
-
   show_loading: =>
     @dom.find( ".fa-play-circle" ).hide()
     @dom.find( ".fa-pause-circle" ).hide()
@@ -270,9 +268,6 @@ module.exports = class Player
 
     app.emit "audio:started", @current_room_id
     @show_pause_button()
-
-    @clearFileInfo()
-
 
   onChannelMetadataUpdate: (payload) =>
     @clearFileInfo()
@@ -287,7 +282,6 @@ module.exports = class Player
       if payload.metadata.itunes_view_url and payload.metadata.itunes_view_url.trim() != ""
         @itunes_button.attr('href', payload.metadata.itunes_view_url + '&at=1000l5ZB')
         @itunes_button.css('display', 'block')
-
 
   onTrackPlaybackStarted: (track) =>
     @clearFileInfo()
