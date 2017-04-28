@@ -260,9 +260,19 @@ module.exports = class Player
       radiokit_channel_id      
     )
     @radiokit_player.on('playback-started', @onPlaybackStarted)
-    @radiokit_metadata.setUpdateCallback(@onMetadata)
-    @radiokit_metadata.setPositionInterval(250)
-    @radiokit_metadata.setPositionCallback(@onPosition)
+
+    # Chrome & FF 
+    # FIXME THIS IS A DEPRECATED RADIOKIT API
+    if @radiokit_player.supportsAudioManager()
+      @radiokit_player.on('track-playback-started', @onTrackPlaybackStarted)
+      @radiokit_player.on('track-position', @onTrackPosition)
+
+    # Safari & Mobile
+    else
+      @radiokit_metadata.setUpdateCallback(@onMetadata)
+      @radiokit_metadata.setPositionInterval(250)
+      @radiokit_metadata.setPositionCallback(@onPosition)
+
     @radiokit_player.on 'error-network', ->
       console.error 'radiokit network error'
       console.log arguments
@@ -290,6 +300,33 @@ module.exports = class Player
     app.emit "audio:started", @current_room_id
     @show_pause_button()
 
+  # Chrome & FF 
+  # FIXME THIS IS A DEPRECATED RADIOKIT API
+  onTrackPlaybackStarted: (track) =>
+    @clearFileInfo()
+
+    track.getInfoAsync()
+      .then (info) =>
+        metadata = info.getMetadata()
+
+        if metadata.artist
+          @track_artist.html metadata.artist
+        if metadata.title
+          @track_title.html metadata.title
+        if metadata.artist and metadata.title
+          @track_separator.html ' - '
+        if metadata.itunes_view_url and metadata.itunes_view_url.trim() != ""
+          @itunes_button.attr('href', metadata.itunes_view_url + '&at=1000l5ZB')
+          @itunes_button.css('display', 'block')
+
+  # Chrome & FF 
+  # FIXME THIS IS A DEPRECATED RADIOKIT API
+  onTrackPosition: (track, position, duration) =>
+    @progress.css 'width', (position / duration * 100) + '%'
+    @time.html @_humanTime(position)
+    @time_tot.html "-" + @_humanTime(duration - position)
+
+  # Safari & Mobile
   onMetadata: (metadata) =>
     @clearFileInfo()
 
@@ -304,6 +341,7 @@ module.exports = class Player
         @itunes_button.attr('href', metadata.itunes_view_url + '&at=1000l5ZB')
         @itunes_button.css('display', 'block')
 
+  # Safari & Mobile
   onPosition: (position, duration) =>
     @progress.css 'width', (position / duration * 100) + '%'
     @time.html @_humanTime(position)
