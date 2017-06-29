@@ -1,56 +1,86 @@
+extends ./explore/_explore
+
 block seo
 
+  title Traxvibes - Expert-curated Channels For Dance Music Fans
 
-  title Traxvibes - Expert Curated Dance Music
+  meta( name="description" content="Choose your favourite genre and discover an endless selection of the latest and most striking underground music.")
+  meta( property="og:url" content="#{s.base_path}/explore" )
+  meta( property="og:title" content="Expert-curated channels for dance music fans" )
+  meta( property="og:description" content="Choose your favourite genre and discover an endless selection of the latest and most striking underground music.")
+  meta( name="twitter:title" content="Expert-curated channels for dance music fans")
+  meta( name="twitter:description" content="Choose your favourite genre and discover an endless selection of the latest and most striking underground music.")
 
-  meta( name="description" content="Tune into over 20 different channels, each focused on a unique style or sub-genre of dance music. Expertly curated by top selectors for you to discover new music." )
-  meta( property="og:url" content="#{s.base_path}" )
-  meta( property="og:title" content="Discover Music For Every Mood" )
-  meta( property="og:description" content="Tune into over 20 different channels, each focused on a unique style or sub-genre of dance music. Expertly curated by top selectors for you to discover new music." )
-  meta( name="twitter:title" content="Discover Music For Every Mood")
-  meta( name="twitter:description" content="Tune into over 20 different channels, each focused on a unique style or sub-genre of dance music. Expertly curated by top selectors for you to discover new music.")
-  meta( name="google-site-verification" content="bKR94RwtrtgY79Pz1-BPqowaimM136gbglIzV3D-xVY" )
 
-extends layout
 
-block content
-  .homepage(data-menu="homepage" data-view="homepage")
+block grid
+  .container
+    .arrows
+      a(href="").prevSlide.arrow
+        img(src="images/arrow_white_left.svg", alt="Previous Slide")
+      a(href="").nextSlide.arrow
+        img(src="images/arrow_right_white.svg", alt="Next Slide")
+    .pagination
 
-    //- intro section
-    .row.intro.swiper-container
+    .swiper-container
       .swiper-wrapper
-        //- first slide
-        .swiper-slide.first-slide
-          .container
-            h1 Expert-curated Dance Music
-            p Tune into over 20 different channels, each focused on a unique style or sub-genre of dance music. Expertly curated by top selectors for you to discover new music.
 
-            a.button.new_green(href="/explore", title="Explore All Channels", onClick="mixpanel.track('Start Listening'); Intercom('trackEvent', 'start-listening');") EXPLORE ALL CHANNELS
+        for item in rooms
 
-        //- second slide
-        .swiper-slide.second-slide
-          .container
-            h1 Explore New Music Together
-            p Join a channel and chat with other listeners about your experience. Purchase the tracks you like on iTunes or save to Apple Music.
+          - klasses = "item-all-genres"
 
-            a.button.new_green(href="/explore", title="Explore All Channels", onClick="mixpanel.track('Start Listening'); Intercom('trackEvent', 'start-listening');") EXPLORE ALL CHANNELS
+          - url         = "/"+ item.user.info.username + "/" + item.info.slug
+          - sharing_url = url
+          - author_url  = "/"+ item.user.info.username
+          - cover_url   = item.info.cover_url || item.user.info.avatar
 
-      .swiper-pagination
+          if !item.status.is_live
+            - url = "#"
 
-      .carousel
+          //- - console.log( "[-------------]", item.info.genres )
+          //- for g in item.info.genres
+          //-   - console.log( slugify(g) )
+          //- - klasses += " item-" + slugify(g)
 
-    //- Featured Channels section
-    .row.featured
-      .container
-        h2.title Featured Channels
+          if item.status.is_live
+            - klasses += " is_live"
+          else
+            - klasses += " not_live"
 
-        .arrows
-          a(href="").prevSlide.arrow
-            img(src="images/arrow_left.svg", alt="Previous Slide")
-          a(href="").nextSlide.arrow
-            img(src="images/arrow_right.svg", alt="Next Slide")
+          //- only show as "is_recorded" after file has been uploaded to S3
+          if item.status.recording.s3 && !item.status.is_live
+            - klasses += " is_recorded"
 
-        .swiper-container
-          .swiper-wrapper
-            each room in rooms
-              include components/room_card.jade
+          .room_cell.item(class="#{klasses}", data-view="components/audio/player_preview", data-radiokit-channel-id="#{item.status.radiokit_channel_id}" data-room-id="#{item._id}" data-is-live="#{item.status.is_live}")
+            if item.status.is_live
+              hidden( class="source_src" value="#{item.info.url}")
+            else
+              if item.status.is_recorded
+                hidden( class="source_src" value="#{item.info.file}")
+
+
+            a(href="#{url}", title="#{item.info.title}", class="thumb_wrapper" onClick="mixpanel.track('Enters Channel'); Intercom('trackEvent', 'enters channel'); ")
+              img.room_thumb.for_desktop(src="#{transform.explore_thumb(cover_url)}")
+
+              i.fa.fa-play-circle.circle_icon(aria-hidden="true" onClick="mixpanel.track('Plays Channel'); Intercom('trackEvent', 'plays channel');")
+              .loading_spin
+
+              .share_wrapper(
+              data-view="buttons/share",
+              data-title="#{item.info.title}",
+              data-summary="#{item.info.about}",
+              data-permalink="#{sharing_url}",
+              data-image="#{item.info.cover_url}"
+              )
+                a.yellow.ss-action(href="#", title="Share")
+
+            .room_content
+              .text
+                h2.room_title
+                  a(href="#{url}", title="#{item.info.title}" onClick="mixpanel.track('Enters Channel'); Intercom('trackEvent', 'enters channel');" ) #{item.info.title}
+                a.room_subtitle.blue(title="#{item.user.info.name}", href="#{author_url}") #{item.user.info.name}
+
+  script
+    //- THIS IS JUST FOR DEBUGGIN. TO BE REMOVED
+    | var data = !{JSON.stringify(locals)};;
+    | console.log( 'explore data', data );

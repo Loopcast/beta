@@ -41,7 +41,6 @@ server.start ( error ) ->
     glob __dirname + "/routes/**/*.coffee", ( error, files ) ->
 
       for file in files
-
         server.hapi.route require( file )
 
       process.nextTick ->

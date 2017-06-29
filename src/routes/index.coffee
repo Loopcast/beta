@@ -1,46 +1,50 @@
+###
+
+Load rooms data then render rooms layout
+
+###
+
+load     = models 'explore'
 template = lib 'render/template'
-#find     = find 'rooms'
 
 module.exports =
   method: 'GET'
   path  : '/'
+
   config:
+    validate:
+      query:
+        page   : joi.number().default 0
+        genres : joi.string().default ''
+        search : joi.string().default ''
 
-    auth:
-      strategy: 'session'
-      mode    : 'try'
+  handler: ( req, reply )->
 
-    handler: ( request, reply )->
+    page   = req.query.page
+    search = req.query.search
+    genres = req.query.genres
 
-      url = '/index'
+    if genres
+      genres = req.query.genres.split(",")
+    else
+      genres = []
 
-      # always inject user data into requests
-      data = request.auth.credentials || {}
+    load page, genres, search, ( error, data ) ->
+      if error then return reply error
 
-      # ~ fetch rooms
-      query = featured: true
+#      url = "/explore/explore" + req.url.pathname
+      url = "/explore/explore";
+      data.url = "/explore/explore"
 
-      fields  =
-        user  : 1
-        info  : 1
-        status: 1
-        likes : 1
+      if genres.length > 0
+        data.current_genre = genres
+      else
+        data.current_genre = ""
 
-      options = {}
-        #sort :
-          #'status.live.started_at': -1
 
-        #limit: page_limit
-        #skip : page_limit * page
+      template url, data, ( error, response ) ->
 
-      find( 'rooms' ) query, fields, options, ( error, rooms ) ->
 
-        if error then return callback error
+        if not error then return reply response
 
-        data.rooms = rooms
-
-        template url, data, ( error, response ) ->
-
-          if not error then return reply response
-
-          reply error
+        reply error

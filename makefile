@@ -9,7 +9,6 @@ BRANCH  = $(shell git rev-parse --abbrev-ref HEAD)
 
 start:
 
-
   # with remote debug
 	# DEBUG=app:* GIT_BRANCH=$(BRANCH) $(NODEMON) --debug --watch . -e coffee,jade ./src/app.coffee
 

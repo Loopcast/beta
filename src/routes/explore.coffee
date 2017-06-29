@@ -30,11 +30,9 @@ module.exports =
       genres = []
 
     load page, genres, search, ( error, data ) ->
-
       if error then return reply error
 
       url = "/explore" + req.url.pathname
-
       data.url = "/explore"
 
       if genres.length > 0

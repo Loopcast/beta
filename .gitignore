@@ -9,3 +9,6 @@ newrelic_agent.log
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
 Ondrej's TODO.txt
+
+
+.idea/
