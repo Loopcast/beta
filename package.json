@@ -35,7 +35,7 @@
     "node-uuid": "^1.4.3",
     "page": "^1.6.3",
     "pusher": "^1.0.4",
-    "radiokit-toolkit-playback": "^3.1.4",
+    "radiokit-toolkit-playback": "^3.1.5",
     "radiokit-toolkit-broadcast-metadata": "^1.0.0",
     "redis": "^0.12.1",
     "request": "^2.55.0",
