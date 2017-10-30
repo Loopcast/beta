@@ -25,6 +25,7 @@ module.exports = class Player
   requested_rooms: {}
   current_room_id: null
   timeout_follow_popup: null
+  radiokit_setup: {}
 
 
   constructor: ( @dom ) ->
@@ -61,6 +62,48 @@ module.exports = class Player
       return true if e.target.nodeName is "TEXTAREA"
 
       @on_play_clicked()
+
+    @initialize_radiokit_setup()
+
+
+  initialize_radiokit_setup:  =>    
+    @add_channel_to_radiokit_setup("0a86ec50-53ba-4a2f-986a-17c2621492f7", "acidhouse")
+    @add_channel_to_radiokit_setup("2fc3da41-3b5a-4fca-ab27-349e5dede7cb", "afrobrazilian")
+    @add_channel_to_radiokit_setup("6f394f81-ee6b-4e8b-bfd9-d6ef968f1e3e", "ambient")
+    @add_channel_to_radiokit_setup("f72fbc70-dda0-461f-b31e-513383488241", "braziliannights")
+    @add_channel_to_radiokit_setup("6f98a5f5-5a33-453a-ac86-96e3b49a7e1d", "berlintechno")
+    @add_channel_to_radiokit_setup("10d61d50-63ea-4978-b375-8fc1f89198dc", "deepspacepodcast")
+    @add_channel_to_radiokit_setup("3b6c543f-a656-416f-9529-12076a79f0f3", "dnbjungle")
+    @add_channel_to_radiokit_setup("78490f7e-68ad-4011-9ab9-59cffffbd628", "detroithouse")
+    @add_channel_to_radiokit_setup("066dd3c9-a8cc-45bb-92a6-66e8d48e2227", "detroittechno")
+    @add_channel_to_radiokit_setup("8e15700b-7fd5-4efb-9f91-c7abe8ff10e3", "deephouse")
+    @add_channel_to_radiokit_setup("4c944fc4-eb41-4e88-8d06-770f5e1febd1", "disco")
+    @add_channel_to_radiokit_setup("76337b17-cddb-4070-ac37-ddddef6acee7", "dubtechno")
+    @add_channel_to_radiokit_setup("2c0a20df-a974-4fca-bf5f-812e8f9f82cc", "frenchhouse")
+    @add_channel_to_radiokit_setup("750cecfd-6d28-47ec-a441-31bc8b7de3e8", "goldenagehiphop")
+    @add_channel_to_radiokit_setup("33445461-336d-4627-b575-d5cf9b803b81", "italonsynths")
+    @add_channel_to_radiokit_setup("46da5c19-2efe-4a71-ac10-3eeb221ec42c", "jazz")
+    @add_channel_to_radiokit_setup("efc45a32-ffa9-48db-9adb-e28431e2f109", "modernhiphop")
+    @add_channel_to_radiokit_setup("7161c70b-33e0-41ff-8a90-f711f5fe3b19", "oldschoolhouse")
+    @add_channel_to_radiokit_setup("3dc12d36-8423-47a4-987f-786b645f7416", "reggaedub")
+    @add_channel_to_radiokit_setup("2d7ad571-34a4-436d-8654-7865bec5e9e8", "soulfulhouse")
+    @add_channel_to_radiokit_setup("7feed3ea-4f9d-4a3f-a432-e17da7ba7c15", "techhouse")
+    @add_channel_to_radiokit_setup("fd9a7d1c-a387-40a0-b876-2799668d6f9d", "ukg")
+    @add_channel_to_radiokit_setup("db0e45c5-05c9-41c2-a457-84912b4c4b66", "minimalhouse")
+    @add_channel_to_radiokit_setup("d8f8547d-277d-457d-9094-5b32bffa51db", "leftfieldhouse")
+    @add_channel_to_radiokit_setup("9e145e40-e7a8-44a3-b885-81b270da6fa0", "worldmusic")
+
+
+  add_channel_to_radiokit_setup: ( radiokit_channel_id, radiokit_lineup_channel_id ) =>
+    @radiokit_setup[radiokit_channel_id] = new radiokit_playback.Channel.Setup(
+      radiokit_channel_id,
+      "https://lineup-traxvibes.radiokitapp.org",
+      radiokit_lineup_channel_id,
+      "http://tube-traxvibes-#{radiokit_lineup_channel_id}.radiokitapp.org",
+      "mp3",
+      192
+    )
+
 
   on_resize: =>
     @close_fullscreen()
@@ -243,6 +286,7 @@ module.exports = class Player
 
     #@radiokit_player.start()
 
+
   initialize_player: ( radiokit_channel_id ) =>
     if @radiokit_player
       try
@@ -252,7 +296,7 @@ module.exports = class Player
         console.log e
 
     @radiokit_player = new radiokit_playback.Channel.Player(
-      radiokit_channel_id,
+      @radiokit_setup[radiokit_channel_id],
       '1:i23jsnduSD82jSjda7sndyasbj*ID2hdydhs'
     )
     @radiokit_metadata = new radiokit_metadata.MetadataListener(
